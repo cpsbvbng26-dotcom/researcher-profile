@@ -16,7 +16,9 @@
     "credentialsNote": "各カードから発行機関の検証ページを開けます。",
     "areas": "学習領域",
     "links": "リンク",
-    "verify": "証明書を確認"
+    "verify": "証明書を確認",
+    "papers": "論文",
+    "papersNote": "いずれも査読前のプレプリントです。各カードから DOI を開けます。"
   },
   "identifiers": [
     {
@@ -102,6 +104,71 @@
     {
       "name": "領域知識",
       "detail": "放射線安全、災害科学、政治哲学"
+    }
+  ],
+  "papers": [
+    {
+      "code": "プレプリント / 英語",
+      "title": "The Nobility and Exemplarity of the Celibate Individual",
+      "subtitle": "An Antinatalist and Ascetic Reconsideration of Autonomy and Quality of Life",
+      "summary": "性的活動を倫理的な義務とみなす通説を反出生主義の側から検討し、他者や欲望の周期に依存しない自足的な幸福という観点から、独身を自己陶冶の型として擁護する。",
+      "doi": "10.5281/zenodo.22058254",
+      "url": "https://doi.org/10.5281/zenodo.22058254",
+      "verify": "Zenodo で読む"
+    },
+    {
+      "code": "プレプリント / 英語",
+      "title": "Manifesto of Imperial Selfhood",
+      "subtitle": "An Exploratory Essay on Personal Imperialism and Spiritual Sovereignty",
+      "summary": "断片化した自己の統合を、カントの立法・ニーチェの価値転換・ユンガーの動員という三層で捉える。三者の対立を解消せず、構造の中身として引き受ける。",
+      "doi": "10.5281/zenodo.22057583",
+      "url": "https://doi.org/10.5281/zenodo.22057583",
+      "verify": "Zenodo で読む"
+    },
+    {
+      "code": "プレプリント / 英語",
+      "title": "Fragmentarian Spiritual Individualism",
+      "subtitle": "A Philosophy of Fragments for Solitary Spiritual Autonomy",
+      "summary": "生・信仰・社会・思想・終末を独立した断片として扱う。断片化を修復すべき傷とみなす通例に対し、克服ではなく厳密さをもって住まうための規律を組み立てる。",
+      "doi": "10.5281/zenodo.22064241",
+      "url": "https://doi.org/10.5281/zenodo.22064241",
+      "verify": "Zenodo で読む"
+    },
+    {
+      "code": "プレプリント / 英語",
+      "title": "A Naval Gazette Entry for Lieutenant Otani Tsune（大谷恒）",
+      "subtitle": "A Note on the Investiture List of 11 September 1943 in the Naval Gazette (Internal Circulation Only), Extra Edition",
+      "summary": "アジア歴史資料センターが公開する海軍公報から叙勲記録一件を翻刻し、この史料で確定できることと、できないことを切り分ける。",
+      "doi": "10.5281/zenodo.22055709",
+      "url": "https://doi.org/10.5281/zenodo.22055709",
+      "verify": "Zenodo で読む"
+    },
+    {
+      "code": "プレプリント / 英語",
+      "title": "Trinity-Infinity Framework, Series I",
+      "subtitle": "A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
+      "summary": "三要素の再帰作用素が一意の不動点へ幾何収束することを証明し、他分野への接続を、証明済みの結果・既知の結果・類推に区別して示す。",
+      "doi": "10.5281/zenodo.22058624",
+      "url": "https://doi.org/10.5281/zenodo.22058624",
+      "verify": "Zenodo で読む"
+    },
+    {
+      "code": "プレプリント / 英語",
+      "title": "Trinity-Infinity Framework, Series II",
+      "subtitle": "Extended Formalization and Further Illustrative Applications",
+      "summary": "混合率を座標ごとに変えても不動点の一意性が保たれることを示し、均衡利得集合の特徴づけとばね系の完全な計算例を加える。",
+      "doi": "10.5281/zenodo.22058777",
+      "url": "https://doi.org/10.5281/zenodo.22058777",
+      "verify": "Zenodo で読む"
+    },
+    {
+      "code": "プレプリント / 英語",
+      "title": "Trinity-Infinity Framework, Series III",
+      "subtitle": "Beyond Three — A Generalization and Retrospective",
+      "summary": "収束定理が三要素を必要としないこと（任意の n ≥ 2 で成立）を示し、この系列が何を確立し、何を撤回したかを回顧する。",
+      "doi": "10.5281/zenodo.22058964",
+      "url": "https://doi.org/10.5281/zenodo.22058964",
+      "verify": "Zenodo で読む"
     }
   ],
   "links": [

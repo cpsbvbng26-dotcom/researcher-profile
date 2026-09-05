@@ -37,6 +37,8 @@ const DEFAULT_LABELS = {
   credentials: '修了証・資格',
   credentialsNote: '各カードから発行機関の検証ページを開けます。',
   areas: '領域',
+  papers: '論文',
+  papersNote: '',
   links: 'リンク',
   verify: '確認',
   skip: '本文へスキップ',
@@ -101,6 +103,41 @@ ${body}
   </section>`;
 }
 
+function renderPapers(papers, labels) {
+  if (!papers.length) return '';
+
+  const cards = papers
+    .map((item) => {
+      const tag = item.url ? 'a' : 'div';
+      const href = item.url ? ` href="${esc(item.url)}"${linkAttrs(item.url)}` : '';
+      return [
+        `      <${tag} class="cert reveal"${href}>`,
+        item.code ? `        <span class="code">${esc(item.code)}</span>` : '',
+        `        <h3>${esc(item.title)}</h3>`,
+        item.subtitle ? `        <p class="alt">${esc(item.subtitle)}</p>` : '',
+        item.summary ? `        <p class="issuer">${esc(item.summary)}</p>` : '',
+        item.doi ? `        <p class="doi">DOI ${esc(item.doi)}</p>` : '',
+        item.url ? `        <span class="verify">${esc(item.verify || labels.verify)}</span>` : '',
+        `      </${tag}>`,
+      ].filter(Boolean).join('\n');
+    })
+    .join('\n');
+
+  return `
+  <hr class="rule">
+
+  <section id="papers" class="wrap block">
+    <div class="sec-head reveal">
+      <h2 class="serif">${esc(labels.papers)}</h2>
+      ${labels.papersNote ? `<p>${esc(labels.papersNote)}</p>` : ''}
+    </div>
+
+    <div class="cards">
+${cards}
+    </div>
+  </section>`;
+}
+
 function renderAreas(areas, labels) {
   if (!areas.length) return '';
   const rows = areas
@@ -162,6 +199,7 @@ function renderNav(profile, labels) {
   const items = [];
   if (arr(profile.credentials).length) items.push(`<a href="#credentials">${esc(labels.credentials)}</a>`);
   if (arr(profile.areas).length) items.push(`<a href="#areas">${esc(labels.areas)}</a>`);
+  if (arr(profile.papers).length) items.push(`<a href="#papers">${esc(labels.papers)}</a>`);
   if (arr(profile.links).length) items.push(`<a href="#links">${esc(labels.links)}</a>`);
   return items.map((i) => `      ${i}`).join('\n');
 }
@@ -235,6 +273,7 @@ function build() {
     .replace(/{{TAGLINE}}/g, profile.tagline ? `    <p class="lead reveal">${esc(profile.tagline)}</p>` : '')
     .replace(/{{CREDENTIALS}}/g, renderCredentials(arr(profile.credentials), labels))
     .replace(/{{AREAS}}/g, renderAreas(arr(profile.areas), labels))
+    .replace(/{{PAPERS}}/g, renderPapers(arr(profile.papers), labels))
     .replace(/{{LINKS}}/g, renderLinks(arr(profile.links), labels))
     .replace(/{{FOOTER}}/g, esc(profile.footer || ''))
     .replace(/{{SKIP}}/g, esc(labels.skip))
@@ -248,7 +287,7 @@ function build() {
   const certCount = arr(profile.credentials).reduce((n, g) => n + arr(g.items).length, 0);
   const linkCount = arr(profile.links).reduce((n, g) => n + arr(g.items).length, 0);
   console.log(`生成しました: ${path.relative(process.cwd(), OUT_DIR)}/index.html`);
-  console.log(`  修了証 ${certCount} 件 / 領域 ${arr(profile.areas).length} 件 / リンク ${linkCount} 件`);
+  console.log(`  修了証 ${certCount} 件 / 領域 ${arr(profile.areas).length} 件 / 論文 ${arr(profile.papers).length} 件 / リンク ${linkCount} 件`);
 }
 
 build();
