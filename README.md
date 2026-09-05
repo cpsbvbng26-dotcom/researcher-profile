@@ -1,5 +1,7 @@
 # researcher-profile
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22335692.svg)](https://doi.org/10.5281/zenodo.22335692)
+
 設定ファイルを 1 つ書くだけで、研究者プロフィールの静的サイトを生成します。
 
 研究者は researchmap、ORCID、HAL、Google Scholar と登録先が分散しがちですが、
@@ -108,6 +110,24 @@ PROFILE_CONFIG=./others/hanako.json PROFILE_OUT=./dist-hanako node build.js
 HTML 1 枚で、外部への通信は発生しません。
 
 テンプレートを直接編集すれば、配色や構成も自由に変えられます。
+
+## 引用
+
+このソフトウェアは Zenodo にアーカイブされ、DOI が付与されています。
+
+> 根本卓哉 (2026). *researcher-profile: 設定ファイル1つから研究者プロフィールの静的サイトを生成するツール* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.22335692
+
+```bibtex
+@software{nemoto2026researcherprofile,
+  author       = {Nemoto, Takuya},
+  title        = {researcher-profile: 設定ファイル1つから研究者プロフィールの静的サイトを生成するツール},
+  version      = {1.0.0},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.22335692},
+  url          = {https://doi.org/10.5281/zenodo.22335692}
+}
+```
 
 ## ライセンス
 
