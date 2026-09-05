@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "researcher-profile: 設定ファイル1つから研究者プロフィールの静的サイトを生成するツール"
+message: このソフトウェアを引用する場合は、以下の情報をご利用ください。
+type: software
+authors:
+  - family-names: Nemoto
+    given-names: Takuya
+    orcid: "https://orcid.org/0009-0000-1406-0547"
+abstract: >-
+  1つの設定ファイルから、研究者プロフィールの静的サイトを生成する。
+  依存パッケージを持たず、生成されるページは外部への通信を行わない。
+keywords:
+  - static site generator
+  - researcher profile
+  - ORCID
+  - GitHub Pages
+license: MIT
+repository-code: "https://github.com/cpsbvbng26-dotcom/researcher-profile"
+version: 1.0.0
+date-released: "2026-09-05"

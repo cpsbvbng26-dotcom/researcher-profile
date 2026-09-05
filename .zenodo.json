@@ -1,0 +1,23 @@
+{
+  "title": "researcher-profile: 設定ファイル1つから研究者プロフィールの静的サイトを生成するツール",
+  "description": "研究者の登録先は researchmap、ORCID、HAL、Google Scholar などに分散しがちで、それらをまとめて示すページは各自で用意する必要がある。このツールは、1つの設定ファイル（profile.json）から、修了証・領域・リンクを含む静的なプロフィールページを生成する。依存パッケージを持たず Node.js だけで動作し、生成されるページは外部への通信を一切行わない。ライト／ダークの切り替え、キーボード操作、印刷用の体裁に対応する。",
+  "upload_type": "software",
+  "language": "jpn",
+  "license": "mit",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Nemoto, Takuya",
+      "orcid": "0009-0000-1406-0547"
+    }
+  ],
+  "keywords": [
+    "static site generator",
+    "researcher profile",
+    "ORCID",
+    "GitHub Pages",
+    "zero dependencies",
+    "静的サイトジェネレータ",
+    "研究者プロフィール"
+  ]
+}
