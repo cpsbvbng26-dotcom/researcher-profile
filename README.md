@@ -129,6 +129,17 @@ HTML 1 枚で、外部への通信は発生しません。
 }
 ```
 
+### 保存
+
+ソースコードは [Software Heritage](https://archive.softwareheritage.org/browse/snapshot/83f09cc80821f5cd02bbc89b069753c0c53c110a/releases/?origin_url=https://doi.org/10.5281/zenodo.22335691&snapshot=83f09cc80821f5cd02bbc89b069753c0c53c110a) にも保存されています。
+
+```
+swh:1:snp:83f09cc80821f5cd02bbc89b069753c0c53c110a
+```
+
+DOI が「この版を指す約束」であるのに対し、SWHID は**中身のハッシュそのもの**です。
+この識別子が指すスナップショットの内容は、保存先のサービスに依存せず検証できます。
+
 ## ライセンス
 
 MIT License

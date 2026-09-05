@@ -15,6 +15,10 @@ keywords:
   - ORCID
   - GitHub Pages
 doi: 10.5281/zenodo.22335692
+identifiers:
+  - type: swh
+    value: "swh:1:snp:83f09cc80821f5cd02bbc89b069753c0c53c110a"
+    description: Software Heritage snapshot（Zenodo からの寄託を保存したもの）
 license: MIT
 repository-code: "https://github.com/cpsbvbng26-dotcom/researcher-profile"
 version: 1.0.0
