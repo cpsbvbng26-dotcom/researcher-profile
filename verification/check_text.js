@@ -40,6 +40,10 @@ const INCONSISTENT = [
 /* Markdown のバッジ記法の壊れ。![...] の ! が落ちる、括弧が全角になる。 */
 const BADGE_BROKEN = /\[!(?!\[)[^\]]*\]\(https?:\/\/[^)]*badge/;
 
+/* 第三者のロゴは載せない方針。バッジは文字と色だけにする。
+ * 商標は各社のもので、使用許諾を得ているわけではないため。 */
+const BADGE_LOGO = /img\.shields\.io\/badge\/[^)\s"]*[?&]logo=/;
+
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
     if (SKIP.has(e.name)) return [];
@@ -85,6 +89,13 @@ files.forEach((file) => {
         text: line.trim().slice(0, 90)
       });
     }
+    if (BADGE_LOGO.test(line)) {
+      hits.push({
+        file: rel, line: i + 1, kind: '第三者のロゴ',
+        msg: 'バッジに logo= が入っています。文字と色だけにしてください',
+        text: line.trim().slice(0, 90)
+      });
+    }
   });
 });
 
@@ -98,4 +109,4 @@ if (hits.length) {
   });
   process.exit(1);
 }
-console.log('既知の誤変換・表記の揺れ・バッジ記法の壊れは見つかりませんでした。');
+console.log('既知の誤変換・表記の揺れ・バッジの壊れ・第三者のロゴは見つかりませんでした。');
