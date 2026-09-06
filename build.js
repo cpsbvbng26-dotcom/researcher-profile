@@ -9,6 +9,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const ROOT = __dirname;
 const CONFIG = process.env.PROFILE_CONFIG || path.join(ROOT, 'profile.json');
@@ -48,6 +49,41 @@ const DEFAULT_LABELS = {
 /* ------------------------------------------------------------------ *
  * 各部品の組み立て
  * ------------------------------------------------------------------ */
+
+/* ---------------------------------------------------------------- *
+ * Content-Security-Policy
+ *
+ * このサイトは外部から何も読み込まない。それを「そう書いてある」ではなく
+ * ブラウザが強制する制約にする。default-src 'none' から始めて、実際に
+ * 使っているものだけを名指しで許す。
+ *
+ * インラインの <style> <script> は中身の SHA-256 で許す。'unsafe-inline'
+ * は使わない —— 使えば注入されたスクリプトも通り、置く意味が無くなる。
+ * 生成のたびに計算し直すので、中身を変えても入れ直す手間はない。
+ * ---------------------------------------------------------------- */
+function withCSP(html) {
+  const sha = (t) =>
+    "'sha256-" + crypto.createHash('sha256').update(t, 'utf8').digest('base64') + "'";
+  const blocks = (tag) => {
+    const re = new RegExp('<' + tag + '(?![^>]*\\bsrc=)[^>]*>([\\s\\S]*?)</' + tag + '>', 'g');
+    const out = [];
+    let m;
+    while ((m = re.exec(html)) !== null) out.push(sha(m[1]));
+    return out;
+  };
+  const csp = [
+    "default-src 'none'",
+    "script-src 'self' " + blocks('script').join(' '),
+    'style-src ' + blocks('style').join(' '),
+    "img-src 'self' data:",
+    "connect-src 'none'",
+    "form-action 'none'",
+    "base-uri 'none'"
+  ].join('; ').replace(/\s+/g, ' ').replace(/ ;/g, ';');
+
+  const tag = '<meta http-equiv="Content-Security-Policy" content="' + csp + '">\n';
+  return html.replace(/(<meta name="viewport"[^>]*>\n?)/, '$1' + tag);
+}
 
 function renderIdentifiers(ids) {
   if (!ids.length) return '';
@@ -280,7 +316,7 @@ function build() {
     .replace(/{{THEME_TOGGLE}}/g, esc(labels.themeToggle));
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  fs.writeFileSync(path.join(OUT_DIR, 'index.html'), html);
+  fs.writeFileSync(path.join(OUT_DIR, 'index.html'), withCSP(html));
   fs.writeFileSync(path.join(OUT_DIR, 'favicon.svg'), renderFavicon(profile));
   fs.writeFileSync(path.join(OUT_DIR, '.nojekyll'), '');
 

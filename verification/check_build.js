@@ -170,6 +170,29 @@ ok('自動で外部を取りに行く要素が無い', external.length === 0, ex
 /* 空のリンクは、設定の欄が空だったときに出る */
 ok('href が空のリンクが無い', !/href=""/.test(html));
 
+
+/* --------------------------------------------------- 3. CSP */
+section('3. Content-Security-Policy');
+
+const crypto = require('crypto');
+const shaOf = (t) => "'sha256-" + crypto.createHash('sha256').update(t, 'utf8').digest('base64') + "'";
+const hashesIn = (h, tag) => {
+  const re = new RegExp('<' + tag + '(?![^>]*\\bsrc=)[^>]*>([\\s\\S]*?)</' + tag + '>', 'g');
+  const out = []; let m;
+  while ((m = re.exec(h)) !== null) out.push(shaOf(m[1]));
+  return out;
+};
+const cspMatch = /<meta http-equiv="Content-Security-Policy" content="([^"]*)">/.exec(html);
+ok('CSP がある', !!cspMatch);
+if (cspMatch) {
+  const csp = cspMatch[1];
+  ok("default-src が 'none' から始まる", csp.indexOf("default-src 'none'") === 0, csp.slice(0, 40));
+  ok('緩められていない', !/unsafe-inline|unsafe-eval|unsafe-hashes|\*/.test(csp));
+  const missing = hashesIn(html, 'style').concat(hashesIn(html, 'script'))
+    .filter((h) => csp.indexOf(h) < 0);
+  ok('ハッシュがページの中身と一致する', missing.length === 0, missing.length + ' 件が欠けている');
+}
+
 console.log('\n' + '-'.repeat(56));
 if (failures.length) {
   console.log(pass + ' 件が通り、' + failures.length + ' 件が通りませんでした。');
