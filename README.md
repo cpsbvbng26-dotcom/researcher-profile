@@ -1,5 +1,7 @@
 # researcher-profile
 
+[![検査](https://github.com/cpsbvbng26-dotcom/researcher-profile/actions/workflows/verify.yml/badge.svg)](https://github.com/cpsbvbng26-dotcom/researcher-profile/actions/workflows/verify.yml)
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22335692.svg)](https://doi.org/10.5281/zenodo.22335692)
 
 設定ファイルを 1 つ書くだけで、研究者プロフィールの静的サイトを生成します。
@@ -140,6 +142,26 @@ swh:1:snp:83f09cc80821f5cd02bbc89b069753c0c53c110a
 
 DOI が「この版を指す約束」であるのに対し、SWHID は**中身のハッシュそのもの**です。
 この識別子が指すスナップショットの内容は、保存先のサービスに依存せず検証できます。
+
+## 検査
+
+```
+node build.js && node verification/check_build.js
+```
+
+依存パッケージはありません。**push のたびに 23 項目を通します。**
+
+この道具の要は「設定ファイル 1 つ」であることで、裏を返すと**設定が壊れても、変な HTML が出るまで気づけません。**
+そこを落とします。
+
+- `profile.json` の必須項目・入れ子の項目・色の書式（`#rrggbb`）・`siteUrl` が https であること・外部 URL に `http://` が混ざっていないこと
+- **テンプレートの `{{印}}` が生成物に残っていないこと。** 印を足して `build.js` を直し忘れると、ページに `{{FOO}}` がそのまま出ます。生成は成功したように見えます
+- テンプレートの印を `build.js` がすべて扱っていること（生成する前に分かります）
+- 修了証・学習領域・リンクの件数が設定と一致すること。**設定に足したのに出ない、を拾います**
+- 設定にあるすべての URL が生成物にあること
+- **自動で外部を取りに行く要素が無いこと。** この道具の売りなので、機械で守ります
+
+空振りでないことは確認済みです。色名を入れる、欄を消す、`http://` を混ぜる、領域を足したのに出ないようにする、テンプレートに新しい印を足す、外部 script を混ぜる —— 六通り壊して六通りとも落ちました。
 
 ## ライセンス
 
