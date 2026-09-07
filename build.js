@@ -167,22 +167,28 @@ function renderCards(papers, sectionId, heading, note, labels) {
     .map((item) => {
       const tag = item.url ? 'a' : 'div';
       const href = item.url ? ` href="${esc(item.url)}"${linkAttrs(item.url)}` : '';
-      return [
+      /* 同じ資料の別の所在。<a> の入れ子は作れないので、カードの外に置く。
+       * 文字で出すだけでは辿れないため、一つずつリンクにする。 */
+      const where = arr(item.locations).length
+        ? `      <p class="where">${arr(item.locations).map((l) => (l.url
+            ? `<a href="${esc(l.url)}"${linkAttrs(l.url)}>${esc(l.name)}${l.id ? ' ' + esc(l.id) : ''}</a>`
+            : esc(l.name) + (l.id ? ' ' + esc(l.id) : ''))).join('　／　')}</p>`
+        : '';
+      const card = [
         `      <${tag} class="cert reveal"${href}>`,
         item.code ? `        <span class="code">${esc(item.code)}</span>` : '',
         `        <h3>${esc(item.title)}</h3>`,
         item.subtitle ? `        <p class="alt">${esc(item.subtitle)}</p>` : '',
         item.summary ? `        <p class="issuer">${esc(item.summary)}</p>` : '',
         item.doi ? `        <p class="doi">DOI ${esc(item.doi)}</p>` : '',
-        /* 同じ資料の別の所在。DOI の下に並べる。カード全体がリンクなので、
-         * ここは入れ子にせず、行き先を文字で示すだけにする。 */
-        arr(item.locations).length
-          ? `        <p class="where">${arr(item.locations)
-              .map((l) => esc(l.name) + (l.id ? ' ' + esc(l.id) : '')).join('　／　')}</p>`
-          : '',
+
         item.url ? `        <span class="verify">${esc(item.verify || labels.verify)}</span>` : '',
         `      </${tag}>`,
       ].filter(Boolean).join('\n');
+      return where
+        ? '      <div class="cert-group reveal">\n' + card.replace(/^ {6}/gm, '        ')
+          + '\n' + where.replace(/^ {6}/gm, '        ') + '\n      </div>'
+        : card;
     })
     .join('\n');
 

@@ -451,11 +451,21 @@ footer::before {
 .prose a:hover, .lead-block a:hover, .lead a:hover { text-decoration-thickness: 2px; }
 
 /* 同じ資料の別の所在。DOI の下に一行で並べる。 */
-.cert .where {
+/* カードの外に出したので .cert の子孫ではない。単独のクラスで指定する。 */
+.where {
   margin: .2rem 0 0;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: .72rem; letter-spacing: .01em; color: var(--faint);
+  font-size: .72rem; line-height: 1.7; letter-spacing: .01em; color: var(--faint);
 }
+
+/* 所在の行はカードの外に置く（<a> の入れ子は作れないため）。
+   カードのすぐ下に、同じ幅で続けて見えるようにする。 */
+.cert-group { display: flex; flex-direction: column; gap: .35rem; }
+.cert-group .cert { flex: 1; }
+.cert-group .where { padding: 0 .35rem; }
+.cert-group .where a { color: var(--faint); }
+.cert-group .where a { text-decoration: underline; text-underline-offset: .15em; }
+.cert-group .where a:hover { color: var(--accent); }
 </style>
 </head>
 <body>

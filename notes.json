@@ -27,11 +27,13 @@
       "locations": [
         {
           "name": "SSRN",
-          "id": "10.2139/ssrn.7358779"
+          "id": "10.2139/ssrn.7358779",
+          "url": "https://doi.org/10.2139/ssrn.7358779"
         },
         {
           "name": "PhilArchive",
-          "id": "NEMTNA"
+          "id": "NEMTNA",
+          "url": "https://philarchive.org/rec/NEMTNA"
         }
       ]
     },
@@ -46,11 +48,13 @@
       "locations": [
         {
           "name": "SSRN",
-          "id": "10.2139/ssrn.7358818"
+          "id": "10.2139/ssrn.7358818",
+          "url": "https://doi.org/10.2139/ssrn.7358818"
         },
         {
           "name": "PhilArchive",
-          "id": "NEMMOI"
+          "id": "NEMMOI",
+          "url": "https://philarchive.org/rec/NEMMOI"
         }
       ]
     },
@@ -65,7 +69,8 @@
       "locations": [
         {
           "name": "PhilArchive",
-          "id": "NEMFSI"
+          "id": "NEMFSI",
+          "url": "https://philarchive.org/rec/NEMFSI"
         }
       ]
     },
@@ -80,7 +85,8 @@
       "locations": [
         {
           "name": "Knowledge Commons",
-          "id": "q36z2-98e12"
+          "id": "q36z2-98e12",
+          "url": "https://works.hcommons.org/records/q36z2-98e12"
         }
       ]
     }
