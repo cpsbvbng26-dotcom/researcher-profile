@@ -65,6 +65,10 @@
         "html": "The repaired argument itself: that P solves the Lyapunov equation, that ‖·‖_P is a norm, and that f contracts in that distance — checked from the definitions (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>)"
       },
       {
+        "name": "51 checks on the errata",
+        "html": "The three papers are frozen; the errata is not. This audits the errata against the PDFs: every quotation verbatim, no undercounting, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged. No inference is used in the judgement (<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>)"
+      },
+      {
         "name": "63 checks on the outlook",
         "html": "Which of the papers\u2019 conclusions survive as each assumption is dropped. What is settled exactly, what is only estimated, and what is undecidable in principle, counted separately (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/roadmap\" target=\"_blank\" rel=\"noopener\">trinity-operator/roadmap</a>)"
       },
