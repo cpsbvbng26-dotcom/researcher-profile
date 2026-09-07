@@ -50,7 +50,7 @@
     "items": [
       {
         "name": "132 checks on the errata",
-        "html": "The same audit applied to all four frozen bodies of work: 51 on the three Trinity-Infinity papers, 50 on the three philosophical papers, 31 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649054\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649054</a>)"
+        "html": "The same audit applied to all four frozen bodies of work: 51 on the three Trinity-Infinity papers, 50 on the three philosophical papers, 31 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
       },
       {
         "name": "63 checks on the tool itself",
@@ -152,7 +152,7 @@
       "code": "Python / MIT / with a DOI",
       "title": "errata-check",
       "summary": "Audits an errata document against a frozen, already-published artifact. Every quotation verbatim, no undercounting, no quiet resolution of an item declared unresolvable, and the artifact itself unchanged. Recomputation of p from printed test statistics, the GRIM test, ORCID/ISBN/ISSN check digits and Japanese era years can also be declared. No inference is used in the judgement, so the output does not need to be re-verified by a human.",
-      "doi": "10.5281/zenodo.22649054",
+      "doi": "10.5281/zenodo.22649899",
       "verify": "View on GitHub"
     },
     {
