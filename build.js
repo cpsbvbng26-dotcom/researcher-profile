@@ -524,6 +524,9 @@ function build() {
     .replace(/{{TAGLINE}}/g, (profile.taglineHtml || profile.tagline)
       ? `    <p class="lead reveal">${profile.taglineHtml || esc(profile.tagline)}</p>` : '')
     .replace(/{{SECTIONS}}/g, renderSections(profile, labels))
+    /* 下の階層に置くページは、ファビコンを一段上から参照する。
+      * 決め打ちにすると notes/ の中でリンク切れになる。 */
+    .replace(/{{FAVICON}}/g, esc(profile.favicon || './favicon.svg'))
     .replace(/{{HEAD_EXTRA}}/g, [
       /* 言語ごとの版がある場合の相互参照。片方だけ直すのを防ぐため設定から出す。 */
       ...arr(profile.alternates).map((a) =>
@@ -540,7 +543,9 @@ function build() {
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   fs.writeFileSync(path.join(OUT_DIR, 'index.html'), withCSP(html));
-  fs.writeFileSync(path.join(OUT_DIR, 'favicon.svg'), renderFavicon(profile));
+  if (!profile.favicon) {
+    fs.writeFileSync(path.join(OUT_DIR, 'favicon.svg'), renderFavicon(profile));
+  }
   fs.writeFileSync(path.join(OUT_DIR, '.nojekyll'), '');
 
   const certCount = arr(profile.credentials).reduce((n, g) => n + arr(g.items).length, 0);
