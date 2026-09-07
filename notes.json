@@ -6,6 +6,20 @@
   "title": "ノート | 根本卓哉",
   "description": "トップに置かなかったもの。哲学の三篇、海軍公報の史料ノート、核に直接関わらないリポジトリ。削除ではなく、ここに置いてあります。",
   "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.html"
+    }
+  ],
   "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",

@@ -6,6 +6,20 @@
   "title": "Notes | Takuya Nemoto",
   "description": "What is not on the front page: three papers in philosophy, a naval gazette source note, and repositories outside the core. Moved here, not deleted.",
   "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.en.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.html"
+    }
+  ],
   "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
