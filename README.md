@@ -56,6 +56,25 @@ node build.js
 | `areas` | 領域。`{ name, detail }` の配列 |
 | `links` | リンク。`{ name, items: [{ name, note, url }] }` の配列 |
 | `labels` | 見出しなどの文言。下記の既定値を個別に上書きできます |
+| `sections` | 節をどの順に出すか。書かなかった節は出ません。既定は `["credentials","areas","papers","links"]` |
+| `claim` | 主張。`statement` と **`refute`（どうすれば覆るか）** と `rows`。`refute` が無いと生成が止まります |
+| `verification` | 検証。`{ note, items: [{ name, detail }] }` |
+| `withdrawn` | 撤回。`{ note, items, recordUrl, recordLabel }`。消さずに残すための節です |
+| `contact` | 連絡。**`criticism`（批判・誤りの指摘の宛先）が必須**で、他の連絡先より前に出ます |
+| `works` | 制作物。論文と同じカードの形です |
+| `blocks` | 自由記述の節。`{ id, title, html, anchors }` |
+| `jsonld` | 構造化データ。そのまま出力に入り、CSP のハッシュも付きます |
+| `alternates` | 言語ごとの版への `hreflang` |
+| `headExtra` | `<head>` にそのまま入れる行 |
+| `extraNav` | 手で書いたページへの導線。`{ name, url }` |
+| `taglineHtml` | `tagline` の HTML 版 |
+
+### 二つの必須
+
+`claim` に `refute` が無いと、`contact` に `criticism` が無いと、**生成が止まります。**
+
+反証の手順を書けない主張は、主張ではなく宣伝です。批判の宛先を先に書かない連絡先は、
+連絡先ではなく飾りです。どちらも、後から足せる注意書きではなく、書かなければ出ない形にしました。
 
 ### `labels` の既定値
 

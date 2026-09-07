@@ -1,0 +1,606 @@
+{
+  "name": "Takuya Nemoto",
+  "nameLatin": "根本卓哉",
+  "initials": "TN",
+  "lang": "en",
+  "title": "Takuya Nemoto | 根本卓哉",
+  "description": "The Trinity-Infinity convergence theorem and its verification. Preprints, not peer reviewed. Convergence is governed by the spectral radius, not by the operator-norm condition the papers assume.",
+  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html",
+  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "identifiers": [
+    {
+      "label": "ORCID",
+      "value": "0009-0000-1406-0547",
+      "url": "https://orcid.org/0009-0000-1406-0547"
+    }
+  ],
+  "taglineHtml": "I study computer science and artificial intelligence. <strong>Everything published here is a preprint that has not been peer reviewed.</strong> <strong>This page has one core: the Trinity-Infinity convergence theorem and its verification.</strong> Three papers in philosophy and a source note are published too, but they are not the core, so they live in <a href=\"./notes/index.en.html\">Notes</a>; the certificates and areas of study are in <a href=\"./cv.html\">CV</a>.",
+  "sections": [
+    "claim",
+    "verification",
+    "withdrawn",
+    "papers",
+    "works",
+    "notes",
+    "contact"
+  ],
+  "claim": {
+    "statementHtml": "Trinity-Infinity Series I–III assume the operator norm <code>‖DQ‖₂ &lt; 1</code> as the condition for convergence. <strong>That condition is sufficient, not necessary.</strong> Convergence is governed by the spectral radius: <code>ρ(DQ) &lt; 1</code>.",
+    "statement": "operator norm is sufficient, not necessary",
+    "rows": [
+      {
+        "term": "Whose claim",
+        "html": "The same person wrote the three papers and this correction. It is a correction to my own framework, not a new theory. <span class=\"faint\">Transient growth in non-normal operators, and ρ &lt; 1 as the convergence condition, are standard facts of numerical linear algebra.</span>"
+      },
+      {
+        "term": "Evidence",
+        "html": "With <code>Q = [[1,40],[0,1]]</code> and <code>a = (0.5, 0.5)</code>, ρ = 0.5 and the iteration converges, while ‖A‖₂ = 20.01 and the papers' condition fails. The error grows to 11.8× its starting value by step 2 before it falls. <a href=\"./trinity.html\">Run it yourself</a>."
+      }
+    ],
+    "refuteHtml": "Produce either one of these. <b>(1)</b> An A and b with ρ(A) &lt; 1 for which some starting point does not converge. <b>(2)</b> An A and b with ρ(A) ≥ 1 that converges to a unique point from every starting point. Type either into <a href=\"./trinity.html\">the operator page</a> and it will tell you.",
+    "refute": "refute",
+    "footHtml": "The three philosophical papers are not refutable in this shape, and they have not been peer reviewed either. Reading them and arguing back is the only route, and that seems right to me.",
+    "foot": "foot"
+  },
+  "verification": {
+    "note": "How many checks, where, and when. All of them run in CI on every push.",
+    "items": [
+      {
+        "name": "紙面の数値 31",
+        "html": "Every number printed in the three papers, recomputed and shown beside the printed value (<code>trinity-infinity/verification/claims_audit.py</code>)"
+      },
+      {
+        "name": "定理の再実装 13",
+        "html": "The theorems reimplemented independently of the papers (<code>trinity-infinity/verification/independent_check.py</code>)"
+      },
+      {
+        "name": "作用素 22",
+        "html": "The operator outside the papers' assumptions, with a fixed seed (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>)"
+      },
+      {
+        "name": "この場で 63",
+        "html": "The numerics behind <a href=\"./trinity.html\">the operator page</a>, checked against 728 recorded NumPy results. Maximum relative difference: ρ 6.7×10⁻¹⁵, ‖A‖₂ 1.7×10⁻¹⁵"
+      }
+    ]
+  },
+  "withdrawn": {
+    "note": "Claims the earlier drafts made that did not survive revision. <b>None of it has been deleted.</b>",
+    "items": [
+      {
+        "name": "The original theorem",
+        "detail": "Under its natural reading the fixed point is not unique"
+      },
+      {
+        "name": "\"98.7% of trials\"",
+        "detail": "No reproducible code, seed or stopping rule"
+      },
+      {
+        "name": "A three-player payoff table",
+        "detail": "Three players with two strategies is 2³ = 8 outcomes; four cells cannot represent it"
+      },
+      {
+        "name": "Lyapunov and LaSalle",
+        "detail": "Continuous-time tools applied to a discrete iteration"
+      },
+      {
+        "name": "Applications to policy",
+        "detail": "AI alignment, climate policy, governance. Nothing was shown"
+      },
+      {
+        "name": "The verification scripts",
+        "detail": "All three papers claim to ship one. They do not exist (confirmed with the author)"
+      }
+    ],
+    "recordUrl": "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md",
+    "recordLabel": "The errata record — ERRATA.md"
+  },
+  "papers": [
+    {
+      "url": "https://doi.org/10.5281/zenodo.22058624",
+      "code": "プレプリント / 英語",
+      "title": "Trinity-Infinity Framework, Series I",
+      "subtitle": "A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
+      "summary": "三要素の再帰作用素が一意の不動点へ幾何収束することを証明し、ゲーム理論・論理学・工学への接続を、証明済みの結果・既知の結果・類推に区別して示す。",
+      "verify": "Zenodo で読む",
+      "doi": "10.5281/zenodo.22058624"
+    },
+    {
+      "url": "https://doi.org/10.5281/zenodo.22058777",
+      "code": "プレプリント / 英語",
+      "title": "Trinity-Infinity Framework, Series II",
+      "subtitle": "Extended Formalization and Further Illustrative Applications",
+      "summary": "混合率を座標ごとに変えても不動点の一意性が保たれることを示し、均衡利得集合の特徴づけとばね系の完全な計算例を加える。",
+      "verify": "Zenodo で読む",
+      "doi": "10.5281/zenodo.22058777"
+    },
+    {
+      "url": "https://doi.org/10.5281/zenodo.22058964",
+      "code": "プレプリント / 英語",
+      "title": "Trinity-Infinity Framework, Series III",
+      "subtitle": "Beyond Three — A Generalization and Retrospective",
+      "summary": "収束定理が三要素を必要としないこと（任意の n ≥ 2 で成立）を示し、この系列が何を確立し、何を撤回したかを回顧する。",
+      "verify": "Zenodo で読む",
+      "doi": "10.5281/zenodo.22058964"
+    }
+  ],
+  "works": [
+    {
+      "url": "./trinity.html",
+      "code": "このサイト内 / ツール",
+      "title": "作用素を回す",
+      "summary": "下の三篇が扱う作用素 x ← DQx + (I−D)p を、その場で回すページ。行列を打ち込むと、スペクトル半径と作用素ノルムを両方出し、収束するか・誤差が単調に減るかを別々に判定し、不動点と誤差の推移を描く。固有値も特異値も連立一次方程式も、このページの中で解いている。外部リクエストは無し。",
+      "verify": "開く"
+    },
+    {
+      "url": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
+      "code": "PDF / CC BY 4.0",
+      "title": "trinity-infinity",
+      "summary": "上の三篇と、その検証をまとめたリポジトリ。定理を独立に実装し直す 13 項目と、紙面の数値を計算し直す 31 項目。何が確立され、何が撤回されたかも記録している。",
+      "verify": "GitHub で見る"
+    },
+    {
+      "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
+      "code": "Python / MIT",
+      "title": "trinity-operator",
+      "summary": "上の三篇が扱う作用素を、置換にも一様な係数にも限らずに実装したリポジトリ。収束を決めているのはスペクトル半径であって、三篇が置いた作用素ノルムの条件は必要以上に強い。誤差が一度 11.8 倍に膨らんでから収束する例を含む 22 項目。",
+      "verify": "GitHub で見る"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "notes",
+      "title": "Notes",
+      "anchors": [
+        "credentials",
+        "areas",
+        "links"
+      ],
+      "noteHtml": "Everything not placed in the core is in <a href=\"./notes/index.en.html\">Notes</a> and <a href=\"./cv.html\">CV</a>, undeleted. The DOIs and the repositories are live.",
+      "note": "notes",
+      "html": "\n      <p><a href=\"./notes/index.en.html#papers\">Three papers in philosophy, and a naval gazette source note</a><span>four papers</span></p>\n      <p><a href=\"./notes/index.en.html#works\">Repositories and tools outside the core</a><span>researcher-profile / justice-and-algorithms / autonomy-and-self-cultivation / naval-gazette-notes / the DOI Analyzer</span></p>\n      <p><a href=\"./cv.html\">Certificates, areas of study, external profiles</a><span>CV</span></p>\n    "
+    }
+  ],
+  "contact": {
+    "criticismHtml": "<strong>Criticism and corrections are welcome.</strong> That is what this place is chiefly for. A counterexample to the claim above goes to <a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator/issues\" target=\"_blank\" rel=\"noopener\">trinity-operator issues</a>; an error in the papers themselves to <a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity/issues\" target=\"_blank\" rel=\"noopener\">trinity-infinity issues</a>; an error on this site to <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/issues\" target=\"_blank\" rel=\"noopener\">this repository's issues</a>. <b>If something should be withdrawn, it will be withdrawn and recorded.</b> That is what has happened so far.",
+    "criticism": "criticism",
+    "others": [
+      {
+        "name": "ORCID",
+        "html": "<a href=\"https://orcid.org/0009-0000-1406-0547\" target=\"_blank\" rel=\"noopener\">0009-0000-1406-0547</a>"
+      },
+      {
+        "name": "GitHub",
+        "html": "<a href=\"https://github.com/cpsbvbng26-dotcom\" target=\"_blank\" rel=\"noopener\">@cpsbvbng26-dotcom</a>"
+      },
+      {
+        "name": "Elsewhere",
+        "html": "External profiles are collected in <a href=\"./cv.html#links\">CV</a>"
+      }
+    ]
+  },
+  "extraNav": [
+    {
+      "name": "Operator",
+      "url": "./trinity.html"
+    },
+    {
+      "name": "DOI",
+      "url": "./doi.html"
+    },
+    {
+      "name": "CV",
+      "url": "./cv.html"
+    },
+    {
+      "name": "日本語",
+      "url": "./index.html"
+    }
+  ],
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person",
+        "name": "根本卓哉",
+        "alternateName": "Takuya Nemoto",
+        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "ORCID",
+          "value": "https://orcid.org/0009-0000-1406-0547"
+        },
+        "knowsAbout": [
+          "コンピュータサイエンス",
+          "人工知能",
+          "機械学習",
+          "コンテナ基盤",
+          "政治哲学",
+          "正義論",
+          "AI倫理",
+          "災害科学",
+          "放射線安全"
+        ],
+        "sameAs": [
+          "https://orcid.org/0009-0000-1406-0547",
+          "https://researchmap.jp/takuyanemoto",
+          "https://philpeople.org/profiles/takuyanemoto",
+          "https://cv.hal.science/nemoto-takuya",
+          "https://acadmc.com/takuyanemoto",
+          "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202601016349119335",
+          "https://scholar.google.com/citations?user=_HEl3dYAAAAJ",
+          "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8730280",
+          "https://www.nemoto200101.com/",
+          "https://jp.linkedin.com/in/%E5%8D%93%E5%93%89-%E6%A0%B9%E6%9C%AC-62b9093a0",
+          "https://medium.com/@heaven_livid_frog_333/lists",
+          "https://github.com/cpsbvbng26-dotcom"
+        ]
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
+        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
+        "name": "根本卓哉 | Takuya Nemoto",
+        "inLanguage": "ja",
+        "mainEntity": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "正義論とアルゴリズム — アルゴリズムによる判断をめぐる論点の整理",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "identifier": "https://doi.org/10.5281/zenodo.22335676",
+        "url": "https://doi.org/10.5281/zenodo.22335676",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "inLanguage": "ja",
+        "datePublished": "2026"
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "researcher-profile",
+        "description": "設定ファイル1つから研究者プロフィールの静的サイトを生成するツール",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "identifier": "https://doi.org/10.5281/zenodo.22335692",
+        "url": "https://doi.org/10.5281/zenodo.22335692",
+        "codeRepository": "https://github.com/cpsbvbng26-dotcom/researcher-profile",
+        "programmingLanguage": "JavaScript",
+        "license": "https://opensource.org/licenses/MIT",
+        "datePublished": "2026"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "name": "The Nobility and Exemplarity of the Celibate Individual: An Antinatalist and Ascetic Reconsideration of Autonomy and Quality of Life",
+        "identifier": "https://doi.org/10.5281/zenodo.22058254",
+        "url": "https://doi.org/10.5281/zenodo.22058254",
+        "sameAs": [
+          "https://doi.org/10.2139/ssrn.7358779",
+          "https://philarchive.org/rec/NEMTNA"
+        ],
+        "inLanguage": "en",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "version": "2",
+        "datePublished": "2026-08-22",
+        "creativeWorkStatus": "Preprint",
+        "keywords": [
+          "celibacy",
+          "asceticism",
+          "antinatalism",
+          "autonomy",
+          "quality of life",
+          "Epicureanism",
+          "Schopenhauer"
+        ],
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "@id": "https://doi.org/10.5281/zenodo.22058254"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "name": "Manifesto of Imperial Selfhood: The Age of Personal Imperialism and Its Spiritual Existence",
+        "identifier": "https://doi.org/10.5281/zenodo.22057583",
+        "url": "https://doi.org/10.5281/zenodo.22057583",
+        "sameAs": [
+          "https://doi.org/10.2139/ssrn.7358818",
+          "https://philarchive.org/rec/NEMMOI"
+        ],
+        "inLanguage": "en",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "datePublished": "2026-08",
+        "creativeWorkStatus": "Preprint",
+        "keywords": [
+          "personal imperialism",
+          "self-sovereignty",
+          "autonomy",
+          "Kant",
+          "Nietzsche",
+          "total mobilization",
+          "technologies of the self"
+        ],
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "@id": "https://doi.org/10.5281/zenodo.22057583"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.5281/zenodo.22055709",
+        "name": "A Naval Gazette Entry for Lieutenant Otani Tsune (大谷恒): A Note on the Investiture List of 11 September 1943 in the Naval Gazette (Internal Circulation Only), Extra Edition",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "identifier": "https://doi.org/10.5281/zenodo.22055709",
+        "url": "https://doi.org/10.5281/zenodo.22055709",
+        "inLanguage": "en",
+        "datePublished": "2026",
+        "creativeWorkStatus": "Preprint",
+        "keywords": [
+          "Imperial Japanese Navy",
+          "Order of the Sacred Treasure",
+          "investiture list",
+          "JACAR",
+          "archival source note",
+          "transcription"
+        ]
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.5281/zenodo.22064241",
+        "name": "Fragmentarian Spiritual Individualism: A Philosophy of Fragments for Solitary Spiritual Autonomy",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "identifier": "https://doi.org/10.5281/zenodo.22064241",
+        "url": "https://doi.org/10.5281/zenodo.22064241",
+        "sameAs": "https://philarchive.org/rec/NEMFSI",
+        "inLanguage": "en",
+        "datePublished": "2026-08",
+        "creativeWorkStatus": "Preprint",
+        "keywords": [
+          "fragmentation",
+          "spiritual individualism",
+          "existentialism",
+          "Christian mysticism",
+          "Bushido",
+          "postwar Japanese philosophy",
+          "institutional detachment"
+        ]
+      },
+      {
+        "@type": "Collection",
+        "name": "自律と自己陶冶 — 三篇のプレプリント",
+        "url": "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation",
+        "sameAs": "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "datePublished": "2026",
+        "hasPart": [
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058254"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22057583"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22064241"
+          }
+        ],
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.5281/zenodo.22058624",
+        "name": "The Trinity-Infinity Framework, Series I: A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "identifier": "https://doi.org/10.5281/zenodo.22058624",
+        "url": "https://doi.org/10.5281/zenodo.22058624",
+        "inLanguage": "en",
+        "datePublished": "2026-08",
+        "creativeWorkStatus": "Preprint",
+        "keywords": [
+          "contraction mapping",
+          "Banach fixed-point theorem",
+          "repeated games",
+          "folk theorem",
+          "recursive integration"
+        ]
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.5281/zenodo.22058777",
+        "name": "The Trinity-Infinity Framework, Series II: Extended Formalization and Further Illustrative Applications",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "identifier": "https://doi.org/10.5281/zenodo.22058777",
+        "url": "https://doi.org/10.5281/zenodo.22058777",
+        "inLanguage": "en",
+        "datePublished": "2026-08",
+        "creativeWorkStatus": "Preprint",
+        "keywords": [
+          "anisotropic contraction",
+          "subgame-perfect equilibrium",
+          "Neumann series",
+          "graph Laplacian",
+          "discrete-time stability"
+        ]
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.5281/zenodo.22058964",
+        "name": "The Trinity-Infinity Framework, Series III: Beyond Three — A Generalization and Retrospective",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "identifier": "https://doi.org/10.5281/zenodo.22058964",
+        "url": "https://doi.org/10.5281/zenodo.22058964",
+        "inLanguage": "en",
+        "datePublished": "2026-08",
+        "creativeWorkStatus": "Preprint",
+        "keywords": [
+          "generalization",
+          "permutation order",
+          "negative result",
+          "self-correction",
+          "research integrity"
+        ]
+      },
+      {
+        "@type": "Collection",
+        "name": "Trinity-Infinity",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "url": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
+        "sameAs": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "datePublished": "2026",
+        "hasPart": [
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058624"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058777"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058964"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "trinity-operator",
+        "description": "Trinity-Infinity の三篇が扱う作用素を、Q を巡回置換に、係数を (0,1) に限らずに実装したもの。収束の条件がスペクトル半径 ρ(DQ) < 1 であり、三篇が置いた作用素ノルムの条件は十分条件にすぎないことを、非正規行列の過渡的増幅とともに示す。",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
+        "codeRepository": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/licenses/MIT",
+        "datePublished": "2026",
+        "isBasedOn": [
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058624"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058777"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058964"
+          }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "海軍公報叙勲名簿データ（1943年9月11日發令）",
+        "description": "海軍公報（部内限）號外、昭和十八年九月十一日發令の叙勲名簿から、敍勲四等授瑞寶章の受章者10名を機械可読にしたもの。原文が「同」で繰り返す階級を各行に展開したうえで、原文に書かれていた値と引き継いだ値を列で区別している。",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "url": "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes",
+        "sameAs": "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "datePublished": "2026",
+        "encodingFormat": [
+          "text/csv",
+          "application/json"
+        ],
+        "isBasedOn": {
+          "@id": "https://doi.org/10.5281/zenodo.22055709"
+        },
+        "citation": "JACAR（アジア歴史資料センター）Ref.C12070491000、海軍公報（部内限）號外　昭和十八年九月十一日發令（防衛省防衛研究所）",
+        "temporalCoverage": "1943-09-11",
+        "keywords": "海軍公報, 瑞寶章, 叙勲, JACAR, 翻刻"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "作用素を回す",
+        "description": "Trinity-Infinity の三篇が扱う作用素 x ← DQx + (I−D)p を、ブラウザの中だけで反復する道具。スペクトル半径と作用素ノルムを別々に出し、収束の可否と誤差が単調に減衰するかを分けて判定する。固有値は Householder 変換とシフト付き QR 法、特異値は Jacobi 回転、連立一次方程式は部分ピボット付き Gauss 消去で、いずれも外部ライブラリを使わずに解いている。外部へのリクエストは無い。",
+        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/trinity.html",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "JavaScript",
+        "isAccessibleForFree": true,
+        "license": "https://opensource.org/licenses/MIT",
+        "inLanguage": "ja",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "isBasedOn": [
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058624"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058777"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.22058964"
+          }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "DOI アナライザー",
+        "description": "DOI の書式を検証し、接頭辞から登録者を推定し、CrossRef と DataCite に照会して BibTeX・CSL-JSON・CITATION.cff などに書き出す道具。文献リストを貼りこむと、含まれる DOI をすべて抽出する。読み込み時は外部へリクエストを出さない。",
+        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/doi.html",
+        "applicationCategory": "ReferenceApplication",
+        "operatingSystem": "Web",
+        "browserRequirements": "JavaScript",
+        "isAccessibleForFree": true,
+        "inLanguage": "ja",
+        "author": {
+          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+        },
+        "license": "https://opensource.org/licenses/MIT"
+      }
+    ]
+  },
+  "labels": {
+    "eyebrow": "Profile",
+    "verify": "Open",
+    "skip": "Skip to content",
+    "themeToggle": "Toggle theme",
+    "claim": "Claim",
+    "claimNote": "One claim, chosen because it is the easiest thing here to check. Agreeing or refuting it takes a browser.",
+    "refute": "What would refute it",
+    "verification": "Verification",
+    "withdrawn": "Withdrawn",
+    "papers": "Papers",
+    "papersNote": {
+      "html": "Trinity-Infinity Series I–III. These three are the core. They have not been peer reviewed.<a class=\"go\" href=\"./doi.html?q=10.5281/zenodo.22058624,10.5281/zenodo.22058777,10.5281/zenodo.22058964\">Analyse all three DOIs</a>"
+    },
+    "works": "Works",
+    "worksNote": "The implementation and the verification of the core.",
+    "contact": "Contact",
+    "contactNote": "Criticism and corrections come first."
+  },
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/"
+    }
+  ],
+  "headExtra": [
+    "<meta name=\"google-site-verification\" content=\"kblg8QQ1xlSNozJKtCEDDiEoxHo3A74_M99BbNTcrr8\">"
+  ]
+}

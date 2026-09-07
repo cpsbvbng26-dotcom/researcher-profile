@@ -521,8 +521,15 @@ function build() {
     .replace(/{{NAME}}/g, esc(profile.name))
     .replace(/{{NAME_LATIN}}/g, profile.nameLatin ? `    <p class="romaji reveal">${esc(profile.nameLatin)}</p>` : '')
     .replace(/{{IDENTIFIERS}}/g, renderIdentifiers(arr(profile.identifiers)))
-    .replace(/{{TAGLINE}}/g, profile.tagline ? `    <p class="lead reveal">${esc(profile.tagline)}</p>` : '')
+    .replace(/{{TAGLINE}}/g, (profile.taglineHtml || profile.tagline)
+      ? `    <p class="lead reveal">${profile.taglineHtml || esc(profile.tagline)}</p>` : '')
     .replace(/{{SECTIONS}}/g, renderSections(profile, labels))
+    .replace(/{{HEAD_EXTRA}}/g, [
+      /* 言語ごとの版がある場合の相互参照。片方だけ直すのを防ぐため設定から出す。 */
+      ...arr(profile.alternates).map((a) =>
+        `<link rel="alternate" hreflang="${esc(a.lang)}" href="${esc(a.url)}">`),
+      ...arr(profile.headExtra),
+    ].join('\n'))
     .replace(/{{JSONLD}}/g, profile.jsonld
       ? '<script type="application/ld+json">\n'
         + JSON.stringify(profile.jsonld, null, 2) + '\n</script>\n'

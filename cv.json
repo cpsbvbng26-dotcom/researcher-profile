@@ -1,0 +1,296 @@
+{
+  "name": "根本卓哉",
+  "nameLatin": "TAKUYA NEMOTO",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "CV | 根本卓哉",
+  "description": "修了証・オープンバッジ 7 件と、学習領域、外部プロフィール。各カードから発行機関の検証ページを開けます。",
+  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/cv.html",
+  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "identifiers": [
+    {
+      "label": "ORCID",
+      "value": "0009-0000-1406-0547",
+      "url": "https://orcid.org/0009-0000-1406-0547"
+    }
+  ],
+  "tagline": "修了証・学習領域・外部プロフィールです。ここは経歴の置き場で、主張の置き場ではありません。主張と検証は トップ にあります。",
+  "sections": [
+    "credentials",
+    "areas",
+    "links"
+  ],
+  "credentials": [
+    {
+      "name": "edX",
+      "items": [
+        {
+          "code": "CS50x",
+          "title": "Introduction to Computer Science",
+          "issuer": "HarvardX",
+          "url": "https://courses.edx.org/certificates/eac0a01d3d424a32a00114c487288fbc"
+        },
+        {
+          "code": "CS50AI",
+          "title": "Introduction to Artificial Intelligence with Python",
+          "issuer": "HarvardX",
+          "url": "https://courses.edx.org/certificates/a746620b6d7d45b583cb41b125e5f807"
+        },
+        {
+          "code": "ER22.1x",
+          "title": "Justice",
+          "issuer": "HarvardX",
+          "url": "https://courses.edx.org/certificates/7584800e9d0048fd94d5d6b1720256b3"
+        },
+        {
+          "code": "CC0201EN",
+          "title": "Introduction to Containers, Kubernetes and OpenShift",
+          "issuer": "IBM",
+          "url": "https://courses.edx.org/certificates/09bd51313ed94fdd8b694164f6745316"
+        }
+      ]
+    },
+    {
+      "name": "東北大学 MOOC",
+      "items": [
+        {
+          "code": "Open Badge",
+          "title": "Radiation Safety",
+          "issuer": "東北大学",
+          "verify": "バッジを確認",
+          "url": "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/N3dGdVhFTUFNaDd5Z1ZhT2VxYWVaZz09"
+        },
+        {
+          "code": "Open Badge",
+          "title": "Disaster Science",
+          "issuer": "東北大学",
+          "verify": "バッジを確認",
+          "url": "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/NElCQ3c1Nng0L0JZYlNNSFZ2aVNPUT09"
+        },
+        {
+          "code": "Open Badge",
+          "title": "Mystery of Aurora",
+          "issuer": "東北大学",
+          "verify": "バッジを確認",
+          "url": "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/cDB4elE1ejd1UDBLZGx6d1NWV2Y5Zz09"
+        }
+      ]
+    }
+  ],
+  "areas": [
+    {
+      "name": "コンピュータサイエンス",
+      "detail": "C / Python、アルゴリズムとデータ構造、計算量の考え方"
+    },
+    {
+      "name": "人工知能",
+      "detail": "探索、知識表現、確率推論、最適化、機械学習、ニューラルネットワーク、自然言語処理"
+    },
+    {
+      "name": "コンテナ基盤",
+      "detail": "Docker、Kubernetes、OpenShift の基本概念と操作"
+    },
+    {
+      "name": "Web 開発",
+      "detail": "HTML / CSS / JavaScript による実装、GitHub Pages での公開と運用"
+    },
+    {
+      "name": "領域知識",
+      "detail": "放射線安全、災害科学、政治哲学"
+    }
+  ],
+  "links": [
+    {
+      "name": "研究者プロフィール",
+      "items": [
+        {
+          "name": "researchmap",
+          "note": "プロフィール",
+          "url": "https://researchmap.jp/takuyanemoto"
+        },
+        {
+          "name": "PhilPeople",
+          "note": "哲学者プロフィール",
+          "url": "https://philpeople.org/profiles/takuyanemoto"
+        },
+        {
+          "name": "HAL",
+          "note": "欧州拠点研究者プロフィール",
+          "url": "https://cv.hal.science/nemoto-takuya"
+        },
+        {
+          "name": "acadmc",
+          "note": "アカデミックプロフィール",
+          "url": "https://acadmc.com/takuyanemoto"
+        },
+        {
+          "name": "J-GLOBAL",
+          "note": "研究者データベース",
+          "url": "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202601016349119335"
+        },
+        {
+          "name": "ORCID",
+          "note": "0009-0000-1406-0547",
+          "url": "https://orcid.org/0009-0000-1406-0547"
+        },
+        {
+          "name": "Google Scholar",
+          "note": "論文データベース",
+          "url": "https://scholar.google.com/citations?user=_HEl3dYAAAAJ&hl=ja"
+        },
+        {
+          "name": "SSRN",
+          "note": "論文リポジトリ",
+          "url": "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8730280"
+        }
+      ]
+    },
+    {
+      "name": "ウェブ・SNS",
+      "items": [
+        {
+          "name": "ホームページ",
+          "note": "nemoto200101.com",
+          "url": "https://www.nemoto200101.com/"
+        },
+        {
+          "name": "LinkedIn",
+          "note": "職務プロフィール",
+          "url": "https://jp.linkedin.com/in/%E5%8D%93%E5%93%89-%E6%A0%B9%E6%9C%AC-62b9093a0"
+        },
+        {
+          "name": "Medium",
+          "note": "記事一覧",
+          "url": "https://medium.com/@heaven_livid_frog_333/lists"
+        },
+        {
+          "name": "GitHub",
+          "note": "@cpsbvbng26-dotcom",
+          "url": "https://github.com/cpsbvbng26-dotcom"
+        }
+      ]
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "トップ",
+      "url": "./index.html"
+    },
+    {
+      "name": "作用素",
+      "url": "./trinity.html"
+    },
+    {
+      "name": "DOI",
+      "url": "./doi.html"
+    },
+    {
+      "name": "ノート",
+      "url": "./notes/index.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "CV",
+    "credentials": "修了証",
+    "credentialsNote": "各カードから発行機関の検証ページを開けます。",
+    "areas": "学習領域",
+    "links": "リンク",
+    "verify": "証明書を確認",
+    "papers": "論文",
+    "papersNote": "いずれも査読前のプレプリントです。各カードから DOI を開けます。"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person",
+        "name": "根本卓哉",
+        "alternateName": "Takuya Nemoto",
+        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "CS50x: Introduction to Computer Science",
+            "credentialCategory": "certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "HarvardX"
+            },
+            "url": "https://courses.edx.org/certificates/eac0a01d3d424a32a00114c487288fbc",
+            "dateCreated": "2026-03"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "ER22.1x: Justice",
+            "credentialCategory": "certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "HarvardX"
+            },
+            "url": "https://courses.edx.org/certificates/7584800e9d0048fd94d5d6b1720256b3",
+            "dateCreated": "2026-03"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "CS50AI: Introduction to Artificial Intelligence with Python",
+            "credentialCategory": "certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "HarvardX"
+            },
+            "url": "https://courses.edx.org/certificates/a746620b6d7d45b583cb41b125e5f807",
+            "dateCreated": "2026-04"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "CC0201EN: Introduction to Containers, Kubernetes and OpenShift",
+            "credentialCategory": "certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "IBM"
+            },
+            "url": "https://courses.edx.org/certificates/09bd51313ed94fdd8b694164f6745316",
+            "dateCreated": "2026-05"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Introduction to radiation safety: Risk assessment for our life and society",
+            "credentialCategory": "certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "国立大学法人東北大学"
+            },
+            "url": "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/N3dGdVhFTUFNaDd5Z1ZhT2VxYWVaZz09",
+            "dateCreated": "2026-03"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Action oriented Research on Disaster Science",
+            "credentialCategory": "certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "国立大学法人東北大学"
+            },
+            "url": "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/NElCQ3c1Nng0L0JZYlNNSFZ2aVNPUT09",
+            "dateCreated": "2026-03"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Mystery of Aurora",
+            "credentialCategory": "certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "国立大学法人東北大学"
+            },
+            "url": "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/cDB4elE1ejd1UDBLZGx6d1NWV2Y5Zz09",
+            "dateCreated": "2026-03"
+          }
+        ]
+      }
+    ]
+  }
+}
