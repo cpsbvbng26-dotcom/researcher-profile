@@ -174,6 +174,12 @@ function renderCards(papers, sectionId, heading, note, labels) {
         item.subtitle ? `        <p class="alt">${esc(item.subtitle)}</p>` : '',
         item.summary ? `        <p class="issuer">${esc(item.summary)}</p>` : '',
         item.doi ? `        <p class="doi">DOI ${esc(item.doi)}</p>` : '',
+        /* 同じ資料の別の所在。DOI の下に並べる。カード全体がリンクなので、
+         * ここは入れ子にせず、行き先を文字で示すだけにする。 */
+        arr(item.locations).length
+          ? `        <p class="where">${arr(item.locations)
+              .map((l) => esc(l.name) + (l.id ? ' ' + esc(l.id) : '')).join('　／　')}</p>`
+          : '',
         item.url ? `        <span class="verify">${esc(item.verify || labels.verify)}</span>` : '',
         `      </${tag}>`,
       ].filter(Boolean).join('\n');

@@ -23,7 +23,17 @@
       "subtitle": "An Antinatalist and Ascetic Reconsideration of Autonomy and Quality of Life",
       "summary": "Argues that the demographic-necessity case for treating sexual activity as obligatory does not survive the antinatalist critique, and defends celibacy as a discipline of autonomous, self-sustaining well-being.",
       "verify": "Read on Zenodo",
-      "doi": "10.5281/zenodo.22058254"
+      "doi": "10.5281/zenodo.22058254",
+      "locations": [
+        {
+          "name": "SSRN",
+          "id": "10.2139/ssrn.7358779"
+        },
+        {
+          "name": "PhilArchive",
+          "id": "NEMTNA"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22057583",
@@ -32,7 +42,17 @@
       "subtitle": "An Exploratory Essay on Personal Imperialism and Spiritual Sovereignty",
       "summary": "Assembles a reflexive account of self-integration from Kantian legislation, Nietzschean revaluation and J&uuml;ngerian mobilisation, treating the tension between them as the structure rather than a defect.",
       "verify": "Read on Zenodo",
-      "doi": "10.5281/zenodo.22057583"
+      "doi": "10.5281/zenodo.22057583",
+      "locations": [
+        {
+          "name": "SSRN",
+          "id": "10.2139/ssrn.7358818"
+        },
+        {
+          "name": "PhilArchive",
+          "id": "NEMMOI"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22064241",
@@ -41,7 +61,13 @@
       "subtitle": "A Philosophy of Fragments for Solitary Spiritual Autonomy",
       "summary": "Treats life, faith, society, thought and finitude as discrete fragments rather than one continuous story, and builds a discipline for inhabiting fragmentation rather than repairing it.",
       "verify": "Read on Zenodo",
-      "doi": "10.5281/zenodo.22064241"
+      "doi": "10.5281/zenodo.22064241",
+      "locations": [
+        {
+          "name": "PhilArchive",
+          "id": "NEMFSI"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22055709",
@@ -50,7 +76,13 @@
       "subtitle": "A Note on the Investiture List of 11 September 1943 in the Naval Gazette (Internal Circulation Only), Extra Edition",
       "summary": "Transcribes a single investiture entry for an Imperial Japanese Navy lieutenant from a gazette held by JACAR, and separates what the document establishes from what it does not.",
       "verify": "Read on Zenodo",
-      "doi": "10.5281/zenodo.22055709"
+      "doi": "10.5281/zenodo.22055709",
+      "locations": [
+        {
+          "name": "Knowledge Commons",
+          "id": "q36z2-98e12"
+        }
+      ]
     }
   ],
   "works": [

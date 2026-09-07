@@ -449,6 +449,13 @@ footer::before {
 .lead a, .issuer a, .sec-head p a { text-decoration: underline; text-underline-offset: .15em; }
 .facts dd a:hover, .claim-kv dd a:hover, .notes-list a:hover,
 .prose a:hover, .lead-block a:hover, .lead a:hover { text-decoration-thickness: 2px; }
+
+/* 同じ資料の別の所在。DOI の下に一行で並べる。 */
+.cert .where {
+  margin: .2rem 0 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .72rem; letter-spacing: .01em; color: var(--faint);
+}
 </style>
 </head>
 <body>

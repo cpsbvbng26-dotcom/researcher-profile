@@ -23,7 +23,17 @@
       "subtitle": "An Antinatalist and Ascetic Reconsideration of Autonomy and Quality of Life",
       "summary": "性的活動を倫理的な義務とみなす通説を反出生主義の側から検討し、他者や欲望の周期に依存しない自足的な幸福という観点から、独身を自己陶冶の型として擁護する。",
       "verify": "Zenodo で読む",
-      "doi": "10.5281/zenodo.22058254"
+      "doi": "10.5281/zenodo.22058254",
+      "locations": [
+        {
+          "name": "SSRN",
+          "id": "10.2139/ssrn.7358779"
+        },
+        {
+          "name": "PhilArchive",
+          "id": "NEMTNA"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22057583",
@@ -32,7 +42,17 @@
       "subtitle": "An Exploratory Essay on Personal Imperialism and Spiritual Sovereignty",
       "summary": "断片化した自己の統合を、カントの立法・ニーチェの価値転換・ユンガーの動員という三層で捉える。三者の対立を解消せず、構造の中身として引き受ける。",
       "verify": "Zenodo で読む",
-      "doi": "10.5281/zenodo.22057583"
+      "doi": "10.5281/zenodo.22057583",
+      "locations": [
+        {
+          "name": "SSRN",
+          "id": "10.2139/ssrn.7358818"
+        },
+        {
+          "name": "PhilArchive",
+          "id": "NEMMOI"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22064241",
@@ -41,7 +61,13 @@
       "subtitle": "A Philosophy of Fragments for Solitary Spiritual Autonomy",
       "summary": "生・信仰・社会・思想・終末を、ひとつづきの物語ではなく独立した断片として扱う。断片化を修復すべき傷とみなす通例に対し、克服ではなく厳密さをもって住まうための規律を組み立てる。",
       "verify": "Zenodo で読む",
-      "doi": "10.5281/zenodo.22064241"
+      "doi": "10.5281/zenodo.22064241",
+      "locations": [
+        {
+          "name": "PhilArchive",
+          "id": "NEMFSI"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22055709",
@@ -50,7 +76,13 @@
       "subtitle": "A Note on the Investiture List of 11 September 1943 in the Naval Gazette (Internal Circulation Only), Extra Edition",
       "summary": "アジア歴史資料センターが公開する海軍公報から、海軍大尉・大谷恒の叙勲記録一件を翻刻し、この史料で確定できることと、できないことを切り分ける。",
       "verify": "Zenodo で読む",
-      "doi": "10.5281/zenodo.22055709"
+      "doi": "10.5281/zenodo.22055709",
+      "locations": [
+        {
+          "name": "Knowledge Commons",
+          "id": "q36z2-98e12"
+        }
+      ]
     }
   ],
   "works": [
