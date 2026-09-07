@@ -65,6 +65,10 @@
         "html": "The repaired argument itself: that P solves the Lyapunov equation, that ‖·‖_P is a norm, and that f contracts in that distance — checked from the definitions (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>)"
       },
       {
+        "name": "63 checks on the outlook",
+        "html": "Which of the papers\u2019 conclusions survive as each assumption is dropped. What is settled exactly, what is only estimated, and what is undecidable in principle, counted separately (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/roadmap\" target=\"_blank\" rel=\"noopener\">trinity-operator/roadmap</a>)"
+      },
+      {
         "name": "90 checks in this page",
         "html": "The numerics behind <a href=\"./trinity.html\">the operator page</a>, checked against 728 recorded NumPy results. Maximum relative difference: ρ 6.7×10⁻¹⁵, ‖A‖₂ 1.7×10⁻¹⁵. The constructed distance is checked against 23 recorded certificates as well (κ within 3.9×10⁻¹⁶)"
       }
@@ -149,7 +153,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
       "code": "Python / MIT",
       "title": "trinity-operator",
-      "summary": "The operator from the three papers above, implemented without restricting Q to a permutation or the coefficients to a uniform scalar. Convergence is governed by the spectral radius; the operator-norm condition the papers impose is stronger than it needs to be. 22 checks, including an example whose error swells to 11.8× before it converges, and 51 more on the construction that repairs the broken argument.",
+      "summary": "The operator from the three papers above, implemented without restricting Q to a permutation or the coefficients to a uniform scalar. Convergence is governed by the spectral radius; the operator-norm condition the papers impose is stronger than it needs to be. 22 checks, including an example whose error swells to 11.8× before it converges, 51 more on the construction that repairs the broken argument, and 63 on a staged outlook that drops one assumption at a time.",
       "verify": "View on GitHub"
     }
   ],
@@ -341,7 +345,7 @@
       {
         "@type": "SoftwareSourceCode",
         "name": "trinity-operator",
-        "description": "The operator from the three Trinity-Infinity papers, implemented without restricting Q to a cyclic permutation or the coefficients to (0,1). It shows that convergence is governed by the spectral radius ρ(DQ) < 1, that the operator-norm condition the papers impose is merely sufficient, and that non-normal matrices amplify the error transiently. It also repairs the Banach argument that fails in that region, by constructing a weighted norm from the Lyapunov equation.",
+        "description": "The operator from the three Trinity-Infinity papers, implemented without restricting Q to a cyclic permutation or the coefficients to (0,1). It shows that convergence is governed by the spectral radius ρ(DQ) < 1, that the operator-norm condition the papers impose is merely sufficient, and that non-normal matrices amplify the error transiently. It also repairs the Banach argument that fails in that region by constructing a weighted norm from the Lyapunov equation, and lays out, as runnable stages, which conclusions survive as each assumption is dropped.",
         "author": {
           "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
         },

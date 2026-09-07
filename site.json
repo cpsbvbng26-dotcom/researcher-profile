@@ -65,6 +65,10 @@
         "html": "壊れた議論を組み直した構成そのもの。P が方程式の解であること、‖·‖_P がノルムであること、f がその距離で縮小写像であることを、定義に戻って当たる（<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>）"
       },
       {
+        "name": "展望 63",
+        "html": "仮定を一つずつ外したとき、三篇の結論のどれが残るか。厳密に決まること・推定でしかないこと・原理的に決まらないことを分けて数える（<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/roadmap\" target=\"_blank\" rel=\"noopener\">trinity-operator/roadmap</a>）"
+      },
+      {
         "name": "この場で 90",
         "html": "<a href=\"./trinity.html\">作用素のページ</a>の数値を、記録した NumPy の値 728 件と突き合わせる。最大相対差 ρ 6.7×10⁻¹⁵、‖A‖₂ 1.7×10⁻¹⁵。縮小になる距離のほうも証書 23 件と突き合わせる（κ の相対差 3.9×10⁻¹⁶）"
       }
@@ -149,7 +153,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
       "code": "Python / MIT",
       "title": "trinity-operator",
-      "summary": "上の三篇が扱う作用素を、置換にも一様な係数にも限らずに実装したリポジトリ。収束を決めているのはスペクトル半径であって、三篇が置いた作用素ノルムの条件は必要以上に強い。誤差が一度 11.8 倍に膨らんでから収束する例を含む 22 項目と、破れた議論を組み直す構成の 51 項目。",
+      "summary": "上の三篇が扱う作用素を、置換にも一様な係数にも限らずに実装したリポジトリ。収束を決めているのはスペクトル半径であって、三篇が置いた作用素ノルムの条件は必要以上に強い。誤差が一度 11.8 倍に膨らんでから収束する例を含む 22 項目、破れた議論を組み直す構成の 51 項目、そして仮定を外していったときに何が残るかを段ごとに走らせる展望の 63 項目。",
       "verify": "GitHub で見る"
     }
   ],
@@ -341,7 +345,7 @@
       {
         "@type": "SoftwareSourceCode",
         "name": "trinity-operator",
-        "description": "Trinity-Infinity の三篇が扱う作用素を、Q を巡回置換に、係数を (0,1) に限らずに実装したもの。収束の条件がスペクトル半径 ρ(DQ) < 1 であり、三篇が置いた作用素ノルムの条件は十分条件にすぎないことを、非正規行列の過渡的増幅とともに示す。あわせて、その領域で成り立たなくなる Banach の議論を、リアプノフ方程式から重み付きノルムを構成して組み直す。",
+        "description": "Trinity-Infinity の三篇が扱う作用素を、Q を巡回置換に、係数を (0,1) に限らずに実装したもの。収束の条件がスペクトル半径 ρ(DQ) < 1 であり、三篇が置いた作用素ノルムの条件は十分条件にすぎないことを、非正規行列の過渡的増幅とともに示す。あわせて、その領域で成り立たなくなる Banach の議論を、リアプノフ方程式から重み付きノルムを構成して組み直し、仮定を一つずつ外したときに結論のどれが残るかを段ごとに実行できる形で並べる。",
         "author": {
           "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
         },
