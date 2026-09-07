@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "en",
   "title": "Takuya Nemoto | 根本卓哉",
-  "description": "The Trinity-Infinity convergence theorem and its verification. Preprints, not peer reviewed. Convergence is governed by the spectral radius, not by the operator-norm condition the papers assume.",
+  "description": "A published artifact cannot be revised; only the errata can, so the errata drifts from its source. That drift is machine-detectable without inference. The record of auditing my own papers, and the tool.",
   "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html",
   "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
   "accent": "#8a6a3d",
@@ -17,7 +17,7 @@
       "url": "https://orcid.org/0009-0000-1406-0547"
     }
   ],
-  "taglineHtml": "I study computer science and artificial intelligence. <strong>Everything published here is a preprint that has not been peer reviewed.</strong> <strong>This page has one core: the Trinity-Infinity convergence theorem and its verification.</strong> Three papers in philosophy and a source note are published too, but they are not the core, so they live in <a href=\"./notes/index.en.html\">Notes</a>; the certificates and areas of study are in <a href=\"./cv.html\">CV</a>.",
+  "taglineHtml": "I study computer science and artificial intelligence. <strong>Everything published here is a preprint that has not been peer reviewed.</strong> <strong>This place has one core: auditing, by machine, what I have already published.</strong> The three Trinity-Infinity papers are what it was applied to. Three papers in philosophy and a source note are in <a href=\"./notes/index.en.html\">Notes</a>; certificates and areas of study are in <a href=\"./cv.html\">CV</a>.",
   "sections": [
     "claim",
     "verification",
@@ -28,26 +28,38 @@
     "contact"
   ],
   "claim": {
-    "statementHtml": "Trinity-Infinity Series I–III assume the operator norm <code>‖DQ‖₂ &lt; 1</code> as the condition for convergence. <strong>That condition is sufficient, not necessary.</strong> Convergence is governed by the spectral radius: <code>ρ(DQ) &lt; 1</code>.",
-    "statement": "operator norm is sufficient, not necessary",
+    "statementHtml": "A published artifact cannot be revised. Only the errata can. <strong>So the errata drifts away from its source over time.</strong> A quotation loses a word, occurrences are undercounted, an item declared unresolvable is quietly marked resolved. <strong>That drift can be caught by machine, without inference.</strong>",
+    "statement": "corrections drift from their sources, and the drift is machine-detectable",
     "rows": [
       {
-        "term": "Whose claim",
-        "html": "The same person wrote the three papers and this correction. It is a correction to my own framework, not a new theory. <span class=\"faint\">Transient growth in non-normal operators, and ρ &lt; 1 as the convergence condition, are standard facts of numerical linear algebra.</span>"
+        "term": "Whose claim this is",
+        "html": "The tool was not built first and then pointed at a paper. <strong>It came out of auditing my own three papers.</strong> <span class=\"faint\">The undercount, the characters added to a quotation that are not in the original, and the last-updated stamp that was older than a date inside the document were all found in my own records.</span>"
       },
       {
         "term": "Evidence",
-        "html": "With <code>Q = [[1,40],[0,1]]</code> and <code>a = (0.5, 0.5)</code>, ρ = 0.5 and the iteration converges, while ‖A‖₂ = 20.01 and the papers' condition fails. The error grows to 11.8× its starting value by step 2 before it falls. <a href=\"./trinity.html\">Run it yourself</a>."
+        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 51 checks on the errata itself, 60 on the tool. The tool is checked by <strong>breaking a passing state in twenty distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
       }
     ],
-    "refuteHtml": "Produce either one of these. <b>(1)</b> An A and b with ρ(A) &lt; 1 for which some starting point does not converge. <b>(2)</b> An A and b with ρ(A) ≥ 1 that converges to a unique point from every starting point. Type either into <a href=\"./trinity.html\">the operator page</a> and it will tell you.",
+    "refuteHtml": "<b>(1)</b> Show one case that passes these checks while the errata does in fact diverge from its source. <b>(2)</b> Or show one check that does not fail when broken as declared. Either one refutes it. The declaration format and the break tests are in <a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>.",
     "refute": "refute",
-    "footHtml": "The three philosophical papers are not refutable in this shape, and they have not been peer reviewed either. Reading them and arguing back is the only route, and that seems right to me.",
+    "footHtml": "<strong>The volume of verification says nothing about the value of what is verified.</strong> No check in this system can decide that question. However many pass, none of them can ever report that the work is not worth doing. It is falsifiable at the level of claims and structurally unfalsifiable at the level of significance. <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">That is recorded as unresolved</a> (ST-002).",
     "foot": "foot"
   },
   "verification": {
-    "note": "How many checks, where, and when. All of them run in CI on every push.",
+    "note": "How many checks, where, and when. All of them run in CI on every push. The first three are the core.",
     "items": [
+      {
+        "name": "51 checks on the errata",
+        "html": "The three papers are frozen; the errata is not. Every quotation verbatim, no undercounting, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649054\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649054</a>)"
+      },
+      {
+        "name": "60 checks on the tool itself",
+        "html": "A checking tool cannot be trusted merely because it passes; a tool that looks at nothing passes too. A passing state is <strong>broken in twenty distinct ways</strong>, and each break must fail exactly the corresponding check. The distributions used to recompute p are validated against published statistical tables at eleven points (<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>)"
+      },
+      {
+        "name": "19 checks on the register",
+        "html": "The shape and history of the correction record itself: that standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+      },
       {
         "name": "31 printed numbers",
         "html": "Every number printed in the three papers, recomputed and shown beside the printed value (<code>trinity-infinity/verification/claims_audit.py</code>)"
@@ -63,10 +75,6 @@
       {
         "name": "51 checks on the certificate",
         "html": "The repaired argument itself: that P solves the Lyapunov equation, that ‖·‖_P is a norm, and that f contracts in that distance — checked from the definitions (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>)"
-      },
-      {
-        "name": "51 checks on the errata",
-        "html": "The three papers are frozen; the errata is not. This audits the errata against the PDFs: every quotation verbatim, no undercounting, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged. No inference is used in the judgement (<a href=\"https://doi.org/10.5281/zenodo.22649054\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649054</a>)"
       },
       {
         "name": "63 checks on the outlook",
@@ -139,6 +147,21 @@
     }
   ],
   "works": [
+    {
+      "url": "https://github.com/cpsbvbng26-dotcom/errata-check",
+      "code": "Python / MIT / with a DOI",
+      "title": "errata-check",
+      "summary": "Audits an errata document against a frozen, already-published artifact. Every quotation verbatim, no undercounting, no quiet resolution of an item declared unresolvable, and the artifact itself unchanged. Recomputation of p from printed test statistics, the GRIM test, ORCID/ISBN/ISSN check digits and Japanese era years can also be declared. No inference is used in the judgement, so the output does not need to be re-verified by a human.",
+      "doi": "10.5281/zenodo.22649054",
+      "verify": "View on GitHub"
+    },
+    {
+      "url": "https://github.com/cpsbvbng26-dotcom/self-correction",
+      "code": "Record / MIT",
+      "title": "self-correction",
+      "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. Fifteen entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
+      "verify": "View on GitHub"
+    },
     {
       "url": "./trinity.html",
       "code": "On this site / tool (in Japanese)",
@@ -406,10 +429,10 @@
     "withdrawn": "Withdrawn",
     "papers": "Papers",
     "papersNote": {
-      "html": "Trinity-Infinity Series I–III. These three are the core. They have not been peer reviewed."
+      "html": "Trinity-Infinity Series I–III. <strong>These three are what the audit was applied to.</strong> They have not been peer reviewed. The condition the papers impose for convergence is stronger than it needs to be, and that can be checked on <a href=\"./trinity.html\">the operator page</a>."
     },
     "works": "Works",
-    "worksNote": "The implementation and the verification of the core.",
+    "worksNote": "The tool that audits, and the implementations that were audited.",
     "contact": "Contact",
     "contactNote": "Criticism and corrections come first."
   },

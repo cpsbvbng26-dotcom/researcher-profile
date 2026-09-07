@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "ja",
   "title": "根本卓哉 | Takuya Nemoto",
-  "description": "Trinity-Infinity の収束定理と、その検証。査読前のプレプリントです。収束を決めるのはスペクトル半径であって、三篇が置いた作用素ノルムの条件ではありません。",
+  "description": "公開した成果物は、もう直せない。直せるのは訂正のほうで、だから訂正は元の資料からずれていく。そのずれを、推論を使わずに機械で落とす。自分の三篇を監査した記録と、その道具。",
   "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
   "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
   "accent": "#8a6a3d",
@@ -17,7 +17,7 @@
       "url": "https://orcid.org/0009-0000-1406-0547"
     }
   ],
-  "taglineHtml": "コンピュータサイエンスと人工知能を学んでいます。<strong>公開しているのは、いずれも査読を受けていないプレプリントです。</strong> <strong>このページの核は一つ —— Trinity-Infinity の収束定理と、その検証です。</strong> 哲学の三篇と史料ノートも公開していますが、核ではないので <a href=\"./notes/index.html\">ノート</a> に、修了証と学習領域は <a href=\"./cv.html\">CV</a> に置いています。",
+  "taglineHtml": "コンピュータサイエンスと人工知能を学んでいます。<strong>公開しているのは、いずれも査読を受けていないプレプリントです。</strong> <strong>この場所の核は一つ —— 自分が公開したものを、あとから機械で監査すること。</strong>Trinity-Infinity の三篇はその対象です。哲学の三篇と史料ノートは <a href=\"./notes/index.html\">ノート</a> に、修了証と学習領域は <a href=\"./cv.html\">CV</a> に置いています。",
   "sections": [
     "claim",
     "verification",
@@ -28,26 +28,38 @@
     "contact"
   ],
   "claim": {
-    "statementHtml": "Trinity-Infinity Series I–III は、収束の条件として作用素ノルム <code>‖DQ‖₂ &lt; 1</code> を置いた。<strong>これは十分条件であって、必要条件ではない。</strong>収束の必要十分条件はスペクトル半径 <code>ρ(DQ) &lt; 1</code> のほうである。",
-    "statement": "operator norm is sufficient, not necessary",
+    "statementHtml": "公開された成果物は、もう直せない。直せるのは訂正のほうである。<strong>だから訂正は、時間とともに元の資料からずれていく。</strong>引用が一字変わり、箇所を数え落とし、未解決と決めた項目が「解決済み」に書き換わる。<strong>そのずれは、推論を使わずに機械で落とせる。</strong>",
+    "statement": "corrections drift from their sources, and the drift is machine-detectable",
     "rows": [
       {
         "term": "誰の主張か",
-        "html": "三篇を書いたのも、この訂正を出しているのも同じ人間です。自分の枠組みに対する訂正であって、新しい理論ではありません。<span class=\"faint\">非正規行列の過渡的増幅も、収束条件が ρ &lt; 1 であることも、数値線形代数の標準的な事実です。</span>"
+        "html": "先に道具を作って論文に当てたのではありません。<strong>自分の三篇を監査したら出てきたもの</strong>です。<span class=\"faint\">数え落としも、引用に原文には無い文字を足していたことも、最終更新の日付が本文より古かったことも、自分の記録から見つかりました。</span>"
       },
       {
         "term": "証拠",
-        "html": "<code>Q = [[1,40],[0,1]]</code>、<code>a = (0.5, 0.5)</code> のとき ρ = 0.5 で収束するが、‖A‖₂ = 20.01 で三篇の条件は破れている。誤差は第 2 段で初期値の 11.8 倍まで増えてから落ちる。<a href=\"./trinity.html\">その場で回せます</a>（行列を打ち替えられます）。"
+        "html": "三篇が検証スクリプトの同梱を謳っている箇所を、<strong>三箇所だと思っていました。数え直すと六箇所ありました。</strong>見つけたのは目視ではなく機械です。正誤表そのものへの検査 51 項目、道具自身への 60 項目。道具は、通る状態を <strong>20 通りに壊して、壊した箇所がちょうど落ちること</strong>を確かめています。"
       }
     ],
-    "refuteHtml": "次のどちらか一つを出してください。<b>(1)</b> ρ(A) &lt; 1 なのに、ある初期値から収束しない A と b。<b>(2)</b> ρ(A) ≥ 1 なのに、すべての初期値から一意の点に収束する A と b。<a href=\"./trinity.html\">作用素のページ</a>に打ち込めば、その場で判定が出ます。",
+    "refuteHtml": "<b>(1)</b> この検査を通ったのに、正誤表が一次資料とずれている例を一つ出してください。<b>(2)</b> あるいは、宣言どおりに壊しても落ちない検査を一つ示してください。どちらも一件で覆ります。宣言の書き方と壊し方は <a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a> にあります。",
     "refute": "refute",
-    "footHtml": "哲学の三篇はこの形で反証できる種類のものではありません。査読も受けていません。読んで反論する以外の道はなく、それでよいと考えています。",
+    "footHtml": "<strong>検証の量は、検証される中身の価値について何も言いません。</strong>この体系には、それを判定できる検査が存在しません。数がいくら増えても、「これは価値が無い」とは出ない。主張の水準では反証可能で、意義の水準では構造的に反証不可能です。<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">未解決のまま記録しています</a>（ST-002）。",
     "foot": "foot"
   },
   "verification": {
-    "note": "何項目が、どこで、いつ走るか。すべて CI で毎回走ります。",
+    "note": "何をどこで、どれだけ当たっているか。すべて push のたびに CI で走ります。上の三つが核にあたるものです。",
     "items": [
+      {
+        "name": "正誤表の監査 51",
+        "html": "凍結された三篇の PDF に対して、正誤表のほうがずれていないかを当たる。引用が一字一句あるか、数え落としが無いか、未解決の項目が「解決済み」に書き換わっていないか、PDF そのものが差し替わっていないか（<a href=\"https://doi.org/10.5281/zenodo.22649054\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649054</a>）"
+      },
+      {
+        "name": "道具自身 60",
+        "html": "検査の道具は、通ることでは信用できない。何も見ていなくても全部通るため。通る状態を <strong>20 通りに壊し、壊した箇所がちょうど落ちること</strong>を見る。検定統計量から p を出す分布は、公表されている数値表と 11 点で突き合わせてある（<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>）"
+      },
+      {
+        "name": "登録簿 19",
+        "html": "訂正の記録そのものの形と履歴。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
+      },
       {
         "name": "紙面の数値 31",
         "html": "三篇に印字されている数値を一つずつ計算し直し、印字された値と並べる（<code>trinity-infinity/verification/claims_audit.py</code>）"
@@ -63,10 +75,6 @@
       {
         "name": "証書 51",
         "html": "壊れた議論を組み直した構成そのもの。P が方程式の解であること、‖·‖_P がノルムであること、f がその距離で縮小写像であることを、定義に戻って当たる（<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>）"
-      },
-      {
-        "name": "正誤表の監査 51",
-        "html": "凍結された三篇の PDF に対して、正誤表のほうがずれていないかを機械で当たる。引用が一字一句あるか、数え落としが無いか、未解決の項目が「解決済み」に書き換わっていないか、PDF そのものが差し替わっていないか。判定に推論を使わない（<a href=\"https://doi.org/10.5281/zenodo.22649054\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649054</a>）"
       },
       {
         "name": "展望 63",
@@ -139,6 +147,21 @@
     }
   ],
   "works": [
+    {
+      "url": "https://github.com/cpsbvbng26-dotcom/errata-check",
+      "code": "Python / MIT / DOI つき",
+      "title": "errata-check",
+      "summary": "凍結された公開物に対して、正誤表のほうを機械で監査する。引用が一字一句あるか、数え落としが無いか、未解決と決めた項目が「解決済み」に書き換わっていないか、一次資料そのものが差し替わっていないか。検定統計量からの p の再計算、GRIM、ORCID・ISBN・ISSN の検査数字、和暦と西暦の対応も宣言できる。判定に推論を使わない。LLM も類似度も使わないので、出力を人が確かめ直す必要が無い。",
+      "doi": "10.5281/zenodo.22649054",
+      "verify": "GitHub で見る"
+    },
+    {
+      "url": "https://github.com/cpsbvbng26-dotcom/self-correction",
+      "code": "記録 / MIT",
+      "title": "self-correction",
+      "summary": "自分が公開した主張のうち、誤っていたもの・撤回したもの・直せないものを、一件ずつ消さずに記録する。いま 15 件。状態は五つに限り、いま立っている主張には覆し方を、直せない項目には理由を書くことを検査で強制する。識別子は永久に消せない —— git の履歴を遡って、過去に一度でも載った項目がいまも残っているかを検査する。消したら落ちる。",
+      "verify": "GitHub で見る"
+    },
     {
       "url": "./trinity.html",
       "code": "このサイト内 / ツール",
@@ -406,10 +429,10 @@
     "withdrawn": "撤回",
     "papers": "論文",
     "papersNote": {
-      "html": "Trinity-Infinity Series I–III。この三篇が核です。査読は受けていません。"
+      "html": "Trinity-Infinity Series I–III。<strong>この三篇が監査の対象です。</strong>査読は受けていません。三篇が収束の条件として置いた仮定は必要以上に強く、そのことは <a href=\"./trinity.html\">作用素のページ</a> でその場で確かめられます。"
     },
     "works": "制作物",
-    "worksNote": "核の実装と検証です。",
+    "worksNote": "監査する側の道具と、監査された側の実装です。",
     "contact": "連絡",
     "contactNote": "批判と誤りの指摘を先に置きます。"
   },
