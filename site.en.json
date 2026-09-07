@@ -66,7 +66,7 @@
       },
       {
         "name": "51 checks on the errata",
-        "html": "The three papers are frozen; the errata is not. This audits the errata against the PDFs: every quotation verbatim, no undercounting, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged. No inference is used in the judgement (<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>)"
+        "html": "The three papers are frozen; the errata is not. This audits the errata against the PDFs: every quotation verbatim, no undercounting, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged. No inference is used in the judgement (<a href=\"https://doi.org/10.5281/zenodo.22649054\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649054</a>)"
       },
       {
         "name": "63 checks on the outlook",
