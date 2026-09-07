@@ -157,9 +157,19 @@
       "name": "ウェブ・SNS",
       "items": [
         {
-          "name": "ホームページ",
+          "name": "ホームページ①",
           "note": "nemoto200101.com",
           "url": "https://www.nemoto200101.com/"
+        },
+        {
+          "name": "ホームページ②",
+          "note": "takuyanemoto.jimdofree.com",
+          "url": "https://takuyanemoto.jimdofree.com/"
+        },
+        {
+          "name": "ホームページ③",
+          "note": "sites.google.com/view/nemototakuya",
+          "url": "https://sites.google.com/view/nemototakuya/"
         },
         {
           "name": "LinkedIn",
