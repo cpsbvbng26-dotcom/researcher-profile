@@ -49,8 +49,8 @@
     "note": "How many checks, where, and when. All of them run in CI on every push. The first three are the core.",
     "items": [
       {
-        "name": "51 checks on the errata",
-        "html": "The three papers are frozen; the errata is not. Every quotation verbatim, no undercounting, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649054\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649054</a>)"
+        "name": "132 checks on the errata",
+        "html": "The same audit applied to all four frozen bodies of work: 51 on the three Trinity-Infinity papers, 50 on the three philosophical papers, 31 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649054\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649054</a>)"
       },
       {
         "name": "60 checks on the tool itself",
@@ -58,7 +58,7 @@
       },
       {
         "name": "19 checks on the register",
-        "html": "The shape and history of the correction record itself: that standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+        "html": "The shape and history of the correction record itself. <strong>23 entries</strong> across five statuses. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
         "name": "31 printed numbers",
