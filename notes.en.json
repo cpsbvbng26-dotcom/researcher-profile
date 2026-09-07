@@ -107,13 +107,6 @@
   ],
   "works": [
     {
-      "url": "./../doi.html",
-      "code": "On this site / tool",
-      "title": "DOI Analyzer",
-      "summary": "Validates DOI syntax, infers the registrant from the prefix, lists where the DOI can be looked up (grouped into indexes, discovery search, and APIs), queries Crossref and DataCite, and exports to BibTeX and other formats. Case, percent-encoding and URL fragments are resolved so that two spellings of one DOI are treated as one, and each export escapes for its own grammar. Also checks ORCID iDs and loads works from an ORCID record. Makes no external request until asked.",
-      "verify": "Open"
-    },
-    {
       "url": "https://github.com/cpsbvbng26-dotcom/researcher-profile",
       "code": "JavaScript / MIT",
       "title": "researcher-profile",
@@ -152,10 +145,6 @@
     {
       "name": "Operator",
       "url": "./../trinity.html"
-    },
-    {
-      "name": "DOI",
-      "url": "./../doi.html"
     },
     {
       "name": "CV",

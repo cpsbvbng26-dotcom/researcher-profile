@@ -70,7 +70,7 @@
       },
       {
         "name": "63 checks on the outlook",
-        "html": "Which of the papers\u2019 conclusions survive as each assumption is dropped. What is settled exactly, what is only estimated, and what is undecidable in principle, counted separately (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/roadmap\" target=\"_blank\" rel=\"noopener\">trinity-operator/roadmap</a>)"
+        "html": "Which of the papers’ conclusions survive as each assumption is dropped. What is settled exactly, what is only estimated, and what is undecidable in principle, counted separately (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/roadmap\" target=\"_blank\" rel=\"noopener\">trinity-operator/roadmap</a>)"
       },
       {
         "name": "90 checks in this page",
@@ -172,7 +172,7 @@
       ],
       "noteHtml": "Everything not placed in the core is in <a href=\"./notes/index.en.html\">Notes</a> and <a href=\"./cv.html\">CV</a>, undeleted. The DOIs and the repositories are live.",
       "note": "notes",
-      "html": "\n      <p><a href=\"./notes/index.en.html#papers\">Three papers in philosophy, and a naval gazette source note</a><span>Summaries and full text are on the Notes page. Where each one lives is listed below</span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22058254\" target=\"_blank\" rel=\"noopener\">The Nobility and Exemplarity of the Celibate Individual</a><span>Zenodo 10.5281/zenodo.22058254　／　<a href=\"https://doi.org/10.2139/ssrn.7358779\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358779</a>　／　<a href=\"https://philarchive.org/rec/NEMTNA\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMTNA</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22057583\" target=\"_blank\" rel=\"noopener\">Manifesto of Imperial Selfhood</a><span>Zenodo 10.5281/zenodo.22057583　／　<a href=\"https://doi.org/10.2139/ssrn.7358818\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358818</a>　／　<a href=\"https://philarchive.org/rec/NEMMOI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMMOI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22064241\" target=\"_blank\" rel=\"noopener\">Fragmentarian Spiritual Individualism</a><span>Zenodo 10.5281/zenodo.22064241　／　<a href=\"https://philarchive.org/rec/NEMFSI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMFSI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22055709\" target=\"_blank\" rel=\"noopener\">A Naval Gazette Entry for Lieutenant Otani Tsune（大谷恒）</a><span>Zenodo 10.5281/zenodo.22055709　／　<a href=\"https://works.hcommons.org/records/q36z2-98e12\" target=\"_blank\" rel=\"noopener\">Knowledge Commons q36z2-98e12</a></span></p>\n      <p><a href=\"./notes/index.en.html#works\">Repositories and tools outside the core</a><span>researcher-profile / justice-and-algorithms / autonomy-and-self-cultivation / naval-gazette-notes / the DOI Analyzer</span></p>\n      <p><a href=\"./cv.html\">Certificates, areas of study, external profiles</a><span>CV</span></p>\n    "
+      "html": "\n      <p><a href=\"./notes/index.en.html#papers\">Three papers in philosophy, and a naval gazette source note</a><span>Summaries and full text are on the Notes page. Where each one lives is listed below</span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22058254\" target=\"_blank\" rel=\"noopener\">The Nobility and Exemplarity of the Celibate Individual</a><span>Zenodo 10.5281/zenodo.22058254　／　<a href=\"https://doi.org/10.2139/ssrn.7358779\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358779</a>　／　<a href=\"https://philarchive.org/rec/NEMTNA\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMTNA</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22057583\" target=\"_blank\" rel=\"noopener\">Manifesto of Imperial Selfhood</a><span>Zenodo 10.5281/zenodo.22057583　／　<a href=\"https://doi.org/10.2139/ssrn.7358818\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358818</a>　／　<a href=\"https://philarchive.org/rec/NEMMOI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMMOI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22064241\" target=\"_blank\" rel=\"noopener\">Fragmentarian Spiritual Individualism</a><span>Zenodo 10.5281/zenodo.22064241　／　<a href=\"https://philarchive.org/rec/NEMFSI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMFSI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22055709\" target=\"_blank\" rel=\"noopener\">A Naval Gazette Entry for Lieutenant Otani Tsune（大谷恒）</a><span>Zenodo 10.5281/zenodo.22055709　／　<a href=\"https://works.hcommons.org/records/q36z2-98e12\" target=\"_blank\" rel=\"noopener\">Knowledge Commons q36z2-98e12</a></span></p>\n      <p><a href=\"./notes/index.en.html#works\">Repositories and tools outside the core</a><span>researcher-profile / justice-and-algorithms / autonomy-and-self-cultivation / naval-gazette-notes</span></p>\n      <p><a href=\"./cv.html\">Certificates, areas of study, external profiles</a><span>CV</span></p>\n    "
     }
   ],
   "contact": {
@@ -197,10 +197,6 @@
     {
       "name": "Operator",
       "url": "./trinity.html"
-    },
-    {
-      "name": "DOI",
-      "url": "./doi.html"
     },
     {
       "name": "CV",
@@ -395,21 +391,6 @@
             "@id": "https://doi.org/10.5281/zenodo.22058964"
           }
         ]
-      },
-      {
-        "@type": "WebApplication",
-        "name": "DOI アナライザー",
-        "description": "A tool that validates DOI syntax, infers the registrant from the prefix, queries CrossRef and DataCite, and exports BibTeX, CSL-JSON, CITATION.cff and other formats. Paste a bibliography and it extracts every DOI in it. It makes no outbound request on load. The interface is in Japanese.",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/doi.html",
-        "applicationCategory": "ReferenceApplication",
-        "operatingSystem": "Web",
-        "browserRequirements": "JavaScript",
-        "isAccessibleForFree": true,
-        "inLanguage": "ja",
-        "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
-        },
-        "license": "https://opensource.org/licenses/MIT"
       }
     ]
   },
@@ -425,7 +406,7 @@
     "withdrawn": "Withdrawn",
     "papers": "Papers",
     "papersNote": {
-      "html": "Trinity-Infinity Series I–III. These three are the core. They have not been peer reviewed.<a class=\"go\" href=\"./doi.html?q=10.5281/zenodo.22058624,10.5281/zenodo.22058777,10.5281/zenodo.22058964\">Analyse all three DOIs</a>"
+      "html": "Trinity-Infinity Series I–III. These three are the core. They have not been peer reviewed."
     },
     "works": "Works",
     "worksNote": "The implementation and the verification of the core.",

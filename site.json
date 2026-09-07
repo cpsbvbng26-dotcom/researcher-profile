@@ -172,7 +172,7 @@
       ],
       "noteHtml": "核に置かなかったものは、消さずに <a href=\"./notes/index.html\">ノート</a> と <a href=\"./cv.html\">CV</a> にあります。DOI も GitHub も生きています。",
       "note": "notes",
-      "html": "\n      <p><a href=\"./notes/index.html#papers\">哲学の三篇と、海軍公報の史料ノート</a><span>四篇の要約と全文はノートのページに。所在は下に並べてあります</span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22058254\" target=\"_blank\" rel=\"noopener\">The Nobility and Exemplarity of the Celibate Individual</a><span>Zenodo 10.5281/zenodo.22058254　／　<a href=\"https://doi.org/10.2139/ssrn.7358779\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358779</a>　／　<a href=\"https://philarchive.org/rec/NEMTNA\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMTNA</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22057583\" target=\"_blank\" rel=\"noopener\">Manifesto of Imperial Selfhood</a><span>Zenodo 10.5281/zenodo.22057583　／　<a href=\"https://doi.org/10.2139/ssrn.7358818\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358818</a>　／　<a href=\"https://philarchive.org/rec/NEMMOI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMMOI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22064241\" target=\"_blank\" rel=\"noopener\">Fragmentarian Spiritual Individualism</a><span>Zenodo 10.5281/zenodo.22064241　／　<a href=\"https://philarchive.org/rec/NEMFSI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMFSI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22055709\" target=\"_blank\" rel=\"noopener\">A Naval Gazette Entry for Lieutenant Otani Tsune（大谷恒）</a><span>Zenodo 10.5281/zenodo.22055709　／　<a href=\"https://works.hcommons.org/records/q36z2-98e12\" target=\"_blank\" rel=\"noopener\">Knowledge Commons q36z2-98e12</a></span></p>\n      <p><a href=\"./notes/index.html#works\">核に直接関わらないリポジトリとツール</a><span>researcher-profile / justice-and-algorithms / autonomy-and-self-cultivation / naval-gazette-notes / DOI アナライザー</span></p>\n      <p><a href=\"./cv.html\">修了証・学習領域・外部プロフィール</a><span>CV</span></p>\n    "
+      "html": "\n      <p><a href=\"./notes/index.html#papers\">哲学の三篇と、海軍公報の史料ノート</a><span>四篇の要約と全文はノートのページに。所在は下に並べてあります</span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22058254\" target=\"_blank\" rel=\"noopener\">The Nobility and Exemplarity of the Celibate Individual</a><span>Zenodo 10.5281/zenodo.22058254　／　<a href=\"https://doi.org/10.2139/ssrn.7358779\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358779</a>　／　<a href=\"https://philarchive.org/rec/NEMTNA\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMTNA</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22057583\" target=\"_blank\" rel=\"noopener\">Manifesto of Imperial Selfhood</a><span>Zenodo 10.5281/zenodo.22057583　／　<a href=\"https://doi.org/10.2139/ssrn.7358818\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358818</a>　／　<a href=\"https://philarchive.org/rec/NEMMOI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMMOI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22064241\" target=\"_blank\" rel=\"noopener\">Fragmentarian Spiritual Individualism</a><span>Zenodo 10.5281/zenodo.22064241　／　<a href=\"https://philarchive.org/rec/NEMFSI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMFSI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22055709\" target=\"_blank\" rel=\"noopener\">A Naval Gazette Entry for Lieutenant Otani Tsune（大谷恒）</a><span>Zenodo 10.5281/zenodo.22055709　／　<a href=\"https://works.hcommons.org/records/q36z2-98e12\" target=\"_blank\" rel=\"noopener\">Knowledge Commons q36z2-98e12</a></span></p>\n      <p><a href=\"./notes/index.html#works\">核に直接関わらないリポジトリとツール</a><span>researcher-profile / justice-and-algorithms / autonomy-and-self-cultivation / naval-gazette-notes</span></p>\n      <p><a href=\"./cv.html\">修了証・学習領域・外部プロフィール</a><span>CV</span></p>\n    "
     }
   ],
   "contact": {
@@ -197,10 +197,6 @@
     {
       "name": "作用素",
       "url": "./trinity.html"
-    },
-    {
-      "name": "DOI",
-      "url": "./doi.html"
     },
     {
       "name": "CV",
@@ -395,21 +391,6 @@
             "@id": "https://doi.org/10.5281/zenodo.22058964"
           }
         ]
-      },
-      {
-        "@type": "WebApplication",
-        "name": "DOI アナライザー",
-        "description": "DOI の書式を検証し、接頭辞から登録者を推定し、CrossRef と DataCite に照会して BibTeX・CSL-JSON・CITATION.cff などに書き出す道具。文献リストを貼りこむと、含まれる DOI をすべて抽出する。読み込み時は外部へリクエストを出さない。",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/doi.html",
-        "applicationCategory": "ReferenceApplication",
-        "operatingSystem": "Web",
-        "browserRequirements": "JavaScript",
-        "isAccessibleForFree": true,
-        "inLanguage": "ja",
-        "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
-        },
-        "license": "https://opensource.org/licenses/MIT"
       }
     ]
   },
@@ -425,7 +406,7 @@
     "withdrawn": "撤回",
     "papers": "論文",
     "papersNote": {
-      "html": "Trinity-Infinity Series I–III。この三篇が核です。査読は受けていません。<a class=\"go\" href=\"./doi.html?q=10.5281/zenodo.22058624,10.5281/zenodo.22058777,10.5281/zenodo.22058964\">3 件の DOI をまとめて解析する</a>"
+      "html": "Trinity-Infinity Series I–III。この三篇が核です。査読は受けていません。"
     },
     "works": "制作物",
     "worksNote": "核の実装と検証です。",

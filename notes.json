@@ -107,13 +107,6 @@
   ],
   "works": [
     {
-      "url": "./../doi.html",
-      "code": "このサイト内 / ツール",
-      "title": "DOI アナライザー",
-      "summary": "DOI の書式を検証し、接頭辞から登録者を推定し、辿れる索引先を索引・発見・API に分けて並べ、CrossRef と DataCite に照会して BibTeX などに書き出す。大小の別・百分率符号化・URL の素片を解いて同じ資料を同一視し、書き出しは題名の記号をそれぞれの文法で逃がす。ORCID iD の検査（チェックディジット）と、ORCID からの業績の読み込みも。読み込み時は外部リクエストを出さない。",
-      "verify": "開く"
-    },
-    {
       "url": "https://github.com/cpsbvbng26-dotcom/researcher-profile",
       "code": "JavaScript / MIT",
       "title": "researcher-profile",
@@ -152,10 +145,6 @@
     {
       "name": "作用素",
       "url": "./../trinity.html"
-    },
-    {
-      "name": "DOI",
-      "url": "./../doi.html"
     },
     {
       "name": "CV",
