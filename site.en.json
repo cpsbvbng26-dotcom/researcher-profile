@@ -9,7 +9,7 @@
   "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
-  "footer": "© 2026 根本卓哉",
+  "footer": "© 2026 Takuya Nemoto",
   "identifiers": [
     {
       "label": "ORCID",
@@ -49,23 +49,23 @@
     "note": "How many checks, where, and when. All of them run in CI on every push.",
     "items": [
       {
-        "name": "紙面の数値 31",
+        "name": "31 printed numbers",
         "html": "Every number printed in the three papers, recomputed and shown beside the printed value (<code>trinity-infinity/verification/claims_audit.py</code>)"
       },
       {
-        "name": "定理の再実装 13",
+        "name": "13 theorems reimplemented",
         "html": "The theorems reimplemented independently of the papers (<code>trinity-infinity/verification/independent_check.py</code>)"
       },
       {
-        "name": "作用素 22",
+        "name": "22 checks on the operator",
         "html": "The operator outside the papers' assumptions, with a fixed seed (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>)"
       },
       {
-        "name": "証書 51",
+        "name": "51 checks on the certificate",
         "html": "The repaired argument itself: that P solves the Lyapunov equation, that ‖·‖_P is a norm, and that f contracts in that distance — checked from the definitions (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>)"
       },
       {
-        "name": "この場で 90",
+        "name": "90 checks in this page",
         "html": "The numerics behind <a href=\"./trinity.html\">the operator page</a>, checked against 728 recorded NumPy results. Maximum relative difference: ρ 6.7×10⁻¹⁵, ‖A‖₂ 1.7×10⁻¹⁵. The constructed distance is checked against 23 recorded certificates as well (κ within 3.9×10⁻¹⁶)"
       }
     ]
@@ -104,53 +104,53 @@
   "papers": [
     {
       "url": "https://doi.org/10.5281/zenodo.22058624",
-      "code": "プレプリント / 英語",
+      "code": "Preprint / English",
       "title": "Trinity-Infinity Framework, Series I",
       "subtitle": "A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
-      "summary": "三要素の再帰作用素が一意の不動点へ幾何収束することを証明し、ゲーム理論・論理学・工学への接続を、証明済みの結果・既知の結果・類推に区別して示す。",
-      "verify": "Zenodo で読む",
+      "summary": "Proves that the three-element recursive operator converges geometrically to a unique fixed point, and sets out the connections to game theory, logic and engineering with proved results, known results and analogies marked apart.",
+      "verify": "Read on Zenodo",
       "doi": "10.5281/zenodo.22058624"
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22058777",
-      "code": "プレプリント / 英語",
+      "code": "Preprint / English",
       "title": "Trinity-Infinity Framework, Series II",
       "subtitle": "Extended Formalization and Further Illustrative Applications",
-      "summary": "混合率を座標ごとに変えても不動点の一意性が保たれることを示し、均衡利得集合の特徴づけとばね系の完全な計算例を加える。",
-      "verify": "Zenodo で読む",
+      "summary": "Shows that uniqueness of the fixed point survives when the mixing rate varies coordinate by coordinate, and adds a characterization of the equilibrium payoff set and a fully worked spring-network example.",
+      "verify": "Read on Zenodo",
       "doi": "10.5281/zenodo.22058777"
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22058964",
-      "code": "プレプリント / 英語",
+      "code": "Preprint / English",
       "title": "Trinity-Infinity Framework, Series III",
       "subtitle": "Beyond Three — A Generalization and Retrospective",
-      "summary": "収束定理が三要素を必要としないこと（任意の n ≥ 2 で成立）を示し、この系列が何を確立し、何を撤回したかを回顧する。",
-      "verify": "Zenodo で読む",
+      "summary": "Shows that the convergence theorem does not need three elements — it holds for any n ≥ 2 — and looks back at what the series established and what it withdrew.",
+      "verify": "Read on Zenodo",
       "doi": "10.5281/zenodo.22058964"
     }
   ],
   "works": [
     {
       "url": "./trinity.html",
-      "code": "このサイト内 / ツール",
-      "title": "作用素を回す",
-      "summary": "下の三篇が扱う作用素 x ← DQx + (I−D)p を、その場で回すページ。行列を打ち込むと、スペクトル半径と作用素ノルムを両方出し、収束するか・誤差が単調に減るかを別々に判定し、不動点と誤差の推移を描く。三篇の議論が破れる領域では、f が縮小写像になる距離をその場で作り、Banach の定理が字義どおり当たる形まで組み直す。固有値も特異値もリアプノフ方程式も、このページの中で解いている。外部リクエストは無し。",
-      "verify": "開く"
+      "code": "On this site / tool (in Japanese)",
+      "title": "Run the operator",
+      "summary": "A page that iterates the operator x ← DQx + (I−D)p from the three papers above. Type in a matrix and it reports both the spectral radius and the operator norm, judges convergence and monotone decay separately, and draws the fixed point and the error curve. Where the papers' argument breaks, it constructs a distance in which f is a contraction and rebuilds the argument until Banach's theorem applies literally. Eigenvalues, singular values and the Lyapunov equation are all solved inside the page. No outbound requests.",
+      "verify": "Open"
     },
     {
       "url": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
       "code": "PDF / CC BY 4.0",
       "title": "trinity-infinity",
-      "summary": "上の三篇と、その検証をまとめたリポジトリ。定理を独立に実装し直す 13 項目と、紙面の数値を計算し直す 31 項目。何が確立され、何が撤回されたかも記録している。",
-      "verify": "GitHub で見る"
+      "summary": "The three papers above and their verification. 13 checks that reimplement the theorems independently and 31 that recompute every number printed on the page. It also records what was established and what was withdrawn.",
+      "verify": "View on GitHub"
     },
     {
       "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
       "code": "Python / MIT",
       "title": "trinity-operator",
-      "summary": "上の三篇が扱う作用素を、置換にも一様な係数にも限らずに実装したリポジトリ。収束を決めているのはスペクトル半径であって、三篇が置いた作用素ノルムの条件は必要以上に強い。誤差が一度 11.8 倍に膨らんでから収束する例を含む 22 項目と、破れた議論を組み直す構成の 51 項目。",
-      "verify": "GitHub で見る"
+      "summary": "The operator from the three papers above, implemented without restricting Q to a permutation or the coefficients to a uniform scalar. Convergence is governed by the spectral radius; the operator-norm condition the papers impose is stronger than it needs to be. 22 checks, including an example whose error swells to 11.8× before it converges, and 51 more on the construction that repairs the broken argument.",
+      "verify": "View on GitHub"
     }
   ],
   "blocks": [
@@ -209,8 +209,8 @@
       {
         "@type": "Person",
         "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person",
-        "name": "根本卓哉",
-        "alternateName": "Takuya Nemoto",
+        "name": "Takuya Nemoto",
+        "alternateName": "根本卓哉",
         "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
         "identifier": {
           "@type": "PropertyValue",
@@ -218,15 +218,15 @@
           "value": "https://orcid.org/0009-0000-1406-0547"
         },
         "knowsAbout": [
-          "コンピュータサイエンス",
-          "人工知能",
-          "機械学習",
-          "コンテナ基盤",
-          "政治哲学",
-          "正義論",
-          "AI倫理",
-          "災害科学",
-          "放射線安全"
+          "Computer science",
+          "Artificial intelligence",
+          "Machine learning",
+          "Container infrastructure",
+          "Political philosophy",
+          "Theories of justice",
+          "AI ethics",
+          "Disaster science",
+          "Radiation safety"
         ],
         "sameAs": [
           "https://orcid.org/0009-0000-1406-0547",
@@ -246,10 +246,10 @@
       },
       {
         "@type": "ProfilePage",
-        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
-        "name": "根本卓哉 | Takuya Nemoto",
-        "inLanguage": "ja",
+        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html",
+        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html",
+        "name": "Takuya Nemoto | 根本卓哉",
+        "inLanguage": "en",
         "mainEntity": {
           "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
         }
@@ -339,7 +339,7 @@
       {
         "@type": "SoftwareSourceCode",
         "name": "trinity-operator",
-        "description": "Trinity-Infinity の三篇が扱う作用素を、Q を巡回置換に、係数を (0,1) に限らずに実装したもの。収束の条件がスペクトル半径 ρ(DQ) < 1 であり、三篇が置いた作用素ノルムの条件は十分条件にすぎないことを、非正規行列の過渡的増幅とともに示す。あわせて、その領域で成り立たなくなる Banach の議論を、リアプノフ方程式から重み付きノルムを構成して組み直す。",
+        "description": "The operator from the three Trinity-Infinity papers, implemented without restricting Q to a cyclic permutation or the coefficients to (0,1). It shows that convergence is governed by the spectral radius ρ(DQ) < 1, that the operator-norm condition the papers impose is merely sufficient, and that non-normal matrices amplify the error transiently. It also repairs the Banach argument that fails in that region, by constructing a weighted norm from the Lyapunov equation.",
         "author": {
           "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
         },
@@ -363,7 +363,7 @@
       {
         "@type": "WebApplication",
         "name": "作用素を回す",
-        "description": "Trinity-Infinity の三篇が扱う作用素 x ← DQx + (I−D)p を、ブラウザの中だけで反復する道具。スペクトル半径と作用素ノルムを別々に出し、収束の可否と誤差が単調に減衰するかを分けて判定する。三篇の議論が成り立たない領域では、リアプノフ方程式を解いて縮小写像になる重み付きノルムを構成し、その縮小定数と誤差の上界を出す。固有値は Householder 変換とシフト付き QR 法、特異値は Jacobi 回転、連立一次方程式は部分ピボット付き Gauss 消去、コレスキー分解も含めて、いずれも外部ライブラリを使わずに解いている。外部へのリクエストは無い。",
+        "description": "A tool that iterates the operator x ← DQx + (I−D)p from the three Trinity-Infinity papers entirely inside the browser. It reports the spectral radius and the operator norm separately, and judges convergence and monotone decay of the error as separate questions. Where the papers' argument does not hold, it solves the Lyapunov equation to construct a weighted norm in which the map contracts, and reports the contraction constant and the resulting error bound. Eigenvalues by Householder reduction and shifted QR, singular values by Jacobi rotation, linear systems by Gaussian elimination with partial pivoting, and Cholesky factorization — all without external libraries. No outbound requests. The interface is in Japanese.",
         "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/trinity.html",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Any",
@@ -389,7 +389,7 @@
       {
         "@type": "WebApplication",
         "name": "DOI アナライザー",
-        "description": "DOI の書式を検証し、接頭辞から登録者を推定し、CrossRef と DataCite に照会して BibTeX・CSL-JSON・CITATION.cff などに書き出す道具。文献リストを貼りこむと、含まれる DOI をすべて抽出する。読み込み時は外部へリクエストを出さない。",
+        "description": "A tool that validates DOI syntax, infers the registrant from the prefix, queries CrossRef and DataCite, and exports BibTeX, CSL-JSON, CITATION.cff and other formats. Paste a bibliography and it extracts every DOI in it. It makes no outbound request on load. The interface is in Japanese.",
         "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/doi.html",
         "applicationCategory": "ReferenceApplication",
         "operatingSystem": "Web",
