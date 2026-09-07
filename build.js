@@ -40,6 +40,15 @@ const DEFAULT_LABELS = {
   areas: '領域',
   papers: '論文',
   papersNote: '',
+  works: '制作物',
+  worksNote: '',
+  claim: '主張',
+  claimNote: '',
+  refute: 'どうすれば覆るか',
+  verification: '検証',
+  withdrawn: '撤回',
+  contact: '連絡',
+  contactNote: '批判と誤りの指摘を先に置きます。',
   links: 'リンク',
   verify: '確認',
   skip: '本文へスキップ',
@@ -139,7 +148,19 @@ ${body}
   </section>`;
 }
 
+/* 説明文に 1 つだけリンクを許す。DOI をまとめて解析する導線などに使う。 */
+function noteHtmlOf(n) { return typeof n === 'object' && n.html ? n.html : esc(n); }
+
 function renderPapers(papers, labels) {
+  return renderCards(papers, 'papers', labels.papers, labels.papersNote, labels);
+}
+
+/* 制作物。論文と同じカードの形で、節の id と見出しだけ変える。 */
+function renderWorks(works, labels) {
+  return renderCards(works, 'works', labels.works, labels.worksNote, labels);
+}
+
+function renderCards(papers, sectionId, heading, note, labels) {
   if (!papers.length) return '';
 
   const cards = papers
@@ -162,10 +183,10 @@ function renderPapers(papers, labels) {
   return `
   <hr class="rule">
 
-  <section id="papers" class="wrap block">
+  <section id="${esc(sectionId)}" class="wrap block">
     <div class="sec-head reveal">
-      <h2 class="serif">${esc(labels.papers)}</h2>
-      ${labels.papersNote ? `<p>${esc(labels.papersNote)}</p>` : ''}
+      <h2 class="serif">${esc(heading)}</h2>
+      ${note ? `<p>${noteHtmlOf(note)}</p>` : ''}
     </div>
 
     <div class="cards">
@@ -231,12 +252,206 @@ ${body}
   </section>`;
 }
 
+/* ------------------------------------------------------------------ *
+ * 主張
+ *
+ * 一つだけ出す。反証の手順まで書いていなければ、主張ではなく宣伝である。
+ * だから refute は必須で、無ければ節ごと出さない。
+ * ------------------------------------------------------------------ */
+function renderClaim(claim, labels) {
+  if (!claim || !claim.statement) return '';
+  if (!claim.refute) {
+    throw new Error('claim には refute（どうすれば覆るか）が要ります。'
+      + '反証の手順を書けない主張は、主張ではなく宣伝です。');
+  }
+  const rows = arr(claim.rows)
+    .map((r) => [
+      '        <div>',
+      `          <dt>${esc(r.term)}</dt>`,
+      `          <dd>${r.html || esc(r.text || '')}</dd>`,
+      '        </div>',
+    ].join('\n'))
+    .join('\n');
+
+  return `
+  <hr class="rule">
+
+  <section id="claim" class="wrap block">
+    <div class="sec-head reveal">
+      <h2 class="serif">${esc(labels.claim)}</h2>
+      ${labels.claimNote ? `<p>${esc(labels.claimNote)}</p>` : ''}
+    </div>
+
+    <div class="claim reveal">
+      <p class="claim-what">${claim.statementHtml || esc(claim.statement)}</p>
+
+      <dl class="claim-kv">
+${rows}
+        <div>
+          <dt>${esc(labels.refute)}</dt>
+          <dd>${claim.refuteHtml || esc(claim.refute)}</dd>
+        </div>
+      </dl>
+${claim.foot ? `\n      <p class="claim-foot">${claim.footHtml || esc(claim.foot)}</p>` : ''}
+    </div>
+  </section>`;
+}
+
+/* 検証 —— 何項目がどこで走るか。数だけ書いて中身が無いものは出さない。 */
+function renderVerification(v, labels) {
+  if (!v || !arr(v.items).length) return '';
+  const rows = arr(v.items)
+    .map((i) => [
+      '      <div class="fact">',
+      `        <dt>${esc(i.name)}</dt>`,
+      `        <dd>${i.html || esc(i.detail || '')}</dd>`,
+      '      </div>',
+    ].join('\n'))
+    .join('\n');
+  return `
+  <hr class="rule">
+
+  <section id="verification" class="wrap block">
+    <div class="sec-head reveal">
+      <h2 class="serif">${esc(labels.verification)}</h2>
+      ${v.note ? `<p>${esc(v.note)}</p>` : ''}
+    </div>
+
+    <div class="facts reveal">
+${rows}
+    </div>
+  </section>`;
+}
+
+/* 撤回 —— 消さずに残す。空で出すことはしない。 */
+function renderWithdrawn(w, labels) {
+  if (!w || !arr(w.items).length) return '';
+  const rows = arr(w.items)
+    .map((i) => [
+      '      <div class="fact">',
+      `        <dt>${esc(i.name)}</dt>`,
+      `        <dd>${i.html || esc(i.detail || '')}</dd>`,
+      '      </div>',
+    ].join('\n'))
+    .join('\n');
+  return `
+  <hr class="rule">
+
+  <section id="withdrawn" class="wrap block">
+    <div class="sec-head reveal">
+      <h2 class="serif">${esc(labels.withdrawn)}</h2>
+      ${w.note ? `<p>${esc(w.note)}</p>` : ''}
+    </div>
+
+    <div class="facts reveal">
+${rows}
+    </div>
+${w.recordUrl ? `
+    <p class="hint reveal"><a href="${esc(w.recordUrl)}"${linkAttrs(w.recordUrl)}>${esc(w.recordLabel || w.recordUrl)}</a></p>` : ''}
+  </section>`;
+}
+
+/* 連絡先 —— 批判と誤りの指摘を先に置く。順序は設定ではなく、ここで固定する。 */
+function renderContact(c, labels) {
+  if (!c) return '';
+  if (!c.criticism) {
+    throw new Error('contact には criticism（批判・誤りの指摘の宛先）が要ります。'
+      + 'それを先に書かない連絡先は置きません。');
+  }
+  const others = arr(c.others)
+    .map((o) => [
+      '      <div class="fact">',
+      `        <dt>${esc(o.name)}</dt>`,
+      `        <dd>${o.html || esc(o.detail || '')}</dd>`,
+      '      </div>',
+    ].join('\n'))
+    .join('\n');
+  return `
+  <hr class="rule">
+
+  <section id="contact" class="wrap block">
+    <div class="sec-head reveal">
+      <h2 class="serif">${esc(labels.contact)}</h2>
+      <p>${esc(labels.contactNote)}</p>
+    </div>
+
+    <div class="claim reveal">
+      <p class="claim-what">${c.criticismHtml || esc(c.criticism)}</p>
+    </div>
+${others ? `
+    <div class="facts reveal">
+${others}
+    </div>` : ''}
+  </section>`;
+}
+
+/* 自由記述の節。トップに一つだけ置く導線などに使う。 */
+function renderProse(b, labels) {
+  if (!b || !b.html) return '';
+  return `
+  <hr class="rule">
+
+  <section id="${esc(b.id || 'prose')}" class="wrap block">
+${b.anchors ? '    ' + arr(b.anchors).map((a) => `<span id="${esc(a)}"></span>`).join('') + '\n' : ''}    <div class="sec-head reveal">
+      <h2 class="serif">${esc(b.title)}</h2>
+      ${b.note ? `<p>${b.noteHtml || esc(b.note)}</p>` : ''}
+    </div>
+    <div class="${esc(b.class || 'notes-list')} reveal">${b.html}</div>
+  </section>`;
+}
+
+/* 節をどの順に出すか。既定は履歴書の形（修了証が先）。
+ * sections を書けば、その順に並ぶ。書かれていない節は出ない。 */
+const SECTION_ORDER_DEFAULT = ['credentials', 'areas', 'papers', 'links'];
+
+function renderSections(profile, labels) {
+  const order = arr(profile.sections).length ? arr(profile.sections) : SECTION_ORDER_DEFAULT;
+  const known = {
+    credentials: () => renderCredentials(arr(profile.credentials), labels),
+    areas: () => renderAreas(arr(profile.areas), labels),
+    papers: () => renderPapers(arr(profile.papers), labels),
+    works: () => renderWorks(arr(profile.works), labels),
+    links: () => renderLinks(arr(profile.links), labels),
+    claim: () => renderClaim(profile.claim, labels),
+    verification: () => renderVerification(profile.verification, labels),
+    withdrawn: () => renderWithdrawn(profile.withdrawn, labels),
+    contact: () => renderContact(profile.contact, labels),
+  };
+  return order.map((name) => {
+    if (known[name]) return known[name]();
+    const b = arr(profile.blocks).find((x) => x.id === name);
+    if (b) return renderProse(b, labels);
+    throw new Error('sections に知らない節があります: ' + name);
+  }).filter(Boolean).join('\n');
+}
+
 function renderNav(profile, labels) {
+  /* ナビは節の順に従う。ページの並びとナビの並びが食い違うのを防ぐ。 */
+  const order = arr(profile.sections).length ? arr(profile.sections) : SECTION_ORDER_DEFAULT;
+  const has = {
+    credentials: () => arr(profile.credentials).length,
+    areas: () => arr(profile.areas).length,
+    papers: () => arr(profile.papers).length,
+    works: () => arr(profile.works).length,
+    links: () => arr(profile.links).length,
+    claim: () => !!(profile.claim && profile.claim.statement),
+    verification: () => !!(profile.verification && arr(profile.verification.items).length),
+    withdrawn: () => !!(profile.withdrawn && arr(profile.withdrawn.items).length),
+    contact: () => !!profile.contact,
+  };
   const items = [];
-  if (arr(profile.credentials).length) items.push(`<a href="#credentials">${esc(labels.credentials)}</a>`);
-  if (arr(profile.areas).length) items.push(`<a href="#areas">${esc(labels.areas)}</a>`);
-  if (arr(profile.papers).length) items.push(`<a href="#papers">${esc(labels.papers)}</a>`);
-  if (arr(profile.links).length) items.push(`<a href="#links">${esc(labels.links)}</a>`);
+  order.forEach((name) => {
+    if (has[name]) {
+      if (has[name]()) items.push(`<a href="#${name}">${esc(labels[name] || name)}</a>`);
+      return;
+    }
+    const b = arr(profile.blocks).find((x) => x.id === name);
+    if (b && b.nav !== false) items.push(`<a href="#${esc(b.id)}">${esc(b.title)}</a>`);
+  });
+  /* 手で書いたページへの導線。生成の対象外なので、設定から足す。 */
+  arr(profile.extraNav).forEach((n) => {
+    items.push(`<a href="${esc(n.url)}">${esc(n.name)}</a>`);
+  });
   return items.map((i) => `      ${i}`).join('\n');
 }
 
@@ -307,10 +522,11 @@ function build() {
     .replace(/{{NAME_LATIN}}/g, profile.nameLatin ? `    <p class="romaji reveal">${esc(profile.nameLatin)}</p>` : '')
     .replace(/{{IDENTIFIERS}}/g, renderIdentifiers(arr(profile.identifiers)))
     .replace(/{{TAGLINE}}/g, profile.tagline ? `    <p class="lead reveal">${esc(profile.tagline)}</p>` : '')
-    .replace(/{{CREDENTIALS}}/g, renderCredentials(arr(profile.credentials), labels))
-    .replace(/{{AREAS}}/g, renderAreas(arr(profile.areas), labels))
-    .replace(/{{PAPERS}}/g, renderPapers(arr(profile.papers), labels))
-    .replace(/{{LINKS}}/g, renderLinks(arr(profile.links), labels))
+    .replace(/{{SECTIONS}}/g, renderSections(profile, labels))
+    .replace(/{{JSONLD}}/g, profile.jsonld
+      ? '<script type="application/ld+json">\n'
+        + JSON.stringify(profile.jsonld, null, 2) + '\n</script>\n'
+      : '')
     .replace(/{{FOOTER}}/g, esc(profile.footer || ''))
     .replace(/{{SKIP}}/g, esc(labels.skip))
     .replace(/{{THEME_TOGGLE}}/g, esc(labels.themeToggle));

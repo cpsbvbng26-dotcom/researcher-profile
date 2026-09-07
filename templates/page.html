@@ -13,7 +13,7 @@
 {{CANONICAL}}
 {{OG_IMAGE}}
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#faf9f7">
+{{JSONLD}}<meta name="theme-color" content="#faf9f7">
 <style>
 :root {
   --bg: #faf9f7;
@@ -22,9 +22,13 @@
   --muted: #63636b;
   --faint: #9a9aa2;
   --line: #e6e4df;
-  --line-soft: #efedea;
-  --accent: {{ACCENT}};
-  --accent-soft: rgba(0, 0, 0, .05);
+  --line-soft: #efedE9;
+  --accent: #8a6a3d;
+  --accent-soft: rgba(138, 106, 61, .10);
+  --wall: #221f26;                          /* 城壁の石。火を遮るので不透明 */
+  --ember: rgba(118, 20, 14, .78);          /* 狭間から漏れる火 */
+  --wall-bg: rgba(28, 26, 30, .06);
+  --stone: rgba(23, 23, 26, .30);           /* 石の継ぎ目 */
   --header-bg: rgba(250, 249, 247, .86);
   --shadow: 0 18px 40px -28px rgba(23, 23, 26, .45);
 }
@@ -37,8 +41,12 @@
   --faint: #6a6a72;
   --line: #2a2a2d;
   --line-soft: #232326;
-  --accent: {{ACCENT_DARK}};
-  --accent-soft: rgba(255, 255, 255, .06);
+  --accent: #b08d57;
+  --accent-soft: rgba(176, 141, 87, .14);
+  --wall: #08070a;
+  --ember: rgba(232, 74, 42, .62);
+  --wall-bg: rgba(0, 0, 0, .35);
+  --stone: rgba(236, 236, 238, .16);
   --header-bg: rgba(18, 18, 20, .86);
   --shadow: 0 18px 40px -28px rgba(0, 0, 0, .8);
 }
@@ -64,13 +72,26 @@ body {
 }
 
 .wrap { max-width: 54rem; margin: 0 auto; padding: 0 1.5rem; }
+
 a { color: inherit; }
 
+/* ---------- ヘッダー ---------- */
 header {
   position: sticky; top: 0; z-index: 20;
   background: var(--header-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
+}
+
+/* 頭上から牙が下りている —— 落とし格子の内側。 */
+header::after {
+  content: ""; display: block; height: 13px;
+  background-image:
+    conic-gradient(from 225deg at 50% 100%, var(--wall) 0 90deg, transparent 0),
+    linear-gradient(to bottom, var(--ember) 0%, transparent 76%);
+  background-size: 24px 13px, 100% 100%;
+  background-position: 0 0, 0 0;
+  background-repeat: repeat-x, no-repeat;
 }
 .head-row {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
@@ -84,7 +105,8 @@ header {
 .nav { display: flex; align-items: center; gap: 1.5rem; }
 .nav a {
   font-size: .82rem; color: var(--muted); text-decoration: none;
-  letter-spacing: .04em; white-space: nowrap; transition: color .15s;
+  letter-spacing: .04em; white-space: nowrap;
+  transition: color .15s;
 }
 .nav a:hover { color: var(--text); }
 
@@ -92,12 +114,15 @@ header {
   width: 2rem; height: 2rem; flex: none;
   display: grid; place-items: center;
   font: inherit; font-size: .9rem; line-height: 1; cursor: pointer;
-  color: var(--muted); background: transparent;
-  border: 1px solid var(--line); border-radius: 999px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
   transition: color .15s, border-color .15s, background-color .15s;
 }
 .theme-toggle:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
 
+/* ---------- ヒーロー ---------- */
 .hero { padding: 6rem 0 4rem; }
 .eyebrow {
   font-size: .72rem; letter-spacing: .28em; text-transform: uppercase;
@@ -107,18 +132,18 @@ header {
   margin: 0 0 .5rem;
   font-size: clamp(2.4rem, 7vw, 3.6rem);
   font-weight: 600; letter-spacing: .04em; line-height: 1.3;
-  text-wrap: balance;
 }
 .hero .romaji {
   margin: 0 0 .9rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem; letter-spacing: .22em; color: var(--faint);
 }
-.ident { margin: 0 0 .6rem; font-size: .8rem; letter-spacing: .04em; }
-.ident:last-of-type { margin-bottom: 2rem; }
+
+.ident { margin: 0 0 2rem; font-size: .8rem; letter-spacing: .04em; }
 .ident .label {
-  font-family: Georgia, serif; letter-spacing: .18em;
-  color: var(--accent); margin-right: .7rem;
+  font-family: Georgia, serif;
+  letter-spacing: .18em; color: var(--accent);
+  margin-right: .7rem;
 }
 .ident a {
   color: var(--muted); text-decoration: none;
@@ -126,24 +151,109 @@ header {
   transition: color .15s, border-color .15s;
 }
 .ident a:hover { color: var(--accent); border-color: var(--accent); }
-.hero p.lead { margin: 0; max-width: 34rem; color: var(--muted); font-size: 1rem; text-wrap: pretty; }
 
-.rule { height: 1px; background: var(--line); margin: 0; border: 0; }
+.hero p.lead {
+  margin: 0; max-width: 34rem;
+  color: var(--muted); font-size: 1rem;
+}
 
+/* ---------- 事実の欄 ----------
+   ヒーローで、数えられる事実と、著者自身の解釈を分けて置く。
+   混ぜると、どちらも検証できないものになる。 */
+.facts { margin: 1.8rem 0 0; max-width: 38rem; display: grid; gap: 0; }
+.facts .fact {
+  display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem;
+  padding: .55rem 0; border-bottom: 1px solid var(--line-soft);
+}
+.facts dt { margin: 0; font-size: .74rem; letter-spacing: .1em; color: var(--faint); padding-top: .2rem; }
+.facts dd { margin: 0; font-size: .86rem; line-height: 1.85; color: var(--muted); }
+.facts dd b { color: var(--text); }
+.facts dd a { color: var(--accent); }
+.facts .faint { color: var(--faint); }
+
+/* ---------- 主張 ----------
+   一つだけ出す。反証の手順まで書いていなければ、主張ではなく宣伝である。 */
+.claim {
+  max-width: 42rem;
+  padding: 1.5rem 1.6rem;
+  background: var(--wall-bg);
+  border-left: 3px solid var(--ember);
+  border-radius: 0 .5rem .5rem 0;
+}
+.claim-what { margin: 0 0 1.4rem; font-size: .95rem; line-height: 1.95; }
+.claim-what code, .claim-kv code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .92em; color: var(--text);
+}
+.claim-kv { margin: 0; display: grid; gap: 0; }
+.claim-kv > div {
+  display: grid; grid-template-columns: 9rem 1fr; gap: 1rem;
+  padding: .75rem 0; border-top: 1px solid var(--line);
+}
+.claim-kv dt { margin: 0; font-size: .76rem; letter-spacing: .08em; color: var(--faint); padding-top: .25rem; }
+.claim-kv dd { margin: 0; font-size: .85rem; line-height: 1.9; color: var(--muted); }
+.claim-kv dd b { color: var(--text); }
+.claim-kv dd a { color: var(--accent); }
+.claim-kv dd .faint { color: var(--faint); }
+.claim-foot {
+  margin: 1.3rem 0 0; padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: .82rem; line-height: 1.85; color: var(--faint);
+}
+
+@media (max-width: 40rem) {
+  .facts .fact, .claim-kv > div { grid-template-columns: 1fr; gap: .15rem; }
+}
+
+/* ---------- ノートへの導線 ----------
+   核に置かなかったものは、消さずにここから辿れる。 */
+.notes-list { max-width: 42rem; }
+.notes-list p {
+  margin: 0; padding: .85rem 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: .88rem; line-height: 1.8;
+}
+.notes-list a { color: var(--accent); text-decoration: none; }
+.notes-list a:hover { text-decoration: underline; }
+.notes-list span {
+  display: block; margin-top: .15rem;
+  font-size: .78rem; color: var(--faint);
+}
+
+/* 仕切りは胸壁 —— 狭間を切った上端と壁体。石は不透明で火を遮り、
+   狭間の隙間からだけ下の火が漏れる。画像は使わない。 */
+.rule {
+  height: 34px; margin: 0; border: 0;
+  background-image:
+    repeating-linear-gradient(90deg, var(--wall) 0 27px, transparent 27px 52px),
+    linear-gradient(var(--wall), var(--wall)),
+    linear-gradient(to bottom, var(--ember) 0%, var(--ember) 46%, transparent 74%);
+  background-size: 52px 22px, 100% 12px, 100% 100%;
+  background-position: 0 0, 0 22px, 0 0;
+  background-repeat: repeat-x, repeat-x, no-repeat;
+}
+
+/* ---------- セクション ---------- */
 section.block { padding: 4.5rem 0; }
 .sec-head { margin-bottom: 2.5rem; }
-.sec-head h2 { margin: 0 0 .4rem; font-size: 1.4rem; font-weight: 600; letter-spacing: .06em; }
+.sec-head h2 {
+  margin: 0 0 .4rem;
+  font-size: 1.4rem; font-weight: 600; letter-spacing: .06em;
+}
 .sec-head p { margin: 0; font-size: .85rem; color: var(--faint); }
 
+/* ---------- 修了証 ---------- */
 .group + .group { margin-top: 2.5rem; }
 .group-name {
   display: flex; align-items: center; gap: .9rem;
   font-size: .74rem; letter-spacing: .2em; color: var(--faint);
-  text-transform: uppercase; margin-bottom: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
 }
 .group-name::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
 .cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+
 .cert {
   display: flex; flex-direction: column; gap: .55rem;
   padding: 1.5rem;
@@ -153,26 +263,67 @@ section.block { padding: 4.5rem 0; }
   text-decoration: none;
   transition: transform .2s, border-color .2s, box-shadow .2s;
 }
-a.cert:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); }
-.cert .code { font-family: Georgia, serif; font-size: .7rem; letter-spacing: .14em; color: var(--accent); }
-.cert h3 { margin: 0; font-size: 1.02rem; font-weight: 600; line-height: 1.6; }
+.cert:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+.cert .code {
+  font-family: Georgia, serif;
+  font-size: .7rem; letter-spacing: .14em; color: var(--accent);
+}
+.cert h3 {
+  margin: 0; font-size: 1.02rem; font-weight: 600; line-height: 1.6;
+  letter-spacing: .01em;
+}
 .cert .issuer { font-size: .8rem; color: var(--muted); margin: 0; }
-.cert .alt { margin: 0; font-size: .76rem; line-height: 1.7; color: var(--faint); }
-.cert .doi { margin: 0; font-family: Georgia, serif; font-size: .72rem; letter-spacing: .08em; color: var(--accent); }
-.cert .verify { margin-top: .35rem; font-size: .74rem; letter-spacing: .06em; color: var(--faint); transition: color .2s; }
-a.cert:hover .verify { color: var(--accent); }
-.cert .verify::after { content: " \2192"; }
+.cert .alt {
+  margin: 0;
+  font-size: .76rem; line-height: 1.7; color: var(--faint);
+}
+.cert .when {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: .74rem; letter-spacing: .1em; color: var(--faint);
+}
+.cert .doi {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: .72rem; letter-spacing: .08em;
+  color: var(--accent);
+}
 
+.sec-head .go {
+  display: inline-block; margin-left: .6rem;
+  font-size: .8rem; color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s;
+}
+.sec-head .go:hover { border-bottom-color: var(--accent); }
+.sec-head .go::after { content: " →"; }
+
+.cert .verify {
+  margin-top: .35rem;
+  font-size: .74rem; letter-spacing: .06em; color: var(--faint);
+  transition: color .2s;
+}
+.cert:hover .verify { color: var(--accent); }
+.cert .verify::after { content: " →"; }
+
+/* ---------- 学習領域 ---------- */
 .areas { display: grid; gap: 0; }
 .area {
-  display: grid; gap: .3rem 2rem; grid-template-columns: 1fr;
-  padding: 1.5rem 0; border-top: 1px solid var(--line-soft);
+  display: grid; gap: .3rem 2rem;
+  grid-template-columns: 1fr;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line-soft);
 }
 .area:last-child { border-bottom: 1px solid var(--line-soft); }
 @media (min-width: 40rem) { .area { grid-template-columns: 13rem 1fr; } }
 .area h3 { margin: 0; font-size: .95rem; font-weight: 600; letter-spacing: .04em; }
 .area p { margin: 0; font-size: .9rem; color: var(--muted); }
 
+/* ---------- リンク ---------- */
 .links { display: flex; flex-wrap: wrap; gap: .75rem; }
 .link {
   display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: .2rem .6rem;
@@ -185,12 +336,45 @@ a.cert:hover .verify { color: var(--accent); }
 .link:hover { border-color: var(--accent); background: var(--accent-soft); }
 .link span { font-size: .72rem; color: var(--faint); letter-spacing: .08em; }
 
-footer { border-top: 1px solid var(--line); margin-top: 2rem; }
+/* ---------- フッター ---------- */
+footer { border-top: 1px solid var(--line); margin-top: 2rem; position: relative; }
+
+/* 基壇の粗い石積み。火は狭間と牙だけに置き、ここは石だけで重くする。
+   上下の段を半分ずらし、周期の違う三枚目を重ねて割付けの規則性を崩す。 */
+footer::before {
+  content: ""; display: block; height: 46px;
+  background-image:
+    repeating-linear-gradient(90deg, var(--stone) 0 2px, transparent 2px 68px),
+    repeating-linear-gradient(90deg, var(--stone) 0 2px, transparent 2px 68px),
+    repeating-linear-gradient(90deg, var(--stone) 0 2px, transparent 2px 109px),
+    linear-gradient(var(--stone), var(--stone)),
+    linear-gradient(to bottom, var(--wall-bg), transparent 70%);
+  background-size: 68px 23px, 68px 23px, 109px 46px, 100% 2px, 100% 100%;
+  background-position: 0 0, 34px 23px, 19px 0, 0 22px, 0 0;
+  background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, no-repeat;
+}
 .foot {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: 1rem; padding: 2.5rem 0; font-size: .74rem; color: var(--faint);
+  gap: 1rem; padding: 2.5rem 0;
+  font-size: .74rem; color: var(--faint);
 }
+.built-with {
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .35rem .85rem;
+  font-size: .72rem; color: var(--muted); text-decoration: none;
+  border: 1px solid var(--line); border-radius: 999px;
+  transition: border-color .15s, color .15s, background-color .15s;
+}
+.built-with:hover { color: var(--text); border-color: #d97757; background: rgba(217, 119, 87, .08); }
+.built-with .dot { width: .45rem; height: .45rem; flex: none; border-radius: 50%; background: #d97757; }
 
+/* Grok の表示。以前は theme.js が実行時に <style> を注入していたが、
+   CSP の style-src が動的な <style> を拒むため、ここに置く。 */
+.built-with.grok:hover { border-color: #4b5563; background: rgba(75, 85, 99, .08); }
+.built-with.grok .dot { background: #4b5563; }
+.built-with-row { display: inline-flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+
+/* ---------- 登場演出 ---------- */
 .reveal {
   opacity: 0; transform: translateY(12px);
   transition: opacity .7s cubic-bezier(.22, .68, .28, 1), transform .7s cubic-bezier(.22, .68, .28, 1);
@@ -198,33 +382,56 @@ footer { border-top: 1px solid var(--line); margin-top: 2rem; }
 }
 .reveal.is-visible { opacity: 1; transform: none; }
 
+/* 登場の時間差。以前は JS で --i を書き込んでいたが、CSP の style-src が
+   インラインの style 適用を拒むため、CSS だけで与える。JS も一つ減る。 */
+.cards > *:nth-child(1), .areas > *:nth-child(1) { --i: 0; }
+.cards > *:nth-child(2), .areas > *:nth-child(2) { --i: 1; }
+.cards > *:nth-child(3), .areas > *:nth-child(3) { --i: 2; }
+.cards > *:nth-child(4), .areas > *:nth-child(4) { --i: 3; }
+.cards > *:nth-child(5), .areas > *:nth-child(5) { --i: 4; }
+.cards > *:nth-child(6), .areas > *:nth-child(6) { --i: 5; }
+.cards > *:nth-child(7), .areas > *:nth-child(7) { --i: 6; }
+.cards > *:nth-child(8), .areas > *:nth-child(8) { --i: 7; }
+.cards > *:nth-child(9), .areas > *:nth-child(9) { --i: 8; }
+.cards > *:nth-child(10), .areas > *:nth-child(10) { --i: 9; }
+.cards > *:nth-child(11), .areas > *:nth-child(11) { --i: 10; }
+.cards > *:nth-child(12), .areas > *:nth-child(12) { --i: 11; }
+
+
 :where(a, button, [tabindex]):focus-visible {
-  outline: 2px solid var(--accent); outline-offset: 3px; border-radius: .3rem;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: .3rem;
 }
+
 .skip-link {
   position: absolute; left: 1rem; top: -3rem; z-index: 50;
   padding: .55rem 1rem;
   color: var(--bg); background: var(--text);
-  text-decoration: none; font-size: .82rem; border-radius: .5rem;
+  text-decoration: none; font-size: .82rem;
+  border-radius: .5rem;
   transition: top .15s;
 }
 .skip-link:focus { top: 1rem; }
 
+/* 項目が 1 行に収まらない幅では、ナビを折り返して見切れを防ぐ */
 @media (max-width: 30rem) {
-  .nav { gap: .85rem; }
-  .nav a { font-size: .74rem; }
+  .head-row { flex-wrap: wrap; align-items: flex-start; row-gap: .55rem; }
+  .nav { width: 100%; flex-wrap: wrap; justify-content: flex-start; gap: .95rem; }
+  .nav a { font-size: .76rem; }
   .wrap { padding: 0 1.1rem; }
 }
+
 @media (max-width: 22rem) {
-  .nav { gap: .55rem; }
-  .nav a { font-size: .7rem; letter-spacing: 0; }
+  .nav { gap: .7rem; }
+  .nav a { font-size: .72rem; letter-spacing: 0; }
   .wrap { padding: 0 .9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
-  a.cert:hover { transform: none; }
+  .cert:hover { transform: none; }
 }
 
 @media print {
@@ -259,10 +466,7 @@ footer { border-top: 1px solid var(--line); margin-top: 2rem; }
 {{IDENTIFIERS}}
 {{TAGLINE}}
   </section>
-{{CREDENTIALS}}
-{{AREAS}}
-{{PAPERS}}
-{{LINKS}}
+{{SECTIONS}}
 </main>
 
 <footer>

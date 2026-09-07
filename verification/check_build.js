@@ -26,6 +26,11 @@ function ok(label, cond, detail) {
   failures.push(label);
 }
 function section(n) { console.log('\n' + n); }
+function eq(label, got, want) {
+  const g = JSON.stringify(got), w = JSON.stringify(want);
+  ok(label, g === w, '期待 ' + w + ' / 実際 ' + g);
+}
+
 
 /* ------------------------------------------------------- 1. profile.json */
 section('1. profile.json');
@@ -170,6 +175,82 @@ ok('自動で外部を取りに行く要素が無い', external.length === 0, ex
 /* 空のリンクは、設定の欄が空だったときに出る */
 ok('href が空のリンクが無い', !/href=""/.test(html));
 
+
+/* --------------------------------------- 新しい節と、節の順序 */
+section('新しい節と節の順序');
+
+const { execFileSync } = require('child_process');
+const os = require('os');
+
+function buildWith(cfg, name) {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'rp-' + name + '-'));
+  const cfgPath = path.join(dir, 'c.json');
+  fs.writeFileSync(cfgPath, JSON.stringify(cfg));
+  execFileSync(process.execPath, [path.join(ROOT, 'build.js')], {
+    env: { ...process.env, PROFILE_CONFIG: cfgPath, PROFILE_OUT: dir },
+    stdio: 'pipe',
+  });
+  return fs.readFileSync(path.join(dir, 'index.html'), 'utf8');
+}
+
+function buildFails(cfg) {
+  try { buildWith(cfg, 'fail'); return null; }
+  catch (e) { return String(e.stderr || e.message); }
+}
+
+const BASE = { name: '試験', initials: 'T' };
+
+/* sections に書いた順に並ぶこと。既定は履歴書の形のままであること。 */
+(() => {
+  const html = buildWith({
+    ...BASE,
+    sections: ['claim', 'verification', 'withdrawn', 'papers', 'contact'],
+    claim: { statement: 'S', refute: 'R' },
+    verification: { items: [{ name: 'V', detail: 'd' }] },
+    withdrawn: { items: [{ name: 'W', detail: 'd' }] },
+    papers: [{ title: 'P' }],
+    contact: { criticism: 'C' },
+  }, 'order');
+  const ids = [...html.matchAll(/<section id="([a-z]+)"/g)].map((m) => m[1]);
+  eq('sections の順に節が並ぶ', ids,
+     ['claim', 'verification', 'withdrawn', 'papers', 'contact']);
+  const nav = [...html.matchAll(/<a href="#([a-z]+)">/g)].map((m) => m[1]);
+  eq('ナビも同じ順になる', nav,
+     ['claim', 'verification', 'withdrawn', 'papers', 'contact']);
+})();
+
+(() => {
+  const html = buildWith({ ...BASE, credentials: [{ name: 'g', items: [{ title: 't' }] }],
+                           papers: [{ title: 'p' }] }, 'default');
+  const ids = [...html.matchAll(/<section id="([a-z]+)"/g)].map((m) => m[1]);
+  eq('sections を書かなければ既定の順のまま', ids, ['credentials', 'papers']);
+})();
+
+/* 反証の手順を書けない主張は、主張ではなく宣伝である。生成を止める。 */
+ok('refute の無い claim は生成が止まる',
+   /refute/.test(buildFails({ ...BASE, sections: ['claim'], claim: { statement: 'S' } }) || ''));
+ok('criticism の無い contact は生成が止まる',
+   /criticism/.test(buildFails({ ...BASE, sections: ['contact'], contact: {} }) || ''));
+ok('知らない節名は生成が止まる',
+   /知らない節/.test(buildFails({ ...BASE, sections: ['nonesuch'] }) || ''));
+
+/* 連絡先は、批判の宛先が他の項目より前にあること。 */
+(() => {
+  const html = buildWith({
+    ...BASE, sections: ['contact'],
+    contact: { criticism: 'まず誤りの指摘を', others: [{ name: 'その他', detail: 'あと' }] },
+  }, 'contact');
+  ok('批判の宛先が他の連絡先より前にある',
+     html.indexOf('まず誤りの指摘を') < html.indexOf('あと'));
+})();
+
+/* JSON-LD をそのまま通すこと。 */
+(() => {
+  const html = buildWith({ ...BASE, jsonld: { '@context': 'https://schema.org', '@type': 'Person' } }, 'ld');
+  ok('jsonld が出力に入る', /<script type="application\/ld\+json">/.test(html));
+  ok('CSP がその script を許している',
+     (html.match(/sha256-/g) || []).length >= 1);
+})();
 
 /* --------------------------------------------------- 3. CSP */
 section('3. Content-Security-Policy');
