@@ -87,7 +87,7 @@
     ]
   },
   "withdrawn": {
-    "note": "改訂前の草稿が主張していて、改訂版に残らなかったものです。<b>消していません。</b>",
+    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（32 件）</a> にあります。",
     "items": [
       {
         "name": "収束定理の原型",
@@ -112,10 +112,22 @@
       {
         "name": "検証スクリプト",
         "detail": "三篇が六箇所で同梱を謳っているが、存在しない（著者確認済み）"
+      },
+      {
+        "name": "初稿の出所",
+        "detail": "記号 Ⅲ∞ に数式を当てはめたのは言語モデル。三篇のどこにも書かれていない"
+      },
+      {
+        "name": "英訳",
+        "detail": "哲学三篇と史料ノートの英文は AI による翻訳。開示文に書かれていない"
+      },
+      {
+        "name": "引用した原典",
+        "detail": "著者は当たっていない。39 冊、まだ一冊も読んでいない"
       }
     ],
     "recordUrl": "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md",
-    "recordLabel": "正誤の記録 —— ERRATA.md"
+    "recordLabel": "三篇の正誤の記録 —— ERRATA.md"
   },
   "papers": [
     {
@@ -428,7 +440,7 @@
     "claimNote": "この場所でいちばん確かめやすい主張を一つ出します。同意も反証も、手元で試せます。",
     "refute": "どうすれば覆るか",
     "verification": "検証",
-    "withdrawn": "撤回",
+    "withdrawn": "撤回と、直せなかったこと",
     "papers": "論文",
     "papersNote": {
       "html": "Trinity-Infinity Series I–III。<strong>この三篇が監査の対象です。</strong>査読は受けていません。三篇が収束の条件として置いた仮定は必要以上に強く、そのことは <a href=\"./trinity.html\">作用素のページ</a> でその場で確かめられます。"

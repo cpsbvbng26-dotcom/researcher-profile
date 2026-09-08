@@ -58,7 +58,7 @@
       },
       {
         "name": "31 checks on the register",
-        "html": "The shape and history of the correction record itself. <strong>32 entries</strong> across five statuses, <strong>21 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>27 can be checked by anyone against a frozen artifact; the remaining 5 rest on the author\u2019s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+        "html": "The shape and history of the correction record itself. <strong>32 entries</strong> across five statuses, <strong>21 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>27 can be checked by anyone against a frozen artifact; the remaining 5 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
         "name": "31 printed numbers",
@@ -87,7 +87,7 @@
     ]
   },
   "withdrawn": {
-    "note": "Claims the earlier drafts made that did not survive revision. <b>None of it has been deleted.</b>",
+    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (32 entries)</a>.",
     "items": [
       {
         "name": "The original theorem",
@@ -112,10 +112,22 @@
       {
         "name": "The verification scripts",
         "detail": "The three papers promise one in six places. None of them exists (confirmed with the author)"
+      },
+      {
+        "name": "Where the first draft came from",
+        "detail": "A language model fitted the mathematics to the symbol Ⅲ∞. None of the three papers says so"
+      },
+      {
+        "name": "The English text",
+        "detail": "The philosophy papers and the source note were machine-translated. The disclosures do not say so"
+      },
+      {
+        "name": "The cited primary sources",
+        "detail": "The author has not consulted them. 39 books, none read yet"
       }
     ],
     "recordUrl": "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md",
-    "recordLabel": "The errata record — ERRATA.md"
+    "recordLabel": "Errata for the three papers — ERRATA.md"
   },
   "papers": [
     {
@@ -428,7 +440,7 @@
     "claimNote": "One claim, chosen because it is the easiest thing here to check. Agreeing or refuting it takes a browser.",
     "refute": "What would refute it",
     "verification": "Verification",
-    "withdrawn": "Withdrawn",
+    "withdrawn": "Withdrawn, and unfixable",
     "papers": "Papers",
     "papersNote": {
       "html": "Trinity-Infinity Series I–III. <strong>These three are what the audit was applied to.</strong> They have not been peer reviewed. The condition the papers impose for convergence is stronger than it needs to be, and that can be checked on <a href=\"./trinity.html\">the operator page</a>."
