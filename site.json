@@ -37,7 +37,7 @@
       },
       {
         "term": "証拠",
-        "html": "三篇が検証スクリプトの同梱を謳っている箇所を、<strong>三箇所だと思っていました。数え直すと六箇所ありました。</strong>見つけたのは目視ではなく機械です。正誤表そのものへの検査 76 項目、道具自身への 68 項目。道具は、通る状態を <strong>26 通りに壊して、壊した箇所がちょうど落ちること</strong>を確かめています。"
+        "html": "三篇が検証スクリプトの同梱を謳っている箇所を、<strong>三箇所だと思っていました。数え直すと六箇所ありました。</strong>見つけたのは目視ではなく機械です。正誤表そのものへの検査 77 項目、道具自身への 68 項目。道具は、通る状態を <strong>26 通りに壊して、壊した箇所がちょうど落ちること</strong>を確かめています。"
       }
     ],
     "refuteHtml": "<b>(1)</b> この検査を通ったのに、正誤表が一次資料とずれている例を一つ出してください。<b>(2)</b> あるいは、宣言どおりに壊しても落ちない検査を一つ示してください。どちらも一件で覆ります。宣言の書き方と壊し方は <a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a> にあります。",
@@ -49,8 +49,8 @@
     "note": "何をどこで、どれだけ当たっているか。すべて push のたびに CI で走ります。上の三つが核にあたるものです。",
     "items": [
       {
-        "name": "正誤表の監査 193",
-        "html": "凍結された四つの成果物すべてに、同じ監査を当てる。Trinity-Infinity の三篇に 76、哲学の三篇に 77、海軍公報の史料ノートに 40。引用が一字一句あるか、「印字されていない」と述べたものが本当に無いか、未解決の項目が「解決済み」に書き換わっていないか、PDF そのものが差し替わっていないか（<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>）"
+        "name": "正誤表の監査 194",
+        "html": "凍結された四つの成果物すべてに、同じ監査を当てる。Trinity-Infinity の三篇に 77、哲学の三篇に 77、海軍公報の史料ノートに 40。引用が一字一句あるか、「印字されていない」と述べたものが本当に無いか、未解決の項目が「解決済み」に書き換わっていないか、PDF そのものが差し替わっていないか（<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>）"
       },
       {
         "name": "道具自身 68",
@@ -58,7 +58,7 @@
       },
       {
         "name": "登録簿 31",
-        "html": "訂正の記録そのものの形と履歴。<strong>35 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 22 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。<strong>第三者が確かめられるのは 30 件で、残る 5 件は著者の証言しか根拠が無い</strong>ことも欄にしてある。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
+        "html": "訂正の記録そのものの形と履歴。<strong>36 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 22 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。<strong>第三者が確かめられるのは 31 件で、残る 5 件は著者の証言しか根拠が無い</strong>ことも欄にしてある。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
       },
       {
         "name": "紙面の数値 31",
@@ -87,7 +87,7 @@
     ]
   },
   "withdrawn": {
-    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（35 件）</a> にあります。",
+    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（36 件）</a> にあります。",
     "items": [
       {
         "name": "収束定理の原型",
