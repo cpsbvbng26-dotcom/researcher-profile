@@ -142,6 +142,11 @@
           "url": "https://orcid.org/0009-0000-1406-0547"
         },
         {
+          "name": "OpenAlex",
+          "note": "A5133339711",
+          "url": "https://openalex.org/A5133339711"
+        },
+        {
           "name": "Google Scholar",
           "note": "論文データベース",
           "url": "https://scholar.google.com/citations?user=_HEl3dYAAAAJ&hl=ja"
