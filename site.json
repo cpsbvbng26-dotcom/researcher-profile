@@ -69,7 +69,7 @@
         "html": "定理を紙面から独立に実装し直す（<code>trinity-infinity/verification/independent_check.py</code>）"
       },
       {
-        "name": "作用素 22",
+        "name": "作用素 29",
         "html": "仮定を外した作用素。乱数種は固定（<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>）"
       },
       {

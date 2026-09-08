@@ -69,7 +69,7 @@
         "html": "The theorems reimplemented independently of the papers (<code>trinity-infinity/verification/independent_check.py</code>)"
       },
       {
-        "name": "22 checks on the operator",
+        "name": "29 checks on the operator",
         "html": "The operator outside the papers' assumptions, with a fixed seed (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>)"
       },
       {
