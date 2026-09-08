@@ -37,7 +37,7 @@
       },
       {
         "term": "Evidence",
-        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 60 checks on the errata itself, 63 on the tool. The tool is checked by <strong>breaking a passing state in 21 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
+        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 60 checks on the errata itself, 68 on the tool. The tool is checked by <strong>breaking a passing state in 26 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
       }
     ],
     "refuteHtml": "<b>(1)</b> Show one case that passes these checks while the errata does in fact diverge from its source. <b>(2)</b> Or show one check that does not fail when broken as declared. Either one refutes it. The declaration format and the break tests are in <a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>.",
@@ -53,8 +53,8 @@
         "html": "The same audit applied to all four frozen bodies of work: 60 on the three Trinity-Infinity papers, 77 on the three philosophical papers, 40 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
       },
       {
-        "name": "63 checks on the tool itself",
-        "html": "A checking tool cannot be trusted merely because it passes; a tool that looks at nothing passes too. A passing state is <strong>broken in 21 distinct ways</strong>, and each break must fail exactly the corresponding check. The distributions used to recompute p are validated against published statistical tables at eleven points (<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>)"
+        "name": "68 checks on the tool itself",
+        "html": "A checking tool cannot be trusted merely because it passes; a tool that looks at nothing passes too. A passing state is <strong>broken in 26 distinct ways</strong>, and each break must fail exactly the corresponding check. The distributions used to recompute p are validated against published statistical tables at eleven points (<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>)"
       },
       {
         "name": "29 checks on the register",
