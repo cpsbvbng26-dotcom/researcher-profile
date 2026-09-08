@@ -49,8 +49,8 @@
     "note": "How many checks, where, and when. All of them run in CI on every push. The first three are the core.",
     "items": [
       {
-        "name": "200 checks on the errata",
-        "html": "The same audit applied to all four frozen bodies of work: 78 on the three Trinity-Infinity papers, 82 on the three philosophical papers, 40 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
+        "name": "205 checks on the errata",
+        "html": "The same audit applied to all four frozen bodies of work: 78 on the three Trinity-Infinity papers, 87 on the three philosophical papers, 40 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
       },
       {
         "name": "68 checks on the tool itself",
@@ -58,7 +58,7 @@
       },
       {
         "name": "34 checks on the register",
-        "html": "The shape and history of the correction record itself. <strong>49 entries</strong> across five statuses, <strong>27 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>42 can be checked by anyone against a frozen artifact; the remaining 7 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+        "html": "The shape and history of the correction record itself. <strong>50 entries</strong> across five statuses, <strong>28 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>43 can be checked by anyone against a frozen artifact; the remaining 7 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
         "name": "31 printed numbers",
@@ -87,7 +87,7 @@
     ]
   },
   "withdrawn": {
-    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (49 entries)</a>.",
+    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (50 entries)</a>.",
     "items": [
       {
         "name": "The original theorem",
