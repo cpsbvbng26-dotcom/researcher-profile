@@ -57,7 +57,7 @@
         "html": "A checking tool cannot be trusted merely because it passes; a tool that looks at nothing passes too. A passing state is <strong>broken in 26 distinct ways</strong>, and each break must fail exactly the corresponding check. The distributions used to recompute p are validated against published statistical tables at eleven points (<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>)"
       },
       {
-        "name": "31 checks on the register",
+        "name": "34 checks on the register",
         "html": "The shape and history of the correction record itself. <strong>44 entries</strong> across five statuses, <strong>25 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>37 can be checked by anyone against a frozen artifact; the remaining 7 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
