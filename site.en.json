@@ -37,7 +37,7 @@
       },
       {
         "term": "Evidence",
-        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 77 checks on the errata itself, 68 on the tool. The tool is checked by <strong>breaking a passing state in 26 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
+        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 78 checks on the errata itself, 68 on the tool. The tool is checked by <strong>breaking a passing state in 26 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
       }
     ],
     "refuteHtml": "<b>(1)</b> Show one case that passes these checks while the errata does in fact diverge from its source. <b>(2)</b> Or show one check that does not fail when broken as declared. Either one refutes it. The declaration format and the break tests are in <a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>.",
@@ -49,8 +49,8 @@
     "note": "How many checks, where, and when. All of them run in CI on every push. The first three are the core.",
     "items": [
       {
-        "name": "194 checks on the errata",
-        "html": "The same audit applied to all four frozen bodies of work: 77 on the three Trinity-Infinity papers, 77 on the three philosophical papers, 40 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
+        "name": "195 checks on the errata",
+        "html": "The same audit applied to all four frozen bodies of work: 78 on the three Trinity-Infinity papers, 77 on the three philosophical papers, 40 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
       },
       {
         "name": "68 checks on the tool itself",
@@ -58,7 +58,7 @@
       },
       {
         "name": "31 checks on the register",
-        "html": "The shape and history of the correction record itself. <strong>37 entries</strong> across five statuses, <strong>22 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>32 can be checked by anyone against a frozen artifact; the remaining 5 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+        "html": "The shape and history of the correction record itself. <strong>41 entries</strong> across five statuses, <strong>25 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>36 can be checked by anyone against a frozen artifact; the remaining 5 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
         "name": "31 printed numbers",
@@ -87,7 +87,7 @@
     ]
   },
   "withdrawn": {
-    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (37 entries)</a>.",
+    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (41 entries)</a>.",
     "items": [
       {
         "name": "The original theorem",
