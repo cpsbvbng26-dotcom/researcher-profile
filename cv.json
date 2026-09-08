@@ -142,6 +142,11 @@
           "url": "https://orcid.org/0009-0000-1406-0547"
         },
         {
+          "name": "Academia.edu",
+          "note": "論文の頒布先",
+          "url": "https://independent.academia.edu/NemotoTakuya"
+        },
+        {
           "name": "OpenAlex",
           "note": "A5133339711",
           "url": "https://openalex.org/A5133339711"
