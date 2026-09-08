@@ -57,8 +57,8 @@
         "html": "検査の道具は、通ることでは信用できない。何も見ていなくても全部通るため。通る状態を <strong>26 通りに壊し、壊した箇所がちょうど落ちること</strong>を見る。検定統計量から p を出す分布は、公表されている数値表と 11 点で突き合わせてある（<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>）"
       },
       {
-        "name": "登録簿 29",
-        "html": "訂正の記録そのものの形と履歴。<strong>31 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 21 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
+        "name": "登録簿 31",
+        "html": "訂正の記録そのものの形と履歴。<strong>32 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 21 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。<strong>第三者が確かめられるのは 27 件で、残る 5 件は著者の証言しか根拠が無い</strong>ことも欄にしてある。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
       },
       {
         "name": "紙面の数値 31",
