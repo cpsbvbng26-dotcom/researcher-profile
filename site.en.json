@@ -58,7 +58,7 @@
       },
       {
         "name": "31 checks on the register",
-        "html": "The shape and history of the correction record itself. <strong>41 entries</strong> across five statuses, <strong>25 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>36 can be checked by anyone against a frozen artifact; the remaining 5 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+        "html": "The shape and history of the correction record itself. <strong>42 entries</strong> across five statuses, <strong>25 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>36 can be checked by anyone against a frozen artifact; the remaining 6 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
         "name": "31 printed numbers",
@@ -87,7 +87,7 @@
     ]
   },
   "withdrawn": {
-    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (41 entries)</a>.",
+    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (42 entries)</a>.",
     "items": [
       {
         "name": "The original theorem",
@@ -185,7 +185,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
       "code": "PDF / CC BY 4.0",
       "title": "trinity-infinity",
-      "summary": "The three papers above and their verification. 13 checks that reimplement the theorems independently and 31 that recompute every number printed on the page. It also records what was established and what was withdrawn.",
+      "summary": "The three papers above and their verification. 13 checks that reimplement the theorems independently and 32 that recompute every number printed on the page. It also records what was established and what was withdrawn.",
       "verify": "View on GitHub"
     },
     {

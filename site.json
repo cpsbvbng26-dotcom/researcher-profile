@@ -58,7 +58,7 @@
       },
       {
         "name": "登録簿 31",
-        "html": "訂正の記録そのものの形と履歴。<strong>41 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 25 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。<strong>第三者が確かめられるのは 36 件で、残る 5 件は著者の証言しか根拠が無い</strong>ことも欄にしてある。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
+        "html": "訂正の記録そのものの形と履歴。<strong>42 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 25 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。<strong>第三者が確かめられるのは 36 件で、残る 6 件は著者の証言しか根拠が無い</strong>ことも欄にしてある。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
       },
       {
         "name": "紙面の数値 31",
@@ -87,7 +87,7 @@
     ]
   },
   "withdrawn": {
-    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（41 件）</a> にあります。",
+    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（42 件）</a> にあります。",
     "items": [
       {
         "name": "収束定理の原型",
@@ -185,7 +185,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
       "code": "PDF / CC BY 4.0",
       "title": "trinity-infinity",
-      "summary": "上の三篇と、その検証をまとめたリポジトリ。定理を独立に実装し直す 13 項目と、紙面の数値を計算し直す 31 項目。何が確立され、何が撤回されたかも記録している。",
+      "summary": "上の三篇と、その検証をまとめたリポジトリ。定理を独立に実装し直す 13 項目と、紙面の数値を計算し直す 32 項目。何が確立され、何が撤回されたかも記録している。",
       "verify": "GitHub で見る"
     },
     {
