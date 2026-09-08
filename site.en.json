@@ -49,8 +49,8 @@
     "note": "How many checks, where, and when. All of them run in CI on every push. The first three are the core.",
     "items": [
       {
-        "name": "145 checks on the errata",
-        "html": "The same audit applied to all four frozen bodies of work: 51 on the three Trinity-Infinity papers, 63 on the three philosophical papers, 31 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
+        "name": "159 checks on the errata",
+        "html": "The same audit applied to all four frozen bodies of work: 51 on the three Trinity-Infinity papers, 77 on the three philosophical papers, 31 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
       },
       {
         "name": "63 checks on the tool itself",
@@ -58,7 +58,7 @@
       },
       {
         "name": "29 checks on the register",
-        "html": "The shape and history of the correction record itself. <strong>27 entries</strong> across five statuses, <strong>18 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+        "html": "The shape and history of the correction record itself. <strong>28 entries</strong> across five statuses, <strong>19 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
         "name": "31 printed numbers",
