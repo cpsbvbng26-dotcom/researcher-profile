@@ -30,6 +30,8 @@
   --ember: rgba(118, 20, 14, .78);          /* 狭間から漏れる火 */
   --wall-bg: rgba(28, 26, 30, .06);
   --stone: rgba(23, 23, 26, .30);           /* 石の継ぎ目 */
+  --sky: rgba(126, 158, 190, .20);          /* 城の上の空 */
+  --void: rgba(126, 158, 190, .13);         /* 城の下の空。基壇が途切れた先 */
   --header-bg: rgba(250, 249, 247, .86);
   --shadow: 0 18px 40px -28px rgba(23, 23, 26, .45);
 }
@@ -48,6 +50,8 @@
   --ember: rgba(232, 74, 42, .62);
   --wall-bg: rgba(0, 0, 0, .35);
   --stone: rgba(236, 236, 238, .16);
+  --sky: rgba(58, 84, 122, .34);            /* 城の上の空 */
+  --void: rgba(58, 84, 122, .22);           /* 城の下の空。基壇が途切れた先 */
   --header-bg: rgba(18, 18, 20, .86);
   --shadow: 0 18px 40px -28px rgba(0, 0, 0, .8);
 }
@@ -59,7 +63,11 @@ html { color-scheme: light; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  /* 城の上の空。頁の天から下へ薄れる。城壁はこの中に浮いている。 */
+  background:
+    linear-gradient(to bottom, var(--sky) 0, transparent 26rem),
+    var(--bg);
+  background-repeat: no-repeat, repeat;
   color: var(--text);
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", system-ui, sans-serif;
   line-height: 1.85;
@@ -231,6 +239,19 @@ header::after {
     linear-gradient(to bottom, var(--ember) 0%, var(--ember) 46%, transparent 74%);
   background-size: 52px 22px, 100% 12px, 100% 100%;
   background-position: 0 0, 0 22px, 0 0;
+  background-repeat: repeat-x, repeat-x, no-repeat;
+}
+
+/* 基壇の下端。石が不揃いに途切れ、その先には何も無い ―― 城は浮いている。
+   牙（落とし格子）と同じ形を下向きに使い、周期をずらして割付けを崩す。 */
+footer::after {
+  content: ""; display: block; height: 30px;
+  background-image:
+    conic-gradient(from 45deg at 50% 0%, var(--stone) 0 90deg, transparent 0),
+    conic-gradient(from 45deg at 50% 0%, var(--stone) 0 90deg, transparent 0),
+    linear-gradient(to bottom, var(--void) 0%, transparent 82%);
+  background-size: 38px 17px, 61px 30px, 100% 100%;
+  background-position: 0 0, 19px 0, 0 0;
   background-repeat: repeat-x, repeat-x, no-repeat;
 }
 
