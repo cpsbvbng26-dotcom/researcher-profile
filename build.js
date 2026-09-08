@@ -539,6 +539,8 @@ function build() {
     /* 下の階層に置くページは、ファビコンを一段上から参照する。
       * 決め打ちにすると notes/ の中でリンク切れになる。 */
     .replace(/{{FAVICON}}/g, esc(profile.favicon || './favicon.svg'))
+    /* 論文ごとのページは article、それ以外は profile。既定は変えない。 */
+    .replace(/{{OG_TYPE}}/g, esc(profile.ogType || 'profile'))
     .replace(/{{HEAD_EXTRA}}/g, [
       /* 言語ごとの版がある場合の相互参照。片方だけ直すのを防ぐため設定から出す。 */
       ...arr(profile.alternates).map((a) =>
