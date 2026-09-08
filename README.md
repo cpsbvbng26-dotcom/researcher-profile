@@ -10,11 +10,11 @@
 まとめて見せる場所は、自分で用意するしかない。その 1 枚を最小の手間で作るための
 道具である。
 
-- **依存パッケージなし** — Node.js だけで動きます。`npm install` は不要です
-- **外部リクエストゼロ** — 生成されるページは CDN もフォントも読み込みません
-- **論文の一覧** — DOI 付きのプレプリントや論文を、修了証と同じ形のカードで並べられます
-- **ライト / ダーク対応** — 端末の設定に従い、切り替えた選択は記憶されます
-- **印刷にも対応** — そのまま PDF にして履歴書に添えられます
+- **依存パッケージなし** — Node.js だけで動く。`npm install` は不要である
+- **外部リクエストゼロ** — 生成されるページは CDN もフォントも読み込まない
+- **論文の一覧** — DOI 付きのプレプリントや論文を、修了証と同じ形のカードで並べられる
+- **ライト / ダーク対応** — 端末の設定に従い、切り替えた選択は記憶される
+- **印刷にも対応** — そのまま PDF にして履歴書に添えられる
 
 ## 使い方
 
@@ -28,26 +28,26 @@ node build.js
 # dist/index.html ができます
 ```
 
-生成物は `dist/` に出力されます（`index.html` / `favicon.svg` / `.nojekyll`）。
+生成物は `dist/` に出力される（`index.html` / `favicon.svg` / `.nojekyll`）。
 
 ## 公開する
 
-同梱の GitHub Actions が `main` への push で自動的にビルドし、GitHub Pages へ配信します。
-リポジトリの **Settings → Pages → Source** を **GitHub Actions** にしてください。
+同梱の GitHub Actions が `main` への push で自動的にビルドし、GitHub Pages へ配信する。
+リポジトリの **Settings → Pages → Source** を **GitHub Actions** にすること。
 
 ## 設定
 
-`profile.json` の項目です。すべて任意で、書かなかった節はページに出力されません。
+`profile.json` の項目である。すべて任意で、書かなかった節はページに出力されない。
 
 | 項目 | 内容 |
 | --- | --- |
 | `name` | 氏名（必須） |
-| `nameLatin` | ラテン表記。氏名の下に小さく表示されます |
+| `nameLatin` | ラテン表記。氏名の下に小さく表示される |
 | `initials` | ヘッダーとファビコンに使う 1〜3 文字 |
 | `lang` | ページの言語。既定は `ja` |
 | `title` / `description` | ページタイトルと説明文 |
 | `tagline` | 氏名の下に置く紹介文 |
-| `siteUrl` | 公開先の URL。canonical と og:url に使われます |
+| `siteUrl` | 公開先の URL。canonical と og:url に使われる |
 | `ogImage` | SNS 共有用画像の URL |
 | `accent` / `accentDark` | 指し色。ライト用とダーク用 |
 | `footer` | フッターに出す文字列 |
@@ -55,15 +55,15 @@ node build.js
 | `credentials` | 修了証。`{ name, items: [{ code, title, issuer, url, verify }] }` の配列 |
 | `areas` | 領域。`{ name, detail }` の配列 |
 | `links` | リンク。`{ name, items: [{ name, note, url }] }` の配列 |
-| `labels` | 見出しなどの文言。下記の既定値を個別に上書きできます |
-| `sections` | 節をどの順に出すか。書かなかった節は出ません。既定は `["credentials","areas","papers","links"]` |
-| `claim` | 主張。`statement` と **`refute`（どうすれば覆るか）** と `rows`。`refute` が無いと生成が止まります |
+| `labels` | 見出しなどの文言。下記の既定値を個別に上書きできる |
+| `sections` | 節をどの順に出すか。書かなかった節は出ない。既定は `["credentials","areas","papers","links"]` |
+| `claim` | 主張。`statement` と **`refute`（どうすれば覆るか）** と `rows`。`refute` が無いと生成が止まる |
 | `verification` | 検証。`{ note, items: [{ name, detail }] }` |
-| `withdrawn` | 撤回。`{ note, items, recordUrl, recordLabel }`。消さずに残すための節です |
-| `contact` | 連絡。**`criticism`（批判・誤りの指摘の宛先）が必須**で、他の連絡先より前に出ます |
-| `works` | 制作物。論文と同じカードの形です |
+| `withdrawn` | 撤回。`{ note, items, recordUrl, recordLabel }`。消さずに残すための節である |
+| `contact` | 連絡。**`criticism`（批判・誤りの指摘の宛先）が必須**で、他の連絡先より前に出る |
+| `works` | 制作物。論文と同じカードの形である |
 | `blocks` | 自由記述の節。`{ id, title, html, anchors }` |
-| `jsonld` | 構造化データ。そのまま出力に入り、CSP のハッシュも付きます |
+| `jsonld` | 構造化データ。そのまま出力に入り、CSP のハッシュも付く |
 | `alternates` | 言語ごとの版への `hreflang` |
 | `headExtra` | `<head>` にそのまま入れる行 |
 | `extraNav` | 手で書いたページへの導線。`{ name, url }` |
@@ -71,10 +71,10 @@ node build.js
 
 ### 二つの必須
 
-`claim` に `refute` が無いと、`contact` に `criticism` が無いと、**生成が止まります。**
+`claim` に `refute` が無いと、`contact` に `criticism` が無いと、**生成が止まる。**
 
-反証の手順を書けない主張は、主張ではなく宣伝です。批判の宛先を先に書かない連絡先は、
-連絡先ではなく飾りです。どちらも、後から足せる注意書きではなく、書かなければ出ない形にしました。
+反証の手順を書けない主張は、主張ではなく宣伝である。批判の宛先を先に書かない連絡先は、
+連絡先ではなく飾りである。どちらも、後から足せる注意書きではなく、書かなければ出ない形にした。
 
 ### `labels` の既定値
 
@@ -91,7 +91,7 @@ node build.js
 }
 ```
 
-日本語以外で使う場合は、`lang` と `labels` を差し替えてください。
+日本語以外で使う場合は、`lang` と `labels` を差し替えること。
 
 ### 設定の例
 
@@ -117,7 +117,7 @@ node build.js
 }
 ```
 
-`profile.json` には作者自身の設定が入っています。動作を確かめてから書き換えてください。
+`profile.json` には作者自身の設定が入っている。動作を確かめてから書き換えること。
 
 ## 別の設定ファイルを使う
 
@@ -128,14 +128,14 @@ PROFILE_CONFIG=./others/hanako.json PROFILE_OUT=./dist-hanako node build.js
 ## 仕組み
 
 `build.js` が `profile.json` を読み、`templates/page.html` のプレースホルダを置き換えて
-`dist/index.html` を書き出すだけです。生成されるのは CSS と JavaScript を内側に持つ
-HTML 1 枚で、外部への通信は発生しません。
+`dist/index.html` を書き出すだけである。生成されるのは CSS と JavaScript を内側に持つ
+HTML 1 枚で、外部への通信は発生しない。
 
-テンプレートを直接編集すれば、配色や構成も自由に変えられます。
+テンプレートを直接編集すれば、配色や構成も自由に変えられる。
 
 ## 引用
 
-このソフトウェアは Zenodo にアーカイブされ、DOI が付与されています。
+このソフトウェアは Zenodo にアーカイブされ、DOI が付与されている。
 
 > 根本卓哉 (2026). *researcher-profile: 設定ファイル1つから研究者プロフィールの静的サイトを生成するツール* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.22335692
 
@@ -153,14 +153,14 @@ HTML 1 枚で、外部への通信は発生しません。
 
 ### 保存
 
-ソースコードは [Software Heritage](https://archive.softwareheritage.org/browse/snapshot/83f09cc80821f5cd02bbc89b069753c0c53c110a/releases/?origin_url=https://doi.org/10.5281/zenodo.22335691&snapshot=83f09cc80821f5cd02bbc89b069753c0c53c110a) にも保存されています。
+ソースコードは [Software Heritage](https://archive.softwareheritage.org/browse/snapshot/83f09cc80821f5cd02bbc89b069753c0c53c110a/releases/?origin_url=https://doi.org/10.5281/zenodo.22335691&snapshot=83f09cc80821f5cd02bbc89b069753c0c53c110a) にも保存されている。
 
 ```
 swh:1:snp:83f09cc80821f5cd02bbc89b069753c0c53c110a
 ```
 
-DOI が「この版を指す約束」であるのに対し、SWHID は**中身のハッシュそのもの**です。
-この識別子が指すスナップショットの内容は、保存先のサービスに依存せず検証できます。
+DOI が「この版を指す約束」であるのに対し、SWHID は**中身のハッシュそのもの**である。
+この識別子が指すスナップショットの内容は、保存先のサービスに依存せず検証できる。
 
 ## 検査
 
@@ -168,19 +168,19 @@ DOI が「この版を指す約束」であるのに対し、SWHID は**中身�
 node build.js && node verification/check_build.js
 ```
 
-依存パッケージはありません。**push のたびに 23 項目を通します。**
+依存パッケージはない。**push のたびに 23 項目を通す。**
 
-この道具の要は「設定ファイル 1 つ」であることで、裏を返すと**設定が壊れても、変な HTML が出るまで気づけません。**
-そこを落とします。
+この道具の要は「設定ファイル 1 つ」であることで、裏を返すと**設定が壊れても、変な HTML が出るまで気づけない。**
+そこを落とす。
 
 - `profile.json` の必須項目・入れ子の項目・色の書式（`#rrggbb`）・`siteUrl` が https であること・外部 URL に `http://` が混ざっていないこと
-- **テンプレートの `{{印}}` が生成物に残っていないこと。** 印を足して `build.js` を直し忘れると、ページに `{{FOO}}` がそのまま出ます。生成は成功したように見えます
-- テンプレートの印を `build.js` がすべて扱っていること（生成する前に分かります）
-- 修了証・学習領域・リンクの件数が設定と一致すること。**設定に足したのに出ない、を拾います**
+- **テンプレートの `{{印}}` が生成物に残っていないこと。** 印を足して `build.js` を直し忘れると、ページに `{{FOO}}` がそのまま出る。生成は成功したように見える
+- テンプレートの印を `build.js` がすべて扱っていること（生成する前に分かる）
+- 修了証・学習領域・リンクの件数が設定と一致すること。**設定に足したのに出ない、を拾う**
 - 設定にあるすべての URL が生成物にあること
-- **自動で外部を取りに行く要素が無いこと。** この道具の売りなので、機械で守ります
+- **自動で外部を取りに行く要素が無いこと。** この道具の売りなので、機械で守る
 
-空振りでないことは確認済みです。色名を入れる、欄を消す、`http://` を混ぜる、領域を足したのに出ないようにする、テンプレートに新しい印を足す、外部 script を混ぜる —— 六通り壊して六通りとも落ちました。
+空振りでないことは確認済みである。色名を入れる、欄を消す、`http://` を混ぜる、領域を足したのに出ないようにする、テンプレートに新しい印を足す、外部 script を混ぜる —— 六通り壊して六通りとも落ちた。
 
 ## ライセンス
 
@@ -191,10 +191,10 @@ MIT License
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-D97757?style=for-the-badge)](https://claude.com/claude-code)
 
 本リポジトリの実装（`build.js` / `templates/page.html`）は、AIコーディング支援ツール
-**Claude Code**（Anthropic）を使用して制作しています。設計・内容の確認および最終的な
-判断は制作者本人が行っています。
+**Claude Code**（Anthropic）を使用して制作している。設計・内容の確認および最終的な
+判断は制作者本人が行っている。
 
-制作過程はリポジトリの履歴から確認できます。
+制作過程はリポジトリの履歴から確認できる。
 
 | 確認できること | 方法 |
 | --- | --- |
@@ -202,5 +202,5 @@ MIT License
 | 各コミットに紐づく作業セッション | コミットメッセージ末尾の `Claude-Session:` トレーラ |
 | 共同作成の記録 | コミットメッセージ末尾の `Co-authored-by:` トレーラ |
 
-なお、**生成されるページ側にはこの表示を入れていません**。生成物は利用者自身の
-プロフィールであり、その制作手段を勝手に表明すべきではないためです。
+なお、**生成されるページ側にはこの表示を入れていない**。生成物は利用者自身の
+プロフィールであり、その制作手段を勝手に表明すべきではないためである。
