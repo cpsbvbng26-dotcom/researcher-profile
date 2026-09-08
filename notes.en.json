@@ -40,6 +40,10 @@
       "doi": "10.5281/zenodo.22058254",
       "locations": [
         {
+          "name": "Paper page on this site",
+          "url": "./../papers/celibate-individual.en.html"
+        },
+        {
           "name": "SSRN",
           "id": "10.2139/ssrn.7358779",
           "url": "https://doi.org/10.2139/ssrn.7358779"
@@ -60,6 +64,10 @@
       "verify": "Read on Zenodo",
       "doi": "10.5281/zenodo.22057583",
       "locations": [
+        {
+          "name": "Paper page on this site",
+          "url": "./../papers/imperial-selfhood.en.html"
+        },
         {
           "name": "SSRN",
           "id": "10.2139/ssrn.7358818",
@@ -82,6 +90,10 @@
       "doi": "10.5281/zenodo.22064241",
       "locations": [
         {
+          "name": "Paper page on this site",
+          "url": "./../papers/fragmentarian-spiritual-individualism.en.html"
+        },
+        {
           "name": "PhilArchive",
           "id": "NEMFSI",
           "url": "https://philarchive.org/rec/NEMFSI"
@@ -97,6 +109,10 @@
       "verify": "Read on Zenodo",
       "doi": "10.5281/zenodo.22055709",
       "locations": [
+        {
+          "name": "Paper page on this site",
+          "url": "./../papers/naval-gazette-otani-tsune.en.html"
+        },
         {
           "name": "Knowledge Commons",
           "id": "q36z2-98e12",

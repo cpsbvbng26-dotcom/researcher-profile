@@ -137,7 +137,13 @@
       "subtitle": "A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
       "summary": "三要素の再帰作用素が一意の不動点へ幾何収束することを証明し、ゲーム理論・論理学・工学への接続を、証明済みの結果・既知の結果・類推に区別して示す。",
       "verify": "Zenodo で読む",
-      "doi": "10.5281/zenodo.22058624"
+      "doi": "10.5281/zenodo.22058624",
+      "locations": [
+        {
+          "name": "このサイトの論文ページ",
+          "url": "./papers/trinity-infinity-series-i.html"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22058777",
@@ -146,7 +152,13 @@
       "subtitle": "Extended Formalization and Further Illustrative Applications",
       "summary": "混合率を座標ごとに変えても不動点の一意性が保たれることを示し、均衡利得集合の特徴づけとばね系の完全な計算例を加える。",
       "verify": "Zenodo で読む",
-      "doi": "10.5281/zenodo.22058777"
+      "doi": "10.5281/zenodo.22058777",
+      "locations": [
+        {
+          "name": "このサイトの論文ページ",
+          "url": "./papers/trinity-infinity-series-ii.html"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22058964",
@@ -155,7 +167,13 @@
       "subtitle": "Beyond Three — A Generalization and Retrospective",
       "summary": "収束定理が三要素を必要としないこと（任意の n ≥ 2 で成立）を示し、この系列が何を確立し、何を撤回したかを回顧する。",
       "verify": "Zenodo で読む",
-      "doi": "10.5281/zenodo.22058964"
+      "doi": "10.5281/zenodo.22058964",
+      "locations": [
+        {
+          "name": "このサイトの論文ページ",
+          "url": "./papers/trinity-infinity-series-iii.html"
+        }
+      ]
     }
   ],
   "works": [

@@ -137,7 +137,13 @@
       "subtitle": "A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
       "summary": "Proves that the three-element recursive operator converges geometrically to a unique fixed point, and sets out the connections to game theory, logic and engineering with proved results, known results and analogies marked apart.",
       "verify": "Read on Zenodo",
-      "doi": "10.5281/zenodo.22058624"
+      "doi": "10.5281/zenodo.22058624",
+      "locations": [
+        {
+          "name": "Paper page on this site",
+          "url": "./papers/trinity-infinity-series-i.en.html"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22058777",
@@ -146,7 +152,13 @@
       "subtitle": "Extended Formalization and Further Illustrative Applications",
       "summary": "Shows that uniqueness of the fixed point survives when the mixing rate varies coordinate by coordinate, and adds a characterization of the equilibrium payoff set and a fully worked spring-network example.",
       "verify": "Read on Zenodo",
-      "doi": "10.5281/zenodo.22058777"
+      "doi": "10.5281/zenodo.22058777",
+      "locations": [
+        {
+          "name": "Paper page on this site",
+          "url": "./papers/trinity-infinity-series-ii.en.html"
+        }
+      ]
     },
     {
       "url": "https://doi.org/10.5281/zenodo.22058964",
@@ -155,7 +167,13 @@
       "subtitle": "Beyond Three — A Generalization and Retrospective",
       "summary": "Shows that the convergence theorem does not need three elements — it holds for any n ≥ 2 — and looks back at what the series established and what it withdrew.",
       "verify": "Read on Zenodo",
-      "doi": "10.5281/zenodo.22058964"
+      "doi": "10.5281/zenodo.22058964",
+      "locations": [
+        {
+          "name": "Paper page on this site",
+          "url": "./papers/trinity-infinity-series-iii.en.html"
+        }
+      ]
     }
   ],
   "works": [
