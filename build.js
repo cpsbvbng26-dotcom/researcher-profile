@@ -116,6 +116,7 @@ function renderProfile(p) {
     '    <div class="profile reveal">',
     `      <h2 class="profile-label">${esc(p.label || '')}</h2>`,
     `      <p class="profile-now">${p.nowHtml || esc(p.now || '')}</p>`,
+    p.studyHtml ? `      <p class="profile-now profile-study">${p.studyHtml}</p>` : '',
     rows ? '      <ol class="path">' : '',
     rows,
     rows ? '      </ol>' : '',
