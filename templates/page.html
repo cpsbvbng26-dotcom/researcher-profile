@@ -299,6 +299,25 @@ header::after {
   .path-state { white-space: normal; }
 }
 
+/* ---------- 修得した科目 ----------
+   修了証と違って検証ページが無い。だからカードにせず、行で並べる。 */
+.courses { list-style: none; margin: 0; padding: 0; max-width: 42rem; }
+.courses li {
+  display: grid; grid-template-columns: 1fr auto; gap: .3rem 1rem;
+  align-items: baseline;
+  padding: .6rem 0; border-top: 1px solid var(--line-soft);
+}
+.courses li:first-child { border-top: 1px solid var(--line); }
+.course-name { font-size: .9rem; line-height: 1.7; color: var(--text); }
+.course-note {
+  font-size: .76rem; letter-spacing: .04em; color: var(--faint); white-space: nowrap;
+}
+
+@media (max-width: 40rem) {
+  .courses li { grid-template-columns: 1fr; gap: .1rem; }
+  .course-note { white-space: normal; }
+}
+
 /* ---------- ノートへの導線 ----------
    核に置かなかったものは、消さずにここから辿れる。 */
 .notes-list { max-width: 42rem; }

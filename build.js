@@ -453,11 +453,47 @@ ${b.anchors ? '    ' + arr(b.anchors).map((a) => `<span id="${esc(a)}"></span>`)
  * sections を書けば、その順に並ぶ。書かれていない節は出ない。 */
 const SECTION_ORDER_DEFAULT = ['credentials', 'areas', 'papers', 'links'];
 
+/* 修得した科目。**外部の修了証とは別に置く。**
+ *
+ * 修了証は発行機関の検証ページを開けるが、大学の単位はそれができない。
+ * 同じ節に混ぜると、検証できるものとできないものが同じ顔で並ぶ。
+ */
+function renderCourses(groups, labels) {
+  if (!groups.length) return '';
+  const body = groups.map((g) => {
+    const rows = arr(g.items).map((c) =>
+      `        <li><span class="course-name">${esc(c.name)}</span>`
+      + (c.note ? `<span class="course-note">${esc(c.note)}</span>` : '')
+      + '</li>').join('\n');
+    return [
+      '    <div class="group">',
+      g.name ? `      <div class="group-name reveal">${esc(g.name)}</div>` : '',
+      '      <ul class="courses reveal">',
+      rows,
+      '      </ul>',
+      '    </div>',
+    ].filter(Boolean).join('\n');
+  }).join('\n\n');
+  return `
+  <hr class="rule">
+
+  <section id="courses" class="wrap block">
+    <div class="sec-head reveal">
+      <h2 class="serif">${esc(labels.courses)}</h2>
+      ${labels.coursesNote ? `<p>${esc(labels.coursesNote)}</p>` : ''}
+    </div>
+
+${body}
+  </section>`;
+}
+
+
 function renderSections(profile, labels) {
   const order = arr(profile.sections).length ? arr(profile.sections) : SECTION_ORDER_DEFAULT;
   const known = {
     credentials: () => renderCredentials(arr(profile.credentials), labels),
     areas: () => renderAreas(arr(profile.areas), labels),
+    courses: () => renderCourses(arr(profile.courses), labels),
     papers: () => renderPapers(arr(profile.papers), labels),
     works: () => renderWorks(arr(profile.works), labels),
     links: () => renderLinks(arr(profile.links), labels),
@@ -480,6 +516,7 @@ function renderNav(profile, labels) {
   const has = {
     credentials: () => arr(profile.credentials).length,
     areas: () => arr(profile.areas).length,
+    courses: () => arr(profile.courses).length,
     papers: () => arr(profile.papers).length,
     works: () => arr(profile.works).length,
     links: () => arr(profile.links).length,
