@@ -63,6 +63,10 @@
     "statement": "corrections drift from their sources, and the drift is machine-detectable",
     "rows": [
       {
+        "term": "What the three papers came to",
+        "html": "<strong>The framework did not survive.</strong> What remains is one fact about one operator: for <code>Q</code> an n-cycle and <code>D</code> diagonal, <code>(DQ)ⁿ = (∏ᵢ aᵢ)·I</code> exactly, so convergence is governed by the geometric mean of the coefficients — not by their maximum, and not by the operator norm.<span class=\"faint\">The fact is correct, machine-checked, and <strong>at the level of an undergraduate exercise</strong>. Of the symbol <code>Ⅲ∞</code>, the half with mathematical content (<code>Ⅲ</code>, three) is the half that was proved not to matter. <a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity#結論\" target=\"_blank\" rel=\"noopener\">The route is recorded here</a>.</span>"
+      },
+      {
         "term": "Whose claim this is",
         "html": "The tool was not built first and then pointed at a paper. <strong>It came out of auditing my own three papers.</strong> <span class=\"faint\">The undercount, the characters added to a quotation that are not in the original, and the last-updated stamp that was older than a date inside the document were all found in my own records.</span>"
       },
@@ -224,7 +228,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/self-correction",
       "code": "Record / MIT",
       "title": "self-correction",
-      "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. Fifteen entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
+      "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. 55 entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
       "verify": "View on GitHub"
     },
     {
