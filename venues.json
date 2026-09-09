@@ -1,0 +1,103 @@
+{
+  "name": "根本卓哉",
+  "nameLatin": "TAKUYA NEMOTO",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "割愛 —— どこに出し、どこに出さなかったか | 根本卓哉",
+  "description": "SSRN・PhilArchive・Zenodo と arXiv を、公表されている受け付けの規則の違いで並べる。どの場も下げない。arXiv に出さなかった理由を書く。",
+  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/venues.html",
+  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "tagline": "どの場に出し、どこに出さなかったか。比べているのは受け付けの規則であって、そこに載っている仕事の質ではありません。どの場も下げるつもりはありません。",
+  "sections": [
+    "stance",
+    "where",
+    "gates",
+    "arxiv",
+    "omitted",
+    "order",
+    "limits",
+    "sources"
+  ],
+  "blocks": [
+    {
+      "id": "stance",
+      "title": "この頁の立場",
+      "html": "<p><b>どの場も下げるつもりはない。</b>ここで比べているのは、各サイトが公表している\n<b>受け付けの規則</b>であって、そこに載っている仕事の質ではない。規則が違うのは、\n受け入れようとしている対象が違うからである。</p>\n<p>順位を付ける頁ではない。付けられるのは「この仕事にとって、その場が合っているか」\nだけである。合っていない場に出さなかったことを、ここでは<b>割愛</b>と呼ぶ。</p>\n<p><b>出典はいずれも検索結果から取ったものである。</b>作業環境から各サイトを開いて\n読んではいない（外へ出られるのは GitHub だけである）。<b>確かめずに「確認済み」とは\n書かない。</b>規則の記述が実際と違う箇所が見つかれば、そこを直す。</p>"
+    },
+    {
+      "id": "where",
+      "title": "いまどこに出してあるか",
+      "html": "<table>\n<tr><th>場</th><th>何を置いているか</th><th>位置づけ</th></tr>\n<tr><td>Zenodo</td><td>論文の PDF と書誌</td><td><b>正本。</b>DOI が付き、版が固定される</td></tr>\n<tr><td>SSRN</td><td>哲学の二篇</td><td>同一本文。入口であって正本ではない</td></tr>\n<tr><td>PhilArchive</td><td>哲学の三篇</td><td>同上。<b>分野の読者がいる場所である</b></td></tr>\n<tr><td>Knowledge Commons</td><td>史料ノート</td><td>同上</td></tr>\n<tr><td>HAL</td><td>収録</td><td>同上</td></tr>\n<tr><td>researchmap</td><td>業績の一覧</td><td><b>場ではない。</b>研究者のデータベースである</td></tr>\n</table>\n<p>どれを正とするかは\n<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/canonical-sources.md\" target=\"_blank\" rel=\"noopener\">canonical-sources.md</a>\nに固定してある。食い違ったときは Zenodo が正である。</p>"
+    },
+    {
+      "id": "gates",
+      "title": "受け付けの門の違い",
+      "html": "<table>\n<tr><th>場</th><th>受け付けで何を見るか</th></tr>\n<tr><td>Zenodo</td><td>実質的な審査は無い。スパムと違法物を除く</td></tr>\n<tr><td>Knowledge Commons</td><td>会員登録</td></tr>\n<tr><td>HAL</td><td>形式と所属の確認。中身は見ない</td></tr>\n<tr><td>PhilArchive</td><td>分野の適合をカテゴリ編集者が見る</td></tr>\n<tr><td>SSRN</td><td><b>編集スタッフの事前審査がある。</b>いま使っている中では、門があるのはここだけである</td></tr>\n<tr><td>arXiv</td><td><b>推薦（endorsement）とモデレーション。</b>次の節に分けて書く</td></tr>\n</table>\n<p><b>ここに挙げたどれも査読ではない。</b>査読は、分野の研究者が内容の当否を判断して\n採否を決める手続きである。上のどれもそれをしていない。<b>DOI が付くことも、査読を\n受けたことを意味しない。</b></p>"
+    },
+    {
+      "id": "arxiv",
+      "title": "arXiv との差",
+      "html": "<p>arXiv の受け付けは、上のどれとも桁が違う。<b>公表されている範囲では次のとおりである\n（いずれも未確認）。</b></p>\n<table>\n<tr><th>何が</th><th>どうなっているか</th></tr>\n<tr><td>推薦</td><td>初めて出す者は、その分野で既に出している者の推薦が要る</td></tr>\n<tr><td>推薦の緩和</td><td><b>2026年1月21日から、所属機関のメールアドレスでは自動推薦が下りない</b></td></tr>\n<tr><td>保留と却下</td><td>投稿の約 6% が保留、約 2% が却下。<b>却下の理由は原則として説明されない</b></td></tr>\n<tr><td>分類変更</td><td>モデレーターが分野を変えることがある</td></tr>\n<tr><td>レビューと立場表明</td><td><b>2025年10月から、計算機科学ではそれらを査読通過なしに受け付けない</b></td></tr>\n<tr><td>AI 生成物</td><td>幻覚した参考文献や消し忘れた指示文があると、<b>1 年の投稿停止</b></td></tr>\n</table>\n<p><b>これは厳しさの誇示ではない。</b>受け入れる対象を絞るための規則である。\n新しい結果を載せる場所として運用されており、そのために門を狭くしている。</p>"
+    },
+    {
+      "id": "omitted",
+      "title": "割愛した理由",
+      "html": "<p><b>arXiv に出していない。理由は arXiv の側にはない。</b>三つある。</p>\n<p><b>一つめ。推薦が要る。</b>2026年1月以降、所属のメールアドレスでも自動では下りない。\n推薦者を個人で見つける必要がある。</p>\n<p><b>二つめ。残った内容に新しい結果が無い。</b>これは外から言われたことではなく、\n<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity#結論\" target=\"_blank\" rel=\"noopener\">この記録が自分で書いている</a>\n—— 残ったのは一つの作用素についての一つの事実で、学部 2〜3 年の演習問題である。\n<b>新しい結果を載せる場所に、新しい結果でないものを出すのは、規則に合わない。</b>\n出さないのはそのためである。</p>\n<p><b>三つめ。経緯を説明する機会が無い。</b>初稿が言語モデルの生成物であることは\n記録に書いてある。開示して出すことと、伏せて出すことは別である。ただし受け付けは\n個別に事情を聞かない。<b>説明が要る経緯を、説明の機会が無い場所へ持ち込むことになる。</b></p>\n<p>哲学の三篇については事情が違う。<b>PhilArchive は分野の読者がいる場所であり、\nそこに置いてある。</b>場を上げる必要は無い。</p>"
+    },
+    {
+      "id": "order",
+      "title": "序列という言い方について",
+      "html": "<p><b>場そのものに序列は付けない。</b>付けられるのは、この仕事にとって合っているか\nどうかだけである。</p>\n<table>\n<tr><th>対象</th><th>合っている場</th><th>理由</th></tr>\n<tr><td>Trinity-Infinity の三篇</td><td><b>どこにも出さない</b></td><td>残った事実に新規性が無いと、記録が自分で書いている。場を上げても中身は変わらない</td></tr>\n<tr><td>哲学の三篇</td><td>PhilArchive</td><td>分野の読者がそこにいる</td></tr>\n<tr><td>史料ノート</td><td>Zenodo と Knowledge Commons</td><td>翻刻と出典表記が読まれればよい</td></tr>\n<tr><td><code>errata-check</code></td><td>ソフトウェアを査読する誌</td><td>審査の対象が「動くか」「文書化されているか」であり、噛み合う。<b>まだ出していない</b></td></tr>\n</table>\n<p><b>厳しい場所を探すより、噛み合う場所を探すほうが早い。</b>arXiv は新しい結果を\n出す場所であり、ここにあるのは間違いを消さずに残した記録である。<b>種類が違う。</b></p>"
+    },
+    {
+      "id": "limits",
+      "title": "この頁が言っていないこと",
+      "html": "<ul>\n<li><b>各サイトの質を比べていない。</b>比べたのは受け付けの規則だけである</li>\n<li><b>どの場も査読ではない。</b>ここに挙げたどの場も、内容の当否を判断していない</li>\n<li><b>規則の記述は未確認である。</b>検索結果から取ったもので、原文に当たっていない</li>\n<li><b>どの場を勧めてもいない。</b>合う合わないを書いただけである</li>\n</ul>\n<p><b>覆し方。</b>上に書いた規則の記述が実際と違う箇所を一つ示せば、その行は覆る。\n一件でよい。</p>"
+    },
+    {
+      "id": "sources",
+      "title": "出典（未確認）",
+      "html": "<blockquote><p><b>作業環境から開いて読んではいない。</b>検索結果から取った一覧である。</p></blockquote>\n<ul>\n<li>arXiv blog, Attention Authors: updated endorsement policy（2026年1月21日）</li>\n<li>arXiv blog, updated endorsement policy for arXiv Mathematics（2025年12月10日）</li>\n<li>On arXiv moderation system, arXiv:2307.11791</li>\n<li>Science, ArXiv preprint server clamps down on AI slop</li>\n<li>The Next Web, arXiv introduces one-year ban for researchers who submit papers with unchecked AI-generated content</li>\n</ul>"
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "トップ",
+      "url": "./index.html"
+    },
+    {
+      "name": "作用素",
+      "url": "./trinity.html"
+    },
+    {
+      "name": "CV",
+      "url": "./cv.html"
+    },
+    {
+      "name": "ノート",
+      "url": "./notes/index.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "割愛"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/venues.html",
+    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/venues.html",
+    "name": "割愛 —— どこに出し、どこに出さなかったか",
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#website"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+    }
+  }
+}
