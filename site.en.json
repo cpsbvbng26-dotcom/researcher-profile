@@ -17,7 +17,34 @@
       "url": "https://orcid.org/0009-0000-1406-0547"
     }
   ],
-  "taglineHtml": "I am enrolled in an information-science faculty at an online university, in its first autumn-entry cohort. I left Tochigi Prefectural Tochigi High School partway through, passed the national Upper Secondary School Equivalency Examination, and spent two years on the Business Management course of the Efficiency Department at Jiyugaoka Sanno College before withdrawing. <strong>Two aims</strong> — to succeed my father in his business, and to teach at an online university after a doctorate.</p>\n    <p class=\"lead reveal\">I study computer science and artificial intelligence. <strong>Everything published here is a preprint that has not been peer reviewed.</strong> <strong>This place has one core: auditing, by machine, what I have already published.</strong> The three Trinity-Infinity papers are what it was applied to. Three papers in philosophy and a source note are in <a href=\"./notes/index.en.html\">Notes</a>; certificates and areas of study are in <a href=\"./cv.html\">CV</a>.",
+  "profile": {
+    "label": "About me",
+    "nowHtml": "I am enrolled in an information-science faculty at an online university, in its first autumn-entry cohort, studying computer science and artificial intelligence.",
+    "history": [
+      {
+        "name": "Tochigi Prefectural Tochigi High School",
+        "state": "left partway through"
+      },
+      {
+        "name": "Upper Secondary School Equivalency Examination",
+        "state": "passed"
+      },
+      {
+        "name": "Jiyugaoka Sanno College, Business Management course",
+        "state": "two years, then withdrew"
+      },
+      {
+        "name": "Online university, information-science faculty",
+        "state": "enrolled (first autumn-entry cohort)"
+      }
+    ],
+    "aimsLabel": "Two aims",
+    "aims": [
+      "To take over the business my father is planning to found",
+      "To teach at an online university after a doctorate"
+    ]
+  },
+  "taglineHtml": "I study computer science and artificial intelligence. <strong>Everything published here is a preprint that has not been peer reviewed.</strong> <strong>This place has one core: auditing, by machine, what I have already published.</strong> The three Trinity-Infinity papers are what it was applied to. Three papers in philosophy and a source note are in <a href=\"./notes/index.en.html\">Notes</a>; certificates and areas of study are in <a href=\"./cv.html\">CV</a>.",
   "sections": [
     "claim",
     "verification",
