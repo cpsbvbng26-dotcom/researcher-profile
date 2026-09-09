@@ -700,8 +700,13 @@ function build() {
     .replace(/{{NAME_LATIN}}/g, profile.nameLatin ? `    <p class="romaji reveal">${esc(profile.nameLatin)}</p>` : '')
     .replace(/{{IDENTIFIERS}}/g, renderIdentifiers(arr(profile.identifiers)))
     .replace(/{{PROFILE}}/g, renderProfile(profile.profile))
-    .replace(/{{TAGLINE}}/g, (profile.taglineHtml || profile.tagline)
+    /* 規則の要約のように、外側が動くものを載せた頁は、いつ時点かを出す。
+     * 日付は設定の asOf 一つが持つ。頁の言語に合わせて書き直すだけである。 */
+    .replace(/{{TAGLINE}}/g, ((profile.taglineHtml || profile.tagline)
       ? `    <p class="lead reveal">${profile.taglineHtml || esc(profile.tagline)}</p>` : '')
+      + (profile.asOf
+        ? `\n    <p class="as-of reveal">${esc(asOfLabel(profile.asOf,
+            String(profile.lang || 'ja').slice(0, 2) === 'en'))}</p>` : ''))
     .replace(/{{SECTIONS}}/g, renderSections(profile, labels))
     /* 下の階層に置くページは、ファビコンを一段上から参照する。
       * 決め打ちにすると notes/ の中でリンク切れになる。 */
