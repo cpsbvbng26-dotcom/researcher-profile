@@ -15,6 +15,7 @@
     "stance",
     "where",
     "gates",
+    "philarchive",
     "arxiv",
     "omitted",
     "order",
@@ -30,12 +31,17 @@
     {
       "id": "where",
       "title": "いまどこに出してあるか",
-      "html": "<table>\n<tr><th>場</th><th>何を置いているか</th><th>位置づけ</th></tr>\n<tr><td>Zenodo</td><td>論文の PDF と書誌</td><td><b>正本。</b>DOI が付き、版が固定される</td></tr>\n<tr><td>SSRN</td><td>哲学の二篇</td><td>同一本文。入口であって正本ではない</td></tr>\n<tr><td>PhilArchive</td><td>哲学の三篇</td><td>同上。<b>分野の読者がいる場所である</b></td></tr>\n<tr><td>Knowledge Commons</td><td>史料ノート</td><td>同上</td></tr>\n<tr><td>HAL</td><td>収録</td><td>同上</td></tr>\n<tr><td>researchmap</td><td>業績の一覧</td><td><b>場ではない。</b>研究者のデータベースである</td></tr>\n</table>\n<p>どれを正とするかは\n<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/canonical-sources.md\" target=\"_blank\" rel=\"noopener\">canonical-sources.md</a>\nに固定してある。食い違ったときは Zenodo が正である。</p>"
+      "html": "<table>\n<tr><th>場</th><th>何を置いているか</th><th>位置づけ</th></tr>\n<tr><td>Zenodo</td><td>論文の PDF と書誌</td><td><b>正本。</b>DOI が付き、版が固定される</td></tr>\n<tr><td>SSRN</td><td>哲学の二篇</td><td>同一本文。入口であって正本ではない</td></tr>\n<tr><td>PhilArchive</td><td>哲学の三篇</td><td>同上。<b>分野の読者がいる場所である</b></td></tr>\n<tr><td>Knowledge Commons</td><td>史料ノート</td><td>同上</td></tr>\n<tr><td>HAL</td><td>収録</td><td>同上</td></tr>\n<tr><td>PhilPeople</td><td>著者の情報</td><td><b>場ではない。</b>哲学者の名鑑である</td></tr>\n<tr><td>researchmap</td><td>業績の一覧</td><td><b>場ではない。</b>研究者のデータベースである</td></tr>\n</table>\n<p>どれを正とするかは\n<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/canonical-sources.md\" target=\"_blank\" rel=\"noopener\">canonical-sources.md</a>\nに固定してある。食い違ったときは Zenodo が正である。</p>"
     },
     {
       "id": "gates",
       "title": "受け付けの門の違い",
-      "html": "<table>\n<tr><th>場</th><th>受け付けで何を見るか</th></tr>\n<tr><td>Zenodo</td><td>実質的な審査は無い。スパムと違法物を除く</td></tr>\n<tr><td>Knowledge Commons</td><td>会員登録</td></tr>\n<tr><td>HAL</td><td>形式と所属の確認。中身は見ない</td></tr>\n<tr><td>PhilArchive</td><td>分野の適合をカテゴリ編集者が見る</td></tr>\n<tr><td>SSRN</td><td><b>編集スタッフの事前審査がある。</b>いま使っている中では、門があるのはここだけである</td></tr>\n<tr><td>arXiv</td><td><b>推薦（endorsement）とモデレーション。</b>次の節に分けて書く</td></tr>\n</table>\n<p><b>ここに挙げたどれも査読ではない。</b>査読は、分野の研究者が内容の当否を判断して\n採否を決める手続きである。上のどれもそれをしていない。<b>DOI が付くことも、査読を\n受けたことを意味しない。</b></p>"
+      "html": "<table>\n<tr><th>場</th><th>受け付けで何を見るか</th></tr>\n<tr><td>Zenodo</td><td>実質的な審査は無い。スパムと違法物を除く</td></tr>\n<tr><td>Knowledge Commons</td><td>会員登録</td></tr>\n<tr><td>HAL</td><td>形式と所属の確認。中身は見ない</td></tr>\n<tr><td>PhilArchive</td><td><b>明文の基準がある。</b>次の節に分けて書く</td></tr>\n<tr><td>SSRN</td><td><b>編集スタッフの事前審査がある</b></td></tr>\n<tr><td>arXiv</td><td><b>推薦（endorsement）とモデレーション。</b>後の節に分けて書く</td></tr>\n</table>\n<p><b>いま使っている中で門があるのは、PhilArchive と SSRN の二つである。</b>\nただし門の掛け方が違う。SSRN は出す前に編集スタッフが見る。PhilArchive は基準を\n明文にしたうえで、カテゴリ編集者が後から整理し、却下権を留保している。</p>\n<p><b>ここに挙げたどれも査読ではない。</b>査読は、分野の研究者が内容の当否を判断して\n採否を決める手続きである。上のどれもそれをしていない。<b>DOI が付くことも、査読を\n受けたことを意味しない。</b></p>"
+    },
+    {
+      "id": "philarchive",
+      "title": "PhilArchive と PhilPeople の基準",
+      "html": "<p>PhilPapers 財団が運営している。<b>公表されている基準は次のとおりである（未確認）。</b></p>\n<table>\n<tr><th>何が</th><th>どうなっているか</th></tr>\n<tr><td>分野</td><td>主に哲学。<b>哲学でないものは、学際的で哲学者に明らかな関心がある場合に限る</b></td></tr>\n<tr><td>水準</td><td><b>投稿されるすべての本と論文は、専門職の水準を満たすこと</b></td></tr>\n<tr><td>却下</td><td><b>いかなる投稿も却下する権利を留保している</b></td></tr>\n<tr><td>編集者</td><td>六百人を超える研究者がカテゴリ編集者に任命されている。担当分野に<b>無関係な項目や誤った項目が入らないようにする</b>のがその役目である</td></tr>\n<tr><td>禁止</td><td>脅迫・嫌がらせ、無断の個人情報、なりすまし</td></tr>\n</table>\n<p><b>「誰でも置ける場所」ではない。</b>水準を明文にし、却下権を留保し、六百人以上の\n編集者が事後に整理している。<b>Zenodo との差はここにある。</b></p>\n<p>PhilPeople は場ではなく、<b>職業としての哲学者の名鑑</b>である。登録は無料で、\n未登録の人も所属機関の公開情報などから収録されている。未登録の項目を自分のものとして\n請求するには登録が要る。<b>所属を確認する手続きがあるかどうかは、この環境からは\n分からない。</b></p>"
     },
     {
       "id": "arxiv",
@@ -45,12 +51,12 @@
     {
       "id": "omitted",
       "title": "割愛した理由",
-      "html": "<p><b>arXiv に出していない。理由は arXiv の側にはない。</b>三つある。</p>\n<p><b>一つめ。推薦が要る。</b>2026年1月以降、所属のメールアドレスでも自動では下りない。\n推薦者を個人で見つける必要がある。</p>\n<p><b>二つめ。残った内容に新しい結果が無い。</b>これは外から言われたことではなく、\n<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity#結論\" target=\"_blank\" rel=\"noopener\">この記録が自分で書いている</a>\n—— 残ったのは一つの作用素についての一つの事実で、学部 2〜3 年の演習問題である。\n<b>新しい結果を載せる場所に、新しい結果でないものを出すのは、規則に合わない。</b>\n出さないのはそのためである。</p>\n<p><b>三つめ。経緯を説明する機会が無い。</b>初稿が言語モデルの生成物であることは\n記録に書いてある。開示して出すことと、伏せて出すことは別である。ただし受け付けは\n個別に事情を聞かない。<b>説明が要る経緯を、説明の機会が無い場所へ持ち込むことになる。</b></p>\n<p>哲学の三篇については事情が違う。<b>PhilArchive は分野の読者がいる場所であり、\nそこに置いてある。</b>場を上げる必要は無い。</p>"
+      "html": "<p><b>arXiv に出していない。理由は arXiv の側にはない。</b>三つある。</p>\n<p><b>一つめ。推薦が要る。</b>2026年1月以降、所属のメールアドレスでも自動では下りない。\n推薦者を個人で見つける必要がある。</p>\n<p><b>二つめ。残った内容に新しい結果が無い。</b>これは外から言われたことではなく、\n<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity#結論\" target=\"_blank\" rel=\"noopener\">この記録が自分で書いている</a>\n—— 残ったのは一つの作用素についての一つの事実で、学部 2〜3 年の演習問題である。\n<b>新しい結果を載せる場所に、新しい結果でないものを出すのは、規則に合わない。</b>\n出さないのはそのためである。</p>\n<p><b>三つめ。経緯を説明する機会が無い。</b>初稿が言語モデルの生成物であることは\n記録に書いてある。開示して出すことと、伏せて出すことは別である。ただし受け付けは\n個別に事情を聞かない。<b>説明が要る経緯を、説明の機会が無い場所へ持ち込むことになる。</b></p>\n<p>哲学の三篇については事情が違う。<b>PhilArchive は分野の読者がいる場所であり、そこに置いてある。</b>しかも専門職の水準という明文の基準と、却下権と、六百人を超える編集者がある。<b>場を上げる必要は無い。</b></p>"
     },
     {
       "id": "order",
       "title": "序列という言い方について",
-      "html": "<p><b>場そのものに序列は付けない。</b>付けられるのは、この仕事にとって合っているか\nどうかだけである。</p>\n<table>\n<tr><th>対象</th><th>合っている場</th><th>理由</th></tr>\n<tr><td>Trinity-Infinity の三篇</td><td><b>どこにも出さない</b></td><td>残った事実に新規性が無いと、記録が自分で書いている。場を上げても中身は変わらない</td></tr>\n<tr><td>哲学の三篇</td><td>PhilArchive</td><td>分野の読者がそこにいる</td></tr>\n<tr><td>史料ノート</td><td>Zenodo と Knowledge Commons</td><td>翻刻と出典表記が読まれればよい</td></tr>\n<tr><td><code>errata-check</code></td><td>ソフトウェアを査読する誌</td><td>審査の対象が「動くか」「文書化されているか」であり、噛み合う。<b>まだ出していない</b></td></tr>\n</table>\n<p><b>厳しい場所を探すより、噛み合う場所を探すほうが早い。</b>arXiv は新しい結果を\n出す場所であり、ここにあるのは間違いを消さずに残した記録である。<b>種類が違う。</b></p>"
+      "html": "<p><b>場そのものに序列は付けない。</b>付けられるのは、この仕事にとって合っているか\nどうかだけである。</p>\n<table>\n<tr><th>対象</th><th>合っている場</th><th>理由</th></tr>\n<tr><td>Trinity-Infinity の三篇</td><td><b>どこにも出さない</b></td><td>残った事実に新規性が無いと、記録が自分で書いている。場を上げても中身は変わらない</td></tr>\n<tr><td>哲学の三篇</td><td>PhilArchive</td><td>分野の読者がそこにいる。<b>そして明文の水準基準がある場所である</b></td></tr>\n<tr><td>史料ノート</td><td>Zenodo と Knowledge Commons</td><td>翻刻と出典表記が読まれればよい</td></tr>\n<tr><td><code>errata-check</code></td><td>ソフトウェアを査読する誌</td><td>審査の対象が「動くか」「文書化されているか」であり、噛み合う。<b>まだ出していない</b></td></tr>\n</table>\n<p><b>厳しい場所を探すより、噛み合う場所を探すほうが早い。</b>arXiv は新しい結果を\n出す場所であり、ここにあるのは間違いを消さずに残した記録である。<b>種類が違う。</b></p>"
     },
     {
       "id": "limits",
@@ -60,7 +66,7 @@
     {
       "id": "sources",
       "title": "出典（未確認）",
-      "html": "<blockquote><p><b>作業環境から開いて読んではいない。</b>検索結果から取った一覧である。</p></blockquote>\n<ul>\n<li>arXiv blog, Attention Authors: updated endorsement policy（2026年1月21日）</li>\n<li>arXiv blog, updated endorsement policy for arXiv Mathematics（2025年12月10日）</li>\n<li>On arXiv moderation system, arXiv:2307.11791</li>\n<li>Science, ArXiv preprint server clamps down on AI slop</li>\n<li>The Next Web, arXiv introduces one-year ban for researchers who submit papers with unchecked AI-generated content</li>\n</ul>"
+      "html": "<blockquote><p><b>作業環境から開いて読んではいない。</b>検索結果から取った一覧である。</p></blockquote>\n<ul>\n<li>arXiv blog, Attention Authors: updated endorsement policy（2026年1月21日）</li>\n<li>arXiv blog, updated endorsement policy for arXiv Mathematics（2025年12月10日）</li>\n<li>On arXiv moderation system, arXiv:2307.11791</li>\n<li>Science, ArXiv preprint server clamps down on AI slop</li>\n<li>The Next Web, arXiv introduces one-year ban for researchers who submit papers with unchecked AI-generated content</li>\n<li>PhilPapers, Submitting material to PhilPapers</li>\n<li>PhilPapers, Content Policy and Code of Conduct</li>\n<li>PhilPapers, Categories and Editors</li>\n<li>PhilPeople, Help</li>\n</ul>"
     }
   ],
   "extraNav": [
