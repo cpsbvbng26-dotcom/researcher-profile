@@ -38,6 +38,10 @@
       {
         "term": "証拠",
         "html": "三篇が検証スクリプトの同梱を謳っている箇所を、<strong>三箇所だと思っていました。数え直すと六箇所ありました。</strong>見つけたのは目視ではなく機械です。正誤表そのものへの検査 78 項目、道具自身への 68 項目。道具は、通る状態を <strong>26 通りに壊して、壊した箇所がちょうど落ちること</strong>を確かめています。"
+      },
+      {
+        "term": "外部の目",
+        "html": "凍結済みの論文を <strong>Stanford Agentic Reviewer</strong>（<code>paperreview.ai</code>、開発 Yixing Jiang・Andrew Ng）に掛け、返ってきた指摘を一つずつ当たって記録しています。<strong>当てたものも外したものも残します。</strong><span class=\"faint\">査読ではありません。arXiv に接地する作りなので、ここで出している論文は精度が落ちる側に当たります —— その前提ごと <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/external-evaluations.md\" target=\"_blank\" rel=\"noopener\">記録に書いてあります</a>。E6 を独立に当てた指摘もあれば、実在しない誤植を作った指摘もありました。</span>"
       }
     ],
     "refuteHtml": "<b>(1)</b> この検査を通ったのに、正誤表が一次資料とずれている例を一つ出してください。<b>(2)</b> あるいは、宣言どおりに壊しても落ちない検査を一つ示してください。どちらも一件で覆ります。宣言の書き方と壊し方は <a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a> にあります。",
