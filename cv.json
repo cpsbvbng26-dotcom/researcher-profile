@@ -110,6 +110,11 @@
       "name": "研究者プロフィール",
       "items": [
         {
+          "name": "arXiv 著者識別子",
+          "note": "ORCID を結び付けると出る頁。arXiv に出した論文は無い",
+          "url": "https://arxiv.org/a/0009-0000-1406-0547.html"
+        },
+        {
           "name": "researchmap",
           "note": "プロフィール",
           "url": "https://researchmap.jp/takuyanemoto"

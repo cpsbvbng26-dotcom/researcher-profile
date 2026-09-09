@@ -52,7 +52,7 @@
     {
       "id": "omitted",
       "title": "割愛した理由",
-      "html": "<p><b>arXiv に出していない。理由は arXiv の側にはない。</b>三つある。</p>\n<p><b>一つめ。推薦が要る。</b>2026年1月以降、所属のメールアドレスでも自動では下りない。\n推薦者を個人で見つける必要がある。</p>\n<p><b>二つめ。残った内容に新しい結果が無い。</b>これは外から言われたことではなく、\n<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity#結論\" target=\"_blank\" rel=\"noopener\">この記録が自分で書いている</a>\n—— 残ったのは一つの作用素についての一つの事実で、学部 2〜3 年の演習問題である。\n<b>新しい結果を載せる場所に、新しい結果でないものを出すのは、規則に合わない。</b>\n出さないのはそのためである。</p>\n<p><b>三つめ。経緯を説明する機会が無い。</b>初稿が言語モデルの生成物であることは\n記録に書いてある。開示して出すことと、伏せて出すことは別である。ただし受け付けは\n個別に事情を聞かない。<b>説明が要る経緯を、説明の機会が無い場所へ持ち込むことになる。</b></p>\n<p>哲学の三篇については事情が違う。<b>PhilArchive は分野の読者がいる場所であり、そこに置いてある。</b>しかも専門職の水準という明文の基準と、却下権と、六百人を超える編集者がある。<b>場を上げる必要は無い。</b></p>"
+      "html": "<p><b>arXiv に出していない。理由は arXiv の側にはない。</b>三つある。</p>\n<p><b>一つめ。推薦が要る。</b>2026年1月以降、所属のメールアドレスでも自動では下りない。\n推薦者を個人で見つける必要がある。</p>\n<p><b>二つめ。残った内容に新しい結果が無い。</b>これは外から言われたことではなく、\n<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity#結論\" target=\"_blank\" rel=\"noopener\">この記録が自分で書いている</a>\n—— 残ったのは一つの作用素についての一つの事実で、学部 2〜3 年の演習問題である。\n<b>新しい結果を載せる場所に、新しい結果でないものを出すのは、規則に合わない。</b>\n出さないのはそのためである。</p>\n<p><b>三つめ。経緯を説明する機会が無い。</b>初稿が言語モデルの生成物であることは\n記録に書いてある。開示して出すことと、伏せて出すことは別である。ただし受け付けは\n個別に事情を聞かない。<b>説明が要る経緯を、説明の機会が無い場所へ持ち込むことになる。</b></p>\n<p><b>arXiv に著者識別子の頁はある。</b>\n<a href=\"https://arxiv.org/a/0009-0000-1406-0547.html\" target=\"_blank\" rel=\"noopener\">arxiv.org/a/0009-0000-1406-0547</a>。\nこれは ORCID を arXiv の利用者記録に結び付けると出る頁で、<b>その ORCID に紐づく\narXiv の論文を並べるものである。</b>公表されている仕組みどおりの機能であって、\n抜け道ではない。</p>\n<p><b>並ぶ論文は無い。</b>arXiv に出していないからである。<b>頁があることを、\narXiv に載ったことと読み違えないための断りをここに置く。</b>\nこの頁が実際に何を表示しているかは、作業環境から開けないので確かめていない。</p>\n<p>哲学の三篇については事情が違う。<b>PhilArchive は分野の読者がいる場所であり、そこに置いてある。</b>しかも専門職の水準という明文の基準と、却下権と、六百人を超える編集者がある。<b>場を上げる必要は無い。</b></p>"
     },
     {
       "id": "order",
@@ -67,7 +67,7 @@
     {
       "id": "sources",
       "title": "出典（未確認）",
-      "html": "<blockquote><p><b>作業環境から開いて読んではいない。</b>検索結果から取った一覧である。</p></blockquote>\n<ul>\n<li>arXiv blog, Attention Authors: updated endorsement policy（2026年1月21日）</li>\n<li>arXiv blog, updated endorsement policy for arXiv Mathematics（2025年12月10日）</li>\n<li>On arXiv moderation system, arXiv:2307.11791</li>\n<li>Science, ArXiv preprint server clamps down on AI slop</li>\n<li>The Next Web, arXiv introduces one-year ban for researchers who submit papers with unchecked AI-generated content</li>\n<li>PhilPapers, Submitting material to PhilPapers</li>\n<li>PhilPapers, Content Policy and Code of Conduct</li>\n<li>PhilPapers, Categories and Editors</li>\n<li>PhilPeople, Help</li>\n</ul>"
+      "html": "<blockquote><p><b>作業環境から開いて読んではいない。</b>検索結果から取った一覧である。</p></blockquote>\n<ul>\n<li>arXiv blog, Attention Authors: updated endorsement policy（2026年1月21日）</li>\n<li>arXiv blog, updated endorsement policy for arXiv Mathematics（2025年12月10日）</li>\n<li>On arXiv moderation system, arXiv:2307.11791</li>\n<li>Science, ArXiv preprint server clamps down on AI slop</li>\n<li>The Next Web, arXiv introduces one-year ban for researchers who submit papers with unchecked AI-generated content</li>\n<li>PhilPapers, Submitting material to PhilPapers</li>\n<li>PhilPapers, Content Policy and Code of Conduct</li>\n<li>PhilPapers, Categories and Editors</li>\n<li>PhilPeople, Help</li>\n<li>arXiv info, ORCID identifiers</li>\n<li>arXiv info, Authority Records</li>\n</ul>"
     }
   ],
   "extraNav": [
