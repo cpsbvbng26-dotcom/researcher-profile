@@ -20,6 +20,7 @@
   "tagline": "修了証・学習領域・外部プロフィールです。ここは経歴の置き場で、主張の置き場ではありません。主張と検証は トップ にあります。",
   "sections": [
     "credentials",
+    "courses",
     "areas",
     "links"
   ],
@@ -76,6 +77,56 @@
           "issuer": "東北大学",
           "verify": "バッジを確認",
           "url": "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/cDB4elE1ejd1UDBLZGx6d1NWV2Y5Zz09"
+        }
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "name": "自由が丘産能短期大学 能率科 経営管理コース",
+      "items": [
+        {
+          "name": "仕事の上手な教え方（インストラクショナルデザイン）",
+          "note": "スクーリング・2 単位"
+        }
+      ]
+    },
+    {
+      "name": "オンライン大学 情報社会系の学部",
+      "items": [
+        {
+          "name": "人文社会入門"
+        },
+        {
+          "name": "IT リテラシー"
+        },
+        {
+          "name": "アカデミックリテラシー"
+        },
+        {
+          "name": "ネット情報発信概論"
+        },
+        {
+          "name": "二次創作の歴史から見るネット文化"
+        },
+        {
+          "name": "多言語 IT コミュニケーション"
+        },
+        {
+          "name": "人工知能活用実践"
+        },
+        {
+          "name": "経済入門"
+        },
+        {
+          "name": "デジタルツールの使い方"
+        },
+        {
+          "name": "情報セキュリティ概論"
+        },
+        {
+          "name": "数学史",
+          "note": "選択必修科目"
         }
       ]
     }
@@ -226,7 +277,9 @@
     "links": "リンク",
     "verify": "証明書を確認",
     "papers": "論文",
-    "papersNote": "いずれも査読前のプレプリントです。各カードから DOI を開けます。"
+    "papersNote": "いずれも査読前のプレプリントです。各カードから DOI を開けます。",
+    "courses": "修得した科目",
+    "coursesNote": "大学・短期大学で単位を修得した科目です。修了証と違って検証ページが無いので、別に置いています。オンライン大学の分はこれから増えます。"
   },
   "jsonld": {
     "@context": "https://schema.org",
