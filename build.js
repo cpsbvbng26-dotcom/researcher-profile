@@ -107,7 +107,9 @@ function renderProfile(p) {
     const now = i === all.length - 1;
     return `      <li${now ? ' class="path-now"' : ''}>`
       + `<span class="path-name">${esc(h.name)}</span>`
-      + `<span class="path-state">${esc(h.state)}</span></li>`;
+      + `<span class="path-state">${esc(h.state)}</span>`
+      + (h.note ? `<span class="path-note">${esc(h.note)}</span>` : '')
+      + '</li>';
   }).join('\n');
   const aims = arr(p.aims).map((a) => `      <li>${esc(a)}</li>`).join('\n');
   return [

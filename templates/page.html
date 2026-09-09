@@ -273,6 +273,13 @@ header::after {
   font-size: .76rem; letter-spacing: .04em; color: var(--muted);
   white-space: nowrap;
 }
+/* 単位を取った科目など、行に付く小さな注記。二列目には収めない。 */
+.path-note {
+  grid-column: 1 / -1;
+  margin-top: .2rem; padding-left: .8rem;
+  font-size: .76rem; line-height: 1.7; color: var(--faint);
+  border-left: 2px solid var(--accent-soft);
+}
 
 /* これからの二つ。数ではなく並びで見せる。 */
 .aims-label { margin: 1.5rem 0 .6rem; }
