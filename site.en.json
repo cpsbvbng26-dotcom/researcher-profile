@@ -19,7 +19,8 @@
   ],
   "profile": {
     "label": "About me",
-    "nowHtml": "I am enrolled in an information-and-society faculty at an online university, in its first autumn-entry cohort. My coursework there is mainly philosophy and business practice. What this place holds is my study of computer science and artificial intelligence.",
+    "nowHtml": "I am enrolled in an information-and-society faculty at an online university, in its first autumn-entry cohort. The programme spans the humanities and the sciences.",
+    "studyHtml": "My coursework is mainly <strong>philosophy</strong> and <strong>business practice</strong>. Mathematics is also on offer, and I have completed <strong>History of Mathematics</strong> as a required elective. What this place holds is my study of computer science and artificial intelligence.",
     "history": [
       {
         "name": "Tochigi Prefectural Tochigi High School",
