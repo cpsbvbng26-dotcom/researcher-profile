@@ -2,6 +2,8 @@
   "_": "修得した単位の唯一の源。site.json / site.en.json / cv.json はここを参照する。",
   "_なぜ": "同じ一覧を四つの設定に写すと、科目が増えた日に写し忘れる。**源を一つにして、合計は数えさせる。**",
   "_使い方": "科目が増えたらここに一行足す。ページを作り直したあと、cpsbvbng26-dotcom で node verification/update_readme_courses.js を走らせると README も揃う。",
+  "_現在": "asOf は、この一覧がどの時点のものかを示す。科目を足したら同じ日に直す。",
+  "asOf": "2026-09-09",
   "groups": [
     {
       "id": "sanno",
@@ -9,8 +11,8 @@
       "nameEn": "Jiyugaoka Sanno College, Business Management course",
       "items": [
         {
-          "name": "仕事の上手な教え方（Instructional Design、英語で開講）",
-          "nameEn": "Instructional Design (taught in English)",
+          "name": "仕事の上手な教え方（Instructional Design）",
+          "nameEn": "Instructional Design (仕事の上手な教え方)",
           "category": "スクーリング",
           "categoryEn": "in-person session",
           "credits": 2
@@ -19,8 +21,8 @@
     },
     {
       "id": "online",
-      "name": "オンライン大学 情報社会系の学部",
-      "nameEn": "Online university, information-and-society faculty",
+      "name": "ZEN大学 知能情報社会学部 知能情報社会学科",
+      "nameEn": "ZEN University — 知能情報社会学部 知能情報社会学科",
       "items": [
         {
           "name": "人文社会入門",

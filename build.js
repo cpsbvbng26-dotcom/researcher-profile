@@ -103,6 +103,21 @@ function withCSP(html) {
  */
 /* 修得した単位の合計。**手で書かない。行から数える。**
  * 区分が一つしか無いときは内訳を出さない。同じ数を二度書くことになる。 */
+/* 「何年何月何日現在」。**逐次更新の目安である。**
+ * courses.json の asOf を、その頁の言語で書き直すだけ。日付を二箇所で持たない。 */
+function asOfLabel(iso, en) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ''));
+  if (!m) return '';
+  const y = Number(m[1]), mo = Number(m[2]), d = Number(m[3]);
+  if (en) {
+    const MON = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                 'August', 'September', 'October', 'November', 'December'];
+    return `as of ${d} ${MON[mo - 1]} ${y}`;
+  }
+  return `${y}年${mo}月${d}日現在`;
+}
+
+
 function courseTotal(items, en) {
   const credits = items.reduce((n, c) => n + (Number(c.credits) || 0), 0);
   const byCat = [];
@@ -132,7 +147,8 @@ function renderProfile(p) {
     let note = h.note || '';
     let list = '';
     if (cs.length) {
-      note = courseTotal(cs, !!h.en);
+      note = courseTotal(cs, !!h.en)
+        + (h.asOf ? (h.en ? ` (${h.asOf})` : `（${h.asOf}）`) : '');
       list = '<ul class="path-courses">'
         + cs.map((c) => `<li data-category="${esc(c.category || '')}" `
             + `data-credits="${Number(c.credits) || 0}">${esc(c.name)}`
@@ -526,6 +542,7 @@ function renderCourses(groups, labels) {
     <div class="sec-head reveal">
       <h2 class="serif">${esc(labels.courses)}</h2>
       ${labels.coursesNote ? `<p>${esc(labels.coursesNote)}</p>` : ''}
+      ${groups[0] && groups[0].asOf ? `<p class="as-of">${esc(groups[0].asOf)}</p>` : ''}
     </div>
 
 ${body}
@@ -641,7 +658,9 @@ function build() {
         credits: c.credits,
       })),
     }));
-    groups.forEach((g) => { g.en = en; });
+    const asOf = asOfLabel(src.asOf, en);
+    groups.forEach((g) => { g.en = en; g.asOf = asOf; });
+    profile.coursesAsOf = asOf;
     if (profile.coursesSection) profile.courses = groups;
     arr(profile.profile && profile.profile.history).forEach((h) => {
       if (!h.coursesGroup) return;
@@ -649,6 +668,7 @@ function build() {
       if (!g) throw new Error('courses.json に無い群を指しています: ' + h.coursesGroup);
       h.courses = g.items;
       h.en = en;
+      h.asOf = asOf;
     });
   }
 
