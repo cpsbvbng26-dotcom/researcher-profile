@@ -461,16 +461,37 @@ const SECTION_ORDER_DEFAULT = ['credentials', 'areas', 'papers', 'links'];
 function renderCourses(groups, labels) {
   if (!groups.length) return '';
   const body = groups.map((g) => {
-    const rows = arr(g.items).map((c) =>
-      `        <li><span class="course-name">${esc(c.name)}</span>`
-      + (c.note ? `<span class="course-note">${esc(c.note)}</span>` : '')
-      + '</li>').join('\n');
+    const items = arr(g.items);
+    const rows = items.map((c) => {
+      const note = [c.category, c.credits ? c.credits + ' 単位' : ''].filter(Boolean).join('・');
+      return `        <li data-category="${esc(c.category || '')}" data-credits="${Number(c.credits) || 0}">`
+        + `<span class="course-name">${esc(c.name)}</span>`
+        + (note ? `<span class="course-note">${esc(note)}</span>` : '')
+        + '</li>';
+    }).join('\n');
+
+    /* **合計は手で書かない。**上の行から数える。
+     * 区分が一つしか無いときは内訳を出さない。同じ数を二度書くことになる。 */
+    const credits = items.reduce((n, c) => n + (Number(c.credits) || 0), 0);
+    const byCat = [];
+    items.forEach((c) => {
+      const k = c.category || '';
+      const hit = byCat.find((x) => x[0] === k);
+      if (hit) hit[1] += Number(c.credits) || 0;
+      else byCat.push([k, Number(c.credits) || 0]);
+    });
+    const detail = byCat.length > 1
+      ? ' —— ' + byCat.map(([k, v]) => `${k} ${v}`).join('・')
+      : '';
+    const total = `        <p class="courses-total">${items.length} 科目 ${credits} 単位${detail}</p>`;
+
     return [
       '    <div class="group">',
       g.name ? `      <div class="group-name reveal">${esc(g.name)}</div>` : '',
       '      <ul class="courses reveal">',
       rows,
       '      </ul>',
+      total,
       '    </div>',
     ].filter(Boolean).join('\n');
   }).join('\n\n');
