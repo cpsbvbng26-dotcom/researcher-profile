@@ -163,6 +163,10 @@
       {
         "name": "The cited primary sources",
         "detail": "The author has not consulted most of them. 38 of the 39 unchecked. The survey has begun one entry at a time; the first came out matching. The second had been read, but no passage could be pointed to, so it stays unchecked — having read a book and being able to cite it are not the same"
+      },
+      {
+        "name": "A trade ebook",
+        "detail": "『グランドセオリーというロマン —— トリニティインフィニティフレームワーク』 (Kindle; the author calls it a manifesto). The author withdrew it from sale. Unlike the frozen PDFs, no third party can now check what it claimed. It is the one thing in this record that was deleted"
       }
     ],
     "recordUrl": "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md",
