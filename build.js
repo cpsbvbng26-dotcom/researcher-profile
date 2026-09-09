@@ -94,6 +94,40 @@ function withCSP(html) {
   return html.replace(/(<meta name="viewport"[^>]*>\n?)/, '$1' + tag);
 }
 
+/* 自己紹介の板。**石垣に嵌めた銘板のつもりで組む。**
+ *
+ * いま何をしているか、来た道、これからの二つ。三つとも別の見え方にする。
+ * 来た道は縦の道筋で、いまいる位置だけ指し色を差す。
+ * 色は既にある指し色（--accent）だけを使う。**新しい本文色を作らない** ——
+ * 作れば check_contrast.js の対象が増え、そこを通らない色が混じる余地ができる。
+ */
+function renderProfile(p) {
+  if (!p) return '';
+  const rows = arr(p.history).map((h, i, all) => {
+    const now = i === all.length - 1;
+    return `      <li${now ? ' class="path-now"' : ''}>`
+      + `<span class="path-name">${esc(h.name)}</span>`
+      + `<span class="path-state">${esc(h.state)}</span></li>`;
+  }).join('\n');
+  const aims = arr(p.aims).map((a) => `      <li>${esc(a)}</li>`).join('\n');
+  return [
+    /* section にしない。ヒーローの検査は最初の </section> で切るので、
+     * 入れ子にすると査読前の断りがヒーローの外に出る。実際に一度そうなった。 */
+    '    <div class="profile reveal">',
+    `      <h2 class="profile-label">${esc(p.label || '')}</h2>`,
+    `      <p class="profile-now">${p.nowHtml || esc(p.now || '')}</p>`,
+    rows ? '      <ol class="path">' : '',
+    rows,
+    rows ? '      </ol>' : '',
+    aims ? `      <p class="aims-label">${esc(p.aimsLabel || '')}</p>` : '',
+    aims ? '      <ul class="aims">' : '',
+    aims,
+    aims ? '      </ul>' : '',
+    '    </div>'
+  ].filter((x) => x !== '').join('\n') + '\n';
+}
+
+
 function renderIdentifiers(ids) {
   if (!ids.length) return '';
   return ids
@@ -533,6 +567,7 @@ function build() {
     .replace(/{{NAME}}/g, esc(profile.name))
     .replace(/{{NAME_LATIN}}/g, profile.nameLatin ? `    <p class="romaji reveal">${esc(profile.nameLatin)}</p>` : '')
     .replace(/{{IDENTIFIERS}}/g, renderIdentifiers(arr(profile.identifiers)))
+    .replace(/{{PROFILE}}/g, renderProfile(profile.profile))
     .replace(/{{TAGLINE}}/g, (profile.taglineHtml || profile.tagline)
       ? `    <p class="lead reveal">${profile.taglineHtml || esc(profile.tagline)}</p>` : '')
     .replace(/{{SECTIONS}}/g, renderSections(profile, labels))

@@ -26,6 +26,7 @@
   --line-soft: #efedE9;
   --accent: #8a6a3d;
   --accent-soft: rgba(138, 106, 61, .10);
+  --accent-wash: rgba(138, 106, 61, .07);   /* 銘板の上にかかる刷毛。装飾のみ */
   --wall: #221f26;                          /* 城壁の石。火を遮るので不透明 */
   --ember: rgba(118, 20, 14, .78);          /* 狭間から漏れる火 */
   --wall-bg: rgba(28, 26, 30, .06);
@@ -46,6 +47,7 @@
   --line-soft: #232326;
   --accent: #b08d57;
   --accent-soft: rgba(176, 141, 87, .14);
+  --accent-wash: rgba(176, 141, 87, .10);   /* 銘板の上にかかる刷毛。装飾のみ */
   --wall: #08070a;
   --ember: rgba(232, 74, 42, .62);
   --wall-bg: rgba(0, 0, 0, .35);
@@ -212,6 +214,80 @@ header::after {
 
 @media (max-width: 40rem) {
   .facts .fact, .claim-kv > div { grid-template-columns: 1fr; gap: .15rem; }
+}
+
+/* ---------- 自己紹介の板 ----------
+   石垣に嵌めた銘板のつもりで組む。左に指し色の細い縁、上に薄い刷毛。
+   来た道は縦の道筋で、いまいる位置だけ塗りつぶす。
+   色は指し色（--accent）だけを使い、新しい本文色を作らない。 */
+.profile {
+  max-width: 42rem;
+  margin: 2rem 0 2.2rem;
+  padding: 1.35rem 1.5rem 1.45rem;
+  background:
+    linear-gradient(to bottom, var(--accent-wash) 0, transparent 5rem),
+    var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 .5rem .5rem 0;
+  box-shadow: var(--shadow);
+}
+.profile-label, .aims-label {
+  margin: 0 0 .7rem;
+  font-size: .7rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--faint);
+}
+.profile-now {
+  margin: 0; font-size: .95rem; line-height: 1.95; color: var(--text);
+}
+
+/* 来た道。縦の線を左に一本引き、節ごとに丸を置く。 */
+.path {
+  list-style: none;
+  margin: 1.25rem 0 0; padding: 0 0 0 1.15rem;
+  border-left: 1px solid var(--line);
+}
+.path li {
+  position: relative;
+  display: grid; grid-template-columns: 1fr auto; gap: .5rem 1rem;
+  align-items: baseline;
+  padding: .55rem 0;
+}
+.path li + li { border-top: 1px solid var(--line-soft); }
+.path li::before {
+  content: ""; position: absolute;
+  left: -1.15rem; top: 1.05rem;
+  width: .42rem; height: .42rem; margin-left: -.22rem;
+  border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--line);
+}
+.path .path-now::before {
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 0 .22rem var(--accent-soft);
+}
+.path-name { font-size: .88rem; line-height: 1.7; color: var(--text); }
+.path-now .path-name { color: var(--accent); }
+.path-state {
+  font-size: .76rem; letter-spacing: .04em; color: var(--muted);
+  white-space: nowrap;
+}
+
+/* これからの二つ。数ではなく並びで見せる。 */
+.aims-label { margin: 1.5rem 0 .6rem; }
+.aims { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.aims li {
+  position: relative; padding-left: 1.15rem;
+  font-size: .88rem; line-height: 1.85; color: var(--muted);
+}
+.aims li::before {
+  content: ""; position: absolute; left: 0; top: .72rem;
+  width: .5rem; height: 1px; background: var(--accent);
+}
+
+@media (max-width: 40rem) {
+  .profile { padding: 1.15rem 1.15rem 1.25rem; }
+  .path li { grid-template-columns: 1fr; gap: .1rem; }
+  .path-state { white-space: normal; }
 }
 
 /* ---------- ノートへの導線 ----------
@@ -510,7 +586,7 @@ footer::before {
     <h1 class="serif reveal">{{NAME}}</h1>
 {{NAME_LATIN}}
 {{IDENTIFIERS}}
-{{TAGLINE}}
+{{PROFILE}}{{TAGLINE}}
   </section>
 {{SECTIONS}}
 </main>
