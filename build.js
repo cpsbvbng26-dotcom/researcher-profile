@@ -105,10 +105,32 @@ function renderProfile(p) {
   if (!p) return '';
   const rows = arr(p.history).map((h, i, all) => {
     const now = i === all.length - 1;
+    /* 単位を取った科目は、この行に入れる。**合計は行から数える。**
+     * note を手で書いた場合はそれを使うが、courses があるほうを優先する。 */
+    const cs = arr(h.courses);
+    let note = h.note || '';
+    let list = '';
+    if (cs.length) {
+      const credits = cs.reduce((n, c) => n + (Number(c.credits) || 0), 0);
+      const byCat = [];
+      cs.forEach((c) => {
+        const hit = byCat.find((x) => x[0] === (c.category || ''));
+        if (hit) hit[1] += Number(c.credits) || 0;
+        else byCat.push([c.category || '', Number(c.credits) || 0]);
+      });
+      note = `${cs.length} ${h.unitWord || '科目'} ${credits} ${h.creditWord || '単位'}`
+        + (byCat.length > 1 ? ' —— ' + byCat.map(([k, v]) => `${k} ${v}`).join('・') : '');
+      list = '<ul class="path-courses">'
+        + cs.map((c) => `<li data-category="${esc(c.category || '')}" `
+            + `data-credits="${Number(c.credits) || 0}">${esc(c.name)}`
+            + (c.category ? `<i>${esc(c.category)}</i>` : '') + '</li>').join('')
+        + '</ul>';
+    }
     return `      <li${now ? ' class="path-now"' : ''}>`
       + `<span class="path-name">${esc(h.name)}</span>`
       + `<span class="path-state">${esc(h.state)}</span>`
-      + (h.note ? `<span class="path-note">${esc(h.note)}</span>` : '')
+      + (note ? `<span class="path-note">${esc(note)}</span>` : '')
+      + list
       + '</li>';
   }).join('\n');
   const aims = arr(p.aims).map((a) => `      <li>${esc(a)}</li>`).join('\n');

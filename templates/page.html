@@ -268,6 +268,22 @@ header::after {
   box-shadow: 0 0 0 .22rem var(--accent-soft);
 }
 .path-name { font-size: .88rem; line-height: 1.7; color: var(--text); }
+/* 行に属する科目。単位欄の中身をそのまま置く。 */
+.path-courses {
+  grid-column: 1 / -1; list-style: none;
+  margin: .5rem 0 .2rem; padding: 0 0 0 .8rem;
+  display: grid; gap: .3rem;
+  border-left: 2px solid var(--accent-soft);
+}
+.path-courses li {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem;
+  font-size: .8rem; line-height: 1.65; color: var(--muted);
+}
+.path-courses li i {
+  font-style: normal; font-size: .68rem; letter-spacing: .08em;
+  padding: .08rem .4rem; border-radius: .2rem;
+  color: var(--accent); background: var(--accent-soft);
+}
 .path-now .path-name { color: var(--accent); }
 .path-state {
   font-size: .76rem; letter-spacing: .04em; color: var(--muted);
