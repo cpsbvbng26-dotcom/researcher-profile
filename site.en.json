@@ -20,7 +20,7 @@
   "coursesFile": "courses.json",
   "profile": {
     "label": "About me",
-    "nowHtml": "I am enrolled in an information-and-society faculty at an online university, in its first autumn-entry cohort. The programme spans the humanities and the sciences.",
+    "nowHtml": "I am enrolled at ZEN University — 知能情報社会学部 知能情報社会学科 — in its first autumn-entry cohort. The programme spans the humanities and the sciences.",
     "studyHtml": "My coursework is mainly <strong>philosophy</strong> and <strong>business practice</strong>. <strong>Mathematics</strong> is on offer as well. The courses I have credit for are listed in the <a href=\"./cv.html\">CV</a> (in Japanese). What this place holds is my study of computer science and artificial intelligence.",
     "history": [
       {
@@ -37,7 +37,7 @@
         "coursesGroup": "sanno"
       },
       {
-        "name": "Online university, information-and-society faculty",
+        "name": "ZEN University — 知能情報社会学部 知能情報社会学科",
         "state": "enrolled (first autumn-entry cohort)",
         "coursesGroup": "online"
       }
@@ -93,7 +93,7 @@
       },
       {
         "name": "34 checks on the register",
-        "html": "The shape and history of the correction record itself. <strong>54 entries</strong> across five statuses, <strong>30 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>46 can be checked by anyone against a frozen artifact; the remaining 8 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+        "html": "The shape and history of the correction record itself. <strong>55 entries</strong> across five statuses, <strong>30 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>47 can be checked by anyone against a frozen artifact; the remaining 8 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
         "name": "31 printed numbers",
@@ -122,7 +122,7 @@
     ]
   },
   "withdrawn": {
-    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (54 entries)</a>.",
+    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (55 entries)</a>.",
     "items": [
       {
         "name": "The original theorem",

@@ -20,7 +20,7 @@
   "coursesFile": "courses.json",
   "profile": {
     "label": "自己紹介",
-    "nowHtml": "オンライン大学の情報社会系の学部に在籍しています（秋入学一期生）。文理を横断する課程です。",
+    "nowHtml": "ZEN大学 知能情報社会学部 知能情報社会学科に在籍しています（秋入学一期生）。文理を横断する課程です。",
     "studyHtml": "大学では主に<strong>哲学</strong>と<strong>実務</strong>を学んでいます。<strong>数学</strong>も履修できます。修得した科目は <a href=\"./cv.html\">CV</a> に並べてあります。この場所に置いているのは、コンピュータサイエンスと人工知能の学習です。",
     "history": [
       {
@@ -37,7 +37,7 @@
         "coursesGroup": "sanno"
       },
       {
-        "name": "オンライン大学 情報社会系の学部",
+        "name": "ZEN大学 知能情報社会学部 知能情報社会学科",
         "state": "在籍（秋入学一期生）",
         "coursesGroup": "online"
       }
@@ -93,7 +93,7 @@
       },
       {
         "name": "登録簿 34",
-        "html": "訂正の記録そのものの形と履歴。<strong>54 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 30 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。<strong>第三者が確かめられるのは 46 件で、残る 8 件は著者の証言しか根拠が無い</strong>ことも欄にしてある。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
+        "html": "訂正の記録そのものの形と履歴。<strong>55 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 30 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。<strong>第三者が確かめられるのは 47 件で、残る 8 件は著者の証言しか根拠が無い</strong>ことも欄にしてある。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
       },
       {
         "name": "紙面の数値 31",
@@ -122,7 +122,7 @@
     ]
   },
   "withdrawn": {
-    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（54 件）</a> にあります。",
+    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（55 件）</a> にあります。",
     "items": [
       {
         "name": "収束定理の原型",
