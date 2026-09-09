@@ -17,6 +17,7 @@
       "url": "https://orcid.org/0009-0000-1406-0547"
     }
   ],
+  "coursesFile": "courses.json",
   "profile": {
     "label": "About me",
     "nowHtml": "I am enrolled in an information-and-society faculty at an online university, in its first autumn-entry cohort. The programme spans the humanities and the sciences.",
@@ -33,78 +34,12 @@
       {
         "name": "Jiyugaoka Sanno College, Business Management course",
         "state": "two years, then withdrew",
-        "courses": [
-          {
-            "name": "Instructional Design (taught in English)",
-            "category": "in-person session",
-            "credits": 2
-          }
-        ],
-        "unitWord": "courses",
-        "creditWord": "credits"
+        "coursesGroup": "sanno"
       },
       {
         "name": "Online university, information-and-society faculty",
         "state": "enrolled (first autumn-entry cohort)",
-        "courses": [
-          {
-            "name": "Introduction to the Humanities and Social Sciences",
-            "category": "required",
-            "credits": 2
-          },
-          {
-            "name": "IT Literacy",
-            "category": "required",
-            "credits": 2
-          },
-          {
-            "name": "Academic Literacy",
-            "category": "required",
-            "credits": 2
-          },
-          {
-            "name": "Using Digital Tools",
-            "category": "required",
-            "credits": 2
-          },
-          {
-            "name": "Multilingual IT Communication",
-            "category": "required",
-            "credits": 2
-          },
-          {
-            "name": "Applied Practice in Artificial Intelligence",
-            "category": "required",
-            "credits": 2
-          },
-          {
-            "name": "Introduction to Economics",
-            "category": "required",
-            "credits": 2
-          },
-          {
-            "name": "Introduction to Information Security",
-            "category": "required elective",
-            "credits": 2
-          },
-          {
-            "name": "History of Mathematics",
-            "category": "required elective",
-            "credits": 2
-          },
-          {
-            "name": "Introduction to Publishing on the Internet",
-            "category": "elective",
-            "credits": 2
-          },
-          {
-            "name": "Internet Culture through the History of Derivative Works",
-            "category": "elective",
-            "credits": 2
-          }
-        ],
-        "unitWord": "courses",
-        "creditWord": "credits"
+        "coursesGroup": "online"
       }
     ],
     "aimsLabel": "Two aims",
