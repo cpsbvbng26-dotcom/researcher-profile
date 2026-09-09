@@ -19,7 +19,7 @@
   ],
   "profile": {
     "label": "About me",
-    "nowHtml": "I am enrolled in an information-science faculty at an online university, in its first autumn-entry cohort, studying computer science and artificial intelligence.",
+    "nowHtml": "I am enrolled in an information-and-society faculty at an online university, in its first autumn-entry cohort. My coursework there is mainly philosophy and business practice. What this place holds is my study of computer science and artificial intelligence.",
     "history": [
       {
         "name": "Tochigi Prefectural Tochigi High School",
@@ -34,7 +34,7 @@
         "state": "two years, then withdrew"
       },
       {
-        "name": "Online university, information-science faculty",
+        "name": "Online university, information-and-society faculty",
         "state": "enrolled (first autumn-entry cohort)"
       }
     ],
