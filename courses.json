@@ -1,0 +1,105 @@
+{
+  "_": "修得した単位の唯一の源。site.json / site.en.json / cv.json はここを参照する。",
+  "_なぜ": "同じ一覧を四つの設定に写すと、科目が増えた日に写し忘れる。**源を一つにして、合計は数えさせる。**",
+  "_使い方": "科目が増えたらここに一行足す。ページを作り直したあと、cpsbvbng26-dotcom で node verification/update_readme_courses.js を走らせると README も揃う。",
+  "groups": [
+    {
+      "id": "sanno",
+      "name": "自由が丘産能短期大学 能率科 経営管理コース",
+      "nameEn": "Jiyugaoka Sanno College, Business Management course",
+      "items": [
+        {
+          "name": "仕事の上手な教え方（Instructional Design、英語で開講）",
+          "nameEn": "Instructional Design (taught in English)",
+          "category": "スクーリング",
+          "categoryEn": "in-person session",
+          "credits": 2
+        }
+      ]
+    },
+    {
+      "id": "online",
+      "name": "オンライン大学 情報社会系の学部",
+      "nameEn": "Online university, information-and-society faculty",
+      "items": [
+        {
+          "name": "人文社会入門",
+          "nameEn": "Introduction to the Humanities and Social Sciences",
+          "category": "必修",
+          "categoryEn": "required",
+          "credits": 2
+        },
+        {
+          "name": "IT リテラシー",
+          "nameEn": "IT Literacy",
+          "category": "必修",
+          "categoryEn": "required",
+          "credits": 2
+        },
+        {
+          "name": "アカデミックリテラシー",
+          "nameEn": "Academic Literacy",
+          "category": "必修",
+          "categoryEn": "required",
+          "credits": 2
+        },
+        {
+          "name": "デジタルツールの使い方",
+          "nameEn": "Using Digital Tools",
+          "category": "必修",
+          "categoryEn": "required",
+          "credits": 2
+        },
+        {
+          "name": "多言語 IT コミュニケーション",
+          "nameEn": "Multilingual IT Communication",
+          "category": "必修",
+          "categoryEn": "required",
+          "credits": 2
+        },
+        {
+          "name": "人工知能活用実践",
+          "nameEn": "Applied Practice in Artificial Intelligence",
+          "category": "必修",
+          "categoryEn": "required",
+          "credits": 2
+        },
+        {
+          "name": "経済入門",
+          "nameEn": "Introduction to Economics",
+          "category": "必修",
+          "categoryEn": "required",
+          "credits": 2
+        },
+        {
+          "name": "情報セキュリティ概論",
+          "nameEn": "Introduction to Information Security",
+          "category": "選択必修",
+          "categoryEn": "required elective",
+          "credits": 2
+        },
+        {
+          "name": "数学史",
+          "nameEn": "History of Mathematics",
+          "category": "選択必修",
+          "categoryEn": "required elective",
+          "credits": 2
+        },
+        {
+          "name": "ネット情報発信概論",
+          "nameEn": "Introduction to Publishing on the Internet",
+          "category": "選択",
+          "categoryEn": "elective",
+          "credits": 2
+        },
+        {
+          "name": "二次創作の歴史から見るネット文化",
+          "nameEn": "Internet Culture through the History of Derivative Works",
+          "category": "選択",
+          "categoryEn": "elective",
+          "credits": 2
+        }
+      ]
+    }
+  ]
+}

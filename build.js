@@ -101,6 +101,27 @@ function withCSP(html) {
  * 色は既にある指し色（--accent）だけを使う。**新しい本文色を作らない** ——
  * 作れば check_contrast.js の対象が増え、そこを通らない色が混じる余地ができる。
  */
+/* 修得した単位の合計。**手で書かない。行から数える。**
+ * 区分が一つしか無いときは内訳を出さない。同じ数を二度書くことになる。 */
+function courseTotal(items, en) {
+  const credits = items.reduce((n, c) => n + (Number(c.credits) || 0), 0);
+  const byCat = [];
+  items.forEach((c) => {
+    const k = c.category || '';
+    const hit = byCat.find((x) => x[0] === k);
+    if (hit) hit[1] += Number(c.credits) || 0;
+    else byCat.push([k, Number(c.credits) || 0]);
+  });
+  const head = en
+    ? `${items.length} course${items.length === 1 ? '' : 's'}, ${credits} credits`
+    : `${items.length} 科目 ${credits} 単位`;
+  if (byCat.length < 2) return head;
+  return head + (en
+    ? ' — ' + byCat.map(([k, v]) => `${v} ${k}`).join(', ')
+    : ' —— ' + byCat.map(([k, v]) => `${k} ${v}`).join('・'));
+}
+
+
 function renderProfile(p) {
   if (!p) return '';
   const rows = arr(p.history).map((h, i, all) => {
@@ -111,15 +132,7 @@ function renderProfile(p) {
     let note = h.note || '';
     let list = '';
     if (cs.length) {
-      const credits = cs.reduce((n, c) => n + (Number(c.credits) || 0), 0);
-      const byCat = [];
-      cs.forEach((c) => {
-        const hit = byCat.find((x) => x[0] === (c.category || ''));
-        if (hit) hit[1] += Number(c.credits) || 0;
-        else byCat.push([c.category || '', Number(c.credits) || 0]);
-      });
-      note = `${cs.length} ${h.unitWord || '科目'} ${credits} ${h.creditWord || '単位'}`
-        + (byCat.length > 1 ? ' —— ' + byCat.map(([k, v]) => `${k} ${v}`).join('・') : '');
+      note = courseTotal(cs, !!h.en);
       list = '<ul class="path-courses">'
         + cs.map((c) => `<li data-category="${esc(c.category || '')}" `
             + `data-credits="${Number(c.credits) || 0}">${esc(c.name)}`
@@ -494,18 +507,7 @@ function renderCourses(groups, labels) {
 
     /* **合計は手で書かない。**上の行から数える。
      * 区分が一つしか無いときは内訳を出さない。同じ数を二度書くことになる。 */
-    const credits = items.reduce((n, c) => n + (Number(c.credits) || 0), 0);
-    const byCat = [];
-    items.forEach((c) => {
-      const k = c.category || '';
-      const hit = byCat.find((x) => x[0] === k);
-      if (hit) hit[1] += Number(c.credits) || 0;
-      else byCat.push([k, Number(c.credits) || 0]);
-    });
-    const detail = byCat.length > 1
-      ? ' —— ' + byCat.map(([k, v]) => `${k} ${v}`).join('・')
-      : '';
-    const total = `        <p class="courses-total">${items.length} 科目 ${credits} 単位${detail}</p>`;
+    const total = `        <p class="courses-total">${courseTotal(items, !!g.en)}</p>`;
 
     return [
       '    <div class="group">',
@@ -621,6 +623,33 @@ function build() {
   if (!profile.name) {
     console.error('設定ファイルに name がありません。');
     process.exit(1);
+  }
+
+  /* 修得した単位は courses.json だけが持つ。**設定に写さない。**
+   * 同じ一覧を四つの設定に写すと、科目が増えた日に写し忘れる。
+   * ここで言語に合わせて解いてから、節にも学歴の行にも同じものを配る。 */
+  if (profile.coursesFile) {
+    const src = JSON.parse(
+      fs.readFileSync(path.join(ROOT, profile.coursesFile), 'utf8'));
+    const en = String(profile.lang || 'ja').slice(0, 2) === 'en';
+    const groups = arr(src.groups).map((g) => ({
+      id: g.id,
+      name: en ? (g.nameEn || g.name) : g.name,
+      items: arr(g.items).map((c) => ({
+        name: en ? (c.nameEn || c.name) : c.name,
+        category: en ? (c.categoryEn || c.category) : c.category,
+        credits: c.credits,
+      })),
+    }));
+    groups.forEach((g) => { g.en = en; });
+    if (profile.coursesSection) profile.courses = groups;
+    arr(profile.profile && profile.profile.history).forEach((h) => {
+      if (!h.coursesGroup) return;
+      const g = groups.find((x) => x.id === h.coursesGroup);
+      if (!g) throw new Error('courses.json に無い群を指しています: ' + h.coursesGroup);
+      h.courses = g.items;
+      h.en = en;
+    });
   }
 
   const labels = Object.assign({}, DEFAULT_LABELS, profile.labels || {});
