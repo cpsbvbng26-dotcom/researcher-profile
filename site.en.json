@@ -20,7 +20,7 @@
   "profile": {
     "label": "About me",
     "nowHtml": "I am enrolled in an information-and-society faculty at an online university, in its first autumn-entry cohort. The programme spans the humanities and the sciences.",
-    "studyHtml": "My coursework is mainly <strong>philosophy</strong> and <strong>business practice</strong>. <strong>Mathematics</strong> is on offer as well. What this place holds is my study of computer science and artificial intelligence.",
+    "studyHtml": "My coursework is mainly <strong>philosophy</strong> and <strong>business practice</strong>. <strong>Mathematics</strong> is on offer as well. The courses I have credit for are listed in the <a href=\"./cv.html\">CV</a> (in Japanese). What this place holds is my study of computer science and artificial intelligence.",
     "history": [
       {
         "name": "Tochigi Prefectural Tochigi High School",
@@ -33,12 +33,12 @@
       {
         "name": "Jiyugaoka Sanno College, Business Management course",
         "state": "two years, then withdrew",
-        "note": "2 credits earned at in-person sessions"
+        "note": "Instructional Design — 2 credits, at in-person sessions"
       },
       {
         "name": "Online university, information-and-society faculty",
         "state": "enrolled (first autumn-entry cohort)",
-        "note": "History of Mathematics completed as a required elective"
+        "note": "courses with credit are listed in the CV"
       }
     ],
     "aimsLabel": "Two aims",
