@@ -1,0 +1,90 @@
+{
+  "name": "根本卓哉",
+  "nameLatin": "TAKUYA NEMOTO",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "先祖の公的記録 —— 高祖父と曾祖父 | 根本卓哉",
+  "description": "公的な記録が残っている先祖を、国立国会図書館デジタルコレクションとアジア歴史資料センターの識別子つきで並べる。著者の仕事の正しさとは関係が無い。確かめていないことも書く。",
+  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/lineage.html",
+  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "tagline": "公的な記録が残っている先祖を並べます。識別子は付けますが、記載の中身は確かめていません。著者の仕事について何かを言う頁ではありません。",
+  "asOf": "2026-09-11",
+  "sections": [
+    "stance",
+    "list",
+    "nemoto",
+    "otani",
+    "limits"
+  ],
+  "blocks": [
+    {
+      "id": "stance",
+      "title": "この頁の立場",
+      "html": "<p><b>この頁は、著者の仕事について何も言わない。</b>先祖の事績は、著者が公開した主張の\n正しさの根拠にならない。ここに並べたのは、<b>公的な記録が残っている</b>ということだけである。</p>\n<p>置いた理由は二つある。<b>一つめ。</b>海軍公報の史料ノートを書いた動機は血縁であり、\n<b>紙面はそれを書いていない。</b>来歴を明かさずに史料を扱うのは、学術の作法として弱い。\n<b>二つめ。</b>公的な記録として残っているものは、誰でも当たれる。当たれるものは書いておく。</p>\n<p><b>血筋を誇る語は使わない。</b>この頁が扱うのは、記録が残っているかどうかだけである。\n<b>使わないことは機械で留めてある</b>（<code>check_site.js</code>）。</p>"
+    },
+    {
+      "id": "list",
+      "title": "一覧",
+      "html": "<table>\n<tr><th>続柄</th><th>名</th><th>記録</th><th>出典</th></tr>\n<tr><td>高祖父（男系男子直系）</td><td>根本嘉一郎</td><td>横川村會議員</td><td>国立国会図書館デジタルコレクション 2 件</td></tr>\n<tr><td>曾祖父</td><td>大谷恒</td><td>海軍大尉。瑞宝章四等（1943年9月11日）</td><td>アジア歴史資料センター 1 件</td></tr>\n</table>\n<p><b>続柄は著者の証言による。</b>戸籍などで突き合わせてはいない。</p>"
+    },
+    {
+      "id": "nemoto",
+      "title": "根本嘉一郎 —— 高祖父",
+      "html": "<p><b>横川村會議員。</b>これが公的な記録から言えることである。生没年、在任の期間、\nその他の事績は、<b>この頁では述べない</b> —— 確かめていないためである。</p>\n<h3>出典</h3>\n<blockquote><p>斎藤良夫 著『明治大正県下政界秘史』, 斎藤良夫, 大正15. 国立国会図書館デジタルコレクション\n<a href=\"https://dl.ndl.go.jp/pid/1018614\" target=\"_blank\" rel=\"noopener\">https://dl.ndl.go.jp/pid/1018614</a>\n（参照 2026-09-11）</p></blockquote>\n<blockquote><p>栃木県勢大観刊行会 編『栃木県勢大観』, 栃木県勢大観刊行会, 昭和4. 国立国会図書館デジタルコレクション\n<a href=\"https://dl.ndl.go.jp/pid/1225188\" target=\"_blank\" rel=\"noopener\">https://dl.ndl.go.jp/pid/1225188</a>\n（参照 2026-09-11）</p></blockquote>\n<p>永続的識別子は <code>info:ndljp/pid/1018614</code> と <code>info:ndljp/pid/1225188</code> である。\n表記は国立国会図書館が示している転載時の形に従っている。</p>\n<p><b>該当の頁は書いていない。</b>作業環境から国立国会図書館デジタルコレクションを開けないため、\n<b>どの頁に、どう記載されているかを確かめていない。</b>確かめていないものを頁数まで書くと、\n読者は確かめられたものとして受け取る。</p>"
+    },
+    {
+      "id": "otani",
+      "title": "大谷恒 —— 曾祖父",
+      "html": "<p>海軍大尉。<b>瑞宝章四等を 1943年9月11日に受けている。</b>假記番号は 2603-25。\n原資料はアジア歴史資料センター（JACAR）の <code>Ref. C12070491000</code>、\n海軍公報（部内限）号外である。</p>\n<p>この一件については史料ノートがある。翻刻と、そこから言えること・言えないことの切り分けを置いた。</p>\n<p><a href=\"https://doi.org/10.5281/zenodo.22055709\" target=\"_blank\" rel=\"noopener\">A Naval Gazette Entry for Lieutenant Otani Tsune（10.5281/zenodo.22055709）</a></p>\n<p><b>名の読みは確定していない。</b>ノートの要旨自身が <code>It does not establish the reading of his name</code>\nと述べている。表題が読みを与えていることは、その正誤表に記録してある\n（<a href=\"https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/ERRATA.md\" target=\"_blank\" rel=\"noopener\">E5</a>）。</p>\n<p><b>そのノートは、著者との続柄を書いていない。</b>紙面は凍結されているので直せない。\n<b>来歴を書いていなかったことのほうを、正誤表に記録した。</b></p>"
+    },
+    {
+      "id": "limits",
+      "title": "確かめていないこと",
+      "html": "<ul>\n<li><b>出典の中身。</b>作業環境から国立国会図書館デジタルコレクションも JACAR も開けない。\n識別子は利用者から受け取ったものである</li>\n<li><b>該当の頁。</b>どの頁に、どういう記載があるかを見ていない</li>\n<li><b>続柄。</b>著者の証言による。戸籍などの一次資料で突き合わせていない</li>\n<li><b>同名異人の可能性。</b>名前が一致することと、同じ人物であることは別である</li>\n</ul>\n<p><b>覆し方。</b>上の出典に当該人物の記載が無いことを一つ示せば、その行は覆る。\n同名異人であることを示しても同じである。</p>"
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "トップ",
+      "url": "./index.html"
+    },
+    {
+      "name": "作用素",
+      "url": "./trinity.html"
+    },
+    {
+      "name": "CV",
+      "url": "./cv.html"
+    },
+    {
+      "name": "ノート",
+      "url": "./notes/index.html"
+    },
+    {
+      "name": "割愛",
+      "url": "./venues.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "先祖の記録"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/lineage.html",
+    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/lineage.html",
+    "name": "先祖の公的記録",
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#website"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+    }
+  }
+}
