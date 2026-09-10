@@ -14,7 +14,9 @@
 {{OG_IMAGE}}
 <link rel="icon" href="{{FAVICON}}" type="image/svg+xml">
 {{HEAD_EXTRA}}
-{{JSONLD}}<meta name="theme-color" content="#faf9f7">
+{{JSONLD}}<meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)">
+<script>document.documentElement.className+=" js";</script>
 <style>
 :root {
   --bg: #faf9f7;
@@ -31,6 +33,7 @@
   --ember: rgba(118, 20, 14, .78);          /* 狭間から漏れる火 */
   --wall-bg: rgba(28, 26, 30, .06);
   --stone: rgba(23, 23, 26, .30);           /* 石の継ぎ目 */
+  --merlon: #3b3540;                        /* 仕切りの狭間。地より暗い側 */
   --sky: rgba(126, 158, 190, .20);          /* 城の上の空 */
   --void: rgba(126, 158, 190, .13);         /* 城の下の空。基壇が途切れた先 */
   --header-bg: rgba(250, 249, 247, .86);
@@ -52,10 +55,38 @@
   --ember: rgba(232, 74, 42, .62);
   --wall-bg: rgba(0, 0, 0, .35);
   --stone: rgba(236, 236, 238, .16);
+  --merlon: #6d6760;                        /* 仕切りの狭間。地より明るい側 */
   --sky: rgba(58, 84, 122, .34);            /* 城の上の空 */
   --void: rgba(58, 84, 122, .22);           /* 城の下の空。基壇が途切れた先 */
   --header-bg: rgba(18, 18, 20, .86);
   --shadow: 0 18px 40px -28px rgba(0, 0, 0, .8);
+}
+
+/* **JS が動かない環境にも暗い側を出す。**上の指定は data-theme が立ったときにしか
+   効かず、そこを立てるのは JS である。明示の選択が無いときは OS の設定に従う。
+   中身は上と一字一句同じにする —— 食い違いは check_site.js が落とす。 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121214;
+    --card: #191919;
+    --text: #ececee;
+    --muted: #9c9ca4;
+    --faint: #81818b;
+    --line: #2a2a2d;
+    --line-soft: #232326;
+    --accent: #b08d57;
+    --accent-soft: rgba(176, 141, 87, .14);
+    --accent-wash: rgba(176, 141, 87, .10);   /* 銘板の上にかかる刷毛。装飾のみ */
+    --wall: #08070a;
+    --ember: rgba(232, 74, 42, .62);
+    --wall-bg: rgba(0, 0, 0, .35);
+    --stone: rgba(236, 236, 238, .16);
+    --merlon: #6d6760;                        /* 仕切りの狭間。地より明るい側 */
+    --sky: rgba(58, 84, 122, .34);            /* 城の上の空 */
+    --void: rgba(58, 84, 122, .22);           /* 城の下の空。基壇が途切れた先 */
+    --header-bg: rgba(18, 18, 20, .86);
+    --shadow: 0 18px 40px -28px rgba(0, 0, 0, .8);
+  }
 }
 
 html { color-scheme: light; }
@@ -82,7 +113,7 @@ body {
   font-feature-settings: "palt" 1;
 }
 
-.wrap { max-width: 54rem; margin: 0 auto; padding: 0 1.5rem; }
+.wrap { max-width: 50rem; margin: 0 auto; padding: 0 1.5rem; }
 
 a { color: inherit; }
 
@@ -96,13 +127,14 @@ header {
 
 /* 頭上から牙が下りている —— 落とし格子の内側。 */
 header::after {
-  content: ""; display: block; height: 13px;
+  content: ""; display: block; height: 8px;
   background-image:
     conic-gradient(from 225deg at 50% 100%, var(--wall) 0 90deg, transparent 0),
-    linear-gradient(to bottom, var(--ember) 0%, transparent 76%);
-  background-size: 24px 13px, 100% 100%;
+    linear-gradient(to bottom, var(--ember) 0%, transparent 62%);
+  background-size: 34px 8px, 100% 100%;
   background-position: 0 0, 0 0;
   background-repeat: repeat-x, no-repeat;
+  opacity: .78;
 }
 .head-row {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
@@ -185,7 +217,7 @@ header::after {
 /* ---------- 主張 ----------
    一つだけ出す。反証の手順まで書いていなければ、主張ではなく宣伝である。 */
 .claim {
-  max-width: 42rem;
+  max-width: 46rem;
   padding: 1.5rem 1.6rem;
   background: var(--wall-bg);
   border-left: 3px solid var(--ember);
@@ -221,7 +253,7 @@ header::after {
    来た道は縦の道筋で、いまいる位置だけ塗りつぶす。
    色は指し色（--accent）だけを使い、新しい本文色を作らない。 */
 .profile {
-  max-width: 42rem;
+  max-width: 46rem;
   margin: 2rem 0 2.2rem;
   padding: 1.35rem 1.5rem 1.45rem;
   background:
@@ -317,7 +349,7 @@ header::after {
 
 /* ---------- 修得した科目 ----------
    修了証と違って検証ページが無い。だからカードにせず、行で並べる。 */
-.courses { list-style: none; margin: 0; padding: 0; max-width: 42rem; }
+.courses { list-style: none; margin: 0; padding: 0; max-width: 46rem; }
 .courses li {
   display: grid; grid-template-columns: 1fr auto; gap: .3rem 1rem;
   align-items: baseline;
@@ -344,7 +376,7 @@ header::after {
 
 /* ---------- ノートへの導線 ----------
    核に置かなかったものは、消さずにここから辿れる。 */
-.notes-list { max-width: 42rem; }
+.notes-list { max-width: 46rem; }
 .notes-list p {
   margin: 0; padding: .85rem 0;
   border-bottom: 1px solid var(--line-soft);
@@ -360,14 +392,20 @@ header::after {
 /* 仕切りは胸壁 —— 狭間を切った上端と壁体。石は不透明で火を遮り、
    狭間の隙間からだけ下の火が漏れる。画像は使わない。 */
 .rule {
-  height: 34px; margin: 0; border: 0;
+  height: 26px; border: 0;
+  width: calc(100% - 3rem); max-width: 50rem; margin: 0 auto;
   background-image:
-    repeating-linear-gradient(90deg, var(--wall) 0 27px, transparent 27px 52px),
-    linear-gradient(var(--wall), var(--wall)),
-    linear-gradient(to bottom, var(--ember) 0%, var(--ember) 46%, transparent 74%);
-  background-size: 52px 22px, 100% 12px, 100% 100%;
-  background-position: 0 0, 0 22px, 0 0;
-  background-repeat: repeat-x, repeat-x, no-repeat;
+    /* 中央の狭間。石は不透明で、隙間からだけ下の火が漏れる */
+    repeating-linear-gradient(90deg, var(--merlon) 0 6px, transparent 6px 15px),
+    linear-gradient(var(--merlon), var(--merlon)),
+    linear-gradient(var(--ember), var(--ember)),
+    /* 罫を中央で断つための地。石の下に敷く */
+    linear-gradient(var(--bg), var(--bg)),
+    /* 左右へ抜ける細い罫 */
+    linear-gradient(var(--line), var(--line));
+  background-size: 7.5rem 8px, 7.5rem 2px, 7.5rem 1px, 10rem 100%, 100% 1px;
+  background-position: center 7px, center 15px, center 17px, center, 0 50%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x;
 }
 
 /* 基壇の下端。石が不揃いに途切れ、その先には何も無い ―― 城は浮いている。
@@ -383,14 +421,37 @@ footer::after {
   background-repeat: repeat-x, repeat-x, no-repeat;
 }
 
-/* ---------- セクション ---------- */
-section.block { padding: 4.5rem 0; }
-.sec-head { margin-bottom: 2.5rem; }
+/* ---------- セクション ----------
+
+   節の番号は HTML に持たせない。**印字するのは装飾であって内容ではない**ので、
+   CSS のカウンタで出す。読み上げには乗らず、順番だけが見える。 */
+body { counter-reset: sec; }
+section.block { padding: 5rem 0; counter-increment: sec; }
+.sec-head { margin-bottom: 2.6rem; position: relative; }
 .sec-head h2 {
-  margin: 0 0 .4rem;
-  font-size: 1.4rem; font-weight: 600; letter-spacing: .06em;
+  margin: 0 0 .45rem;
+  font-size: clamp(1.5rem, 1.1rem + 1.1vw, 2rem);
+  font-weight: 600; letter-spacing: .04em; line-height: 1.25;
 }
-.sec-head p { margin: 0; font-size: .85rem; color: var(--faint); }
+.sec-head h2::before {
+  content: counter(sec, decimal-leading-zero);
+  display: block; margin-bottom: .5rem;
+  font-family: ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  font-size: .68rem; letter-spacing: .28em; color: var(--faint);
+}
+.sec-head h2::after {
+  content: ""; display: block; width: 2.4rem; height: 2px; margin-top: .8rem;
+  background: var(--accent);
+}
+.sec-head p { margin: .9rem 0 0; font-size: .85rem; color: var(--faint); }
+
+/* 広い画面では、番号を本文の外へ出す。組版の余白を使う。 */
+@media (min-width: 62rem) {
+  .sec-head h2::before {
+    position: absolute; left: -4.2rem; top: .55rem;
+    margin: 0; text-align: right; width: 3rem;
+  }
+}
 
 /* ---------- 修了証 ---------- */
 .group + .group { margin-top: 2.5rem; }
@@ -524,13 +585,18 @@ footer::before {
 .built-with.grok .dot { background: #4b5563; }
 .built-with-row { display: inline-flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
 
-/* ---------- 登場演出 ---------- */
+/* ---------- 登場演出 ----------
+
+   **既定は「見える」である。**以前は .reveal に opacity:0 を直接当てており、
+   JS が動かない環境では本文が一つも出なかった（31 要素すべて）。CSP のハッシュが
+   ずれてスクリプトが弾かれるだけで、白紙になる作りだった。
+   隠すのは、head の一行で js が立ったときだけにする。 */
 .reveal {
-  opacity: 0; transform: translateY(12px);
   transition: opacity .7s cubic-bezier(.22, .68, .28, 1), transform .7s cubic-bezier(.22, .68, .28, 1);
   transition-delay: calc(var(--i, 0) * 70ms);
 }
-.reveal.is-visible { opacity: 1; transform: none; }
+.js .reveal { opacity: 0; transform: translateY(12px); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* 登場の時間差。以前は JS で --i を書き込んでいたが、CSP の style-src が
    インラインの style 適用を拒むため、CSS だけで与える。JS も一つ減る。 */
@@ -580,7 +646,7 @@ footer::before {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
   .cert:hover { transform: none; }
 }
 
@@ -589,7 +655,7 @@ footer::before {
   header, footer, .theme-toggle, .skip-link { display: none !important; }
   body { background: #fff; color: #000; }
   .cert { break-inside: avoid; border-color: #ccc; box-shadow: none; }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
 }
 
 /* リンクは色だけで示さない。指し色と本文色の差はどう選んでも 1.2:1 程度にしか
