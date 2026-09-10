@@ -632,10 +632,15 @@ footer::before {
 
 /* 項目が 1 行に収まらない幅では、ナビを折り返して見切れを防ぐ */
 @media (max-width: 30rem) {
-  .head-row { flex-wrap: wrap; align-items: flex-start; row-gap: .55rem; }
+  .head-row { flex-wrap: wrap; align-items: flex-start; row-gap: .55rem;
+              padding-top: .7rem; padding-bottom: .7rem; }
   .nav { width: 100%; flex-wrap: wrap; justify-content: flex-start; gap: .95rem; }
   .nav a { font-size: .76rem; }
   .wrap { padding: 0 1.1rem; }
+
+  /* **狭い画面では貼り付けない。**折り返した項目が三行になり、貼り付けたままだと
+     画面の高さを常に一割以上ふさぐ。上へ戻れば出てくるので、隠したことにはならない。 */
+  header { position: static; }
 }
 
 @media (max-width: 22rem) {
