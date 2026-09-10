@@ -88,8 +88,8 @@
     "note": "How many checks, where, and when. All of them run in CI on every push. The first three are the core.",
     "items": [
       {
-        "name": "218 checks on the errata",
-        "html": "The same audit applied to all four frozen bodies of work: 83 on the three Trinity-Infinity papers, 95 on the three philosophical papers, 40 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
+        "name": "225 checks on the errata",
+        "html": "The same audit applied to all four frozen bodies of work: 83 on the three Trinity-Infinity papers, 102 on the three philosophical papers, 40 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
       },
       {
         "name": "68 checks on the tool itself",
