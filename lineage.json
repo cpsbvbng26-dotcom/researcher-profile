@@ -17,6 +17,7 @@
     "list",
     "nemoto",
     "otani",
+    "elsewhere",
     "limits"
   ],
   "blocks": [
@@ -39,6 +40,11 @@
       "id": "otani",
       "title": "大谷恒 —— 曾祖父",
       "html": "<p><b>続柄は家庭内で共有されていた事実である。</b>著者は幼少期、仏壇で線香をあげていた。<b>文書で突き合わせてはいない。</b></p>\n<p>海軍大尉。<b>瑞宝章四等を 1943年9月11日に受けている。</b>假記番号は 2603-25。\n原資料はアジア歴史資料センター（JACAR）の <code>Ref. C12070491000</code>、\n海軍公報（部内限）号外である。</p>\n<p>この一件については史料ノートがある。翻刻と、そこから言えること・言えないことの切り分けを置いた。</p>\n<p><a href=\"https://doi.org/10.5281/zenodo.22055709\" target=\"_blank\" rel=\"noopener\">A Naval Gazette Entry for Lieutenant Otani Tsune（10.5281/zenodo.22055709）</a></p>\n<p><b>名の読みは確定していない。</b>ノートの要旨自身が <code>It does not establish the reading of his name</code>\nと述べている。表題が読みを与えていることは、その正誤表に記録してある\n（<a href=\"https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/ERRATA.md\" target=\"_blank\" rel=\"noopener\">E5</a>）。</p>\n<p><b>そのノートは、著者との続柄を書いていない。</b>紙面は凍結されているので直せない。\n<b>来歴を書いていなかったことのほうを、正誤表に記録した。</b></p>"
+    },
+    {
+      "id": "elsewhere",
+      "title": "別の媒体に、別の記述があること",
+      "html": "<p><b>この頁の外に、同じ人物についての記述がある。</b>外部の点検が、GitHub の外にある家系図に\n「海軍少佐」「愛国丸機関長」「外曽祖父」とあると述べている\n（<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/external-evaluations.md\" target=\"_blank\" rel=\"noopener\">外部からの評価</a>の九件目）。\n<b>その媒体は作業環境から開けないため、内容を確かめていない。</b></p>\n<h3>矛盾ではない</h3>\n<table>\n<tr><th>差</th><th>判断</th></tr>\n<tr><td>外曽祖父 ／ 曾祖父</td><td><b>矛盾しない。</b>外曽祖父は曾祖父の一種である</td></tr>\n<tr><td>海軍少佐 ／ 海軍大尉</td><td><b>矛盾しない。</b>公報が記録しているのは 1943年9月11日時点の階級であり、その後の昇進を否定しない</td></tr>\n</table>\n<h3>問題は確度のほうである</h3>\n<p>史料ノートは、<b>公報だけでは最終階級も乗艦も配置も確定できない</b>と書いている。\n同じ著者が別の媒体でそれを確定して書けば、<b>二つの基準を使っていることになる。</b></p>\n<table>\n<tr><th>対象</th><th>正</th></tr>\n<tr><td>1943年9月11日時点の階級・受章・假記番号</td><td><b>史料ノート</b>（原資料に当たって書いてある）</td></tr>\n<tr><td>最終階級・乗艦・配置</td><td><b>どこも正ではない</b></td></tr>\n<tr><td>続柄</td><td>この頁（根拠を段階に分けてある）</td></tr>\n</table>\n<p><b>この頁は、公報から確定できないものを書かない。</b>最終階級も、乗艦も、配置も書いていない。\n<b>書いていないことは機械で留めてある</b>（<code>check_site.js</code>）。</p>\n<p><b>揃え方は二つしかない。</b>別の媒体の断定に、それを支える別の出典を付けるか、断定をやめるかである。\n<b>この頁を、確度の低いほうへ合わせることはしない。</b>扱いは\n<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/canonical-sources.md\" target=\"_blank\" rel=\"noopener\">canonical-sources.md</a>\nに、未了であることは<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">登録簿の <code>ST-004</code></a>に置いた。</p>"
     },
     {
       "id": "limits",
