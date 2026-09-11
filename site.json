@@ -302,6 +302,18 @@
     {
       "name": "EN",
       "url": "./index.en.html"
+    },
+    {
+      "name": "DE",
+      "url": "./index.de.html"
+    },
+    {
+      "name": "FR",
+      "url": "./index.fr.html"
+    },
+    {
+      "name": "IT",
+      "url": "./index.it.html"
     }
   ],
   "jsonld": {

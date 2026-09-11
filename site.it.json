@@ -1,0 +1,88 @@
+{
+  "name": "Takuya Nemoto",
+  "nameLatin": "根本卓哉",
+  "initials": "TN",
+  "lang": "it",
+  "title": "Takuya Nemoto — profilo di ricerca | Takuya Nemoto",
+  "description": "Profilo di Takuya Nemoto. Quanto si trova qui poggia sullo studio da autodidatta e sul lavoro con modelli linguistici. I criteri superati, e quelli non superati, sono riportati nelle parole stesse delle piattaforme.",
+  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.it.html",
+  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 Takuya Nemoto",
+  "tagline": "Studio da autodidatta e modelli linguistici. I criteri superati sono citati alla lettera, e così anche ciò che non ne discende.",
+  "labels": {
+    "eyebrow": "Profilo",
+    "verify": "Open",
+    "skip": "Vai al contenuto",
+    "themeToggle": "Cambia tema"
+  },
+  "profile": {
+    "label": "Chi sono",
+    "nowHtml": "Iscritto alla <b>ZEN University, Faculty of Social Informatics</b>, nella prima coorte con immatricolazione autunnale. Il corso attraversa le discipline umanistiche e quelle scientifiche.",
+    "studyHtml": "Si studiano soprattutto <b>filosofia</b> e <b>pratica</b>; la <b>matematica</b> è frequentabile. Quanto è depositato qui riguarda l’informatica e l’intelligenza artificiale.",
+    "coreHtml": "<b>Quanto si trova qui poggia sullo studio da autodidatta e sul lavoro con modelli linguistici.</b> Non vi è stato né un relatore né un coautore. <b>I crediti universitari, però, non sono studio da autodidatta</b> — vengono da corsi seguiti, elaborati consegnati e valutazioni. Lo studio da autodidatta e i modelli linguistici riguardano ciò che sta fuori: i tre saggi di filosofia e gli strumenti e i registri depositati qui.</p><p class=\"profile-core\"><b>I criteri superati, nelle parole delle piattaforme.</b> <b>SSRN</b> — l’argomento deve essere <code>part of the world-wide scholarly discourse covered by one or more of SSRN’s subject area networks</code>; i testi non scientifici di norma non sono accettati, e sono nominati gli <code>articles with no references</code>; titolo, data, abstract e dati completi degli autori devono esserci; i controlli di integrità della ricerca vanno superati. <b>Il personale redazionale esamina il deposito prima della pubblicazione.</b> <b>PhilArchive</b> — si accettano <code>works of all types (articles, books, dissertations) in all areas of academic philosophy</code>; i lavori non filosofici solo se <code>cross-disciplinary and of clear interest to philosophers</code>; vale la regola <code>All books and papers submitted should be of professional quality</code>; minacce, molestie, dati personali senza consenso e sostituzione di persona sono vietati; è riservato il diritto di <code>reject any submissions</code>.</p><p class=\"profile-core\"><b>Ciò che ne discende è preciso.</b> Lavori scritti da autodidatta e con modelli linguistici sono stati <b>ricondotti dalla redazione di SSRN al discorso scientifico del proprio ambito.</b> Per due saggi una persona ha guardato prima della pubblicazione e non li ha respinti. Tre saggi sono su PhilArchive; per due di essi vi è stato un esame.</p><p class=\"profile-core\"><b>Ciò che non ne discende è altrettanto preciso.</b> <b>Nessuna delle due porte ha esaminato se l’argomentazione tenga.</b> Ciò che è stato superato è una porta di ammissione, non una revisione tra pari; dal lato di PhilArchive uno dei tre saggi non ha superato alcuna porta."
+  },
+  "sections": [
+    "about",
+    "works",
+    "verify",
+    "more"
+  ],
+  "blocks": [
+    {
+      "id": "about",
+      "title": "Su questa pagina",
+      "html": "<p><b>Questa pagina è una traduzione, realizzata con un modello linguistico.</b> È più breve delle versioni giapponese e inglese. <b>Fanno fede le pagine giapponese e inglese</b>; dove qualcosa diverge, valgono quelle.</p><p><b>Nulla è stato verificato qui che non lo sia là.</b> Gli errori di traduzione si segnalano tramite <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/issues\" target=\"_blank\" rel=\"noopener\">le issue di questo repository</a>.</p>"
+    },
+    {
+      "id": "works",
+      "title": "Lavori",
+      "html": "<ul class=\"notes-list\"><li><b>The Nobility and Exemplarity of the Celibate Individual</b> — <a href=\"https://doi.org/10.5281/zenodo.22058254\" target=\"_blank\" rel=\"noopener\"><code>10.5281/zenodo.22058254</code></a></li><li><b>Manifesto of Imperial Selfhood</b> — <a href=\"https://doi.org/10.5281/zenodo.22057583\" target=\"_blank\" rel=\"noopener\"><code>10.5281/zenodo.22057583</code></a></li><li><b>Fragmentarian Spiritual Individualism</b> — <a href=\"https://doi.org/10.5281/zenodo.22064241\" target=\"_blank\" rel=\"noopener\"><code>10.5281/zenodo.22064241</code></a></li></ul>"
+    },
+    {
+      "id": "verify",
+      "title": "Verifica",
+      "html": "<p>A ogni push vengono eseguiti <b>890 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>82 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
+    },
+    {
+      "id": "more",
+      "title": "Per approfondire",
+      "html": "<ul class=\"notes-list\"><li><a href=\"./index.html\">Giapponese （日本語）</a></li><li><a href=\"./index.en.html\">Inglese</a></li><li><a href=\"./cv.html\">CV</a></li><li><a href=\"./notes/index.en.html\">Note</a></li><li><a href=\"./trinity.html\">Operatore</a></li></ul>"
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "日本語",
+      "url": "./index.html"
+    },
+    {
+      "name": "EN",
+      "url": "./index.en.html"
+    },
+    {
+      "name": "DE",
+      "url": "./index.de.html"
+    },
+    {
+      "name": "FR",
+      "url": "./index.fr.html"
+    }
+  ],
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.it.html",
+    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.it.html",
+    "name": "Takuya Nemoto — profilo di ricerca",
+    "inLanguage": "it",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#website"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+    }
+  }
+}
