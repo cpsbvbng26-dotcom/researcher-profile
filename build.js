@@ -173,6 +173,9 @@ function renderProfile(p) {
     rows ? '      <ol class="path">' : '',
     rows,
     rows ? '      </ol>' : '',
+    /* 科目名についての断り。**訳を公式名のように出さない。**
+       公式の英語名を確かめられない言語版だけが持つ。 */
+    p.coursesNoteHtml ? `      <p class="path-caveat">${p.coursesNoteHtml}</p>` : '',
     aims ? `      <p class="aims-label">${esc(p.aimsLabel || '')}</p>` : '',
     aims ? '      <ul class="aims">' : '',
     aims,
