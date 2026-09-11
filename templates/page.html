@@ -335,6 +335,16 @@ header::after {
   border-left: 2px solid var(--accent-soft);
 }
 
+/* 根幹の一段。自己紹介の地の文より少し強く、見出しよりは弱く置く。 */
+.profile-core {
+  margin: 1rem 0 0; padding: .85rem 1rem;
+  font-size: .9rem; line-height: 1.95; color: var(--text);
+  background: var(--accent-wash);
+  border-left: 2px solid var(--accent);
+  border-radius: .3rem;
+}
+.profile-core a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+
 /* 科目名についての断り。**訳を公式名のように見せない。**
    本文より小さくするが、薄くはしない —— 読み飛ばされると断りにならない。 */
 .path-caveat {

@@ -46,7 +46,8 @@
     "aims": [
       "事業を承継すること",
       "博士号を取得したのち、オンライン大学で教えること"
-    ]
+    ],
+    "coreHtml": "<b>ここにあるものの根幹は、独学と、言語モデルを使って進めたことである。</b>指導教員も共同研究者もいない。哲学の三篇は PhilArchive にあり、うち二篇は SSRN の事前審査を通っている。<b>それがどこまでの基準かは、場の側の明文のまま<a href=\"./venues.html\">割愛の頁</a>に置いた</b> —— 通ったのは受け付けの門であって査読ではなく、三篇のうち一篇は門そのものが下りていない。"
   },
   "taglineHtml": "コンピュータサイエンスと人工知能を学んでいます。<strong>公開しているのは、いずれも査読を受けていないプレプリントです。</strong> <strong>この場所の核は一つ —— 自分が公開したものを、あとから機械で監査すること。</strong>Trinity-Infinity の三篇はその対象です。哲学の三篇と史料ノートは <a href=\"./notes/index.html\">ノート</a> に、修了証と学習領域は <a href=\"./cv.html\">CV</a> に置いています。",
   "sections": [
@@ -97,7 +98,7 @@
       },
       {
         "name": "登録簿 34",
-        "html": "訂正の記録そのものの形と履歴。<strong>77 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 32 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。<strong>第三者が確かめられるのは 64 件で、残る 13 件は著者の証言しか根拠が無い</strong>ことも欄にしてある。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
+        "html": "訂正の記録そのものの形と履歴。<strong>78 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分ける。<strong>うち 32 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせる。<strong>第三者が確かめられるのは 64 件で、残る 14 件は著者の証言しか根拠が無い</strong>ことも欄にしてある。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
       },
       {
         "name": "紙面の数値 31",
@@ -126,7 +127,7 @@
     ]
   },
   "withdrawn": {
-    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（77 件）</a> にあります。",
+    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（78 件）</a> にあります。",
     "items": [
       {
         "name": "収束定理の原型",
@@ -232,7 +233,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/self-correction",
       "code": "記録 / MIT",
       "title": "self-correction",
-      "summary": "自分が公開した主張のうち、誤っていたもの・撤回したもの・直せないものを、一件ずつ消さずに記録する。いま 77 件。状態は五つに限り、いま立っている主張には覆し方を、直せない項目には理由を書くことを検査で強制する。識別子は永久に消せない —— git の履歴を遡って、過去に一度でも載った項目がいまも残っているかを検査する。消したら落ちる。",
+      "summary": "自分が公開した主張のうち、誤っていたもの・撤回したもの・直せないものを、一件ずつ消さずに記録する。いま 78 件。状態は五つに限り、いま立っている主張には覆し方を、直せない項目には理由を書くことを検査で強制する。識別子は永久に消せない —— git の履歴を遡って、過去に一度でも載った項目がいまも残っているかを検査する。消したら落ちる。",
       "verify": "GitHub で見る"
     },
     {

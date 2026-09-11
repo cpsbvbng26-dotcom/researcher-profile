@@ -170,6 +170,8 @@ function renderProfile(p) {
     `      <h2 class="profile-label">${esc(p.label || '')}</h2>`,
     `      <p class="profile-now">${p.nowHtml || esc(p.now || '')}</p>`,
     p.studyHtml ? `      <p class="profile-now profile-study">${p.studyHtml}</p>` : '',
+    /* 根幹の一段。**自己紹介の中に置く。**下のほうに置けば、読み手は辿り着かない。 */
+    p.coreHtml ? `      <p class="profile-core">${p.coreHtml}</p>` : '',
     rows ? '      <ol class="path">' : '',
     rows,
     rows ? '      </ol>' : '',
