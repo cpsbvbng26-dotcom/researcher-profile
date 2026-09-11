@@ -1,0 +1,121 @@
+{
+  "name": "Takuya Nemoto",
+  "nameLatin": "根本卓哉",
+  "initials": "TN",
+  "lang": "en",
+  "title": "Venues omitted — where this work was posted, and where it was not | Takuya Nemoto",
+  "description": "SSRN, PhilArchive, Zenodo and arXiv set side by side by the differences in their published acceptance rules. No venue is ranked below another. Why arXiv was not used, and how that decision changed.",
+  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/venues.en.html",
+  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 Takuya Nemoto",
+  "tagline": "Where this work was posted, and where it was not. What is compared is the acceptance rules, not the quality of the work they carry. No venue is being ranked below another.",
+  "asOf": "2026-09-09",
+  "sections": [
+    "stance",
+    "where",
+    "gates",
+    "philarchive",
+    "arxiv",
+    "omitted",
+    "order",
+    "limits",
+    "sources"
+  ],
+  "blocks": [
+    {
+      "id": "stance",
+      "title": "What this page is",
+      "html": "<p><b>No venue is being ranked below another.</b> What is compared here is the\n<b>acceptance rules</b> each site publishes, not the quality of the work they carry. The rules\ndiffer because what each is trying to take in differs.</p>\n<p>This is not a page that orders venues. The only thing that can be ordered is whether a venue\nsuits this particular work. Not posting to a venue that does not suit it is what this page calls\n<b>omission</b>.</p>\n<p><b>Rules move.</b> arXiv's acceptance rules changed twice in succession, in October 2025 and\nJanuary 2026. <b>What is written here is as of the date at the top of the page.</b> Changes after\nthat are not reflected.</p>\n<p><b>Every source below was taken from search results.</b> The sites were not opened and read from\nthe working environment (only GitHub is reachable). <b>Nothing is written as \"confirmed\" that was\nnot confirmed.</b> If a rule is found to be described wrongly here, that line gets corrected.</p>"
+    },
+    {
+      "id": "where",
+      "title": "Where it is posted now",
+      "html": "<table>\n<tr><th>Venue</th><th>What is there</th><th>Standing</th></tr>\n<tr><td>Zenodo</td><td>The paper PDFs and their bibliographic records</td><td><b>Of record.</b> A DOI is assigned and the version is fixed</td></tr>\n<tr><td>SSRN</td><td>Two of the philosophy papers</td><td>Same text. A way in, not the record</td></tr>\n<tr><td>PhilArchive</td><td>Three philosophy papers</td><td>Likewise. <b>This is where readers in the field are</b></td></tr>\n<tr><td>Knowledge Commons</td><td>The source note</td><td>Likewise</td></tr>\n<tr><td>HAL</td><td>Deposited</td><td>Likewise</td></tr>\n<tr><td>PhilPeople</td><td>Author information</td><td><b>Not a venue.</b> A directory of philosophers</td></tr>\n<tr><td>researchmap</td><td>A list of output</td><td><b>Not a venue.</b> A researcher database</td></tr>\n</table>\n<p>Which one is authoritative is fixed in\n<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/canonical-sources.md\" target=\"_blank\" rel=\"noopener\">canonical-sources.md</a>.\nWhere they disagree, Zenodo is authoritative.</p>"
+    },
+    {
+      "id": "gates",
+      "title": "How the gates differ",
+      "html": "<table>\n<tr><th>Venue</th><th>What the gate looks at</th></tr>\n<tr><td>Zenodo</td><td>No substantive review. Spam and unlawful material are excluded</td></tr>\n<tr><td>Knowledge Commons</td><td>Membership registration</td></tr>\n<tr><td>HAL</td><td>Format and affiliation. The content is not read</td></tr>\n<tr><td>PhilArchive</td><td><b>There are stated criteria.</b> Set out in the next section</td></tr>\n<tr><td>SSRN</td><td><b>Editorial staff screen before posting</b></td></tr>\n<tr><td>arXiv</td><td><b>Endorsement and moderation.</b> Set out in a later section</td></tr>\n</table>\n<p><b>Of the venues in use, two have a gate: PhilArchive and SSRN.</b> They hang it differently.\nSSRN has editorial staff look before it goes up. PhilArchive states its criteria, then has category\neditors tidy after the fact, reserving the right to reject.</p>\n<p><b>None of these is peer review.</b> Peer review is a procedure in which researchers in the field\njudge whether the content holds and decide on acceptance. None of the above does that.\n<b>Nor does having a DOI mean anything was peer reviewed.</b></p>"
+    },
+    {
+      "id": "philarchive",
+      "title": "The PhilArchive and PhilPeople criteria",
+      "html": "<p>Run by the PhilPapers Foundation. <b>The published criteria are as follows (unconfirmed).</b></p>\n<table>\n<tr><th>What</th><th>How it stands</th></tr>\n<tr><td>Field</td><td>Primarily philosophy. <b>Non-philosophy only where it is interdisciplinary and of evident interest to philosophers</b></td></tr>\n<tr><td>Standard</td><td><b>All books and articles submitted must meet professional standards</b></td></tr>\n<tr><td>Rejection</td><td><b>The right to reject any submission is reserved</b></td></tr>\n<tr><td>Editors</td><td>More than six hundred researchers are appointed as category editors. Their role is to <b>keep irrelevant or misfiled items out</b> of the categories they hold</td></tr>\n<tr><td>Prohibited</td><td>Threats and harassment, personal information posted without consent, impersonation</td></tr>\n</table>\n<p><b>It is not a place where anyone can post anything.</b> The standard is stated, the right of\nrejection is reserved, and more than six hundred editors tidy after the fact.\n<b>That is where it differs from Zenodo.</b></p>\n<p>PhilPeople is not a venue but a <b>directory of philosophers as a profession</b>. Registration is\nfree, and unregistered people are included from public institutional information. Claiming an\nunregistered entry as one's own requires registering. <b>Whether there is a procedure that verifies\naffiliation cannot be determined from this environment.</b></p>"
+    },
+    {
+      "id": "arxiv",
+      "title": "How arXiv differs",
+      "html": "<p>arXiv's acceptance is of a different order from any of the above. <b>As far as has been\npublished, it stands as follows (all unconfirmed).</b></p>\n<table>\n<tr><th>What</th><th>How it stands</th></tr>\n<tr><td>Endorsement</td><td>A first-time submitter needs an endorsement from someone who has already submitted in that field</td></tr>\n<tr><td>Relaxation by email</td><td><b>Since 21 January 2026, an institutional email address no longer triggers automatic endorsement</b></td></tr>\n<tr><td><b>Automatic endorsement in mathematics</b></td><td><b>Since 10 December 2025, an institutional email alone does not suffice in the mathematics categories.</b> <b>Both</b> an institutional email and authorship of a paper accepted into arXiv Mathematics are required</td></tr>\n<tr><td>Who may endorse</td><td>Someone with two to five papers on arXiv in that domain, <b>submitted between three months and five years ago</b></td></tr>\n<tr><td>Holds and rejections</td><td>About 6% of submissions are held, about 2% rejected. <b>Reasons for rejection are as a rule not given</b></td></tr>\n<tr><td>Reclassification</td><td>Moderators may move a submission to a different category</td></tr>\n<tr><td>Reviews and position papers</td><td><b>Since October 2025, computer science does not accept them without prior peer review</b></td></tr>\n<tr><td>AI-generated material</td><td>Hallucinated references or leftover prompt text carry <b>a one-year submission ban</b></td></tr>\n</table>\n<p><b>This is not strictness on display.</b> These are rules for narrowing what is taken in. It is\nrun as a place for new results, and the gate is narrow for that reason.</p>"
+    },
+    {
+      "id": "omitted",
+      "title": "Why it was omitted",
+      "html": "<p><b>It was not posted to arXiv. The reason does not lie with arXiv.</b> There are three.</p>\n<p><b>First. An endorsement is required.</b> Since January 2026 an institutional email address does\nnot produce one automatically. <b>In the mathematics categories that has held since earlier still,\n10 December 2025.</b> Both an institutional email and authorship of a paper accepted into arXiv\nMathematics are required. An endorser has to be found individually.</p>\n<p><b>Second. What survives contains no new result.</b> This was not said from outside;\n<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity#結論\" target=\"_blank\" rel=\"noopener\">the record says it of itself</a>\n—— what survives is one fact about one operator, at the level of a second- or third-year\nundergraduate exercise. <b>Posting something that is not a new result to a place for new results\ndoes not fit the rules.</b> That is why it was not posted.</p>\n<p><b>Third. There is no occasion to explain how it came about.</b> That the first draft was the\noutput of a language model is written in the record. Disclosing it and posting is not the same as\nposting with it concealed. But acceptance does not hear individual circumstances.\n<b>It would mean bringing a history that needs explaining to a place with no occasion to explain\nit.</b></p>\n<p><b>On 9 September 2026 the author decided to post it.</b> The three reasons above are not\ndeleted. The first and the third are procedural, and there are ways to deal with them.\n<b>The second has no way to deal with it.</b> Deciding to post and having a new result are separate\nthings.</p>\n<p><b>The expectation of rejection is written down before the outcome is known.</b> It is in\n<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ARXIV.md\" target=\"_blank\" rel=\"noopener\">ARXIV.md</a>\n—— the three forms it could take, the candidate categories, what to state when asking for\nendorsement, and where the outcome gets written. <b>Even if it is accepted, acceptance is not proof\nof novelty.</b> arXiv is a gate on acceptance, not peer review.</p>\n<p><b>There is an arXiv author identifier page.</b>\n<a href=\"https://arxiv.org/a/0009-0000-1406-0547.html\" target=\"_blank\" rel=\"noopener\">arxiv.org/a/0009-0000-1406-0547</a>.\nThis is the page that appears once an ORCID is linked to an arXiv user record, and\n<b>it lists the arXiv papers tied to that ORCID.</b> It is the documented behaviour of the system,\nnot a way around anything.</p>\n<p><b>There are no papers to list.</b> Nothing was posted to arXiv. <b>This note is here so that the\nexistence of the page is not mistaken for having been published on arXiv.</b>\nWhat the page in fact displays has not been confirmed, because it cannot be opened from the working\nenvironment.</p>\n<p>The philosophy papers are a different matter. <b>PhilArchive is where readers in the field are,\nand that is where they are posted.</b> It also has a stated professional standard, a reserved right\nof rejection, and more than six hundred editors. <b>There is no need to move up a venue.</b></p>"
+    },
+    {
+      "id": "order",
+      "title": "On calling this a ranking",
+      "html": "<p><b>The venues themselves are not ranked.</b> The only thing that can be ordered is whether a\nvenue suits this work.</p>\n<table>\n<tr><th>Work</th><th>Venue that suits it</th><th>Reason</th></tr>\n<tr><td>The three Trinity-Infinity papers</td><td><b>None suits it. It goes to arXiv anyway</b></td><td>That what survives has no novelty is something the record says of itself, and the decision does not change that. <b>It is posted in full knowledge that it does not fit.</b> The outcome, rejection included, gets recorded</td></tr>\n<tr><td>The three philosophy papers</td><td>PhilArchive</td><td>The readers in the field are there. <b>And it is a place with a stated standard</b></td></tr>\n<tr><td>The source note</td><td>Zenodo and Knowledge Commons</td><td>It is enough that the transcription and the citation are read</td></tr>\n<tr><td><code>errata-check</code></td><td>A journal that peer reviews software</td><td>What such review examines is whether it runs and whether it is documented, which is a fit. <b>Not yet submitted</b></td></tr>\n</table>\n<p><b>Looking for the venue that fits is quicker than looking for the strictest one.</b> arXiv is a\nplace for putting out new results; what is here is a record that keeps its mistakes rather than\ndeleting them. <b>They are different kinds of thing.</b> How the decision to post anyway came about\nis in\n<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ARXIV.md\" target=\"_blank\" rel=\"noopener\">ARXIV.md</a>.</p>"
+    },
+    {
+      "id": "limits",
+      "title": "What this page does not say",
+      "html": "<ul>\n<li><b>It does not compare the quality of the sites.</b> What is compared is the acceptance rules</li>\n<li><b>None of these venues is peer review.</b> None of them judges whether the content holds</li>\n<li><b>The descriptions of the rules are unconfirmed.</b> They were taken from search results, not from the originals</li>\n<li><b>No venue is being recommended.</b> What is written is whether it fits</li>\n<li><b>The date it is current as of is at the top of the page.</b> Changes to the rules after that are not reflected</li>\n</ul>\n<p><b>How to overturn this.</b> Point to one place where a rule described above differs from the\nactual rule, and that line falls. One is enough.</p>"
+    },
+    {
+      "id": "sources",
+      "title": "Sources (unconfirmed)",
+      "html": "<blockquote><p><b>They were not opened and read from the working environment.</b> This is a list\ntaken from search results.</p></blockquote>\n<ul>\n<li>arXiv blog, Attention Authors: updated endorsement policy (21 January 2026)</li>\n<li>arXiv blog, updated endorsement policy for arXiv Mathematics (10 December 2025)</li>\n<li>On arXiv moderation system, arXiv:2307.11791</li>\n<li>Science, ArXiv preprint server clamps down on AI slop</li>\n<li>The Next Web, arXiv introduces one-year ban for researchers who submit papers with unchecked AI-generated content</li>\n<li>PhilPapers, Submitting material to PhilPapers</li>\n<li>PhilPapers, Content Policy and Code of Conduct</li>\n<li>PhilPapers, Categories and Editors</li>\n<li>PhilPeople, Help</li>\n<li>arXiv info, ORCID identifiers</li>\n<li>arXiv info, Authority Records</li>\n</ul>"
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "Back to the core",
+      "url": "./index.en.html"
+    },
+    {
+      "name": "Operator",
+      "url": "./trinity.html"
+    },
+    {
+      "name": "CV",
+      "url": "./cv.html"
+    },
+    {
+      "name": "Notes",
+      "url": "./notes/index.en.html"
+    },
+    {
+      "name": "Ancestral record",
+      "url": "./lineage.en.html"
+    },
+    {
+      "name": "日本語",
+      "url": "./venues.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "Venues omitted",
+    "verify": "Open",
+    "skip": "Skip to content",
+    "themeToggle": "Toggle theme"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/venues.en.html",
+    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/venues.en.html",
+    "name": "Venues omitted",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#website"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+    }
+  }
+}

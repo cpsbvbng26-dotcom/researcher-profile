@@ -301,6 +301,10 @@
     {
       "name": "日本語",
       "url": "./index.html"
+    },
+    {
+      "name": "Ancestral record",
+      "url": "./lineage.en.html"
     }
   ],
   "jsonld": {

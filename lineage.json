@@ -74,6 +74,10 @@
     {
       "name": "ノート",
       "url": "./notes/index.html"
+    },
+    {
+      "name": "English",
+      "url": "./lineage.en.html"
     }
   ],
   "labels": {

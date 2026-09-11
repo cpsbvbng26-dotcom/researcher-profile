@@ -90,6 +90,10 @@
     {
       "name": "先祖の記録",
       "url": "./lineage.html"
+    },
+    {
+      "name": "English",
+      "url": "./venues.en.html"
     }
   ],
   "labels": {
