@@ -594,7 +594,12 @@ function renderNav(profile, labels) {
       return;
     }
     const b = arr(profile.blocks).find((x) => x.id === name);
-    if (b && b.nav !== false) items.push(`<a href="#${esc(b.id)}">${esc(b.title)}</a>`);
+    /* nav が文字列なら、それを見出しの代わりにナビへ出す。
+     * 見出しをそのまま並べると、長い言語では 1 行に収まらず右へ流れる。 */
+    if (b && b.nav !== false) {
+      const label = typeof b.nav === 'string' ? b.nav : b.title;
+      items.push(`<a href="#${esc(b.id)}">${esc(label)}</a>`);
+    }
   });
   /* 手で書いたページへの導線。生成の対象外なので、設定から足す。 */
   arr(profile.extraNav).forEach((n) => {

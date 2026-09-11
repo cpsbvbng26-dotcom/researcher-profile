@@ -139,13 +139,19 @@ header::after {
 .head-row {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   padding-top: 1rem; padding-bottom: 1rem;
+  /* **折り返しは、狭い画面だけの話ではない。**節の多い頁では、1440px でも
+     ナビが横幅を 776px 押し広げ、頁ごと横スクロールしていた。
+     折り返さない作りは、項目が増えた分だけ黙って壊れる。 */
+  flex-wrap: wrap; row-gap: .5rem;
 }
 .mark {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.05rem; letter-spacing: .16em; color: var(--accent);
   text-decoration: none;
 }
-.nav { display: flex; align-items: center; gap: 1.5rem; }
+.nav { display: flex; align-items: center; gap: 1.5rem;
+       flex-wrap: wrap; row-gap: .55rem; justify-content: flex-end;
+       min-width: 0; }
 .nav a {
   font-size: .82rem; color: var(--muted); text-decoration: none;
   letter-spacing: .04em; white-space: nowrap;
