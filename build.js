@@ -557,6 +557,18 @@ ${body}
 
 function renderSections(profile, labels) {
   const order = arr(profile.sections).length ? arr(profile.sections) : SECTION_ORDER_DEFAULT;
+  /* blocks の id が組み込みの節名と同じだと、組み込みのほうが勝つ。
+   * 組み込みに渡す配列が空なら、その節は何も出さずに消える。
+   * **書いたはずの節が、黙って落ちる。**落ちたことは出力を読んでも分からない。
+   * 三言語の頁で実際に起きた（self-correction の SC-033）。ここで止める。 */
+  const RESERVED = ['credentials', 'areas', 'courses', 'papers', 'works', 'links',
+                    'claim', 'verification', 'withdrawn', 'contact'];
+  arr(profile.blocks).forEach((b) => {
+    if (RESERVED.indexOf(b.id) >= 0) {
+      throw new Error('blocks の id が組み込みの節名と同じです: ' + b.id
+                      + '（組み込みが勝ち、この節は出ません。別の id にしてください）');
+    }
+  });
   const known = {
     credentials: () => renderCredentials(arr(profile.credentials), labels),
     areas: () => renderAreas(arr(profile.areas), labels),
