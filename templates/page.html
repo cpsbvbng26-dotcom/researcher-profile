@@ -598,6 +598,13 @@ footer::before {
 .js .reveal { opacity: 0; transform: translateY(12px); }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
+/* **焦点の入った塊は、待たずに見せる。**登場はスクロールに合わせているが、
+   Tab で辿るとスクロールより先に焦点が入る。そのままだと opacity 0 の行に
+   焦点が置かれる ―― 枠は出ているのに、中身が見えない。測ったところ、
+   トップで 40 個の a が透明なまま焦点を受けていた。
+   :focus-within は祖先にも掛かるので、入れ子の塊もまとめて出る。 */
+.js .reveal:focus-within { opacity: 1; transform: none; transition: none; }
+
 /* 登場の時間差。以前は JS で --i を書き込んでいたが、CSP の style-src が
    インラインの style 適用を拒むため、CSS だけで与える。JS も一つ減る。 */
 .cards > *:nth-child(1), .areas > *:nth-child(1) { --i: 0; }
@@ -614,7 +621,9 @@ footer::before {
 .cards > *:nth-child(12), .areas > *:nth-child(12) { --i: 11; }
 
 
-:where(a, button, [tabindex]):focus-visible {
+/* 入力欄も同じ枠を出す。既定の枠を消して境界線の色だけで示すと、
+   変わるのは 1px 分でしかなく、焦点の在りかが読めない。 */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: .3rem;
