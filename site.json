@@ -201,6 +201,10 @@
         {
           "name": "このサイトの論文ページ",
           "url": "./papers/trinity-infinity-series-ii.html"
+        },
+        {
+          "name": "SSRN 10.2139/ssrn.7446961",
+          "url": "https://doi.org/10.2139/ssrn.7446961"
         }
       ]
     },

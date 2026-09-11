@@ -44,6 +44,9 @@
       "registerPrefix": "TI",
       "title": "The Trinity-Infinity Framework, Series II",
       "subtitle": "Extended Formalization and Further Illustrative Applications",
+      "locations": [
+        { "name": "SSRN", "id": "10.2139/ssrn.7446961", "url": "https://doi.org/10.2139/ssrn.7446961" }
+      ],
       "ja": {
         "version": "改訂版 — 2026年8月",
         "summary": "混合率を座標ごとに変えても不動点の一意性が保たれることを示し、均衡利得集合の特徴づけとばね系の完全な計算例を加える。",

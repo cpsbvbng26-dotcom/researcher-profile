@@ -202,6 +202,10 @@
         {
           "name": "Paper page on this site",
           "url": "./papers/trinity-infinity-series-ii.en.html"
+        },
+        {
+          "name": "SSRN 10.2139/ssrn.7446961",
+          "url": "https://doi.org/10.2139/ssrn.7446961"
         }
       ]
     },
