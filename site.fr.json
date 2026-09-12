@@ -43,7 +43,7 @@
     {
       "id": "verify",
       "title": "Vérification",
-      "html": "<p>Chaque push déclenche <b>1031 vérifications</b>. Elles portent sur la structure du site, la lisibilité des contrastes et les valeurs numériques de la page consacrée à l’opérateur.</p><p><b>Un registre distinct consigne ce qui s’est révélé faux</b> — <b>85 entrées</b> à ce jour. <b>Rien n’y est supprimé.</b> Les outils de vérification sont eux-mêmes vérifiés : un état valide est délibérément cassé, et l’on établit que c’est bien la vérification correspondante qui échoue.</p>"
+      "html": "<p>Chaque push déclenche <b>1001 vérifications</b>. Elles portent sur la structure du site, la lisibilité des contrastes et les valeurs numériques de la page consacrée à l’opérateur.</p><p><b>Un registre distinct consigne ce qui s’est révélé faux</b> — <b>85 entrées</b> à ce jour. <b>Rien n’y est supprimé.</b> Les outils de vérification sont eux-mêmes vérifiés : un état valide est délibérément cassé, et l’on établit que c’est bien la vérification correspondante qui échoue.</p>"
     },
     {
       "id": "more",
