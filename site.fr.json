@@ -26,6 +26,7 @@
   "sections": [
     "about",
     "writings",
+    "tier",
     "verify",
     "more"
   ],
@@ -49,6 +50,12 @@
       "id": "more",
       "title": "Pour aller plus loin",
       "html": "<ul class=\"notes-list\"><li><a href=\"./index.html\">Japonais （日本語）</a></li><li><a href=\"./index.en.html\">Anglais</a></li><li><a href=\"./cv.html\">CV</a></li><li><a href=\"./notes/index.en.html\">Notes</a></li><li><a href=\"./trinity.html\">Opérateur</a></li></ul>"
+    },
+    {
+      "id": "tier",
+      "title": "Palier relatif",
+      "nav": "Palier relatif",
+      "html": "<p><b>Ce n’est pas une note de qualité.</b> On ne mesure que <b>qui a laissé passer le travail, et comment</b>. Aucun jugement de l’auteur n’entre dans la définition des paliers.</p><ul class=\"notes-list\"><li><b>Mathématiques</b> — <b>C</b>　<span>Trinity-Infinity série II a franchi le filtre de SSRN ; les deux autres sont en auto-dépôt seulement</span></li><li><b>Philosophie</b> — <b>C</b>　<span>Deux ont franchi SSRN et deux le filtre de PhilArchive ; un a été refusé par SSRN</span></li><li><b>Histoire</b> — <b>D</b>　<span>La note de source est sur Zenodo et Knowledge Commons, deux auto-dépôts</span></li><li><b>Ensemble</b> — <b>D</b>　<span>Aligné sur le domaine le plus bas. L’aligner sur le plus haut effacerait l’absence dans les domaines non franchis</span></li></ul><ul class=\"notes-list\"><li><b>EX</b> — Intégré aux références standard : manuels et articles de synthèse le citent comme tel</li><li><b>SSS</b> — Dans une revue de premier plan du domaine et largement cité</li><li><b>SS</b> — Dans une revue de premier plan du domaine (expertisé)</li><li><b>S</b> — Dans une revue à comité de lecture établie</li><li><b>A</b> — Dans une revue à comité de lecture (quel que soit son rang)</li><li><b>B</b> — Soumis à expertise, rapports de relecture reçus (non accepté)</li><li><b>C</b> — Un préprint qu’une personne a examiné et laissé franchir un filtre d’admission</li><li><b>D</b> — Publié avec un DOI mais sans examen humain (auto-dépôt seulement)</li><li><b>E</b> — Publié mais sans identifiant pérenne</li><li><b>F</b> — Non publié</li></ul><p><b>Entre <code>A</code> et <code>B</code> se trouve l’expertise ; entre <code>C</code> et <code>D</code>, le fait qu’une personne ait regardé.</b> Le nombre d’articles expertisés est <b>0</b> : rien au niveau <code>A</code> ou au-dessus ne peut être revendiqué. <b><code>B</code> n’est pas atteint parce que rien n’a été soumis à expertise — non parce que quelque chose aurait été soumis et refusé.</b> Le palier ne se relève pas à la main : il est calculé depuis <code>papers.json</code>.</p>"
     }
   ],
   "extraNav": [

@@ -54,6 +54,7 @@
     "claim",
     "verification",
     "withdrawn",
+    "tier",
     "papers",
     "works",
     "notes",
@@ -274,6 +275,12 @@
       "noteHtml": "核に置かなかったものは、消さずに <a href=\"./notes/index.html\">ノート</a> と <a href=\"./cv.html\">CV</a> にあります。DOI も GitHub も生きています。",
       "note": "notes",
       "html": "\n      <p><a href=\"./notes/index.html#papers\">哲学の三篇と、海軍公報の史料ノート</a><span>要約と全文はノートのページに。哲学の三篇の所在は下に並べてあります</span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22058254\" target=\"_blank\" rel=\"noopener\">The Nobility and Exemplarity of the Celibate Individual</a><span>Zenodo 10.5281/zenodo.22058254　／　<a href=\"https://doi.org/10.2139/ssrn.7358779\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358779</a>　／　<a href=\"https://philarchive.org/rec/NEMTNA\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMTNA</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22057583\" target=\"_blank\" rel=\"noopener\">Manifesto of Imperial Selfhood</a><span>Zenodo 10.5281/zenodo.22057583　／　<a href=\"https://doi.org/10.2139/ssrn.7358818\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358818</a>　／　<a href=\"https://philarchive.org/rec/NEMMOI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMMOI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22064241\" target=\"_blank\" rel=\"noopener\">Fragmentarian Spiritual Individualism</a><span>Zenodo 10.5281/zenodo.22064241　／　<a href=\"https://philarchive.org/rec/NEMFSI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMFSI</a></span></p>\n      <p><a href=\"./notes/index.html#works\">核に直接関わらないリポジトリとツール</a><span>researcher-profile / justice-and-algorithms / autonomy-and-self-cultivation / naval-gazette-notes</span></p>\n      <p><a href=\"./cv.html\">修了証・学習領域・外部プロフィール</a><span>CV</span></p>\n    "
+    },
+    {
+      "id": "tier",
+      "title": "相対ティア",
+      "nav": "相対ティア",
+      "html": "<p><b>質の等級ではない。</b>測るのは<b>誰がどう通したか</b>だけである。段の定義に著者の判断は入らない。</p><ul class=\"notes-list\"><li><b>数学</b> — <b>C</b>　<span>Trinity-Infinity Series II が SSRN の受け付けを通っている。残る二篇は自己登録のみ</span></li><li><b>哲学</b> — <b>C</b>　<span>二篇が SSRN、二篇が PhilArchive の門を通っている。一篇は SSRN に落ちている</span></li><li><b>歴史</b> — <b>D</b>　<span>史料ノートは Zenodo と Knowledge Commons にあるが、どちらも自己登録である</span></li><li><b>総合</b> — <b>D</b>　<span>最も低い分野に合わせる。最高に合わせると、通っていない分野の不在が消える</span></li></ul><ul class=\"notes-list\"><li><b>EX</b> — 分野の標準参照に取り込まれている。教科書や総説が標準として引く</li><li><b>SSS</b> — 分野の最上位誌に載り、広く引かれている</li><li><b>SS</b> — 分野の最上位誌に載っている（査読通過）</li><li><b>S</b> — 定評のある査読誌に載っている</li><li><b>A</b> — 査読誌に載っている（誌の格を問わない）</li><li><b>B</b> — 査読に出し、査読者の報告を受けている（受理には至らない）</li><li><b>C</b> — 受け付けの門を、人が見て通したプレプリントがある</li><li><b>D</b> — DOI つきで公開しているが、人の選別を通っていない（自己登録のみ）</li><li><b>E</b> — 公開しているが、恒久識別子が無い</li><li><b>F</b> — 公開していない</li></ul><p><b><code>A</code> と <code>B</code> の境目に査読があり、<code>C</code> と <code>D</code> の境目に人が見たかどうかがある。</b>査読を通った論文は <b>0 篇</b>である。したがって <code>A</code> 以上は名乗れない。<b><code>B</code> に届いていないのは、査読に出していないからである。出して落ちたのではない。</b>この段は手で上げられない —— <code>papers.json</code> から計算し、書いた段と違えば検査が落ちる。</p>"
     }
   ],
   "contact": {
