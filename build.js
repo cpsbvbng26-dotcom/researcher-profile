@@ -706,7 +706,7 @@ function build() {
     ? `<meta property="og:image" content="${esc(profile.ogImage)}">\n<meta name="twitter:card" content="summary_large_image">`
     : '';
 
-  const html = template
+  let html = template
     .replace(/{{LANG}}/g, esc(profile.lang || 'ja'))
     .replace(/{{TITLE}}/g, esc(title))
     .replace(/{{DESCRIPTION}}/g, esc(profile.description || profile.tagline || ''))
@@ -748,6 +748,15 @@ function build() {
     .replace(/{{FOOTER}}/g, esc(profile.footer || ''))
     .replace(/{{SKIP}}/g, esc(labels.skip))
     .replace(/{{THEME_TOGGLE}}/g, esc(labels.themeToggle));
+
+  /* **場の言葉のまま置いた引用を、翻訳に食わせない。**
+   * <code> の中身は、掲載基準の原文と DOI と識別子である。訳す対象ではない。
+   * ブラウザの翻訳を通すと、周りの日本語ごと書き換えられ、引用の位置まで動く。
+   * 2026年9月12日、利用者が翻訳越しに読んだ頁では「専門職の水準」が
+   * 「専門職の一時」に、「脅迫・嫌がらせ」が「注意・嫌がらせ」に化け、
+   * PhilArchive の見出しごと落ちていた。**引用であることが消える。**
+   * translate="no" は標準の属性、notranslate は Google の翻訳が見る印である。 */
+  html = html.replace(/<code>/g, '<code translate="no" class="notranslate">');
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   fs.writeFileSync(path.join(OUT_DIR, 'index.html'), withCSP(html));
