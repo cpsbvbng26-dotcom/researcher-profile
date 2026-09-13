@@ -55,7 +55,6 @@
     "claim",
     "verification",
     "withdrawn",
-    "tier",
     "papers",
     "works",
     "notes",
@@ -100,7 +99,7 @@
       },
       {
         "name": "34 checks on the register",
-        "html": "The shape and history of the correction record itself. <strong>86 entries</strong> across five statuses, <strong>32 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>69 can be checked by anyone against a frozen artifact; the remaining 17 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+        "html": "The shape and history of the correction record itself. <strong>87 entries</strong> across five statuses, <strong>32 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>70 can be checked by anyone against a frozen artifact; the remaining 17 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
         "name": "31 printed numbers",
@@ -129,7 +128,7 @@
     ]
   },
   "withdrawn": {
-    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (86 entries)</a>.",
+    "note": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (87 entries)</a>.",
     "items": [
       {
         "name": "The original theorem",
@@ -239,7 +238,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/self-correction",
       "code": "Record / MIT",
       "title": "self-correction",
-      "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. 86 entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
+      "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. 87 entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
       "verify": "View on GitHub"
     },
     {
@@ -276,12 +275,6 @@
       "noteHtml": "Everything not placed in the core is in <a href=\"./notes/index.en.html\">Notes</a> and <a href=\"./cv.html\">CV</a>, undeleted. The DOIs and the repositories are live.",
       "note": "notes",
       "html": "\n      <p><a href=\"./notes/index.en.html#papers\">Three papers in philosophy, and a naval gazette source note</a><span>Summaries and full text are on the Notes page. Where the three philosophical papers live is listed below</span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22058254\" target=\"_blank\" rel=\"noopener\">The Nobility and Exemplarity of the Celibate Individual</a><span>Zenodo 10.5281/zenodo.22058254　／　<a href=\"https://doi.org/10.2139/ssrn.7358779\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358779</a>　／　<a href=\"https://philarchive.org/rec/NEMTNA\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMTNA</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22057583\" target=\"_blank\" rel=\"noopener\">Manifesto of Imperial Selfhood</a><span>Zenodo 10.5281/zenodo.22057583　／　<a href=\"https://doi.org/10.2139/ssrn.7358818\" target=\"_blank\" rel=\"noopener\">SSRN 10.2139/ssrn.7358818</a>　／　<a href=\"https://philarchive.org/rec/NEMMOI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMMOI</a></span></p>\n      <p><a href=\"https://doi.org/10.5281/zenodo.22064241\" target=\"_blank\" rel=\"noopener\">Fragmentarian Spiritual Individualism</a><span>Zenodo 10.5281/zenodo.22064241　／　<a href=\"https://philarchive.org/rec/NEMFSI\" target=\"_blank\" rel=\"noopener\">PhilArchive NEMFSI</a></span></p>\n      <p><a href=\"./notes/index.en.html#works\">Repositories and tools outside the core</a><span>researcher-profile / justice-and-algorithms / autonomy-and-self-cultivation / naval-gazette-notes</span></p>\n      <p><a href=\"./cv.html\">Certificates, areas of study, external profiles</a><span>CV</span></p>\n    "
-    },
-    {
-      "id": "tier",
-      "title": "Relative tier",
-      "nav": "Relative tier",
-      "html": "<p><b>This is not a grade of quality.</b> It measures only <b>who let the work through, and how</b>. No judgement of the author’s enters the definition of a step.</p><ul class=\"notes-list\"><li><b>Mathematics</b> — <b>C</b>　<span>Trinity-Infinity Series II passed SSRN screening; the other two are self-deposit only</span></li><li><b>Philosophy</b> — <b>C</b>　<span>Two passed SSRN and two passed the PhilArchive gate; one was rejected by SSRN</span></li><li><b>History</b> — <b>D</b>　<span>The source note is on Zenodo and Knowledge Commons, both self-deposit</span></li><li><b>Overall</b> — <b>D</b>　<span>Set to the lowest field. Setting it to the highest would erase the absence in the fields not passed</span></li></ul><ul class=\"notes-list\"><li><b>EX</b> — Taken up as a standard reference: textbooks and review articles cite it as standard</li><li><b>SSS</b> — In a top journal of the field and widely cited</li><li><b>SS</b> — In a top journal of the field (peer reviewed)</li><li><b>S</b> — In an established peer-reviewed journal</li><li><b>A</b> — In a peer-reviewed journal (of any standing)</li><li><b>B</b> — Submitted for peer review and referee reports received (not accepted)</li><li><b>C</b> — A preprint that a person screened and let through an acceptance gate</li><li><b>D</b> — Published with a DOI but through no human screening (self-deposit only)</li><li><b>E</b> — Published but with no persistent identifier</li><li><b>F</b> — Not published</li></ul><p><b>Peer review is the line between <code>A</code> and <code>B</code>; whether a person looked is the line between <code>C</code> and <code>D</code>.</b> The number of peer-reviewed papers is <b>0</b>, so nothing at <code>A</code> or above can be claimed. <b><code>B</code> is not reached because nothing has been submitted for review — not because something was submitted and failed.</b> The step cannot be raised by hand: it is computed from <code>papers.json</code>, and a mismatch fails the checks.</p><p><b>Disclaimer.</b> The <code>EX</code>-to-<code>F</code> ladder <b>exists nowhere in academia; it borrows the form of a game ranking</b>, and the form is the author’s own import. <b>Only the facts of acceptance and rejection are fixed</b> — <b>0</b> peer-reviewed papers, <b>3 accepted and 1 rejected</b> at SSRN, <b>2 through</b> the PhilArchive gate. <b>How many steps there are, and where the lines fall, the author decided.</b> A different ladder could be built from the same facts. <b>It is not absolute.</b> Gates are built differently in different fields, so <b>it is not universal either.</b> <b>It is not a yardstick for other people</b> — these steps describe one author’s published work, and <b>no one else has consented to appear on this table.</b> It was not made to rank others, and using it that way is a misuse. <b>It says nothing about worth.</b> It is kept because <b>the step can only rise when someone else lets the work through.</b></p>"
     }
   ],
   "contact": {

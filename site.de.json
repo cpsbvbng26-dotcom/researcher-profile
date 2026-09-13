@@ -26,7 +26,6 @@
   "sections": [
     "about",
     "writings",
-    "tier",
     "verify",
     "more"
   ],
@@ -44,18 +43,12 @@
     {
       "id": "verify",
       "title": "Prüfung",
-      "html": "<p>Bei jedem Push laufen <b>1013 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>86 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>"
+      "html": "<p>Bei jedem Push laufen <b>1013 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>87 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>"
     },
     {
       "id": "more",
       "title": "Weiterlesen",
       "html": "<ul class=\"notes-list\"><li><a href=\"./index.html\">Japanisch （日本語）</a></li><li><a href=\"./index.en.html\">Englisch</a></li><li><a href=\"./cv.html\">Lebenslauf</a></li><li><a href=\"./notes/index.en.html\">Notizen</a></li><li><a href=\"./trinity.html\">Operator</a></li></ul>"
-    },
-    {
-      "id": "tier",
-      "title": "Relative Stufe",
-      "nav": "Relative Stufe",
-      "html": "<p><b>Dies ist keine Qualitätsnote.</b> Gemessen wird nur, <b>wer die Arbeit durchgelassen hat und wie</b>. In die Definition der Stufen geht kein Urteil des Autors ein.</p><ul class=\"notes-list\"><li><b>Mathematik</b> — <b>C</b>　<span>Trinity-Infinity Serie II hat die SSRN-Prüfung bestanden; die anderen beiden sind nur selbst abgelegt</span></li><li><b>Philosophie</b> — <b>C</b>　<span>Zwei bestanden SSRN, zwei die PhilArchive-Prüfung; einer wurde von SSRN abgewiesen</span></li><li><b>Geschichte</b> — <b>D</b>　<span>Die Quellennotiz liegt auf Zenodo und Knowledge Commons, beides Selbstablage</span></li><li><b>Gesamt</b> — <b>D</b>　<span>Auf das niedrigste Fach gesetzt. Am höchsten gesetzt, verschwände das Fehlen in den nicht bestandenen Fächern</span></li></ul><ul class=\"notes-list\"><li><b>EX</b> — In die Standardliteratur aufgenommen: Lehrbücher und Übersichtsartikel zitieren es als Standard</li><li><b>SSS</b> — In einer Spitzenzeitschrift des Fachs und breit zitiert</li><li><b>SS</b> — In einer Spitzenzeitschrift des Fachs (begutachtet)</li><li><b>S</b> — In einer etablierten begutachteten Zeitschrift</li><li><b>A</b> — In einer begutachteten Zeitschrift (unabhängig vom Rang)</li><li><b>B</b> — Zur Begutachtung eingereicht, Gutachten erhalten (nicht angenommen)</li><li><b>C</b> — Ein Preprint, das ein Mensch geprüft und durch eine Aufnahmeprüfung gelassen hat</li><li><b>D</b> — Mit DOI veröffentlicht, aber ohne menschliche Prüfung (nur Selbstablage)</li><li><b>E</b> — Veröffentlicht, aber ohne dauerhaften Identifikator</li><li><b>F</b> — Nicht veröffentlicht</li></ul><p><b>Zwischen <code>A</code> und <code>B</code> liegt die Begutachtung; zwischen <code>C</code> und <code>D</code> liegt, ob ein Mensch hingesehen hat.</b> Die Zahl begutachteter Aufsätze ist <b>0</b>, daher ist <code>A</code> oder höher nicht zu beanspruchen. <b><code>B</code> ist nicht erreicht, weil nichts zur Begutachtung eingereicht wurde — nicht weil etwas eingereicht und abgelehnt worden wäre.</b> Die Stufe lässt sich nicht von Hand anheben: sie wird aus <code>papers.json</code> berechnet.</p><p><b>Haftungsausschluss.</b> Die Leiter von <code>EX</code> bis <code>F</code> <b>existiert in der Wissenschaft nirgends; sie borgt die Form einer Spielrangliste</b>, und die Form hat der Autor eingebracht. <b>Fest stehen allein die Tatsachen von Annahme und Ablehnung</b> — <b>0</b> begutachtete Aufsätze, bei SSRN <b>3 angenommen, 1 abgewiesen</b>, bei PhilArchive <b>2 durchgelassen</b>. <b>Wie viele Stufen es gibt und wo die Grenzen liegen, hat der Autor entschieden.</b> Aus denselben Tatsachen ließe sich eine andere Leiter bauen. <b>Sie ist nicht absolut.</b> Die Prüfungen sind in jedem Fach anders gebaut, also <b>auch nicht allgemeingültig.</b> <b>Sie ist kein Maßstab für andere Menschen</b> — sie beschreibt das veröffentlichte Werk eines Einzelnen, und <b>niemand sonst hat eingewilligt, in dieser Tabelle zu stehen.</b> Sie wurde nicht gebaut, um andere einzustufen; so verwendet, ist sie missbraucht. <b>Über den Wert sagt sie nichts.</b> Sie bleibt, weil <b>die Stufe nur steigt, wenn ein anderer die Arbeit durchlässt.</b></p>"
     }
   ],
   "extraNav": [

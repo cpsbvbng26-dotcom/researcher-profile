@@ -26,7 +26,6 @@
   "sections": [
     "about",
     "writings",
-    "tier",
     "verify",
     "more"
   ],
@@ -44,18 +43,12 @@
     {
       "id": "verify",
       "title": "Verifica",
-      "html": "<p>A ogni push vengono eseguiti <b>1013 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>86 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
+      "html": "<p>A ogni push vengono eseguiti <b>1013 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>87 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
     },
     {
       "id": "more",
       "title": "Per approfondire",
       "html": "<ul class=\"notes-list\"><li><a href=\"./index.html\">Giapponese （日本語）</a></li><li><a href=\"./index.en.html\">Inglese</a></li><li><a href=\"./cv.html\">CV</a></li><li><a href=\"./notes/index.en.html\">Note</a></li><li><a href=\"./trinity.html\">Operatore</a></li></ul>"
-    },
-    {
-      "id": "tier",
-      "title": "Livello relativo",
-      "nav": "Livello relativo",
-      "html": "<p><b>Non è un voto di qualità.</b> Si misura soltanto <b>chi ha lasciato passare il lavoro, e come</b>. Nella definizione dei gradini non entra alcun giudizio dell’autore.</p><ul class=\"notes-list\"><li><b>Matematica</b> — <b>C</b>　<span>Trinity-Infinity serie II ha superato il vaglio di SSRN; gli altri due sono solo autodeposito</span></li><li><b>Filosofia</b> — <b>C</b>　<span>Due hanno superato SSRN e due la porta di PhilArchive; uno è stato respinto da SSRN</span></li><li><b>Storia</b> — <b>D</b>　<span>La nota di fonte è su Zenodo e Knowledge Commons, entrambi autodeposito</span></li><li><b>Complessivo</b> — <b>D</b>　<span>Allineato all’ambito più basso. Allinearlo al più alto cancellerebbe l’assenza negli ambiti non superati</span></li></ul><ul class=\"notes-list\"><li><b>EX</b> — Assunto tra i riferimenti standard: manuali e rassegne lo citano come tale</li><li><b>SSS</b> — In una rivista di primo piano del settore e ampiamente citato</li><li><b>SS</b> — In una rivista di primo piano del settore (con revisione paritaria)</li><li><b>S</b> — In una rivista con revisione paritaria consolidata</li><li><b>A</b> — In una rivista con revisione paritaria (di qualunque rango)</li><li><b>B</b> — Inviato a revisione, ricevuti i rapporti dei revisori (non accettato)</li><li><b>C</b> — Un preprint che una persona ha esaminato e fatto passare da una porta di accettazione</li><li><b>D</b> — Pubblicato con DOI ma senza vaglio umano (solo autodeposito)</li><li><b>E</b> — Pubblicato ma senza identificatore persistente</li><li><b>F</b> — Non pubblicato</li></ul><p><b>Tra <code>A</code> e <code>B</code> sta la revisione paritaria; tra <code>C</code> e <code>D</code> sta se una persona abbia guardato.</b> Il numero di saggi con revisione paritaria è <b>0</b>: nulla al livello <code>A</code> o superiore può essere rivendicato. <b><code>B</code> non è raggiunto perché nulla è stato inviato a revisione — non perché qualcosa sia stato inviato e respinto.</b> Il gradino non si alza a mano: è calcolato da <code>papers.json</code>.</p><p><b>Avvertenza.</b> La scala da <code>EX</code> a <code>F</code> <b>non esiste in alcun luogo del mondo accademico; prende in prestito la forma di una classifica di gioco</b>, e la forma è un apporto dell’autore. <b>Sono fissi soltanto i fatti di accettazione e rifiuto</b> — <b>0</b> saggi con revisione paritaria, su SSRN <b>3 accettati e 1 respinto</b>, su PhilArchive <b>2 passati</b>. <b>Quanti gradini vi siano e dove cadano le soglie lo ha deciso l’autore.</b> Dalla stessa base di fatti si potrebbe costruire un’altra scala. <b>Non è assoluta.</b> Le porte sono costruite in modo diverso in ogni ambito, dunque <b>non è nemmeno universale.</b> <b>Non è un metro per altre persone</b> — questi gradini descrivono l’opera pubblicata di una sola persona, e <b>nessun altro ha acconsentito a comparire in questa tabella.</b> Non è stata fatta per classificare altri; usarla così è un abuso. <b>Non dice nulla sul valore.</b> Resta perché <b>il gradino sale soltanto quando un altro lascia passare il lavoro.</b></p>"
     }
   ],
   "extraNav": [

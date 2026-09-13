@@ -26,7 +26,6 @@
   "sections": [
     "about",
     "writings",
-    "tier",
     "verify",
     "more"
   ],
@@ -44,18 +43,12 @@
     {
       "id": "verify",
       "title": "Vérification",
-      "html": "<p>Chaque push déclenche <b>1013 vérifications</b>. Elles portent sur la structure du site, la lisibilité des contrastes et les valeurs numériques de la page consacrée à l’opérateur.</p><p><b>Un registre distinct consigne ce qui s’est révélé faux</b> — <b>86 entrées</b> à ce jour. <b>Rien n’y est supprimé.</b> Les outils de vérification sont eux-mêmes vérifiés : un état valide est délibérément cassé, et l’on établit que c’est bien la vérification correspondante qui échoue.</p>"
+      "html": "<p>Chaque push déclenche <b>1013 vérifications</b>. Elles portent sur la structure du site, la lisibilité des contrastes et les valeurs numériques de la page consacrée à l’opérateur.</p><p><b>Un registre distinct consigne ce qui s’est révélé faux</b> — <b>87 entrées</b> à ce jour. <b>Rien n’y est supprimé.</b> Les outils de vérification sont eux-mêmes vérifiés : un état valide est délibérément cassé, et l’on établit que c’est bien la vérification correspondante qui échoue.</p>"
     },
     {
       "id": "more",
       "title": "Pour aller plus loin",
       "html": "<ul class=\"notes-list\"><li><a href=\"./index.html\">Japonais （日本語）</a></li><li><a href=\"./index.en.html\">Anglais</a></li><li><a href=\"./cv.html\">CV</a></li><li><a href=\"./notes/index.en.html\">Notes</a></li><li><a href=\"./trinity.html\">Opérateur</a></li></ul>"
-    },
-    {
-      "id": "tier",
-      "title": "Palier relatif",
-      "nav": "Palier relatif",
-      "html": "<p><b>Ce n’est pas une note de qualité.</b> On ne mesure que <b>qui a laissé passer le travail, et comment</b>. Aucun jugement de l’auteur n’entre dans la définition des paliers.</p><ul class=\"notes-list\"><li><b>Mathématiques</b> — <b>C</b>　<span>Trinity-Infinity série II a franchi le filtre de SSRN ; les deux autres sont en auto-dépôt seulement</span></li><li><b>Philosophie</b> — <b>C</b>　<span>Deux ont franchi SSRN et deux le filtre de PhilArchive ; un a été refusé par SSRN</span></li><li><b>Histoire</b> — <b>D</b>　<span>La note de source est sur Zenodo et Knowledge Commons, deux auto-dépôts</span></li><li><b>Ensemble</b> — <b>D</b>　<span>Aligné sur le domaine le plus bas. L’aligner sur le plus haut effacerait l’absence dans les domaines non franchis</span></li></ul><ul class=\"notes-list\"><li><b>EX</b> — Intégré aux références standard : manuels et articles de synthèse le citent comme tel</li><li><b>SSS</b> — Dans une revue de premier plan du domaine et largement cité</li><li><b>SS</b> — Dans une revue de premier plan du domaine (expertisé)</li><li><b>S</b> — Dans une revue à comité de lecture établie</li><li><b>A</b> — Dans une revue à comité de lecture (quel que soit son rang)</li><li><b>B</b> — Soumis à expertise, rapports de relecture reçus (non accepté)</li><li><b>C</b> — Un préprint qu’une personne a examiné et laissé franchir un filtre d’admission</li><li><b>D</b> — Publié avec un DOI mais sans examen humain (auto-dépôt seulement)</li><li><b>E</b> — Publié mais sans identifiant pérenne</li><li><b>F</b> — Non publié</li></ul><p><b>Entre <code>A</code> et <code>B</code> se trouve l’expertise ; entre <code>C</code> et <code>D</code>, le fait qu’une personne ait regardé.</b> Le nombre d’articles expertisés est <b>0</b> : rien au niveau <code>A</code> ou au-dessus ne peut être revendiqué. <b><code>B</code> n’est pas atteint parce que rien n’a été soumis à expertise — non parce que quelque chose aurait été soumis et refusé.</b> Le palier ne se relève pas à la main : il est calculé depuis <code>papers.json</code>.</p><p><b>Avertissement.</b> L’échelle de <code>EX</code> à <code>F</code> <b>n’existe nulle part dans le monde académique ; elle emprunte la forme d’un classement de jeu</b>, et cette forme est un apport de l’auteur. <b>Seuls les faits d’acceptation et de refus sont fixes</b> — <b>0</b> article expertisé, <b>3 acceptés et 1 refusé</b> sur SSRN, <b>2 franchis</b> sur PhilArchive. <b>Le nombre de paliers et l’emplacement des seuils, c’est l’auteur qui les a décidés.</b> Une autre échelle pourrait être bâtie sur les mêmes faits. <b>Elle n’est pas absolue.</b> Les filtres sont construits différemment selon les domaines : <b>elle n’est pas universelle non plus.</b> <b>Ce n’est pas une toise pour autrui</b> — ces paliers décrivent l’œuvre publiée d’une seule personne, et <b>nul autre n’a consenti à figurer dans ce tableau.</b> Elle n’a pas été faite pour classer les autres ; l’employer ainsi est un mésusage. <b>Elle ne dit rien de la valeur.</b> Elle demeure parce que <b>le palier ne monte que lorsqu’un autre laisse passer le travail.</b></p>"
     }
   ],
   "extraNav": [
