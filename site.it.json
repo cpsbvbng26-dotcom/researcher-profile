@@ -43,7 +43,7 @@
     {
       "id": "verify",
       "title": "Verifica",
-      "html": "<p>A ogni push vengono eseguiti <b>1013 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>89 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
+      "html": "<p>A ogni push vengono eseguiti <b>1017 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>89 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
     },
     {
       "id": "more",
