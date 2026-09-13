@@ -74,7 +74,7 @@
       },
       {
         "term": "Evidence",
-        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 96 checks on the errata itself, 74 on the tool. The tool is checked by <strong>breaking a passing state in 28 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
+        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 100 checks on the errata itself, 74 on the tool. The tool is checked by <strong>breaking a passing state in 28 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
       },
       {
         "term": "The outside eye",
@@ -90,8 +90,8 @@
     "note": "How many checks, where, and when. All of them run in CI on every push. The first three are the core.",
     "items": [
       {
-        "name": "256 checks on the errata",
-        "html": "The same audit applied to all four frozen bodies of work: 96 on the three Trinity-Infinity papers, 102 on the three philosophical papers, 58 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
+        "name": "260 checks on the errata",
+        "html": "The same audit applied to all four frozen bodies of work: 100 on the three Trinity-Infinity papers, 102 on the three philosophical papers, 58 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
       },
       {
         "name": "74 checks on the tool itself",
