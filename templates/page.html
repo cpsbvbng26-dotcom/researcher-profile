@@ -824,7 +824,10 @@ footer::before {
         entry.target.classList.add('is-visible');
         io.unobserve(entry.target);
       });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: .1 });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+    /* 閾値は 0 にする。割合で判定すると、画面より高い塊が永久に出ない。
+     * 自己紹介が 8819px まで伸びたとき、844px の画面では最大 9.6% しか
+     * 見えず、1 割の条件に届かなかった。頁の上半分が丸ごと消えていた。 */
     Array.prototype.forEach.call(targets, function (el) { io.observe(el); });
   });
 })();
