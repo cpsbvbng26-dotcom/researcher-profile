@@ -127,7 +127,9 @@
     ]
   },
   "withdrawn": {
-    "note": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（91 件）</a> にあります。",
+    "note": {
+      "html": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。四つの成果物ぶんの記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（91 件）</a> にあります。"
+    },
     "items": [
       {
         "name": "収束定理の原型",

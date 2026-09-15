@@ -445,7 +445,7 @@ function renderWithdrawn(w, labels) {
   <section id="withdrawn" class="wrap block">
     <div class="sec-head reveal">
       <h2 class="serif">${esc(labels.withdrawn)}</h2>
-      ${w.note ? `<p>${esc(w.note)}</p>` : ''}
+      ${w.note ? `<p>${noteHtmlOf(w.note)}</p>` : ''}
     </div>
 
     <div class="facts reveal">
