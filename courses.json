@@ -3,7 +3,7 @@
   "_なぜ": "同じ一覧を四つの設定に写すと、科目が増えた日に写し忘れる。**源を一つにして、合計は数えさせる。**",
   "_使い方": "科目が増えたらここに一行足す。ページを作り直したあと、cpsbvbng26-dotcom で node verification/update_readme_courses.js を走らせると README も揃う。",
   "_現在": "asOf は、この一覧がどの時点のものかを示す。科目を足したら同じ日に直す。",
-  "asOf": "2026-09-09",
+  "asOf": "2026-09-16",
   "groups": [
     {
       "id": "sanno",
@@ -99,6 +99,48 @@
           "nameEn": "Internet Culture through the History of Derivative Works",
           "category": "選択",
           "categoryEn": "elective",
+          "credits": 2
+        },
+        {
+          "name": "日本のゲーム産業史",
+          "nameEn": "A History of the Japanese Game Industry",
+          "category": "選択必修",
+          "categoryEn": "required elective",
+          "credits": 2
+        },
+        {
+          "name": "企業経営",
+          "nameEn": "Business Management",
+          "category": "選択必修",
+          "categoryEn": "required elective",
+          "credits": 2
+        },
+        {
+          "name": "法学Ⅰ",
+          "nameEn": "Law I",
+          "category": "選択必修",
+          "categoryEn": "required elective",
+          "credits": 2
+        },
+        {
+          "name": "心理学",
+          "nameEn": "Psychology",
+          "category": "選択必修",
+          "categoryEn": "required elective",
+          "credits": 2
+        },
+        {
+          "name": "機械翻訳実践（情報）",
+          "nameEn": "Applied Machine Translation (Informatics)",
+          "category": "選択必修",
+          "categoryEn": "required elective",
+          "credits": 2
+        },
+        {
+          "name": "機械翻訳実践（法学）",
+          "nameEn": "Applied Machine Translation (Law)",
+          "category": "選択必修",
+          "categoryEn": "required elective",
           "credits": 2
         }
       ]
