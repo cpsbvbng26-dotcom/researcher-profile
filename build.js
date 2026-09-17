@@ -151,8 +151,10 @@ function renderProfile(p) {
         + (h.asOf ? (h.en ? ` (${h.asOf})` : `（${h.asOf}）`) : '');
       list = '<ul class="path-courses">'
         + cs.map((c) => `<li data-category="${esc(c.category || '')}" `
-            + `data-credits="${Number(c.credits) || 0}">${esc(c.name)}`
-            + (c.category ? `<i>${esc(c.category)}</i>` : '') + '</li>').join('')
+            + `data-credits="${Number(c.credits) || 0}" `
+            + `data-grade="${esc(c.grade || '')}">${esc(c.name)}`
+            + (c.category ? `<i>${esc(c.category)}</i>` : '')
+            + (c.grade ? `<b>${esc(c.grade)}</b>` : '') + '</li>').join('')
         + '</ul>';
     }
     return `      <li${now ? ' class="path-now"' : ''}>`
@@ -519,8 +521,12 @@ function renderCourses(groups, labels) {
   const body = groups.map((g) => {
     const items = arr(g.items);
     const rows = items.map((c) => {
-      const note = [c.category, c.credits ? c.credits + ' 単位' : ''].filter(Boolean).join('・');
-      return `        <li data-category="${esc(c.category || '')}" data-credits="${Number(c.credits) || 0}">`
+      const note = [c.category,
+                    c.credits ? (g.en ? c.credits + ' credits' : c.credits + ' 単位') : '',
+                    c.grade ? (g.en ? 'grade ' + c.grade : '評価 ' + c.grade) : '']
+        .filter(Boolean).join(g.en ? ', ' : '・');
+      return `        <li data-category="${esc(c.category || '')}" data-credits="${Number(c.credits) || 0}"`
+        + ` data-grade="${esc(c.grade || '')}">`
         + `<span class="course-name">${esc(c.name)}</span>`
         + (note ? `<span class="course-note">${esc(note)}</span>` : '')
         + '</li>';
@@ -678,6 +684,9 @@ function build() {
         name: en ? (c.nameEn || c.name) : c.name,
         category: en ? (c.categoryEn || c.category) : c.category,
         credits: c.credits,
+        /* 評語はそのまま運ぶ。**言語で置き換えない。**
+         * 発行元が印字した一文字である。訳せば別の尺度に見える。 */
+        grade: c.grade,
       })),
     }));
     const asOf = asOfLabel(src.asOf, en);
