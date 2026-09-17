@@ -3,7 +3,7 @@
   "_なぜ": "同じ一覧を四つの設定に写すと、科目が増えた日に写し忘れる。**源を一つにして、合計は数えさせる。**",
   "_使い方": "科目が増えたらここに一行足す。ページを作り直したあと、cpsbvbng26-dotcom で node verification/update_readme_courses.js を走らせると README も揃う。",
   "_現在": "asOf は、この一覧がどの時点のものかを示す。科目を足したら同じ日に直す。",
-  "asOf": "2026-09-16",
+  "asOf": "2026-09-17",
   "groups": [
     {
       "id": "sanno",
@@ -29,121 +29,139 @@
           "nameEn": "Introduction to the Humanities and Social Sciences",
           "category": "必修",
           "categoryEn": "required",
-          "credits": 2
+          "credits": 2,
+          "grade": "B"
         },
         {
           "name": "IT リテラシー",
           "nameEn": "IT Literacy",
           "category": "必修",
           "categoryEn": "required",
-          "credits": 2
+          "credits": 2,
+          "grade": "C"
         },
         {
           "name": "アカデミックリテラシー",
           "nameEn": "Academic Literacy",
           "category": "必修",
           "categoryEn": "required",
-          "credits": 2
+          "credits": 2,
+          "grade": "P"
         },
         {
           "name": "デジタルツールの使い方",
           "nameEn": "Using Digital Tools",
           "category": "必修",
           "categoryEn": "required",
-          "credits": 2
+          "credits": 2,
+          "grade": "B"
         },
         {
           "name": "多言語 IT コミュニケーション",
           "nameEn": "Multilingual IT Communication",
           "category": "必修",
           "categoryEn": "required",
-          "credits": 2
+          "credits": 2,
+          "grade": "B"
         },
         {
           "name": "人工知能活用実践",
           "nameEn": "Applied Practice in Artificial Intelligence",
           "category": "必修",
           "categoryEn": "required",
-          "credits": 2
+          "credits": 2,
+          "grade": "C"
         },
         {
           "name": "経済入門",
           "nameEn": "Introduction to Economics",
           "category": "必修",
           "categoryEn": "required",
-          "credits": 2
+          "credits": 2,
+          "grade": "C"
         },
         {
           "name": "情報セキュリティ概論",
           "nameEn": "Introduction to Information Security",
           "category": "選択必修",
           "categoryEn": "required elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "C"
         },
         {
           "name": "数学史",
           "nameEn": "History of Mathematics",
           "category": "選択必修",
           "categoryEn": "required elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "B"
         },
         {
           "name": "ネット情報発信概論",
           "nameEn": "Introduction to Publishing on the Internet",
           "category": "選択",
           "categoryEn": "elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "A"
         },
         {
           "name": "二次創作の歴史から見るネット文化",
           "nameEn": "Internet Culture through the History of Derivative Works",
           "category": "選択",
           "categoryEn": "elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "B"
         },
         {
           "name": "日本のゲーム産業史",
           "nameEn": "A History of the Japanese Game Industry",
           "category": "選択必修",
           "categoryEn": "required elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "C"
         },
         {
           "name": "企業経営",
           "nameEn": "Business Management",
           "category": "選択必修",
           "categoryEn": "required elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "C"
         },
         {
           "name": "法学Ⅰ",
           "nameEn": "Law I",
           "category": "選択必修",
           "categoryEn": "required elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "C"
         },
         {
           "name": "心理学",
           "nameEn": "Psychology",
           "category": "選択必修",
           "categoryEn": "required elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "D"
         },
         {
           "name": "機械翻訳実践（情報）",
           "nameEn": "Applied Machine Translation (Informatics)",
           "category": "選択必修",
           "categoryEn": "required elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "D"
         },
         {
           "name": "機械翻訳実践（法学）",
           "nameEn": "Applied Machine Translation (Law)",
           "category": "選択必修",
           "categoryEn": "required elective",
-          "credits": 2
+          "credits": 2,
+          "grade": "D"
         }
       ]
     }
-  ]
+  ],
+  "_評価": "grade は利用者から受け取った評語をそのまま書く。換算も推測もしない。ZEN大学の分だけが持つ。"
 }
