@@ -98,7 +98,7 @@
         "html": "A checking tool cannot be trusted merely because it passes; a tool that looks at nothing passes too. A passing state is <strong>broken in 28 distinct ways</strong>, and each break must fail exactly the corresponding check. The distributions used to recompute p are validated against published statistical tables at eleven points (<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>)"
       },
       {
-        "name": "34 checks on the register",
+        "name": "46 checks on the register",
         "html": "The shape and history of the correction record itself. <strong>92 entries</strong> across five statuses, <strong>33 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>75 can be checked by anyone against a frozen artifact; the remaining 17 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
@@ -118,7 +118,7 @@
         "html": "The repaired argument itself: that P solves the Lyapunov equation, that ‖·‖_P is a norm, and that f contracts in that distance — checked from the definitions (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator\" target=\"_blank\" rel=\"noopener\">trinity-operator</a>)"
       },
       {
-        "name": "63 checks on the outlook",
+        "name": "81 checks on the outlook",
         "html": "Which of the papers’ conclusions survive as each assumption is dropped. What is settled exactly, what is only estimated, and what is undecidable in principle, counted separately (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/roadmap\" target=\"_blank\" rel=\"noopener\">trinity-operator/roadmap</a>)"
       },
       {
