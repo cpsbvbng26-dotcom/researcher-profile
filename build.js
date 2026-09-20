@@ -170,6 +170,14 @@ function renderProfile(p) {
      * 入れ子にすると査読前の断りがヒーローの外に出る。実際に一度そうなった。 */
     '    <div class="profile reveal">',
     `      <h2 class="profile-label">${esc(p.label || '')}</h2>`,
+    /* 顔写真。**無ければ何も出さない。**この道具を使う側が必ず顔を出すとは限らない。
+     * **寸法を属性で書く。**書かないと読み込みのたびに本文が跳ねる。 */
+    p.photo && p.photo.src
+      ? `      <img class="profile-photo" src="${esc(p.photo.src)}"`
+        + ` alt="${esc(p.photo.alt || '')}"`
+        + ` width="${esc(String(p.photo.width || ''))}" height="${esc(String(p.photo.height || ''))}"`
+        + ' loading="lazy" decoding="async">'
+      : '',
     `      <p class="profile-now">${p.nowHtml || esc(p.now || '')}</p>`,
     p.studyHtml ? `      <p class="profile-now profile-study">${p.studyHtml}</p>` : '',
     /* 根幹の一段。**自己紹介の中に置く。**下のほうに置けば、読み手は辿り着かない。 */
