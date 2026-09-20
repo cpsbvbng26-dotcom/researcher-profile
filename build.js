@@ -170,14 +170,11 @@ function renderProfile(p) {
      * 入れ子にすると査読前の断りがヒーローの外に出る。実際に一度そうなった。 */
     '    <div class="profile reveal">',
     `      <h2 class="profile-label">${esc(p.label || '')}</h2>`,
-    /* 顔写真。**無ければ何も出さない。**この道具を使う側が必ず顔を出すとは限らない。
+    /* 写真。**無ければ何も出さない。**この道具を使う側が必ず顔を出すとは限らない。
+     * **一枚でも並べてでも取れる。**object を渡せば一枚、配列を渡せば横に並ぶ。
+     * 一枚のときの markup は前と同じで、既存の設定は何も変わらない。
      * **寸法を属性で書く。**書かないと読み込みのたびに本文が跳ねる。 */
-    p.photo && p.photo.src
-      ? `      <img class="profile-photo" src="${esc(p.photo.src)}"`
-        + ` alt="${esc(p.photo.alt || '')}"`
-        + ` width="${esc(String(p.photo.width || ''))}" height="${esc(String(p.photo.height || ''))}"`
-        + ' loading="lazy" decoding="async">'
-      : '',
+    renderPhotos(p.photo),
     `      <p class="profile-now">${p.nowHtml || esc(p.now || '')}</p>`,
     p.studyHtml ? `      <p class="profile-now profile-study">${p.studyHtml}</p>` : '',
     /* 根幹の一段。**自己紹介の中に置く。**下のほうに置けば、読み手は辿り着かない。 */
@@ -194,6 +191,20 @@ function renderProfile(p) {
     aims ? '      </ul>' : '',
     '    </div>'
   ].filter((x) => x !== '').join('\n') + '\n';
+}
+
+
+function renderPhotos(photo) {
+  const list = (Array.isArray(photo) ? photo : [photo]).filter((x) => x && x.src);
+  if (!list.length) return '';
+  const img = (x, indent) => `${indent}<img class="profile-photo" src="${esc(x.src)}"`
+    + ` alt="${esc(x.alt || '')}"`
+    + ` width="${esc(String(x.width || ''))}" height="${esc(String(x.height || ''))}"`
+    + ' loading="lazy" decoding="async">';
+  if (list.length === 1) return img(list[0], '      ');
+  return ['      <div class="profile-photos">']
+    .concat(list.map((x) => img(x, '        ')))
+    .concat(['      </div>']).join('\n');
 }
 
 
