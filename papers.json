@@ -167,6 +167,7 @@
       "title": "A Naval Gazette Entry for Lieutenant Otani Tsune (大谷恒)",
       "subtitle": "A Note on the Investiture List of 11 September 1943 in the Naval Gazette (Internal Circulation Only), Extra Edition",
       "locations": [
+        { "name": "SSRN", "id": "10.2139/ssrn.7449338", "url": "https://doi.org/10.2139/ssrn.7449338" },
         { "name": "Knowledge Commons", "id": "q36z2-98e12", "url": "https://works.hcommons.org/records/q36z2-98e12" }
       ],
       "ja": {
