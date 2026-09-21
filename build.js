@@ -174,7 +174,7 @@ function renderProfile(p) {
      * **一枚でも並べてでも取れる。**object を渡せば一枚、配列を渡せば横に並ぶ。
      * 一枚のときの markup は前と同じで、既存の設定は何も変わらない。
      * **寸法を属性で書く。**書かないと読み込みのたびに本文が跳ねる。 */
-    renderPhotos(p.photo),
+    renderPhotos(p.photo, p.photoNote),
     `      <p class="profile-now">${p.nowHtml || esc(p.now || '')}</p>`,
     p.studyHtml ? `      <p class="profile-now profile-study">${p.studyHtml}</p>` : '',
     /* 根幹の一段。**自己紹介の中に置く。**下のほうに置けば、読み手は辿り着かない。 */
@@ -194,17 +194,20 @@ function renderProfile(p) {
 }
 
 
-function renderPhotos(photo) {
+function renderPhotos(photo, note) {
   const list = (Array.isArray(photo) ? photo : [photo]).filter((x) => x && x.src);
   if (!list.length) return '';
   const img = (x, indent) => `${indent}<img class="profile-photo" src="${esc(x.src)}"`
     + ` alt="${esc(x.alt || '')}"`
     + ` width="${esc(String(x.width || ''))}" height="${esc(String(x.height || ''))}"`
     + ' loading="lazy" decoding="async">';
-  if (list.length === 1) return img(list[0], '      ');
-  return ['      <div class="profile-photos">']
-    .concat(list.map((x) => img(x, '        ')))
-    .concat(['      </div>']).join('\n');
+  /* **撮影の断りは、写真の下に置く。**どちらの一枚についてかは断りの側が名乗る。
+   * 位置で指さない —— 並びが変われば、位置で指した断りは嘘になる。 */
+  const 断り = note ? ['        <p class="profile-photo-note">' + esc(note) + '</p>'] : [];
+  if (list.length === 1 && !note) return img(list[0], '      ');
+  return ['      <div class="profile-photos">', '        <div class="profile-photos-row">']
+    .concat(list.map((x) => img(x, '          ')))
+    .concat(['        </div>']).concat(断り).concat(['      </div>']).join('\n');
 }
 
 

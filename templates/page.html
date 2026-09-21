@@ -279,8 +279,10 @@ header::after {
   display: block; width: 8.5rem; height: auto; margin: 0 0 1.1rem;
   border-radius: .4rem; border: 1px solid var(--line);
 }
-.profile-photos {
-  display: flex; gap: .55rem; align-items: flex-start; margin: 0 0 1.1rem;
+.profile-photos { margin: 0 0 1.1rem; }
+.profile-photos-row { display: flex; gap: .55rem; align-items: flex-start; }
+.profile-photo-note {
+  margin: .45rem 0 0; font-size: .7rem; line-height: 1.7; color: var(--faint);
 }
 /* **並べるときは同じ枠に収める。**縦横比の違うものが素のまま並ぶと、
    対に見えない。切り出す位置は右寄せ —— 切り抜きの余白は左に出る。 */
@@ -288,6 +290,7 @@ header::after {
   height: 9.5rem; aspect-ratio: 3 / 4; width: auto; margin: 0;
   object-fit: cover; object-position: right center;
 }
+.profile-photos { max-width: 100%; }
 @media (min-width: 40rem) {
   .profile-photo { float: right; width: 9.5rem; margin: .2rem 0 1rem 1.4rem; }
   .profile-photos { float: right; margin: .2rem 0 1rem 1.4rem; }
