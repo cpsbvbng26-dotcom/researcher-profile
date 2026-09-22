@@ -203,8 +203,11 @@ function renderPhotos(photo, note) {
     + ' loading="lazy" decoding="async">';
   /* **撮影の断りは、写真の下に置く。**どちらの一枚についてかは断りの側が名乗る。
    * 位置で指さない —— 並びが変われば、位置で指した断りは嘘になる。 */
-  const 断り = note ? ['        <p class="profile-photo-note">' + esc(note) + '</p>'] : [];
-  if (list.length === 1 && !note) return img(list[0], '      ');
+  /* **断りは一行とは限らない。**撮影のことと、外の道具に掛けた結果は別の話である。
+   * 一つの段落に混ぜると、どこまでが確かめたことかが読めなくなる。 */
+  const notes = (Array.isArray(note) ? note : [note]).filter((x) => x && String(x).trim());
+  const 断り = notes.map((x) => '        <p class="profile-photo-note">' + esc(x) + '</p>');
+  if (list.length === 1 && !断り.length) return img(list[0], '      ');
   return ['      <div class="profile-photos">', '        <div class="profile-photos-row">']
     .concat(list.map((x) => img(x, '          ')))
     .concat(['        </div>']).concat(断り).concat(['      </div>']).join('\n');
