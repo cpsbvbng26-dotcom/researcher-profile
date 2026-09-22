@@ -29,7 +29,7 @@
     ],
     "photoNote": [
       "Il ritratto è stato scattato a 25 anni, nella stanza dell’autore, con la fotocamera frontale di un iPhone.",
-      "Sottoposta alla diagnosi di punteggio facciale di IKACHI, questa foto ha dato 57,2 (2026-09-22). Il 23,58% superiore indicato non è una posizione in classifica: è la coda della distribuzione normale di media 50 e deviazione standard 10. Il funzionamento della diagnosi non è stato verificato qui."
+      "Questa foto è stata sottoposta a due servizi (2026-09-22). Il punteggio facciale risulta 57,2 su IKACHI e 65 su LUFT. Il 23,58% superiore indicato da IKACHI non è una posizione in classifica: è la coda della distribuzione normale di media 50 e deviazione standard 10. Con due valori non viene data alcuna mediana. Il funzionamento delle due diagnosi non è stato verificato qui."
     ],
     "nowHtml": "Iscritto alla <b>ZEN University, Faculty of Social Informatics</b>, nella prima coorte con immatricolazione autunnale. Il corso attraversa le discipline umanistiche e quelle scientifiche.",
     "studyHtml": "Si studiano soprattutto <b>filosofia</b> e <b>pratica</b>; la <b>matematica</b> è frequentabile. Quanto è depositato qui riguarda l’informatica e l’intelligenza artificiale.",
@@ -55,7 +55,7 @@
     {
       "id": "verify",
       "title": "Verifica",
-      "html": "<p>A ogni push vengono eseguiti <b>1199 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>92 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
+      "html": "<p>A ogni push vengono eseguiti <b>1201 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>92 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
     },
     {
       "id": "more",

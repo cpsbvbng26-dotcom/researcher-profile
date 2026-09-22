@@ -29,7 +29,7 @@
     ],
     "photoNote": [
       "Le portrait a été pris à 25 ans, dans la chambre de l’auteur, avec la caméra frontale d’un iPhone.",
-      "Soumise au diagnostic de score facial d’IKACHI, cette photo a obtenu 57,2 (2026-09-22). Les 23,58 % supérieurs affichés ne sont pas un rang : c’est la queue de la loi normale de moyenne 50 et d’écart-type 10. Le fonctionnement du diagnostic n’a pas été vérifié ici."
+      "Cette photo a été soumise à deux services (2026-09-22). Le score facial ressort à 57,2 chez IKACHI et à 65 chez LUFT. Les 23,58 % supérieurs indiqués par IKACHI ne sont pas un rang : c’est la queue de la loi normale de moyenne 50 et d’écart-type 10. Avec deux valeurs, aucune médiane n’est donnée. Le fonctionnement des deux diagnostics n’a pas été vérifié ici."
     ],
     "nowHtml": "Inscrit à la <b>ZEN University, Faculty of Social Informatics</b>, dans la première promotion de rentrée d’automne. Le cursus traverse les lettres et les sciences.",
     "studyHtml": "Les études portent surtout sur la <b>philosophie</b> et la <b>pratique</b> ; les <b>mathématiques</b> sont accessibles. Ce qui est déposé ici relève de l’informatique et de l’intelligence artificielle.",
@@ -55,7 +55,7 @@
     {
       "id": "verify",
       "title": "Vérification",
-      "html": "<p>Chaque push déclenche <b>1199 vérifications</b>. Elles portent sur la structure du site, la lisibilité des contrastes et les valeurs numériques de la page consacrée à l’opérateur.</p><p><b>Un registre distinct consigne ce qui s’est révélé faux</b> — <b>92 entrées</b> à ce jour. <b>Rien n’y est supprimé.</b> Les outils de vérification sont eux-mêmes vérifiés : un état valide est délibérément cassé, et l’on établit que c’est bien la vérification correspondante qui échoue.</p>"
+      "html": "<p>Chaque push déclenche <b>1201 vérifications</b>. Elles portent sur la structure du site, la lisibilité des contrastes et les valeurs numériques de la page consacrée à l’opérateur.</p><p><b>Un registre distinct consigne ce qui s’est révélé faux</b> — <b>92 entrées</b> à ce jour. <b>Rien n’y est supprimé.</b> Les outils de vérification sont eux-mêmes vérifiés : un état valide est délibérément cassé, et l’on établit que c’est bien la vérification correspondante qui échoue.</p>"
     },
     {
       "id": "more",

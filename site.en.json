@@ -30,7 +30,7 @@
     ],
     "photoNote": [
       "The portrait was taken at 25, in the author’s room, with an iPhone front camera.",
-      "Run through IKACHI’s facial score diagnosis, this photo returned 57.2 (2026-09-22). The stated top 23.58% is not a rank; it is the normal-distribution tail of that score, with mean 50 and standard deviation 10. The workings of the diagnosis have not been verified here."
+      "This photo was run through two services (2026-09-22). The facial score came out at 57.2 from IKACHI and 65 from LUFT. The top 23.58% that IKACHI adds is not a rank; it is the normal-distribution tail of that score, with mean 50 and standard deviation 10. With two figures, no median is given. The workings of both diagnoses have not been verified here."
     ],
     "nowHtml": "I am enrolled at ZEN University, Faculty of Social Informatics — in its first autumn-entry cohort. The programme spans the humanities and the sciences.",
     "studyHtml": "My coursework is mainly <strong>philosophy</strong> and <strong>business practice</strong>. <strong>Mathematics</strong> is on offer as well. The courses I have credit for are listed in the <a href=\"./cv.html\">CV</a> (in Japanese). What this place holds is my study of computer science and artificial intelligence.",
