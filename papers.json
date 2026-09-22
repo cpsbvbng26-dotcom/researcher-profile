@@ -120,7 +120,8 @@
       "subtitle": "An Exploratory Essay on Personal Imperialism and Spiritual Sovereignty",
       "locations": [
         { "name": "SSRN", "id": "10.2139/ssrn.7358818", "url": "https://doi.org/10.2139/ssrn.7358818" },
-        { "name": "PhilArchive", "id": "NEMMOI", "url": "https://philarchive.org/rec/NEMMOI" }
+        { "name": "PhilArchive", "id": "NEMMOI", "url": "https://philarchive.org/rec/NEMMOI" },
+        { "name": "HAL", "id": "hal-05758968", "url": "https://hal.science/hal-05758968" }
       ],
       "ja": {
         "version": "改訂増補版 — 2026年8月",
