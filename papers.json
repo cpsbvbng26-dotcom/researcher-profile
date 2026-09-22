@@ -13,6 +13,9 @@
     {
       "slug": "trinity-infinity-series-i",
       "doi": "10.5281/zenodo.22058624",
+      "locations": [
+        { "name": "HAL", "id": "hal-05759325", "url": "https://hal.science/hal-05759325" }
+      ],
       "repo": "trinity-infinity",
       "pdf": "pdf/trinity-infinity-series-i-revised.pdf",
       "errata": "trinity-infinity/blob/main/ERRATA.md",
