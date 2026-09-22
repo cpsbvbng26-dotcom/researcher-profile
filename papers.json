@@ -93,7 +93,8 @@
       "subtitle": "An Antinatalist and Ascetic Reconsideration of Autonomy and Quality of Life",
       "locations": [
         { "name": "SSRN", "id": "10.2139/ssrn.7358779", "url": "https://doi.org/10.2139/ssrn.7358779" },
-        { "name": "PhilArchive", "id": "NEMTNA", "url": "https://philarchive.org/rec/NEMTNA" }
+        { "name": "PhilArchive", "id": "NEMTNA", "url": "https://philarchive.org/rec/NEMTNA" },
+        { "name": "HAL", "id": "hal-05758942", "url": "https://hal.science/hal-05758942" }
       ],
       "ja": {
         "version": "v2 — 2026年8月22日（初版 2025年10月21日）",
