@@ -147,7 +147,8 @@
       "title": "Fragmentarian Spiritual Individualism",
       "subtitle": "A Philosophy of Fragments for Solitary Spiritual Autonomy",
       "locations": [
-        { "name": "PhilArchive", "id": "NEMFSI", "url": "https://philarchive.org/rec/NEMFSI" }
+        { "name": "PhilArchive", "id": "NEMFSI", "url": "https://philarchive.org/rec/NEMFSI" },
+        { "name": "HAL", "id": "hal-05759279", "url": "https://hal.science/hal-05759279" }
       ],
       "ja": {
         "version": "2026年8月",
