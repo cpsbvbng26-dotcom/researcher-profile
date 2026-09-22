@@ -45,7 +45,8 @@
       "title": "The Trinity-Infinity Framework, Series II",
       "subtitle": "Extended Formalization and Further Illustrative Applications",
       "locations": [
-        { "name": "SSRN", "id": "10.2139/ssrn.7446961", "url": "https://doi.org/10.2139/ssrn.7446961" }
+        { "name": "SSRN", "id": "10.2139/ssrn.7446961", "url": "https://doi.org/10.2139/ssrn.7446961" },
+        { "name": "HAL", "id": "hal-05759007", "url": "https://hal.science/hal-05759007" }
       ],
       "ja": {
         "version": "改訂版 — 2026年8月",
