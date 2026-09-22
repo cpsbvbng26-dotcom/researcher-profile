@@ -20,18 +20,6 @@
   "coursesFile": "courses.json",
   "profile": {
     "label": "About me",
-    "photo": [
-      {
-        "src": "./portrait.jpg",
-        "alt": "Portrait of Takuya Nemoto",
-        "width": 750,
-        "height": 1000
-      }
-    ],
-    "photoNote": [
-      "The portrait was taken at 25, in the author’s room, with an iPhone front camera.",
-      "This photo was run through three services (2026-09-22). The facial score came out at IKACHI 57.2, LUFT 65 and face-score.com 70.8. The median is 65. The three scales are not identical, though. The top 23.58% that IKACHI adds is not a rank; it is the normal-distribution tail of that score, with mean 50 and standard deviation 10. Language models are excluded from the count, because on faces neither retouching nor accuracy can be relied on. The workings of these diagnoses have not been verified here."
-    ],
     "nowHtml": "I am enrolled at ZEN University, Faculty of Social Informatics — in its first autumn-entry cohort. The programme spans the humanities and the sciences.",
     "studyHtml": "My coursework is mainly <strong>philosophy</strong> and <strong>business practice</strong>. <strong>Mathematics</strong> is on offer as well. The courses I have credit for are listed in the <a href=\"./cv.html\">CV</a> (in Japanese). What this place holds is my study of computer science and artificial intelligence.",
     "history": [
