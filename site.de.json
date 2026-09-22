@@ -29,7 +29,7 @@
     ],
     "photoNote": [
       "Das Porträt entstand mit 25, im Zimmer des Autors, mit der Frontkamera eines iPhone.",
-      "Dieses Foto wurde durch zwei Dienste geschickt (2026-09-22). Der Gesichtswert lag bei 57,2 bei IKACHI und 65 bei LUFT. Die von IKACHI angegebenen oberen 23,58 % sind kein Rang, sondern der Normalverteilungsrand dieses Werts, Mittelwert 50, Standardabweichung 10. Bei zwei Werten wird kein Median angegeben. Die Funktionsweise beider Diagnosen wurde hier nicht geprüft."
+      "Dieses Foto wurde durch drei Dienste geschickt (2026-09-22). Der Gesichtswert lautete IKACHI 57,2, LUFT 65, face-score.com 70,8. Der Median liegt bei 65. Die drei Skalen sind allerdings nicht dieselben. Die von IKACHI angegebenen oberen 23,58 % sind kein Rang, sondern der Normalverteilungsrand dieses Werts, Mittelwert 50, Standardabweichung 10. Sprachmodelle bleiben aus der Zählung heraus, denn bei Gesichtern ist weder die Bearbeitung noch die Genauigkeit verlässlich. Die Funktionsweise dieser Diagnosen wurde hier nicht geprüft."
     ],
     "nowHtml": "Eingeschrieben an der <b>ZEN University, Faculty of Social Informatics</b>, im ersten Jahrgang mit Herbstbeginn. Der Studiengang verbindet Geistes- und Naturwissenschaften.",
     "studyHtml": "Studiert werden vor allem <b>Philosophie</b> und <b>Praxis</b>; <b>Mathematik</b> ist belegbar. Was hier abgelegt ist, betrifft Informatik und künstliche Intelligenz.",
@@ -55,7 +55,7 @@
     {
       "id": "verify",
       "title": "Prüfung",
-      "html": "<p>Bei jedem Push laufen <b>1201 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>92 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>"
+      "html": "<p>Bei jedem Push laufen <b>1203 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>92 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>"
     },
     {
       "id": "more",
