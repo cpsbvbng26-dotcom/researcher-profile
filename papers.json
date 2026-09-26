@@ -13,9 +13,6 @@
     {
       "slug": "trinity-infinity-series-i",
       "doi": "10.5281/zenodo.22058624",
-      "locations": [
-        { "name": "HAL", "id": "hal-05759325", "url": "https://hal.science/hal-05759325" }
-      ],
       "repo": "trinity-infinity",
       "pdf": "pdf/trinity-infinity-series-i-revised.pdf",
       "errata": "trinity-infinity/blob/main/ERRATA.md",
@@ -65,9 +62,6 @@
     {
       "slug": "trinity-infinity-series-iii",
       "doi": "10.5281/zenodo.22058964",
-      "locations": [
-        { "name": "HAL", "id": "hal-05759296", "url": "https://hal.science/hal-05759296" }
-      ],
       "repo": "trinity-infinity",
       "pdf": "pdf/trinity-infinity-series-iii.pdf",
       "errata": "trinity-infinity/blob/main/ERRATA.md",
@@ -153,8 +147,7 @@
       "title": "Fragmentarian Spiritual Individualism",
       "subtitle": "A Philosophy of Fragments for Solitary Spiritual Autonomy",
       "locations": [
-        { "name": "PhilArchive", "id": "NEMFSI", "url": "https://philarchive.org/rec/NEMFSI" },
-        { "name": "HAL", "id": "hal-05759279", "url": "https://hal.science/hal-05759279" }
+        { "name": "PhilArchive", "id": "NEMFSI", "url": "https://philarchive.org/rec/NEMFSI" }
       ],
       "ja": {
         "version": "2026年8月",
