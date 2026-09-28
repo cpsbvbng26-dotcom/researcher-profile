@@ -95,7 +95,8 @@
       "locations": [
         { "name": "SSRN", "id": "10.2139/ssrn.7358779", "url": "https://doi.org/10.2139/ssrn.7358779" },
         { "name": "PhilArchive", "id": "NEMTNA", "url": "https://philarchive.org/rec/NEMTNA" },
-        { "name": "HAL", "id": "hal-05758942", "url": "https://hal.science/hal-05758942" }
+        { "name": "HAL", "id": "hal-05758942", "url": "https://hal.science/hal-05758942" },
+        { "name": "CORE", "id": "403307066", "url": "https://core.ac.uk/works/403307066", "note": "書誌の索引です。全文は置かれていません", "noteEn": "Bibliographic index. The full text is not held there" }
       ],
       "ja": {
         "version": "v2 — 2026年8月22日（初版 2025年10月21日）",
