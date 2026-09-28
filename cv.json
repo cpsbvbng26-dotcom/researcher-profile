@@ -19,10 +19,11 @@
   ],
   "coursesFile": "courses.json",
   "coursesSection": true,
-  "tagline": "修了証・学習領域・外部プロフィールです。ここは経歴の置き場で、主張の置き場ではありません。主張と検証は トップ にあります。",
+  "tagline": "修了証・学習領域・外部プロフィールです。「独立研究者」は分かりやすさのための仮の肩書きで、実際には一学部生です。ここは経歴の置き場で、主張の置き場ではありません。主張と検証は トップ にあります。",
   "sections": [
     "credentials",
     "courses",
+    "affiliations",
     "areas",
     "links"
   ],
@@ -225,6 +226,14 @@
           "url": "https://github.com/cpsbvbng26-dotcom"
         }
       ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "affiliations",
+      "title": "所属・登録",
+      "note": "本人の申告です。修了証と違って検証ページが無いので、別に置いています。2026年9月時点のものです。",
+      "html": "\n      <p>CIVICUS<span>アソシエイトメンバー。CIVICUS（World Alliance for Citizen Participation）は、市民社会の組織と個人がつくる国際的な連合です</span></p>\n      <p>グリーンピース・ジャパン<span>ボランティアとして登録しています</span></p>\n    "
     }
   ],
   "extraNav": [
