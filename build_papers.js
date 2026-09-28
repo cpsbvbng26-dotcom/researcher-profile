@@ -94,8 +94,11 @@ function pageConfig(p, lang) {
     row(t.canonical + ' ' + esc(p.doi), doiUrl, t.canonicalNote, true),
     row(t.pdf, gh + p.repo + '/blob/main/' + p.pdf, t.pdfNote, true),
   ];
+  /* 所在の既定の説明は「同じ本文」。索引のように本文を持たない先は、
+   * 設定の note / noteEn で説明を差し替える。既定のままだと嘘になる。 */
   (p.locations || []).forEach((l) => {
-    locations.push(row(esc(l.name) + ' ' + esc(l.id), l.url, en ? 'Same text' : '同じ本文です', true));
+    const note = en ? (l.noteEn ? esc(l.noteEn) : 'Same text') : (l.note ? esc(l.note) : '同じ本文です');
+    locations.push(row(esc(l.name) + ' ' + esc(l.id), l.url, note, true));
   });
   if (p.transcript) locations.push(row(t.transcript, gh + p.transcript, t.transcriptNote, true));
   if (p.supersedes) {
