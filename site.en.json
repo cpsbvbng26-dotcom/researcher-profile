@@ -74,7 +74,7 @@
       },
       {
         "term": "Evidence",
-        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 108 checks on the errata itself, 74 on the tool. The tool is checked by <strong>breaking a passing state in 28 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
+        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 108 checks on the errata itself, 75 on the tool. The tool is checked by <strong>breaking a passing state in 28 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
       },
       {
         "term": "The outside eye",
@@ -94,12 +94,12 @@
         "html": "The same audit applied to all four frozen bodies of work: 108 on the three Trinity-Infinity papers, 102 on the three philosophical papers, 58 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
       },
       {
-        "name": "74 checks on the tool itself",
+        "name": "75 checks on the tool itself",
         "html": "A checking tool cannot be trusted merely because it passes; a tool that looks at nothing passes too. A passing state is <strong>broken in 28 distinct ways</strong>, and each break must fail exactly the corresponding check. The distributions used to recompute p are validated against published statistical tables at eleven points (<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>)"
       },
       {
         "name": "46 checks on the register",
-        "html": "The shape and history of the correction record itself. <strong>92 entries</strong> across five statuses, <strong>33 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>75 can be checked by anyone against a frozen artifact; the remaining 17 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+        "html": "The shape and history of the correction record itself. <strong>93 entries</strong> across five statuses, <strong>34 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>76 can be checked by anyone against a frozen artifact; the remaining 17 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
         "name": "31 printed numbers",
@@ -129,7 +129,7 @@
   },
   "withdrawn": {
     "note": {
-      "html": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (92 entries)</a>."
+      "html": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record across all four bodies of work is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (93 entries)</a>."
     },
     "items": [
       {
@@ -240,7 +240,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/self-correction",
       "code": "Record / MIT",
       "title": "self-correction",
-      "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. 92 entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
+      "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. 93 entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
       "verify": "View on GitHub"
     },
     {
