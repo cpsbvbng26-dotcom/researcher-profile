@@ -159,6 +159,16 @@ HTML 1 枚で、外部への通信は発生しません。
 swh:1:snp:83f09cc80821f5cd02bbc89b069753c0c53c110a
 ```
 
+v1.0.0 のソースは、GitHub の側からも [Software Heritage](https://archive.softwareheritage.org/swh:1:dir:93fc4fb09f261ba48f97cd9f6e4ddcc4968dd652;origin=https://github.com/cpsbvbng26-dotcom/researcher-profile;anchor=swh:1:rev:65b3622a15370ce8965a11a721dbf20dcd06cd7e) に保存されています。
+識別子は次のとおりです。
+
+```
+swh:1:dir:93fc4fb09f261ba48f97cd9f6e4ddcc4968dd652
+```
+
+これは v1.0.0 の git の木のハッシュと同じです（`git rev-parse "v1.0.0^{tree}"`）。
+保存されたことは、2026-09-29 に errata-check の `.github/workflows/swh-save.yml` で確かめました。
+
 DOI が「この版を指す約束」であるのに対し、SWHID は**中身のハッシュそのもの**です。
 この識別子が指すスナップショットの内容は、保存先のサービスに依存せず検証できます。
 
