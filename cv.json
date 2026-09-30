@@ -186,16 +186,6 @@
           "url": "https://sites.google.com/view/nemototakuya/"
         },
         {
-          "name": "LinkedIn",
-          "note": "独立での案件募集",
-          "url": "https://jp.linkedin.com/in/%E5%8D%93%E5%93%89-%E6%A0%B9%E6%9C%AC-62b9093a0"
-        },
-        {
-          "name": "Wantedly",
-          "note": "職務プロフィール",
-          "url": "https://www.wantedly.com/id/takuya_nemoto_q"
-        },
-        {
           "name": "Medium",
           "note": "記事一覧",
           "url": "https://medium.com/@heaven_livid_frog_333/lists"
@@ -204,6 +194,26 @@
           "name": "DEV Community",
           "note": "記事一覧",
           "url": "https://dev.to/cpsbvbng26dotcom"
+        },
+        {
+          "name": "GitHub",
+          "note": "@cpsbvbng26-dotcom",
+          "url": "https://github.com/cpsbvbng26-dotcom"
+        }
+      ]
+    },
+    {
+      "name": "仕事の窓口 —— 研究とは別",
+      "items": [
+        {
+          "name": "LinkedIn",
+          "note": "独立での案件募集",
+          "url": "https://jp.linkedin.com/in/%E5%8D%93%E5%93%89-%E6%A0%B9%E6%9C%AC-62b9093a0"
+        },
+        {
+          "name": "Wantedly",
+          "note": "職務プロフィール",
+          "url": "https://www.wantedly.com/id/takuya_nemoto_q"
         },
         {
           "name": "ランサーズ",
@@ -219,11 +229,6 @@
           "name": "クラウドワークス",
           "note": "独立での案件募集",
           "url": "https://crowdworks.jp/public/employees/7030074"
-        },
-        {
-          "name": "GitHub",
-          "note": "@cpsbvbng26-dotcom",
-          "url": "https://github.com/cpsbvbng26-dotcom"
         }
       ]
     }

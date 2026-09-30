@@ -1,0 +1,73 @@
+{
+  "name": "What is to remain after death",
+  "nameLatin": "石・紙・デジタル",
+  "initials": "TN",
+  "lang": "en",
+  "title": "What is to remain after death | Takuya Nemoto",
+  "description": "The gravestone and posthumous name, the degree, ORCID and DOI. A personal matter, not research, moved out of the self-introduction.",
+  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.html"
+    }
+  ],
+  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "ogType": "article",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "taglineHtml": "This is not research. It is a personal matter, so it has been moved out of the research self-introduction and kept here.",
+  "sections": [
+    "remains"
+  ],
+  "blocks": [
+    {
+      "id": "remains",
+      "title": "Three places it remains",
+      "note": "Stone, paper, network",
+      "html": "\n      <p class=\"profile-core\"><b>What will remain after death is being put in order while alive.</b> There are three places it remains — stone, paper, and the network. <b>What exists right now is the grave, the ORCID record, and the DOIs.</b> The posthumous name is carved after death, and the degree is not held yet.</p>\n      <p class=\"profile-core\"><b>Stone is the gravestone and the posthumous name (諡名, <i>okurina</i>).</b> The family rite is the Shinto funeral (神葬祭); the author's grandmother came from a line of Shinto priests and is already enshrined as an ancestral deity of the house. The kanji of the author's given name were assigned at a shrine. One exception is placed on top of that tradition — <b>the Shinto funeral is being arranged in advance, while living.</b> The consultation with the local funeral company is done. Shinto has a posthumous name answering to the Buddhist <i>kaimyō</i>; the common form adds to the name borne in life something such as 大人之命 (<i>ushi-no-mikoto</i>). <b>The form varies by shrine and by priest.</b> The grave already exists, and the name with the posthumous name attached will be carved on its 奥津城 (<i>okutsuki</i>). <b>The divine name after death is built on the name borne in life.</b> That is where the author locates Shinto's view of life and death. <b>The Shinto forms have not been checked against sources.</b> What stands above is the explanation received from the author, not something verified here.</p>\n      <p class=\"profile-core\"><b>Paper is the doctorate, 博士（学術）.</b> It is one of the two aims listed in the self-introduction on the front page. <b>It is not held.</b> There is only a plan to obtain it. 博士（学術） is one of the names under which a doctorate is awarded, used for interdisciplinary and composite research. <b>A degree is not extinguished by the holder's death, and the record of its award stays with the university.</b> The timing is set as: while both parents are alive. <b>That cannot be written as a deadline.</b> The deadline is not the author's to set. <b>Of the three, this is the only one not yet begun.</b></p>\n      <p class=\"profile-core\"><b>The network is ORCID and DOI.</b> ORCID is a persistent identifier used across a researcher's career, the base that ties a person to their output. <b>The official FAQ states that a record created during life is maintained after death as the holder left it.</b> There is also a mechanism for delegating management (Trusted Individual). <b>That statement has not been checked against the source</b> — <code>orcid.org</code> is not reachable from the working environment. <b>Nothing is delegated to anyone at present.</b> DOI is the persistent identification system specified in ISO 26324, designed so that the target of resolution can change. <b>Numbers already issued remain, together with the papers, as a bibliographic trace.</b></p>\n      <p class=\"profile-core\"><b>The real name with its posthumous name on stone, the degree on paper, ORCID and DOI on the network.</b> One exception placed on top of the tradition, and what will remain afterwards put in order while alive. <b>One of the three is not there yet.</b></p>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "Profile",
+      "url": "./../index.en.html"
+    },
+    {
+      "name": "Operator",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "Notes",
+      "url": "./index.en.html"
+    },
+    {
+      "name": "日本語",
+      "url": "./afterlife.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "Personal",
+    "verify": "Open",
+    "skip": "Skip to content",
+    "themeToggle": "Toggle theme"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html",
+    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html",
+    "name": "What is to remain after death",
+    "inLanguage": "en"
+  }
+}
