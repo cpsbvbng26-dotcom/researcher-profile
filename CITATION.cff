@@ -19,6 +19,9 @@ identifiers:
   - type: swh
     value: "swh:1:snp:83f09cc80821f5cd02bbc89b069753c0c53c110a"
     description: Software Heritage snapshot（Zenodo からの寄託を保存したもの）
+  - type: swh
+    value: "swh:1:dir:93fc4fb09f261ba48f97cd9f6e4ddcc4968dd652"
+    description: v1.0.0 のソース（Software Heritage、GitHub から保存したもの）
 license: MIT
 repository-code: "https://github.com/cpsbvbng26-dotcom/researcher-profile"
 version: 1.0.0
