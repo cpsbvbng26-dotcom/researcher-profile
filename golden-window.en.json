@@ -1,0 +1,77 @@
+{
+  "name": "The golden-window conjecture",
+  "nameLatin": "黄金比の窓の予想",
+  "initials": "TN",
+  "lang": "en",
+  "title": "The golden-window conjecture | Takuya Nemoto",
+  "description": "A conjecture on a three-player repeated game: for discount factors in the window from 1/φ to 2/3, the payoffs that can be kept without randomization form a set of length zero. Not proved; the evidence is numerical.",
+  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.en.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html"
+    }
+  ],
+  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "ogType": "article",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "taglineHtml": "This is an unproved conjecture. Outside the window everything is proved. Inside it there is only numerical evidence.",
+  "sections": [
+    "conjecture"
+  ],
+  "blocks": [
+    {
+      "id": "conjecture",
+      "title": "The conjecture, and what is proved",
+      "note": "Conjecture, unproved",
+      "html": "\n      <p class=\"profile-core\"><b>The golden-window conjecture is a conjecture. It has not been proved.</b> It was stated in a note that applies the operator of the three Trinity-Infinity papers to a repeated game (<a href=\"https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/games\" target=\"_blank\" rel=\"noopener\">trinity-operator, games</a>).</p>\n      <p class=\"profile-core\"><b>The setting is a three-player game.</b> Each player chooses to cooperate (C) or defect (D). With <code>k</code> co-players cooperating, a cooperator gets <code>k + 1</code> and a defector gets <code>k + 2</code>. This is the payoff table of Series I. The game is repeated without end, and future payoffs are discounted by a factor <code>δ</code>.</p>\n      <p class=\"profile-core\"><b>The question is whether the payoff <code>(2+t, 4−t, 2+t)</code> can be kept as an equilibrium without randomization.</b> Here <code>t</code> is greater than 0 and at most 1. The point <code>(2,4,2)</code>, which Series II called sustainable, is the end of this segment. That end itself cannot be kept for any <code>δ</code>.</p>\n      <p class=\"profile-core\"><b>Outside the window, everything is proved.</b> When <code>δ</code> is at least 1/2 and below <code>1/φ</code>, only two values of <code>t</code> can be kept: <code>δ</code> and 1. When <code>δ</code> is at least <code>2/3</code>, every <code>t</code> from <code>1 − δ</code> upward can be kept. With public randomization, the condition becomes <code>δ ≥ max(1/2, 1 − t)</code>.</p>\n      <p class=\"profile-core\"><b>The conjecture is about the window in between, <code>1/φ &lt; δ &lt; 2/3</code>.</b> (a) The set of <code>t</code> that can be kept has length zero. (b) Its dimension lies between 0 and 1, grows with <code>δ</code>, and tends to 0 at the lower end of the window and to 1 at the upper end.</p>\n      <p class=\"profile-core\"><b>The evidence is numerical only.</b> Refining the interval period by period, the total length of the surviving intervals kept shrinking. The dimension estimate grew with <code>δ</code>. Both are computations to a finite depth, not proofs.</p>\n      <p class=\"profile-core\"><b>The name describes the statement. It is not a person’s name.</b> The window is the interval of discount factors from <code>1/φ</code> to <code>2/3</code>. Its lower end, <code>1/φ</code>, is also the threshold at which three players taking turns to defect becomes an equilibrium.</p>\n      <p class=\"profile-core\"><b>It has not been checked against the literature.</b> Berg and Kitti (2014) showed that pure-strategy equilibrium payoff sets can be fractals. Their methods may settle the question. The papers’ operator is a special case of the Friedkin–Johnsen model.</p>\n      <p class=\"profile-core\">The conjecture and the proofs outside the window were written with Claude Code (Anthropic). The author is responsible for the claims. Claude is not an author.</p>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "Profile",
+      "url": "./../index.en.html"
+    },
+    {
+      "name": "Operator",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "Notes",
+      "url": "./index.en.html"
+    },
+    {
+      "name": "日本語",
+      "url": "./golden-window.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "Conjecture",
+    "verify": "Open",
+    "skip": "Skip to content",
+    "themeToggle": "Toggle theme"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.en.html",
+    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.en.html",
+    "name": "The golden-window conjecture",
+    "inLanguage": "en",
+    "about": {
+      "@type": "Thing",
+      "name": "Golden-window conjecture"
+    }
+  }
+}
