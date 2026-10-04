@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "en",
   "title": "What is to remain after death | Takuya Nemoto",
-  "description": "The gravestone and posthumous name, the degree, ORCID and DOI. A personal matter, not research, moved out of the self-introduction.",
+  "description": "The gravestone and posthumous name, the degree, ORCID and DOI, and a vow of celibacy. A personal matter, not research, moved out of the self-introduction.",
   "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html",
   "alternates": [
     {
@@ -28,7 +28,8 @@
   "footer": "© 2026 根本卓哉",
   "taglineHtml": "This is not research. It is a personal matter, so it has been moved out of the research self-introduction and kept here.",
   "sections": [
-    "remains"
+    "remains",
+    "vow"
   ],
   "blocks": [
     {
@@ -36,6 +37,12 @@
       "title": "Three places it remains",
       "note": "Stone, paper, network",
       "html": "\n      <p class=\"profile-core\"><b>What will remain after death is being put in order while alive.</b> There are three places it remains — stone, paper, and the network. <b>What exists right now is the grave, the ORCID record, and the DOIs.</b> The posthumous name is carved after death, and the degree is not held yet.</p>\n      <p class=\"profile-core\"><b>Stone is the gravestone and the posthumous name (諡名, <i>okurina</i>).</b> The family rite is the Shinto funeral (神葬祭); the author's grandmother came from a line of Shinto priests and is already enshrined as an ancestral deity of the house. The kanji of the author's given name were assigned at a shrine. One exception is placed on top of that tradition — <b>the Shinto funeral is being arranged in advance, while living.</b> The consultation with the local funeral company is done. Shinto has a posthumous name answering to the Buddhist <i>kaimyō</i>; the common form adds to the name borne in life something such as 大人之命 (<i>ushi-no-mikoto</i>). <b>The form varies by shrine and by priest.</b> The grave already exists, and the name with the posthumous name attached will be carved on its 奥津城 (<i>okutsuki</i>). <b>The divine name after death is built on the name borne in life.</b> That is where the author locates Shinto's view of life and death. <b>The Shinto forms have not been checked against sources.</b> What stands above is the explanation received from the author, not something verified here.</p>\n      <p class=\"profile-core\"><b>Paper is the doctorate, 博士（学術）.</b> It is one of the two aims listed in the self-introduction on the front page. <b>It is not held.</b> There is only a plan to obtain it. 博士（学術） is one of the names under which a doctorate is awarded, used for interdisciplinary and composite research. <b>A degree is not extinguished by the holder's death, and the record of its award stays with the university.</b> The timing is set as: while both parents are alive. <b>That cannot be written as a deadline.</b> The deadline is not the author's to set. <b>Of the three, this is the only one not yet begun.</b></p>\n      <p class=\"profile-core\"><b>The network is ORCID and DOI.</b> ORCID is a persistent identifier used across a researcher's career, the base that ties a person to their output. <b>The official FAQ states that a record created during life is maintained after death as the holder left it.</b> There is also a mechanism for delegating management (Trusted Individual). <b>That statement has not been checked against the source</b> — <code>orcid.org</code> is not reachable from the working environment. <b>Nothing is delegated to anyone at present.</b> DOI is the persistent identification system specified in ISO 26324, designed so that the target of resolution can change. <b>Numbers already issued remain, together with the papers, as a bibliographic trace.</b></p>\n      <p class=\"profile-core\"><b>The real name with its posthumous name on stone, the degree on paper, ORCID and DOI on the network.</b> One exception placed on top of the tradition, and what will remain afterwards put in order while alive. <b>One of the three is not there yet.</b></p>\n    "
+    },
+    {
+      "id": "vow",
+      "title": "A vow of celibacy",
+      "note": "Before a rational God",
+      "html": "\n      <p class=\"profile-core\"><b>At nineteen, a vow of lifelong celibacy was made before a rational God. It is to be kept for life.</b> Both parents understand this vow.</p>\n      <p class=\"profile-core\"><b>The God meant here is not a God of miracles or revelation.</b> It is a God on the side of reason, one that affirms what follows from argument. The vow is a declaration before that God, and also a way of binding oneself to the conclusion one’s own reason has reached.</p>\n      <p class=\"profile-core\"><b>The vow rests on the logic of three traditions.</b> From Buddhism it takes the form of a vow: vowing celibacy turns a mere state into a chosen act. From Shinto it takes a name: as in the paragraph on stone above, the name under which one will be enshrined is settled now, through a Shinto funeral arranged in life. From a Christian antinatalism it takes a reading of absolution: if it is better not to be born, then having been born is itself the ground of original sin, and one who closes the line in one’s own generation can be regarded as one whose original sin God has annulled.</p>\n      <p class=\"profile-core\"><b>Virginity has no value in itself.</b> Because it has none, it can be a vessel for the vow, the name and the absolution. If it had value, absolution would become a reward for merit.</p>\n      <p class=\"profile-core\"><b>This is not the teaching of the three traditions themselves.</b> It is an interpretation that borrows their premises and that reason binds into a single decision. All three traditions affirm marriage and children, so the vow does not reject anyone else’s way of life. It is a decision about how to close one’s own life.</p>\n      <p class=\"profile-core\">A vow means something only once it has been kept to the end. <b>What is written here is a declaration, and only its beginning.</b></p>\n    "
     }
   ],
   "extraNav": [
