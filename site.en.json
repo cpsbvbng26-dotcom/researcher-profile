@@ -29,7 +29,8 @@
       },
       {
         "name": "Upper Secondary School Equivalency Examination",
-        "state": "passed (all subjects except Japanese history exempted by credits earned at Seisa International High School; sat Japanese history only)"
+        "state": "passed",
+        "note": "All subjects except Japanese history were exempted by credits earned at Seisa International High School; only Japanese history was sat"
       },
       {
         "name": "Seisa International High School (attended at Musashi Gakuin)",
