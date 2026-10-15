@@ -200,7 +200,7 @@ MIT License
 
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-D97757?style=for-the-badge)](https://claude.com/claude-code)
 
-本リポジトリの実装（`build.js` / `templates/page.html`）は、AIコーディング支援ツール
+本リポジトリの実装（`build.js` / `templates/page.html`）は、言語モデルによるコーディング支援ツール
 **Claude Code**（Anthropic）を使用して制作しています。設計・内容の確認および最終的な
 判断は制作者本人が行っています。
 
