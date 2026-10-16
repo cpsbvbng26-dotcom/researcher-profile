@@ -18,7 +18,7 @@
     "links": "リンク",
     "verify": "証明書を確認",
     "papers": "論文",
-    "papersNote": "いずれも査読前のプレプリントです。各カードから DOI を開けます。"
+    "papersNote": "いずれも査読前の論文です。各カードから DOI を開けます。"
   },
   "identifiers": [
     {
