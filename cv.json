@@ -170,6 +170,11 @@
           "name": "Kudos",
           "note": "公開した成果物の紹介",
           "url": "https://www.growkudos.com/profile/%E5%8D%93%E5%93%89_%E6%A0%B9%E6%9C%AC"
+        },
+        {
+          "name": "ORKG",
+          "note": "論文の主張を構造化した知識グラフ",
+          "url": "https://orkg.org/u/82a7b4bb-37c0-4aaf-a6fd-13165a894046"
         }
       ]
     },
