@@ -175,6 +175,8 @@ function renderProfile(p) {
      * 一枚のときの markup は前と同じで、既存の設定は何も変わらない。
      * **寸法を属性で書く。**書かないと読み込みのたびに本文が跳ねる。 */
     renderPhotos(p.photo, p.photoNote),
+    /* 修了証を技術の目安として、自己紹介の先頭に置く。**無ければ何も出さない。** */
+    p.credHtml ? `      <p class="profile-now profile-cred">${p.credHtml}</p>` : '',
     `      <p class="profile-now">${p.nowHtml || esc(p.now || '')}</p>`,
     p.studyHtml ? `      <p class="profile-now profile-study">${p.studyHtml}</p>` : '',
     /* 根幹の一段。**自己紹介の中に置く。**下のほうに置けば、読み手は辿り着かない。 */
