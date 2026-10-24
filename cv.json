@@ -175,6 +175,11 @@
           "name": "ORKG",
           "note": "論文の主張を構造化した知識グラフ",
           "url": "https://orkg.org/u/82a7b4bb-37c0-4aaf-a6fd-13165a894046"
+        },
+        {
+          "name": "aiXiv",
+          "note": "言語モデルを使った数学研究の公開アーカイブ",
+          "url": "https://aixiv.online/user/takuyanemoto"
         }
       ]
     },
