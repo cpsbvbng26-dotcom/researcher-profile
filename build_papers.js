@@ -140,6 +140,7 @@ function pageConfig(p, lang) {
       { lang: 'x-default', url: SRC.base + 'papers/' + p.slug + '.html' },
     ],
     ogImage: SRC.base + 'og.png',
+    twitterCard: 'summary',
     ogType: 'article',
     favicon: './../favicon.svg',
     accent: SRC.accent,
