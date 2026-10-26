@@ -692,6 +692,17 @@ function build() {
     process.exit(1);
   }
 
+  /* 同じ本文を別の配信先へ出すときは、違うところだけを重ねる。
+   * 本文を二つの設定に写すと、片方だけ直した日にずれる。 */
+  if (process.env.PROFILE_OVERLAY) {
+    try {
+      Object.assign(profile, JSON.parse(fs.readFileSync(process.env.PROFILE_OVERLAY, 'utf8')));
+    } catch (e) {
+      console.error(`重ねる設定を読めません: ${e.message}`);
+      process.exit(1);
+    }
+  }
+
   if (!profile.name) {
     console.error('設定ファイルに name がありません。');
     process.exit(1);
