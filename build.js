@@ -750,7 +750,8 @@ function build() {
   const canonical = profile.siteUrl ? `<link rel="canonical" href="${esc(profile.siteUrl)}">` : '';
   const ogUrl = profile.siteUrl ? `<meta property="og:url" content="${esc(profile.siteUrl)}">` : '';
   const ogImage = profile.ogImage
-    ? `<meta property="og:image" content="${esc(profile.ogImage)}">\n<meta name="twitter:card" content="summary_large_image">`
+    /* カードの型は既定で大きい画像。正方形のロゴだけを見せるときは summary を選ぶ。 */
+    ? `<meta property="og:image" content="${esc(profile.ogImage)}">\n<meta name="twitter:card" content="${esc(profile.twitterCard || 'summary_large_image')}">`
     : '';
 
   let html = template
