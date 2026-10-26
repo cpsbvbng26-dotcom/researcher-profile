@@ -7,6 +7,7 @@
   "description": "修了証・オープンバッジ 7 件と、学習領域、外部プロフィール。各カードから発行機関の検証ページを開けます。",
   "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/cv.html",
   "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "twitterCard": "summary",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",

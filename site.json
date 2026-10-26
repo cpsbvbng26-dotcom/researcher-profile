@@ -7,6 +7,7 @@
   "description": "公開した成果物は、もう直せない。直せるのは訂正のほうで、だから訂正は元の資料からずれていく。そのずれを、推論を使わずに機械で落とす。自分の三篇を監査した記録と、その道具。",
   "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
   "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "twitterCard": "summary",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",

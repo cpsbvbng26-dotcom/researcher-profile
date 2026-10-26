@@ -750,8 +750,9 @@ function build() {
   const canonical = profile.siteUrl ? `<link rel="canonical" href="${esc(profile.siteUrl)}">` : '';
   const ogUrl = profile.siteUrl ? `<meta property="og:url" content="${esc(profile.siteUrl)}">` : '';
   const ogImage = profile.ogImage
-    /* カードの型は既定で大きい画像。正方形のロゴだけを見せるときは summary を選ぶ。 */
-    ? `<meta property="og:image" content="${esc(profile.ogImage)}">\n<meta name="twitter:card" content="${esc(profile.twitterCard || 'summary_large_image')}">`
+    /* カードの型は既定で大きい画像。正方形のロゴだけを見せるときは summary を選ぶ。
+     * twitter:image も明示する。X は og:image で補うと書いているが、出ないことがあった。 */
+    ? `<meta property="og:image" content="${esc(profile.ogImage)}">\n<meta name="twitter:card" content="${esc(profile.twitterCard || 'summary_large_image')}">\n<meta name="twitter:image" content="${esc(profile.ogImage)}">`
     : '';
 
   let html = template

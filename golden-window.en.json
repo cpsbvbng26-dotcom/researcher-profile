@@ -21,6 +21,7 @@
     }
   ],
   "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "twitterCard": "summary",
   "ogType": "article",
   "favicon": "./../favicon.svg",
   "accent": "#8a6a3d",

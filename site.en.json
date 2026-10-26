@@ -7,6 +7,7 @@
   "description": "A published artifact cannot be revised; only the errata can, so the errata drifts from its source. That drift is machine-detectable without inference. The record of auditing my own papers, and the tool.",
   "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html",
   "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "twitterCard": "summary",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 Takuya Nemoto",
