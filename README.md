@@ -49,6 +49,7 @@ node build.js
 | `tagline` | 氏名の下に置く紹介文 |
 | `siteUrl` | 公開先の URL。canonical と og:url に使われる |
 | `ogImage` | SNS 共有用画像の URL |
+| `twitterCard` | 共有したときのカードの型。既定は `summary_large_image`。正方形のロゴを小さく出すなら `summary` |
 | `accent` / `accentDark` | 指し色。ライト用とダーク用 |
 | `footer` | フッターに出す文字列 |
 | `identifiers` | ORCID などの識別子。`{ label, value, url }` の配列 |
