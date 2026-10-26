@@ -153,6 +153,14 @@ PROFILE_CONFIG=./site.en.json PROFILE_OUT=<出力先> node build.js   # index.en
 PROFILE_CONFIG=./cv.json      PROFILE_OUT=<出力先> node build.js   # cv.html
 ```
 
+**`trinity-operator/site/index.html` もここから出ている**（golden-window.vercel.app）。
+本文は英語の頁と同じ設定を使い、配信先が違うところだけを重ねる。
+
+```
+PROFILE_CONFIG=./golden-window.en.json PROFILE_OVERLAY=./golden-window.site.json \
+  PROFILE_OUT=<出力先> node build.js
+```
+
 既定の設定は `profile.json`（道具そのものの見本）であって `site.json` ではない。
 **`node build.js` を引数なしで回すと見本のほうが出る**。取り違えない。
 
