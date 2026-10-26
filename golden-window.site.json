@@ -1,0 +1,42 @@
+{
+  "title": "The golden-window conjecture",
+  "siteUrl": "https://golden-window.vercel.app/",
+  "alternates": [],
+  "ogImage": "",
+  "favicon": "./favicon.svg",
+  "footer": "© 2026 Takuya Nemoto · CC BY 4.0",
+  "extraNav": [
+    { "name": "Paper", "url": "https://doi.org/10.6084/m9.figshare.34419198" },
+    { "name": "Code", "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/games" },
+    { "name": "Author", "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html" },
+    { "name": "日本語", "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html" }
+  ],
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://golden-window.vercel.app/#website",
+        "url": "https://golden-window.vercel.app/",
+        "name": "The golden-window conjecture",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://golden-window.vercel.app/",
+        "url": "https://golden-window.vercel.app/",
+        "name": "The golden-window conjecture",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://golden-window.vercel.app/#website" },
+        "about": { "@type": "Thing", "name": "Golden-window conjecture" },
+        "author": {
+          "@type": "Person",
+          "name": "Takuya Nemoto",
+          "sameAs": ["https://orcid.org/0009-0000-1406-0547"]
+        },
+        "citation": "https://doi.org/10.6084/m9.figshare.34419198",
+        "license": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ]
+  }
+}
