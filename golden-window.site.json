@@ -1,6 +1,6 @@
 {
   "title": "The golden-window conjecture",
-  "siteUrl": "https://golden-window.vercel.app/",
+  "siteUrl": "https://golden-window-conjecture.vercel.app/",
   "alternates": [],
   "ogImage": "",
   "favicon": "./favicon.svg",
@@ -16,18 +16,18 @@
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://golden-window.vercel.app/#website",
-        "url": "https://golden-window.vercel.app/",
+        "@id": "https://golden-window-conjecture.vercel.app/#website",
+        "url": "https://golden-window-conjecture.vercel.app/",
         "name": "The golden-window conjecture",
         "inLanguage": "en"
       },
       {
         "@type": "WebPage",
-        "@id": "https://golden-window.vercel.app/",
-        "url": "https://golden-window.vercel.app/",
+        "@id": "https://golden-window-conjecture.vercel.app/",
+        "url": "https://golden-window-conjecture.vercel.app/",
         "name": "The golden-window conjecture",
         "inLanguage": "en",
-        "isPartOf": { "@id": "https://golden-window.vercel.app/#website" },
+        "isPartOf": { "@id": "https://golden-window-conjecture.vercel.app/#website" },
         "about": { "@type": "Thing", "name": "Golden-window conjecture" },
         "author": {
           "@type": "Person",
