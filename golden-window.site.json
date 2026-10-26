@@ -2,7 +2,8 @@
   "title": "The golden-window conjecture",
   "siteUrl": "https://golden-window-conjecture.vercel.app/",
   "alternates": [],
-  "ogImage": "",
+  "ogImage": "https://golden-window-conjecture.vercel.app/og.png",
+  "twitterCard": "summary",
   "favicon": "./favicon.svg",
   "footer": "© 2026 Takuya Nemoto · CC BY 4.0",
   "extraNav": [
