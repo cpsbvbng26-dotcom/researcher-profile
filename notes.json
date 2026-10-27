@@ -5,22 +5,22 @@
   "lang": "ja",
   "title": "ノート | 根本卓哉",
   "description": "トップに置かなかったもの。哲学の三篇、海軍公報の史料ノート、核に直接関わらないリポジトリ。削除ではなく、ここに置いてあります。",
-  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.html",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/index.html",
   "alternates": [
     {
       "lang": "ja",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/index.html"
     },
     {
       "lang": "en",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.en.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/index.en.html"
     },
     {
       "lang": "x-default",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/index.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/index.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
   "twitterCard": "summary",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
@@ -177,16 +177,16 @@
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person",
+        "@id": "https://cpsbvbng26-dotcom.vercel.app/#person",
         "name": "根本卓哉",
         "alternateName": "Takuya Nemoto",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/"
+        "url": "https://cpsbvbng26-dotcom.vercel.app/"
       },
       {
         "@type": "CreativeWork",
         "name": "正義論とアルゴリズム — アルゴリズムによる判断をめぐる論点の整理",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22335676",
         "url": "https://doi.org/10.5281/zenodo.22335676",
@@ -199,7 +199,7 @@
         "name": "researcher-profile",
         "description": "設定ファイル1つから研究者プロフィールの静的サイトを生成するツール",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22335692",
         "url": "https://doi.org/10.5281/zenodo.22335692",
@@ -232,7 +232,7 @@
           "Schopenhauer"
         ],
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "@id": "https://doi.org/10.5281/zenodo.22058254"
       },
@@ -259,7 +259,7 @@
           "technologies of the self"
         ],
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "@id": "https://doi.org/10.5281/zenodo.22057583"
       },
@@ -268,7 +268,7 @@
         "@id": "https://doi.org/10.5281/zenodo.22055709",
         "name": "A Naval Gazette Entry for Lieutenant Otani Tsune (大谷恒): A Note on the Investiture List of 11 September 1943 in the Naval Gazette (Internal Circulation Only), Extra Edition",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22055709",
         "url": "https://doi.org/10.5281/zenodo.22055709",
@@ -292,7 +292,7 @@
         "@id": "https://doi.org/10.5281/zenodo.22064241",
         "name": "Fragmentarian Spiritual Individualism: A Philosophy of Fragments for Solitary Spiritual Autonomy",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22064241",
         "url": "https://doi.org/10.5281/zenodo.22064241",
@@ -329,7 +329,7 @@
           }
         ],
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         }
       },
       {
@@ -337,7 +337,7 @@
         "name": "海軍公報叙勲名簿データ（1943年9月11日發令）",
         "description": "海軍公報（部内限）號外、昭和十八年九月十一日發令の叙勲名簿から、敍勲四等授瑞寶章の受章者10名を機械可読にしたもの。原文が「同」で繰り返す階級を各行に展開したうえで、原文に書かれていた値と引き継いだ値を列で区別している。",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "url": "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes",
         "sameAs": "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes",

@@ -5,22 +5,22 @@
   "lang": "en",
   "title": "What is to remain after death | Takuya Nemoto",
   "description": "The gravestone and posthumous name, the degree, ORCID and DOI, and a vow of celibacy. A personal matter, not research, moved out of the self-introduction.",
-  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.en.html",
   "alternates": [
     {
       "lang": "ja",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html"
     },
     {
       "lang": "en",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.en.html"
     },
     {
       "lang": "x-default",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
   "twitterCard": "summary",
   "ogType": "article",
   "favicon": "./../favicon.svg",
@@ -73,8 +73,8 @@
   "jsonld": {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html",
-    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.en.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.en.html",
     "name": "What is to remain after death",
     "inLanguage": "en"
   }

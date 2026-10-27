@@ -5,22 +5,22 @@
   "lang": "ja",
   "title": "黄金比の窓の予想 | 根本卓哉",
   "description": "三人の繰り返しゲームで、割引因子が 1/φ から 2/3 の窓にあるとき、乱数なしで保てる利得の集合が長さ 0 になるという予想。証明はなく、根拠は数値だけ。",
-  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.html",
   "alternates": [
     {
       "lang": "ja",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.html"
     },
     {
       "lang": "en",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.en.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.en.html"
     },
     {
       "lang": "x-default",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
   "twitterCard": "summary",
   "ogType": "article",
   "favicon": "./../favicon.svg",
@@ -66,8 +66,8 @@
   "jsonld": {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html",
-    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.html",
     "name": "黄金比の窓の予想",
     "inLanguage": "ja",
     "about": {

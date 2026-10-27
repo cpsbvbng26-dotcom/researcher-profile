@@ -5,8 +5,8 @@
   "lang": "en",
   "title": "Takuya Nemoto | 根本卓哉",
   "description": "A published artifact cannot be revised; only the errata can, so the errata drifts from its source. That drift is machine-detectable without inference. The record of auditing my own papers, and the tool.",
-  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html",
-  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/index.en.html",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
   "twitterCard": "summary",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
@@ -325,10 +325,10 @@
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person",
+        "@id": "https://cpsbvbng26-dotcom.vercel.app/#person",
         "name": "Takuya Nemoto",
         "alternateName": "根本卓哉",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
+        "url": "https://cpsbvbng26-dotcom.vercel.app/",
         "identifier": {
           "@type": "PropertyValue",
           "propertyID": "ORCID",
@@ -370,12 +370,12 @@
       },
       {
         "@type": "ProfilePage",
-        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html",
+        "@id": "https://cpsbvbng26-dotcom.vercel.app/index.en.html",
+        "url": "https://cpsbvbng26-dotcom.vercel.app/index.en.html",
         "name": "Takuya Nemoto | 根本卓哉",
         "inLanguage": "en",
         "mainEntity": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         }
       },
       {
@@ -383,7 +383,7 @@
         "@id": "https://doi.org/10.5281/zenodo.22058624",
         "name": "The Trinity-Infinity Framework, Series I: A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22058624",
         "url": "https://doi.org/10.5281/zenodo.22058624",
@@ -403,7 +403,7 @@
         "@id": "https://doi.org/10.5281/zenodo.22058777",
         "name": "The Trinity-Infinity Framework, Series II: Extended Formalization and Further Illustrative Applications",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22058777",
         "url": "https://doi.org/10.5281/zenodo.22058777",
@@ -423,7 +423,7 @@
         "@id": "https://doi.org/10.5281/zenodo.22058964",
         "name": "The Trinity-Infinity Framework, Series III: Beyond Three — A Generalization and Retrospective",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22058964",
         "url": "https://doi.org/10.5281/zenodo.22058964",
@@ -442,7 +442,7 @@
         "@type": "Collection",
         "name": "Trinity-Infinity",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "url": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
         "sameAs": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
@@ -465,7 +465,7 @@
         "name": "trinity-operator",
         "description": "The operator from the three Trinity-Infinity papers, implemented without restricting Q to a cyclic permutation or the coefficients to (0,1). It shows that convergence is governed by the spectral radius ρ(DQ) < 1, that the operator-norm condition the papers impose is merely sufficient, and that non-normal matrices amplify the error transiently. It also repairs the Banach argument that fails in that region by constructing a weighted norm from the Lyapunov equation, and lays out, as runnable stages, which conclusions survive as each assumption is dropped.",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
         "codeRepository": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
@@ -488,7 +488,7 @@
         "@type": "WebApplication",
         "name": "作用素を回す",
         "description": "A tool that iterates the operator x ← DQx + (I−D)p from the three Trinity-Infinity papers entirely inside the browser. It reports the spectral radius and the operator norm separately, and judges convergence and monotone decay of the error as separate questions. Where the papers' argument does not hold, it solves the Lyapunov equation to construct a weighted norm in which the map contracts, and reports the contraction constant and the resulting error bound. Eigenvalues by Householder reduction and shifted QR, singular values by Jacobi rotation, linear systems by Gaussian elimination with partial pivoting, and Cholesky factorization — all without external libraries. No outbound requests. The interface is in Japanese.",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/trinity.html",
+        "url": "https://cpsbvbng26-dotcom.vercel.app/trinity.html",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Any",
         "browserRequirements": "JavaScript",
@@ -496,7 +496,7 @@
         "license": "https://opensource.org/licenses/MIT",
         "inLanguage": "ja",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "isBasedOn": [
           {
@@ -534,15 +534,15 @@
   "alternates": [
     {
       "lang": "ja",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/"
     },
     {
       "lang": "en",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/index.en.html"
     },
     {
       "lang": "x-default",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/"
     }
   ],
   "headExtra": [
