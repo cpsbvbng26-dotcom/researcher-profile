@@ -9,8 +9,8 @@
   "extraNav": [
     { "name": "Paper", "url": "https://doi.org/10.6084/m9.figshare.34419198" },
     { "name": "Code", "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/games" },
-    { "name": "Author", "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html" },
-    { "name": "日本語", "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html" }
+    { "name": "Author", "url": "https://cpsbvbng26-dotcom.vercel.app/index.en.html" },
+    { "name": "日本語", "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.html" }
   ],
   "jsonld": {
     "@context": "https://schema.org",
