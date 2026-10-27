@@ -5,8 +5,8 @@
   "lang": "ja",
   "title": "根本卓哉 | Takuya Nemoto",
   "description": "公開した成果物は、もう直せない。直せるのは訂正のほうで、だから訂正は元の資料からずれていく。そのずれを、推論を使わずに機械で落とす。自分の三篇を監査した記録と、その道具。",
-  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
-  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
   "twitterCard": "summary",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
@@ -324,10 +324,10 @@
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person",
+        "@id": "https://cpsbvbng26-dotcom.vercel.app/#person",
         "name": "根本卓哉",
         "alternateName": "Takuya Nemoto",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
+        "url": "https://cpsbvbng26-dotcom.vercel.app/",
         "identifier": {
           "@type": "PropertyValue",
           "propertyID": "ORCID",
@@ -369,12 +369,12 @@
       },
       {
         "@type": "ProfilePage",
-        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
+        "@id": "https://cpsbvbng26-dotcom.vercel.app/",
+        "url": "https://cpsbvbng26-dotcom.vercel.app/",
         "name": "根本卓哉 | Takuya Nemoto",
         "inLanguage": "ja",
         "mainEntity": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         }
       },
       {
@@ -382,7 +382,7 @@
         "@id": "https://doi.org/10.5281/zenodo.22058624",
         "name": "The Trinity-Infinity Framework, Series I: A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22058624",
         "url": "https://doi.org/10.5281/zenodo.22058624",
@@ -402,7 +402,7 @@
         "@id": "https://doi.org/10.5281/zenodo.22058777",
         "name": "The Trinity-Infinity Framework, Series II: Extended Formalization and Further Illustrative Applications",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22058777",
         "url": "https://doi.org/10.5281/zenodo.22058777",
@@ -422,7 +422,7 @@
         "@id": "https://doi.org/10.5281/zenodo.22058964",
         "name": "The Trinity-Infinity Framework, Series III: Beyond Three — A Generalization and Retrospective",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "identifier": "https://doi.org/10.5281/zenodo.22058964",
         "url": "https://doi.org/10.5281/zenodo.22058964",
@@ -441,7 +441,7 @@
         "@type": "Collection",
         "name": "Trinity-Infinity",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "url": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
         "sameAs": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
@@ -464,7 +464,7 @@
         "name": "trinity-operator",
         "description": "Trinity-Infinity の三篇が扱う作用素を、Q を巡回置換に、係数を (0,1) に限らずに実装したもの。収束の条件がスペクトル半径 ρ(DQ) < 1 であり、三篇が置いた作用素ノルムの条件は十分条件にすぎないことを、非正規行列の過渡的増幅とともに示す。あわせて、その領域で成り立たなくなる Banach の議論を、リアプノフ方程式から重み付きノルムを構成して組み直し、仮定を一つずつ外したときに結論のどれが残るかを段ごとに実行できる形で並べる。",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
         "codeRepository": "https://github.com/cpsbvbng26-dotcom/trinity-operator",
@@ -487,7 +487,7 @@
         "@type": "WebApplication",
         "name": "作用素を回す",
         "description": "Trinity-Infinity の三篇が扱う作用素 x ← DQx + (I−D)p を、ブラウザの中だけで反復する道具。スペクトル半径と作用素ノルムを別々に出し、収束の可否と誤差が単調に減衰するかを分けて判定する。三篇の議論が成り立たない領域では、リアプノフ方程式を解いて縮小写像になる重み付きノルムを構成し、その縮小定数と誤差の上界を出す。固有値は Householder 変換とシフト付き QR 法、特異値は Jacobi 回転、連立一次方程式は部分ピボット付き Gauss 消去、コレスキー分解も含めて、いずれも外部ライブラリを使わずに解いている。外部へのリクエストは無い。",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/trinity.html",
+        "url": "https://cpsbvbng26-dotcom.vercel.app/trinity.html",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Any",
         "browserRequirements": "JavaScript",
@@ -495,7 +495,7 @@
         "license": "https://opensource.org/licenses/MIT",
         "inLanguage": "ja",
         "author": {
-          "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+          "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
         },
         "isBasedOn": [
           {
@@ -533,15 +533,15 @@
   "alternates": [
     {
       "lang": "ja",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/"
     },
     {
       "lang": "en",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.en.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/index.en.html"
     },
     {
       "lang": "x-default",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/"
     }
   ],
   "headExtra": [

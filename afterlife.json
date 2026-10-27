@@ -5,22 +5,22 @@
   "lang": "ja",
   "title": "死後に残すもの | 根本卓哉",
   "description": "墓と諡名、学位、ORCID と DOI、不犯の誓い。研究の成果ではない個人の事柄を、自己紹介から分けて置いた頁。",
-  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.html",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html",
   "alternates": [
     {
       "lang": "ja",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html"
     },
     {
       "lang": "en",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.en.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.en.html"
     },
     {
       "lang": "x-default",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
   "twitterCard": "summary",
   "ogType": "article",
   "favicon": "./../favicon.svg",
@@ -73,8 +73,8 @@
   "jsonld": {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.html",
-    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/afterlife.html",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html",
     "name": "死後に残すもの",
     "inLanguage": "ja"
   }

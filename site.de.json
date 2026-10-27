@@ -5,8 +5,8 @@
   "lang": "de",
   "title": "Takuya Nemoto — Forschungsprofil | Takuya Nemoto",
   "description": "Profil von Takuya Nemoto. Was hier steht, beruht auf Selbststudium und auf der Arbeit mit Sprachmodellen. Die Kriterien, die dabei erfüllt wurden, und die, die nicht erfüllt wurden, stehen im Wortlaut der jeweiligen Plattform.",
-  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.de.html",
-  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/index.de.html",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
   "twitterCard": "summary",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
@@ -74,17 +74,17 @@
   "jsonld": {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.de.html",
-    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/index.de.html",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/index.de.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/index.de.html",
     "name": "Takuya Nemoto — Forschungsprofil",
     "inLanguage": "de",
     "isPartOf": {
       "@type": "WebSite",
-      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#website"
+      "@id": "https://cpsbvbng26-dotcom.vercel.app/#website"
     },
     "author": {
       "@type": "Person",
-      "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person"
+      "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
     }
   }
 }

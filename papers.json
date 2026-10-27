@@ -2,7 +2,7 @@
   "_": "論文ごとの単独ページの、唯一の出所。build_papers.js がここから 14 ページを生成する。",
   "_注意": "散文に数を書かない。件数は生成先のリポジトリで動くので、書けば必ず古くなる。導線だけを置く。",
 
-  "base": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
+  "base": "https://cpsbvbng26-dotcom.vercel.app/",
   "gh": "https://github.com/cpsbvbng26-dotcom/",
   "orcid": "0009-0000-1406-0547",
   "footer": "© 2026 根本卓哉",

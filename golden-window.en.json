@@ -5,22 +5,22 @@
   "lang": "en",
   "title": "The golden-window conjecture | Takuya Nemoto",
   "description": "A conjecture on a three-player repeated game: for discount factors in the window from 1/φ to 2/3, the payoffs that can be kept without randomization form a set of length zero. Not proved; the evidence is numerical.",
-  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.en.html",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.en.html",
   "alternates": [
     {
       "lang": "ja",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.html"
     },
     {
       "lang": "en",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.en.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.en.html"
     },
     {
       "lang": "x-default",
-      "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.html"
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
   "twitterCard": "summary",
   "ogType": "article",
   "favicon": "./../favicon.svg",
@@ -66,8 +66,8 @@
   "jsonld": {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.en.html",
-    "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/notes/golden-window.en.html",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.en.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.en.html",
     "name": "The golden-window conjecture",
     "inLanguage": "en",
     "about": {

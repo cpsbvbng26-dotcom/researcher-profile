@@ -5,8 +5,8 @@
   "lang": "ja",
   "title": "CV | 根本卓哉",
   "description": "修了証・オープンバッジ 7 件と、学習領域、外部プロフィール。各カードから発行機関の検証ページを開けます。",
-  "siteUrl": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/cv.html",
-  "ogImage": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/og.png",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/cv.html",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
   "twitterCard": "summary",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
@@ -290,10 +290,10 @@
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/#person",
+        "@id": "https://cpsbvbng26-dotcom.vercel.app/#person",
         "name": "根本卓哉",
         "alternateName": "Takuya Nemoto",
-        "url": "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/",
+        "url": "https://cpsbvbng26-dotcom.vercel.app/",
         "hasCredential": [
           {
             "@type": "EducationalOccupationalCredential",
