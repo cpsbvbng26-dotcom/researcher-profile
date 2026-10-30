@@ -552,6 +552,9 @@
     }
   ],
   "headExtra": [
-    "<meta name=\"google-site-verification\" content=\"kblg8QQ1xlSNozJKtCEDDiEoxHo3A74_M99BbNTcrr8\">"
+    "<meta name=\"google-site-verification\" content=\"kblg8QQ1xlSNozJKtCEDDiEoxHo3A74_M99BbNTcrr8\">",
+    "<link rel=\"icon\" href=\"./favicon.ico\" sizes=\"48x48\">",
+    "<link rel=\"icon\" href=\"./favicon-192.png\" sizes=\"192x192\" type=\"image/png\">",
+    "<link rel=\"apple-touch-icon\" href=\"./apple-touch-icon.png\">"
   ]
 }
