@@ -41,6 +41,10 @@
       "doi": "10.5281/zenodo.22058254",
       "locations": [
         {
+          "name": "要点の頁",
+          "url": "./celibate-individual.html"
+        },
+        {
           "name": "このサイトの論文ページ",
           "url": "./../papers/celibate-individual.html"
         },
@@ -66,6 +70,10 @@
       "doi": "10.5281/zenodo.22057583",
       "locations": [
         {
+          "name": "要点の頁",
+          "url": "./imperial-selfhood.html"
+        },
+        {
           "name": "このサイトの論文ページ",
           "url": "./../papers/imperial-selfhood.html"
         },
@@ -90,6 +98,10 @@
       "verify": "Zenodo で読む",
       "doi": "10.5281/zenodo.22064241",
       "locations": [
+        {
+          "name": "要点の頁",
+          "url": "./fragmentarian-spiritual-individualism.html"
+        },
         {
           "name": "このサイトの論文ページ",
           "url": "./../papers/fragmentarian-spiritual-individualism.html"
