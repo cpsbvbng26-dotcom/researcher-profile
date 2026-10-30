@@ -1,0 +1,79 @@
+{
+  "name": "皇帝主義",
+  "nameLatin": "Personal imperialism",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "皇帝主義 | 根本卓哉",
+  "description": "断片化した自己を、自分の内側にだけ築く主権的な秩序として統合する見取り図。カントの立法・ニーチェの評価・ユンガーの動員の三層からなる。国家でも他者の支配でもない。探索的なエッセイで、査読は受けていない。",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/imperial-selfhood.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/imperial-selfhood.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/imperial-selfhood.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/imperial-selfhood.html"
+    }
+  ],
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
+  "twitterCard": "summary",
+  "ogType": "article",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "taglineHtml": "帝国を築くのは、自分の内側にだけです。探索的なエッセイで、査読は受けていません。",
+  "sections": [
+    "theory"
+  ],
+  "blocks": [
+    {
+      "id": "theory",
+      "title": "見取り図と、紙面が自分で置いた断り書き",
+      "note": "探索的・査読前",
+      "html": "\n      <p class=\"profile-core\"><b>皇帝主義（個人帝国主義、personal imperialism）は、断片化した自己を一つの秩序へ統合するための見取り図である。</b>論文「Manifesto of Imperial Selfhood」（改訂版、2026年8月）で立てた（<a href=\"https://doi.org/10.5281/zenodo.22057583\" target=\"_blank\" rel=\"noopener\"><code>10.5281/zenodo.22057583</code></a>）。探索的なエッセイであり、査読は受けていない。完成した立場ではなく、問いの出発点として出した。</p>\n      <p class=\"profile-core\"><b>帝国は、国家でも、他者の支配でもない。</b>要旨は冒頭でこう断っている。</p>\n      <p class=\"profile-core\"><code>The term does not denote empire as a form of state, still less any claim to dominion over other persons; it names a strictly reflexive project.</code></p>\n      <p class=\"profile-core\"><b>この語は国家としての帝国を指さない。まして他者への支配を主張しない。</b>指すのは、自分の内側に主権的な秩序を築く、厳密に再帰的な事業だけである。</p>\n      <p class=\"profile-core\"><b>構造は三つの層からなる。</b>立法の層はカントの目的の王国から借りた。自ら法を与え、同時にその法に従う形を、一人の内側へ向け直す。評価の層はニーチェから借りた。法の中身を作っては作り替えつづける。動員の層はユンガーの労働者のゲシュタルトから借りた。能力を出し惜しまず、全体として形へ動員する。形を与えるのがカント、中身を与えるのがニーチェ、それを現実にするのがユンガーである。どれも、原典の意図からは作り替えて借りている。</p>\n      <p class=\"profile-core\"><b>三つは互いに合わない。その緊張が構造の中身である。</b>立法だけなら固まり、規則に従うだけの者になる。評価だけなら溶け、成長と気まぐれの区別がつかなくなる。動員だけなら、向かう先の無い活動になる。どの層も、ほかの二つが生む病を抑える。紙面はこれを混合政体にたとえる。三者を一つの人生で保てることは示していない、と紙面自身が断っている。</p>\n      <p class=\"profile-core\"><b>紙面は、自分で三つの断り書きを置いている。</b>『力への意志』はニーチェ自身の本ではない。彼が倒れたあと、妹らが遺稿から編んだものである。ユンガーの『労働者』（1932）はナチスの権力掌握の直前に書かれ、反動的モダニズムに属する。ユンガーがナチ党に入らず、この本が人種の生物学を退けていると指摘されることにも触れたうえで、紙面は <code>That distinction is real, but it is not a discharge.</code> と書く。区別は本物だが、免責にはならない。</p>\n      <p class=\"profile-core\"><b>帝国の比喩が外へ漏れ出さないかは、未解決のまま残してある。</b>征服と支配の語彙が、他者を取り込み動員してよいという扱いへ広がらないか。紙面はこれを <code>the single most important open problem</code> として残した。ナチズムとの関係についての答えは、<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/objections.md\" target=\"_blank\" rel=\"noopener\">先に立てておく反論</a>の反論 6 に置いてある。</p>\n      <p class=\"profile-core\"><b>記録の側で認めていることが三つある。</b>原稿は日本語で書き、公開している英文は言語モデルによる翻訳である（E5）。引いた原典に、著者は当たっていない（E6）。開示文の「捏造は無い」という断言は、著者には確かめられない（E7）。どれも<a href=\"https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md\" target=\"_blank\" rel=\"noopener\">正誤表</a>にある。紙面は凍結してあり、直すのは正誤表のほうである。</p>\n      <p class=\"profile-core\"><b>理論ではない。</b>紙面は自らを、完成した学説ではなく、さらなる仕事のための挑発であり出発点だと位置づけている。名乗ることと、分野が数えることは別である。</p>\n      <p class=\"profile-core\">紙面の改訂は Claude（Anthropic）を用いて行い、この頁も Claude Code を用いて書いた。主張の責任は著者にある。Claude は著者ではない。</p>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "自己紹介",
+      "url": "./../index.html"
+    },
+    {
+      "name": "作用素",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "ノート",
+      "url": "./index.html"
+    },
+    {
+      "name": "English",
+      "url": "./imperial-selfhood.en.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "見取り図",
+    "verify": "開く",
+    "skip": "本文へスキップ",
+    "themeToggle": "テーマを切り替える"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/imperial-selfhood.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/imperial-selfhood.html",
+    "name": "皇帝主義",
+    "inLanguage": "ja",
+    "about": {
+      "@type": "ScholarlyArticle",
+      "name": "Personal imperialism",
+      "identifier": "https://doi.org/10.5281/zenodo.22057583"
+    }
+  }
+}

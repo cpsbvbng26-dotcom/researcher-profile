@@ -1,0 +1,79 @@
+{
+  "name": "断章論",
+  "nameLatin": "Fragmentarian spiritual individualism",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "断章論 | 根本卓哉",
+  "description": "生・信仰・社会・思想・終末を、ひとつづきの物語ではなく独立した断片として扱う枠組み。断片化を直すべき傷とせず、規律をもって住まう。プレプリントで、査読は受けていない。",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.html"
+    }
+  ],
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
+  "twitterCard": "summary",
+  "ogType": "article",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "taglineHtml": "断片化は、直すべき傷ではありません。そこに規律をもって住まう、という枠組みです。査読は受けていません。",
+  "sections": [
+    "theory"
+  ],
+  "blocks": [
+    {
+      "id": "theory",
+      "title": "枠組みと、比喩の限定と、残した限界",
+      "note": "プレプリント・査読前",
+      "html": "\n      <p class=\"profile-core\"><b>断章論（Fragmentarian Spiritual Individualism）は、生・信仰・社会・思想・終末を、ひとつづきの物語ではなく独立した断片として扱う枠組みである。</b>論文「Fragmentarian Spiritual Individualism」（2026年8月）で立てた（<a href=\"https://doi.org/10.5281/zenodo.22064241\" target=\"_blank\" rel=\"noopener\"><code>10.5281/zenodo.22064241</code></a>）。プレプリントであり、査読は受けていない。</p>\n      <p class=\"profile-core\"><b>断片化を、直すべき傷として扱わない。</b>治療的な立場も、共同体主義も、自由主義的な人間観も、断片化を傷として扱う。物語を取り戻すか、共同体に埋め戻すか、理性的な自己統治へ戻そうとする。この論文は逆を行く。断片化は、生の実際のあり方の、より正確な記述ではないか。だとすれば課題は、克服することではなく、厳密さをもってそこに住まうことになる。</p>\n      <p class=\"profile-core\"><code>… not to overcome fragmentation but to inhabit it with rigor.</code></p>\n      <p class=\"profile-core\"><b>四つのものに、共通の欠陥を見る。</b>近代的合理主義、制度宗教、物語的自己、資本主義的な自己実現。どれも、単独で不連続な個人を、外から来る連続性の論理に従わせている。官僚的な論理、教義の論理、伝記の論理、経済の論理である。</p>\n      <p class=\"profile-core\"><b>枠組みは六つの断片から組み立てる。</b>戦術としての孤独（キェルケゴールの単独者、武士道の残心）。信仰における制度からの離脱（エックハルトの放下、ベーメの無底）。思想と鍛錬の融合（文武両道、宮本武蔵『五輪書』、アドの霊的修練）。効率に抗する形式と儀礼の美学（型。マルクスの疎外とウェーバーの鉄の檻への対抗）。有限性の終末論（ハイデガーの死への存在、『葉隠』の学術的な読み）。自らの出自を辿る系譜（吉本隆明の共同幻想論、柄谷行人のトランスクリティーク）。</p>\n      <p class=\"profile-core\"><b>「戦闘」も「死」も「栄光」も、比喩として限定している。</b>戦闘は暴力ではない。思索と意志の鍛錬が一つの力だという主張で、まず自分の内へ向かう（<code>the claim is not that philosophical reflection should be supplemented by interpersonal violence</code>）。死を讃えも勧めもしない。有限性を引き受けて、いまを生きることの話である（<code>it is not a valorization of dying, still less an exhortation toward it</code>）。栄光は征服でも名声でもなく、断片が形として完結することを指す（<code>a property much closer to craftsmanship than to domination</code>）。</p>\n      <p class=\"profile-core\"><b>断片を一つの体系にまとめない。</b>まとめれば、生の水準で退けた連続した物語の要求を、書き方の水準で繰り返すことになる。柄谷行人のトランスクリティークに倣った方法である。</p>\n      <p class=\"profile-core\"><b>限界は、未解決のまま残してある。</b>一つは、徹底した自律と、他者への正義・ケア・互恵の要求との関係である。もう一つは、断片が基本だという存在論で、生涯にわたる規律の継続をどう支えるかである。また、今日の「武士道」の多くは江戸後期から明治に後から体系化され、理想化された像であり、紙面はそれを固定した伝統ではなく思想の資源として使うと断っている。</p>\n      <p class=\"profile-core\"><b>記録の側で認めていることが三つある。</b>原稿は日本語で書き、公開している英文は言語モデルによる翻訳である（E5）。引いた原典の大半に、著者は当たっていない（E6）。本文が挙げた新渡戸稲造が、参考文献欄に無い（E9）。どれも<a href=\"https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md\" target=\"_blank\" rel=\"noopener\">正誤表</a>にある。紙面は凍結してあり、直すのは正誤表のほうである。</p>\n      <p class=\"profile-core\"><b>理論ではない。</b>紙面は自らの方法を、第一原理からの体系的な論証ではなく、伝統をまたいだ総合だと述べ、経験的な検証を伴わないと断っている。名乗ることと、分野が数えることは別である。</p>\n      <p class=\"profile-core\">紙面の草稿は Claude（Anthropic）を用いて書き、この頁も Claude Code を用いて書いた。主張の責任は著者にある。Claude は著者ではない。</p>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "自己紹介",
+      "url": "./../index.html"
+    },
+    {
+      "name": "作用素",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "ノート",
+      "url": "./index.html"
+    },
+    {
+      "name": "English",
+      "url": "./fragmentarian-spiritual-individualism.en.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "枠組み",
+    "verify": "開く",
+    "skip": "本文へスキップ",
+    "themeToggle": "テーマを切り替える"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.html",
+    "name": "断章論",
+    "inLanguage": "ja",
+    "about": {
+      "@type": "ScholarlyArticle",
+      "name": "Fragmentarian spiritual individualism",
+      "identifier": "https://doi.org/10.5281/zenodo.22064241"
+    }
+  }
+}
