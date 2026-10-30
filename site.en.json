@@ -226,6 +226,13 @@
   ],
   "works": [
     {
+      "url": "https://sophaxis.vercel.app/",
+      "code": "Site / operator",
+      "title": "Sophaxis",
+      "summary": "An overlay preprint server for philosophy and mathematics. Authors submit work deposited in Zenodo, figshare, arXiv, SSRN and other repositories by DOI and ORCID iD, and it is listed after moderation. Moderation is not peer review, and quality is not guaranteed. ORCID confirms that the submitter is an author. Work made with generative models is accepted when the use is disclosed. It charges nothing, to authors or to readers.",
+      "verify": "Open"
+    },
+    {
       "url": "https://github.com/cpsbvbng26-dotcom/errata-check",
       "code": "Python / MIT / with a DOI",
       "title": "errata-check",
