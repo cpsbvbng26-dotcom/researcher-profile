@@ -1,0 +1,79 @@
+{
+  "name": "Fragmentarian spiritual individualism",
+  "nameLatin": "断章論",
+  "initials": "TN",
+  "lang": "en",
+  "title": "Fragmentarian spiritual individualism | Takuya Nemoto",
+  "description": "A framework that treats life, faith, society, ideas and eschatology as self-contained fragments rather than one continuous story, and asks how to inhabit fragmentation with rigor. A preprint, not peer-reviewed.",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.en.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.html"
+    }
+  ],
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
+  "twitterCard": "summary",
+  "ogType": "article",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "taglineHtml": "Fragmentation is not a wound to be repaired. The framework asks how to inhabit it with discipline. It has not been peer-reviewed.",
+  "sections": [
+    "theory"
+  ],
+  "blocks": [
+    {
+      "id": "theory",
+      "title": "The framework and its limits",
+      "note": "Preprint, not peer-reviewed",
+      "html": "\n      <p class=\"profile-core\"><b>Fragmentarian Spiritual Individualism treats life, faith, society, ideas and eschatology as self-contained fragments rather than as one continuous story.</b> It was set out in the paper “Fragmentarian Spiritual Individualism” (August 2026; <a href=\"https://doi.org/10.5281/zenodo.22064241\" target=\"_blank\" rel=\"noopener\"><code>10.5281/zenodo.22064241</code></a>). It is a preprint and has not been peer-reviewed.</p>\n      <p class=\"profile-core\"><b>Fragmentation is not treated as a wound.</b> Therapeutic, communitarian and liberal-humanist traditions alike treat fragmentation as a wound to be cured: recover a coherent life story, re-embed the person in a community, or restore rational self-governance. The paper goes the other way. Fragmentation may be a more accurate description of how a life is actually lived. The task is then</p>\n      <p class=\"profile-core\"><code>… not to overcome fragmentation but to inhabit it with rigor.</code></p>\n      <p class=\"profile-core\"><b>Four things share one flaw.</b> Modern rationalism, institutional religion, narrative selfhood and capitalist self-realization each subordinate the singular, discontinuous individual to an external logic of continuity: bureaucratic, doctrinal, biographical or economic.</p>\n      <p class=\"profile-core\"><b>The framework is built from six fragments.</b> Tactical solitude (Kierkegaard’s single individual, the zanshin of Bushido). Institutional detachment in faith (Eckhart’s Gelassenheit, Boehme’s Ungrund). The fusion of ideas and discipline (bun-bu-ryōdō, Musashi’s Book of Five Rings, Hadot’s spiritual exercises). An aesthetics of form and ritual against efficiency (kata, set against Marx’s alienation and Weber’s iron cage). An eschatology of finitude (Heidegger’s being-toward-death, an academic reading of Hagakure). A genealogy of its own sources (Yoshimoto Takaaki’s communal illusion, Karatani Kojin’s transcritique).</p>\n      <p class=\"profile-core\"><b>“Combat”, “death” and “glory” are limited to metaphor.</b> Combat is not violence: <code>the claim is not that philosophical reflection should be supplemented by interpersonal violence</code>. Death is neither praised nor urged: <code>it is not a valorization of dying, still less an exhortation toward it</code>. Glory is <code>a property much closer to craftsmanship than to domination</code>: a fragment reaching formal completion.</p>\n      <p class=\"profile-core\"><b>The fragments are not merged into one system.</b> Merging them would repeat, at the level of exposition, the demand for a continuous story that the framework rejects at the level of life. The method follows Karatani’s transcritique.</p>\n      <p class=\"profile-core\"><b>The limits are left unresolved.</b> One is how radical autonomy relates to the claims of justice, care and reciprocity owed to others. The other is how an ontology of discontinuous fragments can support a discipline kept up over a whole life. The paper also notes that much of what circulates today as Bushido was systematized and idealized in the late Edo and Meiji periods, and uses it as a philosophical resource, not as a fixed tradition.</p>\n      <p class=\"profile-core\"><b>The record admits three things.</b> The manuscript was written in Japanese, and the published English is a translation by a language model (E5). The author has not read most of the cited sources (E6). Nitobe Inazō, named in the text, is missing from the references (E9). All three are in <a href=\"https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md\" target=\"_blank\" rel=\"noopener\">the errata</a>. The paper is frozen; corrections go into the errata.</p>\n      <p class=\"profile-core\"><b>This is not a theory.</b> The paper describes its method as synthesis across traditions rather than systematic argument from first principles, offering conceptual resources rather than empirical validation. Claiming a contribution and having the field count it are different things.</p>\n      <p class=\"profile-core\">The paper was drafted with Claude (Anthropic), and this page was written with Claude Code. The author is responsible for the claims. Claude is not an author.</p>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "Profile",
+      "url": "./../index.en.html"
+    },
+    {
+      "name": "Operator",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "Notes",
+      "url": "./index.en.html"
+    },
+    {
+      "name": "日本語",
+      "url": "./fragmentarian-spiritual-individualism.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "Framework",
+    "verify": "Open",
+    "skip": "Skip to content",
+    "themeToggle": "Toggle theme"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.en.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.en.html",
+    "name": "Fragmentarian spiritual individualism",
+    "inLanguage": "en",
+    "about": {
+      "@type": "ScholarlyArticle",
+      "name": "Fragmentarian spiritual individualism",
+      "identifier": "https://doi.org/10.5281/zenodo.22064241"
+    }
+  }
+}

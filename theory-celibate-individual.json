@@ -1,0 +1,79 @@
+{
+  "name": "独身論",
+  "nameLatin": "The celibate individual",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "独身論 | 根本卓哉",
+  "description": "独身を、性的活動の欠如ではなく、倫理的・実存的な選択として捉え直す論文。選ばれた独身を、自己陶冶の範型の一つとして擁護する。唯一正しい生き方とも、万人の義務とも言わない。プレプリントで、査読は受けていない。",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/celibate-individual.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/celibate-individual.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/celibate-individual.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/celibate-individual.html"
+    }
+  ],
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
+  "twitterCard": "summary",
+  "ogType": "article",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "taglineHtml": "選んだ独身は、説明を要する欠落ではなく、擁護しうる自己陶冶の一つの範型です。唯一正しいとは言いません。査読は受けていません。",
+  "sections": [
+    "theory"
+  ],
+  "blocks": [
+    {
+      "id": "theory",
+      "title": "論証と、その射程と、認めている穴",
+      "note": "プレプリント・査読前",
+      "html": "\n      <p class=\"profile-core\"><b>独身論は、独身を性的活動の欠如ではなく、倫理的・実存的な選択として捉え直す論文である。</b>論文「The Nobility and Exemplarity of the Celibate Individual」（初版 2025年10月21日、改訂版 2026年8月22日）で論じた（<a href=\"https://doi.org/10.5281/zenodo.22058254\" target=\"_blank\" rel=\"noopener\"><code>10.5281/zenodo.22058254</code></a>）。プレプリントであり、査読は受けていない。</p>\n      <p class=\"profile-core\"><b>論証は二段である。</b>第一段は否定である。生殖がなければ社会は続かない、という性的活動を義務とみなす通説は、生物学的な事実から個人の義務を導いている。その移行は、ベネターの反出生主義の議論を前にすると持ちこたえない、と論じる。第二段は肯定である。エピクロスの快の区別（動的な快と、静的で安定した快）と、ショーペンハウアーの意志の形而上学を手がかりに、他者や欲望の周期に依存しない自足的な幸福という観点から、独身を積極的に評価する。</p>\n      <p class=\"profile-core\"><b>主張の射程は狭い。</b>独身が唯一正しいとも、万人が選ぶべきだとも言っていない。結論はこうである。</p>\n      <p class=\"profile-core\"><code>… one exemplary and defensible path of ethical self-cultivation, rather than as a deficiency to be explained away.</code></p>\n      <p class=\"profile-core\"><b>四つの反論に答えている。</b>関係性の心理学からの反論、反出生主義は普遍化すると自己論駁的だという反論、神学的な偏狭さの疑い、生活の質の判断は主観的だという反論である。どの応答も、独身が平均して幸福だという経験的な主張はしていない、という線で立っている。</p>\n      <p class=\"profile-core\"><b>紙面の穴を、記録の側で認めている。</b>否定の段は生殖を撃ち、肯定の段は性行為そのものを撃つ。避妊はこの二つを切り離すが、紙面はそこに触れていない（N5）。紙面が擁護しているのは選ばれた独身だが、選べなかった性的不活発、アセクシュアリティ、アロマンティックとの区別を明示していない（N6）。区別が無いと、選べなかったことを称揚する読みが成り立ってしまう。この頁は、選ばれた独身についてだけ述べる。</p>\n      <p class=\"profile-core\"><b>他者の生き方を否定しない。</b>パートナーとの生活や性的な生活のほうが自分の幸福に適う、と自律的に判断する人がいることを、紙面は認めている。独身は、その多様さの中の範型の一つとして扱われるべきだ、というのが主張である。</p>\n      <p class=\"profile-core\"><b>記録の側で認めていることが、ほかに二つある。</b>原稿は日本語で書き、公開している英文は言語モデルによる翻訳である（E5）。引いた原典の大半に、著者は当たっていない（E6）。どれも<a href=\"https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md\" target=\"_blank\" rel=\"noopener\">正誤表</a>にある。紙面は凍結してあり、直すのは正誤表のほうである。</p>\n      <p class=\"profile-core\"><b>理論ではない。</b>規範的な哲学の論証であり、経験的な裏付けは持たない。名乗ることと、分野が数えることは別である。</p>\n      <p class=\"profile-core\">紙面の改訂は Claude（Anthropic）を用いて行い、この頁も Claude Code を用いて書いた。主張の責任は著者にある。Claude は著者ではない。</p>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "自己紹介",
+      "url": "./../index.html"
+    },
+    {
+      "name": "作用素",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "ノート",
+      "url": "./index.html"
+    },
+    {
+      "name": "English",
+      "url": "./celibate-individual.en.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "論証",
+    "verify": "開く",
+    "skip": "本文へスキップ",
+    "themeToggle": "テーマを切り替える"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/celibate-individual.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/celibate-individual.html",
+    "name": "独身論",
+    "inLanguage": "ja",
+    "about": {
+      "@type": "ScholarlyArticle",
+      "name": "The celibate individual",
+      "identifier": "https://doi.org/10.5281/zenodo.22058254"
+    }
+  }
+}
