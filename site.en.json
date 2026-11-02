@@ -222,6 +222,25 @@
           "url": "./papers/trinity-infinity-series-iii.en.html"
         }
       ]
+    },
+    {
+      "url": "https://osf.io/mq7za/",
+      "code": "Project / OSF",
+      "title": "Sophaxis",
+      "subtitle": "An Independent Overlay Preprint Server",
+      "summary": "The OSF project page of the overlay preprint server for philosophy and mathematics that I operate. The DOI names the project, not a listed work.",
+      "verify": "Open on OSF",
+      "doi": "10.17605/OSF.IO/MQ7ZA",
+      "locations": [
+        {
+          "name": "Sophaxis page on this site",
+          "url": "./notes/sophaxis.en.html"
+        },
+        {
+          "name": "sophaxis.vercel.app",
+          "url": "https://sophaxis.vercel.app/"
+        }
+      ]
     }
   ],
   "works": [

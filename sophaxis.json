@@ -1,0 +1,97 @@
+{
+  "name": "Sophaxis",
+  "nameLatin": "Sophaxis",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "Sophaxis | 根本卓哉",
+  "description": "根本卓哉が運営する、哲学と数学のオーバーレイ型プレプリントサーバー Sophaxis の頁。OSF のプロジェクトと DOI、載っている記録、これからの予定。",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html"
+    }
+  ],
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
+  "twitterCard": "summary",
+  "ogType": "website",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "taglineHtml": "リポジトリに置かれた稿を、モデレーションのうえで載せるプレプリントサーバーです。査読ではありません。",
+  "sections": [
+    "about",
+    "records",
+    "elsewhere"
+  ],
+  "blocks": [
+    {
+      "id": "about",
+      "title": "Sophaxis とは",
+      "note": "運営",
+      "html": "\n      <p class=\"profile-core\"><b>Sophaxis（ソファクシス）は、哲学と数学のためのオーバーレイ型のプレプリントサーバーです。</b>扱う分野は、哲学・数学・論理学・数理哲学・科学哲学です。根本卓哉が運営しています（<a href=\"https://sophaxis.vercel.app/\" target=\"_blank\" rel=\"noopener\">sophaxis.vercel.app</a>）。</p>\n      <p class=\"profile-core\"><b>稿そのものは置きません。</b>著者が Zenodo・Figshare・arXiv・SSRN などのリポジトリに置いた稿を、DOI と ORCID iD で投稿してもらいます。モデレーションのうえで一覧に載せ、固定の頁を与えます。DOI は置いた先のリポジトリが付けます。</p>\n      <p class=\"profile-core\"><b>受理はモデレーションであり、査読ではありません。</b>載った稿の質は保証しません。稿の中身と権利の責任は、著者が負います。</p>\n      <p class=\"profile-core\">著者からも読者からも、費用を取りません。言語モデルなどの生成モデルの使用は、開示を条件に受けます。生成モデルは著者になれません。投稿者が著者本人であることは、ORCID の記録と GitHub のアカウントで確かめます。</p>\n      <p class=\"profile-core\">規約は <a href=\"https://sophaxis.vercel.app/policy.html\" target=\"_blank\" rel=\"noopener\">Policies</a> に、問い合わせの窓口は <a href=\"https://sophaxis.vercel.app/contact.html\" target=\"_blank\" rel=\"noopener\">Operator and contact</a> にあります。どちらも英語です。</p>\n    "
+    },
+    {
+      "id": "records",
+      "title": "載っている記録",
+      "note": "運営者自身の投稿",
+      "html": "\n      <p class=\"profile-core\">いま載っている記録は、どれも運営者自身の投稿です。運営者の投稿も、同じ規則でモデレーションしています。</p>\n      <ul class=\"profile-core\">\n        <li><a href=\"https://sophaxis.vercel.app/abs/2026.0001.html\" target=\"_blank\" rel=\"noopener\">Sophaxis:2026.0001</a> Repeated Games through a Cyclic Operator（Figshare）</li>\n        <li><a href=\"https://sophaxis.vercel.app/abs/2026.0002.html\" target=\"_blank\" rel=\"noopener\">Sophaxis:2026.0002</a> Machine-mediated Rediscovery（SSRN）</li>\n      </ul>\n    "
+    },
+    {
+      "id": "elsewhere",
+      "title": "プロジェクトと、これから",
+      "note": "OSF・DOAPR・JOSS",
+      "html": "\n      <p class=\"profile-core\"><b>OSF にプロジェクトの頁があります。</b><a href=\"https://osf.io/mq7za/\" target=\"_blank\" rel=\"noopener\">Sophaxis: An Independent Overlay Preprint Server</a>、DOI <a href=\"https://doi.org/10.17605/OSF.IO/MQ7ZA\" target=\"_blank\" rel=\"noopener\"><code>10.17605/OSF.IO/MQ7ZA</code></a> です。この DOI はプロジェクトに付いたもので、載せた稿のものではありません。</p>\n      <p class=\"profile-core\">コードと記録は、GitHub の <a href=\"https://github.com/cpsbvbng26-dotcom/sophaxis\" target=\"_blank\" rel=\"noopener\">公開リポジトリ</a> にあります。ライセンスは、文章が CC BY 4.0、コードが MIT です。</p>\n      <p class=\"profile-core\">2026-11-01 に、COAR が運営する DOAPR（Directory of Open Access Preprint Repositories）への掲載を申請しました。掲載するかどうかは DOAPR が決めます。</p>\n      <p class=\"profile-core\">コードを Journal of Open Source Software（JOSS）に投稿することを計画しています。最初のコミットは <b>2026-10-30</b> なので、六か月の条件から最短で <b>2027-05-01</b> です。まだ投稿していません。</p>\n      <p class=\"profile-core\">サイトとコードは、運営者の求めで Claude Code（Anthropic）が作りました。責任は運営者にあります。Claude は著者ではありません。サイトは Vercel で配信しています。</p>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "自己紹介",
+      "url": "./../index.html"
+    },
+    {
+      "name": "作用素",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "ノート",
+      "url": "./index.html"
+    },
+    {
+      "name": "English",
+      "url": "./sophaxis.en.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "運営しているサイト",
+    "verify": "開く",
+    "skip": "本文へスキップ",
+    "themeToggle": "テーマを切り替える"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html",
+    "name": "Sophaxis",
+    "inLanguage": "ja",
+    "about": {
+      "@type": "WebSite",
+      "name": "Sophaxis",
+      "url": "https://sophaxis.vercel.app/",
+      "sameAs": [
+        "https://osf.io/mq7za/",
+        "https://doi.org/10.17605/OSF.IO/MQ7ZA"
+      ]
+    }
+  }
+}
