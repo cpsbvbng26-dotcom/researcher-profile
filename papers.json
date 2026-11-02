@@ -22,6 +22,9 @@
       "supersedes": "10.5281/zenodo.17173703",
       "title": "The Trinity-Infinity Framework, Series I",
       "subtitle": "A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
+      "locations": [
+        { "name": "Sophaxis", "id": "2026.0006", "url": "https://sophaxis.vercel.app/abs/2026.0006.html" }
+      ],
       "ja": {
         "version": "改訂版 — 2026年8月",
         "summary": "三要素の再帰作用素が一意の不動点へ幾何収束することを証明し、ゲーム理論・論理学・工学への接続を、証明済みの結果・既知の結果・類推に区別して示す。",
@@ -46,7 +49,8 @@
       "subtitle": "Extended Formalization and Further Illustrative Applications",
       "locations": [
         { "name": "SSRN", "id": "10.2139/ssrn.7446961", "url": "https://doi.org/10.2139/ssrn.7446961" },
-        { "name": "HAL", "id": "hal-05759064", "url": "https://hal.science/hal-05759064" }
+        { "name": "HAL", "id": "hal-05759064", "url": "https://hal.science/hal-05759064" },
+        { "name": "Sophaxis", "id": "2026.0007", "url": "https://sophaxis.vercel.app/abs/2026.0007.html" }
       ],
       "ja": {
         "version": "改訂版 — 2026年8月",
@@ -70,6 +74,9 @@
       "registerPrefix": "TI",
       "title": "The Trinity-Infinity Framework, Series III",
       "subtitle": "Beyond Three — A Generalization and Retrospective",
+      "locations": [
+        { "name": "Sophaxis", "id": "2026.0008", "url": "https://sophaxis.vercel.app/abs/2026.0008.html" }
+      ],
       "ja": {
         "version": "2026年8月",
         "summary": "収束定理が三要素を必要としないこと（任意の n ≥ 2 で成立）を示し、この系列が何を確立し、何を撤回したかを回顧する。",
@@ -96,7 +103,8 @@
         { "name": "SSRN", "id": "10.2139/ssrn.7358779", "url": "https://doi.org/10.2139/ssrn.7358779" },
         { "name": "PhilArchive", "id": "NEMTNA", "url": "https://philarchive.org/rec/NEMTNA" },
         { "name": "HAL", "id": "hal-05758942", "url": "https://hal.science/hal-05758942" },
-        { "name": "CORE", "id": "403307066", "url": "https://core.ac.uk/works/403307066", "note": "書誌の索引です。全文は置かれていません", "noteEn": "Bibliographic index. The full text is not held there" }
+        { "name": "CORE", "id": "403307066", "url": "https://core.ac.uk/works/403307066", "note": "書誌の索引です。全文は置かれていません", "noteEn": "Bibliographic index. The full text is not held there" },
+        { "name": "Sophaxis", "id": "2026.0004", "url": "https://sophaxis.vercel.app/abs/2026.0004.html" }
       ],
       "ja": {
         "version": "v2 — 2026年8月22日（初版 2025年10月21日）",
@@ -123,7 +131,8 @@
       "locations": [
         { "name": "SSRN", "id": "10.2139/ssrn.7358818", "url": "https://doi.org/10.2139/ssrn.7358818" },
         { "name": "PhilArchive", "id": "NEMMOI", "url": "https://philarchive.org/rec/NEMMOI" },
-        { "name": "HAL", "id": "hal-05758968", "url": "https://hal.science/hal-05758968" }
+        { "name": "HAL", "id": "hal-05758968", "url": "https://hal.science/hal-05758968" },
+        { "name": "Sophaxis", "id": "2026.0003", "url": "https://sophaxis.vercel.app/abs/2026.0003.html" }
       ],
       "ja": {
         "version": "改訂増補版 — 2026年8月",
@@ -148,7 +157,8 @@
       "title": "Fragmentarian Spiritual Individualism",
       "subtitle": "A Philosophy of Fragments for Solitary Spiritual Autonomy",
       "locations": [
-        { "name": "PhilArchive", "id": "NEMFSI", "url": "https://philarchive.org/rec/NEMFSI" }
+        { "name": "PhilArchive", "id": "NEMFSI", "url": "https://philarchive.org/rec/NEMFSI" },
+        { "name": "Sophaxis", "id": "2026.0005", "url": "https://sophaxis.vercel.app/abs/2026.0005.html" }
       ],
       "ja": {
         "version": "2026年8月",
