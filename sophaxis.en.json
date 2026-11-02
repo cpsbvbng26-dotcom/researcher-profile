@@ -1,0 +1,97 @@
+{
+  "name": "Sophaxis",
+  "nameLatin": "Sophaxis",
+  "initials": "TN",
+  "lang": "en",
+  "title": "Sophaxis | Takuya Nemoto",
+  "description": "Sophaxis, an overlay preprint server for philosophy and mathematics operated by Takuya Nemoto: its OSF project and DOI, the listed records, and what comes next.",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.en.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html"
+    }
+  ],
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
+  "twitterCard": "summary",
+  "ogType": "website",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "taglineHtml": "A preprint server that lists work deposited in repositories, after moderation. It is not peer review.",
+  "sections": [
+    "about",
+    "records",
+    "elsewhere"
+  ],
+  "blocks": [
+    {
+      "id": "about",
+      "title": "What Sophaxis is",
+      "note": "Operator",
+      "html": "\n      <p class=\"profile-core\"><b>Sophaxis is an overlay preprint server for philosophy and mathematics.</b> Its fields are philosophy, mathematics, logic, the philosophy of mathematics and the philosophy of science. It is operated by Takuya Nemoto (<a href=\"https://sophaxis.vercel.app/\" target=\"_blank\" rel=\"noopener\">sophaxis.vercel.app</a>).</p>\n      <p class=\"profile-core\"><b>It holds no manuscripts of its own.</b> Authors submit a preprint they have deposited in Zenodo, Figshare, arXiv, SSRN or another repository, by its DOI and their ORCID iD. After moderation it is listed and given a stable record page. The DOI comes from the repository.</p>\n      <p class=\"profile-core\"><b>Acceptance is moderation, not peer review.</b> The quality of listed work is not guaranteed. The authors bear responsibility for the content and the rights.</p>\n      <p class=\"profile-core\">It charges nothing, to authors or to readers. Work made with language models and other generative models is accepted when the use is disclosed. No generative model can be an author. That the submitter is an author is checked against the ORCID record and the GitHub account.</p>\n      <p class=\"profile-core\">The rules are in the <a href=\"https://sophaxis.vercel.app/policy.html\" target=\"_blank\" rel=\"noopener\">Policies</a>, and the contact is on <a href=\"https://sophaxis.vercel.app/contact.html\" target=\"_blank\" rel=\"noopener\">Operator and contact</a>.</p>\n    "
+    },
+    {
+      "id": "records",
+      "title": "Listed records",
+      "note": "The operator's own submissions",
+      "html": "\n      <p class=\"profile-core\">The records listed so far are all the operator's own submissions. They are moderated under the same rules.</p>\n      <ul class=\"profile-core\">\n        <li><a href=\"https://sophaxis.vercel.app/abs/2026.0001.html\" target=\"_blank\" rel=\"noopener\">Sophaxis:2026.0001</a> Repeated Games through a Cyclic Operator (Figshare)</li>\n        <li><a href=\"https://sophaxis.vercel.app/abs/2026.0002.html\" target=\"_blank\" rel=\"noopener\">Sophaxis:2026.0002</a> Machine-mediated Rediscovery (SSRN)</li>\n      </ul>\n    "
+    },
+    {
+      "id": "elsewhere",
+      "title": "The project, and what comes next",
+      "note": "OSF · DOAPR · JOSS",
+      "html": "\n      <p class=\"profile-core\"><b>Sophaxis has a project page on OSF:</b> <a href=\"https://osf.io/mq7za/\" target=\"_blank\" rel=\"noopener\">Sophaxis: An Independent Overlay Preprint Server</a>, DOI <a href=\"https://doi.org/10.17605/OSF.IO/MQ7ZA\" target=\"_blank\" rel=\"noopener\"><code>10.17605/OSF.IO/MQ7ZA</code></a>. The DOI names the project, not a listed work.</p>\n      <p class=\"profile-core\">The code and the records are in the <a href=\"https://github.com/cpsbvbng26-dotcom/sophaxis\" target=\"_blank\" rel=\"noopener\">public repository</a> on GitHub. Text is CC BY 4.0 and code is MIT.</p>\n      <p class=\"profile-core\">On 2026-11-01 the operator applied for Sophaxis to be listed in DOAPR, the Directory of Open Access Preprint Repositories run by COAR. Whether it is listed is DOAPR's decision.</p>\n      <p class=\"profile-core\">Submission of the code to the Journal of Open Source Software (JOSS) is planned. The first commit is from <b>2026-10-30</b>, so under the six-month requirement the earliest possible submission is <b>2027-05-01</b>. Nothing has been submitted yet.</p>\n      <p class=\"profile-core\">The site and its code were built with Claude Code (Anthropic) at the operator's request. The operator is responsible for them, and Claude is not an author. The site is hosted on Vercel.</p>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "Profile",
+      "url": "./../index.en.html"
+    },
+    {
+      "name": "Operator",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "Notes",
+      "url": "./index.en.html"
+    },
+    {
+      "name": "日本語",
+      "url": "./sophaxis.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "A site I operate",
+    "verify": "Open",
+    "skip": "Skip to content",
+    "themeToggle": "Toggle theme"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.en.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.en.html",
+    "name": "Sophaxis",
+    "inLanguage": "en",
+    "about": {
+      "@type": "WebSite",
+      "name": "Sophaxis",
+      "url": "https://sophaxis.vercel.app/",
+      "sameAs": [
+        "https://osf.io/mq7za/",
+        "https://doi.org/10.17605/OSF.IO/MQ7ZA"
+      ]
+    }
+  }
+}
