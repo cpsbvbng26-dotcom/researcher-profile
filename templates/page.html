@@ -209,13 +209,15 @@ header::after {
 /* ---------- 事実の欄 ----------
    ヒーローで、数えられる事実と、著者自身の解釈を分けて置く。
    混ぜると、どちらも検証できないものになる。 */
-.facts { margin: 1.8rem 0 0; max-width: 38rem; display: grid; gap: 0; }
+/* **列は minmax(0, 1fr) にする。**1fr の最小は中身の最小幅で、DOI のように折り返せない語があると、
+   列ごと画面より広がる。360px の画面で 2px はみ出していた。 */
+.facts { margin: 1.8rem 0 0; max-width: 38rem; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
 .facts .fact {
-  display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem;
+  display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem;
   padding: .55rem 0; border-bottom: 1px solid var(--line-soft);
 }
 .facts dt { margin: 0; font-size: .74rem; letter-spacing: .1em; color: var(--faint); padding-top: .2rem; }
-.facts dd { margin: 0; font-size: .86rem; line-height: 1.85; color: var(--muted); }
+.facts dd { margin: 0; font-size: .86rem; line-height: 1.85; color: var(--muted); overflow-wrap: anywhere; }
 .facts dd b { color: var(--text); }
 .facts dd a { color: var(--accent); }
 .facts .faint { color: var(--faint); }
@@ -251,7 +253,7 @@ header::after {
 }
 
 @media (max-width: 40rem) {
-  .facts .fact, .claim-kv > div { grid-template-columns: 1fr; gap: .15rem; }
+  .facts .fact, .claim-kv > div { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
 }
 
 /* ---------- 自己紹介の板 ----------
@@ -493,7 +495,9 @@ footer::after {
    節の番号は HTML に持たせない。**印字するのは装飾であって内容ではない**ので、
    CSS のカウンタで出す。読み上げには乗らず、順番だけが見える。 */
 body { counter-reset: sec; }
-section.block { padding: 5rem 0; counter-increment: sec; }
+/* 上下だけを決める。**padding の一括指定は左右も 0 にし、.wrap の余白を消していた** ——
+   狭い画面で本文が画面の端に張り付き、行末の全角の区切りが外へこぼれていた。 */
+section.block { padding-top: 5rem; padding-bottom: 5rem; counter-increment: sec; }
 .sec-head { margin-bottom: 2.6rem; position: relative; }
 .sec-head h2 {
   margin: 0 0 .45rem;
@@ -752,6 +756,8 @@ footer::before {
   margin: .2rem 0 0;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: .72rem; line-height: 1.7; letter-spacing: .01em; color: var(--faint);
+  /* 等幅の DOI は途中で切れない。切れないと、360px の画面で行ごと 4px はみ出していた。 */
+  overflow-wrap: anywhere;
 }
 
 /* 所在の行はカードの外に置く（<a> の入れ子は作れないため）。
