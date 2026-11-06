@@ -20,6 +20,12 @@
   },
   "profile": {
     "label": "À propos",
+    "photo": {
+      "src": "./portrait.jpg",
+      "alt": "Portrait de Takuya Nemoto",
+      "width": 750,
+      "height": 1000
+    },
     "nowHtml": "Inscrit à la <b>ZEN University, Faculty of Social Informatics</b>, dans la première promotion de rentrée d’automne. Le cursus traverse les lettres et les sciences.",
     "studyHtml": "Les études portent surtout sur la <b>philosophie</b> et la <b>pratique</b> ; les <b>mathématiques</b> sont accessibles. Ce qui est déposé ici relève de l’informatique et de l’intelligence artificielle.",
     "credHtml": "Les certificats edX viennent en premier, comme repère du niveau technique. Tous sont des cours d’introduction. CS50x (HarvardX) est une introduction à l’informatique : tous les exercices en C, Python, SQL et programmation web ont été rendus, ainsi qu’un projet final. Repère : écrire un programme de zéro et le faire fonctionner. CS50AI (HarvardX) est une introduction à l’intelligence artificielle avec Python : recherche, inférence logique, probabilités, optimisation, apprentissage automatique, réseaux de neurones et traitement du langage ont été implémentés en projets. Repère : construire soi-même les méthodes classiques. CC0201EN (IBM) est une introduction aux conteneurs, à Kubernetes et à OpenShift, avec des travaux pratiques qui construisent et exécutent des conteneurs. ER22.1x (HarvardX) est le cours de philosophie politique Justice, pas un certificat technique. Les règles des cours sont aussi indiquées ici. Les deux cours CS50 tiennent pour malhonnêteté académique l’usage d’outils génératifs externes (ChatGPT, Claude, Copilot, Gemini, etc.) qui suggèrent ou complètent des réponses ou du code ; seul l’outil propre à CS50, le CS50 Duck, est autorisé. Le Honor Code d’edX exige de réaliser soi-même tous les examens et devoirs, sauf si la collaboration est explicitement permise. Il n’existe aucun moyen de prouver que ces règles ont été respectées. Selon les règles, cependant, les certificats ci-dessus ont été délivrés en considérant qu’elles avaient été respectées.",

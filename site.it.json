@@ -20,6 +20,12 @@
   },
   "profile": {
     "label": "Chi sono",
+    "photo": {
+      "src": "./portrait.jpg",
+      "alt": "Ritratto di Takuya Nemoto",
+      "width": 750,
+      "height": 1000
+    },
     "nowHtml": "Iscritto alla <b>ZEN University, Faculty of Social Informatics</b>, nella prima coorte con immatricolazione autunnale. Il corso attraversa le discipline umanistiche e quelle scientifiche.",
     "studyHtml": "Si studiano soprattutto <b>filosofia</b> e <b>pratica</b>; la <b>matematica</b> è frequentabile. Quanto è depositato qui riguarda l’informatica e l’intelligenza artificiale.",
     "credHtml": "I certificati edX vengono per primi, come indicazione del livello tecnico. Sono tutti corsi introduttivi. CS50x (HarvardX) è un’introduzione all’informatica: sono stati consegnati tutti gli esercizi in C, Python, SQL e programmazione web, oltre a un progetto finale. Indicazione: scrivere un programma da zero e farlo funzionare. CS50AI (HarvardX) è un’introduzione all’intelligenza artificiale con Python: ricerca, inferenza logica, probabilità, ottimizzazione, apprendimento automatico, reti neurali ed elaborazione del linguaggio sono stati implementati come progetti. Indicazione: costruire da sé i metodi classici. CC0201EN (IBM) è un’introduzione a container, Kubernetes e OpenShift, con laboratori che costruiscono ed eseguono container. ER22.1x (HarvardX) è il corso di filosofia politica Justice, non un certificato tecnico. Anche le regole dei corsi sono indicate qui. I due corsi CS50 considerano disonestà accademica l’uso di strumenti generativi esterni (ChatGPT, Claude, Copilot, Gemini e simili) che suggeriscono o completano risposte o codice; è consentito solo lo strumento proprio di CS50, il CS50 Duck. Lo Honor Code di edX richiede di svolgere da sé tutti gli esami e i compiti, salvo che la collaborazione sia esplicitamente consentita. Non c’è modo di dimostrare che queste regole siano state rispettate. Secondo le regole, tuttavia, i certificati sopra sono stati rilasciati considerandole rispettate.",
