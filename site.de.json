@@ -20,6 +20,12 @@
   },
   "profile": {
     "label": "Über mich",
+    "photo": {
+      "src": "./portrait.jpg",
+      "alt": "Porträt von Takuya Nemoto",
+      "width": 750,
+      "height": 1000
+    },
     "nowHtml": "Eingeschrieben an der <b>ZEN University, Faculty of Social Informatics</b>, im ersten Jahrgang mit Herbstbeginn. Der Studiengang verbindet Geistes- und Naturwissenschaften.",
     "studyHtml": "Studiert werden vor allem <b>Philosophie</b> und <b>Praxis</b>; <b>Mathematik</b> ist belegbar. Was hier abgelegt ist, betrifft Informatik und künstliche Intelligenz.",
     "credHtml": "Die edX-Zertifikate stehen vorn, als Anhaltspunkt für das technische Niveau. Alle sind Einführungskurse. CS50x (HarvardX) ist eine Einführung in die Informatik: Alle Aufgaben in C, Python, SQL und Webprogrammierung wurden eingereicht, dazu ein Abschlussprojekt. Anhaltspunkt: ein Programm von Grund auf schreiben und zum Laufen bringen. CS50AI (HarvardX) ist eine Einführung in künstliche Intelligenz mit Python: Suche, logisches Schließen, Wahrscheinlichkeit, Optimierung, maschinelles Lernen, neuronale Netze und Sprachverarbeitung wurden als Projekte umgesetzt. Anhaltspunkt: die klassischen Verfahren selbst bauen. CC0201EN (IBM) ist eine Einführung in Container, Kubernetes und OpenShift, mit Übungen, in denen Container gebaut und betrieben werden. ER22.1x (HarvardX) ist die Vorlesung Justice in politischer Philosophie, kein technisches Zertifikat. Auch die Kursregeln stehen hier. Die beiden CS50-Kurse werten den Einsatz externer generativer Werkzeuge (ChatGPT, Claude, Copilot, Gemini u. a.), die Antworten oder Code vorschlagen oder vervollständigen, als akademisch unredlich; erlaubt ist nur das eigene Werkzeug von CS50, die CS50 Duck. Der edX Honor Code verlangt, alle Prüfungen und Aufgaben selbst zu erledigen, sofern Zusammenarbeit nicht ausdrücklich erlaubt ist. Dass diese Regeln eingehalten wurden, lässt sich nicht beweisen. Nach den Regeln wurden die obigen Zertifikate jedoch auf der Grundlage ausgestellt, dass sie eingehalten wurden.",
