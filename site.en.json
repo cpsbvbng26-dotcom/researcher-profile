@@ -77,7 +77,7 @@
       },
       {
         "term": "Evidence",
-        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 108 checks on the errata itself, 82 on the tool. The tool is checked by <strong>breaking a passing state in 30 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
+        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Counting the pages, there are six.</strong> That was found by machine, not by reading. 109 checks on the errata itself, 82 on the tool. The tool is checked by <strong>breaking a passing state in 30 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
       },
       {
         "term": "The outside eye",
@@ -93,15 +93,15 @@
     "note": "How many checks, where, and when. All of them run in CI on every push. The first three are the core.",
     "items": [
       {
-        "name": "268 checks on the errata",
-        "html": "The same audit applied to all four frozen bodies of work: 108 on the three Trinity-Infinity papers, 102 on the three philosophical papers, 58 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
+        "name": "271 checks on the errata",
+        "html": "The same audit applied to all four frozen bodies of work: 109 on the three Trinity-Infinity papers, 103 on the three philosophical papers, 59 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolvable, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
       },
       {
         "name": "82 checks on the tool itself",
         "html": "A checking tool cannot be trusted merely because it passes; a tool that looks at nothing passes too. A passing state is <strong>broken in 30 distinct ways</strong>, and each break must fail exactly the corresponding check. The distributions used to recompute p are validated against published statistical tables at eleven points (<a href=\"https://github.com/cpsbvbng26-dotcom/errata-check\" target=\"_blank\" rel=\"noopener\">errata-check</a>)"
       },
       {
-        "name": "46 checks on the register",
+        "name": "47 checks on the register",
         "html": "The shape and history of the correction record itself. <strong>97 entries</strong> across five statuses, <strong>37 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>78 can be checked by anyone against a frozen artifact; the remaining 19 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
       },
       {
