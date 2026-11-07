@@ -255,6 +255,7 @@
       "code": "Site / operator",
       "title": "Sophaxis",
       "summary": "An overlay preprint server for philosophy and mathematics. Authors submit work deposited in Zenodo, Figshare, arXiv, SSRN and other repositories by DOI and ORCID iD, and it is listed after moderation. Moderation is not peer review, and quality is not guaranteed. ORCID confirms that the submitter is an author. Work made with generative models is accepted when the use is disclosed. It charges nothing, to authors or to readers.",
+      "doi": "10.5281/zenodo.24033372",
       "verify": "Open"
     },
     {
@@ -270,6 +271,7 @@
       "code": "JavaScript / MIT",
       "title": "deposit-check",
       "summary": "Checks the DOI metadata of a researcher’s works against their ORCID record. It reports missing abstracts, licences, ORCID iDs and links between versions, and works missing from the ORCID record. It only reads the public APIs of DataCite, Crossref, JaLC and ORCID, and writes nothing anywhere. Sophaxis uses it to advise submitters on the metadata of their DOIs.",
+      "doi": "10.5281/zenodo.24033082",
       "verify": "View on GitHub"
     },
     {
@@ -277,6 +279,7 @@
       "code": "Record / MIT",
       "title": "self-correction",
       "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. 97 entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
+      "doi": "10.5281/zenodo.24033597",
       "verify": "View on GitHub"
     },
     {
@@ -291,6 +294,7 @@
       "code": "PDF / CC BY 4.0",
       "title": "trinity-infinity",
       "summary": "The three papers above and their verification. 15 checks that reimplement the theorems independently and 32 that recompute every number printed on the page. It also records what was established and what was withdrawn.",
+      "doi": "10.5281/zenodo.24033961",
       "verify": "View on GitHub"
     },
     {
@@ -298,6 +302,7 @@
       "code": "Python / MIT",
       "title": "trinity-operator",
       "summary": "The operator from the three papers above, implemented without restricting Q to a permutation or the coefficients to a uniform scalar. Convergence is governed by the spectral radius; the operator-norm condition the papers impose is stronger than it needs to be. 22 checks, including an example whose error swells to 11.8× before it converges, 51 more on the construction that repairs the broken argument, and 63 on a staged outlook that drops one assumption at a time.",
+      "doi": "10.5281/zenodo.24033459",
       "verify": "View on GitHub"
     }
   ],
