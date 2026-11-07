@@ -19,5 +19,6 @@
     "zero dependencies",
     "静的サイトジェネレータ",
     "研究者プロフィール"
-  ]
+  ],
+  "notes": "The tool was written with Claude Code (Anthropic) at the author's request. The author decided the design, reviewed the output and is responsible for it. Claude is not an author. The code is MIT."
 }
