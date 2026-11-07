@@ -22,9 +22,7 @@
       "supersedes": "10.5281/zenodo.17173703",
       "title": "The Trinity-Infinity Framework, Series I",
       "subtitle": "A Conceptual Model with Illustrative Applications in Game Theory, Mathematical Logic, and Mechanical Engineering",
-      "locations": [
-        { "name": "Sophaxis", "id": "2026.0006", "url": "https://sophaxis.vercel.app/abs/2026.0006.html" }
-      ],
+      "locations": [],
       "ja": {
         "version": "改訂版 — 2026年8月",
         "summary": "三要素の再帰作用素が一意の不動点へ幾何収束することを証明し、ゲーム理論・論理学・工学への接続を、証明済みの結果・既知の結果・類推に区別して示す。",
@@ -48,8 +46,7 @@
       "title": "The Trinity-Infinity Framework, Series II",
       "subtitle": "Extended Formalization and Further Illustrative Applications",
       "locations": [
-        { "name": "SSRN", "id": "10.2139/ssrn.7446961", "url": "https://doi.org/10.2139/ssrn.7446961" },
-        { "name": "Sophaxis", "id": "2026.0007", "url": "https://sophaxis.vercel.app/abs/2026.0007.html" }
+        { "name": "SSRN", "id": "10.2139/ssrn.7446961", "url": "https://doi.org/10.2139/ssrn.7446961" }
       ],
       "ja": {
         "version": "改訂版 — 2026年8月",
@@ -73,9 +70,7 @@
       "registerPrefix": "TI",
       "title": "The Trinity-Infinity Framework, Series III",
       "subtitle": "Beyond Three — A Generalization and Retrospective",
-      "locations": [
-        { "name": "Sophaxis", "id": "2026.0008", "url": "https://sophaxis.vercel.app/abs/2026.0008.html" }
-      ],
+      "locations": [],
       "ja": {
         "version": "2026年8月",
         "summary": "収束定理が三要素を必要としないこと（任意の n ≥ 2 で成立）を示し、この系列が何を確立し、何を撤回したかを回顧する。",
