@@ -215,3 +215,5 @@ MIT License
 
 なお、**生成されるページ側にはこの表示を入れていません**。生成物は利用者自身の
 プロフィールであり、その制作手段を勝手に表明すべきではないためです。
+
+責任の範囲は、[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)に定めています。
