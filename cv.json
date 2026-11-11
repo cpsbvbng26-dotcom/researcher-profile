@@ -302,6 +302,10 @@
       {
         "@type": "Person",
         "@id": "https://cpsbvbng26-dotcom.vercel.app/#person",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "ZEN大学"
+        },
         "name": "根本卓哉",
         "alternateName": "Takuya Nemoto",
         "url": "https://cpsbvbng26-dotcom.vercel.app/",

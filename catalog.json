@@ -255,8 +255,9 @@
       "resourceType": "Preprint",
       "registry": "Figshare",
       "startRepo": "trinity-operator",
-      "startNoteJa": "保守している版は trinity-operator の games のノート。学部一年次の成果の続きにあたる",
-      "startNoteEn": "The maintained version is the games note in trinity-operator; a continuation of first-year work"
+      "continues": "Trinity-Infinity",
+      "startNoteJa": "保守している版は trinity-operator の games のノート。Trinity-Infinity Framework の一部で、学部一年次の成果の続きにあたる（決めごと 15 が許す続き。利用者の決め、2026-11-11）",
+      "startNoteEn": "The maintained version is the games note in trinity-operator. It is part of the Trinity-Infinity Framework and a continuation of first-year work (a continuation rule 15 allows; the author's decision, 2026-11-11)"
     },
     {
       "id": "celibate-individual",
