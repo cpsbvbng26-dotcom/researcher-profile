@@ -313,6 +313,7 @@ function base(lang, file, otherFile, name, nameLatin, eyebrow, title, descriptio
     ogType: 'website',
     accent: SRC.accent, accentDark: SRC.accentDark,
     footer: SRC.footer,
+    footerSet: lang, updatedFrom: ['catalog.json'],
     taglineHtml: esc(tagline),
     asOf: SRC.asOf,
     labels: { eyebrow, verify: en ? 'Open' : '開く', skip: t.skip, themeToggle: t.theme },

@@ -32,6 +32,24 @@ const linkAttrs = (url) =>
 
 const arr = (v) => (Array.isArray(v) ? v : []);
 
+/** 中身が変わった日。**生成した日ではない。**
+ * 頁の中身の源（設定・重ねる設定・科目の表）を、git が最後に変えた日を取る。
+ * 源に未コミットの変更があれば、その日（UTC）を取る。git が無ければ null。 */
+function contentDate(files) {
+  const { execFileSync } = require('child_process');
+  const list = files.filter(Boolean).map((f) => path.resolve(f));
+  if (!list.length) return null;
+  const opt = { cwd: path.dirname(list[0]), encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] };
+  try {
+    const dirty = execFileSync('git', ['status', '--porcelain', '--', ...list], opt).trim();
+    if (dirty) return new Date().toISOString().slice(0, 10);
+    const d = execFileSync('git', ['log', '-1', '--format=%cs', '--', ...list], opt).trim();
+    return d || null;
+  } catch (e) {
+    return null;
+  }
+}
+
 /** 既定のラベル。profile.labels で個別に上書きできる */
 const DEFAULT_LABELS = {
   eyebrow: 'Profile',
@@ -164,7 +182,23 @@ function renderProfile(p) {
       + list
       + '</li>';
   }).join('\n');
-  const aims = arr(p.aims).map((a) => `      <li>${esc(a)}</li>`).join('\n');
+  /* 目標。**文字列なら一行ずつ、{ text, when, status } なら表にする。**
+   * 表にするのは、達成したかどうかの欄を置くためである（2026-11-11）。
+   * 何をもって達成とするかを同じ行に書く。書かなければ、欄はいつまでも埋まらない。 */
+  const aimList = arr(p.aims);
+  const aimRows = aimList.every((a) => a && typeof a === 'object');
+  const cols = arr(p.aimsStatusLabel);
+  const aims = !aimList.length ? ''
+    : aimRows
+      ? [
+          '      <table class="aims-table">',
+          `        <thead><tr><th scope="col">${esc(cols[0] || '')}</th><th scope="col">${esc(cols[1] || '')}</th><th scope="col">${esc(cols[2] || '')}</th></tr></thead>`,
+          '        <tbody>',
+          ...aimList.map((a) => `          <tr><td>${esc(a.text)}</td><td>${esc(a.when || '')}</td><td class="aim-status">${esc(a.status || '')}</td></tr>`),
+          '        </tbody>',
+          '      </table>'
+        ].join('\n')
+      : aimList.map((a) => `      <li>${esc(a)}</li>`).join('\n');
   return [
     /* section にしない。ヒーローの検査は最初の </section> で切るので、
      * 入れ子にすると査読前の断りがヒーローの外に出る。実際に一度そうなった。 */
@@ -188,13 +222,56 @@ function renderProfile(p) {
        公式の英語名を確かめられない言語版だけが持つ。 */
     p.coursesNoteHtml ? `      <p class="path-caveat">${p.coursesNoteHtml}</p>` : '',
     aims ? `      <p class="aims-label">${esc(p.aimsLabel || '')}</p>` : '',
-    aims ? '      <ul class="aims">' : '',
+    aims && !aimRows ? '      <ul class="aims">' : '',
     aims,
-    aims ? '      </ul>' : '',
+    aims && !aimRows ? '      </ul>' : '',
     '    </div>'
   ].filter((x) => x !== '').join('\n') + '\n';
 }
 
+
+/* 頁の下の欄に足す道。{ label, url } の並び。updatedLabel があれば、中身が変わった日も出す。 */
+function footerSet(profile) {
+  if (!profile.footerSet) return { links: [], updated: '' };
+  const all = JSON.parse(fs.readFileSync(path.join(ROOT, 'footer.json'), 'utf8'));
+  if (!all[profile.footerSet]) throw new Error('footer.json に無い言語です: ' + profile.footerSet);
+  return all[profile.footerSet];
+}
+
+function renderFooterExtra(profile) {
+  const set = footerSet(profile);
+  const links = arr(set.links).map((l) =>
+    `<a href="${esc(l.url)}"${linkAttrs(l.url)}>${esc(l.label)}</a>`);
+  if (set.updated) {
+    /* 源を設定が名指すときは、それを使う（論文の頁と目録は、設定を一時ファイルに書いて渡すため）。 */
+    const d = contentDate(profile.updatedFrom
+      ? arr(profile.updatedFrom).map((f) => path.join(ROOT, f))
+      : [CONFIG, process.env.PROFILE_OVERLAY, profile.coursesFile ? path.join(ROOT, profile.coursesFile) : null]);
+    if (d) links.push(`<span class="updated">${esc(set.updated)} <time datetime="${d}">${d}</time></span>`);
+  }
+  return links.length ? '\n    <span class="foot-links">' + links.join(' · ') + '</span>' : '';
+}
+
+/* 使っている部品の分だけ、スタイルを足す。**使わない頁のスタイルは一字一句前と同じ。**
+ * 予想のサイトは生成物を写して一字一句で照らしているので、ここで黙って変えない。 */
+function extraCss(profile) {
+  const out = [];
+  const aims = arr(profile.profile && profile.profile.aims);
+  if (aims.length && aims.every((a) => a && typeof a === 'object')) {
+    out.push('.aims-table { width: 100%; border-collapse: collapse; font-size: .85rem; line-height: 1.7; }',
+      '.aims-table th { text-align: left; font-weight: 600; color: var(--text); padding: .35rem .5rem .35rem 0; border-bottom: 1px solid var(--line); }',
+      '.aims-table td { color: var(--muted); padding: .45rem .5rem .45rem 0; border-bottom: 1px solid var(--line-soft); vertical-align: top; overflow-wrap: anywhere; }',
+      '.aims-table .aim-status { white-space: nowrap; color: var(--text); }');
+  }
+  if (profile.footerSet) {
+    out.push('.foot-links { display: flex; flex-wrap: wrap; gap: .25rem .4rem; }',
+      '.foot-links a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }');
+  }
+  if (profile.printCard) {
+    out.push('@media print {', '  @page { size: A4; margin: 12mm; }', '  html { font-size: 11pt; }', '  .hero { padding: 0; }', '  section, .cert, .links-group { break-inside: avoid; }', '}');
+  }
+  return out.length ? out.join('\n') + '\n' : '';
+}
 
 function renderPhotos(photo, note) {
   const list = (Array.isArray(photo) ? photo : [photo]).filter((x) => x && x.src);
@@ -811,6 +888,10 @@ function build() {
         + JSON.stringify(profile.jsonld, null, 2) + '\n</script>\n'
       : '')
     .replace(/{{FOOTER}}/g, esc(profile.footer || ''))
+    /* 頁の下の欄に、運営・連絡・免責への道と、中身が変わった日を置く（2026-11-11）。
+     * 設定に書いた頁だけに出す。書いていない頁の出力は、一字一句前と同じである。 */
+    .replace(/{{FOOTER_EXTRA}}/g, renderFooterExtra(profile))
+    .replace(/{{EXTRA_CSS}}/g, extraCss(profile))
     .replace(/{{SKIP}}/g, esc(labels.skip))
     .replace(/{{THEME_TOGGLE}}/g, esc(labels.themeToggle));
 

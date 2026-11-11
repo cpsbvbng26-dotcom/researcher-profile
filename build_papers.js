@@ -146,6 +146,7 @@ function pageConfig(p, lang) {
     accent: SRC.accent,
     accentDark: SRC.accentDark,
     footer: SRC.footer,
+    footerSet: lang, updatedFrom: ['papers.json'],
     identifiers: [
       { label: 'DOI', value: p.doi, url: doiUrl },
       { label: 'ORCID', value: SRC.orcid, url: 'https://orcid.org/' + SRC.orcid },
