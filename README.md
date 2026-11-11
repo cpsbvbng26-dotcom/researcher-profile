@@ -13,10 +13,10 @@
 道具です。
 
 - **依存パッケージなし** — Node.js だけで動きます。`npm install` は不要です
-- **外部リクエストゼロ** — 生成されるページは CDN もフォントも読み込まない
-- **論文の一覧** — DOI 付きのプレプリントや論文を、修了証と同じ形のカードで並べられる
-- **ライト / ダーク対応** — 端末の設定に従い、切り替えた選択は記憶される
-- **印刷にも対応** — そのまま PDF にして履歴書に添えられる
+- **外部リクエストゼロ** — 生成されるページは CDN もフォントも読み込みません
+- **論文の一覧** — DOI 付きのプレプリントや論文を、修了証と同じ形のカードで並べられます
+- **ライト / ダーク対応** — 端末の設定に従い、切り替えた選択は記憶されます
+- **印刷にも対応** — そのまま PDF にして履歴書に添えられます
 
 ## 使い方
 
@@ -30,12 +30,12 @@ node build.js
 # dist/index.html ができます
 ```
 
-生成物は `dist/` に出力される（`index.html` / `favicon.svg` / `.nojekyll`）。
+生成物は `dist/` に出力されます（`index.html` / `favicon.svg` / `.nojekyll`）。
 
 ## 公開する
 
 同梱の GitHub Actions が `main` への push で自動的にビルドし、GitHub Pages へ配信します。
-リポジトリの **Settings → Pages → Source** を **GitHub Actions** にすること。
+リポジトリの **Settings → Pages → Source** を **GitHub Actions** にします。
 
 ## 設定
 
@@ -80,7 +80,7 @@ node build.js
 
 ### 二つの必須
 
-`claim` に `refute` が無いと、`contact` に `criticism` が無いと、生成が止まる。
+`claim` に `refute` が無いと、`contact` に `criticism` が無いと、生成が止まります。
 
 反証の手順を書けない主張は、主張ではなく宣伝です。批判の宛先を先に書かない連絡先は、
 連絡先ではなく飾りです。どちらも、後から足せる注意書きではなく、書かなければ出ない形にしました。
@@ -100,7 +100,7 @@ node build.js
 }
 ```
 
-日本語以外で使う場合は、`lang` と `labels` を差し替えること。
+日本語以外で使う場合は、`lang` と `labels` を差し替えます。
 
 ### 設定の例
 
@@ -126,7 +126,7 @@ node build.js
 }
 ```
 
-`profile.json` には作者自身の設定が入っています。動作を確かめてから書き換えること。
+`profile.json` には作者自身の設定が入っています。動作を確かめてから書き換えます。
 
 ## 別の設定ファイルを使う
 
@@ -165,10 +165,10 @@ node verification/check_build.js
 単位を修得した科目は、`courses.json` に一行ずつ足します。
 手順は次の四つです。
 
-1. `courses.json` の該当する学校の `items` に一行足す（科目名・区分・単位・評価）
-2. `PROFILE_CONFIG=./site.json PROFILE_OUT=<cpsbvbng26-dotcom> node build.js` で日本語の頁を作り直す（英語・独仏伊も同じ形で）
-3. `cpsbvbng26-dotcom` で `node verification/update_readme_courses.js` を回し、README の学歴の欄を作り直す
-4. `cpsbvbng26-dotcom` で `node verification/update_csp.js` と `node verification/update_sitemap.js` を回す
+1. `courses.json` の該当する学校の `items` に一行足します（科目名・区分・単位・評価）
+2. `PROFILE_CONFIG=./site.json PROFILE_OUT=<cpsbvbng26-dotcom> node build.js` で日本語の頁を作り直します（英語・独仏伊も同じ形で）
+3. `cpsbvbng26-dotcom` で `node verification/update_readme_courses.js` を回し、README の学歴の欄を作り直します
+4. `cpsbvbng26-dotcom` で `node verification/update_csp.js` と `node verification/update_sitemap.js` を回します
 
 README と頁の科目の数は、`cpsbvbng26-dotcom` の検査が突き合わせます。
 
@@ -260,14 +260,14 @@ node build.js && node verification/check_build.js
 秘密情報と個人の連絡先も、`node verification/check_secrets.js` が push のたびに見ます。
 
 この道具の要は「設定ファイル 1 つ」であることで、裏を返すと設定が壊れても、変な HTML が出るまで気づけません。
-そこを落とす。
+そこを落とします。
 
 - `profile.json` の必須項目・入れ子の項目・色の書式（`#rrggbb`）・`siteUrl` が https であること・外部 URL に `http://` が混ざっていないこと
-- テンプレートの `{{印}}` が生成物に残っていないこと。 印を足して `build.js` を直し忘れると、ページに `{{FOO}}` がそのまま出ます。生成は成功したように見える
+- テンプレートの `{{印}}` が生成物に残っていないこと。印を足して `build.js` を直し忘れると、ページに `{{FOO}}` がそのまま出ます。生成は成功したように見えます
 - テンプレートの印を `build.js` がすべて扱っていること（生成する前に分かる）
-- 修了証・学習領域・リンクの件数が設定と一致すること。**設定に足したのに出ない、を拾う**
+- 修了証・学習領域・リンクの件数が設定と一致すること。**設定に足したのに出ない、を拾います**
 - 設定にあるすべての URL が生成物にあること
-- 自動で外部を取りに行く要素が無いこと。 この道具の売りなので、機械で守る
+- 自動で外部を取りに行く要素が無いこと。この道具の売りなので、機械で守ります
 - 検証の節を群に分けても、名乗る数を拾う行（`<dt>`）の形が変わらないこと
 - `scripts` に書いたファイルが頁に入り、CSP がそのハッシュで許していること。無いファイルや外のディレクトリを書けば生成が止まること
 - 見本の設定（`examples/minimal.json`）から頁が生成できること
@@ -302,12 +302,12 @@ MIT License
 | --- | --- | --- |
 | Claude Code（Anthropic） | `build.js`・`build_catalog.js`・`build_papers.js`・`templates/page.html`・`verification/` の実装、設定ファイルの文の起こし | 著者 |
 
+なお、**生成されるページ側にはこの表示を入れていません**。生成物は利用者自身の
+プロフィールであり、その制作手段を勝手に表明すべきではないためです。
+
 ## 安全の問題
 
 [SECURITY.md](SECURITY.md) にあります。
 誤りの知らせは、issue の「誤りの知らせ」の様式で受けます。
-
-なお、**生成されるページ側にはこの表示を入れていません**。生成物は利用者自身の
-プロフィールであり、その制作手段を勝手に表明すべきではないためです。
 
 責任の範囲は、[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)に定めています。
