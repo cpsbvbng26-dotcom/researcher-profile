@@ -386,19 +386,19 @@
       "url": "./cv.html"
     },
     {
-      "name": "EN",
+      "name": "English",
       "url": "./index.en.html"
     },
     {
-      "name": "DE",
+      "name": "Deutsch",
       "url": "./index.de.html"
     },
     {
-      "name": "FR",
+      "name": "Français",
       "url": "./index.fr.html"
     },
     {
-      "name": "IT",
+      "name": "Italiano",
       "url": "./index.it.html"
     }
   ],

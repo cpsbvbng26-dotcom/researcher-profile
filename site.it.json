@@ -84,15 +84,15 @@
       "url": "./index.html"
     },
     {
-      "name": "EN",
+      "name": "English",
       "url": "./index.en.html"
     },
     {
-      "name": "DE",
+      "name": "Deutsch",
       "url": "./index.de.html"
     },
     {
-      "name": "FR",
+      "name": "Français",
       "url": "./index.fr.html"
     }
   ],
