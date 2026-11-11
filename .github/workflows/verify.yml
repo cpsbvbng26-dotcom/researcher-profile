@@ -8,7 +8,7 @@ on:
 
 jobs:
   verify:
-    name: 設定と生成物 23 項目
+    name: 設定と生成物 51 項目
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

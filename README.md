@@ -1,5 +1,7 @@
 # researcher-profile
 
+種類：ソフトウェア　状態：改訂中
+
 [![検査](https://github.com/cpsbvbng26-dotcom/researcher-profile/actions/workflows/verify.yml/badge.svg)](https://github.com/cpsbvbng26-dotcom/researcher-profile/actions/workflows/verify.yml)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22335692.svg)](https://doi.org/10.5281/zenodo.22335692)
@@ -59,7 +61,7 @@ node build.js
 | `labels` | 見出しなどの文言。下記の既定値を個別に上書きできる |
 | `sections` | 節をどの順に出すか。書かなかった節は出ない。既定は `["credentials","areas","papers","links"]` |
 | `claim` | 主張。`statement` と **`refute`（どうすれば覆るか）** と `rows`。`refute` が無いと生成が止まる |
-| `verification` | 検証。`{ note, items: [{ name, detail }] }` |
+| `verification` | 検証。`{ note, items: [{ name, detail }] }`。`items` の代わりに `groups: [{ id, name, items }]` と書けば、作品の種類などの群ごとに見出しを置いて並べる |
 | `withdrawn` | 撤回。`{ note, items, recordUrl, recordLabel }`。消さずに残すための節である |
 | `contact` | 連絡。**`criticism`（批判・誤りの指摘の宛先）が必須**で、他の連絡先より前に出る |
 | `works` | 制作物。論文と同じカードの形である |
@@ -69,6 +71,8 @@ node build.js
 | `headExtra` | `<head>` にそのまま入れる行 |
 | `extraNav` | 手で書いたページへの導線。`{ name, url }` |
 | `taglineHtml` | `tagline` の HTML 版 |
+| `scripts` | 頁に入れるスクリプトのファイル名の配列。このリポジトリの直下に置いたファイルだけを読み、中身を頁に入れて CSP のハッシュで許す。外へは取りに行かない |
+| `asOf` | いつ時点の頁かを示す日付（`YYYY-MM-DD`）。頁の言語に合わせて書き直して出す |
 
 ### 二つの必須
 
@@ -126,6 +130,43 @@ node build.js
 PROFILE_CONFIG=./others/hanako.json PROFILE_OUT=./dist-hanako node build.js
 ```
 
+## 雛形として使う
+
+この道具は、ほかの人が自分のサイトを作る雛形として使えます。作者の設定（`profile.json` や `site.json`）を写す必要はありません。
+最小の見本は [`examples/minimal.json`](examples/minimal.json) にあります。主張と覆し方、批判の宛先まで入った、そのまま生成できる設定です。
+
+手順は次の五つです。
+
+1. このリポジトリを複製します。GitHub の Fork でも、`git clone` でも同じです。
+2. `examples/minimal.json` を写し、名前・識別子・論文・リンクを自分のものに書き換えます。項目は上の「設定」の表にあります。書かなかった節は出ません。
+3. `PROFILE_CONFIG=./自分の設定.json PROFILE_OUT=./dist node build.js` で生成します。
+4. `node verification/check_build.js` で、設定の形と生成物を確かめます。外へ取りに行く要素が混ざれば、ここで落ちます。
+5. `dist/` を GitHub Pages などに置きます。同梱の GitHub Actions は `main` への push で `profile.json` から生成して配信します。自分の設定を `profile.json` に置けば、そのまま使えます。
+
+決まりは二つだけです。主張を書くなら覆し方（`refute`）を、連絡を書くなら批判の宛先（`criticism`）を書きます。どちらも、無ければ生成が止まります。
+ライセンスは MIT です。写した先にも、`LICENSE` の権利表示を残します。
+
+```bash
+git clone https://github.com/cpsbvbng26-dotcom/researcher-profile.git
+cd researcher-profile
+cp examples/minimal.json mine.json      # 書き換える
+PROFILE_CONFIG=./mine.json PROFILE_OUT=./dist node build.js
+node verification/check_build.js
+```
+
+## 全作品の目録
+
+`catalog.json` から、作品を種類ごとに並べた目録の頁（日英）と、道具の一覧の頁（日英）と、同じ中身の JSON と BibTeX を作ります。
+作者のサイトの `catalog.html`・`tools.html`・`catalog.json`・`catalog.bib` は、ここから出ています。
+
+```bash
+CATALOG_OUT=../cpsbvbng26-dotcom node build_catalog.js
+```
+
+ライセンスの列は手で書きません。置いてあるリポジトリの LICENSE の置き方（`licenceLayout`）から出します。
+始めた時期の列も手で書きません。置いてあるリポジトリの最初のコミットの日付（`years.firstCommit`）から出します。
+どちらの表も、作者のサイトの横断の検査が、各リポジトリの実物と突き合わせます。
+
 ## 仕組み
 
 `build.js` が `profile.json` を読み、`templates/page.html` のプレースホルダを置き換えて
@@ -179,7 +220,7 @@ DOI が「この版を指す約束」であるのに対し、SWHID は**中身�
 node build.js && node verification/check_build.js
 ```
 
-依存パッケージはありません。push のたびに 23 項目を通します。
+依存パッケージはありません。push のたびに 51 項目を通します。
 
 この道具の要は「設定ファイル 1 つ」であることで、裏を返すと設定が壊れても、変な HTML が出るまで気づけません。
 そこを落とす。
@@ -190,6 +231,11 @@ node build.js && node verification/check_build.js
 - 修了証・学習領域・リンクの件数が設定と一致すること。**設定に足したのに出ない、を拾う**
 - 設定にあるすべての URL が生成物にあること
 - 自動で外部を取りに行く要素が無いこと。 この道具の売りなので、機械で守る
+- 検証の節を群に分けても、名乗る数を拾う行（`<dt>`）の形が変わらないこと
+- `scripts` に書いたファイルが頁に入り、CSP がそのハッシュで許していること。無いファイルや外のディレクトリを書けば生成が止まること
+- 見本の設定（`examples/minimal.json`）から頁が生成できること
+- 目録の生成で、頁四つと JSON と BibTeX が出て、JSON が設定の作品をすべて挙げること
+- この検査が名乗る件数が、README と CI の仕事の名前で実際と合うこと
 
 空振りでないことは確認済みです。色名を入れる、欄を消す、`http://` を混ぜる、領域を足したのに出ないようにする、テンプレートに新しい印を足す、外部 script を混ぜる —— 六通り壊して六通りとも落ちました。
 
