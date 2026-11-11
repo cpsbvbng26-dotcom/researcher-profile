@@ -332,6 +332,108 @@ if (cspMatch) {
   ok('ハッシュがページの中身と一致する', missing.length === 0, missing.length + ' 件が欠けている');
 }
 
+/* --------------------------------------------------- 3b. 作者のサイトの設定 */
+section('3b. 作者のサイトの設定（五言語の日付・目標・頁の下の欄・依存）');
+
+(() => {
+  const { execFileSync } = require('child_process');
+  const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
+  /* 中身が変わった日。build.js の contentDate と同じ決め方（未コミットなら今日）。 */
+  const dateOf = (f) => {
+    const opt = { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] };
+    try {
+      if (execFileSync('git', ['status', '--porcelain', '--', f], opt).trim()) return new Date().toISOString().slice(0, 10);
+      return execFileSync('git', ['log', '-1', '--format=%cs', '--', f], opt).trim() || null;
+    } catch (e) { return null; }
+  };
+
+  /* 373. **五つの言語を、同じ日に直す。**日本語だけ直して訳を置いていくと、
+   * 片方だけ古い頁が残る。最後に変えた日が一つでも違えば落とす。 */
+  const LANGS = { 'site.json': 'ja', 'site.en.json': 'en', 'site.de.json': 'de', 'site.fr.json': 'fr', 'site.it.json': 'it' };
+  const dates = Object.keys(LANGS).map((f) => [f, dateOf(f)]);
+  ok('トップの頁の五つの言語の設定を、同じ日に直している', dates.every(([, d]) => d && d === dates[0][1]),
+     dates.map(([f, d]) => f + ' ' + d).join(', '));
+
+  /* 374. **目標に、達成したかどうかの欄を置く。**何をもって達成とするかも同じ行に書く。 */
+  const STATUS = { ja: ['未達成', '達成'], en: ['Not achieved', 'Achieved'], de: ['Nicht erreicht', 'Erreicht'],
+                   fr: ['Non atteint', 'Atteint'], it: ['Non raggiunto', 'Raggiunto'] };
+  const aimBad = [];
+  Object.entries(LANGS).forEach(([f, l]) => {
+    const p = J(f).profile || {};
+    const a = Array.isArray(p.aims) ? p.aims : [];
+    if (a.length !== 2) aimBad.push(f + ' の目標が ' + a.length);
+    a.forEach((x, i) => {
+      if (!x || typeof x !== 'object' || !x.text || !x.when) aimBad.push(f + ' の ' + (i + 1) + ' つ目に、何をもって達成とするかが無い');
+      else if (!STATUS[l].includes(x.status)) aimBad.push(f + ' の ' + (i + 1) + ' つ目の状態が ' + x.status);
+    });
+    if (!Array.isArray(p.aimsStatusLabel) || p.aimsStatusLabel.length !== 3) aimBad.push(f + ' の表の見出し');
+  });
+  ok('五つの言語の目標が二つずつあり、達成とする時と状態の欄を持つ', aimBad.length === 0, aimBad.join(' / '));
+
+  /* 328・379. **頁の下の欄。**作者のサイトの頁は、運営（© の行）・連絡・免責への道と、
+   * 中身が変わった日を出す。連絡は GitHub の issue だけで、個人の連絡先を置かない。 */
+  const F = J('footer.json');
+  const setBad = ['ja', 'en', 'de', 'fr', 'it'].filter((l) => {
+    const s = F[l];
+    return !s || !s.updated || !Array.isArray(s.links) || s.links.length !== 2
+      || !/\/issues\/new\/choose$/.test(s.links[0].url) || !/\/DISCLAIMER(\.en)?\.md$/.test(s.links[1].url);
+  });
+  ok('頁の下の欄の組（footer.json）が、五言語とも連絡と免責の二つと日付の見出しを持つ', setBad.length === 0, setBad.join(', '));
+  ok('頁の下の欄に、メールアドレスも mailto も無い', !/mailto:|@[a-z0-9-]+\.[a-z]{2,}/i.test(JSON.stringify(F)));
+  const site = fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f) && !/^(profile|footer|catalog|papers|courses|package)/.test(f) && !/\.site\.json$/.test(f))
+    .filter((f) => { try { return /^https:\/\/cpsbvbng26-dotcom\.vercel\.app\//.test(J(f).siteUrl || ''); } catch (e) { return false; } });
+  const noSet = site.filter((f) => J(f).footerSet !== String(J(f).lang || 'ja').slice(0, 2));
+  ok('作者のサイトに出す設定（' + site.length + ' 本）が、頁の言語の欄の組を指す', site.length > 0 && noSet.length === 0, noSet.join(', '));
+
+  /* 生成して、欄と日付が実際に出ることを見る。日付は設定の中身が変わった日である。 */
+  const out = fs.mkdtempSync(path.join(require('os').tmpdir(), 'rp-foot-'));
+  let h = '';
+  try {
+    execFileSync(process.execPath, [path.join(ROOT, 'build.js')],
+      { env: Object.assign({}, process.env, { PROFILE_CONFIG: path.join(ROOT, 'site.json'), PROFILE_OUT: out }), stdio: 'pipe' });
+    h = fs.readFileSync(path.join(out, 'index.html'), 'utf8');
+  } catch (e) { h = ''; }
+  const foot = (/<footer>[\s\S]*?<\/footer>/.exec(h) || [''])[0];
+  const want = dateOf('site.json');
+  ok('トップの頁の下の欄に、運営・連絡・免責と、中身が変わった日がある',
+     foot.indexOf('© 2026 根本卓哉') >= 0 && foot.indexOf('/issues/new/choose') >= 0 && foot.indexOf('DISCLAIMER.md') >= 0
+     && foot.indexOf('<time datetime="' + want + '">') >= 0, '期待する日 ' + want);
+  ok('目標の表が、状態の欄つきで頁に出る', /<table class="aims-table">[\s\S]*?<td class="aim-status">未達成<\/td>/.test(h));
+
+  /* 378. 印刷して一枚に収める頁。 */
+  let card = '';
+  try {
+    execFileSync(process.execPath, [path.join(ROOT, 'build.js')],
+      { env: Object.assign({}, process.env, { PROFILE_CONFIG: path.join(ROOT, 'card.json'), PROFILE_OUT: out }), stdio: 'pipe' });
+    card = fs.readFileSync(path.join(out, 'index.html'), 'utf8');
+  } catch (e) { card = ''; }
+  fs.rmSync(out, { recursive: true, force: true });
+  ok('印刷向けの一頁（card.json）が生成でき、印刷の体裁を持つ', /@page \{ size: A4; margin: 12mm; \}/.test(card) && card.indexOf('0009-0000-1406-0547') >= 0);
+
+  /* 313. **依存を持たない。**package.json を置かず、require は Node.js の組み込みだけ。
+   * CI も何も入れない。足したら、ここが落ちる。 */
+  const BUILTIN = new Set(['fs', 'path', 'crypto', 'child_process', 'os', 'url', 'util']);
+  const js = [];
+  (function walk(d) {
+    fs.readdirSync(d, { withFileTypes: true }).forEach((e) => {
+      if (['.git', 'node_modules', 'dist'].includes(e.name)) return;
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) walk(p); else if (/\.js$/.test(e.name)) js.push(p);
+    });
+  })(ROOT);
+  const 外 = [];
+  js.forEach((p) => {
+    for (const m of fs.readFileSync(p, 'utf8').matchAll(/require\(\s*'([^']+)'\s*\)/g)) {
+      const name = m[1].replace(/^node:/, '');
+      if (!BUILTIN.has(name) && !name.startsWith('.')) 外.push(path.relative(ROOT, p) + ' → ' + m[1]);
+    }
+  });
+  const wf = fs.readdirSync(path.join(ROOT, '.github', 'workflows')).map((f) => fs.readFileSync(path.join(ROOT, '.github', 'workflows', f), 'utf8')).join('\n')
+    .split('\n').filter((l) => !/^\s*#/.test(l)).join('\n');
+  ok('依存を持たない（package.json が無く、require は組み込みだけで、CI が何も入れない）',
+     !fs.existsSync(path.join(ROOT, 'package.json')) && 外.length === 0 && !/npm (install|ci)|pip install/.test(wf), 外.join(', '));
+})();
+
 /* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */
 section('4. この検査が名乗る件数');
 (() => {
