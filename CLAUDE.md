@@ -165,3 +165,15 @@ PROFILE_CONFIG=./golden-window.en.json PROFILE_OVERLAY=./golden-window.site.json
 **`node build.js` を引数なしで回すと見本のほうが出る**。取り違えない。
 
 生成物を写したら、写した先で CSP と sitemap を入れ直す。
+
+**全作品の目録と道具の一覧もここから出ている。**`catalog.json` が唯一の出所である。
+
+```
+CATALOG_OUT=<cpsbvbng26-dotcom> node build_catalog.js   # catalog.html / catalog.en.html / tools.html / tools.en.html / catalog.json / catalog.bib
+```
+
+ライセンスの列は `licenceLayout`、始めた時期の列は `years.firstCommit` から出す。どちらも手で頁に書かない。
+DOI は doi-index.md と各リポジトリの CITATION.cff にある番号だけを書く。
+
+**黄金比の窓の図のスクリプトは `golden-window.js` である。**設定の `scripts` に名前を書くと、
+build.js が中身を頁に入れ、CSP のハッシュで許す。頁の側を手で直さない。

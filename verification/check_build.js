@@ -252,6 +252,64 @@ ok('知らない節名は生成が止まる',
      (html.match(/sha256-/g) || []).length >= 1);
 })();
 
+/* 検証の節を、作品の種類ごとに分けて出せること。分けないときの形は変えない。
+ * 名乗る数は <dt> から拾われているので、行の形は群に分けても同じにする。 */
+(() => {
+  const items = [{ name: 'A 1', detail: 'a' }, { name: 'B 2', detail: 'b' }, { name: 'C 3', detail: 'c' }];
+  const flat = buildWith({ ...BASE, sections: ['verification'], verification: { items } }, 'vflat');
+  const grouped = buildWith({ ...BASE, sections: ['verification'], verification: {
+    groups: [{ id: 'g-soft', name: '群一', items: items.slice(0, 2) }, { id: 'g-data', name: '群二', items: items.slice(2) }],
+  } }, 'vgroup');
+  const dts = (h) => [...h.matchAll(/<dt>([^<]*)<\/dt>/g)].map((m) => m[1]);
+  eq('検証を群に分けても、行（<dt>）は同じ順に同じ形で出る', dts(grouped), dts(flat));
+  const heads = [...grouped.matchAll(/<div class="group-name reveal" id="([^"]+)">([^<]*)<\/div>/g)].map((m) => m[1] + ':' + m[2]);
+  eq('群の見出しが、書いた順に出る', heads, ['g-soft:群一', 'g-data:群二']);
+  ok('群に分けないときは、群の見出しを出さない', flat.indexOf('<div class="group-name') < 0);
+  ok('群に分けても、ナビに検証が出る', /<a href="#verification">/.test(grouped));
+})();
+
+/* 頁に固有のスクリプトは、中身を頁に入れ、CSP はハッシュで許す。外へは取りに行かせない。 */
+(() => {
+  const html = buildWith({ ...BASE, scripts: ['golden-window.js'] }, 'script');
+  const code = fs.readFileSync(path.join(ROOT, 'golden-window.js'), 'utf8').replace(/\s+$/, '');
+  const sha = "'sha256-" + require('crypto').createHash('sha256').update('\n' + code + '\n', 'utf8').digest('base64') + "'";
+  ok('scripts に書いたファイルが、頁の中に入る', html.indexOf('<script>\n' + code + '\n</script>') >= 0);
+  ok('CSP が、そのスクリプトをハッシュで許している', html.indexOf(sha) >= 0);
+  ok('scripts の頁にも src のある script を出さない', !/<script[^>]+src=/.test(html));
+  ok('scripts に無いファイルを書くと生成が止まる', /scripts/.test(buildFails({ ...BASE, scripts: ['nonesuch.js'] }) || ''));
+  ok('scripts で外のディレクトリを指すと生成が止まる', /scripts/.test(buildFails({ ...BASE, scripts: ['../build.js'] }) || ''));
+})();
+
+/* 雛形として使うときの見本。README の手順のとおりに生成できること。 */
+(() => {
+  const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'examples', 'minimal.json'), 'utf8'));
+  let html = '';
+  try { html = buildWith(cfg, 'example'); } catch (e) { html = ''; }
+  ok('見本の設定（examples/minimal.json）から頁が生成できる', html.indexOf('<title>' + cfg.title + '</title>') >= 0);
+  ok('見本の設定の主張に、覆し方が書いてある', !!(cfg.claim && cfg.claim.refute) && html.indexOf(cfg.claim.refute) >= 0);
+})();
+
+/* 全作品の目録。catalog.json から、頁四つと JSON と BibTeX を作る。 */
+(() => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'rp-catalog-'));
+  let made = [];
+  try {
+    execFileSync(process.execPath, [path.join(ROOT, 'build_catalog.js')], {
+      env: { ...process.env, CATALOG_OUT: dir }, stdio: 'pipe' });
+    made = fs.readdirSync(dir).sort();
+  } catch (e) { made = []; }
+  eq('目録の生成で、頁四つと JSON と BibTeX が出る', made,
+     ['catalog.bib', 'catalog.en.html', 'catalog.html', 'catalog.json', 'tools.en.html', 'tools.html']);
+  const src = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
+  let out = null;
+  try { out = JSON.parse(fs.readFileSync(path.join(dir, 'catalog.json'), 'utf8')); } catch (e) { out = null; }
+  ok('目録の JSON が、設定の作品をすべて挙げる', out !== null && out.works.length === src.works.length
+     && src.works.every((w) => out.works.some((x) => x.id === w.id)));
+  const dois = src.works.filter((w) => w.doi).map((w) => w.doi);
+  ok('DOI は設定に書いた番号だけで、重ならない', new Set(dois).size === dois.length
+     && dois.every((d) => /^10\.\d{4,9}\/\S+$/.test(d)));
+})();
+
 /* --------------------------------------------------- 3. CSP */
 section('3. Content-Security-Policy');
 
@@ -273,6 +331,21 @@ if (cspMatch) {
     .filter((h) => csp.indexOf(h) < 0);
   ok('ハッシュがページの中身と一致する', missing.length === 0, missing.length + ' 件が欠けている');
 }
+
+/* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */
+section('4. この検査が名乗る件数');
+(() => {
+  const total = pass + failures.length + 1;
+  const claims = [
+    ['README.md', /push のたびに (\d+) 項目を通します/],
+    ['.github/workflows/verify.yml', /設定と生成物 (\d+) 項目/],
+  ];
+  const wrong = claims.map(([f, re]) => {
+    const m = re.exec(fs.readFileSync(path.join(ROOT, f), 'utf8'));
+    return m && Number(m[1]) === total ? null : f + ' が ' + (m ? m[1] : '名乗っていない');
+  }).filter(Boolean);
+  ok('この検査が名乗る件数が実際と合う', wrong.length === 0, '実際 ' + total + (wrong.length ? ' / ' + wrong.join(', ') : ''));
+})();
 
 console.log('\n' + '-'.repeat(56));
 if (failures.length) {

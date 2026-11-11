@@ -431,10 +431,21 @@ ${claim.foot ? `\n      <p class="claim-foot">${claim.footHtml || esc(claim.foot
   </section>`;
 }
 
-/* 検証 —— 何項目がどこで走るか。数だけ書いて中身が無いものは出さない。 */
+/* 検証 —— 何項目がどこで走るか。数だけ書いて中身が無いものは出さない。
+ *
+ * **作品の種類ごとに分けて出せる。**groups を書けば、群ごとに見出しを置いて並べる。
+ * どの作品のどの主張を、どの検査が支えているかを、種類で辿れるようにする。
+ * 行の形（<dt> と <dd>）は分けないときと同じにする。名乗る数は <dt> から拾われている。 */
+function verificationGroups(v) {
+  if (!v) return [];
+  if (arr(v.groups).length) return arr(v.groups).filter((g) => arr(g.items).length);
+  return arr(v.items).length ? [{ items: arr(v.items) }] : [];
+}
+
 function renderVerification(v, labels) {
-  if (!v || !arr(v.items).length) return '';
-  const rows = arr(v.items)
+  const groups = verificationGroups(v);
+  if (!groups.length) return '';
+  const facts = (items) => arr(items)
     .map((i) => [
       '      <div class="fact">',
       `        <dt>${esc(i.name)}</dt>`,
@@ -442,6 +453,13 @@ function renderVerification(v, labels) {
       '      </div>',
     ].join('\n'))
     .join('\n');
+  const body = groups.map((g) => [
+    g.name ? `    <div class="group-name reveal"${g.id ? ` id="${esc(g.id)}"` : ''}>${esc(g.name)}</div>` : '',
+    g.note ? `    <p class="hint reveal">${g.noteHtml || esc(g.note)}</p>` : '',
+    '    <div class="facts reveal">',
+    facts(g.items),
+    '    </div>',
+  ].filter(Boolean).join('\n')).join('\n\n');
   return `
   <hr class="rule">
 
@@ -451,9 +469,7 @@ function renderVerification(v, labels) {
       ${v.note ? `<p>${esc(v.note)}</p>` : ''}
     </div>
 
-    <div class="facts reveal">
-${rows}
-    </div>
+${body}
   </section>`;
 }
 
@@ -633,7 +649,7 @@ function renderNav(profile, labels) {
     works: () => arr(profile.works).length,
     links: () => arr(profile.links).length,
     claim: () => !!(profile.claim && profile.claim.statement),
-    verification: () => !!(profile.verification && arr(profile.verification.items).length),
+    verification: () => verificationGroups(profile.verification).length > 0,
     withdrawn: () => !!(profile.withdrawn && arr(profile.withdrawn.items).length),
     contact: () => !!profile.contact,
   };
@@ -806,6 +822,20 @@ function build() {
    * PhilArchive の見出しごと落ちていた。**引用であることが消える。**
    * translate="no" は標準の属性、notranslate は Google の翻訳が見る印である。 */
   html = html.replace(/<code>/g, '<code translate="no" class="notranslate">');
+
+  /* 頁に固有のスクリプト。**外のファイルを読みに行かせない。**中身を頁に入れ、
+   * CSP はその中身のハッシュで許す（withCSP）。'unsafe-inline' は使わない。
+   * 出所は researcher-profile の中のファイルで、設定には名前だけを書く。
+   * 手で頁に書き足すと、次の生成で消える。 */
+  arr(profile.scripts).forEach((name) => {
+    const file = path.join(ROOT, name);
+    if (path.dirname(path.resolve(file)) !== ROOT || !fs.existsSync(file)) {
+      throw new Error('scripts に書いたファイルがありません（researcher-profile の直下に置きます）: ' + name);
+    }
+    const code = fs.readFileSync(file, 'utf8');
+    if (/<\/script/i.test(code)) throw new Error('scripts の中身に </script> があります: ' + name);
+    html = html.replace(/<\/body>/, '<script>\n' + code.replace(/\s+$/, '') + '\n</script>\n</body>');
+  });
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   fs.writeFileSync(path.join(OUT_DIR, 'index.html'), withCSP(html));

@@ -1,0 +1,35 @@
+{
+  "name": "山田花子",
+  "nameLatin": "HANAKO YAMADA",
+  "initials": "HY",
+  "lang": "ja",
+  "title": "山田花子 | Hanako Yamada",
+  "description": "山田花子の研究者プロフィール。",
+  "tagline": "言語学を研究しています。",
+  "siteUrl": "https://example.org/",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 山田花子",
+  "identifiers": [
+    { "label": "ORCID", "value": "0000-0000-0000-0000", "url": "https://orcid.org/0000-0000-0000-0000" }
+  ],
+  "sections": ["claim", "papers", "areas", "links", "contact"],
+  "claim": {
+    "statement": "この方言では、二つの母音の区別が失われつつある。",
+    "refute": "同じ地域の若い話者から、二つの母音を区別して発音する録音を十分な数だけ集めれば覆る。"
+  },
+  "papers": [
+    { "title": "論文の題", "summary": "一行の要約", "doi": "10.0000/example", "url": "https://doi.org/10.0000/example" }
+  ],
+  "areas": [
+    { "name": "音韻論", "detail": "方言の母音体系" }
+  ],
+  "links": [
+    { "name": "研究者プロフィール", "items": [{ "name": "ORCID", "url": "https://orcid.org/0000-0000-0000-0000" }] }
+  ],
+  "contact": {
+    "criticism": "誤りの指摘は、GitHub の issue で受け付けます。",
+    "others": [{ "name": "そのほか", "detail": "ORCID の頁にある連絡先" }]
+  },
+  "labels": { "papers": "論文", "areas": "領域", "links": "リンク" }
+}
