@@ -73,6 +73,10 @@ node build.js
 | `taglineHtml` | `tagline` の HTML 版 |
 | `scripts` | 頁に入れるスクリプトのファイル名の配列。このリポジトリの直下に置いたファイルだけを読み、中身を頁に入れて CSP のハッシュで許す。外へは取りに行かない |
 | `asOf` | いつ時点の頁かを示す日付（`YYYY-MM-DD`）。頁の言語に合わせて書き直して出す |
+| `profile.aims` | 目標。文字列の配列なら一行ずつ並ぶ。`{ text, when, status }` の配列なら、達成とする時と状態の欄を持つ表になる。表の見出しは `profile.aimsStatusLabel`（三つ） |
+| `footerSet` | 頁の下の欄に足す組の名（`footer.json` の `ja`・`en`・`de`・`fr`・`it`）。連絡と免責への道と、中身が変わった日を出す。書かなければ何も足さない |
+| `updatedFrom` | 中身が変わった日を取る源のファイル。既定は設定ファイルそのものと `coursesFile` |
+| `printCard` | 印刷して一枚に収める体裁（A4、余白 12mm）を足す |
 
 ### 二つの必須
 
@@ -154,6 +158,38 @@ PROFILE_CONFIG=./mine.json PROFILE_OUT=./dist node build.js
 node verification/check_build.js
 ```
 
+## 作者のサイトの決まった手順
+
+### 学期ごとに科目を足す
+
+単位を修得した科目は、`courses.json` に一行ずつ足します。
+手順は次の四つです。
+
+1. `courses.json` の該当する学校の `items` に一行足す（科目名・区分・単位・評価）
+2. `PROFILE_CONFIG=./site.json PROFILE_OUT=<cpsbvbng26-dotcom> node build.js` で日本語の頁を作り直す（英語・独仏伊も同じ形で）
+3. `cpsbvbng26-dotcom` で `node verification/update_readme_courses.js` を回し、README の学歴の欄を作り直す
+4. `cpsbvbng26-dotcom` で `node verification/update_csp.js` と `node verification/update_sitemap.js` を回す
+
+README と頁の科目の数は、`cpsbvbng26-dotcom` の検査が突き合わせます。
+
+### 五つの言語を同じ日に直す
+
+トップの頁の設定は、`site.json`・`site.en.json`・`site.de.json`・`site.fr.json`・`site.it.json` の五つです。
+一つを直したら、同じ日に残りの四つも直します。
+最後に変えた日が一つでも違えば、`verification/check_build.js` が落ちます。
+
+### 頁の下の欄と、中身が変わった日
+
+頁の下の欄に出す連絡と免責への道は、`footer.json` 一つが持ちます。
+連絡は GitHub の issue だけで、個人の連絡先は置きません。
+「最終更新」の日は、生成した日ではありません。
+頁の源（設定と科目の表）を git が最後に変えた日です。
+
+### 印刷向けの一頁
+
+`card.json` から、名刺の代わりに印刷する一頁（`card.html`）を作ります。
+ファイルを配るのではなく、頁をそのまま印刷する体裁です。
+
 ## 全作品の目録
 
 `catalog.json` から、作品を種類ごとに並べた目録の頁（日英）と、道具の一覧の頁（日英）と、同じ中身の JSON と BibTeX を作ります。
@@ -220,7 +256,8 @@ DOI が「この版を指す約束」であるのに対し、SWHID は**中身�
 node build.js && node verification/check_build.js
 ```
 
-依存パッケージはありません。push のたびに 51 項目を通します。
+依存パッケージはありません。push のたびに 60 項目を通します。
+秘密情報と個人の連絡先も、`node verification/check_secrets.js` が push のたびに見ます。
 
 この道具の要は「設定ファイル 1 つ」であることで、裏を返すと設定が壊れても、変な HTML が出るまで気づけません。
 そこを落とす。
@@ -258,6 +295,17 @@ MIT License
 | どのコミットが支援を受けたものか | `git log --author=Claude` |
 | 各コミットに紐づく作業セッション | コミットメッセージ末尾の `Claude-Session:` トレーラ |
 | 共同作成の記録 | コミットメッセージ末尾の `Co-authored-by:` トレーラ |
+
+言語モデルの使い方を、全リポジトリで同じ形の表にしています。
+
+| 道具 | 使ったところ | 確かめた人 |
+| --- | --- | --- |
+| Claude Code（Anthropic） | `build.js`・`build_catalog.js`・`build_papers.js`・`templates/page.html`・`verification/` の実装、設定ファイルの文の起こし | 著者 |
+
+## 安全の問題
+
+[SECURITY.md](SECURITY.md) にあります。
+誤りの知らせは、issue の「誤りの知らせ」の様式で受けます。
 
 なお、**生成されるページ側にはこの表示を入れていません**。生成物は利用者自身の
 プロフィールであり、その制作手段を勝手に表明すべきではないためです。
