@@ -32,6 +32,8 @@
   ],
   "extraNav": [
     { "name": "トップ", "url": "./index.html" },
+    { "name": "作用素", "url": "./trinity.html" },
+    { "name": "ノート", "url": "./notes/index.html" },
     { "name": "CV", "url": "./cv.html" }
   ],
   "labels": {
