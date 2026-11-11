@@ -1,0 +1,38 @@
+{
+  "_": "頁の下の欄に足す道（連絡・免責）と、中身が変わった日の見出し。設定の footerSet に言語の名を書いた頁にだけ出す。運営者は footer の欄（© の行）が名乗る。連絡先は GitHub の issue だけで、個人の連絡先は置かない（決めごと 9）。",
+  "ja": {
+    "links": [
+      { "label": "連絡（GitHub の issue）", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/issues/new/choose" },
+      { "label": "免責事項", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md" }
+    ],
+    "updated": "最終更新"
+  },
+  "en": {
+    "links": [
+      { "label": "Contact (GitHub issues)", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/issues/new/choose" },
+      { "label": "Disclaimer", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md" }
+    ],
+    "updated": "Last changed"
+  },
+  "de": {
+    "links": [
+      { "label": "Kontakt (GitHub-Issues)", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/issues/new/choose" },
+      { "label": "Haftungsausschluss (englisch)", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md" }
+    ],
+    "updated": "Zuletzt geändert"
+  },
+  "fr": {
+    "links": [
+      { "label": "Contact (issues GitHub)", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/issues/new/choose" },
+      { "label": "Avertissement (en anglais)", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md" }
+    ],
+    "updated": "Dernière modification"
+  },
+  "it": {
+    "links": [
+      { "label": "Contatti (issue su GitHub)", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/issues/new/choose" },
+      { "label": "Esclusione di responsabilità (in inglese)", "url": "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md" }
+    ],
+    "updated": "Ultima modifica"
+  }
+}

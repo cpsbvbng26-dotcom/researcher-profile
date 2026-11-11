@@ -1,0 +1,41 @@
+{
+  "name": "根本卓哉",
+  "nameLatin": "TAKUYA NEMOTO",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "一頁の紹介 | 根本卓哉",
+  "description": "名刺の代わりに印刷する一頁。名前、ORCID、所属、取り組んでいること、所在。",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/card.html",
+  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
+  "twitterCard": "summary",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "footerSet": "ja",
+  "printCard": true,
+  "identifiers": [
+    { "label": "ORCID", "value": "0009-0000-1406-0547", "url": "https://orcid.org/0009-0000-1406-0547" }
+  ],
+  "tagline": "ZEN大学 知能情報社会学部 知能情報社会学科の学部生です。哲学とゲーム理論を、言語モデルの助けを借りて独学しています。公開しているのは、いずれも査読を受けていないプレプリントです。印刷すると一枚に収まる頁です。",
+  "sections": ["links"],
+  "links": [
+    {
+      "name": "所在",
+      "items": [
+        { "name": "サイト", "note": "cpsbvbng26-dotcom.vercel.app", "url": "https://cpsbvbng26-dotcom.vercel.app/" },
+        { "name": "GitHub", "note": "github.com/cpsbvbng26-dotcom", "url": "https://github.com/cpsbvbng26-dotcom" },
+        { "name": "ORCID", "note": "0009-0000-1406-0547", "url": "https://orcid.org/0009-0000-1406-0547" },
+        { "name": "researchmap", "note": "researchmap.jp/takuyanemoto", "url": "https://researchmap.jp/takuyanemoto" },
+        { "name": "作品の目録", "note": "種類ごとの一覧と DOI", "url": "https://cpsbvbng26-dotcom.vercel.app/catalog.html" }
+      ]
+    }
+  ],
+  "extraNav": [
+    { "name": "トップ", "url": "./index.html" },
+    { "name": "CV", "url": "./cv.html" }
+  ],
+  "labels": {
+    "eyebrow": "Card",
+    "links": "所在"
+  }
+}
