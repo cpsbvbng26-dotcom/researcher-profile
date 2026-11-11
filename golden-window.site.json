@@ -6,7 +6,6 @@
   "twitterCard": "summary",
   "favicon": "./favicon.svg",
   "footer": "© 2026 Takuya Nemoto · CC BY 4.0",
-  "footerSet": null,
   "extraNav": [
     { "name": "Paper", "url": "https://doi.org/10.6084/m9.figshare.34419198" },
     { "name": "Code", "url": "https://github.com/cpsbvbng26-dotcom/trinity-operator/tree/main/games" },
