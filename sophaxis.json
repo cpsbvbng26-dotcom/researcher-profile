@@ -27,6 +27,7 @@
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
+  "footerSet": "ja",
   "taglineHtml": "リポジトリに置かれた稿を、モデレーションのうえで載せるプレプリントサーバーです。査読ではありません。",
   "sections": [
     "about",

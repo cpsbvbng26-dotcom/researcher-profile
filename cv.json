@@ -11,6 +11,7 @@
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
+  "footerSet": "ja",
   "identifiers": [
     {
       "label": "ORCID",
@@ -20,7 +21,7 @@
   ],
   "coursesFile": "courses.json",
   "coursesSection": true,
-  "tagline": "修了証・学習領域・外部プロフィールです。「独立研究者」は分かりやすさのための仮の肩書きで、実際には一学部生です。ここは経歴の置き場で、主張の置き場ではありません。主張と検証は トップ にあります。",
+  "tagline": "修了証・学習領域・外部プロフィールです。本人は一学部生です。肩書きは名乗っていません。ここは経歴の置き場で、主張の置き場ではありません。主張と検証は トップ にあります。",
   "sections": [
     "credentials",
     "courses",
