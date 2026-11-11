@@ -400,6 +400,20 @@ section('3b. 作者のサイトの設定（五言語の日付・目標・頁の�
      && foot.indexOf('<time datetime="' + want + '">') >= 0, '期待する日 ' + want);
   ok('目標の表が、状態の欄つきで頁に出る', /<table class="aims-table">[\s\S]*?<td class="aim-status">未達成<\/td>/.test(h));
 
+  /* 所属は「ZEN大学」／「ZEN University」だけを書く。肩書きでは書かない（決めごと 6、2026-11-11）。 */
+  const 所属 = [];
+  ['site.json', 'site.en.json', 'cv.json'].forEach((f) => {
+    const g = ((J(f).jsonld || {})['@graph'] || []).find((x) => x['@type'] === 'Person');
+    const a = g && g.affiliation;
+    if (!a || !/^ZEN(大学| University)$/.test(a.name)) 所属.push(f);
+  });
+  const 所属文 = ['build_papers.js', 'build_catalog.js'].filter((f) =>
+    fs.readFileSync(path.join(ROOT, f), 'utf8').indexOf("affiliation: { '@type': 'CollegeOrUniversity', name: 'ZEN University' }") < 0);
+  const 独立 = fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f))
+    .filter((f) => /"(affiliation|jobTitle)"[^}]*[Ii]ndependent/.test(fs.readFileSync(path.join(ROOT, f), 'utf8')));
+  ok('構造化データの所属が ZEN大学／ZEN University で、Independent の所属も肩書きも無い',
+     所属.length === 0 && 所属文.length === 0 && 独立.length === 0, 所属.concat(所属文, 独立).join(', '));
+
   /* 378. 印刷して一枚に収める頁。 */
   let card = '';
   try {
