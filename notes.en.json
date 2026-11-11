@@ -25,7 +25,7 @@
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
-  "taglineHtml": "The core of this site is <a href=\"./../index.en.html\">the Trinity-Infinity convergence theorem and its verification</a>. Everything not placed in the core is collected here. <strong>None of it has been discarded.</strong> The DOIs and the repositories are live. Certificates, areas of study and external profiles are in <a href=\"./../cv.html\">CV</a>. <strong>Nothing here has been peer reviewed either.</strong>",
+  "taglineHtml": "The core of this site is <a href=\"./../index.en.html\">auditing, by machine, what I have already published</a>. The three Trinity-Infinity papers are what it was applied to. Everything not placed in the core is collected here. <strong>None of it has been discarded.</strong> The DOIs and the repositories are live. Certificates, areas of study and external profiles are in <a href=\"./../cv.html\">CV</a>. <strong>Nothing here has been peer reviewed either.</strong>",
   "sections": [
     "papers",
     "works"
@@ -376,7 +376,7 @@
     "papers": "Papers outside the core",
     "papersNote": "Three papers in philosophy, and a source note from a naval gazette.",
     "works": "Works outside the core",
-    "worksNote": "Repositories not directly part of the core, and the tools on this site."
+    "worksNote": "Repositories not directly part of the core."
   },
   "favicon": "./../favicon.svg"
 }
