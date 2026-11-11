@@ -25,6 +25,7 @@
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
+  "footerSet": "ja",
   "taglineHtml": "このサイトの核は <a href=\"./../index.html\">自分が公開したものを、あとから機械で監査すること</a>です。Trinity-Infinity の三篇はその対象です。核に置かなかったものを、ここに集めています。<strong>捨てたのではありません。</strong>DOI も GitHub も生きています。修了証・学習領域・外部プロフィールは <a href=\"./../cv.html\">CV</a> にあります。<strong>ここにあるものも、査読を受けていません。</strong>",
   "sections": [
     "papers",
@@ -182,6 +183,10 @@
     {
       "name": "CV",
       "url": "./../cv.html"
+    },
+    {
+      "name": "English",
+      "url": "./index.en.html"
     }
   ],
   "jsonld": {

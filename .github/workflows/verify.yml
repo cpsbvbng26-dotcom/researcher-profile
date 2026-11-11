@@ -6,13 +6,20 @@ on:
   pull_request:
   workflow_dispatch:
 
+# 読むだけでよい。書き込む仕事は無い。
+permissions:
+  contents: read
+
 jobs:
   verify:
-    name: 設定と生成物 51 項目
+    name: 設定と生成物 61 項目
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          # 五つの言語の設定を同じ日に直したかを、git の記録で見る。履歴が要る。
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: 22
       # 依存パッケージなし。npm install は要らない。
@@ -22,3 +29,7 @@ jobs:
         run: node build.js
       - name: 設定と生成物
         run: node verification/check_build.js
+      - name: 秘密情報と個人の連絡先
+        run: node verification/check_secrets.js
+      - name: 秘密情報の検査を壊して確かめる
+        run: node verification/check_secrets.js --break

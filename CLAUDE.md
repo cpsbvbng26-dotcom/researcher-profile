@@ -177,3 +177,8 @@ DOI は doi-index.md と各リポジトリの CITATION.cff にある番号だけ
 
 **黄金比の窓の図のスクリプトは `golden-window.js` である。**設定の `scripts` に名前を書くと、
 build.js が中身を頁に入れ、CSP のハッシュで許す。頁の側を手で直さない。
+
+**頁の下の欄（連絡・免責・最終更新）は `footer.json` が持つ。**設定の `footerSet` に言語の名を書いた頁にだけ出る。
+最終更新の日は、源の設定を git が最後に変えた日である。予想のサイトにも出るので、設定を直したら
+`trinity-operator/site/index.html` も作り直して写す（横断の検査が一字一句で照らす）。
+`card.json` は印刷向けの一頁（`card.html`）。トップの五言語の設定は同じ日に直す（`check_build.js` が見る）。

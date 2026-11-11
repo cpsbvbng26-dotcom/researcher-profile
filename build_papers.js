@@ -146,6 +146,7 @@ function pageConfig(p, lang) {
     accent: SRC.accent,
     accentDark: SRC.accentDark,
     footer: SRC.footer,
+    footerSet: lang, updatedFrom: ['papers.json'],
     identifiers: [
       { label: 'DOI', value: p.doi, url: doiUrl },
       { label: 'ORCID', value: SRC.orcid, url: 'https://orcid.org/' + SRC.orcid },
@@ -184,6 +185,7 @@ function pageConfig(p, lang) {
           author: {
             '@type': 'Person',
             name: 'Takuya Nemoto',
+            affiliation: { '@type': 'CollegeOrUniversity', name: 'ZEN University' },
             alternateName: '根本卓哉',
             identifier: 'https://orcid.org/' + SRC.orcid,
             url: 'https://orcid.org/' + SRC.orcid,

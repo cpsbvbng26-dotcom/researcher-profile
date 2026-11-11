@@ -45,7 +45,7 @@ const L = {
     tagline: '作品を種類ごとに並べます。各行に、状態・DOI・正の所在・ライセンス・Zenodo の資源の種類・始めた時期を置きます。'
       + 'どの作品も査読を受けていません。DOI があることは、査読を受けたことを意味しません。',
     cols: ['題', '種類', '状態', 'DOI', '正の所在', 'ライセンス', 'Zenodo の種類', '始めた時期'],
-    year1: '学部一年次', year2: '学部二年次', yearUnknown: '—（確かめていない）',
+    year1: '学部一年次', year2: '学部二年次', yearUnknown: '—（確かめていない）', year1Cont: '学部一年次の成果（{}）の続き',
     rulesYear: '始めた時期は、作品を置いたリポジトリの最初のコミットの日付から出しています。学部二年次は 2026 年 10 月からです。',
     concept: '全版', also: '別の所在',
     noRepo: '—（リポジトリに置いていない）',
@@ -77,7 +77,7 @@ const L = {
     tagline: 'The works, by type. Each row gives the status, DOI, canonical location, licence, Zenodo resource type and the period in which it was begun. '
       + 'None of the works has been peer-reviewed. A DOI does not imply peer review.',
     cols: ['Title', 'Type', 'Status', 'DOI', 'Canonical location', 'Licence', 'Zenodo resource type', 'Begun'],
-    year1: 'First undergraduate year', year2: 'Second undergraduate year', yearUnknown: '— (not checked)',
+    year1: 'First undergraduate year', year2: 'Second undergraduate year', yearUnknown: '— (not checked)', year1Cont: 'Continuation of first-year work ({})',
     rulesYear: 'The period begun is taken from the first commit of the repository that holds the work. The second undergraduate year began in October 2026.',
     concept: 'all versions', also: 'also',
     noRepo: '— (not in a repository)',
@@ -172,7 +172,8 @@ function begunOf(w) {
   const period = date ? (date < Y.secondYearFrom ? 'first' : 'second') : null;
   return { date, basis, period };
 }
-const begunText = (w, t) => { const b = begunOf(w); return b.period === 'first' ? t.year1 : b.period === 'second' ? t.year2 : t.yearUnknown; };
+/* 学部一年次の成果の続き（決めごと 15 が許すもの）は、その旨を名指す。黄金比の窓の予想は Trinity-Infinity の続きである。 */
+const begunText = (w, t) => { const b = begunOf(w); if (b.period === 'first' && w.continues) return t.year1Cont.replace('{}', w.continues); return b.period === 'first' ? t.year1 : b.period === 'second' ? t.year2 : t.yearUnknown; };
 
 /* ------------------------------------------------------------ 表 */
 
@@ -246,6 +247,7 @@ const ICONS = [
 const PERSON = {
   '@type': 'Person',
   '@id': SRC.base + '#person',
+  affiliation: { '@type': 'CollegeOrUniversity', name: 'ZEN University' },
   name: 'Takuya Nemoto',
   alternateName: '根本卓哉',
   identifier: 'https://orcid.org/' + SRC.orcid,
@@ -313,6 +315,7 @@ function base(lang, file, otherFile, name, nameLatin, eyebrow, title, descriptio
     ogType: 'website',
     accent: SRC.accent, accentDark: SRC.accentDark,
     footer: SRC.footer,
+    footerSet: lang, updatedFrom: ['catalog.json'],
     taglineHtml: esc(tagline),
     asOf: SRC.asOf,
     labels: { eyebrow, verify: en ? 'Open' : '開く', skip: t.skip, themeToggle: t.theme },

@@ -27,6 +27,7 @@
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
+  "footerSet": "en",
   "taglineHtml": "An unproved conjecture about one segment of payoffs in one three-player game. Proved: what happens below the window, at its lower end and from <code>2/3</code> up, and that the set inside the window has positive dimension. Open: whether that set has length zero, and how its dimension behaves. For those, the evidence is numerical only.",
   "sections": [
     "state",
