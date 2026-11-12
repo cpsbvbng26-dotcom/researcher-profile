@@ -49,7 +49,7 @@ const L = {
     rulesYear: '始めた時期は、作品を置いたリポジトリの最初のコミットの日付から出しています。学部二年次は 2026 年 10 月からです。',
     concept: '全版', also: '別の所在',
     noRepo: '—（リポジトリに置いていない）',
-    mit: 'MIT（全体）', split: 'CC BY 4.0（文書）・MIT（コード）', splitText: 'CC BY 4.0（文書と論文）',
+    mit: 'MIT（全体）', mitExcept: 'MIT（ただし {dirs} は CC BY 4.0）', dirSep: '・', split: 'CC BY 4.0（文書）・MIT（コード）', splitText: 'CC BY 4.0（文書と論文）',
     noType: '—', notZenodo: '—（Zenodo に無い）', figshare: '（Figshare）', noDoi: '—（DOI を持たない）',
     dataTitle: '機械で読む形と、列の決め方', dataNav: '機械で読む形',
     dataNote: '同じ中身を、JSON と BibTeX でも配っています。',
@@ -82,7 +82,7 @@ const L = {
     rulesYear: 'The period begun is taken from the first commit of the repository that holds the work. The second undergraduate year began in October 2026.',
     concept: 'all versions', also: 'also',
     noRepo: '— (not in a repository)',
-    mit: 'MIT (whole repository)', split: 'CC BY 4.0 (texts) and MIT (code)', splitText: 'CC BY 4.0 (texts and papers)',
+    mit: 'MIT (whole repository)', mitExcept: 'MIT (except {dirs}, under CC BY 4.0)', dirSep: ', ', split: 'CC BY 4.0 (texts) and MIT (code)', splitText: 'CC BY 4.0 (texts and papers)',
     noType: '—', notZenodo: '— (not on Zenodo)', figshare: ' (Figshare)', noDoi: '— (no DOI)',
     dataTitle: 'Machine-readable forms, and how the columns are decided', dataNav: 'Data',
     dataNote: 'The same content is also published as JSON and BibTeX.',
@@ -115,16 +115,25 @@ function layoutOf(repo) {
 }
 
 /* SPDX の並び。JSON と構造化データに使う。 */
+/* 全体が MIT のリポジトリの中で、CC BY 4.0 にしたディレクトリ（2026-11-12 の法令の点検で足した）。 */
+function exceptOf(repo) {
+  const ex = (SRC.licenceLayout.exceptions || {})[repo];
+  return Array.isArray(ex) && ex.length ? ex : null;
+}
+
 function licenceSpdx(w) {
   const lay = layoutOf(w.repo);
-  if (lay === 'mit') return ['MIT'];
+  if (lay === 'mit') return exceptOf(w.repo) ? ['MIT', 'CC-BY-4.0'] : ['MIT'];
   if (lay === 'split') return w.kind === 'repository' ? ['CC-BY-4.0', 'MIT'] : ['CC-BY-4.0'];
   return [];
 }
 
 function licenceText(w, t) {
   const lay = layoutOf(w.repo);
-  if (lay === 'mit') return t.mit;
+  if (lay === 'mit') {
+    const ex = exceptOf(w.repo);
+    return ex ? t.mitExcept.replace('{dirs}', ex.map((d) => d + '/').join(t.dirSep)) : t.mit;
+  }
   if (lay === 'split') return w.kind === 'repository' ? t.split : t.splitText;
   return t.noRepo;
 }
