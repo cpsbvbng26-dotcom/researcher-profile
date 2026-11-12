@@ -284,7 +284,7 @@ DOI が「この版を指す約束」であるのに対し、SWHID は**中身�
 node build.js && node verification/check_build.js
 ```
 
-依存パッケージはありません。push のたびに 67 項目を通します。
+依存パッケージはありません。push のたびに 68 項目を通します。
 秘密情報と個人の連絡先も、`node verification/check_secrets.js` が push のたびに見ます。
 
 この道具の要は「設定ファイル 1 つ」であることで、裏を返すと設定が壊れても、変な HTML が出るまで気づけません。
@@ -339,4 +339,4 @@ MIT License
 [SECURITY.md](SECURITY.md) にあります。
 誤りの知らせは、issue の「誤りの知らせ」の様式で受けます。
 
-責任の範囲は、[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)に定めています。
+責任は、法令の定めるとおりです。説明は[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)にあります。
