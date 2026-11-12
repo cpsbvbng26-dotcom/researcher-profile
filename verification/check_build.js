@@ -332,6 +332,118 @@ if (cspMatch) {
   ok('ハッシュがページの中身と一致する', missing.length === 0, missing.length + ' 件が欠けている');
 }
 
+/* 五つのファイルを、同じ時に変えたか。cwd は git の作業木。
+ * 返すのは { ok, detail }。日が同じなら通す。一日だけ違うなら、最後に変えたコミットが
+ * すべて同じ変更（同じマージが持ち込んだもの、またはまだ main に入っていない同じ枝）にあるときだけ通す。 */
+function sameChange(cwd, files) {
+  const { execFileSync } = require('child_process');
+  const opt = { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] };
+  const git = (args) => { try { return execFileSync('git', args, opt).trim(); } catch (e) { return null; } };
+  const today = new Date().toISOString().slice(0, 10);
+  const rows = files.map((f) => {
+    if (git(['status', '--porcelain', '--', f])) return { f, date: today, commit: 'WORKTREE' };
+    const line = git(['log', '-1', '--format=%H %cs', '--', f]);
+    if (!line) return { f, date: null, commit: null };
+    const [commit, date] = line.split(' ');
+    return { f, date, commit };
+  });
+  const detail = rows.map((r) => r.f + ' ' + r.date).join(', ');
+  if (rows.some((r) => !r.date)) return { ok: false, detail };
+  if (rows.every((r) => r.date === rows[0].date)) return { ok: true, detail };
+  const days = rows.map((r) => Date.parse(r.date + 'T00:00:00Z') / 86400000);
+  if (Math.max(...days) - Math.min(...days) > 1) return { ok: false, detail: detail + '（二日以上ずれている）' };
+  /* どの変更が持ち込んだか。main の第一の親の並びで、そのコミットを最初に含むもの。 */
+  const fp = (git(['rev-list', '--first-parent', '--reverse', 'HEAD']) || '').split('\n').filter(Boolean);
+  const main = git(['rev-parse', '-q', '--verify', 'refs/remotes/origin/main']);
+  const isAnc = (a, b) => { try { execFileSync('git', ['merge-base', '--is-ancestor', a, b], opt); return true; } catch (e) { return false; } };
+  const groupOf = (c) => {
+    if (c === 'WORKTREE') return 'WORKTREE';
+    if (main && !isAnc(c, main)) return 'BRANCH';
+    let lo = 0, hi = fp.length - 1, found = -1;
+    while (lo <= hi) {
+      const mid = (lo + hi) >> 1;
+      if (isAnc(c, fp[mid])) { found = mid; hi = mid - 1; } else lo = mid + 1;
+    }
+    return found < 0 ? null : fp[found];
+  };
+  const groups = rows.map((r) => groupOf(r.commit));
+  const 一つ = groups.every((g) => g && g === groups[0]);
+  /* 第一の親の並びのコミットがマージでなく、自分自身なら、それは一つのコミットである。
+   * 五つが別々の直の push なら、群は別々になって落ちる。 */
+  return { ok: 一つ, detail: detail + (一つ ? '（一日のずれ。五つとも同じ PR で変えた）' : '（一日のずれ。別の変更で直している）') };
+}
+
+/* 判定そのものを、作り物の履歴で確かめる。外へは出ない。落ちた場合の名を返す。 */
+function sameChangeSelfTest() {
+  const os = require('os');
+  const { execFileSync } = require('child_process');
+  const bad = [];
+  const mk = () => {
+    const d = fs.mkdtempSync(path.join(os.tmpdir(), 'samechange-'));
+    const g = (args, env) => execFileSync('git', ['-c', 'user.name=t', '-c', 'user.email=t@example.invalid', '-c', 'commit.gpgsign=false'].concat(args),
+      { cwd: d, stdio: 'ignore', env: Object.assign({}, process.env, env || {}) });
+    g(['init', '-q', '-b', 'main']);
+    return { d, g };
+  };
+  const at = (iso) => ({ GIT_AUTHOR_DATE: iso, GIT_COMMITTER_DATE: iso });
+  const write = (d, files, v) => files.forEach((f) => fs.writeFileSync(path.join(d, f), v));
+  const F = ['a', 'b', 'c', 'd', 'e'];
+  try {
+    /* 一つの PR の中で、日をまたいで直した。マージで main に入った。 → 通る */
+    {
+      const { d, g } = mk();
+      write(d, F, '0'); g(['add', '.']); g(['commit', '-q', '-m', 'init'], at('2026-11-01T12:00:00+0000'));
+      g(['checkout', '-q', '-b', 'pr']);
+      write(d, ['a', 'b'], '1'); g(['commit', '-q', '-am', 'ab'], at('2026-11-11T23:59:00+0000'));
+      write(d, ['c', 'd', 'e'], '1'); g(['commit', '-q', '-am', 'cde'], at('2026-11-12T00:01:00+0000'));
+      g(['checkout', '-q', 'main']); g(['merge', '-q', '--no-ff', '-m', 'merge', 'pr'], at('2026-11-12T00:05:00+0000'));
+      if (!sameChange(d, F).ok) bad.push('同じ PR で日をまたいだのに落ちた');
+      fs.rmSync(d, { recursive: true, force: true });
+    }
+    /* 別々に main へ直に入れて、日がずれた。 → 落ちる */
+    {
+      const { d, g } = mk();
+      write(d, F, '0'); g(['add', '.']); g(['commit', '-q', '-m', 'init'], at('2026-11-01T12:00:00+0000'));
+      write(d, ['a', 'b'], '1'); g(['commit', '-q', '-am', 'ab'], at('2026-11-11T23:59:00+0000'));
+      write(d, ['c', 'd', 'e'], '1'); g(['commit', '-q', '-am', 'cde'], at('2026-11-12T00:01:00+0000'));
+      if (sameChange(d, F).ok) bad.push('別の変更で日がずれたのに通った');
+      fs.rmSync(d, { recursive: true, force: true });
+    }
+    /* 別々の PR で、日が一つずれた。 → 落ちる */
+    {
+      const { d, g } = mk();
+      write(d, F, '0'); g(['add', '.']); g(['commit', '-q', '-m', 'init'], at('2026-11-01T12:00:00+0000'));
+      for (const [name, fs2, when] of [['p1', ['a', 'b'], '2026-11-11T23:00:00+0000'], ['p2', ['c', 'd', 'e'], '2026-11-12T01:00:00+0000']]) {
+        g(['checkout', '-q', '-b', name]); write(d, fs2, name); g(['commit', '-q', '-am', name], at(when));
+        g(['checkout', '-q', 'main']); g(['merge', '-q', '--no-ff', '-m', 'merge ' + name, name], at(when));
+      }
+      if (sameChange(d, F).ok) bad.push('別の PR で日がずれたのに通った');
+      fs.rmSync(d, { recursive: true, force: true });
+    }
+    /* 同じ PR でも、二日ずれた。 → 落ちる */
+    {
+      const { d, g } = mk();
+      write(d, F, '0'); g(['add', '.']); g(['commit', '-q', '-m', 'init'], at('2026-11-01T12:00:00+0000'));
+      g(['checkout', '-q', '-b', 'pr']);
+      write(d, ['a', 'b'], '1'); g(['commit', '-q', '-am', 'ab'], at('2026-11-10T12:00:00+0000'));
+      write(d, ['c', 'd', 'e'], '1'); g(['commit', '-q', '-am', 'cde'], at('2026-11-12T12:00:00+0000'));
+      g(['checkout', '-q', 'main']); g(['merge', '-q', '--no-ff', '-m', 'merge', 'pr'], at('2026-11-12T12:05:00+0000'));
+      if (sameChange(d, F).ok) bad.push('二日ずれたのに通った');
+      fs.rmSync(d, { recursive: true, force: true });
+    }
+    /* 同じ日なら、別々でも通る（これまでどおり）。 */
+    {
+      const { d, g } = mk();
+      write(d, F, '0'); g(['add', '.']); g(['commit', '-q', '-m', 'init'], at('2026-11-01T12:00:00+0000'));
+      write(d, ['a', 'b'], '1'); g(['commit', '-q', '-am', 'ab'], at('2026-11-12T01:00:00+0000'));
+      write(d, ['c', 'd', 'e'], '1'); g(['commit', '-q', '-am', 'cde'], at('2026-11-12T09:00:00+0000'));
+      if (!sameChange(d, F).ok) bad.push('同じ日なのに落ちた');
+      fs.rmSync(d, { recursive: true, force: true });
+    }
+  } catch (e) { bad.push('作り物の履歴を作れなかった: ' + e.message); }
+  return bad;
+}
+
 /* --------------------------------------------------- 3b. 作者のサイトの設定 */
 section('3b. 作者のサイトの設定（五言語の日付・目標・頁の下の欄・依存）');
 
@@ -348,11 +460,18 @@ section('3b. 作者のサイトの設定（五言語の日付・目標・頁の�
   };
 
   /* 373. **五つの言語を、同じ日に直す。**日本語だけ直して訳を置いていくと、
-   * 片方だけ古い頁が残る。最後に変えた日が一つでも違えば落とす。 */
+   * 片方だけ古い頁が残る。最後に変えた日が一つでも違えば落とす。
+   *
+   * 478（百本ノック五）。**日付をまたぐコミットで落ちないようにする。**一つの PR の中で、
+   * 23:59 と 00:01 に分けてコミットすると、同じ時に直したのに日が一つずれる。
+   * 日が違うときは、一日のずれに限り、五つを最後に変えたコミットがすべて同じ PR
+   * （main の第一の親の並びで、同じマージが持ち込んだもの）に入っていれば通す。
+   * 「一緒に変えた」より弱くはしない。別の PR で変えたなら、日がずれれば落ちる。 */
   const LANGS = { 'site.json': 'ja', 'site.en.json': 'en', 'site.de.json': 'de', 'site.fr.json': 'fr', 'site.it.json': 'it' };
-  const dates = Object.keys(LANGS).map((f) => [f, dateOf(f)]);
-  ok('トップの頁の五つの言語の設定を、同じ日に直している', dates.every(([, d]) => d && d === dates[0][1]),
-     dates.map(([f, d]) => f + ' ' + d).join(', '));
+  const together = sameChange(ROOT, Object.keys(LANGS));
+  const self = sameChangeSelfTest();
+  ok('トップの頁の五つの言語の設定を、同じ日に直している（日をまたぐなら同じ PR で）', together.ok && self.length === 0,
+     together.detail + (self.length ? ' / 判定の自己試験が落ちた: ' + self.join(', ') : ''));
 
   /* 374. **目標に、達成したかどうかの欄を置く。**何をもって達成とするかも同じ行に書く。 */
   const STATUS = { ja: ['未達成', '達成'], en: ['Not achieved', 'Achieved'], de: ['Nicht erreicht', 'Erreicht'],
