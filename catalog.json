@@ -452,7 +452,7 @@
       "summaryEn": "An overlay preprint server for philosophy and mathematics. Acceptance is moderation, not peer review",
       "doi": "10.5281/zenodo.24033372",
       "osf": {
-        "doi": "10.17605/OSF.IO/MQ7ZA",
+        "doi": "10.17605/osf.io/mq7za",
         "noteJa": "Sophaxis のプロジェクトの頁です。学部二年次に始めたもので、論文の引用先ではありません",
         "noteEn": "The project page of Sophaxis. It was begun in the second undergraduate year, and it is not a citation target for the papers"
       },
@@ -472,7 +472,7 @@
       "doi": "10.5281/zenodo.24034360",
       "conceptDoi": "10.5281/zenodo.24034359",
       "osf": {
-        "doi": "10.17605/OSF.IO/7KR5N",
+        "doi": "10.17605/osf.io/7kr5n",
         "noteJa": "学部一年次の研究のリポジトリをまとめる頁です。論文の引用先ではありません（DataCite で確かめた日 2026-11-12）",
         "noteEn": "The page that gathers the first-year research repositories. It is not a citation target for the papers (checked on DataCite, 2026-11-12)"
       },
