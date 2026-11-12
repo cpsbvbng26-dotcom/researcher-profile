@@ -333,14 +333,14 @@
       "url": "https://github.com/cpsbvbng26-dotcom/deposit-check",
       "code": "JavaScript / MIT",
       "title": "deposit-check",
-      "summary": "研究者の業績の DOI の登録情報を、ORCID の記録と突き合わせて点検します。要旨・ライセンス・ORCID iD・版の繋がりの欠けと、ORCID の記録に載っていない業績を挙げます。DataCite・Crossref・JaLC と ORCID の公開 API を読むだけで、どこにも書き込みません。Sophaxis でも、投稿された DOI の登録情報への助言に使っています。",
+      "summary": "研究者の業績の DOI の登録情報を、ORCID の記録と突き合わせて点検します。要旨・ライセンス・ORCID iD・版の繋がりの欠けと、ORCID の記録に載っていない業績を挙げます。DataCite・Crossref・JaLC・ORCID・OpenAlex の公開 API を読むだけで、どこにも書き込みません。Sophaxis でも、投稿された DOI の登録情報への助言に使っています。",
       "verify": "GitHub で見る"
     },
     {
       "url": "https://github.com/cpsbvbng26-dotcom/self-correction",
       "code": "記録 / MIT",
       "title": "self-correction",
-      "summary": "自分が公開した主張のうち、誤っていたもの・撤回したもの・直せないものを、一件ずつ消さずに記録します。いま 97 件です。状態は五つに限り、いま立っている主張には覆し方を、直せない項目には理由を書くことを検査で強制します。識別子は永久に消せません —— git の履歴を遡って、過去に一度でも載った項目がいまも残っているかを検査します。消したら落ちます。",
+      "summary": "自分が公開した主張のうち、誤っていたもの・撤回したもの・直せないものを、一件ずつ消さずに記録します。いま 104 件です。状態は五つに限り、いま立っている主張には覆し方を、直せない項目には理由を書くことを検査で強制します。識別子は永久に消せません —— git の履歴を遡って、過去に一度でも載った項目がいまも残っているかを検査します。消したら落ちます。",
       "verify": "GitHub で見る"
     },
     {
