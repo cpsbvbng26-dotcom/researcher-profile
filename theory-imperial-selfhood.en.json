@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "en",
   "title": "Personal imperialism | Takuya Nemoto",
-  "description": "A sketch for integrating a fragmented self as a sovereign order built only within oneself, in three layers drawn from Kant, Nietzsche and Jünger. Not empire as a state, and no dominion over others. An exploratory essay, not peer-reviewed.",
+  "description": "An overview of the paper Manifesto of Imperial Selfhood. A sketch for integrating a fragmented self as a sovereign order built only within oneself, in three layers drawn from Kant, Nietzsche and Jünger. Not empire as a state, and no dominion over others. An exploratory essay, not peer-reviewed.",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/imperial-selfhood.en.html",
   "alternates": [
     {
@@ -20,15 +20,14 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/imperial-selfhood.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "ogType": "article",
   "favicon": "./../favicon.svg",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "en",
-  "taglineHtml": "The empire is built only within oneself. An exploratory essay; it has not been peer-reviewed.",
+  "taglineHtml": "An overview of the paper Manifesto of Imperial Selfhood. The empire is built only within oneself. An exploratory essay; it has not been peer-reviewed.",
   "sections": [
     "theory"
   ],

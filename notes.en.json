@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "en",
   "title": "Notes | Takuya Nemoto",
-  "description": "What is not on the front page: three papers in philosophy, a naval gazette source note, and repositories outside the core. Moved here, not deleted.",
+  "description": "This page gathers what is not on the front page: three papers in philosophy, a naval gazette source note, and repositories outside the core. Moved here, not deleted.",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/index.en.html",
   "alternates": [
     {
@@ -20,13 +20,12 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/index.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "en",
-  "taglineHtml": "The core of this site is <a href=\"./../index.en.html\">auditing, by machine, what I have already published</a>. The three Trinity-Infinity papers are what it was applied to. Everything not placed in the core is collected here. <strong>None of it has been discarded.</strong> The DOIs and the repositories are live. Certificates, areas of study and external profiles are in <a href=\"./../cv.html\">CV</a>. <strong>Nothing here has been peer reviewed either.</strong>",
+  "taglineHtml": "This page gathers what is not on the front page. The core of this site is <a href=\"./../index.en.html\">auditing, by machine, what I have already published</a>. The three Trinity-Infinity papers are what it was applied to. <strong>None of it has been discarded.</strong> The DOIs and the repositories are live. Certificates, areas of study and external profiles are in <a href=\"./../cv.html\">CV</a>. <strong>Nothing here has been peer reviewed either.</strong>",
   "sections": [
     "papers",
     "works"

@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "ja",
   "title": "ノート | 根本卓哉",
-  "description": "トップに置かなかったもの。哲学の三篇、海軍公報の史料ノート、核に直接関わらないリポジトリ。削除ではなく、ここに置いてあります。",
+  "description": "トップに置かなかったものを集めた頁です。哲学の三篇、海軍公報の史料ノート、核に直接関わらないリポジトリがあります。削除ではなく、ここに置いてあります。",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/index.html",
   "alternates": [
     {
@@ -20,13 +20,12 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/index.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "ja",
-  "taglineHtml": "このサイトの核は <a href=\"./../index.html\">自分が公開したものを、あとから機械で監査すること</a>です。Trinity-Infinity の三篇はその対象です。核に置かなかったものを、ここに集めています。<strong>捨てたのではありません。</strong>DOI も GitHub も生きています。修了証・学習領域・外部プロフィールは <a href=\"./../cv.html\">CV</a> にあります。<strong>ここにあるものも、査読を受けていません。</strong>",
+  "taglineHtml": "トップに置かなかったものを集めた頁です。このサイトの核は <a href=\"./../index.html\">自分が公開したものを、あとから機械で監査すること</a>です。Trinity-Infinity の三篇はその対象です。<strong>捨てたのではありません。</strong>DOI も GitHub も生きています。修了証・学習領域・外部プロフィールは <a href=\"./../cv.html\">CV</a> にあります。<strong>ここにあるものも、査読を受けていません。</strong>",
   "sections": [
     "papers",
     "works"
@@ -37,7 +36,7 @@
       "code": "プレプリント / 英語",
       "title": "The Nobility and Exemplarity of the Celibate Individual",
       "subtitle": "An Antinatalist and Ascetic Reconsideration of Autonomy and Quality of Life",
-      "summary": "性的活動を倫理的な義務とみなす通説を反出生主義の側から検討し、他者や欲望の周期に依存しない自足的な幸福という観点から、独身を自己陶冶の型として擁護する。",
+      "summary": "性的活動を倫理的な義務とみなす通説を反出生主義の側から検討し、他者や欲望の周期に依存しない自足的な幸福という観点から、独身を自己陶冶の型として擁護します。",
       "verify": "Zenodo で読む",
       "doi": "10.5281/zenodo.22058254",
       "locations": [
@@ -66,7 +65,7 @@
       "code": "プレプリント / 英語",
       "title": "Manifesto of Imperial Selfhood",
       "subtitle": "An Exploratory Essay on Personal Imperialism and Spiritual Sovereignty",
-      "summary": "断片化した自己の統合を、カントの立法・ニーチェの価値転換・ユンガーの動員という三層で捉える。三者の対立を解消せず、構造の中身として引き受ける。",
+      "summary": "断片化した自己の統合を、カントの立法・ニーチェの価値転換・ユンガーの動員という三層で捉えます。三者の対立を解消せず、構造の中身として引き受けます。",
       "verify": "Zenodo で読む",
       "doi": "10.5281/zenodo.22057583",
       "locations": [
@@ -95,7 +94,7 @@
       "code": "プレプリント / 英語",
       "title": "Fragmentarian Spiritual Individualism",
       "subtitle": "A Philosophy of Fragments for Solitary Spiritual Autonomy",
-      "summary": "生・信仰・社会・思想・終末を、ひとつづきの物語ではなく独立した断片として扱う。断片化を修復すべき傷とみなす通例に対し、克服ではなく厳密さをもって住まうための規律を組み立てる。",
+      "summary": "生・信仰・社会・思想・終末を、ひとつづきの物語ではなく独立した断片として扱います。断片化を修復すべき傷とみなす通例に対し、克服ではなく厳密さをもって住まうための規律を組み立てます。",
       "verify": "Zenodo で読む",
       "doi": "10.5281/zenodo.22064241",
       "locations": [
@@ -119,7 +118,7 @@
       "code": "プレプリント / 英語",
       "title": "A Naval Gazette Entry for Lieutenant Otani Tsune（大谷恒）",
       "subtitle": "A Note on the Investiture List of 11 September 1943 in the Naval Gazette (Internal Circulation Only), Extra Edition",
-      "summary": "アジア歴史資料センターが公開する海軍公報から、海軍大尉・大谷恒の叙勲記録一件を翻刻し、この史料で確定できることと、できないことを切り分ける。",
+      "summary": "アジア歴史資料センターが公開する海軍公報から、海軍大尉・大谷恒の叙勲記録一件を翻刻し、この史料で確定できることと、できないことを切り分けます。",
       "verify": "Zenodo で読む",
       "doi": "10.5281/zenodo.22055709",
       "locations": [
@@ -144,7 +143,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/researcher-profile",
       "code": "JavaScript / MIT",
       "title": "researcher-profile",
-      "summary": "設定ファイル 1 つから、研究者プロフィールの静的サイトを生成するツール。依存パッケージなし、外部リクエストゼロ。",
+      "summary": "設定ファイル 1 つから、研究者プロフィールの静的サイトを生成するツールです。依存パッケージは無く、外部へのリクエストもありません。",
       "verify": "GitHub で見る",
       "doi": "10.5281/zenodo.22335692"
     },
@@ -152,7 +151,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/justice-and-algorithms",
       "code": "Markdown / CC BY 4.0",
       "title": "justice-and-algorithms",
-      "summary": "アルゴリズムによる判断をめぐる論点を、政治哲学の正義論に接続して整理する資料。",
+      "summary": "アルゴリズムによる判断をめぐる論点を、政治哲学の正義論に接続して整理する資料です。",
       "verify": "GitHub で見る",
       "doi": "10.5281/zenodo.22335676"
     },
@@ -160,14 +159,14 @@
       "url": "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation",
       "code": "Markdown / CC BY 4.0",
       "title": "autonomy-and-self-cultivation",
-      "summary": "上の三篇の全文・PDF・引用情報をまとめたリポジトリ。PDF から起こした本文を、語の並びまで照合している。",
+      "summary": "上の三篇の全文・PDF・引用情報をまとめたリポジトリです。PDF から起こした本文を、語の並びまで照合しています。",
       "verify": "GitHub で見る"
     },
     {
       "url": "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes",
       "code": "CSV・JSON / CC BY 4.0",
       "title": "naval-gazette-notes",
-      "summary": "上の史料ノートの翻刻を、機械可読にしたリポジトリ。原文が「同」で繰り返す階級を各行に展開したうえで、書かれていたものと引き継いだものを列で区別している。",
+      "summary": "上の史料ノートの翻刻を、機械可読にしたリポジトリです。原文が「同」で繰り返す階級を各行に展開したうえで、書かれていたものと引き継いだものを列で区別しています。",
       "verify": "GitHub で見る"
     }
   ],
