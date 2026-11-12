@@ -102,6 +102,23 @@ Sophaxis の取り寄せの仕事を走らせて e-Gov から取り寄せ、cpsb
 | site.de.json・site.fr.json・site.it.json の、場の文の段と題の下の一文 | 著作権法第32条、著作権法第48条 | 引用部分が引用元と一字一句同じであること。引いた句から言えることだけを書くこと | 三つの設定は、取り寄せた頁に無い `part of the world-wide scholarly discourse` と `reject any submissions` の句、`articles with no references` の句、SSRN の編集の人が公開前に見るという文を残していた。題の下の一文と説明は「満たした基準」と書いていた | 表現 | 段を、日英と同じ、取り寄せた頁の句だけの段に書き直した。題の下の一文と説明は「場が書いていること」に直した。上の二度目の見落としの節の自己紹介の行は、五つの言語を書き直したとしていたが、独仏伊のこの段は残っていた。2026-11-12 に Claude が決めました。場が書いていない判断を、どの言語でも場に帰さないためです |
 | SECURITY.md | 民法第709条 | 安全について、事実と違う説明をしないこと | 写しは、入力を受け取るものは無いと書いていた。同じ写しを置く errata-check と deposit-check は、入力を受け取る GitHub Action を公開している | 誤り | 写しを直した。2026-11-12 に Claude が決めました。理由は cpsbvbng26-dotcom の記録の同じ行にあります |
 
+## 2026-11-12 の続き：四度目の見落とし
+
+同じ日に、読むだけの点検を、四度目に別の手で行いました。
+上の節が見落としていたものが見つかりました。
+前の行は、そのとき何を確かめたかの記録なので、消していません。
+誤っていた前の行は、新しい行の中でそう書き、理由を添えます。
+法令の文は、cpsbvbng26-dotcom の `verification/statutes.json` に写した取り寄せた文から引きます。
+10 のリポジトリと deposit-check に同じ形で置く文の点検は、[cpsbvbng26-dotcom の記録](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/legal-audit-2026-11-12.md)の同じ見出しの節にもあります。
+
+| 箇所 | 法令と条 | 要件 | 事実 | 判定 | 対応 |
+| --- | --- | --- | --- | --- | --- |
+| 独仏伊の設定（site.de.json・site.fr.json・site.it.json）の、SSRN が主題と形式を見るという一文 | なし（表示の正確さ） | 場が何をするかは、取り寄せた場の頁が言う範囲で書くこと | 三つの設定は、作品の段に「Geprüft werden Gegenstand und Form.」「Ce qui est examiné, c’est le sujet et la forme.」「Si controllano l’argomento e la forma.」を置いていた。取り寄せた SSRN の頁（所在と SHA-256 は cpsbvbng26-dotcom の記録の二度目の見落としの節）が書くのは、学術的な内容の基準を満たすかを SSRN が決めること、プレプリントを査読しないことである。主題と形式を見るとは書いていない。上の三度目の見落としの節は、独仏伊の自己紹介の段を書き直したが、別の段にあるこの一文を見落としていた | 表現 | 三つの設定から一文を外し、前の一文（SSRN への掲載は査読ではない）は残した。cpsbvbng26-dotcom の三頁を作り直した。cpsbvbng26-dotcom の `verification/screening.js` と `check_ecosystem.js` の 12l が、語の表ではなく形で、五つの言語の設定と頁に当てる。2026-11-12 に Claude が決めました。言い換えを語の表で一つずつ止める形では、同じ誤りが言語と段を変えて残るからです |
+| 自己紹介（site.json・site.en.json）の deposit-check の欄が名乗る、読む API | なし（表示の正確さ） | 道具が問い合わせる場を、名乗る一覧が欠けなく挙げること | 欄は「DataCite・Crossref・JaLC と ORCID の公開 API を読むだけ」と書いていた。deposit-check の `src/fetch.js` は、各 DOI について api.openalex.org にも問い合わせる | 表現 | 日英の欄に OpenAlex を足し、トップの二頁を作り直した。`check_ecosystem.js` の 12l が、名乗る名の集まりと、fetch.js が問い合わせる場の集まりを突き合わせる。2026-11-12 に Claude が決めました。名乗る一覧を、道具の中身から確かめられる形にするためです |
+| 自己紹介（site.json・site.en.json）の self-correction の欄が名乗る件数 | 決めごと 5 | 散文に書いた数を、機械で確かめられるようにすること | 欄は「いま 97 件です。」「97 entries so far.」と書いていた。self-correction の register.toml には 104 件ある。同じ頁の別の段は 104 件と書いていた。この欄の数を突き合わせる検査は無かった | 誤り | 日英の欄を 104 件に直し、トップの二頁を作り直した。`check_ecosystem.js` の 12l が、五つの言語の設定と頁、cpsbvbng26-dotcom の README と自己分析が名乗る件数のすべてを、register.toml の項目の数と突き合わせる。2026-11-12 に Claude が決めました。数を設定に書いたまま、出所との突き合わせを足すほうが、生成の仕組みを変えるより小さく済むからです |
+| README「ライセンス」 | 著作権法第21条 | 取り寄せた文は「著作者は、その著作物を複製する権利を専有する。」と定める（cpsbvbng26-dotcom の `verification/statutes.json`、SHA-256 `a85d04f2fd20d7867d5579bee40676b13405c58ea7fd7eb27f1e7a5a03bda100`）。許せるのは、許す者が権利を持つものだけである。ライセンスの文が、他人の文まで許すと読めないこと | README のライセンスの節は、リポジトリ全体の MIT だけを書き、引いた他人の文の扱いを書いていなかった。Sophaxis は、最初の見落としの節で同じ一文を足していたが、10 のリポジトリと deposit-check には届いていなかった。上の点検の表の「README「ライセンス」、LICENSE、CITATION.cff、.zenodo.json」の行は問題なしとしていたが、他人の文の扱いを見ていなかった | 漏れ | README のライセンスの節に「このリポジトリが引き、または引用を確かめるために置いている他人の文は、CC BY 4.0 でも MIT でも許諾しておらず、それぞれの権利者のものです。」を足した。`check_ecosystem.js` の 12l が、10 のリポジトリと deposit-check の README（英語の README を含む）にこの一文があることを見る。2026-11-12 に Claude が決めました。Sophaxis の README と同じ範囲を、同じ形で書くためです |
+| CITATION.cff の message と .zenodo.json の notes | 著作権法第21条 | 同上。引用情報の license の欄は、どの部分に掛かるかを書けないので、その範囲を別の欄で書くこと | CITATION.cff と .zenodo.json の license の欄は MIT で、notes は「The code is MIT.」とだけ書いていた。リポジトリは LICENSE 一つで、文書も MIT である（免責事項の「再利用」）。上の点検の表の「README「ライセンス」、LICENSE、CITATION.cff、.zenodo.json」の行は問題なしとしていたが、欄の掛かる範囲と他人の文を見ていなかった | 表現 | message と notes に、コードも文書も含めてリポジトリ全体が MIT で、license の欄が全体に掛かることを書いた。他人の文は許諾していないとも、和英で書いた。`check_ecosystem.js` の 12l が、二つのファイルにこの文があり、置き方が目録の licenceLayout と同じことを見る。2026-11-12 に Claude が決めました。Sophaxis の CITATION.cff が三度目の見落としの節で書いた範囲の文に、10 のリポジトリと deposit-check を揃えるためです |
+
 ## 調べた法令
 
 - 著作権法（第21条、第23条、第32条、第48条）

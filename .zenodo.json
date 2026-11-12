@@ -20,5 +20,5 @@
     "静的サイトジェネレータ",
     "研究者プロフィール"
   ],
-  "notes": "The tool was written with Claude Code (Anthropic) at the author's request. The author decided the design, reviewed the output and is responsible for it. Claude is not an author. The code is MIT."
+  "notes": "The tool was written with Claude Code (Anthropic) at the author's request. The author decided the design, reviewed the output and is responsible for it. Claude is not an author. The whole repository, the code and the documents, is MIT (LICENSE). The licence field of this record covers the whole repository. Texts by others that this repository quotes, or keeps to verify its quotations, are not licensed under CC BY 4.0 or the MIT License and remain their owners'."
 }

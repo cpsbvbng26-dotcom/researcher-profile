@@ -1,6 +1,10 @@
 cff-version: 1.2.0
 title: "researcher-profile: 設定ファイル1つから研究者プロフィールの静的サイトを生成するツール"
-message: このソフトウェアを引用する場合は、以下の情報をご利用ください。
+message: >-
+  このソフトウェアを引用する場合は、以下の情報をご利用ください。
+  コードも文書も含めて、リポジトリ全体が MIT（LICENSE）です。
+  license の欄は、リポジトリ全体に掛かります。
+  このリポジトリが引き、または引用を確かめるために置いている他人の文は、CC BY 4.0 でも MIT でも許諾しておらず、それぞれの権利者のものです。
 type: software
 authors:
   - family-names: Nemoto

@@ -334,14 +334,14 @@
       "url": "https://github.com/cpsbvbng26-dotcom/deposit-check",
       "code": "JavaScript / MIT",
       "title": "deposit-check",
-      "summary": "Checks the DOI metadata of a researcher’s works against their ORCID record. It reports missing abstracts, licences, ORCID iDs and links between versions, and works missing from the ORCID record. It only reads the public APIs of DataCite, Crossref, JaLC and ORCID, and writes nothing anywhere. Sophaxis uses it to advise submitters on the metadata of their DOIs.",
+      "summary": "Checks the DOI metadata of a researcher’s works against their ORCID record. It reports missing abstracts, licences, ORCID iDs and links between versions, and works missing from the ORCID record. It only reads the public APIs of DataCite, Crossref, JaLC, ORCID and OpenAlex, and writes nothing anywhere. Sophaxis uses it to advise submitters on the metadata of their DOIs.",
       "verify": "View on GitHub"
     },
     {
       "url": "https://github.com/cpsbvbng26-dotcom/self-correction",
       "code": "Record / MIT",
       "title": "self-correction",
-      "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. 97 entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
+      "summary": "Every claim I have published that turned out to be wrong, was withdrawn, or cannot be fixed — recorded one by one and never deleted. 104 entries so far. Five statuses only; standing claims must carry a refutation route and unresolvable ones must say why. Identifiers can never be removed: the check walks the git history and fails if any entry that was ever published has since disappeared.",
       "verify": "View on GitHub"
     },
     {
