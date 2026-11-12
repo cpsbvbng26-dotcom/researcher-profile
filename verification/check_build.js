@@ -670,7 +670,7 @@ section('3e. 所蔵の主と、本の著者の数');
   const 所蔵 = [
     /held (?:by|at|in) (?:the )?(?:JACAR|Japan Center for Asian Historical Records)/i,
     /(?:JACAR|Japan Center for Asian Historical Records)(?:'s|’s)? (?:holds|holding|collection|owns|keeps)/i,
-    /(?:JACAR|アジア歴史資料センター)(?:が|の)?(?:所蔵|保管|所有)/,
+    /(?:JACAR|アジア歴史資料センター)\s*(?:が|の)?\s*(?:所蔵|保管|所有)/,
     /所蔵(?:館|機関|先|元)?(?:[:：は]\s*)?(?:JACAR|アジア歴史資料センター)/,
     /(?:im Besitz|im Bestand|aufbewahrt) (?:von |des |der |bei )?JACAR/i,
     /conserv\S* (?:par|à|au|aux) (?:le |la |l’)?JACAR/i,
@@ -681,7 +681,7 @@ section('3e. 所蔵の主と、本の著者の数');
   const 所蔵か = (s) => 所蔵.some((re) => re.test(s));
   const 単著か = (s) => 相手.test(s) && 単著.test(s);
   const 試験 = [], 試験2 = [];
-  ['from a gazette held by JACAR, and separates', 'JACAR holds the original gazette.', 'アジア歴史資料センター所蔵の海軍公報',
+  ['from a gazette held by JACAR, and separates', 'JACAR holds the original gazette.', 'アジア歴史資料センター所蔵の海軍公報', 'JACAR が所蔵する海軍公報',
    '所蔵：JACAR', 'ein Blatt im Besitz von JACAR', 'un bulletin conservé par JACAR', 'un bollettino conservato presso JACAR']
     .forEach((x) => { if (!所蔵か(x)) 試験.push('通した：' + x); });
   ['held by the National Institute for Defense Studies (Ministry of Defense) and published by JACAR (Ref. C12070491000)',
