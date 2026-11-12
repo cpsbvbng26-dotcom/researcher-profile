@@ -20,15 +20,14 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/golden-window.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "ogType": "article",
   "favicon": "./../favicon.svg",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "en",
-  "taglineHtml": "An unproved conjecture about one segment of payoffs in one three-player game. Proved: what happens below the window, at its lower end and from <code>2/3</code> up, and that the set inside the window has positive dimension. Open: whether that set has length zero, and how its dimension behaves. For those, the evidence is numerical only.",
+  "taglineHtml": "This page is about an unproved conjecture on one segment of payoffs in one three-player game. Proved: what happens below the window, at its lower end and from <code>2/3</code> up, and that the set inside the window has positive dimension. Open: whether that set has length zero, and how its dimension behaves. For those, the evidence is numerical only.",
   "sections": [
     "state",
     "figure",

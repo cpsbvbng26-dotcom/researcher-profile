@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "en",
   "title": "What is to remain after death | Takuya Nemoto",
-  "description": "The gravestone and posthumous name, the degree, ORCID and DOI, and a vow of celibacy. A personal matter, not research, moved out of the self-introduction.",
+  "description": "This page lists what is to remain after death: the gravestone and posthumous name, the degree, ORCID and DOI, and a vow of celibacy. A personal matter, not research, moved out of the self-introduction.",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.en.html",
   "alternates": [
     {
@@ -20,15 +20,14 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "ogType": "article",
   "favicon": "./../favicon.svg",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "en",
-  "taglineHtml": "This is not research. It is a personal matter, so it has been moved out of the research self-introduction and kept here.",
+  "taglineHtml": "This page lists what is to remain after death. It is not research. It is a personal matter, so it has been moved out of the research self-introduction and kept here.",
   "sections": [
     "remains",
     "vow"

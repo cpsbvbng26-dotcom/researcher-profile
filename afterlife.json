@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "ja",
   "title": "死後に残すもの | 根本卓哉",
-  "description": "墓と諡名、学位、ORCID と DOI、不犯の誓い。研究の成果ではない個人の事柄を、自己紹介から分けて置いた頁。",
+  "description": "研究の成果ではない個人の事柄（墓と諡名、学位、ORCID と DOI、不犯の誓い）を、自己紹介から分けて置いた頁です。",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html",
   "alternates": [
     {
@@ -20,15 +20,14 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/afterlife.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "ogType": "article",
   "favicon": "./../favicon.svg",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "ja",
-  "taglineHtml": "研究の成果ではありません。個人の事柄なので、研究の自己紹介から分けて、ここに置いています。",
+  "taglineHtml": "死後に残すものを並べた頁です。研究の成果ではありません。個人の事柄なので、研究の自己紹介から分けて、ここに置いています。",
   "sections": [
     "remains",
     "vow"

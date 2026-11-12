@@ -4,10 +4,9 @@
   "initials": "TN",
   "lang": "ja",
   "title": "一頁の紹介 | 根本卓哉",
-  "description": "名刺の代わりに印刷する一頁。名前、ORCID、所属、取り組んでいること、所在。",
+  "description": "名刺の代わりに印刷する一頁です。名前、ORCID、所属、取り組んでいること、所在を載せています。",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/card.html",
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
@@ -16,7 +15,7 @@
   "identifiers": [
     { "label": "ORCID", "value": "0009-0000-1406-0547", "url": "https://orcid.org/0009-0000-1406-0547" }
   ],
-  "tagline": "ZEN大学 知能情報社会学部 知能情報社会学科の学部生です。哲学とゲーム理論を、言語モデルの助けを借りて独学しています。公開しているのは、いずれも査読を受けていないプレプリントです。印刷すると一枚に収まる頁です。",
+  "tagline": "名刺の代わりに印刷する、一枚に収まる紹介の頁です。ZEN大学 知能情報社会学部 知能情報社会学科の学部生です。哲学とゲーム理論を、言語モデルの助けを借りて独学しています。公開しているのは、いずれも査読を受けていないプレプリントです。",
   "sections": ["links"],
   "links": [
     {
