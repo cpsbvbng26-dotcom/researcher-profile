@@ -645,13 +645,15 @@ section('3c. 見た目の決まり（字・幅・色・印刷・写真・最初�
 
 /* 2026-11-12 の続き（法的なリスクを締めた）。Vercel の無料の枠（Hobby）は、個人の非営利の利用に限られ、
  * 商品や役務の販売の広告を商用の例に挙げる。配っている頁の設定に、受注の場への道と「案件募集」を置かない。
- * README（GitHub の上の面）には残してある。見本の profile.json は配らないので見ない。 */
+ * LinkedIn も、仕事の依頼の窓口として同じ日に外した（利用者が決めました）。見本の profile.json は
+ * 配らないが、作者の窓口を載せないことは同じなので、LinkedIn だけはそちらも見る。 */
 section('3d. 配っている頁に、受注の場への道を置かない');
 (() => {
-  const 場 = /lancers\.jp|coconala\.com|crowdworks\.jp|wantedly\.com|案件募集|independent work/i;
+  const 場 = /lancers\.jp|coconala\.com|crowdworks\.jp|wantedly\.com|linkedin\.com\/in\/|案件募集|independent work/i;
   const 出た = fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f) && f !== 'profile.json' && f !== 'package.json')
     .filter((f) => 場.test(fs.readFileSync(path.join(ROOT, f), 'utf8')));
-  ok('配る頁の設定に、受注の場（ランサーズ・ココナラ・クラウドワークス・Wantedly）への道と案件募集の語が無い', 出た.length === 0, 出た.join(', '));
+  const 見本 = /linkedin\.com\/in\//i.test(fs.readFileSync(path.join(ROOT, 'profile.json'), 'utf8')) ? ['profile.json'] : [];
+  ok('配る頁の設定に、受注の場（ランサーズ・ココナラ・クラウドワークス・Wantedly・LinkedIn）への道と案件募集の語が無い', 出た.length === 0 && 見本.length === 0, 出た.concat(見本).join(', '));
 })();
 
 /* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */
