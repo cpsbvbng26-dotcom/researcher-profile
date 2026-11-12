@@ -258,7 +258,6 @@ const ICONS = [
 const PERSON = {
   '@type': 'Person',
   '@id': SRC.base + '#person',
-  affiliation: { '@type': 'CollegeOrUniversity', name: 'ZEN University' },
   name: 'Takuya Nemoto',
   alternateName: '根本卓哉',
   identifier: 'https://orcid.org/' + SRC.orcid,
