@@ -339,4 +339,4 @@ MIT License
 [SECURITY.md](SECURITY.md) にあります。
 誤りの知らせは、issue の「誤りの知らせ」の様式で受けます。
 
-責任の範囲は、[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)に定めています。
+責任は、法令の定めるとおりです。説明は[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)にあります。
