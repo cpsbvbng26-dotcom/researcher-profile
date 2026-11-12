@@ -38,7 +38,7 @@
   },
   "profile": {
     "label": "Chi sono",
-    "nowHtml": "Iscritto alla <b>ZEN University, Faculty of Social Informatics</b>, nella prima coorte con immatricolazione autunnale. Il corso attraversa le discipline umanistiche e quelle scientifiche. Inoltre imprenditore individuale da circa ottobre 2024; la dichiarazione di inizio attività (kaigyō todoke) non è stata presentata all’ufficio delle imposte giapponese; sarà presentata quando ci sarà tempo.",
+    "nowHtml": "Iscritto alla <b>ZEN University, Faculty of Social Informatics</b>, nella prima coorte con immatricolazione autunnale. Il corso attraversa le discipline umanistiche e quelle scientifiche. Inoltre imprenditore individuale da circa ottobre 2024; la dichiarazione di inizio attività (kaigyō todoke) non è stata presentata all’ufficio delle imposte giapponese.",
     "studyHtml": "Si studiano soprattutto <b>filosofia</b> e <b>pratica</b>; la <b>matematica</b> è frequentabile. Quanto è depositato qui riguarda l’informatica e l’intelligenza artificiale.",
     "aimsLabel": "Obiettivi",
     "aimsStatusLabel": [
@@ -82,7 +82,7 @@
     {
       "id": "verify",
       "title": "Verifica",
-      "html": "<p>A ogni push vengono eseguiti <b>1746 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>104 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
+      "html": "<p>A ogni push vengono eseguiti <b>1747 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>104 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
     },
     {
       "id": "more",
