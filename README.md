@@ -284,7 +284,7 @@ DOI が「この版を指す約束」であるのに対し、SWHID は**中身�
 node build.js && node verification/check_build.js
 ```
 
-依存パッケージはありません。push のたびに 68 項目を通します。
+依存パッケージはありません。push のたびに 70 項目を通します。
 秘密情報と個人の連絡先も、`node verification/check_secrets.js` が push のたびに見ます。
 
 この道具の要は「設定ファイル 1 つ」であることで、裏を返すと設定が壊れても、変な HTML が出るまで気づけません。
