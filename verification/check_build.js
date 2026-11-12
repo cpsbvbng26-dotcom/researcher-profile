@@ -658,6 +658,54 @@ section('3d. 配っている頁に、受注の場への道を置かない');
   ok('配る頁の設定に、受注の場（ランサーズ・ココナラ・クラウドワークス・Wantedly・LinkedIn）への道と案件募集の語が無い', 出た.length === 0 && 見本.length === 0, 出た.concat(見本).join(', '));
 })();
 
+/* 2026-11-12 の続き（六度目の見落とし。決めたのは 2026-11-13）。
+ * 一つ目。英語の要旨が、海軍公報を「held by JACAR」と書いていた。JACAR の目録（C12070491000）は所蔵館を
+ * 防衛省防衛研究所と書き、JACAR は画像を公開している側である。JACAR やアジア歴史資料センターを所蔵の主に
+ * 置く文を、どの言語でも設定に置かない。式は cpsbvbng26-dotcom の ecosystem.json（六度目の見落とし）と同じものにしてある。
+ * 二つ目。日本語の自己紹介が、Friedkin と Johnsen の 2011 年の本を「単著の理論書」と書いていた。Crossref の記録は
+ * 種類を monograph、著者を二人と返す。Friedkin・Johnsen の名か本の題と同じ段落に、単著や single-authored を置かない。
+ * どちらの式も、止める文と通す文で先に壊して確かめる。 */
+section('3e. 所蔵の主と、本の著者の数');
+(() => {
+  const 所蔵 = [
+    /held (?:by|at|in) (?:the )?(?:JACAR|Japan Center for Asian Historical Records)/i,
+    /(?:JACAR|Japan Center for Asian Historical Records)(?:'s|’s)? (?:holds|holding|collection|owns|keeps)/i,
+    /(?:JACAR|アジア歴史資料センター)(?:が|の)?(?:所蔵|保管|所有)/,
+    /所蔵(?:館|機関|先|元)?(?:[:：は]\s*)?(?:JACAR|アジア歴史資料センター)/,
+    /(?:im Besitz|im Bestand|aufbewahrt) (?:von |des |der |bei )?JACAR/i,
+    /conserv\S* (?:par|à|au|aux) (?:le |la |l’)?JACAR/i,
+    /conservat\S* (?:da|presso|dal|dall’) ?(?:il |lo )?JACAR/i,
+  ];
+  const 単著 = /単著|single-authored|sole-authored|single author|sole author|einzig\w* Autor|auteur unique|unico autore/i;
+  const 相手 = /Friedkin|Johnsen|Social Influence Network Theory/;
+  const 所蔵か = (s) => 所蔵.some((re) => re.test(s));
+  const 単著か = (s) => 相手.test(s) && 単著.test(s);
+  const 試験 = [], 試験2 = [];
+  ['from a gazette held by JACAR, and separates', 'JACAR holds the original gazette.', 'アジア歴史資料センター所蔵の海軍公報',
+   '所蔵：JACAR', 'ein Blatt im Besitz von JACAR', 'un bulletin conservé par JACAR', 'un bollettino conservato presso JACAR']
+    .forEach((x) => { if (!所蔵か(x)) 試験.push('通した：' + x); });
+  ['held by the National Institute for Defense Studies (Ministry of Defense) and published by JACAR (Ref. C12070491000)',
+   'アジア歴史資料センターが公開する海軍公報', 'JACAR（アジア歴史資料センター）Ref.C12070491000、海軍公報（防衛省防衛研究所）']
+    .forEach((x) => { if (所蔵か(x)) 試験.push('止めた：' + x); });
+  if (!単著か('Friedkin–Johnsen モデルは 2011 年に Cambridge から単著の理論書になり')) 試験2.push('単著を通した');
+  if (!単著か('Social Influence Network Theory, a single-authored book')) 試験2.push('single-authored を通した');
+  if (単著か('Friedkin–Johnsen モデルは 2011 年に Cambridge から Friedkin と Johnsen の共著の理論書になり')) 試験2.push('共著を止めた');
+  const 設定 = fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f) && f !== 'package.json');
+  const 出た = [], 段 = [];
+  設定.forEach((f) => {
+    const t = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    if (所蔵か(t)) 出た.push(f);
+    t.split(/\n|<\/p>/).forEach((p) => { if (単著か(p)) 段.push(f); });
+  });
+  const P = JSON.parse(fs.readFileSync(path.join(ROOT, 'papers.json'), 'utf8')).papers.find((p) => p.slug === 'naval-gazette-otani-tsune');
+  const 正 = 'held by the National Institute for Defense Studies (Ministry of Defense) and published by JACAR';
+  ok('どの設定も JACAR を所蔵の主に置かず、海軍公報の英語の要旨が所蔵館を防衛研究所、JACAR を公開の側と書く（' + 設定.length + ' 本、式は日英独仏伊）',
+     出た.length === 0 && 試験.length === 0 && !!P && P.en.summary.indexOf(正) >= 0, 出た.concat(試験).join(' / ') || (P ? '' : '海軍公報の項が無い'));
+  const ja = fs.readFileSync(path.join(ROOT, 'site.json'), 'utf8');
+  ok('Friedkin と Johnsen の 2011 年の本を単著と書かず、日本語の自己紹介が二人の共著と書く（' + 設定.length + ' 本）',
+     段.length === 0 && 試験2.length === 0 && ja.indexOf('Friedkin と Johnsen の共著の理論書') >= 0, [...new Set(段)].concat(試験2).join(' / '));
+})();
+
 /* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */
 section('4. この検査が名乗る件数');
 (() => {
