@@ -380,7 +380,7 @@ function sameChangeSelfTest() {
   const bad = [];
   const mk = () => {
     const d = fs.mkdtempSync(path.join(os.tmpdir(), 'samechange-'));
-    const g = (args, env) => execFileSync('git', ['-c', 'user.name=t', '-c', 'user.email=t@example.invalid', '-c', 'commit.gpgsign=false'].concat(args),
+    const g = (args, env) => execFileSync('git', ['-c', 'user.name=t', '-c', 'user.email=t', '-c', 'commit.gpgsign=false'].concat(args),
       { cwd: d, stdio: 'ignore', env: Object.assign({}, process.env, env || {}) });
     g(['init', '-q', '-b', 'main']);
     return { d, g };
