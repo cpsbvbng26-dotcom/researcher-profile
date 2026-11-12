@@ -94,7 +94,11 @@
       "naval-gazette-notes",
       "justice-and-algorithms",
       "solitary-school"
-    ]
+    ],
+    "exceptions": {
+      "_": "全体が MIT のリポジトリのうち、中の LICENSE か頁の末尾の表示で CC BY 4.0 にしたディレクトリ。免責事項の「再利用」と同じ。2026-11-12 の法令の点検で、目録が trinity-operator を「MIT（全体）」と書いていたことを見つけて足した。check_ecosystem.js が、免責事項の表（ecosystem.json）と同じであることを見る。",
+      "trinity-operator": ["lessons", "games", "site"]
+    }
   },
   "years": {
     "_": "始めた時期は、作品を置いたリポジトリの最初のコミットの日付から出す。学部二年次は 2026 年 10 月からである（利用者から受け取った。2026-11-11）。check_ecosystem.js が、最初のコミットの日付を各リポジトリの git の履歴と突き合わせる。",

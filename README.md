@@ -227,6 +227,7 @@ CATALOG_OUT=../cpsbvbng26-dotcom node build_catalog.js
 ```
 
 ライセンスの列は手で書きません。置いてあるリポジトリの LICENSE の置き方（`licenceLayout`）から出します。
+全体が MIT のリポジトリの中で、中の LICENSE か頁の末尾の表示で CC BY 4.0 にしたディレクトリは、`licenceLayout.exceptions` に書きます。列には「MIT（ただし … は CC BY 4.0）」と出ます。2026-11-12 の法令の点検で足しました（[docs/legal-audit-2026-11-12.md](docs/legal-audit-2026-11-12.md)）。
 始めた時期の列も手で書きません。置いてあるリポジトリの最初のコミットの日付（`years.firstCommit`）から出します。
 どちらの表も、作者のサイトの横断の検査が、各リポジトリの実物と突き合わせます。
 
