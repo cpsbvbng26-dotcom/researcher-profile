@@ -4,6 +4,7 @@
   "alternates": [],
   "ogImage": "https://golden-window-conjecture.vercel.app/og.png",
   "twitterCard": "summary",
+  "ogCard": null,
   "favicon": "./favicon.svg",
   "footer": "© 2026 Takuya Nemoto · CC BY 4.0",
   "extraNav": [

@@ -134,7 +134,21 @@ files.forEach((file) => {
   });
 });
 
-console.log(files.length + ' ファイルを走査しました。');
+/* 日本語の文の中の、英字・数字の前後の空白（2026-11-12）。決まりと例外は spacing.js にある。
+ * 見るのは、頁の地の文になる設定の値である。英語・ドイツ語・フランス語・イタリア語の設定は見ない。 */
+const spacing = require('./spacing');
+let spacingFiles = 0;
+fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f) && !/\.(en|de|fr|it)\.json$/.test(f)).forEach((f) => {
+  spacingFiles++;
+  const j = JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
+  spacing.strings(j, '', []).forEach((s) => spacing.gaps(s).forEach((g) => hits.push({
+    file: f, line: 0, kind: '英字・数字の前後の空白',
+    msg: 'かな・漢字と英字・数字のあいだに半角の空白を一つ置きます（verification/spacing.js）',
+    text: g.around.replace(/\s+/g, ' ')
+  })));
+});
+
+console.log(files.length + ' ファイルを走査しました（うち設定 ' + spacingFiles + ' 本は、英字・数字の前後の空白も見ました）。');
 if (hits.length) {
   console.log('\n' + hits.length + ' 件見つかりました。\n');
   hits.forEach((h) => {
@@ -144,4 +158,4 @@ if (hits.length) {
   });
   process.exit(1);
 }
-console.log('既知の誤変換・活用の壊れ・表記の揺れ・バッジの壊れ・第三者のロゴは見つかりませんでした。');
+console.log('既知の誤変換・活用の壊れ・表記の揺れ・バッジの壊れ・第三者のロゴ・英字と数字の前後の空白の抜けは見つかりませんでした。');

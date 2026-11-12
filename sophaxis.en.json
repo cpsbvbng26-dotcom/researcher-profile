@@ -20,15 +20,14 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "ogType": "website",
   "favicon": "./../favicon.svg",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "en",
-  "taglineHtml": "A preprint server that lists work deposited in repositories, after moderation. It is not peer review.",
+  "taglineHtml": "This page is about Sophaxis, a preprint server that lists work deposited in repositories, after moderation. It is not peer review.",
   "sections": [
     "about",
     "records",

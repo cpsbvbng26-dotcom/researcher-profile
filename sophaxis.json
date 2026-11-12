@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "ja",
   "title": "Sophaxis | 根本卓哉",
-  "description": "根本卓哉が運営する、哲学と数学のオーバーレイ型プレプリントサーバー Sophaxis の頁。OSF のプロジェクトと DOI、載っている記録、これからの予定。",
+  "description": "根本卓哉が運営する、哲学と数学のオーバーレイ型プレプリントサーバー Sophaxis の頁です。OSF のプロジェクトと DOI、載っている記録、これからの予定を置いています。",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html",
   "alternates": [
     {
@@ -20,15 +20,14 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/sophaxis.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "ogType": "website",
   "favicon": "./../favicon.svg",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "ja",
-  "taglineHtml": "リポジトリに置かれた稿を、モデレーションのうえで載せるプレプリントサーバーです。査読ではありません。",
+  "taglineHtml": "リポジトリに置かれた稿を、モデレーションのうえで載せるプレプリントサーバー Sophaxis の頁です。査読ではありません。",
   "sections": [
     "about",
     "records",

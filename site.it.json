@@ -6,27 +6,38 @@
   "title": "Takuya Nemoto — profilo di ricerca",
   "description": "Profilo di Takuya Nemoto. Quanto si trova qui poggia sullo studio da autodidatta e sul lavoro con modelli linguistici. I criteri superati, e quelli non superati, sono riportati nelle parole stesse delle piattaforme.",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/index.it.html",
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 Takuya Nemoto",
   "footerSet": "it",
   "tagline": "Studio da autodidatta e modelli linguistici. I criteri superati sono citati alla lettera, e così anche ciò che non ne discende.",
+  "lead": "Traduzione abbreviata della pagina di profilo di Takuya Nemoto: preprint non sottoposti a revisione paritaria e gli strumenti che li verificano automaticamente.",
+  "entries": [
+    {
+      "name": "Lavori",
+      "url": "#writings",
+      "note": "Gli articoli e dove sono depositati"
+    },
+    {
+      "name": "Verifica",
+      "url": "#verify",
+      "note": "Che cosa viene verificato a ogni push"
+    },
+    {
+      "name": "Catalogo",
+      "url": "./catalog.en.html",
+      "note": "Tutti i lavori in un’unica tabella (in inglese)"
+    }
+  ],
   "labels": {
-    "eyebrow": "Profilo",
+    "eyebrow": "",
     "verify": "Open",
     "skip": "Vai al contenuto",
     "themeToggle": "Cambia tema"
   },
   "profile": {
     "label": "Chi sono",
-    "photo": {
-      "src": "./portrait.jpg",
-      "alt": "Ritratto di Takuya Nemoto",
-      "width": 750,
-      "height": 1000
-    },
     "nowHtml": "Iscritto alla <b>ZEN University, Faculty of Social Informatics</b>, nella prima coorte con immatricolazione autunnale. Il corso attraversa le discipline umanistiche e quelle scientifiche. Inoltre imprenditore individuale da circa ottobre 2024; la dichiarazione di inizio attività (kaigyō todoke) non è stata presentata all’ufficio delle imposte giapponese; sarà presentata quando ci sarà tempo.",
     "studyHtml": "Si studiano soprattutto <b>filosofia</b> e <b>pratica</b>; la <b>matematica</b> è frequentabile. Quanto è depositato qui riguarda l’informatica e l’intelligenza artificiale.",
     "aimsLabel": "Obiettivi",
@@ -52,6 +63,7 @@
   },
   "sections": [
     "about",
+    "profile",
     "writings",
     "verify",
     "more"
@@ -70,7 +82,7 @@
     {
       "id": "verify",
       "title": "Verifica",
-      "html": "<p>A ogni push vengono eseguiti <b>1739 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>97 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
+      "html": "<p>A ogni push vengono eseguiti <b>1745 controlli</b>. Riguardano la struttura del sito, la leggibilità dei contrasti cromatici e i valori numerici della pagina dell’operatore.</p><p><b>Un registro a parte annota ciò che si è rivelato falso</b> — allo stato <b>97 voci</b>. <b>Nulla vi viene cancellato.</b> Anche gli strumenti di verifica sono verificati: uno stato valido viene rotto di proposito e si accerta che a fallire sia esattamente il controllo corrispondente.</p>"
     },
     {
       "id": "more",

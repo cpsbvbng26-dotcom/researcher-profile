@@ -567,6 +567,82 @@ section('3b. 作者のサイトの設定（五言語の日付・目標・頁の�
      !fs.existsSync(path.join(ROOT, 'package.json')) && 外.length === 0 && !/npm (install|ci)|pip install/.test(wf), 外.join(', '));
 })();
 
+/* 見た目の決まり（2026-11-12、百本ノック五の 433・435・436・437・441・472）。
+ * テンプレートの <style> と、作者の設定を読む。決まりは README の「見た目の決まり」にある。 */
+section('3c. 見た目の決まり（字・幅・色・印刷・写真・最初の一文）');
+(() => {
+  const tpl = fs.readFileSync(path.join(ROOT, 'templates', 'page.html'), 'utf8');
+  const css = (/<style>([\s\S]*?)<\/style>/.exec(tpl) || [])[1] || '';
+  /* 印刷の段は紙の寸法（pt）で決め直すので、ここでは外して数える。印刷は下で別に見る。 */
+  const pi = css.indexOf('@media print');
+  const screen = pi >= 0 ? css.slice(0, pi) + css.slice(css.indexOf('\n}\n', pi) + 3) : css;
+
+  /* 433. 字の大きさは五段と名前の一段だけ。宣言はどれも変数を通す。外の書体を読まない。 */
+  const 段 = (/:root \{[^}]*--fs-xs[^}]*\}/.exec(css) || [''])[0].match(/--fs-[a-z]+:/g) || [];
+  const 大きさ = [...screen.matchAll(/(?<![-\w])font-size:\s*([^;}]+)/g)].map((m) => m[1].trim())
+    .filter((v) => !/^var\(--fs-(xs|sm|md|lg|xl|name)\)$/.test(v) && v !== 'inherit');
+  const 書体 = [...screen.matchAll(/(?<![-\w])font-family:\s*([^;}]+)/g)].map((m) => m[1].trim())
+    .filter((v) => !/^var\(--font-(sans|serif|mono)\)$/.test(v));
+  const readme = fs.readFileSync(path.join(ROOT, 'README.md'), 'utf8');
+  const 名乗る段 = Number((/字の大きさは `--fs-` の (\d+) 段だけです/.exec(readme) || [])[1]);
+  /* README が書く画素の数も、変数の値（rem × 16）と合わせる。 */
+  const rem = (k) => Math.round(parseFloat((new RegExp('--fs-' + k + ': ([\\d.]+)rem;').exec(css) || [])[1]) * 16);
+  const 画素 = readme.indexOf('です。' + ['xs', 'sm', 'md', 'lg', 'xl'].map(rem).join('・') + ' px と、名前の ' + rem('name') + ' px です。') >= 0;
+  ok('字の大きさが一つの段の表（README が名乗る ' + 名乗る段 + ' 段）だけで決まり、書体も三つの変数だけで、外の書体を読まない',
+     段.length === 6 && 段.length === 名乗る段 && 画素 && 大きさ.length === 0 && 書体.length === 0 && !/@font-face|@import|fonts\.googleapis/.test(tpl),
+     '段 ' + 段.length + (大きさ.length ? ' / 外れた大きさ ' + 大きさ.join(', ') : '') + (書体.length ? ' / 外れた書体 ' + 書体.join(', ') : ''));
+
+  /* 436. 幅は二つだけ。頁の幅（--page）と、一行の長さ（--measure、40 字）。 */
+  const 幅 = [...screen.matchAll(/(?<![-\w(])max-width:\s*([^;}]+)/g)].map((m) => m[1].trim())
+    .filter((v) => !/^(var\(--(measure|page)\)|calc\(var\(--page\) \+ 3rem\)|100%|none)$/.test(v));
+  /* README が名乗る幅と字数も、テンプレートの値と合わせる（決めごと 5）。16 px の字で 1rem が 1 字である。 */
+  const 名乗る = /頁の幅は `--page`（(\d+)rem）、一行の長さは `--measure`（(\d+)rem）の二つだけです。\2rem は、16 px の字でおよそ \2 字です。/.exec(readme);
+  ok('頁の幅と一行の長さが --page と --measure の二つだけで決まり、README の名乗り（' + (名乗る ? 名乗る[1] + 'rem・' + 名乗る[2] + ' 字' : '無し') + '）と合う',
+     名乗る !== null && css.indexOf('--measure: ' + 名乗る[2] + 'rem;') >= 0 && css.indexOf('--page: ' + 名乗る[1] + 'rem;') >= 0
+       && 幅.length === 0, 幅.join(', '));
+
+  /* 437. 色の値は変数の定義にしか書かない。指し色は一つで、薄めた二つはその指し色から作る。 */
+  const 色 = css.split('\n').filter((l) => /#[0-9a-fA-F]{3,6}\b|rgba?\(/.test(l) && !/^\s*--[a-z-]+:/.test(l.trim().replace(/^(--[a-z-]+:[^;]*;\s*)+$/, '--x: y;')));
+  const 名 = [...new Set([...((/:root \{([^}]*)\}/.exec(css) || [])[1] || '').matchAll(/--([a-z-]+):/g)].map((m) => m[1]))];
+  const 許す = ['bg', 'card', 'text', 'muted', 'faint', 'line', 'line-soft', 'accent', 'accent-soft', 'accent-wash', 'header-bg'];
+  const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(', ');
+  const 指し = [[/:root \{([^}]*)\}/, 'ライト'], [/:root\[data-theme="dark"\] \{([^}]*)\}/, 'ダーク']].filter(([re]) => {
+    const b = (re.exec(css) || [])[1] || '';
+    const a = (/--accent: (#[0-9a-f]{6});/.exec(b) || [])[1];
+    return !a || b.indexOf('--accent-soft: rgba(' + rgb(a) + ',') < 0 || b.indexOf('--accent-wash: rgba(' + rgb(a) + ',') < 0;
+  }).map(([, n]) => n);
+  ok('色の値を変数の定義にしか書かず、指し色が一つで、薄めた色もその指し色から作る',
+     色.length === 0 && 名.every((n) => 許す.indexOf(n) >= 0) && 指し.length === 0,
+     [色.length ? '定義の外の色 ' + 色.length + ' 行' : '', 名.filter((n) => 許す.indexOf(n) < 0).join(', '), 指し.join(', ')].filter(Boolean).join(' / '));
+
+  /* 441. 印刷。頁の上の欄を外し、表とカードを途中で切らず、外への URL を書き出す。 */
+  const 印 = pi >= 0 ? css.slice(pi) : '';
+  ok('印刷の指定が、頁の上の欄を外し、行と塊を途中で切らず、外への URL を書き出す',
+     /header, \.theme-toggle/.test(印) && /\.works-table tr[^{]*\{ break-inside: avoid; \}/.test(印)
+       && /a\[href\^="http"\]::after \{ content: " <" attr\(href\) ">"/.test(印));
+
+  /* 435. 顔写真は置かない。ロゴだけにする（2026-11-12 に決めた）。 */
+  const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
+  const 写真 = fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f)).filter((f) => {
+    const p = J(f).profile;
+    return p && typeof p === 'object' && (p.photo || p.photoNote);
+  });
+  ok('作者の設定が顔写真を持たず、頁の上の欄にロゴを置く', 写真.length === 0
+     && /<a class="mark" href="#main"><img src="\{\{FAVICON\}\}" alt="\{\{NAME\}\}" width="32" height="32"><\/a>/.test(tpl),
+     写真.join(', '));
+
+  /* 472. 頁の最初の一文は、その頁が何かを言う。「一学部生の入口です」のような文にしない。 */
+  const 一文 = (h) => String(h || '').replace(/<[^>]*>/g, '').split('。')[0] + '。';
+  const 何か = /(頁|目録|一覧)です。$/;
+  const 外れ = fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f) && !/\.(en|de|fr|it)\.json$/.test(f))
+    .map((f) => [f, J(f)]).filter(([, o]) => o.name && o.lang === 'ja' && /vercel\.app/.test(o.siteUrl || ''))
+    .map(([f, o]) => [f, 一文(o.leadHtml || o.lead || o.taglineHtml || o.tagline)])
+    .filter(([, x]) => !何か.test(x));
+  const 論文 = J('papers.json').papers.filter((p) => !/(論文|史料ノート)です。$/.test(一文(p.ja.summary))).map((p) => p.slug);
+  ok('日本語の頁の最初の一文が、その頁が何かを言う（〜の頁です・目録です・一覧です、論文の頁は〜論文です）',
+     外れ.length === 0 && 論文.length === 0, 外れ.map(([f, x]) => f + '「' + x + '」').concat(論文).join(' / '));
+})();
+
 /* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */
 section('4. この検査が名乗る件数');
 (() => {

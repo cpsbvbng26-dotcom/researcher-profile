@@ -132,7 +132,7 @@ function asOfLabel(iso, en) {
                  'August', 'September', 'October', 'November', 'December'];
     return `as of ${d} ${MON[mo - 1]} ${y}`;
   }
-  return `${y}年${mo}月${d}日現在`;
+  return `${y} 年 ${mo} 月 ${d} 日現在`;
 }
 
 
@@ -155,7 +155,7 @@ function courseTotal(items, en) {
 }
 
 
-function renderProfile(p) {
+function renderProfile(p, idsHtml) {
   if (!p) return '';
   const rows = arr(p.history).map((h, i, all) => {
     const now = i === all.length - 1;
@@ -204,6 +204,8 @@ function renderProfile(p) {
      * 入れ子にすると査読前の断りがヒーローの外に出る。実際に一度そうなった。 */
     '    <div class="profile reveal">',
     `      <h2 class="profile-label">${esc(p.label || '')}</h2>`,
+    /* 識別子（ORCID）は、自己紹介の節では見出しのすぐ下に置く。 */
+    idsHtml ? idsHtml.replace(/^ {4}/gm, '      ') : '',
     /* 写真。**無ければ何も出さない。**この道具を使う側が必ず顔を出すとは限らない。
      * **一枚でも並べてでも取れる。**object を渡せば一枚、配列を渡せば横に並ぶ。
      * 一枚のときの markup は前と同じで、既存の設定は何も変わらない。
@@ -258,7 +260,7 @@ function extraCss(profile) {
   const out = [];
   const aims = arr(profile.profile && profile.profile.aims);
   if (aims.length && aims.every((a) => a && typeof a === 'object')) {
-    out.push('.aims-table { width: 100%; border-collapse: collapse; font-size: .85rem; line-height: 1.7; }',
+    out.push('.aims-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); line-height: 1.7; }',
       '.aims-table th { text-align: left; font-weight: 600; color: var(--text); padding: .35rem .5rem .35rem 0; border-bottom: 1px solid var(--line); }',
       '.aims-table td { color: var(--muted); padding: .45rem .5rem .45rem 0; border-bottom: 1px solid var(--line-soft); vertical-align: top; overflow-wrap: anywhere; }',
       '.aims-table .aim-status { white-space: nowrap; color: var(--text); }');
@@ -267,8 +269,17 @@ function extraCss(profile) {
     out.push('.foot-links { display: flex; flex-wrap: wrap; gap: .25rem .4rem; }',
       '.foot-links a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }');
   }
+  if (profile.filter && arr(profile.filter.items).length) {
+    const ids = arr(profile.filter.items).map((i) => i.id);
+    out.push('.filter { margin: 1.75rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }',
+      '.filter a { padding: .25rem .85rem; font-size: var(--fs-sm); line-height: 1.8; color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; }',
+      '.filter a:hover { color: var(--text); border-color: var(--accent); }',
+      'main:has(.filterable:target) .filterable:not(:target), main:has(.filterable:target) hr.rule { display: none; }',
+      ids.map((id) => `main:has(#${id}:target) .filter a[href="#${id}"]`).join(',\n')
+        + ',\nmain:not(:has(.filterable:target)) .filter a[href="#filter"] { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }');
+  }
   if (profile.printCard) {
-    out.push('@media print {', '  @page { size: A4; margin: 12mm; }', '  html { font-size: 11pt; }', '  .hero { padding: 0; }', '  section, .cert, .links-group { break-inside: avoid; }', '}');
+    out.push('@media print {', '  @page { size: A4; margin: 12mm; }', '  :root { --fs-md: 11pt; }', '  .hero { padding-top: 0; padding-bottom: 0; }', '  section, .cert, .links-group { break-inside: avoid; }', '}');
   }
   return out.length ? out.join('\n') + '\n' : '';
 }
@@ -292,6 +303,34 @@ function renderPhotos(photo, note) {
     .concat(['        </div>']).concat(断り).concat(['      </div>']).join('\n');
 }
 
+
+/* 最初の画面の入口。**三つまで。**多ければ入口ではなく目次になる。 */
+function renderEntries(list) {
+  const items = arr(list);
+  if (!items.length) return '';
+  if (items.length > 3) throw new Error('entries は三つまでです: ' + items.length);
+  return '\n    <ul class="entries reveal">\n' + items.map((e) =>
+    `      <li><a href="${esc(e.url)}"${linkAttrs(e.url)}><b>${esc(e.name)}</b>`
+    + (e.note ? `<span>${esc(e.note)}</span>` : '') + '</a></li>').join('\n') + '\n    </ul>';
+}
+
+/* 種類で絞る。**スクリプトを足さない。**頁の中のリンクで、節を :target にするだけである。
+ * 絞った節以外を隠すのは CSS（extraCss）。:has を読まない古いブラウザでは、ただの頁内リンクになる。 */
+function renderFilter(f) {
+  if (!f || !arr(f.items).length) return '';
+  return `\n    <nav class="filter reveal" id="filter" aria-label="${esc(f.label || '')}">`
+    + `<a href="#filter">${esc(f.all || '')}</a>`
+    + arr(f.items).map((i) => `<a href="#${esc(i.id)}">${esc(i.name)}</a>`).join('')
+    + '</nav>';
+}
+
+/* 共有カードの画像の名。正の URL の道筋を、そのまま平らにする。
+ * https://example.org/          → index
+ * https://example.org/a/b.en.html → a-b.en */
+function cardName(url) {
+  const p = String(url).replace(/^https?:\/\/[^/]+\/?/, '').replace(/\.html$/, '');
+  return (p || 'index').replace(/\//g, '-');
+}
 
 function renderIdentifiers(ids) {
   if (!ids.length) return '';
@@ -350,8 +389,65 @@ ${body}
 /* 説明文に 1 つだけリンクを許す。DOI をまとめて解析する導線などに使う。 */
 function noteHtmlOf(n) { return typeof n === 'object' && n.html ? n.html : esc(n); }
 
-function renderPapers(papers, labels) {
+function renderPapers(papers, labels, profile) {
+  if (profile && profile.papersLayout === 'table') return renderPaperTable(papers, labels, profile);
   return renderCards(papers, 'papers', labels.papers, labels.papersNote, labels);
+}
+
+/* 論文の表。**題・年・DOI・状態を一行に並べる。**カードより比べやすい（2026-11-12）。
+ *
+ * 状態は手で書かない。目録（catalog.json）の行から取る。行は catalogId で名指す。
+ * 年は設定の year に書く。DataCite の publicationYear を写したものである。
+ * どちらかが欠けたら生成を止める。空欄の表は、比べられない表である。 */
+function renderPaperTable(papers, labels, profile) {
+  if (!papers.length) return '';
+  const cat = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
+  const en = String(profile.lang || 'ja').slice(0, 2) !== 'ja';
+  const cols = arr(labels.papersColumns).length === 4 ? labels.papersColumns
+    : (en ? ['Title', 'Year', 'DOI', 'Status'] : ['題', '年', 'DOI', '状態']);
+  const rows = papers.map((item) => {
+    const w = cat.works.find((x) => x.id === item.catalogId);
+    if (!w) throw new Error('論文の表の行が目録にありません（catalogId）: ' + (item.catalogId || item.title));
+    if (!/^\d{4}$/.test(String(item.year || ''))) throw new Error('論文の表の行に年がありません: ' + item.title);
+    const st = cat.statuses[w.status];
+    if (!st) throw new Error('目録に無い状態です: ' + w.status);
+    const where = arr(item.locations).map((l) => (l.url
+      ? `<a href="${esc(l.url)}"${linkAttrs(l.url)}>${esc(l.name)}${l.id ? ' ' + esc(l.id) : ''}</a>`
+      : esc(l.name) + (l.id ? ' ' + esc(l.id) : ''))).join('　／　');
+    const title = item.url
+      ? `<a href="${esc(item.url)}"${linkAttrs(item.url)}>${esc(item.title)}</a>` : esc(item.title);
+    const doi = item.doi
+      ? `<a href="https://doi.org/${esc(item.doi)}"${linkAttrs('https://')}>${esc(item.doi)}</a>` : '—';
+    return [
+      '        <tr class="paper">',
+      `          <td class="t-title">${title}`
+        + (item.summary ? `<span class="t-sum">${esc(item.summary)}</span>` : '')
+        + (where ? `<span class="t-where">${where}</span>` : '') + '</td>',
+      `          <td class="t-year" data-label="${esc(cols[1])}">${esc(String(item.year))}</td>`,
+      `          <td class="t-doi" data-label="${esc(cols[2])}">${doi}</td>`,
+      `          <td class="t-state" data-label="${esc(cols[3])}">${esc(en ? st.en : st.ja)}</td>`,
+      '        </tr>',
+    ].join('\n');
+  }).join('\n');
+  const note = labels.papersNote;
+  return `
+  <hr class="rule">
+
+  <section id="papers" class="wrap block">
+    <div class="sec-head reveal">
+      <h2 class="serif">${esc(labels.papers)}</h2>
+      ${note ? `<p>${noteHtmlOf(note)}</p>` : ''}
+    </div>
+
+    <div class="reveal">
+      <table class="works-table">
+        <thead><tr>${cols.map((c) => `<th scope="col">${esc(c)}</th>`).join('')}</tr></thead>
+        <tbody>
+${rows}
+        </tbody>
+      </table>
+    </div>
+  </section>`;
 }
 
 /* 制作物。論文と同じカードの形で、節の id と見出しだけ変える。 */
@@ -618,7 +714,7 @@ function renderProse(b, labels) {
   return `
   <hr class="rule">
 
-  <section id="${esc(b.id || 'prose')}" class="wrap block">
+  <section id="${esc(b.id || 'prose')}" class="wrap block${b.filterable ? ' filterable' : ''}">
 ${b.anchors ? '    ' + arr(b.anchors).map((a) => `<span id="${esc(a)}"></span>`).join('') + '\n' : ''}    <div class="sec-head reveal">
       <h2 class="serif">${esc(b.title)}</h2>
       ${b.note ? `<p>${b.noteHtml || esc(b.note)}</p>` : ''}
@@ -681,6 +777,70 @@ ${body}
 }
 
 
+/* 自己紹介を、最初の画面から外して節にする（2026-11-12）。
+ * sections に 'profile' と書いた頁だけがこうなる。書かない頁は、前と同じく最初の画面に置く。
+ * 見出しは自己紹介の板の <h2 class="profile-label"> が持つ。節の見出しを重ねると、同じ語が二度出る。
+ * 板の後ろに、紹介の一段（tagline）を置く。README の写しは、板からこの一段の手前までを読む。 */
+function renderProfileSection(profile) {
+  if (!profile.profile) return '';
+  const tag = profile.taglineHtml || profile.tagline;
+  return `
+  <hr class="rule">
+
+  <section id="profile" class="wrap block profile-section">
+${renderProfile(profile.profile, renderIdentifiers(arr(profile.identifiers)))}${tag ? `    <p class="lead reveal">${profile.taglineHtml || esc(profile.tagline)}</p>\n` : ''}  </section>`;
+}
+
+/* 図。**トップに一枚だけ置く。既にある図から取る。**
+ * 黄金比の窓の図（golden-window.js）の計算を、生成のときに回して SVG にする。
+ * 頁ではスクリプトを動かさない。外のファイルも読まない。色は CSS の変数で付ける。 */
+function renderFigure(fig) {
+  if (!fig || fig.kind !== 'golden-window') return '';
+  const gw = require('./golden-window.js');
+  const d = Number(fig.delta);
+  const W = 600, PAD = 24, LO = 0.45, HI = 0.75;
+  const dx = (v) => PAD + (W - 2 * PAD) * (v - LO) / (HI - LO);
+  const tx = (v) => PAD + (W - 2 * PAD) * v;
+  const r1 = (v) => Math.round(v * 10) / 10;
+  const T = fig.labels || {};
+  const out = [];
+  out.push(`<rect class="band" x="${r1(dx(LO))}" y="18" width="${r1(dx(HI) - dx(LO))}" height="10"/>`);
+  out.push(`<rect class="win" x="${r1(dx(gw.PHI_INV))}" y="18" width="${r1(dx(2 / 3) - dx(gw.PHI_INV))}" height="10"/>`);
+  out.push(`<text x="${r1((dx(gw.PHI_INV) + dx(2 / 3)) / 2)}" y="12" text-anchor="middle">${esc(T.window || '')}</text>`);
+  [[0.5, '1/2'], [gw.PHI_INV, '1/φ'], [2 / 3, '2/3']].forEach(([v, s]) => {
+    out.push(`<line class="tick" x1="${r1(dx(v))}" x2="${r1(dx(v))}" y1="16" y2="30"/>`);
+    out.push(`<text x="${r1(dx(v))}" y="42" text-anchor="middle">${s}</text>`);
+  });
+  out.push(`<line class="now" x1="${r1(dx(d))}" x2="${r1(dx(d))}" y1="14" y2="32"/><circle class="now" cx="${r1(dx(d))}" cy="23" r="4"/>`);
+  out.push(`<text x="${W - PAD}" y="58" text-anchor="end">${esc(T.deltaAxis || '')}</text>`);
+  out.push(`<rect class="band" x="${tx(0)}" y="82" width="${tx(1) - tx(0)}" height="18"/>`);
+  /* 区間は千を超える。**一画素より細いものは、画素の列にまとめて描く。**
+   * 一つずつ <rect> にすると、図だけで頁が百キロバイトを超える。 */
+  const res = gw.tSet(d);
+  const cols = new Set();
+  res.list.forEach(([a, b]) => {
+    for (let x = Math.floor(tx(a)); x <= Math.max(Math.floor(tx(a)), Math.ceil(tx(b)) - 1); x++) cols.add(x);
+  });
+  const xs = [...cols].sort((a, b) => a - b);
+  const runs = [];
+  xs.forEach((x) => {
+    const last = runs[runs.length - 1];
+    if (last && x === last[1] + 1) last[1] = x; else runs.push([x, x]);
+  });
+  out.push(`<path class="set" stroke-width="18" d="${runs.map(([a, b]) => `M${a} 91h${b - a + 1}`).join('')}"/>`);
+  [0, 0.5, 1].forEach((v) => out.push(`<text x="${tx(v)}" y="116" text-anchor="middle">${v}</text>`));
+  out.push(`<text x="${W - PAD}" y="134" text-anchor="end">${esc(T.tAxis || '')}</text>`);
+  return `
+  <hr class="rule">
+
+  <section id="diagram" class="wrap block figure-section">
+    <figure class="figure reveal">
+      <svg viewBox="0 0 ${W} 140" role="img" aria-label="${esc(fig.alt || '')}">${out.join('')}</svg>
+      <figcaption>${fig.captionHtml || esc(fig.caption || '')}</figcaption>
+    </figure>
+  </section>`;
+}
+
 function renderSections(profile, labels) {
   const order = arr(profile.sections).length ? arr(profile.sections) : SECTION_ORDER_DEFAULT;
   /* blocks の id が組み込みの節名と同じだと、組み込みのほうが勝つ。
@@ -688,7 +848,7 @@ function renderSections(profile, labels) {
    * **書いたはずの節が、黙って落ちる。**落ちたことは出力を読んでも分からない。
    * 三言語の頁で実際に起きた（self-correction の SC-033）。ここで止める。 */
   const RESERVED = ['credentials', 'areas', 'courses', 'papers', 'works', 'links',
-                    'claim', 'verification', 'withdrawn', 'contact'];
+                    'claim', 'verification', 'withdrawn', 'contact', 'profile', 'diagram'];
   arr(profile.blocks).forEach((b) => {
     if (RESERVED.indexOf(b.id) >= 0) {
       throw new Error('blocks の id が組み込みの節名と同じです: ' + b.id
@@ -699,7 +859,9 @@ function renderSections(profile, labels) {
     credentials: () => renderCredentials(arr(profile.credentials), labels),
     areas: () => renderAreas(arr(profile.areas), labels),
     courses: () => renderCourses(arr(profile.courses), labels),
-    papers: () => renderPapers(arr(profile.papers), labels),
+    papers: () => renderPapers(arr(profile.papers), labels, profile),
+    profile: () => renderProfileSection(profile),
+    diagram: () => renderFigure(profile.figure),
     works: () => renderWorks(arr(profile.works), labels),
     links: () => renderLinks(arr(profile.links), labels),
     claim: () => renderClaim(profile.claim, labels),
@@ -729,6 +891,9 @@ function renderNav(profile, labels) {
     verification: () => verificationGroups(profile.verification).length > 0,
     withdrawn: () => !!(profile.withdrawn && arr(profile.withdrawn.items).length),
     contact: () => !!profile.contact,
+    /* 自己紹介と図はナビに出さない。どちらも最初の画面のすぐ下にある。 */
+    profile: () => false,
+    diagram: () => false,
   };
   const items = [];
   order.forEach((name) => {
@@ -835,6 +1000,13 @@ function build() {
   }
 
   const labels = Object.assign({}, DEFAULT_LABELS, profile.labels || {});
+  const profileInSection = arr(profile.sections).indexOf('profile') >= 0;
+  /* 共有カードの画像を頁ごとにする（2026-11-12）。ogCard に置き場の URL を書いた頁は、
+   * 正の URL の道筋から画像の名を作る。画像そのものは build_cards.js が頁から作る。 */
+  if (profile.ogCard && profile.siteUrl) {
+    profile.ogImage = profile.ogCard + cardName(profile.siteUrl) + '.png';
+    profile.twitterCard = 'summary_large_image';
+  }
   const template = fs.readFileSync(path.join(ROOT, 'templates', 'page.html'), 'utf8');
   const accent = profile.accent || '#8a6a3d';
   const accentDark = profile.accentDark || '#b08d57';
@@ -859,18 +1031,22 @@ function build() {
     .replace(/{{ACCENT_DARK}}/g, esc(accentDark))
     .replace(/{{INITIALS}}/g, esc(profile.initials || ''))
     .replace(/{{NAV}}/g, renderNav(profile, labels))
-    .replace(/{{EYEBROW}}/g, esc(labels.eyebrow))
+    .replace(/{{EYEBROW}}/g, labels.eyebrow ? `    <p class="eyebrow reveal">${esc(labels.eyebrow)}</p>\n` : '')
     .replace(/{{NAME}}/g, esc(profile.name))
     .replace(/{{NAME_LATIN}}/g, profile.nameLatin ? `    <p class="romaji reveal">${esc(profile.nameLatin)}</p>` : '')
-    .replace(/{{IDENTIFIERS}}/g, renderIdentifiers(arr(profile.identifiers)))
-    .replace(/{{PROFILE}}/g, renderProfile(profile.profile))
+    .replace(/{{IDENTIFIERS}}/g, profileInSection ? '' : renderIdentifiers(arr(profile.identifiers)))
+    .replace(/{{PROFILE}}/g, profileInSection ? '' : renderProfile(profile.profile))
     /* 規則の要約のように、外側が動くものを載せた頁は、いつ時点かを出す。
      * 日付は設定の asOf 一つが持つ。頁の言語に合わせて書き直すだけである。 */
-    .replace(/{{TAGLINE}}/g, ((profile.taglineHtml || profile.tagline)
-      ? `    <p class="lead reveal">${profile.taglineHtml || esc(profile.tagline)}</p>` : '')
+    /* 最初の画面の一文（lead）を書いた頁は、紹介の一段（tagline）を自己紹介の節へ送る。 */
+    .replace(/{{TAGLINE}}/g, ((profile.leadHtml || profile.lead)
+      ? `    <p class="hero-what reveal">${profile.leadHtml || esc(profile.lead)}</p>`
+      : (!profileInSection && (profile.taglineHtml || profile.tagline))
+        ? `    <p class="lead reveal">${profile.taglineHtml || esc(profile.tagline)}</p>` : '')
       + (profile.asOf
         ? `\n    <p class="as-of reveal">${esc(asOfLabel(profile.asOf,
             String(profile.lang || 'ja').slice(0, 2) === 'en'))}</p>` : ''))
+    .replace(/{{ENTRIES}}/g, renderEntries(profile.entries) + renderFilter(profile.filter))
     .replace(/{{SECTIONS}}/g, renderSections(profile, labels))
     /* 下の階層に置くページは、ファビコンを一段上から参照する。
       * 決め打ちにすると notes/ の中でリンク切れになる。 */

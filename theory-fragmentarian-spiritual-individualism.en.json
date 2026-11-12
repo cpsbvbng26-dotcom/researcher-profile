@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "en",
   "title": "Fragmentarian spiritual individualism | Takuya Nemoto",
-  "description": "A framework that treats life, faith, society, ideas and eschatology as self-contained fragments rather than one continuous story, and asks how to inhabit fragmentation with rigor. A preprint, not peer-reviewed.",
+  "description": "An overview of the paper Fragmentarian Spiritual Individualism. A framework that treats life, faith, society, ideas and eschatology as self-contained fragments rather than one continuous story, and asks how to inhabit fragmentation with rigor. A preprint, not peer-reviewed.",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.en.html",
   "alternates": [
     {
@@ -20,15 +20,14 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/fragmentarian-spiritual-individualism.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "ogType": "article",
   "favicon": "./../favicon.svg",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "en",
-  "taglineHtml": "Fragmentation is not a wound to be repaired. The framework asks how to inhabit it with discipline. It has not been peer-reviewed.",
+  "taglineHtml": "An overview of the paper Fragmentarian Spiritual Individualism. Fragmentation is not a wound to be repaired. The framework asks how to inhabit it with discipline. It has not been peer-reviewed.",
   "sections": [
     "theory"
   ],

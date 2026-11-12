@@ -4,7 +4,7 @@
   "initials": "TN",
   "lang": "en",
   "title": "The celibate individual | Takuya Nemoto",
-  "description": "A paper that reconsiders celibacy not as an absence of sexual activity but as an ethical and existential choice, and defends chosen celibacy as one exemplary path of self-cultivation, not the only right one and not a duty for all. A preprint, not peer-reviewed.",
+  "description": "An overview of the paper The Nobility and Exemplarity of the Celibate Individual. A paper that reconsiders celibacy not as an absence of sexual activity but as an ethical and existential choice, and defends chosen celibacy as one exemplary path of self-cultivation, not the only right one and not a duty for all. A preprint, not peer-reviewed.",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/celibate-individual.en.html",
   "alternates": [
     {
@@ -20,15 +20,14 @@
       "url": "https://cpsbvbng26-dotcom.vercel.app/notes/celibate-individual.html"
     }
   ],
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "ogType": "article",
   "favicon": "./../favicon.svg",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "en",
-  "taglineHtml": "Chosen celibacy is one exemplary and defensible path of self-cultivation, not a deficiency to be explained away. It is not claimed to be the only right path. Not peer-reviewed.",
+  "taglineHtml": "An overview of the paper on chosen celibacy. Chosen celibacy is one exemplary and defensible path of self-cultivation, not a deficiency to be explained away. It is not claimed to be the only right path. Not peer-reviewed.",
   "sections": [
     "theory"
   ],
