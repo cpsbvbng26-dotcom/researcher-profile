@@ -314,6 +314,7 @@
       "summaryJa": "流派を持たない者が「独我流」を名乗るとき、何が欠けるかを、稽古の記録として確かめる",
       "summaryEn": "What is missing when someone with no school names their practice as one, checked as a record of practice",
       "doi": "10.5281/zenodo.22765695",
+      "conceptDoi": "10.5281/zenodo.22765694",
       "canonical": "zenodo",
       "resourceType": "Preprint"
     },
@@ -328,6 +329,7 @@
       "summaryJa": "エッセイです。都市伝説を反転した通過儀礼として読む。論文ではありません",
       "summaryEn": "An essay. Reads the urban legend as an inverted rite of passage. Not a research paper",
       "doi": "10.5281/zenodo.23114131",
+      "conceptDoi": "10.5281/zenodo.23114130",
       "canonical": "zenodo",
       "resourceType": "Preprint",
       "startDate": "2026-10-03",
@@ -420,6 +422,7 @@
       "summaryJa": "設定ファイル一つから、外部へリクエストを出さない研究者のサイトを作る道具",
       "summaryEn": "Builds a researcher's site, which makes no external requests, from one configuration file",
       "doi": "10.5281/zenodo.22335692",
+      "conceptDoi": "10.5281/zenodo.22335691",
       "version": "1.0.0",
       "canonical": "github",
       "resourceType": "Software",
@@ -451,11 +454,7 @@
       "summaryJa": "哲学と数学のプレプリントのオーバーレイ。受け付けはモデレーションであって査読ではない",
       "summaryEn": "An overlay preprint server for philosophy and mathematics. Acceptance is moderation, not peer review",
       "doi": "10.5281/zenodo.24033372",
-      "osf": {
-        "doi": "10.17605/osf.io/mq7za",
-        "noteJa": "Sophaxis のプロジェクトの頁です。学部二年次に始めたもので、論文の引用先ではありません",
-        "noteEn": "The project page of Sophaxis. It was begun in the second undergraduate year, and it is not a citation target for the papers"
-      },
+      "otherDois": ["10.17605/osf.io/mq7za"],
       "version": "1.0.0",
       "canonical": "github",
       "resourceType": "Software"
@@ -471,11 +470,7 @@
       "summaryEn": "The public profile site, and the checks across the ten repositories",
       "doi": "10.5281/zenodo.24034360",
       "conceptDoi": "10.5281/zenodo.24034359",
-      "osf": {
-        "doi": "10.17605/osf.io/7kr5n",
-        "noteJa": "学部一年次の研究のリポジトリをまとめる頁です。論文の引用先ではありません（DataCite で確かめた日 2026-11-12）",
-        "noteEn": "The page that gathers the first-year research repositories. It is not a citation target for the papers (checked on DataCite, 2026-11-12)"
-      },
+      "otherDois": ["10.17605/osf.io/7kr5n"],
       "version": "1.0.0",
       "canonical": "site",
       "resourceType": "Software"
