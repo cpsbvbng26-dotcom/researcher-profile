@@ -706,6 +706,46 @@ section('3e. 所蔵の主と、本の著者の数');
      段.length === 0 && 試験2.length === 0 && ja.indexOf('Friedkin と Johnsen の共著の理論書') >= 0, [...new Set(段)].concat(試験2).join(' / '));
 })();
 
+/* ワークフローと GitHub の規約（2026-11-13）。GitHub の利用規約は I 節で追加製品の規約を取り込み、その Actions の節は、
+ * GitHub の実行環境での使い方を、リポジトリのソフトウェアのプロジェクトの制作・検査・配備・公開に限る。ワークフローを足すときは、
+ * 点検の記録の「八度目の見落とし」の表に行を足して判定する。行の無いワークフローも、無いワークフローの行も落とす。 */
+(() => {
+  const EIGHTH = '\n## 2026-11-12 の続き：八度目の見落とし\n';
+  const PURPOSE = 'If using GitHub-hosted runners, any other activity unrelated to the production, testing, deployment, or publication of the software project associated with the repository where GitHub Actions are used.';
+  const problems = (text, names) => {
+    const i = text.indexOf(EIGHTH);
+    if (i < 0) return ['記録に八度目の見落としの節が無い'];
+    const j = text.indexOf('\n## ', i + EIGHTH.length);
+    const sec = text.slice(i, j < 0 ? text.length : j);
+    const rows = sec.split('\n').filter((l) => l.startsWith('| ') && !l.startsWith('| 箇所 |') && !l.startsWith('| --- |')).map((l) => l.slice(2, -2).split(' | '));
+    const bad = [];
+    for (const r of rows) {
+      if (r.length !== 6 || !['誤り', '根拠不足', '漏れ', '表現', '問題なし'].includes(r[4])) bad.push('表の形：' + r[0].slice(0, 30));
+      else if (r[4] !== '問題なし' && !r[5].includes('2026-11-13 に Claude が決めました。')) bad.push('決めた者の無い行：' + r[0].slice(0, 30));
+    }
+    const named = rows.map((r) => (/^`\.github\/workflows\/([^`]+)`/.exec(r[0]) || [])[1]).filter(Boolean);
+    names.filter((n) => !named.includes(n)).forEach((n) => bad.push('行の無いワークフロー：' + n));
+    named.filter((n) => !names.includes(n)).forEach((n) => bad.push('無いワークフローの行：' + n));
+    if (!sec.includes('「' + PURPOSE + '」')) bad.push('Actions の節の文を引いていない');
+    return bad;
+  };
+  const f = path.join(ROOT, 'docs', 'legal-audit-2026-11-12.md');
+  const text = fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : '';
+  const names = fs.readdirSync(path.join(ROOT, '.github', 'workflows')).filter((x) => /\.ya?ml$/.test(x)).sort();
+  const now = problems(text, names);
+  ok('ワークフロー（' + names.length + ' 本）が、どれも点検の記録の表に行を持ち、GitHub の追加製品の規約に照らして判定してある', now.length === 0, now.join(', '));
+  const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const broken = [
+    problems(text, names.concat(['newsletter.yml'])),
+    problems(text, names.slice(1)),
+    problems(text.replace(new RegExp('\\n\\| `\\.github/workflows/' + esc(names[0]) + '`[^\\n]*'), ''), names),
+    problems(text.replace('publication of the software project', 'promotion of the software project'), names),
+    problems(text.replace(EIGHTH, '\n## 八度目\n'), names),
+  ];
+  ok('壊して確かめる：新しいワークフロー・外したワークフロー・表から外した行・引いた文の一語・節の見出しのどれでも落ちる（' + broken.filter((b) => b.length).length + ' / ' + broken.length + '）',
+    broken.every((b) => b.length > 0));
+})();
+
 /* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */
 section('4. この検査が名乗る件数');
 (() => {
