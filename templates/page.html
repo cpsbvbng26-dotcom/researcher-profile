@@ -618,7 +618,7 @@ footer { border-top: 1px solid var(--line); margin-top: 2rem; }
 
 /* 項目が 1 行に収まらない幅では、ナビを折り返して見切れを防ぐ */
 @media (max-width: 30rem) {
-  .head-row { align-items: flex-start; padding-top: .6rem; padding-bottom: .6rem; }
+  .head-row { flex-wrap: wrap; align-items: flex-start; padding-top: .6rem; padding-bottom: .6rem; }
   .nav { width: 100%; justify-content: flex-start; gap: .3rem .9rem; }
   .wrap { padding: 0 1rem; }
   .hero { padding-top: 2.5rem; padding-bottom: 2.5rem; }
