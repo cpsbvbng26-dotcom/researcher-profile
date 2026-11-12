@@ -132,8 +132,42 @@ Sophaxis の取り寄せの仕事を走らせて e-Gov から取り寄せ、cpsb
 | papers.json と notes.en.json の、海軍公報の史料ノートの英語の要旨 | JACAR の目録 C12070491000、JACAR「資料画像の利用について」 | 原資料をどこが所蔵しているかは、取り寄せた目録が言うとおりに書くこと | 英語の要旨は「from a gazette held by JACAR」と書いていた。取り寄せた目録（cpsbvbng26-dotcom の `verification/statutes.json` の「JACAR 目録 C12070491000」）は「（所蔵館：防衛省防衛研究所）」と表示する。JACAR の案内は、この種の資料を「防衛省防衛研究所からの提供資料」と呼ぶ。JACAR は画像を公開している側です。日本語の要旨は「アジア歴史資料センターが公開する」と書いており、目録と合っていた | 誤り | 二つの設定の英語の要旨を「held by the National Institute for Defense Studies (Ministry of Defense) and published by JACAR (Ref. C12070491000)」に直した。そこから出る cpsbvbng26-dotcom の論文の頁二頁、ノートの英語の目次、共有カード一枚を作り直した。`check_build.js` の 3e が、JACAR やアジア歴史資料センターを所蔵の主に置く文を、日英独仏伊のどの形でも、どの設定でも止める。式は、止める文八つと通す文三つで先に壊して確かめる。2026-11-13 に Claude が決めました。目録が所蔵館を名指ししており、公開する側と分けて書けば目録と食い違わないからです |
 | site.json の自己紹介の、Friedkin と Johnsen の 2011 年の本 | なし（表示の正確さ） | 他人の本の著者を、書誌の記録が言うとおりに書くこと | 欄は「2011 年に Cambridge から単著の理論書になり」と書いていた。Crossref の記録（https://api.crossref.org/works/10.1017/cbo9780511976735 、2026-11-13 に日本時間で読んだ）は、type を「monograph」、author を Noah E. Friedkin（sequence「first」）と Eugene C. Johnsen（sequence「additional」）の二人、publisher を「Cambridge University Press」、issued を 2011-04-18 と返した。単著は一人で書いた本を指すので、記録と食い違っていた。英独仏伊の設定は monograph（Monographie、monographie、monografia）と書いており、著者の数を言っていない | 誤り | 「2011 年に Cambridge から Friedkin と Johnsen の共著の理論書になり」に直し、cpsbvbng26-dotcom のトップの頁を作り直した。`check_build.js` の 3e が、Friedkin・Johnsen の名か本の題と同じ段落に単著や single-authored を置く設定を止め、日本語の自己紹介が共著と書くことを求める。2026-11-13 に Claude が決めました。Crossref の記録が著者を二人と返すからです。英語の monograph は著者の数を言わないので、そのままにしました |
 
+## 2026-11-12 の続き：八度目の見落とし
+
+読むだけの点検を、八度目に別の手で行いました。
+上の節が見落としていたものが見つかりました。
+直した日は、日本時間で 2026-11-13 です。
+前の行は、そのとき何を確かめたかの記録なので、消していません。
+GitHub の利用規約の I 節は「Some Service features may be subject to additional terms specific to that feature or product as set forth in the GitHub Additional Product Terms.」と書きます。
+その追加の規約（GitHub Terms for Additional Products and Features）を、これまでの点検は取り寄せていませんでした。
+追加の規約は、`github/site-policy` のコミット `166eb97e485b7de3cd5dbaf8c8d16e4310fda46c` の文を、2026-11-13 に raw.githubusercontent.com から直に取り寄せました。
+ファイルの SHA-256 は `c39b5a7fc1953ebd37428db18101726acefb55420f766bcd7d912e1b71ee2ffc` です。
+Actions の節は「Additionally, regardless of whether an Action is using self-hosted runners, Actions should not be used for:」と書き、次の二つを挙げます。
+一つは「Any activity that places a burden on our servers, where that burden is disproportionate to the benefits provided to users (for example, don't use Actions as a content delivery network or as part of a serverless application, but a low benefit Action could be ok if it’s also low burden); or」です。
+もう一つは「If using GitHub-hosted runners, any other activity unrelated to the production, testing, deployment, or publication of the software project associated with the repository where GitHub Actions are used.」です。
+同じ節は「Misuse of GitHub Actions may result in termination of jobs, restrictions in your ability to use GitHub Actions, disabling of repositories created to run Actions in a way that violates these Terms, or in some cases, suspension or termination of your GitHub account.」とも書きます。
+このリポジトリのワークフローは、どれも GitHub の実行環境（`ubuntu-latest` か `ubuntu-24.04`）で動きます。
+そこで、ワークフローを一つずつ、四つの目的（制作・検査・配備・公開）のどれに当たるか、負荷が益に見合うかで読みました。
+ワークフローの行は、箇所の欄を `.github/workflows/` のファイルの名で始めます。
+実行の時間は、GitHub の API で 2026-11-13 に読んだ直近の実行（多くて 300 件）の中央値です。
+GitHub Pages が枝から頁を配るときに GitHub が動かす仕事と、Dependabot の版の更新は、このリポジトリのファイルではないので、表に挙げていません。
+引いた文は、cpsbvbng26-dotcom の `verification/statutes.json` の「GitHub の利用規約 I」と「GitHub の追加製品の規約 Actions」に写しました。
+同じ点検は、13 のリポジトリの記録の同じ見出しの節にあります。
+
+| 箇所 | 法令と条 | 要件 | 事実 | 判定 | 対応 |
+| --- | --- | --- | --- | --- | --- |
+| GitHub の追加製品の規約（Actions の節） | GitHub の利用規約 I、GitHub の追加製品の規約 Actions | 使っているサービスの規約を取り寄せて読むこと | 利用規約の I 節は追加の規約を取り込みますが、これまでの点検は追加の規約を読んでいませんでした | 漏れ | 取り寄せ、Actions の節の文を cpsbvbng26-dotcom の `verification/statutes.json` に写しました。Sophaxis と Nusquama の見張りにも足しました。2026-11-13 に Claude が決めました。ワークフローの使い方を決める文なので、ほかの規約と同じに読むためです |
+| `.github/workflows/pages.yml`（main への push、手で起こすとき） | GitHub の追加製品の規約 Actions | GitHub の実行環境で、リポジトリのソフトウェアのプロジェクトの制作・検査・配備・公開のどれかに当たること。負荷が利用者への益に見合うこと | `build.js` で道具の見本の頁を組み、GitHub Pages に配ります。実行の中央値は 30 秒です | 問題なし | 変えていません。配備と公開に当たります |
+| `.github/workflows/verify.yml`（main への push・PR、手で起こすとき） | GitHub の追加製品の規約 Actions | GitHub の実行環境で、リポジトリのソフトウェアのプロジェクトの制作・検査・配備・公開のどれかに当たること。負荷が利用者への益に見合うこと | このリポジトリの検査を回します（散文、組み立て、秘密）。実行の中央値は 10 秒です | 問題なし | 変えていません。検査に当たります |
+| 検査（`verification/check_build.js`） | なし | ワークフローごとの判断を、機械で固めること | ありませんでした | 漏れ | `verification/check_build.js` に、`.github/workflows/` のどのファイルもこの節の表に行を持ち、無いファイルの行が無いことを確かめる項目を足しました。cpsbvbng26-dotcom の `check_ecosystem.js` の 12o も、13 のリポジトリについて同じことを確かめます。2026-11-13 に Claude が決めました。新しいワークフローを、規約に照らさずに足せないようにするためです |
+
+この表の判定は、漏れ 2、問題なし 2 です。
+
+弁護士は、この節を見ていません。
+
 ## 調べた法令
 
+- GitHub の利用規約（I 節）と GitHub の追加製品の規約（Actions の節。2026-11-13 に `github/site-policy` から直に取り寄せた）
 - 著作権法（第21条、第23条、第32条、第48条）
 - 個人情報保護法（第2条、第21条）
 - 電気通信事業法（第27条の12）
