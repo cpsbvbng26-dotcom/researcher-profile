@@ -115,7 +115,7 @@
       },
       {
         "term": "証拠",
-        "html": "三篇が検証スクリプトの同梱を謳っている箇所を、<strong>三箇所だと思っていました。数え直すと六箇所ありました。</strong>見つけたのは目視ではなく機械です。正誤表そのものへの検査 109 項目、道具自身への 82 項目。道具は、通る状態を <strong>30 通りに壊して、壊した箇所がちょうど落ちること</strong>を確かめています。"
+        "html": "三篇が検証スクリプトの同梱を謳っている箇所を、<strong>三箇所だと思っていました。数え直すと六箇所ありました。</strong>見つけたのは目視ではなく機械です。正誤表そのものへの検査 111 項目、道具自身への 82 項目。道具は、通る状態を <strong>30 通りに壊して、壊した箇所がちょうど落ちること</strong>を確かめています。"
       },
       {
         "term": "外部の目",
@@ -135,8 +135,8 @@
         "name": "ソフトウェア —— errata-check が、凍結した論文の正誤表を種類をまたいで監査する",
         "items": [
           {
-            "name": "正誤表の監査 271",
-            "html": "凍結された三つの成果物すべてに、同じ監査を当てています。Trinity-Infinity の三篇に 109、哲学の三篇に 103、海軍公報の史料ノートに 59。引用が一字一句あるか、「印字されていない」と述べたものが本当に無いか、未解決の項目が「解決済み」に書き換わっていないか、PDF そのものが差し替わっていないか（<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>）"
+            "name": "正誤表の監査 290",
+            "html": "凍結された三つの成果物すべてに、同じ監査を当てています。Trinity-Infinity の三篇に 111、哲学の三篇に 111、海軍公報の史料ノートに 68。引用が一字一句あるか、「印字されていない」と述べたものが本当に無いか、未解決の項目が「解決済み」に書き換わっていないか、PDF そのものが差し替わっていないか（<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>）"
           },
           {
             "name": "道具自身 82",
@@ -149,8 +149,8 @@
         "name": "データセット —— self-correction の訂正の登録簿",
         "items": [
           {
-            "name": "登録簿 47",
-            "html": "訂正の記録そのものの形と履歴。<strong>97 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分けています。<strong>うち 37 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせています。<strong>第三者が確かめられるのは 78 件で、残る 19 件は著者の証言しか根拠が無い</strong>ことも欄にしてあります。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
+            "name": "登録簿 48",
+            "html": "訂正の記録そのものの形と履歴。<strong>104 件</strong>を、いま立っている・未解決・直せない・直した・撤回したの五つに分けています。<strong>うち 44 件はあとからの再構成である</strong>ことも記録に入れ、書いた日は git の履歴と突き合わせています。<strong>第三者が確かめられるのは 85 件で、残る 19 件は著者の証言しか根拠が無い</strong>ことも欄にしてあります。いま立っている主張に覆し方が書いてあるか、直せない項目に理由が書いてあるか、そして <strong>過去に一度でも載った項目が消されていないか</strong>（<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>）"
           }
         ]
       },
@@ -163,7 +163,7 @@
             "html": "三篇に印字されている数値を一つずつ計算し直し、印字された値と並べています（<code>trinity-infinity/verification/claims_audit.py</code>）"
           },
           {
-            "name": "定理の再実装 15",
+            "name": "定理の再実装 16",
             "html": "定理を紙面から独立に実装し直しています（<code>trinity-infinity/verification/independent_check.py</code>）"
           },
           {
@@ -188,7 +188,7 @@
   },
   "withdrawn": {
     "note": {
-      "html": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。公開したもの全部の記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（97 件）</a> にあります。"
+      "html": "改訂で撤回したものと、<b>あとから分かって、もう直せなかったもの</b>です。<b>消していません。</b>凍結された PDF は直せないので、直せるのは記録のほうだけです。公開したもの全部の記録は <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">登録簿（104 件）</a> にあります。"
     },
     "items": [
       {
@@ -354,7 +354,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
       "code": "PDF / CC BY 4.0",
       "title": "trinity-infinity",
-      "summary": "上の三篇と、その検証をまとめたリポジトリです。定理を独立に実装し直す 15 項目と、紙面の数値を計算し直す 32 項目があります。何が確立され、何が撤回されたかも記録しています。",
+      "summary": "上の三篇と、その検証をまとめたリポジトリです。定理を独立に実装し直す 16 項目と、紙面の数値を計算し直す 32 項目があります。何が確立され、何が撤回されたかも記録しています。",
       "verify": "GitHub で見る"
     },
     {
