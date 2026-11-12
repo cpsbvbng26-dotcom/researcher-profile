@@ -47,7 +47,7 @@ const L = {
     cols: ['題', '種類', '状態', 'DOI', '正の所在', 'ライセンス', 'Zenodo の種類', '始めた時期'],
     year1: '学部一年次', year2: '学部二年次', yearUnknown: '—（確かめていない）', year1Cont: '学部一年次の成果（{}）の続き',
     rulesYear: '始めた時期は、作品を置いたリポジトリの最初のコミットの日付から出しています。学部二年次は 2026 年 10 月からです。',
-    concept: '全版', also: '別の所在', osf: 'OSF のプロジェクト',
+    concept: '全版', also: '別の所在',
     noRepo: '—（リポジトリに置いていない）',
     mit: 'MIT（全体）', split: 'CC BY 4.0（文書）・MIT（コード）', splitText: 'CC BY 4.0（文書と論文）',
     noType: '—', notZenodo: '—（Zenodo に無い）', figshare: '（Figshare）', noDoi: '—（DOI を持たない）',
@@ -80,7 +80,7 @@ const L = {
     cols: ['Title', 'Type', 'Status', 'DOI', 'Canonical location', 'Licence', 'Zenodo resource type', 'Begun'],
     year1: 'First undergraduate year', year2: 'Second undergraduate year', yearUnknown: '— (not checked)', year1Cont: 'Continuation of first-year work ({})',
     rulesYear: 'The period begun is taken from the first commit of the repository that holds the work. The second undergraduate year began in October 2026.',
-    concept: 'all versions', also: 'also', osf: 'OSF project',
+    concept: 'all versions', also: 'also',
     noRepo: '— (not in a repository)',
     mit: 'MIT (whole repository)', split: 'CC BY 4.0 (texts) and MIT (code)', splitText: 'CC BY 4.0 (texts and papers)',
     noType: '—', notZenodo: '— (not on Zenodo)', figshare: ' (Figshare)', noDoi: '— (no DOI)',
@@ -179,16 +179,11 @@ const begunText = (w, t) => { const b = begunOf(w); if (b.period === 'first' && 
 
 /* ------------------------------------------------------------ 表 */
 
-const lang = (t) => (t === L.en ? 'en' : 'ja');
-
 function doiCell(w, t) {
   if (!w.doi) return t.noDoi;
   const parts = [ext(doiUrl(w.doi), '<code>' + esc(w.doi) + '</code>')];
   if (w.conceptDoi) parts.push(t.concept + ' ' + ext(doiUrl(w.conceptDoi), '<code>' + esc(w.conceptDoi) + '</code>'));
   (w.otherDois || []).forEach((d) => parts.push(t.also + ' ' + ext(doiUrl(d), '<code>' + esc(d) + '</code>')));
-  /* OSF のプロジェクト。**まとめ役の頁であって、論文の引用先ではない。**別の所在とも分けて書く。 */
-  if (w.osf) parts.push(t.osf + ' ' + ext(doiUrl(w.osf.doi), '<code>' + esc(w.osf.doi) + '</code>')
-    + '<span>' + esc(lang(t) === 'en' ? w.osf.noteEn : w.osf.noteJa) + '</span>');
   return parts.join('<br>');
 }
 
@@ -448,7 +443,6 @@ function exportJson() {
         doi: w.doi || null,
         conceptDoi: w.conceptDoi || null,
         otherDois: w.otherDois || [],
-        osfProject: w.osf ? { doi: w.osf.doi, url: doiUrl(w.osf.doi), noteJa: w.osf.noteJa, noteEn: w.osf.noteEn } : null,
         url: w.doi ? doiUrl(w.doi) : null,
         version: w.version || null,
         repository: w.repo ? SRC.gh + w.repo : null,
