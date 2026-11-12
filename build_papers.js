@@ -185,7 +185,6 @@ function pageConfig(p, lang) {
           author: {
             '@type': 'Person',
             name: 'Takuya Nemoto',
-            affiliation: { '@type': 'CollegeOrUniversity', name: 'ZEN University' },
             alternateName: '根本卓哉',
             identifier: 'https://orcid.org/' + SRC.orcid,
             url: 'https://orcid.org/' + SRC.orcid,

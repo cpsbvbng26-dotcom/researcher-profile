@@ -193,14 +193,9 @@
       "name": "ウェブ・SNS",
       "items": [
         {
-          "name": "ホームページ①",
+          "name": "ホームページ",
           "note": "takuyanemoto.jimdofree.com",
           "url": "https://takuyanemoto.jimdofree.com/"
-        },
-        {
-          "name": "ホームページ②",
-          "note": "sites.google.com/view/nemototakuya",
-          "url": "https://sites.google.com/view/nemototakuya/"
         },
         {
           "name": "Medium",

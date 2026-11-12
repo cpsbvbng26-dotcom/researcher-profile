@@ -526,11 +526,13 @@ section('3b. 作者のサイトの設定（五言語の日付・目標・頁の�
     const a = g && g.affiliation;
     if (!a || !/^ZEN(大学| University)$/.test(a.name)) 所属.push(f);
   });
+  /* 2026-11-12。論文の頁と目録は、作品の著者に所属を付けない。論文は研究上の所属が無いと書いている。
+   * 在籍は人の頁（site・cv の Person）にだけ書く。作品の著者に付ければ、大学の研究のように読める。 */
   const 所属文 = ['build_papers.js', 'build_catalog.js'].filter((f) =>
-    fs.readFileSync(path.join(ROOT, f), 'utf8').indexOf("affiliation: { '@type': 'CollegeOrUniversity', name: 'ZEN University' }") < 0);
+    /affiliation/.test(fs.readFileSync(path.join(ROOT, f), 'utf8')));
   const 独立 = fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f))
     .filter((f) => /"(affiliation|jobTitle)"[^}]*[Ii]ndependent/.test(fs.readFileSync(path.join(ROOT, f), 'utf8')));
-  ok('構造化データの所属が ZEN大学／ZEN University で、Independent の所属も肩書きも無い',
+  ok('構造化データの所属は人の頁だけが ZEN大学／ZEN University で書き、論文と目録の著者には付けず、Independent の所属も肩書きも無い',
      所属.length === 0 && 所属文.length === 0 && 独立.length === 0, 所属.concat(所属文, 独立).join(', '));
 
   /* 378. 印刷して一枚に収める頁。 */
