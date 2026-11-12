@@ -38,7 +38,7 @@
   },
   "profile": {
     "label": "Über mich",
-    "nowHtml": "Eingeschrieben an der <b>ZEN University, Faculty of Social Informatics</b>, im ersten Jahrgang mit Herbstbeginn. Der Studiengang verbindet Geistes- und Naturwissenschaften. Daneben seit etwa Oktober 2024 selbstständig als Einzelunternehmer; die Anzeige der Geschäftseröffnung (kaigyō todoke) beim japanischen Finanzamt ist nicht eingereicht und soll eingereicht werden, sobald Zeit dafür ist.",
+    "nowHtml": "Eingeschrieben an der <b>ZEN University, Faculty of Social Informatics</b>, im ersten Jahrgang mit Herbstbeginn. Der Studiengang verbindet Geistes- und Naturwissenschaften. Daneben seit etwa Oktober 2024 selbstständig als Einzelunternehmer; die Anzeige der Geschäftseröffnung (kaigyō todoke) beim japanischen Finanzamt ist nicht eingereicht.",
     "studyHtml": "Studiert werden vor allem <b>Philosophie</b> und <b>Praxis</b>; <b>Mathematik</b> ist belegbar. Was hier abgelegt ist, betrifft Informatik und künstliche Intelligenz.",
     "aimsLabel": "Ziele",
     "aimsStatusLabel": [
@@ -82,7 +82,7 @@
     {
       "id": "verify",
       "title": "Prüfung",
-      "html": "<p>Bei jedem Push laufen <b>1746 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>104 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>"
+      "html": "<p>Bei jedem Push laufen <b>1747 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>104 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>"
     },
     {
       "id": "more",
