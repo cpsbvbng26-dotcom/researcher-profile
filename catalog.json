@@ -18,42 +18,42 @@
       "id": "dataset",
       "ja": "データセット",
       "en": "Dataset",
-      "noteJa": "資料と記録を、機械で読める形で残したもの",
+      "noteJa": "資料と記録を、機械で読める形で残したものです",
       "noteEn": "Sources and records kept in a machine-readable form"
     },
     {
       "id": "thought-experiment",
       "ja": "思考実験・予想",
       "en": "Thought experiment and conjecture",
-      "noteJa": "前提を置いて、そこから何が言えるかを追ったもの",
+      "noteJa": "前提を置いて、そこから何が言えるかを追ったものです",
       "noteEn": "Assumptions set down, and what follows from them"
     },
     {
       "id": "essay",
       "ja": "エッセイ",
       "en": "Essay",
-      "noteJa": "哲学と、文化の構造を論じたもの。論文の形をとっていても、種類はエッセイです",
+      "noteJa": "哲学と、文化の構造を論じたものです。論文の形をとっていても、種類はエッセイです",
       "noteEn": "Philosophy, and the structure of culture. Some take the form of a paper; the type is essay"
     },
     {
       "id": "historical",
       "ja": "史料研究・事例研究",
       "en": "Historical and case study",
-      "noteJa": "一次資料や出来事を確かめたもの",
+      "noteJa": "一次資料や出来事を確かめたものです",
       "noteEn": "Primary sources and events, checked"
     },
     {
       "id": "software",
       "ja": "ソフトウェア",
       "en": "Software",
-      "noteJa": "ほかの人も使える道具",
+      "noteJa": "ほかの人も使える道具です",
       "noteEn": "Tools that others can use"
     },
     {
       "id": "project",
       "ja": "プロジェクト",
       "en": "Project",
-      "noteJa": "続けて動かしているもの",
+      "noteJa": "続けて動かしているものです",
       "noteEn": "Things kept running"
     }
   ],
@@ -256,7 +256,7 @@
       "registry": "Figshare",
       "startRepo": "trinity-operator",
       "continues": "Trinity-Infinity",
-      "startNoteJa": "保守している版は trinity-operator の games のノート。Trinity-Infinity Framework の一部で、学部一年次の成果の続きにあたる（決めごと 15 が許す続き。利用者の決め、2026-11-11）",
+      "startNoteJa": "保守している版は trinity-operator の games のノートです。Trinity-Infinity Framework の一部で、学部一年次の成果の続きにあたります（決めごと 15 が許す続きです。利用者の決め、2026-11-11）",
       "startNoteEn": "The maintained version is the games note in trinity-operator. It is part of the Trinity-Infinity Framework and a continuation of first-year work (a continuation rule 15 allows; the author's decision, 2026-11-11)"
     },
     {
@@ -331,7 +331,7 @@
       "canonical": "zenodo",
       "resourceType": "Preprint",
       "startDate": "2026-10-03",
-      "startNoteJa": "リポジトリを持たない。書き始めた日は確かめていない。利用者の決め（2026-11-11）により、公開の日（2026-10-03）で学部二年次のものとして扱う。独身論の続き（貞潔の話の延長）にあたる",
+      "startNoteJa": "リポジトリを持ちません。書き始めた日は確かめていません。利用者の決め（2026-11-11）により、公開の日（2026-10-03）で学部二年次のものとして扱います。独身論の続き（貞潔の話の延長）にあたります",
       "startNoteEn": "No repository; the date the writing began has not been checked. By the author's decision (2026-11-11) it is dated by publication (2026-10-03) and counted as second-year work. It continues the celibacy essay"
     },
     {
@@ -416,7 +416,7 @@
       "kind": "repository",
       "repo": "researcher-profile",
       "status": "revising",
-      "title": "researcher-profile: 設定ファイル1つから研究者プロフィールの静的サイトを生成するツール",
+      "title": "researcher-profile: 設定ファイル 1 つから研究者プロフィールの静的サイトを生成するツール",
       "summaryJa": "設定ファイル一つから、外部へリクエストを出さない研究者のサイトを作る道具",
       "summaryEn": "Builds a researcher's site, which makes no external requests, from one configuration file",
       "doi": "10.5281/zenodo.22335692",
@@ -451,6 +451,11 @@
       "summaryJa": "哲学と数学のプレプリントのオーバーレイ。受け付けはモデレーションであって査読ではない",
       "summaryEn": "An overlay preprint server for philosophy and mathematics. Acceptance is moderation, not peer review",
       "doi": "10.5281/zenodo.24033372",
+      "osf": {
+        "doi": "10.17605/OSF.IO/MQ7ZA",
+        "noteJa": "Sophaxis のプロジェクトの頁です。学部二年次に始めたもので、論文の引用先ではありません",
+        "noteEn": "The project page of Sophaxis. It was begun in the second undergraduate year, and it is not a citation target for the papers"
+      },
       "version": "1.0.0",
       "canonical": "github",
       "resourceType": "Software"
@@ -466,6 +471,11 @@
       "summaryEn": "The public profile site, and the checks across the ten repositories",
       "doi": "10.5281/zenodo.24034360",
       "conceptDoi": "10.5281/zenodo.24034359",
+      "osf": {
+        "doi": "10.17605/OSF.IO/7KR5N",
+        "noteJa": "学部一年次の研究のリポジトリをまとめる頁です。論文の引用先ではありません（DataCite で確かめた日 2026-11-12）",
+        "noteEn": "The page that gathers the first-year research repositories. It is not a citation target for the papers (checked on DataCite, 2026-11-12)"
+      },
       "version": "1.0.0",
       "canonical": "site",
       "resourceType": "Software"
@@ -490,38 +500,38 @@
     "zenodo": {
       "ja": "Zenodo",
       "en": "Zenodo",
-      "ruleJa": "論文の PDF と書誌は Zenodo が正",
+      "ruleJa": "論文の PDF と書誌は Zenodo が正です",
       "ruleEn": "Zenodo is canonical for the PDF and bibliographic record of a paper"
     },
     "github": {
       "ja": "GitHub",
       "en": "GitHub",
-      "ruleJa": "実装と版管理は GitHub が正。Zenodo の保存版は特定の時点の写し",
+      "ruleJa": "実装と版管理は GitHub が正です。Zenodo の保存版は特定の時点の写しです",
       "ruleEn": "GitHub is canonical for implementation and version history; a Zenodo archive is a copy at one point in time"
     },
     "site": {
       "ja": "公開の入口（Vercel）",
       "en": "Public entrance (Vercel)",
       "url": "https://cpsbvbng26-dotcom.vercel.app/",
-      "ruleJa": "公開の入口は Vercel が正",
+      "ruleJa": "公開の入口は Vercel が正です",
       "ruleEn": "The public entrance is canonical on Vercel"
     },
     "figshare": {
       "ja": "Figshare",
       "en": "Figshare",
-      "ruleJa": "Zenodo に無い本文は、いまの所在が正",
+      "ruleJa": "Zenodo に無い本文は、いまの所在が正です",
       "ruleEn": "For a text not on Zenodo, its present location is canonical"
     },
     "ssrn": {
       "ja": "SSRN",
       "en": "SSRN",
-      "ruleJa": "Zenodo に無い本文は、いまの所在が正",
+      "ruleJa": "Zenodo に無い本文は、いまの所在が正です",
       "ruleEn": "For a text not on Zenodo, its present location is canonical"
     },
     "errata": {
       "ja": "各リポジトリの ERRATA.md",
       "en": "Each repository's ERRATA.md",
-      "ruleJa": "撤回と正誤は ERRATA.md が正",
+      "ruleJa": "撤回と正誤は ERRATA.md が正です",
       "ruleEn": "ERRATA.md is canonical for withdrawals and corrections"
     }
   }
