@@ -42,12 +42,12 @@ const L = {
     top: './index.html', name: '全作品の目録', nameLatin: 'Catalogue of works', eyebrow: 'Catalogue',
     title: '全作品の目録 | 根本卓哉',
     description: '根本卓哉の作品を種類ごとに並べた目録です。題・種類・状態・DOI・正の所在・ライセンス・Zenodo の資源の種類・始めた時期を一表にしています。',
-    tagline: '作品を種類ごとに並べます。各行に、状態・DOI・正の所在・ライセンス・Zenodo の資源の種類・始めた時期を置きます。'
+    tagline: '根本卓哉の作品を、種類ごとに一表に並べた目録です。各行に、状態・DOI・正の所在・ライセンス・Zenodo の資源の種類・始めた時期を置きます。'
       + 'どの作品も査読を受けていません。DOI があることは、査読を受けたことを意味しません。',
     cols: ['題', '種類', '状態', 'DOI', '正の所在', 'ライセンス', 'Zenodo の種類', '始めた時期'],
     year1: '学部一年次', year2: '学部二年次', yearUnknown: '—（確かめていない）', year1Cont: '学部一年次の成果（{}）の続き',
     rulesYear: '始めた時期は、作品を置いたリポジトリの最初のコミットの日付から出しています。学部二年次は 2026 年 10 月からです。',
-    concept: '全版', also: '別の所在',
+    concept: '全版', also: '別の所在', osf: 'OSF のプロジェクト',
     noRepo: '—（リポジトリに置いていない）',
     mit: 'MIT（全体）', split: 'CC BY 4.0（文書）・MIT（コード）', splitText: 'CC BY 4.0（文書と論文）',
     noType: '—', notZenodo: '—（Zenodo に無い）', figshare: '（Figshare）', noDoi: '—（DOI を持たない）',
@@ -63,23 +63,24 @@ const L = {
     canonDoc: '正本の優先順位', disclaimer: '免責事項', source: '生成もと（catalog.json）',
     toolsName: '道具の一覧', toolsLatin: 'Tools', toolsEyebrow: 'Tools', toolsTitle: '道具の一覧 | 根本卓哉',
     toolsDescription: '根本卓哉が公開している道具の一覧です。一つずつ、何をするか・リポジトリ・DOI・ライセンスを並べます。',
-    toolsTagline: 'ほかの人も使える道具です。一つずつ、何をするか・リポジトリ・DOI・ライセンスを並べます。',
+    toolsTagline: '根本卓哉が公開している、ほかの人も使える道具の一覧です。一つずつ、何をするか・リポジトリ・DOI・ライセンスを並べます。',
     toolsSection: '道具', toolsSectionNote: '目録の「ソフトウェア」の行と同じ中身です。',
     repoLabel: 'リポジトリ', licenceLabel: 'ライセンス', backCatalog: '目録', backTop: '核へ戻る',
     operator: '作用素', lang: '日本語', otherLang: 'English',
     sep: '　／　', skip: '本文へスキップ', theme: 'テーマを切り替える',
+    filterLabel: '種類で絞る', filterAll: 'すべて',
   },
   en: {
     file: 'catalog.en.html', other: 'catalog.html', tools: 'tools.en.html', toolsOther: 'tools.html',
     top: './index.en.html', name: 'Catalogue of works', nameLatin: '全作品の目録', eyebrow: 'Catalogue',
     title: 'Catalogue of works | Takuya Nemoto',
     description: 'The works of Takuya Nemoto by type, in one table: title, type, status, DOI, canonical location, licence, Zenodo resource type and the period in which it was begun.',
-    tagline: 'The works, by type. Each row gives the status, DOI, canonical location, licence, Zenodo resource type and the period in which it was begun. '
+    tagline: 'This catalogue lists the works of Takuya Nemoto by type, in one table. Each row gives the status, DOI, canonical location, licence, Zenodo resource type and the period in which it was begun. '
       + 'None of the works has been peer-reviewed. A DOI does not imply peer review.',
     cols: ['Title', 'Type', 'Status', 'DOI', 'Canonical location', 'Licence', 'Zenodo resource type', 'Begun'],
     year1: 'First undergraduate year', year2: 'Second undergraduate year', yearUnknown: '— (not checked)', year1Cont: 'Continuation of first-year work ({})',
     rulesYear: 'The period begun is taken from the first commit of the repository that holds the work. The second undergraduate year began in October 2026.',
-    concept: 'all versions', also: 'also',
+    concept: 'all versions', also: 'also', osf: 'OSF project',
     noRepo: '— (not in a repository)',
     mit: 'MIT (whole repository)', split: 'CC BY 4.0 (texts) and MIT (code)', splitText: 'CC BY 4.0 (texts and papers)',
     noType: '—', notZenodo: '— (not on Zenodo)', figshare: ' (Figshare)', noDoi: '— (no DOI)',
@@ -95,11 +96,12 @@ const L = {
     canonDoc: 'Which copy is canonical', disclaimer: 'Disclaimer', source: 'Source (catalog.json)',
     toolsName: 'Tools', toolsLatin: '道具の一覧', toolsEyebrow: 'Tools', toolsTitle: 'Tools | Takuya Nemoto',
     toolsDescription: 'The tools published by Takuya Nemoto. For each: what it does, the repository, the DOI and the licence.',
-    toolsTagline: 'Tools that others can use. For each: what it does, the repository, the DOI and the licence.',
+    toolsTagline: 'The tools that Takuya Nemoto has published for others to use. For each: what it does, the repository, the DOI and the licence.',
     toolsSection: 'Tools', toolsSectionNote: 'The same content as the Software rows of the catalogue.',
     repoLabel: 'Repository', licenceLabel: 'Licence', backCatalog: 'Catalogue', backTop: 'Profile',
     operator: 'Operator', lang: 'English', otherLang: '日本語',
     sep: ' / ', skip: 'Skip to content', theme: 'Toggle theme',
+    filterLabel: 'Filter by type', filterAll: 'All',
   },
 };
 
@@ -177,11 +179,16 @@ const begunText = (w, t) => { const b = begunOf(w); if (b.period === 'first' && 
 
 /* ------------------------------------------------------------ 表 */
 
+const lang = (t) => (t === L.en ? 'en' : 'ja');
+
 function doiCell(w, t) {
   if (!w.doi) return t.noDoi;
   const parts = [ext(doiUrl(w.doi), '<code>' + esc(w.doi) + '</code>')];
   if (w.conceptDoi) parts.push(t.concept + ' ' + ext(doiUrl(w.conceptDoi), '<code>' + esc(w.conceptDoi) + '</code>'));
   (w.otherDois || []).forEach((d) => parts.push(t.also + ' ' + ext(doiUrl(d), '<code>' + esc(d) + '</code>')));
+  /* OSF のプロジェクト。**まとめ役の頁であって、論文の引用先ではない。**別の所在とも分けて書く。 */
+  if (w.osf) parts.push(t.osf + ' ' + ext(doiUrl(w.osf.doi), '<code>' + esc(w.osf.doi) + '</code>')
+    + '<span>' + esc(lang(t) === 'en' ? w.osf.noteEn : w.osf.noteJa) + '</span>');
   return parts.join('<br>');
 }
 
@@ -227,12 +234,12 @@ function table(works, lang) {
 const TABLE_STYLE = '<style>'
   + '.wrap:has(.catalog){max-width:72rem}'
   + '.notes-list.catalog{max-width:none}'
-  + '.notes-list.catalog table{border-collapse:collapse;width:100%;font-size:.8rem;line-height:1.7}'
+  + '.notes-list.catalog table{border-collapse:collapse;width:100%;font-size:var(--fs-sm);line-height:1.7}'
   + '.notes-list.catalog th,.notes-list.catalog td{text-align:left;vertical-align:top;padding:.55rem .6rem;border-bottom:1px solid var(--line-soft)}'
   + '.notes-list.catalog th{font-weight:400;color:var(--faint);letter-spacing:.06em;white-space:nowrap}'
   + '.notes-list.catalog td:nth-child(2),.notes-list.catalog td:nth-child(3),.notes-list.catalog td:nth-child(7),.notes-list.catalog td:nth-child(8){white-space:nowrap}'
   + '.notes-list.catalog table td code{white-space:nowrap;overflow-wrap:normal}'
-  + '.notes-list.catalog td span{display:inline;margin:0;font-size:.76rem;color:var(--muted)}'
+  + '.notes-list.catalog td span{display:inline;margin:0;font-size:var(--fs-xs);color:var(--muted)}'
   + '.notes-list.catalog td b{font-weight:600;color:var(--text)}'
   + '</style>';
 
@@ -310,8 +317,8 @@ function base(lang, file, otherFile, name, nameLatin, eyebrow, title, descriptio
       { lang: 'en', url: SRC.base + enFile },
       { lang: 'x-default', url: SRC.base + jaFile },
     ],
-    ogImage: SRC.base + 'og.png',
-    twitterCard: 'summary',
+    /* 共有カードは頁ごと（2026-11-12）。画像の名は正の URL から build.js が作る。 */
+    ogCard: SRC.base + 'og/',
     ogType: 'website',
     accent: SRC.accent, accentDark: SRC.accentDark,
     footer: SRC.footer,
@@ -333,9 +340,12 @@ function catalogConfig(lang) {
     if (!works.length) throw new Error('作品の無い種類があります: ' + ty.id);
     return {
       id: ty.id, title: en ? ty.en : ty.ja, note: en ? ty.noteEn : ty.noteJa,
-      class: 'notes-list catalog', html: table(works, lang),
+      class: 'notes-list catalog', html: table(works, lang), filterable: true,
     };
   });
+  /* 種類で絞る。頁の中のリンクだけで、スクリプトは足さない（2026-11-12）。 */
+  cfg.filter = { label: t.filterLabel, all: t.filterAll,
+    items: SRC.types.map((ty) => ({ id: ty.id, name: en ? ty.en : ty.ja })) };
   const canonRules = [...new Set(Object.keys(SRC.canonical).filter((k) => k !== '_')
     .map((k) => en ? SRC.canonical[k].ruleEn : SRC.canonical[k].ruleJa))];
   const gh = SRC.gh;
@@ -438,6 +448,7 @@ function exportJson() {
         doi: w.doi || null,
         conceptDoi: w.conceptDoi || null,
         otherDois: w.otherDois || [],
+        osfProject: w.osf ? { doi: w.osf.doi, url: doiUrl(w.osf.doi), noteJa: w.osf.noteJa, noteEn: w.osf.noteEn } : null,
         url: w.doi ? doiUrl(w.doi) : null,
         version: w.version || null,
         repository: w.repo ? SRC.gh + w.repo : null,

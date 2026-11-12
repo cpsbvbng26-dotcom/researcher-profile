@@ -17,7 +17,8 @@
   var LO = 0.45, HI = 0.75;
   var MAX_INTERVALS = 3000, MAX_DEPTH = 24;
 
-  var en = (document.documentElement.getAttribute('lang') || '').slice(0, 2) === 'en';
+  var en = typeof document !== 'undefined'
+    && (document.documentElement.getAttribute('lang') || '').slice(0, 2) === 'en';
   var TXT = en ? {
     below: 'δ < 1/2: no t can be kept. Proved (Proposition 4).',
     two: '1/2 ≤ δ < 1/φ: only t = δ and t = 1 can be kept. Proved (Proposition 5).',
@@ -91,6 +92,13 @@
       });
     });
     return { list: merge(out), depth: s.depth };
+  }
+
+  /* 生成のときにも同じ計算を使う。トップの頁の図は、build.js がここを呼んで描く（2026-11-12）。
+   * 頁の中では module が無いので、ここは素通りする。 */
+  if (typeof module === 'object' && module.exports) {
+    module.exports = { tSet: tSet, PHI_INV: PHI_INV };
+    return;
   }
 
   /* ---------- 描画 ---------- */

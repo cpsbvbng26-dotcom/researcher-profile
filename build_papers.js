@@ -139,8 +139,8 @@ function pageConfig(p, lang) {
       { lang: 'en', url: SRC.base + 'papers/' + p.slug + '.en.html' },
       { lang: 'x-default', url: SRC.base + 'papers/' + p.slug + '.html' },
     ],
-    ogImage: SRC.base + 'og.png',
-    twitterCard: 'summary',
+    /* 共有カードは頁ごと（2026-11-12）。画像の名は正の URL から build.js が作る。 */
+    ogCard: SRC.base + 'og/',
     ogType: 'article',
     favicon: './../favicon.svg',
     accent: SRC.accent,
