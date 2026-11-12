@@ -119,6 +119,19 @@ Sophaxis の取り寄せの仕事を走らせて e-Gov から取り寄せ、cpsb
 | README「ライセンス」 | 著作権法第21条 | 取り寄せた文は「著作者は、その著作物を複製する権利を専有する。」と定める（cpsbvbng26-dotcom の `verification/statutes.json`、SHA-256 `a85d04f2fd20d7867d5579bee40676b13405c58ea7fd7eb27f1e7a5a03bda100`）。許せるのは、許す者が権利を持つものだけである。ライセンスの文が、他人の文まで許すと読めないこと | README のライセンスの節は、リポジトリ全体の MIT だけを書き、引いた他人の文の扱いを書いていなかった。Sophaxis は、最初の見落としの節で同じ一文を足していたが、10 のリポジトリと deposit-check には届いていなかった。上の点検の表の「README「ライセンス」、LICENSE、CITATION.cff、.zenodo.json」の行は問題なしとしていたが、他人の文の扱いを見ていなかった | 漏れ | README のライセンスの節に「このリポジトリが引き、または引用を確かめるために置いている他人の文は、CC BY 4.0 でも MIT でも許諾しておらず、それぞれの権利者のものです。」を足した。`check_ecosystem.js` の 12l が、10 のリポジトリと deposit-check の README（英語の README を含む）にこの一文があることを見る。2026-11-12 に Claude が決めました。Sophaxis の README と同じ範囲を、同じ形で書くためです |
 | CITATION.cff の message と .zenodo.json の notes | 著作権法第21条 | 同上。引用情報の license の欄は、どの部分に掛かるかを書けないので、その範囲を別の欄で書くこと | CITATION.cff と .zenodo.json の license の欄は MIT で、notes は「The code is MIT.」とだけ書いていた。リポジトリは LICENSE 一つで、文書も MIT である（免責事項の「再利用」）。上の点検の表の「README「ライセンス」、LICENSE、CITATION.cff、.zenodo.json」の行は問題なしとしていたが、欄の掛かる範囲と他人の文を見ていなかった | 表現 | message と notes に、コードも文書も含めてリポジトリ全体が MIT で、license の欄が全体に掛かることを書いた。他人の文は許諾していないとも、和英で書いた。`check_ecosystem.js` の 12l が、二つのファイルにこの文があり、置き方が目録の licenceLayout と同じことを見る。2026-11-12 に Claude が決めました。Sophaxis の CITATION.cff が三度目の見落としの節で書いた範囲の文に、10 のリポジトリと deposit-check を揃えるためです |
 
+## 2026-11-12 の続き：六度目の見落とし
+
+読むだけの点検を、六度目に別の手で行いました。
+上の節が見落としていたものが見つかりました。
+直した日は、日本時間で 2026-11-13 です。
+前の行は、そのとき何を確かめたかの記録なので、消していません。
+同じ二つの誤りの点検は、[cpsbvbng26-dotcom の記録](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/legal-audit-2026-11-12.md)と、trinity-infinity の記録の同じ見出しの節にもあります。
+
+| 箇所 | 法令と条 | 要件 | 事実 | 判定 | 対応 |
+| --- | --- | --- | --- | --- | --- |
+| papers.json と notes.en.json の、海軍公報の史料ノートの英語の要旨 | JACAR の目録 C12070491000、JACAR「資料画像の利用について」 | 原資料をどこが所蔵しているかは、取り寄せた目録が言うとおりに書くこと | 英語の要旨は「from a gazette held by JACAR」と書いていた。取り寄せた目録（cpsbvbng26-dotcom の `verification/statutes.json` の「JACAR 目録 C12070491000」）は「（所蔵館：防衛省防衛研究所）」と表示する。JACAR の案内は、この種の資料を「防衛省防衛研究所からの提供資料」と呼ぶ。JACAR は画像を公開している側です。日本語の要旨は「アジア歴史資料センターが公開する」と書いており、目録と合っていた | 誤り | 二つの設定の英語の要旨を「held by the National Institute for Defense Studies (Ministry of Defense) and published by JACAR (Ref. C12070491000)」に直した。そこから出る cpsbvbng26-dotcom の論文の頁二頁、ノートの英語の目次、共有カード一枚を作り直した。`check_build.js` の 3e が、JACAR やアジア歴史資料センターを所蔵の主に置く文を、日英独仏伊のどの形でも、どの設定でも止める。式は、止める文七つと通す文三つで先に壊して確かめる。2026-11-13 に Claude が決めました。目録が所蔵館を名指ししており、公開する側と分けて書けば目録と食い違わないからです |
+| site.json の自己紹介の、Friedkin と Johnsen の 2011 年の本 | なし（表示の正確さ） | 他人の本の著者を、書誌の記録が言うとおりに書くこと | 欄は「2011 年に Cambridge から単著の理論書になり」と書いていた。Crossref の記録（https://api.crossref.org/works/10.1017/cbo9780511976735 、2026-11-13 に日本時間で読んだ）は、type を「monograph」、author を Noah E. Friedkin（sequence「first」）と Eugene C. Johnsen（sequence「additional」）の二人、publisher を「Cambridge University Press」、issued を 2011-04-18 と返した。単著は一人で書いた本を指すので、記録と食い違っていた。英独仏伊の設定は monograph（Monographie、monographie、monografia）と書いており、著者の数を言っていない | 誤り | 「2011 年に Cambridge から Friedkin と Johnsen の共著の理論書になり」に直し、cpsbvbng26-dotcom のトップの頁を作り直した。`check_build.js` の 3e が、Friedkin・Johnsen の名か本の題と同じ段落に単著や single-authored を置く設定を止め、日本語の自己紹介が共著と書くことを求める。2026-11-13 に Claude が決めました。Crossref の記録が著者を二人と返すからです。英語の monograph は著者の数を言わないので、そのままにしました |
+
 ## 調べた法令
 
 - 著作権法（第21条、第23条、第32条、第48条）
