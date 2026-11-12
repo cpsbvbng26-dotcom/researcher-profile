@@ -116,7 +116,7 @@
       },
       {
         "term": "Evidence",
-        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Recounted, there are six.</strong> That was found by machine, not by reading. 109 checks on the errata itself, 82 on the tool. The tool is checked by <strong>breaking a passing state in 30 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
+        "html": "I believed the three papers promised a bundled verification script in three places. <strong>Recounted, there are six.</strong> That was found by machine, not by reading. 111 checks on the errata itself, 82 on the tool. The tool is checked by <strong>breaking a passing state in 30 distinct ways and asserting that each break fails exactly the corresponding check.</strong>"
       },
       {
         "term": "The outside eye",
@@ -136,8 +136,8 @@
         "name": "Software — errata-check audits the errata of frozen papers, across types",
         "items": [
           {
-            "name": "271 checks on the errata",
-            "html": "The same audit applied to all three frozen bodies of work: 109 on the three Trinity-Infinity papers, 103 on the three philosophical papers, 59 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolved, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
+            "name": "290 checks on the errata",
+            "html": "The same audit applied to all three frozen bodies of work: 111 on the three Trinity-Infinity papers, 111 on the three philosophical papers, 68 on the naval gazette source note. Every quotation verbatim, everything declared absent really absent, no quiet resolution of an item declared unresolved, and the PDFs themselves unchanged (<a href=\"https://doi.org/10.5281/zenodo.22649899\" target=\"_blank\" rel=\"noopener\">errata-check 10.5281/zenodo.22649899</a>)"
           },
           {
             "name": "82 checks on the tool itself",
@@ -150,8 +150,8 @@
         "name": "Dataset — the self-correction register",
         "items": [
           {
-            "name": "47 checks on the register",
-            "html": "The shape and history of the correction record itself. <strong>97 entries</strong> across five statuses, <strong>37 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>78 can be checked by anyone against a frozen artifact; the remaining 19 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
+            "name": "48 checks on the register",
+            "html": "The shape and history of the correction record itself. <strong>104 entries</strong> across five statuses, <strong>44 of them reconstructed after the fact</strong> and marked as such, with the recording date checked against git history. <strong>85 can be checked by anyone against a frozen artifact; the remaining 19 rest on the author’s word alone</strong>, and that too is a field. That standing claims carry a refutation route, that unresolvable items give a reason, and that <strong>no entry ever published has since been removed</strong> (<a href=\"https://github.com/cpsbvbng26-dotcom/self-correction\" target=\"_blank\" rel=\"noopener\">self-correction</a>)"
           }
         ]
       },
@@ -164,7 +164,7 @@
             "html": "Every number printed in the three papers, recomputed and shown beside the printed value (<code>trinity-infinity/verification/claims_audit.py</code>)"
           },
           {
-            "name": "15 theorems reimplemented",
+            "name": "16 theorems reimplemented",
             "html": "The theorems reimplemented independently of the papers (<code>trinity-infinity/verification/independent_check.py</code>)"
           },
           {
@@ -189,7 +189,7 @@
   },
   "withdrawn": {
     "note": {
-      "html": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record of everything published is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (97 entries)</a>."
+      "html": "Claims withdrawn in revision, and <b>things found later that could no longer be fixed</b>. <b>Nothing has been deleted.</b> A frozen PDF cannot be corrected; only the record can. The record of everything published is the <a href=\"https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/REGISTER.md\" target=\"_blank\" rel=\"noopener\">register (104 entries)</a>."
     },
     "items": [
       {
@@ -355,7 +355,7 @@
       "url": "https://github.com/cpsbvbng26-dotcom/trinity-infinity",
       "code": "PDF / CC BY 4.0",
       "title": "trinity-infinity",
-      "summary": "The three papers above and their verification. 15 checks that reimplement the theorems independently and 32 that recompute every number printed on the page. It also records what was established and what was withdrawn.",
+      "summary": "The three papers above and their verification. 16 checks that reimplement the theorems independently and 32 that recompute every number printed on the page. It also records what was established and what was withdrawn.",
       "verify": "View on GitHub"
     },
     {
