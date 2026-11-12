@@ -747,6 +747,62 @@ section('3e. 所蔵の主と、本の著者の数');
 })();
 
 /* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */
+section('3f. 最初のコミットの日付が、どの時刻の日付か');
+
+/* 2026-11-13（九度目の見落とし）。トップの頁は「最初のコミットは 2026-10-30 と 2026-11-02」と
+ * 時刻の帯を言わずに書いていた。deposit-check の最初のコミットは 2026-11-02T20:33Z で、日本時間では
+ * 2026-11-03 になる。日付は git の履歴が記す協定世界時のものなので、五言語とも UTC と書く。
+ * 最初のコミットの日付を書いた段は、その日付より前に UTC と書いてあること。日付が git と合うかは、
+ * 兄弟のリポジトリを読める cpsbvbng26-dotcom の check_ecosystem.js が見る。 */
+(() => {
+  const LANGS = ['site.json', 'site.en.json', 'site.de.json', 'site.fr.json', 'site.it.json'];
+  const SAY = {
+    'site.json': ['最初のコミットは、協定世界時（UTC）で 2026-10-30 と 2026-11-02 です。', 'この段の日付は、どれも協定世界時（UTC）の日付です。'],
+    'site.en.json': ['Their first commits are dated 2026-10-30 and 2026-11-02, in UTC.', 'Every date in this paragraph is a date in UTC.'],
+    'site.de.json': ['Ihre ersten Commits tragen die Daten 2026-10-30 und 2026-11-02, in UTC.', 'Alle Daten in diesem Absatz sind Daten in UTC.'],
+    'site.fr.json': ['Leurs premiers commits datent du 2026-10-30 et du 2026-11-02, en UTC.', 'Toutes les dates de ce paragraphe sont en UTC.'],
+    'site.it.json': ['I loro primi commit sono datati 2026-10-30 e 2026-11-02, in UTC.', 'Tutte le date di questo paragrafo sono in UTC.'],
+  };
+  const FIRST = /最初のコミット|first commits?|ersten? Commits?|premiers? commits?|prim[oi] commit/i;
+  const DATE = /\d{4}-\d{2}-\d{2}/;
+  /* 純粋な判定。段（<p>…</p>）ごとに、最初のコミットの語の後に出る最初の日付について、その文か、段のそれより前に UTC があること。 */
+  const problems = (texts) => {
+    const bad = [];
+    for (const f of LANGS) {
+      const h = String(texts[f] || '');
+      for (const s of SAY[f]) if (h.indexOf(s) < 0) bad.push(f + ' に「' + s.slice(0, 24) + '」が無い');
+      const paras = h.split(/<\/p>/);
+      paras.forEach((p, i) => {
+        const m = FIRST.exec(p);
+        if (!m) return;
+        const d = DATE.exec(p.slice(m.index));
+        if (!d) return;
+        const at = m.index + d.index;
+        /* 日付を含む文（句点から句点まで）か、段のそれより前に UTC があること。 */
+        const end = p.slice(at).search(/[。.](?:\s|<|$)/);
+        const 文 = p.slice(Math.max(p.lastIndexOf('。', at), p.lastIndexOf('. ', at)) + 1, end < 0 ? p.length : at + end + 1);
+        if (p.slice(0, at).indexOf('UTC') < 0 && 文.indexOf('UTC') < 0) bad.push(f + ' の ' + (i + 1) + ' 段目が UTC と書かずに最初のコミットの日付を書く');
+      });
+    }
+    return bad;
+  };
+  const texts = Object.fromEntries(LANGS.map((f) => [f, JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8')).profile.coreHtml]));
+  const now = problems(texts);
+  ok('トップの頁の五言語が、最初のコミットの日付を UTC の日付と書いている', now.length === 0, now.join(' / '));
+  const 替 = (f, a2, b2) => Object.assign({}, texts, { [f]: texts[f].replace(a2, b2) });
+  const breaks = [
+    ['日本語の一文から UTC を外す', 替('site.json', '最初のコミットは、協定世界時（UTC）で 2026-10-30', '最初のコミットは 2026-10-30')],
+    ['英語の段の一文を外す', 替('site.en.json', 'Every date in this paragraph is a date in UTC. ', '')],
+    ['ドイツ語の一文から UTC を外す', 替('site.de.json', '2026-11-02, in UTC.', '2026-11-02.')],
+    ['フランス語の段の一文を外す', 替('site.fr.json', 'Toutes les dates de ce paragraphe sont en UTC. ', '')],
+    ['イタリア語の一文から UTC を外す', 替('site.it.json', '2026-11-02, in UTC.', '2026-11-02.')],
+    ['UTC の無い段に最初のコミットの日付を足す', 替('site.en.json', '</p>', ' Its first commit is from 2026-11-03.</p>')],
+  ];
+  const missed = breaks.filter(([, x]) => problems(x).length === 0).map(([k]) => k);
+  ok('壊して確かめる：五言語のどれかで UTC を外すか、UTC の無い段に最初のコミットの日付を足すと落ちる（' + (breaks.length - missed.length) + ' / ' + breaks.length + '）',
+     missed.length === 0, missed.join(' / '));
+})();
+
 section('4. この検査が名乗る件数');
 (() => {
   const total = pass + failures.length + 1;
