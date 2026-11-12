@@ -6,27 +6,38 @@
   "title": "Takuya Nemoto — profil de recherche",
   "description": "Profil de Takuya Nemoto. Ce qui est ici repose sur l’étude en autodidacte et sur le travail avec des modèles de langue. Les critères franchis, et ceux qui ne l’ont pas été, sont donnés dans les termes mêmes des plateformes.",
   "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/index.fr.html",
-  "ogImage": "https://cpsbvbng26-dotcom.vercel.app/og.png",
-  "twitterCard": "summary",
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
   "accent": "#8a6a3d",
   "accentDark": "#b08d57",
   "footer": "© 2026 Takuya Nemoto",
   "footerSet": "fr",
   "tagline": "Autodidaxie et modèles de langue. Les critères franchis sont cités mot pour mot, et de même ce qui n’en découle pas.",
+  "lead": "Traduction abrégée de la page de profil de Takuya Nemoto : des prépublications non évaluées par les pairs, et les outils qui les vérifient automatiquement.",
+  "entries": [
+    {
+      "name": "Travaux",
+      "url": "#writings",
+      "note": "Les articles et les lieux où ils sont déposés"
+    },
+    {
+      "name": "Vérification",
+      "url": "#verify",
+      "note": "Ce qui est vérifié à chaque push"
+    },
+    {
+      "name": "Catalogue",
+      "url": "./catalog.en.html",
+      "note": "Tous les travaux dans un seul tableau (en anglais)"
+    }
+  ],
   "labels": {
-    "eyebrow": "Profil",
+    "eyebrow": "",
     "verify": "Open",
     "skip": "Aller au contenu",
     "themeToggle": "Changer de thème"
   },
   "profile": {
     "label": "À propos",
-    "photo": {
-      "src": "./portrait.jpg",
-      "alt": "Portrait de Takuya Nemoto",
-      "width": 750,
-      "height": 1000
-    },
     "nowHtml": "Inscrit à la <b>ZEN University, Faculty of Social Informatics</b>, dans la première promotion de rentrée d’automne. Le cursus traverse les lettres et les sciences. Également entrepreneur individuel depuis octobre 2024 environ ; la déclaration d’ouverture d’activité (kaigyō todoke) n’a pas été déposée auprès de l’administration fiscale japonaise ; elle le sera dès que le temps le permettra.",
     "studyHtml": "Les études portent surtout sur la <b>philosophie</b> et la <b>pratique</b> ; les <b>mathématiques</b> sont accessibles. Ce qui est déposé ici relève de l’informatique et de l’intelligence artificielle.",
     "aimsLabel": "Buts",
@@ -52,6 +63,7 @@
   },
   "sections": [
     "about",
+    "profile",
     "writings",
     "verify",
     "more"
@@ -70,7 +82,7 @@
     {
       "id": "verify",
       "title": "Vérification",
-      "html": "<p>Chaque push déclenche <b>1739 vérifications</b>. Elles portent sur la structure du site, la lisibilité des contrastes et les valeurs numériques de la page consacrée à l’opérateur.</p><p><b>Un registre distinct consigne ce qui s’est révélé faux</b> — <b>97 entrées</b> à ce jour. <b>Rien n’y est supprimé.</b> Les outils de vérification sont eux-mêmes vérifiés : un état valide est délibérément cassé, et l’on établit que c’est bien la vérification correspondante qui échoue.</p>"
+      "html": "<p>Chaque push déclenche <b>1745 vérifications</b>. Elles portent sur la structure du site, la lisibilité des contrastes et les valeurs numériques de la page consacrée à l’opérateur.</p><p><b>Un registre distinct consigne ce qui s’est révélé faux</b> — <b>97 entrées</b> à ce jour. <b>Rien n’y est supprimé.</b> Les outils de vérification sont eux-mêmes vérifiés : un état valide est délibérément cassé, et l’on établit que c’est bien la vérification correspondante qui échoue.</p>"
     },
     {
       "id": "more",
