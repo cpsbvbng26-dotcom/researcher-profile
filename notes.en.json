@@ -109,7 +109,8 @@
         {
           "name": "PhilArchive",
           "id": "NEMFSI",
-          "url": "https://philarchive.org/rec/NEMFSI"
+          "url": "https://philarchive.org/rec/NEMFSI",
+          "note": " (deletion requested on 2026-09-26; its current state has not been checked from here)"
         }
       ]
     },
@@ -312,7 +313,6 @@
         },
         "identifier": "https://doi.org/10.5281/zenodo.22064241",
         "url": "https://doi.org/10.5281/zenodo.22064241",
-        "sameAs": "https://philarchive.org/rec/NEMFSI",
         "inLanguage": "en",
         "datePublished": "2026-08",
         "creativeWorkStatus": "Preprint",
