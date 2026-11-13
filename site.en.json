@@ -402,6 +402,10 @@
       {
         "name": "Elsewhere",
         "html": "External profiles are collected in <a href=\"./cv.html#links\">CV</a>"
+      },
+      {
+        "name": "Statement",
+        "html": "What this place is for, and how that relates to the Disclaimer, is in the <a href=\"./notes/mission.en.html\">Statement of Purpose</a>"
       }
     ]
   },
