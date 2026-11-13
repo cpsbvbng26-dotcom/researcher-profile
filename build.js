@@ -413,7 +413,7 @@ function renderPaperTable(papers, labels, profile) {
     if (!st) throw new Error('目録に無い状態です: ' + w.status);
     const where = arr(item.locations).map((l) => (l.url
       ? `<a href="${esc(l.url)}"${linkAttrs(l.url)}>${esc(l.name)}${l.id ? ' ' + esc(l.id) : ''}</a>`
-      : esc(l.name) + (l.id ? ' ' + esc(l.id) : ''))).join('　／　');
+      : esc(l.name) + (l.id ? ' ' + esc(l.id) : '')) + (l.note ? esc(l.note) : '')).join('　／　');
     const title = item.url
       ? `<a href="${esc(item.url)}"${linkAttrs(item.url)}>${esc(item.title)}</a>` : esc(item.title);
     const doi = item.doi
@@ -463,11 +463,12 @@ function renderCards(papers, sectionId, heading, note, labels) {
       const tag = item.url ? 'a' : 'div';
       const href = item.url ? ` href="${esc(item.url)}"${linkAttrs(item.url)}` : '';
       /* 同じ資料の別の所在。<a> の入れ子は作れないので、カードの外に置く。
-       * 文字で出すだけでは辿れないため、一つずつリンクにする。 */
+       * 文字で出すだけでは辿れないため、一つずつリンクにする。
+       * note はリンクのすぐ後ろに文字で添える（削除を依頼した所在など。2026-11-13）。 */
       const where = arr(item.locations).length
         ? `      <p class="where">${arr(item.locations).map((l) => (l.url
             ? `<a href="${esc(l.url)}"${linkAttrs(l.url)}>${esc(l.name)}${l.id ? ' ' + esc(l.id) : ''}</a>`
-            : esc(l.name) + (l.id ? ' ' + esc(l.id) : ''))).join('　／　')}</p>`
+            : esc(l.name) + (l.id ? ' ' + esc(l.id) : '')) + (l.note ? esc(l.note) : '')).join('　／　')}</p>`
         : '';
       const card = [
         `      <${tag} class="cert reveal"${href}>`,

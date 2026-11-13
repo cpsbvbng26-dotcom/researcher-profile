@@ -95,9 +95,20 @@ function pageConfig(p, lang) {
     row(t.pdf, gh + p.repo + '/blob/main/' + p.pdf, t.pdfNote, true),
   ];
   /* 所在の既定の説明は「同じ本文」。索引のように本文を持たない先は、
-   * 設定の note / noteEn で説明を差し替える。既定のままだと嘘になる。 */
+   * 設定の note / noteEn で説明を差し替える。既定のままだと嘘になる。
+   * 削除を依頼した先（deletionRequested に依頼の日）は、依頼の日と、いまの状態を
+   * 確かめていないことだけを書く。消えたとも、残っているとも書かない（2026-11-13）。 */
   (p.locations || []).forEach((l) => {
-    const note = en ? (l.noteEn ? esc(l.noteEn) : 'Same text') : (l.note ? esc(l.note) : '同じ本文です');
+    if (l.deletionRequested && !/^\d{4}-\d{2}-\d{2}$/.test(l.deletionRequested)) {
+      throw new Error('deletionRequested は日付で書きます: ' + l.name + ' ' + l.id);
+    }
+    if (l.deletionRequested && (l.note || l.noteEn)) {
+      throw new Error('削除を依頼した所在に、別の説明を重ねません: ' + l.name + ' ' + l.id);
+    }
+    const note = l.deletionRequested
+      ? (en ? 'Deletion requested on ' + esc(l.deletionRequested) + '. Its current state has not been checked from here'
+        : esc(l.deletionRequested) + ' に削除を依頼しました。いまの状態は、ここからは確かめていません')
+      : en ? (l.noteEn ? esc(l.noteEn) : 'Same text') : (l.note ? esc(l.note) : '同じ本文です');
     locations.push(row(esc(l.name) + ' ' + esc(l.id), l.url, note, true));
   });
   if (p.transcript) locations.push(row(t.transcript, gh + p.transcript, t.transcriptNote, true));
@@ -181,7 +192,8 @@ function pageConfig(p, lang) {
           abstract: p.en.summary,
           inLanguage: 'en',
           identifier: [{ '@type': 'PropertyValue', propertyID: 'DOI', value: p.doi }],
-          sameAs: [doiUrl].concat((p.locations || []).map((l) => l.url)),
+          /* 削除を依頼した所在は、同じものとして名乗らない。 */
+          sameAs: [doiUrl].concat((p.locations || []).filter((l) => !l.deletionRequested).map((l) => l.url)),
           author: {
             '@type': 'Person',
             name: 'Takuya Nemoto',

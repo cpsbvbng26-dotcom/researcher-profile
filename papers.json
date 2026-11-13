@@ -149,7 +149,7 @@
       "title": "Fragmentarian Spiritual Individualism",
       "subtitle": "A Philosophy of Fragments for Solitary Spiritual Autonomy",
       "locations": [
-        { "name": "PhilArchive", "id": "NEMFSI", "url": "https://philarchive.org/rec/NEMFSI" },
+        { "name": "PhilArchive", "id": "NEMFSI", "url": "https://philarchive.org/rec/NEMFSI", "deletionRequested": "2026-09-26" },
         { "name": "Sophaxis", "id": "2026.0005", "url": "https://sophaxis.vercel.app/abs/2026.0005.html" }
       ],
       "ja": {
