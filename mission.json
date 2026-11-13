@@ -1,0 +1,162 @@
+{
+  "name": "運営理念・声明",
+  "nameLatin": "Statement of Purpose",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "運営理念・声明 | 根本卓哉",
+  "description": "根本卓哉のプロフィールサイトと、そこから案内するリポジトリの運営理念・声明の頁です。何のための場所かと、適用されるのは免責事項と各ライセンスであることを書いています。",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.html"
+    }
+  ],
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
+  "ogType": "website",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "footerSet": "ja",
+  "taglineHtml": "このプロフィールサイトと、そこから案内するリポジトリの運営理念・声明の頁です。権利や義務を生じさせるものではなく、適用されるのは<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md\" target=\"_blank\" rel=\"noopener\">免責事項</a>と各リポジトリのライセンスです。",
+  "sections": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8",
+    "a9",
+    "a10",
+    "a11",
+    "a12",
+    "a13"
+  ],
+  "blocks": [
+    {
+      "id": "a1",
+      "title": "第 1 条（目的）",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">このサイト（cpsbvbng26-dotcom.vercel.app）は、根本卓哉のプロフィールサイトです。</p>\n      <p class=\"profile-core\">この声明は、このサイトと、<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md\" target=\"_blank\" rel=\"noopener\">免責事項</a>が挙げる 10 のリポジトリと、deposit-check に掛かります。Sophaxis と Nusquama には、それぞれのサイトの規約と声明があり、この声明は掛かりません。</p>\n      <p class=\"profile-core\">これらの場所は、独学で書いた査読前のプレプリントと、それをあとから機械で監査する道具と記録を公開しています。</p>\n      <p class=\"profile-core\">運営者は、公開したものを誰でも料金を払わずに読めるように置き、あとから機械で監査し、誤りを消さずに記録に残すことを目的としています。</p>\n      <p class=\"profile-core\">批判と誤りの指摘を受けることが、この場所の一番の用途です（<a href=\"./../index.html\">トップの頁</a>）。</p>\n    "
+    },
+    {
+      "id": "a2",
+      "title": "第 2 条（この声明の性格）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>この声明は、運営の考え方を述べたものです。</li>\n        <li>この声明は、<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md\" target=\"_blank\" rel=\"noopener\">免責事項</a>と、各リポジトリのライセンス（LICENSE と、あれば LICENSE-CODE）の条項ではありません。それ自体で、運営者にも、読む人その他の誰にも、権利や義務を生じさせません。</li>\n        <li>この声明と、免責事項・各ライセンスとが食い違うときは、免責事項と各ライセンスが優先します。</li>\n        <li>第 1 条の目的は、運営者が目指すものです。それが果たされることを、約束も保証もしません。</li>\n        <li>この声明は、法的な助言ではありません。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a3",
+      "title": "第 3 条（料金と再利用）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>頁を読むのに、料金は掛かりません。頁に、販売・広告・寄付の求めはありません。</li>\n        <li>文書・論文・コードは、各リポジトリのライセンスの定めのもとで再利用できます（免責事項「再利用」）。</li>\n        <li>これらのリポジトリが引き、または引用を確かめるために置いている他人の文は、それぞれの権利者のものです。</li>\n        <li>独学で進めたものは、読む側からも書く側からも金を取らないダイヤモンド・オープンアクセスの場にしか出しません（<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/README.md\" target=\"_blank\" rel=\"noopener\">README</a>）。</li>\n        <li>料金が掛からないことは、正確さや完全さを保証する意味を持ちません。保証しないことは、免責事項「提供のしかた」に書いたとおりです。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a4",
+      "title": "第 4 条（査読前の稿であること）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>論文はどれも、査読を受けていない稿です。</li>\n        <li>DOI があることは、査読を受けたことを意味しません。</li>\n        <li>プレプリントの場や索引に載ったことも、査読を受けたことを意味しません。</li>\n        <li>文書・論文・コードは、学術上・法律上・医学上・財務上その他の専門的な助言ではありません。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a5",
+      "title": "第 5 条（誤りと訂正）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>誤りが見つかったものは、消さずに正誤表と訂正の記録に残します。</li>\n        <li>撤回すべきものが見つかったら、撤回して記録に残します。</li>\n        <li>各リポジトリの検査と、それらをまたぐ横断の検査が、公開物の数と文を機械で突き合わせています。</li>\n        <li>検証の量は、検証される中身の価値について何も言いません。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a6",
+      "title": "第 6 条（運営主体と独立）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>これらの場所は、根本卓哉が個人で運営しています。法人や団体ではありません。</li>\n        <li>指導教員も共同研究者もいません。</li>\n        <li>運営者は、ZEN大学の学生です。これらの場所は、ZEN大学その他の機関の事業ではありません。どの機関からも、承認・後援・推薦を受けていません。</li>\n        <li>預け先・索引・登録簿に載っていることは、それらとの提携でも、それらによる推薦でもありません。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a7",
+      "title": "第 7 条（人についての記載）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>人についての記載の誤りや権利の侵害は、免責事項「人についての記載」の窓口で受け付けます。</li>\n        <li>届いた求めは速やかに確かめ、必要なときは訂正または削除します。</li>\n        <li>存命の家族について書くのは、「両親」という語までです。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a8",
+      "title": "第 8 条（個人の情報）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>頁は cookie を置かず、アクセス解析の仕組みも置いていません。</li>\n        <li>届いた個人の情報は、免責事項「情報の扱い」のとおりに扱います。</li>\n        <li>issue の題と本文が言語モデルに渡るのは、本人の同意があるときだけです（免責事項「issue の中身と言語モデル」）。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a9",
+      "title": "第 9 条（言語モデル）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>文書とコードの一部は、運営者の求めにより Claude Code（Anthropic）で書いています。</li>\n        <li>運営者が内容を確かめ、責任を負います。Claude は著者ではありません。</li>\n        <li>この声明も、運営者の求めにより Claude Code で書きました。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a10",
+      "title": "第 10 条（法令）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>免責事項が掛かる場所での運営者の責任は、免責事項「責任」の節のとおり、法令の定めるとおりです。</li>\n        <li>再利用の条件と、その条件のもとでの保証と責任は、それぞれのライセンスの定めによります（免責事項「再利用」）。</li>\n        <li>免責事項は、日本の法令に従って解釈します（免責事項「準拠法と変更」）。</li>\n        <li>この声明は、これらの定めを変えません。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a11",
+      "title": "第 11 条（紛争への対応）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>運営者は、現在、弁護士その他の専門家に依頼していません。この声明と免責事項は、弁護士の確認を受けていません。</li>\n        <li>紛争が生じたときは、運営者は、必要に応じて弁護士その他の専門家に相談したうえで対応します。</li>\n        <li>対応は、日本の法令（国際的な事件の裁判管轄と準拠法についての定めを含む）と、免責事項の「責任」と「準拠法と変更」の節と、各ライセンスの定めに沿います。</li>\n        <li>この条は、誰かに対する警告ではありません。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a12",
+      "title": "第 12 条（継続）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>このサイトは、いま運営中です。</li>\n        <li>続くことは保証しません。</li>\n        <li>続けられなくなったときの手順は、<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/continuity.md\" target=\"_blank\" rel=\"noopener\">続けられなくなったとき</a>の頁にあります。</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a13",
+      "title": "第 13 条（この声明の変更）",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>運営者は、この声明を変えることがあります。</li>\n        <li>変えたときは、頁の下の欄の最終更新の日付が改まります。過去の版は、公開のリポジトリの履歴に残ります。</li>\n        <li>この声明を変えても、免責事項と各ライセンスの定めは変わりません。</li>\n      </ol></div>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "自己紹介",
+      "url": "./../index.html"
+    },
+    {
+      "name": "作用素",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "ノート",
+      "url": "./index.html"
+    },
+    {
+      "name": "English",
+      "url": "./mission.en.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "声明",
+    "verify": "開く",
+    "skip": "本文へスキップ",
+    "themeToggle": "テーマを切り替える"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.html",
+    "name": "運営理念・声明",
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/"
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "name": "Statement of Purpose",
+  "nameLatin": "運営理念・声明",
+  "initials": "TN",
+  "lang": "en",
+  "title": "Statement of Purpose | Takuya Nemoto",
+  "description": "The Statement of Purpose for the profile site of Takuya Nemoto and the repositories it leads to: what they are for, and that the Disclaimer and the licences, not this statement, are what apply.",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.en.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.html"
+    }
+  ],
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
+  "ogType": "website",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "footerSet": "en",
+  "taglineHtml": "This page is the Statement of Purpose for this profile site and the repositories it leads to. It is a translation of the <a href=\"./mission.html\">Japanese page</a>, which prevails where they differ. It creates no right or obligation; what applies is the <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md\" target=\"_blank\" rel=\"noopener\">Disclaimer</a> and each repository’s licence.",
+  "sections": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8",
+    "a9",
+    "a10",
+    "a11",
+    "a12",
+    "a13"
+  ],
+  "blocks": [
+    {
+      "id": "a1",
+      "title": "Article 1 (Purpose)",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">This site (cpsbvbng26-dotcom.vercel.app) is the profile site of Takuya Nemoto.</p>\n      <p class=\"profile-core\">This statement applies to this site, to the 10 repositories listed in the <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md\" target=\"_blank\" rel=\"noopener\">Disclaimer</a>, and to deposit-check. Sophaxis and Nusquama have their own terms and statements, and this statement does not apply to them.</p>\n      <p class=\"profile-core\">These places publish preprints written through self-study, none of them peer-reviewed, together with the tools and records that audit them by machine afterwards.</p>\n      <p class=\"profile-core\">The operator aims to keep what is published readable by anyone without charge, to audit it by machine afterwards, and to keep errors on record rather than delete them.</p>\n      <p class=\"profile-core\">Receiving criticism and corrections is what this place is chiefly for (<a href=\"./../index.en.html\">the top page</a>).</p>\n    "
+    },
+    {
+      "id": "a2",
+      "title": "Article 2 (Nature of this statement)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>This statement sets out how the operator approaches running these places.</li>\n        <li>This statement is not a term of the <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md\" target=\"_blank\" rel=\"noopener\">Disclaimer</a> or of any repository’s licence (LICENSE and, where there is one, LICENSE-CODE). By itself it creates no right or obligation for the operator, for readers or for anyone else.</li>\n        <li>Where this statement and the Disclaimer or a licence differ, the Disclaimer and the licence prevail.</li>\n        <li>The purpose in Article 1 is what the operator aims at. Its being achieved is neither promised nor guaranteed.</li>\n        <li>This statement is not legal advice.</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a3",
+      "title": "Article 3 (No charge, and reuse)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>Reading the pages costs nothing. The pages carry no sales, no advertising and no request for donations.</li>\n        <li>The texts, papers and code can be reused under the licence of each repository (Disclaimer, “Reuse”).</li>\n        <li>Texts by others that these repositories quote, or keep to verify their quotations, remain their owners’.</li>\n        <li>Anything taken this far by self-study goes only to diamond open-access venues, which charge neither the reader nor the writer (<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/README.en.md\" target=\"_blank\" rel=\"noopener\">README</a>).</li>\n        <li>That nothing is charged does not mean that accuracy or completeness is guaranteed. What is not guaranteed is set out in the Disclaimer, “How the works are offered”.</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a4",
+      "title": "Article 4 (Preprints, not peer-reviewed)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>Every paper is a preprint that has not been peer-reviewed.</li>\n        <li>Having a DOI does not mean having been peer-reviewed.</li>\n        <li>Appearing on a preprint venue or in an index does not mean having been peer-reviewed either.</li>\n        <li>The texts, papers and code are not academic, legal, medical, financial or other professional advice.</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a5",
+      "title": "Article 5 (Errors and corrections)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>Errors that were found are kept, not deleted, in the errata and the record of corrections.</li>\n        <li>If something should be withdrawn, it is withdrawn and recorded.</li>\n        <li>The checks in each repository, and the cross-repository check across them, compare the numbers and sentences of what is published by machine.</li>\n        <li>The amount of verification says nothing about the value of what is verified.</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a6",
+      "title": "Article 6 (Operator and independence)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>These places are run by Takuya Nemoto as an individual. They are not a company or other organisation.</li>\n        <li>There is no supervisor and no collaborator.</li>\n        <li>The operator is a student at ZEN University. These places are not a project of ZEN University or of any other institution. No institution has approved, sponsored or recommended them.</li>\n        <li>Being held by a repository, or listed in an index or registry, is neither a partnership with it nor a recommendation by it.</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a7",
+      "title": "Article 7 (Statements about people)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>An error in a statement about a person, or an infringement of their rights, is received at the contact given in the Disclaimer, “Statements about people”.</li>\n        <li>Each request is checked promptly, and the statement is corrected or removed where needed.</li>\n        <li>Of living family members, nothing is written beyond the word “parents”.</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a8",
+      "title": "Article 8 (Personal information)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>The pages set no cookie and carry no analytics.</li>\n        <li>Personal information received is handled as the Disclaimer, “Information”, sets out.</li>\n        <li>The title and text of an issue reach a language model only with the consent of the person concerned (Disclaimer, “Issues and the language model”).</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a9",
+      "title": "Article 9 (Language models)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>Parts of the texts and code are written with Claude Code (Anthropic) at the operator’s request.</li>\n        <li>The operator checks the content and is responsible for it. Claude is not an author.</li>\n        <li>This statement, too, was written with Claude Code at the operator’s request.</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a10",
+      "title": "Article 10 (Law)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>Where the Disclaimer applies, the operator’s liability is as the law provides, as its section “Liability” sets out.</li>\n        <li>The terms of reuse, and the warranties and liability under them, are those of the licence that applies (Disclaimer, “Reuse”).</li>\n        <li>The Disclaimer is read under the laws of Japan (Disclaimer, “Governing law and changes”).</li>\n        <li>This statement does not change any of these.</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a11",
+      "title": "Article 11 (Disputes)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>The operator has not, at present, retained a lawyer or other professional. This statement and the Disclaimer have not been reviewed by a lawyer.</li>\n        <li>If a dispute arises, the operator will respond after consulting a lawyer or other professional where needed.</li>\n        <li>The response will follow the laws of Japan (including their rules on international jurisdiction and on the governing law), the sections “Liability” and “Governing law and changes” of the Disclaimer, and the terms of each licence.</li>\n        <li>This article is not a warning to anyone.</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a12",
+      "title": "Article 12 (Continuity)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>This site is currently in operation.</li>\n        <li>Its continuing is not guaranteed.</li>\n        <li>What is done if it cannot continue is set out in <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/continuity.md\" target=\"_blank\" rel=\"noopener\">When it cannot continue</a> (in Japanese).</li>\n      </ol></div>\n    "
+    },
+    {
+      "id": "a13",
+      "title": "Article 13 (Changes to this statement)",
+      "nav": false,
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>The operator may change this statement.</li>\n        <li>When it changes, the date of the last change at the foot of the page changes. Earlier versions stay in the history of the public repository.</li>\n        <li>Changing this statement changes nothing in the Disclaimer or in any licence.</li>\n      </ol></div>\n    "
+    }
+  ],
+  "extraNav": [
+    {
+      "name": "Profile",
+      "url": "./../index.en.html"
+    },
+    {
+      "name": "Operator",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "Notes",
+      "url": "./index.en.html"
+    },
+    {
+      "name": "日本語",
+      "url": "./mission.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "Statement",
+    "verify": "Open",
+    "skip": "Skip to content",
+    "themeToggle": "Toggle theme"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.en.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/mission.en.html",
+    "name": "Statement of Purpose",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/"
+    }
+  }
+}
