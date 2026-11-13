@@ -87,7 +87,7 @@
     {
       "id": "more",
       "title": "Weiterlesen",
-      "html": "<ul class=\"notes-list\"><li><a href=\"./index.html\">Japanisch （日本語）</a></li><li><a href=\"./index.en.html\">Englisch</a></li><li><a href=\"./cv.html\">Lebenslauf</a></li><li><a href=\"./notes/index.en.html\">Notizen</a></li><li><a href=\"./trinity.html\">Operator</a></li></ul>"
+      "html": "<ul class=\"notes-list\"><li><a href=\"./index.html\">Japanisch （日本語）</a></li><li><a href=\"./index.en.html\">Englisch</a></li><li><a href=\"./cv.html\">Lebenslauf</a></li><li><a href=\"./notes/index.en.html\">Notizen</a></li><li><a href=\"./trinity.html\">Operator</a></li><li><a href=\"./notes/mission.en.html\">Zweckerklärung (englisch)</a></li></ul>"
     }
   ],
   "extraNav": [
