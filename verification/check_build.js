@@ -747,6 +747,113 @@ section('3e. 所蔵の主と、本の著者の数');
     broken.every((b) => b.length > 0));
 })();
 
+/* 2026-11-14。作者のサイトの意匠（design.js）。決まりは README の「意匠」にある。
+ * テンプレートと同じ決まり（字の大きさは --fs-、書体は三つの変数、幅は --measure と --page、色は変数の定義だけ）を、
+ * 意匠の CSS にも当てる。飾りの SVG は長方形・多角形・型だけで、字・画像・外への参照を持たない。
+ * 当たるのは作者のサイトの頁だけで、予想のサイト（重ねる設定）には当たらない。年表は行から数える。
+ * どの決まりも、壊した入力で落ちることを先に確かめる。 */
+section('3g. 作者のサイトの意匠（帯・飾り・年表・色・字）');
+(() => {
+  const { execFileSync } = require('child_process');
+  const design = require(path.join(ROOT, 'design.js'));
+  const cssProblems = (css) => {
+    const pi = css.indexOf('@media print');
+    const screen = pi >= 0 ? css.slice(0, pi) : css;
+    const bad = [];
+    [...screen.matchAll(/(?<![-\w])font-size:\s*([^;}]+)/g)].map((m) => m[1].trim())
+      .filter((v) => !/^var\(--fs-(xs|sm|md|lg|xl|name)\)$/.test(v)).forEach((v) => bad.push('字の大きさ ' + v));
+    [...screen.matchAll(/(?<![-\w])font-family:\s*([^;}]+)/g)].map((m) => m[1].trim())
+      .filter((v) => !/^var\(--font-(sans|serif|mono)\)$/.test(v)).forEach((v) => bad.push('書体 ' + v));
+    [...screen.matchAll(/(?<![-\w(])max-width:\s*([^;}]+)/g)].map((m) => m[1].trim())
+      .filter((v) => !/^(var\(--(measure|page)\)|100%|none)$/.test(v)).forEach((v) => bad.push('幅 ' + v));
+    css.split('\n').filter((l) => /#[0-9a-fA-F]{3,8}\b|rgba?\(|hsla?\(/.test(l))
+      .filter((l) => !/^\s*(:root[^{]*\{\s*)?(--[a-z0-9-]+:\s*[^;]+;\s*)+\}?\s*$/.test(l)).forEach((l) => bad.push('定義の外の色 ' + l.trim().slice(0, 40)));
+    if (/@font-face|@import|url\(\s*['"]?(?:https?:)?\/\//i.test(css)) bad.push('外の書体か外への参照');
+    return bad;
+  };
+  const svgProblems = (svg) => {
+    const bad = [];
+    const tags = [...svg.matchAll(/<\/?([a-zA-Z]+)/g)].map((m) => m[1]);
+    tags.filter((t) => ['svg', 'rect', 'polygon', 'defs', 'pattern'].indexOf(t) < 0).forEach((t) => bad.push('使わない要素 ' + t));
+    if (!/^<svg [^>]*aria-hidden="true"/.test(svg)) bad.push('読み上げを外していない');
+    if (/href|https?:|<text|<image|font/i.test(svg)) bad.push('字か外への参照');
+    return bad;
+  };
+  const svgs = () => [design.bandSvg(), design.sealSvg(), design.ornamentSvg('long'), design.ornamentSvg('short'), design.barSvg(3, 7)];
+
+  const css = design.css();
+  const cssNow = cssProblems(css);
+  ok('意匠の CSS が、字の大きさを --fs- に、書体を三つの変数に、幅を二つに限り、色を変数の定義にしか書かず、外の書体を読まない',
+     cssNow.length === 0, cssNow.join(' / '));
+  const cssBroken = [css.replace('font-size: var(--fs-sm)', 'font-size: 13px'), css.replace('font-family: var(--font-mono)', 'font-family: Menlo'),
+    css.replace('max-width: var(--measure)', 'max-width: 37rem'), css.replace('fill: var(--accent)', 'fill: #8a6a3d'),
+    css + '@font-face { font-family: X; src: url(https://example.org/x.woff2); }\n'].map(cssProblems);
+  ok('壊して確かめる：字の大きさ・書体・幅・色・外の書体のどれを混ぜても落ちる（' + cssBroken.filter((b) => b.length).length + ' / ' + cssBroken.length + '）',
+     cssBroken.every((b) => b.length > 0));
+
+  const svgNow = svgs().map(svgProblems).flat();
+  ok('帯・銘・飾り・年表の棒の SVG（' + svgs().length + ' 種）が、長方形と多角形と型だけで描かれ、字も外への参照も持たず、読み上げない', svgNow.length === 0, svgNow.join(' / '));
+  const svgBroken = [design.bandSvg().replace('</svg>', '<text>TN</text></svg>'), design.ornamentSvg('short').replace(' aria-hidden="true"', ''),
+    design.sealSvg().replace('</svg>', '<image href="https://example.org/a.png"/></svg>')].map(svgProblems);
+  ok('壊して確かめる：字・読み上げ・外の画像のどれを混ぜても落ちる（' + svgBroken.filter((b) => b.length).length + ' / ' + svgBroken.length + '）',
+     svgBroken.every((b) => b.length > 0));
+
+  /* ロゴの寸法から描いたものが、ロゴの寸法どおりか。favicon.svg との一字一句の照合は、兄弟を読める
+   * cpsbvbng26-dotcom の check_ecosystem.js が見る。ここでは、飾りの枠の比がロゴの枠の比であることを見る。 */
+  ok('飾りの枠の比が、ロゴの枠の比（太さ ' + design.LOGO.frame.stroke + ' / 内寸 ' + (design.LOGO.size - 2 * design.LOGO.frame.inset) + '）から取られている',
+     Math.abs(design.FRAME_RATIO - design.LOGO.frame.stroke / (design.LOGO.size - 2 * design.LOGO.frame.inset)) < 1e-12
+     && design.logoSvg().indexOf('stroke-width="' + design.LOGO.frame.stroke + '"') >= 0);
+
+  /* 当たる頁と当たらない頁。作者のサイトの設定は全部当たり、予想のサイトの重ねる設定のあとは当たらない。 */
+  const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
+  const own = fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f) && !/\.site\.json$/.test(f))
+    .filter((f) => { try { return /^https:\/\/cpsbvbng26-dotcom\.vercel\.app\//.test(J(f).siteUrl || ''); } catch (e) { return false; } });
+  const gw = Object.assign({}, J('golden-window.en.json'), J('golden-window.site.json'));
+  ok('意匠が作者のサイトの設定（' + own.length + ' 本）に当たり、予想のサイトと見本には当たらない',
+     own.length > 0 && own.every((f) => design.applies(J(f))) && !design.applies(gw) && !design.applies(J('profile.json')));
+
+  /* 生成して見る。トップの頁は帯が一本、銘が一つ、名前の下の飾りが一つ、節の見出しごとに飾りが一つ。 */
+  const gen = (cfg, overlay) => {
+    const out = fs.mkdtempSync(path.join(require('os').tmpdir(), 'rp-design-'));
+    try {
+      execFileSync(process.execPath, [path.join(ROOT, 'build.js')], { env: Object.assign({}, process.env,
+        { PROFILE_CONFIG: path.join(ROOT, cfg), PROFILE_OUT: out }, overlay ? { PROFILE_OVERLAY: path.join(ROOT, overlay) } : {}), stdio: 'pipe' });
+      return fs.readFileSync(path.join(out, 'index.html'), 'utf8');
+    } catch (e) { return ''; } finally { fs.rmSync(out, { recursive: true, force: true }); }
+  };
+  const top = gen('site.json');
+  const count = (h, s) => h.split(s).length - 1;
+  const heads = count(top, '<div class="sec-head reveal">') + count(top, '<h2 class="profile-label">');
+  ok('トップの頁に、帯が一本・銘が一つ・名前の下の飾りが一つ・節の見出しごとに飾りが一つ（' + heads + '）あり、意匠の CSS が入る',
+     count(top, design.bandSvg()) === 1 && /<header>\n  <svg class="band"/.test(top) && count(top, design.sealSvg()) === 1
+     && count(top, design.ornamentSvg('long')) === 1 && count(top, design.ornamentSvg('short')) === heads && heads > 0
+     && top.indexOf(design.css()) >= 0);
+  const gwHtml = gen('golden-window.en.json', 'golden-window.site.json');
+  ok('予想のサイトの頁には、帯も飾りも意匠の CSS も入らない',
+     gwHtml !== '' && !/class="(band|seal|orn )|orn orn-/.test(gwHtml) && gwHtml.indexOf('意匠（design.js') < 0);
+
+  /* 年表。行は register-timeline.json の行と同じ並びで、件数と合計を字で出す。合計は行から数える。 */
+  const tl = J('register-timeline.json');
+  const rows = [...top.matchAll(/<li><time datetime="(\d{4}-\d{2}-\d{2})">\1<\/time><svg class="tl-bar"[^]*?<\/svg><span class="tl-count">(\d+) 件<\/span><\/li>/g)]
+    .map((m) => ({ date: m[1], count: Number(m[2]) }));
+  const sum = tl.rows.reduce((n, r) => n + r.count, 0);
+  ok('トップの頁の年表が、register-timeline.json の ' + tl.rows.length + ' 行を同じ並びで出し、合計（' + sum + ' 件）を行から数える',
+     JSON.stringify(rows) === JSON.stringify(tl.rows) && top.indexOf('<p class="timeline-total">合計 ' + sum + ' 件</p>') >= 0
+     && tl.rows.every((r, i) => i === 0 || tl.rows[i - 1].date < r.date));
+  const langs = ['site.en.json', 'site.de.json', 'site.fr.json', 'site.it.json'].filter((f) => {
+    const h = gen(f);
+    return count(h, '<span class="tl-count">') !== tl.rows.length || h.indexOf('<p class="timeline-total">') < 0 || h.indexOf(String(sum)) < 0;
+  });
+  ok('ほかの四つの言語のトップの頁にも、同じ年表が出る', langs.length === 0, langs.join(', '));
+  const { timeline } = require(path.join(ROOT, 'build_timeline.js'));
+  const csv = 'id,status,recorded\nA-1,open,2026-09-08\n"B-1","x, ""y""\nz",2026-09-07\nA-2,open,2026-09-08\n';
+  const t1 = timeline(csv);
+  let threw = false;
+  try { timeline('id,recorded\nA-1,2026-9-8\n'); } catch (e) { threw = true; }
+  ok('壊して確かめる：年表は引用符の中の改行とカンマを読み、日の順に並べ、日付でない記録の日で止まる',
+     JSON.stringify(t1) === JSON.stringify([{ date: '2026-09-07', count: 1 }, { date: '2026-09-08', count: 2 }]) && threw);
+})();
+
 /* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */
 section('3f. 最初のコミットの日付が、どの時刻の日付か');
 
