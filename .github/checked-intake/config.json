@@ -1,0 +1,20 @@
+{
+  "from": "2026-12-01",
+  "forms": [
+    {
+      "label": "erratum",
+      "kind": "quote",
+      "where": [
+        "どこか / Where"
+      ],
+      "quote": [
+        "書いてあること / What it says"
+      ]
+    }
+  ],
+  "pages": [],
+  "blob": "https://github.com/cpsbvbng26-dotcom/researcher-profile",
+  "dois": {},
+  "ids": [],
+  "neverClose": []
+}
