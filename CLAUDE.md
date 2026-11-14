@@ -197,4 +197,7 @@ build.js が中身を頁に入れ、CSP のハッシュで許す。頁の側を�
 **頁の下の欄（連絡・免責・最終更新）は `footer.json` が持つ。**設定の `footerSet` に言語の名を書いた頁にだけ出る。
 最終更新の日は、源の設定を git が最後に変えた日である。予想のサイトにも出るので、設定を直したら
 `trinity-operator/site/index.html` も作り直して写す（横断の検査が一字一句で照らす）。
+**作者のサイトの意匠は `design.js` が持つ**（2026-11-14）。帯・銘・飾り・年表の棒の数と CSS はここだけにあり、
+`siteUrl` が作者のサイトの頁にだけ当たる。予想のサイトには当たらない（重ねる設定で `siteUrl` が変わる）。
+**`register-timeline.json` は生成物。**`node build_timeline.js` が兄弟の `self-correction/data/register.csv` から作る。手で直さない。
 `card.json` は印刷向けの一頁（`card.html`）。トップの五言語の設定は同じ日に直す（`check_build.js` が見る）。
