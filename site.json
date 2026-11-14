@@ -233,7 +233,8 @@
       }
     ],
     "recordUrl": "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md",
-    "recordLabel": "三篇の正誤の記録 —— ERRATA.md"
+    "recordLabel": "三篇の正誤の記録 —— ERRATA.md",
+    "timeline": { "file": "register-timeline.json", "label": "訂正の登録簿に、記録した日ごとに書いた件数です。", "unit": "{n} 件", "total": "合計 {n} 件" }
   },
   "papers": [
     {
