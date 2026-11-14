@@ -234,7 +234,8 @@
       }
     ],
     "recordUrl": "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md",
-    "recordLabel": "Errata for the three papers — ERRATA.md"
+    "recordLabel": "Errata for the three papers — ERRATA.md",
+    "timeline": { "file": "register-timeline.json", "label": "Entries in the correction register, by the date they were recorded.", "unit": "{n}", "total": "{n} entries in all" }
   },
   "papers": [
     {

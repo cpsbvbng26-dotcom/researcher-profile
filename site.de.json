@@ -82,7 +82,8 @@
     {
       "id": "verify",
       "title": "Prüfung",
-      "html": "<p>Bei jedem Push laufen <b>1806 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>104 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>"
+      "html": "<p>Bei jedem Push laufen <b>1938 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>104 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>",
+      "timeline": { "file": "register-timeline.json", "label": "Einträge im Korrekturregister nach dem Tag, an dem sie eingetragen wurden.", "unit": "{n}", "total": "Insgesamt {n} Einträge" }
     },
     {
       "id": "more",

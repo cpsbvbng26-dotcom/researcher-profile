@@ -10,6 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const design = require('./design.js');
 
 const ROOT = __dirname;
 const CONFIG = process.env.PROFILE_CONFIG || path.join(ROOT, 'profile.json');
@@ -248,7 +249,8 @@ function renderFooterExtra(profile) {
     /* 源を設定が名指すときは、それを使う（論文の頁と目録は、設定を一時ファイルに書いて渡すため）。 */
     const d = contentDate(profile.updatedFrom
       ? arr(profile.updatedFrom).map((f) => path.join(ROOT, f))
-      : [CONFIG, process.env.PROFILE_OVERLAY, profile.coursesFile ? path.join(ROOT, profile.coursesFile) : null]);
+      : [CONFIG, process.env.PROFILE_OVERLAY, profile.coursesFile ? path.join(ROOT, profile.coursesFile) : null,
+         timelineOf(profile) ? path.join(ROOT, timelineOf(profile).file) : null]);
     if (d) links.push(`<span class="updated">${esc(set.updated)} <time datetime="${d}">${d}</time></span>`);
   }
   return links.length ? '\n    <span class="foot-links">' + links.join(' · ') + '</span>' : '';
@@ -647,6 +649,38 @@ ${body}
   </section>`;
 }
 
+/* 年表 —— 訂正の登録簿に、記録した日ごとに何件を書いたか（2026-11-14）。
+ * **数は手で書かない。**register-timeline.json（build_timeline.js が self-correction の register.csv から作る）を読む。
+ * 一行は「日・棒・件数」。棒は飾りで、件数は字で出る。合計も行から数える。
+ * 文言は設定の timeline が持つ。{n} に数が入る。 */
+function timelineOf(profile) {
+  const all = [profile && profile.withdrawn && profile.withdrawn.timeline]
+    .concat(arr(profile && profile.blocks).map((b) => b.timeline));
+  return all.find((t) => t && t.file) || null;
+}
+
+function renderTimeline(t) {
+  if (!t || !t.file) return '';
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, t.file), 'utf8'));
+  const rows = arr(data.rows);
+  if (!rows.length) throw new Error('年表の行がありません: ' + t.file);
+  rows.forEach((r) => {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(r.date)) || !(Number(r.count) > 0)) throw new Error('年表の行の形: ' + JSON.stringify(r));
+  });
+  const max = Math.max(...rows.map((r) => Number(r.count)));
+  const total = rows.reduce((n, r) => n + Number(r.count), 0);
+  const fill = (tpl, n) => esc(String(tpl || '{n}')).replace('{n}', String(n));
+  return `
+    <div class="timeline reveal">
+      <p class="timeline-head">${esc(t.label || '')}</p>
+      <ol>
+${rows.map((r) => `        <li><time datetime="${esc(r.date)}">${esc(r.date)}</time>${design.barSvg(Number(r.count), max)}<span class="tl-count">${fill(t.unit, r.count)}</span></li>`).join('\n')}
+      </ol>
+      <p class="timeline-total">${fill(t.total, total)}</p>
+    </div>
+`;
+}
+
 /* 撤回 —— 消さずに残す。空で出すことはしない。 */
 function renderWithdrawn(w, labels) {
   if (!w || !arr(w.items).length) return '';
@@ -670,7 +704,7 @@ function renderWithdrawn(w, labels) {
     <div class="facts reveal">
 ${rows}
     </div>
-${w.recordUrl ? `
+${renderTimeline(w.timeline)}${w.recordUrl ? `
     <p class="hint reveal"><a href="${esc(w.recordUrl)}"${linkAttrs(w.recordUrl)}>${esc(w.recordLabel || w.recordUrl)}</a></p>` : ''}
   </section>`;
 }
@@ -721,7 +755,7 @@ ${b.anchors ? '    ' + arr(b.anchors).map((a) => `<span id="${esc(a)}"></span>`)
       ${b.note ? `<p>${b.noteHtml || esc(b.note)}</p>` : ''}
     </div>
     <div class="${esc(b.class || 'notes-list')} reveal">${b.html}</div>
-  </section>`;
+${renderTimeline(b.timeline)}  </section>`;
 }
 
 /* 節をどの順に出すか。既定は履歴書の形（修了証が先）。
@@ -1000,6 +1034,9 @@ function build() {
     });
   }
 
+  /* 作者のサイトの意匠（design.js）。当たるのは siteUrl が作者のサイトの頁だけ。 */
+  const useDesign = design.applies(profile);
+
   const labels = Object.assign({}, DEFAULT_LABELS, profile.labels || {});
   const profileInSection = arr(profile.sections).indexOf('profile') >= 0;
   /* 共有カードの画像を頁ごとにする（2026-11-12）。ogCard に置き場の URL を書いた頁は、
@@ -1068,7 +1105,8 @@ function build() {
     /* 頁の下の欄に、運営・連絡・免責への道と、中身が変わった日を置く（2026-11-11）。
      * 設定に書いた頁だけに出す。書いていない頁の出力は、一字一句前と同じである。 */
     .replace(/{{FOOTER_EXTRA}}/g, renderFooterExtra(profile))
-    .replace(/{{EXTRA_CSS}}/g, extraCss(profile))
+    .replace(/{{EXTRA_CSS}}/g, extraCss(profile) + (useDesign ? design.css() : ''))
+    .replace(/{{BAND}}/g, useDesign ? '\n  ' + design.bandSvg() : '')
     .replace(/{{SKIP}}/g, esc(labels.skip))
     .replace(/{{THEME_TOGGLE}}/g, esc(labels.themeToggle));
 
@@ -1080,6 +1118,19 @@ function build() {
    * PhilArchive の見出しごと落ちていた。**引用であることが消える。**
    * translate="no" は標準の属性、notranslate は Google の翻訳が見る印である。 */
   html = html.replace(/<code>/g, '<code translate="no" class="notranslate">');
+
+  /* 意匠の飾り。名前の下に長いもの、節の見出しの下に短いものを置く。
+   * 見出しの字は変えない。飾りは読み上げない。 */
+  if (useDesign) {
+    html = html
+      .replace('<section class="wrap hero">\n', '<section class="wrap hero">\n    ' + design.sealSvg() + '\n')
+      .replace(/(<h1 class="serif reveal">[^\n]*<\/h1>\n(?: {4}<p class="romaji reveal">[^\n]*<\/p>\n)?)/,
+        '$1    ' + design.ornamentSvg('long') + '\n')
+      .replace(/(<div class="sec-head reveal">\n\s*<h2 class="serif">[^\n]*<\/h2>)/g,
+        '$1\n      ' + design.ornamentSvg('short'))
+      .replace(/(\n( *)<h2 class="profile-label">[^\n]*<\/h2>)/g,
+        (m, a, ind) => a + '\n' + ind + design.ornamentSvg('short'));
+  }
 
   /* 頁に固有のスクリプト。**外のファイルを読みに行かせない。**中身を頁に入れ、
    * CSP はその中身のハッシュで許す（withCSP）。'unsafe-inline' は使わない。
