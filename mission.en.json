@@ -27,7 +27,7 @@
   "accentDark": "#b08d57",
   "footer": "© 2026 根本卓哉",
   "footerSet": "en",
-  "taglineHtml": "This page is the Statement of Purpose for this profile site and the repositories it leads to. It is a translation of the <a href=\"./mission.html\">Japanese page</a>, which prevails where they differ. It creates no right or obligation; what applies is the <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md\" target=\"_blank\" rel=\"noopener\">Disclaimer</a> and each repository’s licence.",
+  "taglineHtml": "This page is the Statement of Purpose for this profile site and the repositories it leads to. It is a translation of the <a href=\"./mission.html\">Japanese page</a>, which prevails where they differ. It creates no right or obligation; what applies is the <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md\" target=\"_blank\" rel=\"noopener\">Disclaimer</a> and each repository’s licence. Where this statement says “at present”, it means as of the date this page was last updated.",
   "sections": [
     "a1",
     "a2",
@@ -48,7 +48,7 @@
       "id": "a1",
       "title": "Article 1 (Purpose)",
       "nav": false,
-      "html": "\n      <p class=\"profile-core\">This site (cpsbvbng26-dotcom.vercel.app) is the profile site of Takuya Nemoto.</p>\n      <p class=\"profile-core\">This statement applies to this site, to the 10 repositories listed in the <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md\" target=\"_blank\" rel=\"noopener\">Disclaimer</a>, and to deposit-check. Sophaxis and Nusquama have their own terms and statements, and this statement does not apply to them.</p>\n      <p class=\"profile-core\">These places publish preprints written through self-study, none of them peer-reviewed, together with the tools and records that audit them by machine afterwards.</p>\n      <p class=\"profile-core\">The operator aims to keep what is published readable by anyone without charge, to audit it by machine afterwards, and to keep errors on record rather than delete them.</p>\n      <p class=\"profile-core\">Receiving criticism and corrections is what this place is chiefly for (<a href=\"./../index.en.html\">the top page</a>).</p>\n    "
+      "html": "\n      <p class=\"profile-core\">This site (cpsbvbng26-dotcom.vercel.app) is the profile site of Takuya Nemoto.</p>\n      <p class=\"profile-core\">This statement applies to this site, to the 10 repositories listed in the <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.en.md\" target=\"_blank\" rel=\"noopener\">Disclaimer</a>, and to deposit-check. Sophaxis and Nusquama have their own terms and statements, and this statement does not apply to them.</p>\n      <p class=\"profile-core\">At present, these places publish preprints written through self-study, none of them peer-reviewed, together with the tools and records that audit them by machine afterwards.</p>\n      <p class=\"profile-core\">The operator aims to keep what is published readable by anyone without charge, to audit it by machine afterwards, and to keep errors on record rather than delete them.</p>\n      <p class=\"profile-core\">Receiving criticism and corrections is what this place is chiefly for (<a href=\"./../index.en.html\">the top page</a>).</p>\n    "
     },
     {
       "id": "a2",
@@ -60,13 +60,13 @@
       "id": "a3",
       "title": "Article 3 (No charge, and reuse)",
       "nav": false,
-      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>Reading the pages costs nothing. The pages carry no sales, no advertising and no request for donations.</li>\n        <li>The texts, papers and code can be reused under the licence of each repository (Disclaimer, “Reuse”).</li>\n        <li>Texts by others that these repositories quote, or keep to verify their quotations, remain their owners’.</li>\n        <li>Anything taken this far by self-study goes only to diamond open-access venues, which charge neither the reader nor the writer (<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/README.en.md\" target=\"_blank\" rel=\"noopener\">README</a>).</li>\n        <li>That nothing is charged does not mean that accuracy or completeness is guaranteed. What is not guaranteed is set out in the Disclaimer, “How the works are offered”.</li>\n      </ol></div>\n    "
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>At present, reading the pages costs nothing. At present, the pages carry no sales, no advertising and no request for donations.</li>\n        <li>The texts, papers and code can be reused under the licence of each repository (Disclaimer, “Reuse”).</li>\n        <li>Texts by others that these repositories quote, or keep to verify their quotations, remain their owners’.</li>\n        <li>Anything taken this far by self-study goes only to diamond open-access venues, which charge neither the reader nor the writer (<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/README.en.md\" target=\"_blank\" rel=\"noopener\">README</a>).</li>\n        <li>That nothing is charged does not mean that accuracy or completeness is guaranteed. What is not guaranteed is set out in the Disclaimer, “How the works are offered”.</li>\n      </ol></div>\n    "
     },
     {
       "id": "a4",
       "title": "Article 4 (Preprints, not peer-reviewed)",
       "nav": false,
-      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>Every paper is a preprint that has not been peer-reviewed.</li>\n        <li>Having a DOI does not mean having been peer-reviewed.</li>\n        <li>Appearing on a preprint venue or in an index does not mean having been peer-reviewed either.</li>\n        <li>The texts, papers and code are not academic, legal, medical, financial or other professional advice.</li>\n      </ol></div>\n    "
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>At present, every paper is a preprint that has not been peer-reviewed.</li>\n        <li>Having a DOI does not mean having been peer-reviewed.</li>\n        <li>Appearing on a preprint venue or in an index does not mean having been peer-reviewed either.</li>\n        <li>The texts, papers and code are not academic, legal, medical, financial or other professional advice.</li>\n      </ol></div>\n    "
     },
     {
       "id": "a5",
@@ -78,7 +78,7 @@
       "id": "a6",
       "title": "Article 6 (Operator and independence)",
       "nav": false,
-      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>These places are run by Takuya Nemoto as an individual. They are not a company or other organisation.</li>\n        <li>There is no supervisor and no collaborator.</li>\n        <li>The operator is a student at ZEN University. These places are not a project of ZEN University or of any other institution. No institution has approved, sponsored or recommended them.</li>\n        <li>Being held by a repository, or listed in an index or registry, is neither a partnership with it nor a recommendation by it.</li>\n      </ol></div>\n    "
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>At present, these places are run by Takuya Nemoto as an individual, and are not a company or other organisation.</li>\n        <li>At present, there is no supervisor and no collaborator.</li>\n        <li>The operator is, at present, a student at ZEN University. At present, these places are not a project of ZEN University or of any other institution. At present, no institution has approved, sponsored or recommended them.</li>\n        <li>Being held by a repository, or listed in an index or registry, is neither a partnership with it nor a recommendation by it.</li>\n      </ol></div>\n    "
     },
     {
       "id": "a7",
@@ -90,13 +90,13 @@
       "id": "a8",
       "title": "Article 8 (Personal information)",
       "nav": false,
-      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>The pages set no cookie and carry no analytics.</li>\n        <li>Personal information received is handled as the Disclaimer, “Information”, sets out.</li>\n        <li>The title and text of an issue reach a language model only with the consent of the person concerned (Disclaimer, “Issues and the language model”).</li>\n      </ol></div>\n    "
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>At present, the pages set no cookie and carry no analytics.</li>\n        <li>Personal information received is handled as the Disclaimer, “Information”, sets out.</li>\n        <li>The title and text of an issue reach a language model only with the consent of the person concerned (Disclaimer, “Issues and the language model”).</li>\n      </ol></div>\n    "
     },
     {
       "id": "a9",
       "title": "Article 9 (Language models)",
       "nav": false,
-      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>Parts of the texts and code are written with Claude Code (Anthropic) at the operator’s request.</li>\n        <li>The operator checks the content and is responsible for it. Claude is not an author.</li>\n        <li>This statement, too, was written with Claude Code at the operator’s request.</li>\n      </ol></div>\n    "
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>At present, parts of the texts and code are written with Claude Code (Anthropic) at the operator’s request.</li>\n        <li>The operator checks the content and is responsible for it. Claude is not an author.</li>\n        <li>This statement, too, was written with Claude Code at the operator’s request.</li>\n      </ol></div>\n    "
     },
     {
       "id": "a10",
@@ -108,13 +108,13 @@
       "id": "a11",
       "title": "Article 11 (Disputes)",
       "nav": false,
-      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>The operator has not, at present, retained a lawyer or other professional. This statement and the Disclaimer have not been reviewed by a lawyer.</li>\n        <li>If a dispute arises, the operator will respond after consulting a lawyer or other professional where needed.</li>\n        <li>The response will follow the laws of Japan (including their rules on international jurisdiction and on the governing law), the sections “Liability” and “Governing law and changes” of the Disclaimer, and the terms of each licence.</li>\n        <li>This article is not a warning to anyone.</li>\n      </ol></div>\n    "
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>The operator has not, at present, retained a lawyer or other professional. This statement and the Disclaimer have not, at present, been reviewed by a lawyer.</li>\n        <li>If a dispute arises, the operator will respond after consulting a lawyer or other professional where needed.</li>\n        <li>The response will follow the laws of Japan (including their rules on international jurisdiction and on the governing law), the sections “Liability” and “Governing law and changes” of the Disclaimer, and the terms of each licence.</li>\n        <li>This article is not a warning to anyone.</li>\n      </ol></div>\n    "
     },
     {
       "id": "a12",
       "title": "Article 12 (Continuity)",
       "nav": false,
-      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>This site is currently in operation.</li>\n        <li>Its continuing is not guaranteed.</li>\n        <li>What is done if it cannot continue is set out in <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/continuity.md\" target=\"_blank\" rel=\"noopener\">When it cannot continue</a> (in Japanese).</li>\n      </ol></div>\n    "
+      "html": "\n      <div class=\"profile-core\"><ol>\n        <li>At present, this site is in operation.</li>\n        <li>Its continuing is not guaranteed.</li>\n        <li>What is done if it cannot continue is set out in <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/continuity.md\" target=\"_blank\" rel=\"noopener\">When it cannot continue</a> (in Japanese).</li>\n      </ol></div>\n    "
     },
     {
       "id": "a13",
