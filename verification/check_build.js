@@ -911,6 +911,37 @@ section('3f. 最初のコミットの日付が、どの時刻の日付か');
      missed.length === 0, missed.join(' / '));
 })();
 
+section('3b. Pages へ出す仕事を二つに分ける（2026-11-15）');
+(() => {
+  /* 組む仕事は読むだけで、鍵を残さずに組んで成果物を上げる。書く権限（pages・id-token）は、組まない deploy の仕事にだけ渡す。
+   * autonomy-and-self-cultivation と justice-and-algorithms と同じ形。2026-11-15 に利用者が決め、Claude が書いた。 */
+  const WF = path.join(ROOT, '.github', 'workflows', 'pages.yml');
+  const real = fs.readFileSync(WF, 'utf8');
+  const jobs = (t) => Object.fromEntries((t.split(/^jobs:\n/m)[1] || '').split(/\n(?=  [a-z]+:\n)/).map((b) => [(/^  ([a-z]+):/.exec(b) || [])[1], b]).filter(([k]) => k));
+  const problems = (t) => {
+    const bad = [];
+    const j = jobs(t);
+    if (!/^permissions:\n  contents: read\n(?!  \w)/m.test(t)) bad.push('先頭の権限が読むだけでない');
+    if (!j.build || !/\n    permissions:\n      contents: read\n      pages: read\n(?!      \w)/.test(j.build) || /: write/.test(j.build)) bad.push('組む仕事の権限');
+    if (!j.build || !/persist-credentials: false/.test(j.build) || !/upload-pages-artifact@/.test(j.build)) bad.push('組む仕事が鍵を残すか、成果物を上げない');
+    if (!j.deploy || !/\n    needs: build\n/.test(j.deploy) || !/\n    permissions:\n      pages: write\n      id-token: write\n(?!      \w)/.test(j.deploy)) bad.push('出す仕事の権限');
+    if (!j.deploy || /actions\/checkout@|node build\.js|run:/.test(j.deploy)) bad.push('出す仕事が取り出すか組む');
+    if (Object.keys(j).length !== 2) bad.push('仕事の数');
+    return bad;
+  };
+  const now = problems(real);
+  ok('Pages へ出す仕事は二つで、組む仕事は読むだけ（鍵を残さず成果物を上げる）、pages と id-token は組まない deploy の仕事にだけある', now.length === 0, now.join(' / '));
+  const breaks = [
+    ['先頭に書く権限を戻す', real.replace('permissions:\n  contents: read\n\nconcurrency:', 'permissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:')],
+    ['組む仕事に pages: write', real.replace('      contents: read\n      pages: read\n', '      contents: read\n      pages: write\n')],
+    ['出す仕事で組む', real.replace('      - id: deployment\n', '      - run: node build.js\n      - id: deployment\n')],
+    ['組む仕事の checkout が鍵を残す', real.replace('        with:\n          persist-credentials: false\n', '')],
+    ['出す仕事が組む仕事を待たない', real.replace('    needs: build\n', '')],
+  ];
+  const missed = breaks.filter(([, y]) => problems(y).length === 0).map(([k]) => k);
+  ok('壊して確かめる：先頭の書く権限・組む仕事の書く権限・出す仕事で組む・鍵を残す checkout・待たない出す仕事のどれでも落ちる（' + (breaks.length - missed.length) + ' / ' + breaks.length + '）', missed.length === 0, missed.join(' / '));
+})();
+
 section('4. この検査が名乗る件数');
 (() => {
   const total = pass + failures.length + 1;
