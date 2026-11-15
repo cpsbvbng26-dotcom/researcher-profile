@@ -5,10 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# 先頭では読むだけにする。Pages へ出す書き込みは deploy の仕事にだけ渡す（2026-11-15。autonomy-and-self-cultivation と同じ形）。
+# 組む仕事は読むだけで、鍵を持たずに組んで成果物を上げる。書く仕事は、組まず、上がった成果物を Pages へ出すだけである。
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -17,8 +17,15 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # configure-pages が Pages の設定を読む。
+    permissions:
+      contents: read
+      pages: read
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: 20
@@ -32,6 +39,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
