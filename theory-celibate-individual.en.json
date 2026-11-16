@@ -73,7 +73,10 @@
     "about": {
       "@type": "ScholarlyArticle",
       "name": "The celibate individual",
-      "identifier": "https://doi.org/10.5281/zenodo.22058254"
+      "identifier": "https://doi.org/10.5281/zenodo.22058254",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q142184034"
+      ]
     }
   }
 }

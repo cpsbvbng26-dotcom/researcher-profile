@@ -85,6 +85,7 @@
     {
       "slug": "celibate-individual",
       "doi": "10.5281/zenodo.22058254",
+      "wikidata": "Q142184034",
       "repo": "autonomy-and-self-cultivation",
       "pdf": "pdf/nobility-and-exemplarity-of-the-celibate-individual-v2.pdf",
       "transcript": "autonomy-and-self-cultivation/blob/main/papers/celibate-individual.md",
@@ -113,6 +114,7 @@
     {
       "slug": "imperial-selfhood",
       "doi": "10.5281/zenodo.22057583",
+      "wikidata": "Q142184151",
       "repo": "autonomy-and-self-cultivation",
       "pdf": "pdf/manifesto-of-imperial-selfhood-revised.pdf",
       "transcript": "autonomy-and-self-cultivation/blob/main/papers/imperial-selfhood.md",
@@ -140,6 +142,7 @@
     {
       "slug": "fragmentarian-spiritual-individualism",
       "doi": "10.5281/zenodo.22064241",
+      "wikidata": "Q142184207",
       "repo": "autonomy-and-self-cultivation",
       "pdf": "pdf/fragmentarian-spiritual-individualism.pdf",
       "transcript": "autonomy-and-self-cultivation/blob/main/papers/fragmentarian-spiritual-individualism.md",

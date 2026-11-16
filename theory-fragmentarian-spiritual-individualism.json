@@ -73,7 +73,10 @@
     "about": {
       "@type": "ScholarlyArticle",
       "name": "Fragmentarian spiritual individualism",
-      "identifier": "https://doi.org/10.5281/zenodo.22064241"
+      "identifier": "https://doi.org/10.5281/zenodo.22064241",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q142184207"
+      ]
     }
   }
 }
