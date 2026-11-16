@@ -50,7 +50,7 @@ const L = {
     concept: '全版', also: '別の所在',
     noRepo: '—（リポジトリに置いていない）',
     mit: 'MIT（全体）', mitExcept: 'MIT（ただし {dirs} は CC BY 4.0）', dirSep: '・', split: 'CC BY 4.0（文書）・MIT（コード）', splitText: 'CC BY 4.0（文書と論文）',
-    noType: '—', notZenodo: '—（Zenodo に無い）', figshare: '（Figshare）', noDoi: '—（DOI を持たない）',
+    noType: '—', notZenodo: '—（Zenodo に無い）', figshare: '（Figshare）', osf: '（OSF）', noDoi: '—（DOI を持たない）',
     dataTitle: '機械で読む形と、列の決め方', dataNav: '機械で読む形',
     dataNote: '同じ中身を、JSON と BibTeX でも配っています。',
     json: '目録の JSON', jsonNote: '題・種類・状態・DOI・正の所在・ライセンス・Zenodo の資源の種類・始めた時期を、作品ごとに',
@@ -83,7 +83,7 @@ const L = {
     concept: 'all versions', also: 'also',
     noRepo: '— (not in a repository)',
     mit: 'MIT (whole repository)', mitExcept: 'MIT (except {dirs}, under CC BY 4.0)', dirSep: ', ', split: 'CC BY 4.0 (texts) and MIT (code)', splitText: 'CC BY 4.0 (texts and papers)',
-    noType: '—', notZenodo: '— (not on Zenodo)', figshare: ' (Figshare)', noDoi: '— (no DOI)',
+    noType: '—', notZenodo: '— (not on Zenodo)', figshare: ' (Figshare)', osf: ' (OSF)', noDoi: '— (no DOI)',
     dataTitle: 'Machine-readable forms, and how the columns are decided', dataNav: 'Data',
     dataNote: 'The same content is also published as JSON and BibTeX.',
     json: 'Catalogue as JSON', jsonNote: 'Title, type, status, DOI, canonical location, licence, Zenodo resource type and period begun, for each work',
@@ -153,7 +153,7 @@ function canonicalOf(w, lang) {
   const c = SRC.canonical[w.canonical];
   if (!c) throw new Error('知らない正の所在です: ' + w.canonical);
   let url = null;
-  if (w.canonical === 'zenodo' || w.canonical === 'figshare' || w.canonical === 'ssrn') url = doiUrl(w.doi);
+  if (w.canonical === 'zenodo' || w.canonical === 'figshare' || w.canonical === 'ssrn' || w.canonical === 'osf') url = doiUrl(w.doi);
   else if (w.canonical === 'github') url = SRC.gh + w.repo;
   else if (c.url) url = c.url;
   return { name: lang === 'en' ? c.en : c.ja, url, rule: lang === 'en' ? c.ruleEn : c.ruleJa };
@@ -163,6 +163,8 @@ function resourceTypeText(w, t) {
   if (!w.doi) return t.noDoi;
   if (w.registry === 'Crossref') return t.notZenodo;
   if (w.registry === 'Figshare') return esc(w.resourceType) + t.figshare;
+  /* OSF の事前登録（2026-11-17）。DOI は DataCite のもので、種類は DataCite の resourceTypeGeneral を書く。 */
+  if (w.registry === 'OSF') return esc(w.resourceType) + t.osf;
   return esc(w.resourceType || t.noType);
 }
 
@@ -468,7 +470,7 @@ function exportJson() {
 const bibEsc = (s) => String(s).replace(/([{}])/g, '\\$1').replace(/([&%$#_])/g, '\\$1');
 
 function exportBib() {
-  const PUB = { zenodo: 'Zenodo', github: 'Zenodo', site: 'Zenodo', figshare: 'Figshare', ssrn: 'SSRN' };
+  const PUB = { zenodo: 'Zenodo', github: 'Zenodo', site: 'Zenodo', figshare: 'Figshare', ssrn: 'SSRN', osf: 'OSF Registries' };
   const out = [
     '% Catalogue of works by Takuya Nemoto (ORCID ' + SRC.orcid + ').',
     '% Generated from catalog.json in researcher-profile by build_catalog.js. Do not edit by hand.',
@@ -478,7 +480,7 @@ function exportBib() {
   SRC.works.filter((w) => w.doi).forEach((w) => {
     const ty = typeOf(w.type);
     const key = 'nemoto2026' + w.id.replace(/[^a-z0-9]/g, '');
-    const publisher = w.registry === 'Figshare' ? 'Figshare' : (w.registry === 'Crossref' ? 'SSRN' : PUB[w.canonical]);
+    const publisher = w.registry === 'Figshare' ? 'Figshare' : (w.registry === 'Crossref' ? 'SSRN' : (w.registry === 'OSF' ? 'OSF Registries' : PUB[w.canonical]));
     const fields = [
       ['author', 'Nemoto, Takuya'],
       ['title', w.title],
