@@ -73,7 +73,10 @@
     "about": {
       "@type": "ScholarlyArticle",
       "name": "Personal imperialism",
-      "identifier": "https://doi.org/10.5281/zenodo.22057583"
+      "identifier": "https://doi.org/10.5281/zenodo.22057583",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q142184151"
+      ]
     }
   }
 }

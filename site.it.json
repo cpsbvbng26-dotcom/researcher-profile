@@ -122,7 +122,10 @@
     },
     "author": {
       "@type": "Person",
-      "@id": "https://cpsbvbng26-dotcom.vercel.app/#person"
+      "@id": "https://cpsbvbng26-dotcom.vercel.app/#person",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139590485"
+      ]
     }
   },
   "headExtra": [
