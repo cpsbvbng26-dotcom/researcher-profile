@@ -6,7 +6,7 @@
     "ライセンスの列は、置いてあるリポジトリの LICENSE の置き方（免責事項の「再利用」）から生成する。手で書かない。",
     "娯楽の創作は載せない。研究の系列とはつながない。"
   ],
-  "asOf": "2026-11-11",
+  "asOf": "2026-11-17",
   "base": "https://cpsbvbng26-dotcom.vercel.app/",
   "gh": "https://github.com/cpsbvbng26-dotcom/",
   "orcid": "0009-0000-1406-0547",
@@ -262,6 +262,24 @@
       "continues": "Trinity-Infinity",
       "startNoteJa": "保守している版は trinity-operator の games のノートです。Trinity-Infinity Framework の一部で、学部一年次の成果の続きにあたります（決めごと 15 が許す続きです。利用者の決め、2026-11-11）",
       "startNoteEn": "The maintained version is the games note in trinity-operator. It is part of the Trinity-Infinity Framework and a continuation of first-year work (a continuation rule 15 allows; the author's decision, 2026-11-11)"
+    },
+    {
+      "id": "golden-window-preregistration",
+      "type": "thought-experiment",
+      "kind": "text",
+      "repo": null,
+      "status": "frozen",
+      "title": "A confirmatory numerical scan of the golden-window conjecture on a preregistered grid",
+      "summaryJa": "黄金比の窓の予想を確かめる数値の走査を、回す前に OSF に事前登録したもの。登録した 54 通りの δ で三つの仮説がすべて成り立った。これは根拠であって、証明ではない",
+      "summaryEn": "A confirmatory numerical scan of the golden-window conjecture, registered on OSF before it was run. All three hypotheses held at the 54 registered values of δ. This is evidence, not proof",
+      "doi": "10.17605/osf.io/6ew38",
+      "canonical": "osf",
+      "resourceType": "StudyRegistration",
+      "registry": "OSF",
+      "startRepo": "trinity-operator",
+      "continues": "Trinity-Infinity",
+      "startNoteJa": "2026-11-17（日本時間）に OSF で承認された事前登録です。登録の下書きは trinity-operator の games/PREREGISTRATION.md、走査の出力は games/scan-confirmatory.txt にあります。Figshare のプレプリント（10.6084/m9.figshare.34419198）が置いた黄金比の窓の予想の確かめで、学部一年次の成果の続きにあたります（決めごと 15 が許す続きです。2026-11-17 に Claude が決めました）",
+      "startNoteEn": "A preregistration approved on OSF on 2026-11-17 (JST). The draft is games/PREREGISTRATION.md in trinity-operator, and the output of the scan is games/scan-confirmatory.txt. It tests the golden-window conjecture stated in the Figshare preprint (10.6084/m9.figshare.34419198), and is a continuation of first-year work (a continuation rule 15 allows; decided by Claude on 2026-11-17)"
     },
     {
       "id": "celibate-individual",
@@ -524,6 +542,12 @@
     "ssrn": {
       "ja": "SSRN",
       "en": "SSRN",
+      "ruleJa": "Zenodo に無い本文は、いまの所在が正です",
+      "ruleEn": "For a text not on Zenodo, its present location is canonical"
+    },
+    "osf": {
+      "ja": "OSF",
+      "en": "OSF",
       "ruleJa": "Zenodo に無い本文は、いまの所在が正です",
       "ruleEn": "For a text not on Zenodo, its present location is canonical"
     },
