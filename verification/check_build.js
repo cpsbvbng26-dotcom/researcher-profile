@@ -942,6 +942,110 @@ section('3b. Pages へ出す仕事を二つに分ける（2026-11-15）');
   ok('壊して確かめる：先頭の書く権限・組む仕事の書く権限・出す仕事で組む・鍵を残す checkout・待たない出す仕事のどれでも落ちる（' + (breaks.length - missed.length) + ' / ' + breaks.length + '）', missed.length === 0, missed.join(' / '));
 })();
 
+section('3h. Wikidata の項目（2026-11-16）');
+(() => {
+  /* 2026-11-16 に利用者が求め、Claude が書いた。人の項目と、作品の項目三つを、構造化データの sameAs に置く。
+   * 人の項目は、トップの頁の五言語の設定の Person（@id が #person）にある。
+   * 作品の項目は、その作品の DOI を持つ ScholarlyArticle のすべて（ノート・要点の頁・論文の頁）にある。
+   * 四つ目の作品の項目 Q142184237（Machine-mediated Rediscovery、SSRN）は、このサイトに頁が無いので、どこにも置かない。
+   * ほかの Q は置かない。人の項目を作品に、作品の項目を別の作品に付けても落とす。 */
+  const { execFileSync } = require('child_process');
+  const WD = 'https://www.wikidata.org/wiki/';
+  const PERSON = 'Q139590485';
+  const PERSON_ID = 'https://cpsbvbng26-dotcom.vercel.app/#person';
+  const WORKS = { Q142184034: '10.5281/zenodo.22058254', Q142184151: '10.5281/zenodo.22057583', Q142184207: '10.5281/zenodo.22064241' };
+  const ALLOWED = [PERSON].concat(Object.keys(WORKS));
+  const TWINS = ['site.json', 'site.en.json', 'site.de.json', 'site.fr.json', 'site.it.json'];
+  const doiOf = (n) => {
+    const xs = [n['@id'], n.url].concat([].concat(n.identifier || []).map((x) => (x && typeof x === 'object') ? x.value : x));
+    for (const x of xs) {
+      const m = /(?:doi\.org\/)?(10\.\d{4,}\/[^\s"]+)$/i.exec(String(x || ''));
+      if (m) return m[1].toLowerCase();
+    }
+    return null;
+  };
+  const nodes = (o, out) => {
+    if (Array.isArray(o)) o.forEach((x) => nodes(x, out));
+    else if (o && typeof o === 'object') { if (o['@type']) out.push(o); Object.keys(o).forEach((k) => nodes(o[k], out)); }
+    return out;
+  };
+  /* 純粋な判定。docs は { 名: JSON-LD }。 */
+  const problems = (docs) => {
+    const bad = [];
+    const seen = Object.fromEntries(Object.keys(WORKS).map((q) => [q, 0]));
+    for (const [f, ld] of Object.entries(docs)) {
+      for (const n of nodes(ld, [])) {
+        const same = [].concat(n.sameAs || []);
+        const qs = same.filter((u) => /wikidata\.org/.test(u)).map((u) => (u.indexOf(WD) === 0 ? u.slice(WD.length) : '形の違う ' + u));
+        const d = doiOf(n);
+        qs.forEach((q) => {
+          if (q === PERSON) { if (n['@type'] !== 'Person' || n['@id'] !== PERSON_ID) bad.push(f + ' の ' + (n.name || n['@type']) + ' に人の項目'); }
+          else if (WORKS[q]) { if (d !== WORKS[q]) bad.push(f + ' の ' + (d || n['@type']) + ' に ' + q); else seen[q]++; }
+          else bad.push(f + ' に置かない項目 ' + q);
+        });
+        const want = Object.keys(WORKS).find((q) => WORKS[q] === d);
+        if (want && /Article|CreativeWork/.test(n['@type']) && !qs.includes(want)) bad.push(f + ' の ' + d + ' に ' + want + ' が無い');
+      }
+    }
+    TWINS.forEach((f) => {
+      const p = nodes(docs[f] || [], []).filter((n) => n['@type'] === 'Person' && n['@id'] === PERSON_ID);
+      if (!p.some((n) => [].concat(n.sameAs || []).includes(WD + PERSON))) bad.push(f + ' の人に ' + PERSON + ' が無い');
+    });
+    Object.keys(WORKS).forEach((q) => { if (!seen[q]) bad.push(q + ' がどこにも無い'); });
+    return bad;
+  };
+  /* 生もの：設定の JSON-LD と、生成した論文の頁の JSON-LD。 */
+  const docs = {};
+  fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f)).forEach((f) => {
+    try { const j = JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8')); if (j && j.jsonld) docs[f] = j.jsonld; } catch (e) { /* 1. で落ちる */ }
+  });
+  const out = fs.mkdtempSync(path.join(require('os').tmpdir(), 'rp-wd-'));
+  try {
+    execFileSync(process.execPath, [path.join(ROOT, 'build_papers.js')], { env: Object.assign({}, process.env, { PAPERS_OUT: out }), stdio: 'pipe' });
+    fs.readdirSync(out).forEach((h) => {
+      const m = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/.exec(fs.readFileSync(path.join(out, h), 'utf8'));
+      if (m) docs['papers/' + h] = JSON.parse(m[1]);
+    });
+  } catch (e) { /* 論文の頁が 0 頁になり、下で落ちる */ }
+  fs.rmSync(out, { recursive: true, force: true });
+  const paperPages = Object.keys(docs).filter((k) => /^papers\/.+\.html$/.test(k)).length;
+  const now = problems(docs);
+  ok('人の項目 ' + PERSON + ' が五言語の Person の sameAs にあり、作品の項目三つがその DOI の論文のすべての sameAs にある（設定 '
+     + (Object.keys(docs).length - paperPages) + ' 本・論文の頁 ' + paperPages + ' 頁）', paperPages > 0 && now.length === 0, now.slice(0, 4).join(' / '));
+  /* 構造化データの外も見る。設定・生成の道具・README に出る Q は、決めた四つ（人と作品三つ）だけ。 */
+  const files = fs.readdirSync(ROOT).filter((f) => /\.(json|js|md)$/.test(f));
+  const strays = (texts) => {
+    const bad = [];
+    for (const [f, t] of Object.entries(texts)) for (const m of String(t).matchAll(/\bQ\d{5,}\b/g)) if (!ALLOWED.includes(m[0])) bad.push(f + ' に ' + m[0]);
+    return bad;
+  };
+  const texts = Object.fromEntries(files.map((f) => [f, fs.readFileSync(path.join(ROOT, f), 'utf8')]));
+  const 余 = strays(texts);
+  ok('決めた四つのほかの Wikidata の項目が、設定と道具に無い（' + files.length + ' ファイル）', 余.length === 0, 余.join(', '));
+  /* 壊して確かめる。 */
+  const clone = (x) => JSON.parse(JSON.stringify(x));
+  const 替 = (f, fn) => { const d = clone(docs); if (d[f]) fn(d[f]); return d; };
+  const drop = (q) => (n) => { if (Array.isArray(n.sameAs)) n.sameAs = n.sameAs.filter((u) => u !== WD + q); };
+  const at = (pred, fn) => (ld) => nodes(ld, []).filter(pred).forEach(fn);
+  const isDoi = (d) => (n) => doiOf(n) === d;
+  const 論文 = 'papers/celibate-individual.en.html';
+  const breaks = [
+    ['ドイツ語の頁の人から項目を外す', 替('site.de.json', at((n) => n['@type'] === 'Person', drop(PERSON)))],
+    ['日本語の頁の人から項目を外す', 替('site.json', at((n) => n['@type'] === 'Person', drop(PERSON)))],
+    ['英語の要点の頁の断章論から項目を外す', 替('theory-fragmentarian-spiritual-individualism.en.json', at(isDoi(WORKS.Q142184207), drop('Q142184207')))],
+    ['論文の頁の独身論から項目を外す', 替(論文, at(isDoi(WORKS.Q142184034), drop('Q142184034')))],
+    ['ノートの独身論の項目を、皇帝主義の項目と取り違える', 替('notes.json', at(isDoi(WORKS.Q142184034), (n) => { n.sameAs = n.sameAs.map((u) => (u === WD + 'Q142184034' ? WD + 'Q142184151' : u)); }))],
+    ['人の項目を作品に付ける', 替('notes.en.json', at(isDoi(WORKS.Q142184207), (n) => { n.sameAs.push(WD + PERSON); }))],
+    ['頁の無い作品の項目を足す', 替('notes.json', at(isDoi('10.5281/zenodo.22055709'), (n) => { n.sameAs.push(WD + 'Q142184237'); }))],
+    ['人の項目の番号を一つ変える', 替('site.en.json', at((n) => n['@type'] === 'Person', (n) => { n.sameAs = n.sameAs.map((u) => (u === WD + PERSON ? WD + 'Q139590486' : u)); }))],
+  ];
+  const missed = breaks.filter(([, d]) => problems(d).length === 0).map(([k]) => k);
+  const 散 = strays(Object.assign({}, texts, { 'cv.json': texts['cv.json'] + ' Q142184237' })).length > 0;
+  if (!散) missed.push('設定に頁の無い作品の番号を書く');
+  ok('壊して確かめる：人の項目を外す・作品の項目を外す・取り違える・人を作品に付ける・頁の無い作品や違う番号を置くと落ちる（'
+     + (breaks.length + 1 - missed.length) + ' / ' + (breaks.length + 1) + '）', Boolean(docs[論文]) && missed.length === 0, missed.join(' / '));
+})();
+
 section('4. この検査が名乗る件数');
 (() => {
   const total = pass + failures.length + 1;
