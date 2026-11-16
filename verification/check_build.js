@@ -948,7 +948,9 @@ section('3h. Wikidata の項目（2026-11-16）');
    * 人の項目は、トップの頁の五言語の設定の Person（@id が #person）にある。
    * 作品の項目は、その作品の DOI を持つ ScholarlyArticle のすべて（ノート・要点の頁・論文の頁）にある。
    * 四つ目の作品の項目 Q142184237（Machine-mediated Rediscovery、SSRN）は、このサイトに頁が無いので、どこにも置かない。
-   * ほかの Q は置かない。人の項目を作品に、作品の項目を別の作品に付けても落とす。 */
+   * ほかの Q は置かない。人の項目を作品に、作品の項目を別の作品に付けても落とす。
+   * 2026-11-17。予想のサイトの設定（golden-window.site.json）の著者の Person にも、人の項目を置く。
+   * その Person は @id を持たないので、ORCID を sameAs に持つ Person に限って、人の項目を許す。 */
   const { execFileSync } = require('child_process');
   const WD = 'https://www.wikidata.org/wiki/';
   const PERSON = 'Q139590485';
@@ -956,6 +958,8 @@ section('3h. Wikidata の項目（2026-11-16）');
   const WORKS = { Q142184034: '10.5281/zenodo.22058254', Q142184151: '10.5281/zenodo.22057583', Q142184207: '10.5281/zenodo.22064241' };
   const ALLOWED = [PERSON].concat(Object.keys(WORKS));
   const TWINS = ['site.json', 'site.en.json', 'site.de.json', 'site.fr.json', 'site.it.json'];
+  const GW = 'golden-window.site.json';
+  const ORCID = 'https://orcid.org/0009-0000-1406-0547';
   const doiOf = (n) => {
     const xs = [n['@id'], n.url].concat([].concat(n.identifier || []).map((x) => (x && typeof x === 'object') ? x.value : x));
     for (const x of xs) {
@@ -979,7 +983,7 @@ section('3h. Wikidata の項目（2026-11-16）');
         const qs = same.filter((u) => /wikidata\.org/.test(u)).map((u) => (u.indexOf(WD) === 0 ? u.slice(WD.length) : '形の違う ' + u));
         const d = doiOf(n);
         qs.forEach((q) => {
-          if (q === PERSON) { if (n['@type'] !== 'Person' || n['@id'] !== PERSON_ID) bad.push(f + ' の ' + (n.name || n['@type']) + ' に人の項目'); }
+          if (q === PERSON) { if (n['@type'] !== 'Person' || (n['@id'] !== PERSON_ID && !(f === GW && !n['@id'] && same.includes(ORCID)))) bad.push(f + ' の ' + (n.name || n['@type']) + ' に人の項目'); }
           else if (WORKS[q]) { if (d !== WORKS[q]) bad.push(f + ' の ' + (d || n['@type']) + ' に ' + q); else seen[q]++; }
           else bad.push(f + ' に置かない項目 ' + q);
         });
@@ -991,6 +995,10 @@ section('3h. Wikidata の項目（2026-11-16）');
       const p = nodes(docs[f] || [], []).filter((n) => n['@type'] === 'Person' && n['@id'] === PERSON_ID);
       if (!p.some((n) => [].concat(n.sameAs || []).includes(WD + PERSON))) bad.push(f + ' の人に ' + PERSON + ' が無い');
     });
+    {
+      const p = nodes(docs[GW] || [], []).filter((n) => n['@type'] === 'Person' && [].concat(n.sameAs || []).includes(ORCID));
+      if (p.length !== 1 || ![].concat(p[0].sameAs).includes(WD + PERSON)) bad.push(GW + ' の著者に ' + PERSON + ' が無い');
+    }
     Object.keys(WORKS).forEach((q) => { if (!seen[q]) bad.push(q + ' がどこにも無い'); });
     return bad;
   };
@@ -1010,7 +1018,7 @@ section('3h. Wikidata の項目（2026-11-16）');
   fs.rmSync(out, { recursive: true, force: true });
   const paperPages = Object.keys(docs).filter((k) => /^papers\/.+\.html$/.test(k)).length;
   const now = problems(docs);
-  ok('人の項目 ' + PERSON + ' が五言語の Person の sameAs にあり、作品の項目三つがその DOI の論文のすべての sameAs にある（設定 '
+  ok('人の項目 ' + PERSON + ' が五言語の Person と予想のサイトの著者の sameAs にあり、作品の項目三つがその DOI の論文のすべての sameAs にある（設定 '
      + (Object.keys(docs).length - paperPages) + ' 本・論文の頁 ' + paperPages + ' 頁）', paperPages > 0 && now.length === 0, now.slice(0, 4).join(' / '));
   /* 構造化データの外も見る。設定・生成の道具・README に出る Q は、決めた四つ（人と作品三つ）だけ。 */
   const files = fs.readdirSync(ROOT).filter((f) => /\.(json|js|md)$/.test(f));
@@ -1038,11 +1046,14 @@ section('3h. Wikidata の項目（2026-11-16）');
     ['人の項目を作品に付ける', 替('notes.en.json', at(isDoi(WORKS.Q142184207), (n) => { n.sameAs.push(WD + PERSON); }))],
     ['頁の無い作品の項目を足す', 替('notes.json', at(isDoi('10.5281/zenodo.22055709'), (n) => { n.sameAs.push(WD + 'Q142184237'); }))],
     ['人の項目の番号を一つ変える', 替('site.en.json', at((n) => n['@type'] === 'Person', (n) => { n.sameAs = n.sameAs.map((u) => (u === WD + PERSON ? WD + 'Q139590486' : u)); }))],
+    ['予想のサイトの著者から項目を外す', 替(GW, at((n) => n['@type'] === 'Person', drop(PERSON)))],
+    ['予想のサイトの著者から ORCID を外す', 替(GW, at((n) => n['@type'] === 'Person', (n) => { n.sameAs = n.sameAs.filter((u) => u !== ORCID); }))],
+    ['予想のサイトの頁に人の項目を付ける', 替(GW, at((n) => n['@type'] === 'WebPage', (n) => { n.sameAs = [WD + PERSON]; }))],
   ];
   const missed = breaks.filter(([, d]) => problems(d).length === 0).map(([k]) => k);
   const 散 = strays(Object.assign({}, texts, { 'cv.json': texts['cv.json'] + ' Q142184237' })).length > 0;
   if (!散) missed.push('設定に頁の無い作品の番号を書く');
-  ok('壊して確かめる：人の項目を外す・作品の項目を外す・取り違える・人を作品に付ける・頁の無い作品や違う番号を置くと落ちる（'
+  ok('壊して確かめる：人の項目を外す（予想のサイトの著者からも）・作品の項目を外す・取り違える・人を作品や頁に付ける・頁の無い作品や違う番号を置くと落ちる（'
      + (breaks.length + 1 - missed.length) + ' / ' + (breaks.length + 1) + '）', Boolean(docs[論文]) && missed.length === 0, missed.join(' / '));
 })();
 
