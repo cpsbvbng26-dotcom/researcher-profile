@@ -192,8 +192,10 @@ function pageConfig(p, lang) {
           abstract: p.en.summary,
           inLanguage: 'en',
           identifier: [{ '@type': 'PropertyValue', propertyID: 'DOI', value: p.doi }],
-          /* 削除を依頼した所在は、同じものとして名乗らない。 */
-          sameAs: [doiUrl].concat((p.locations || []).filter((l) => !l.deletionRequested).map((l) => l.url)),
+          /* 削除を依頼した所在は、同じものとして名乗らない。
+           * Wikidata の作品の項目は、所在ではない（本文を持たない）ので、所在の欄には出さず、ここにだけ足す（2026-11-16）。 */
+          sameAs: [doiUrl].concat((p.locations || []).filter((l) => !l.deletionRequested).map((l) => l.url))
+            .concat(p.wikidata ? ['https://www.wikidata.org/wiki/' + p.wikidata] : []),
           author: {
             '@type': 'Person',
             name: 'Takuya Nemoto',
