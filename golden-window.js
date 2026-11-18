@@ -23,7 +23,7 @@
     below: 'δ < 1/2: no t can be kept. Proved (Proposition 4).',
     two: '1/2 ≤ δ < 1/φ: only t = δ and t = 1 can be kept. Proved (Proposition 5).',
     at: 'δ = 1/φ: a countably infinite set. Proved (Proposition 5).',
-    window: 'Inside the window 1/φ < δ < 2/3: the set has positive dimension, which is proved (Proposition 6). That its length is zero is conjecture (a), and is not proved.',
+    window: 'Inside the window 1/φ < δ < 2/3: the set has positive dimension (Proposition 6) and length zero (Proposition 8), and its dimension is below 1 and strictly increasing in δ (Proposition 9). All are proved; length zero and the dimension formula are special cases of known theorems.',
     full: 'δ ≥ 2/3: every t from 1 − δ to 1 can be kept. Proved (Proposition 5).',
     depth: function (k, n, len) {
       return 'Drawn: the values of t that survive ' + n + ' periods, ' + k + ' interval' + (k === 1 ? '' : 's')
@@ -34,7 +34,7 @@
     below: 'δ < 1/2：保てる t は無い。証明してある（命題 4）。',
     two: '1/2 ≤ δ < 1/φ：保てる t は δ と 1 の二点だけ。証明してある（命題 5）。',
     at: 'δ = 1/φ：可算無限の集合。証明してある（命題 5）。',
-    window: '窓の中 1/φ < δ < 2/3：集合の次元が正であることは証明してある（命題 6）。長さが 0 になることは予想 (a) で、証明していない。',
+    window: '窓の中 1/φ < δ < 2/3：集合の次元が正であること（命題 6）、長さが 0 になること（命題 8）、次元が 1 未満で δ について狭義に増えること（命題 9）は証明してある。長さが 0 であることと次元の式は、既知の定理の特別な場合である。',
     full: 'δ ≥ 2/3：1 − δ から 1 までのすべての t を保てる。証明してある（命題 5）。',
     depth: function (k, n, len) {
       return '描いているのは、' + n + ' 期を生き残る t の区間 ' + k + ' 個、総長 ' + len + '。有限の深さの計算であって、証明ではない。';
