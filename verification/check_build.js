@@ -480,14 +480,15 @@ section('3b. 作者のサイトの設定（五言語の日付・目標・頁の�
   Object.entries(LANGS).forEach(([f, l]) => {
     const p = J(f).profile || {};
     const a = Array.isArray(p.aims) ? p.aims : [];
-    if (a.length !== 2) aimBad.push(f + ' の目標が ' + a.length);
+    /* 2026-11-19 に Georgia Tech の OMSCS での修士号を足して三つにした（所有者が決めた）。 */
+    if (a.length !== 3) aimBad.push(f + ' の目標が ' + a.length);
     a.forEach((x, i) => {
       if (!x || typeof x !== 'object' || !x.text || !x.when) aimBad.push(f + ' の ' + (i + 1) + ' つ目に、何をもって達成とするかが無い');
       else if (!STATUS[l].includes(x.status)) aimBad.push(f + ' の ' + (i + 1) + ' つ目の状態が ' + x.status);
     });
     if (!Array.isArray(p.aimsStatusLabel) || p.aimsStatusLabel.length !== 3) aimBad.push(f + ' の表の見出し');
   });
-  ok('五つの言語の目標が二つずつあり、達成とする時と状態の欄を持つ', aimBad.length === 0, aimBad.join(' / '));
+  ok('五つの言語の目標が三つずつあり、達成とする時と状態の欄を持つ', aimBad.length === 0, aimBad.join(' / '));
 
   /* 328・379. **頁の下の欄。**作者のサイトの頁は、運営（© の行）・連絡・免責への道と、
    * 中身が変わった日を出す。連絡は GitHub の issue だけで、個人の連絡先を置かない。 */
