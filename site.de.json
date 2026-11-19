@@ -48,6 +48,11 @@
     ],
     "aims": [
       {
+        "text": "Über das OMSCS von Georgia Tech (Online Master of Science in Computer Science) einen Masterabschluss erwerben",
+        "when": "Wenn der Masterabschluss verliehen ist",
+        "status": "Nicht erreicht"
+      },
+      {
         "text": "Nach der Promotion als unabhängiger Forscher arbeiten",
         "when": "Wenn der Doktorgrad verliehen ist",
         "status": "Nicht erreicht"

@@ -48,6 +48,11 @@
     ],
     "aims": [
       {
+        "text": "Conseguire una laurea magistrale con l’OMSCS di Georgia Tech (Online Master of Science in Computer Science)",
+        "when": "Quando la laurea magistrale è conferita",
+        "status": "Non raggiunto"
+      },
+      {
         "text": "Lavorare come ricercatore indipendente dopo il dottorato",
         "when": "Quando il dottorato è conferito",
         "status": "Non raggiunto"

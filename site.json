@@ -46,6 +46,11 @@
     ],
     "aims": [
       {
+        "text": "Georgia Tech の OMSCS（Online Master of Science in Computer Science）で修士号を取得すること",
+        "when": "修士号が授与された時",
+        "status": "未達成"
+      },
+      {
         "text": "博士号を取得したのち、独立研究者として活動すること",
         "when": "博士号が授与された時",
         "status": "未達成"

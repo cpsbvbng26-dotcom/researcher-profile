@@ -48,6 +48,11 @@
     ],
     "aims": [
       {
+        "text": "Obtenir un master par l’OMSCS de Georgia Tech (Online Master of Science in Computer Science)",
+        "when": "Quand le master est délivré",
+        "status": "Non atteint"
+      },
+      {
         "text": "Exercer comme chercheur indépendant après un doctorat",
         "when": "Quand le doctorat est délivré",
         "status": "Non atteint"

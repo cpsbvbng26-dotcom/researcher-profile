@@ -46,6 +46,11 @@
     ],
     "aims": [
       {
+        "text": "To earn a master’s degree through Georgia Tech’s OMSCS (Online Master of Science in Computer Science)",
+        "when": "When the master’s degree is awarded",
+        "status": "Not achieved"
+      },
+      {
         "text": "To work as an independent researcher after a doctorate",
         "when": "When a doctorate is awarded",
         "status": "Not achieved"
