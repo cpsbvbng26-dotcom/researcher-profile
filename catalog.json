@@ -291,6 +291,7 @@
       "summaryJa": "黄金比の窓の予想を解き、穴の開いた β 変換と Trinity-Infinity の Series II のゲームについての関連する結果を足した稿。ノートの命題 8 と 9 を証明とともに収める。解決済み（(a) と (b) の式は既知の定理の特別な場合。δ についての連続・狭義の増加・両端の極限は、読んだ文献には見つからない）。Figshare の稿（10.6084/m9.figshare.34419198）の新しい版ではなく、別の項目",
       "summaryEn": "Resolves the golden-window conjecture and adds related results on β-transformations with a hole and on the Trinity-Infinity Series II game. It contains Propositions 8 and 9 of the note with their proofs. Resolved: part (a) and the formula of part (b) are special cases of known theorems; continuity and strict increase in δ and the limits at both ends were not found in the texts read. A separate Figshare item, not a new version of the preprint 10.6084/m9.figshare.34419198",
       "doi": "10.6084/m9.figshare.35050300",
+      "otherDois": ["10.5281/zenodo.24382288", "10.5281/zenodo.24382287"],
       "canonical": "figshare",
       "resourceType": "Preprint",
       "registry": "Figshare",
