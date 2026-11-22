@@ -520,6 +520,39 @@ section('3b. 作者のサイトの設定（五言語の日付・目標・頁の�
      && foot.indexOf('<time datetime="' + want + '">') >= 0, '期待する日 ' + want);
   ok('目標の表が、状態の欄つきで頁に出る', /<table class="aims-table">[\s\S]*?<td class="aim-status">未達成<\/td>/.test(h));
 
+  /* 2026-11-22。デザインに関する法的な扱いの頁（design-legal.json・design-legal.en.json）。
+   * 頁の下の欄の sitePages から、作者のサイトの頁にだけ相対の道でつなぐ。日本語の頁は日本語の版へ、ほかの四言語は英語の版へ。
+   * 予想のサイト（重ねる設定で siteUrl が変わる）には出さない。引いた文の CSS は、引いた文を持つ頁にだけ足す。 */
+  {
+    const WANT = { ja: 'notes/design-legal.html', en: 'notes/design-legal.en.html', de: 'notes/design-legal.en.html', fr: 'notes/design-legal.en.html', it: 'notes/design-legal.en.html' };
+    const 組の問題 = (G) => Object.keys(WANT).filter((l) => {
+      const s = (G[l] || {}).sitePages;
+      return !Array.isArray(s) || s.length !== 1 || s[0].page !== WANT[l] || !s[0].label || s[0].url !== undefined;
+    });
+    const 組 = 組の問題(F);
+    ok('頁の下の欄の組（footer.json）が、五言語ともデザインに関する法的な扱いの頁を一つずつ、その言語の版（独仏伊は英語の版）で指す', 組.length === 0, 組.join(', '));
+    const 組壊 = [Object.assign({}, F, { de: Object.assign({}, F.de, { sitePages: [{ label: 'x', page: 'notes/design-legal.html' }] }) }),
+      Object.assign({}, F, { ja: Object.assign({}, F.ja, { sitePages: [] }) })].map(組の問題);
+    ok('壊して確かめる：独語の欄を日本語の版へ向ける・日本語の欄から外すのどちらでも落ちる', 組壊.every((b) => b.length > 0));
+
+    const gen = (cfg, overlay) => {
+      const o = fs.mkdtempSync(path.join(require('os').tmpdir(), 'rp-dl-'));
+      try {
+        execFileSync(process.execPath, [path.join(ROOT, 'build.js')], { env: Object.assign({}, process.env, { PROFILE_CONFIG: path.join(ROOT, cfg), PROFILE_OUT: o }, overlay ? { PROFILE_OVERLAY: path.join(ROOT, overlay) } : {}), stdio: 'pipe' });
+        return fs.readFileSync(path.join(o, 'index.html'), 'utf8');
+      } catch (e) { return ''; }
+    };
+    const footOf = (x) => (/<footer>[\s\S]*?<\/footer>/.exec(x) || [''])[0];
+    const 道 = [['site.json', '<a href="./notes/design-legal.html">'], ['site.de.json', '<a href="./notes/design-legal.en.html">'],
+      ['design-legal.json', '<a href="./design-legal.html">'], ['design-legal.en.json', '<a href="./design-legal.en.html">'], ['mission.en.json', '<a href="./design-legal.en.html">']];
+    const 道外れ = 道.filter(([c, w]) => footOf(gen(c)).indexOf(w) < 0).map(([c]) => c);
+    ok('作者のサイトの頁の下の欄が、根と notes/ のどちらからも、デザインに関する法的な扱いの頁を相対の道で指す（' + 道.length + ' 本で生成）', 道外れ.length === 0, 道外れ.join(', '));
+    const gw = gen('golden-window.en.json', 'golden-window.site.json');
+    ok('予想のサイトの頁には、その道も引いた文の CSS も出ない', gw.length > 0 && gw.indexOf('design-legal') < 0 && gw.indexOf('blockquote.profile-core') < 0);
+    const dl = gen('design-legal.json'), top = gen('site.json');
+    ok('引いた文の CSS は、引いた文を持つ頁にだけ出る', /\.notes-list blockquote\.profile-core \{/.test(dl) && top.indexOf('blockquote.profile-core') < 0);
+  }
+
   /* 所属は「ZEN大学」／「ZEN University」だけを書く。肩書きでは書かない（決めごと 6、2026-11-11）。 */
   const 所属 = [];
   ['site.json', 'site.en.json', 'cv.json'].forEach((f) => {
