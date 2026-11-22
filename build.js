@@ -241,10 +241,21 @@ function footerSet(profile) {
   return all[profile.footerSet];
 }
 
+/* 作者のサイトの頁から、同じサイトの頁への相対の道（2026-11-22）。page は根からの道（notes/x.html）。 */
+function siteRel(siteUrl, page) {
+  const here = String(siteUrl).slice(design.SITE.length);
+  const dir = '/' + here.slice(0, here.lastIndexOf('/') + 1);
+  return './' + path.posix.relative(dir, '/' + page);
+}
+
 function renderFooterExtra(profile) {
   const set = footerSet(profile);
   const links = arr(set.links).map((l) =>
     `<a href="${esc(l.url)}"${linkAttrs(l.url)}>${esc(l.label)}</a>`);
+  /* sitePages は作者のサイトの頁にだけ出す（2026-11-22）。予想のサイトも同じ欄の組を使うが、そこにその頁は無い。 */
+  if (design.applies(profile)) {
+    arr(set.sitePages).forEach((l) => links.push(`<a href="${esc(siteRel(profile.siteUrl, l.page))}">${esc(l.label)}</a>`));
+  }
   if (set.updated) {
     /* 源を設定が名指すときは、それを使う（論文の頁と目録は、設定を一時ファイルに書いて渡すため）。 */
     const d = contentDate(profile.updatedFrom
@@ -266,6 +277,10 @@ function extraCss(profile) {
       '.aims-table th { text-align: left; font-weight: 600; color: var(--text); padding: .35rem .5rem .35rem 0; border-bottom: 1px solid var(--line); }',
       '.aims-table td { color: var(--muted); padding: .45rem .5rem .45rem 0; border-bottom: 1px solid var(--line-soft); vertical-align: top; overflow-wrap: anywhere; }',
       '.aims-table .aim-status { white-space: nowrap; color: var(--text); }');
+  }
+  /* 引いた文（2026-11-22）。地の文と見分けられるように、縁を線の色にし、字を一段小さく薄くする。薄さは --muted で、比は check_contrast.js が測る。 */
+  if (arr(profile.blocks).some((b) => /<blockquote class="profile-core"/.test(b.html || ''))) {
+    out.push('.notes-list blockquote.profile-core { border-left-color: var(--line); color: var(--muted); font-size: var(--fs-sm); line-height: 1.9; }');
   }
   if (profile.footerSet) {
     out.push('.foot-links { display: flex; flex-wrap: wrap; gap: .25rem .4rem; }',

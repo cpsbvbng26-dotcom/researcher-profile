@@ -87,13 +87,13 @@
     {
       "id": "verify",
       "title": "Prüfung",
-      "html": "<p>Bei jedem Push laufen <b>1939 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>106 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>",
+      "html": "<p>Bei jedem Push laufen <b>2003 Prüfungen</b>. Sie decken den Aufbau der Seite, die Lesbarkeit der Farbkontraste und die Zahlenwerte der Operator-Seite ab.</p><p><b>Ein eigenes Register hält fest, was sich als falsch erwiesen hat</b> — derzeit <b>106 Einträge</b>. <b>Nichts darin wird gelöscht.</b> Auch die Prüfwerkzeuge werden geprüft: ein gültiger Stand wird gezielt beschädigt, und es wird nachgewiesen, dass genau die zugehörige Prüfung fehlschlägt.</p>",
       "timeline": { "file": "register-timeline.json", "label": "Einträge im Korrekturregister nach dem Tag, an dem sie eingetragen wurden.", "unit": "{n}", "total": "Insgesamt {n} Einträge" }
     },
     {
       "id": "more",
       "title": "Weiterlesen",
-      "html": "<ul class=\"notes-list\"><li><a href=\"./index.html\">Japanisch （日本語）</a></li><li><a href=\"./index.en.html\">Englisch</a></li><li><a href=\"./cv.html\">Lebenslauf</a></li><li><a href=\"./notes/index.en.html\">Notizen</a></li><li><a href=\"./trinity.html\">Operator</a></li><li><a href=\"./notes/mission.en.html\">Zweckerklärung (englisch)</a></li></ul>"
+      "html": "<ul class=\"notes-list\"><li><a href=\"./index.html\">Japanisch （日本語）</a></li><li><a href=\"./index.en.html\">Englisch</a></li><li><a href=\"./cv.html\">Lebenslauf</a></li><li><a href=\"./notes/index.en.html\">Notizen</a></li><li><a href=\"./trinity.html\">Operator</a></li><li><a href=\"./notes/mission.en.html\">Zweckerklärung (englisch)</a></li><li><a href=\"./notes/design-legal.en.html\">Design: rechtliche Behandlung (englisch)</a></li></ul>"
     }
   ],
   "extraNav": [
