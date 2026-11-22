@@ -128,7 +128,7 @@
       "id": "d9",
       "title": "引いた文の出所",
       "nav": false,
-      "html": "\n      <p class=\"profile-core\">条文は、<a href=\"https://github.com/cpsbvbng26-dotcom/nusquama/blob/85dd68091ce06598f55740428d3f1a927448523c/verification/statutes-texts.json\" target=\"_blank\" rel=\"noopener\">nusquama の verification/statutes-texts.json</a>（コミット 85dd680、e-Gov 法令 API から 2026-11-22 に取り寄せ）の文と一字一句同じです。このリポジトリでは、同じ文を verification/statutes.json に置いています。</p>\n      <p class=\"profile-core\">長い条は、頁の文が拠る項や号だけを、写しの文から一字一句そのまま切り出しました。切り出したところは、引いた文の前に書いています。</p>\n      <p class=\"profile-core\">IPA フォントライセンスの文は、共有カードを描いた作業の環境のパッケージ（fonts-ipafont-gothic）の許諾の文から、行の折り返しだけを外して写しました。その文書全体の SHA-256 も、verification/statutes.json に置いています。</p>\n      <p class=\"profile-core\">CC BY 4.0 と MIT の文は、このリポジトリの LICENSE と LICENSE-CODE から写しました。</p>\n    "
+      "html": "\n      <p class=\"profile-core\">条文は、このリポジトリの <a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/statutes.json\" target=\"_blank\" rel=\"noopener\">verification/statutes.json</a> に置いた写しから引きます。写しは e-Gov 法令 API から取り寄せた文です。</p>\n      <p class=\"profile-core\">引いた条はどれも、2026-11-22 に e-Gov 法令 API から取り寄せ直した文と、一字一句同じです。</p>\n      <p class=\"profile-core\">長い条は、頁の文が拠る項や号だけを、写しの文から一字一句そのまま切り出しました。切り出したところは、引いた文の前に書いています。</p>\n      <p class=\"profile-core\">IPA フォントライセンスの文は、共有カードを描いた作業の環境のパッケージ（fonts-ipafont-gothic）の許諾の文から、行の折り返しだけを外して写しました。その文書全体の SHA-256 も、verification/statutes.json に置いています。</p>\n      <p class=\"profile-core\">CC BY 4.0 と MIT の文は、このリポジトリの LICENSE と LICENSE-CODE から写しました。</p>\n    "
     }
   ]
 }
