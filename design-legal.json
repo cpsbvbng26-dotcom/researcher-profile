@@ -1,0 +1,134 @@
+{
+  "name": "デザインに関する法的な扱い",
+  "nameLatin": "Legal handling of the design",
+  "initials": "TN",
+  "lang": "ja",
+  "title": "デザインに関する法的な扱い | 根本卓哉",
+  "description": "根本卓哉のプロフィールサイトの見た目の部品（書体・ロゴ・共有の画像・飾り・図・配色・配置）について、作り方と出所、権利と許諾、関わる法令の条を書いた頁です。",
+  "siteUrl": "https://cpsbvbng26-dotcom.vercel.app/notes/design-legal.html",
+  "alternates": [
+    {
+      "lang": "ja",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/design-legal.html"
+    },
+    {
+      "lang": "en",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/design-legal.en.html"
+    },
+    {
+      "lang": "x-default",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/notes/design-legal.html"
+    }
+  ],
+  "ogCard": "https://cpsbvbng26-dotcom.vercel.app/og/",
+  "ogType": "website",
+  "favicon": "./../favicon.svg",
+  "accent": "#8a6a3d",
+  "accentDark": "#b08d57",
+  "footer": "© 2026 根本卓哉",
+  "footerSet": "ja",
+  "taglineHtml": "このサイトの見た目の部品の、作り方と出所、権利と許諾、関わる法令の条を書いた頁です。運営者の側の理解であり、法的な助言ではありません。適用されるのは<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md\" target=\"_blank\" rel=\"noopener\">免責事項</a>と各ライセンスです。",
+  "sections": [
+    "d1",
+    "d2",
+    "d3",
+    "d4",
+    "d5",
+    "d6",
+    "d7",
+    "d8",
+    "d9"
+  ],
+  "extraNav": [
+    {
+      "name": "自己紹介",
+      "url": "./../index.html"
+    },
+    {
+      "name": "作用素",
+      "url": "./../trinity.html"
+    },
+    {
+      "name": "ノート",
+      "url": "./index.html"
+    },
+    {
+      "name": "English",
+      "url": "./design-legal.en.html"
+    }
+  ],
+  "labels": {
+    "eyebrow": "決まり",
+    "verify": "開く",
+    "skip": "本文へスキップ",
+    "themeToggle": "テーマを切り替える"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://cpsbvbng26-dotcom.vercel.app/notes/design-legal.html",
+    "url": "https://cpsbvbng26-dotcom.vercel.app/notes/design-legal.html",
+    "name": "デザインに関する法的な扱い",
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://cpsbvbng26-dotcom.vercel.app/"
+    }
+  },
+  "blocks": [
+    {
+      "id": "d1",
+      "title": "この頁について",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">この頁は、このサイトの見た目の部品について、誰が作ったか、どこから来たか、権利と許諾がどうなっているか、どの法令の条にどう関わるかを書きます。</p>\n      <p class=\"profile-core\">このサイトは、cpsbvbng26-dotcom.github.io と cpsbvbng26-dotcom.vercel.app の二つの所で、同じリポジトリの同じファイルを配っています。</p>\n      <p class=\"profile-core\">部品は、書体、ロゴと共有の画像、頁の飾り、図、配色、配置、外から読む素材の有無です。</p>\n      <p class=\"profile-core\">書いてあるのは運営者の側の理解です。法的な助言ではありません。</p>\n      <p class=\"profile-core\">この頁は、弁護士の確認を受けていません。</p>\n      <p class=\"profile-core\">条文は、e-Gov 法令 API から取り寄せた写しの文を、一字一句そのまま引きます。写しの出所は、最後の節にあります。</p>\n      <p class=\"profile-core\">この頁は権利や義務を生じさせるものではありません。適用されるのは、<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md\" target=\"_blank\" rel=\"noopener\">免責事項</a>と、このリポジトリのライセンス（LICENSE と LICENSE-CODE）です。</p>\n    "
+    },
+    {
+      "id": "d2",
+      "title": "部品の一覧",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">このリポジトリが配る画像のファイルは、下の表の行に挙げたものだけです。字のファイルは、一つも配っていません。</p>\n      <table class=\"works-table design-parts\">\n        <thead><tr><th scope=\"col\">部品</th><th scope=\"col\">ファイル</th><th scope=\"col\">作り方と出所</th><th scope=\"col\">権利と許諾</th><th scope=\"col\">確かめ方</th></tr></thead>\n        <tbody>\n          <tr><td data-label=\"部品\">ロゴ</td><td data-label=\"ファイル\"><code translate=\"no\" class=\"notranslate\">favicon.svg</code></td><td data-label=\"作り方と出所\">長方形 6 つと多角形 1 つで、運営者の名の頭文字 T と N を組んだ図形です。色は墨 <code translate=\"no\" class=\"notranslate\">#16161a</code> と金 <code translate=\"no\" class=\"notranslate\">#b08d57</code> の二色です。運営者の求めにより Claude Code（Anthropic）で書き、運営者が確かめて手で置きました。字形、写真、他人の図案は使っていません。</td><td data-label=\"権利と許諾\">CC BY 4.0（README のライセンスの節で「ロゴと共有カードの画像」の欄）</td><td data-label=\"確かめ方\">check_site.js の 10.69 が、図形の要素と色を数えます。</td></tr>\n          <tr><td data-label=\"部品\">ロゴを画素にしたもの</td><td data-label=\"ファイル\"><code translate=\"no\" class=\"notranslate\">favicon.ico</code>（16・32・48 px）、<code translate=\"no\" class=\"notranslate\">favicon-192.png</code>（192 px）、<code translate=\"no\" class=\"notranslate\">apple-touch-icon.png</code>（180 px）</td><td data-label=\"作り方と出所\">同じロゴをブラウザで描き、縮めたものです。検索の結果などで SVG を読まない場合のために置いています。</td><td data-label=\"権利と許諾\">CC BY 4.0（同じ欄）</td><td data-label=\"確かめ方\">check_site.js の 13 が、画素の大きさを見ます。</td></tr>\n          <tr><td data-label=\"部品\">共有の画像</td><td data-label=\"ファイル\"><code translate=\"no\" class=\"notranslate\">og.png</code>（600×600 px）</td><td data-label=\"作り方と出所\">ロゴを、角を丸めずに正方形の PNG にしたものです。</td><td data-label=\"権利と許諾\">CC BY 4.0（同じ欄）</td><td data-label=\"確かめ方\">check_site.js の 10.69 が、大きさを見ます。</td></tr>\n          <tr><td data-label=\"部品\">共有カード</td><td data-label=\"ファイル\"><code translate=\"no\" class=\"notranslate\">og/*.png</code>（43 枚、どれも 1200×630 px）</td><td data-label=\"作り方と出所\"><code translate=\"no\" class=\"notranslate\">verification/update_cards.js</code> が、頁の題と説明の文とロゴから、ブラウザ（playwright の Chromium）で描きます。字の形は、描いた作業の環境の書体を画素にしたものです（次の節）。</td><td data-label=\"権利と許諾\">画像は CC BY 4.0（同じ欄）。字の形は、その書体の使用許諾に従います（次の節）。</td><td data-label=\"確かめ方\">check_site.js の 10.69 が、枚数と大きさと、カードを指す頁の数を突き合わせます。</td></tr>\n          <tr><td data-label=\"部品\">書体（配るもの）</td><td data-label=\"ファイル\">無い</td><td data-label=\"作り方と出所\"><code translate=\"no\" class=\"notranslate\">@font-face</code> も、字のファイルも置いていません。</td><td data-label=\"権利と許諾\">配っていないので、許諾の問いは生じません。</td><td data-label=\"確かめ方\">check_site.js の 10.68 と 10.69 が見ます。</td></tr>\n          <tr><td data-label=\"部品\">書体（名指すだけのもの）</td><td data-label=\"ファイル\">頁の CSS の <code translate=\"no\" class=\"notranslate\">font-family</code> の並び</td><td data-label=\"作り方と出所\">閲覧者の端末にある書体を、名で指すだけです。指す名は次の節にあります。</td><td data-label=\"権利と許諾\">書体のファイルは閲覧者の端末の側にあり、このサイトは配っていません。</td><td data-label=\"確かめ方\">check_site.js の 10.69 が、頁の CSS の名をすべて拾い、次の節の並びと突き合わせます。</td></tr>\n          <tr><td data-label=\"部品\">頁の飾り（上の帯・名前の下の銘と飾り・節の見出しの下の飾り・年表の棒）</td><td data-label=\"ファイル\">各頁の中の SVG</td><td data-label=\"作り方と出所\">researcher-profile の <code translate=\"no\" class=\"notranslate\">design.js</code> が、長方形と多角形と型だけで描きます。数はロゴの寸法から取っています。</td><td data-label=\"権利と許諾\">MIT（README の欄で「サイトの実装」。頁のマークアップの一部です）</td><td data-label=\"確かめ方\">check_site.js の 10.68 が、要素の種類と、字も外への参照も持たないことを見ます。</td></tr>\n          <tr><td data-label=\"部品\">図（黄金比の窓の図）</td><td data-label=\"ファイル\">トップの頁と黄金比の窓の頁の中の SVG</td><td data-label=\"作り方と出所\">頁のスクリプト（researcher-profile の <code translate=\"no\" class=\"notranslate\">golden-window.js</code>）が、数から描きます。</td><td data-label=\"権利と許諾\">MIT（同じ欄）</td><td data-label=\"確かめ方\">check_site.js の 10.65 が、スクリプトが外へ何も取りに行かないことを見ます。</td></tr>\n          <tr><td data-label=\"部品\">配色</td><td data-label=\"ファイル\">各頁の CSS の色の変数</td><td data-label=\"作り方と出所\">指し色 <code translate=\"no\" class=\"notranslate\">#8a6a3d</code>（暗い側は <code translate=\"no\" class=\"notranslate\">#b08d57</code>）と、ロゴの二色です。</td><td data-label=\"権利と許諾\">MIT（同じ欄）</td><td data-label=\"確かめ方\"><code translate=\"no\" class=\"notranslate\">check_contrast.js</code> が比を測ります（見やすさの節）。</td></tr>\n          <tr><td data-label=\"部品\">配置</td><td data-label=\"ファイル\">各頁の CSS</td><td data-label=\"作り方と出所\">生成した頁は、researcher-profile の <code translate=\"no\" class=\"notranslate\">templates/page.html</code> と <code translate=\"no\" class=\"notranslate\">design.js</code> で組みます。<code translate=\"no\" class=\"notranslate\">trinity.html</code> と <code translate=\"no\" class=\"notranslate\">404.html</code> は、このリポジトリに置いた頁で、CSS も頁の中にあります。</td><td data-label=\"権利と許諾\">MIT（同じ欄）</td><td data-label=\"確かめ方\">check_site.js と <code translate=\"no\" class=\"notranslate\">check_keyboard.js</code> が、構造と幅を見ます。</td></tr>\n          <tr><td data-label=\"部品\">外から読む素材</td><td data-label=\"ファイル\">無い</td><td data-label=\"作り方と出所\">頁の CSP は <code translate=\"no\" class=\"notranslate\">default-src 'none'</code> から始め、外のホストを許していません。</td><td data-label=\"権利と許諾\">外の素材を使っていないので、その許諾の問いは生じません。</td><td data-label=\"確かめ方\">check_site.js の 2 と 6c が見ます。</td></tr>\n        </tbody>\n      </table>\n    "
+    },
+    {
+      "id": "d3",
+      "title": "書体と共有カードの字",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">頁の CSS が名指す書体の名は、<code translate=\"no\" class=\"notranslate\">Hiragino Sans</code>、<code translate=\"no\" class=\"notranslate\">Hiragino Kaku Gothic ProN</code>、<code translate=\"no\" class=\"notranslate\">Hiragino Mincho ProN</code>、<code translate=\"no\" class=\"notranslate\">Noto Sans JP</code>、<code translate=\"no\" class=\"notranslate\">Noto Serif JP</code>、<code translate=\"no\" class=\"notranslate\">Yu Gothic</code>、<code translate=\"no\" class=\"notranslate\">Yu Mincho</code>、<code translate=\"no\" class=\"notranslate\">YuMincho</code>、<code translate=\"no\" class=\"notranslate\">Meiryo</code>、<code translate=\"no\" class=\"notranslate\">Georgia</code>、<code translate=\"no\" class=\"notranslate\">Times New Roman</code>、<code translate=\"no\" class=\"notranslate\">SFMono-Regular</code>、<code translate=\"no\" class=\"notranslate\">Menlo</code>、<code translate=\"no\" class=\"notranslate\">Consolas</code>です。ほかに、端末の既定の書体を指す <code translate=\"no\" class=\"notranslate\">system-ui</code>、<code translate=\"no\" class=\"notranslate\">sans-serif</code>、<code translate=\"no\" class=\"notranslate\">serif</code>、<code translate=\"no\" class=\"notranslate\">ui-monospace</code>、<code translate=\"no\" class=\"notranslate\">monospace</code>を使います。</p>\n      <p class=\"profile-core\">どれも閲覧者の端末にある書体を名で指すだけで、このサイトは書体のファイルを配っていません。</p>\n      <p class=\"profile-core\">共有カードの字は、<code translate=\"no\" class=\"notranslate\">verification/update_cards.js</code> の並び（<code translate=\"no\" class=\"notranslate\">\"Hiragino Sans\", \"Noto Sans CJK JP\", \"IPAGothic\", \"IPAPGothic\", sans-serif</code>）で描きます。</p>\n      <p class=\"profile-core\">いまの共有カードを描いた作業の環境では、並びの初めの二つが無く、IPAGothic で描かれています。同じ環境で描き直すと、カードが一ビットも違わずに出ることを確かめました。</p>\n      <p class=\"profile-core\">IPAGothic の使用許諾（IPA フォントライセンス v1.0）の第 2 条は、次のとおり定めます。引いたのは、その環境にあるパッケージの許諾の文です。</p>\n      <blockquote class=\"profile-core\" data-licence=\"IPA\">2.受領者はコンピュータにインストールされた許諾プログラムをそのまま、または改変を行ったうえで、印刷物およびデジタル・コンテンツにおいて、文字テキスト表現等として使用することができます。</blockquote>\n      <blockquote class=\"profile-core\" data-licence=\"IPA\">3.受領者は前項の定めに従い作成した印刷物およびデジタル・コンテンツにつき、その商用・非商用の別、および放送、通信、各種記録メディアなどの媒体の形式を問わず、複製その他の利用をすることができます。</blockquote>\n      <p class=\"profile-core\">共有カードは、この二つの定めのとおりに、書体を画像の中の文字として使ったものです。書体のファイルそのものは、カードにも頁にも入っていません。</p>\n    "
+    },
+    {
+      "id": "d4",
+      "title": "著作権",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">著作権法は、著作物を次のように定め、美術の著作物を例に挙げます。</p>\n      <p class=\"profile-core\">著作権法 第 2 条第 1 項第 1 号</p>\n      <blockquote class=\"profile-core\" data-statute=\"著作権法 第2条\">一 著作物 思想又は感情を創作的に表現したものであつて、文芸、学術、美術又は音楽の範囲に属するものをいう。</blockquote>\n      <p class=\"profile-core\">著作権法 第 10 条第 1 項第 4 号</p>\n      <blockquote class=\"profile-core\" data-statute=\"著作権法 第10条\">四 絵画、版画、彫刻その他の美術の著作物</blockquote>\n      <p class=\"profile-core\">このサイトのロゴ、飾り、図、配色、配置が美術の著作物に当たるかは、条文の文からは決まりません。この頁は、当たるとも当たらないとも決めません。</p>\n      <p class=\"profile-core\">当たる部分の許諾は、<a href=\"https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/README.md\" target=\"_blank\" rel=\"noopener\">README のライセンスの節</a>の区分のとおりです。ロゴと共有カードの画像は CC BY 4.0（LICENSE）、頁のマークアップ・スタイル・スクリプトは MIT（LICENSE-CODE）です。この頁で区分を変えることはありません。</p>\n      <p class=\"profile-core\">CC BY 4.0 の LICENSE は、冒頭の案内（ライセンスの本文ではない部分）で、許諾は許諾者が持つ権利の範囲に限ると書いています。</p>\n      <blockquote class=\"profile-core\" data-licence=\"CC BY 4.0\">Our licenses grant only permissions under copyright and certain other rights that a licensor has authority to grant.</blockquote>\n      <p class=\"profile-core\">著作者人格権については、著作権法が次のように定めます。どちらも第 1 項だけを切り出しています。</p>\n      <p class=\"profile-core\">著作権法 第 19 条第 1 項</p>\n      <blockquote class=\"profile-core\" data-statute=\"著作権法 第19条\">著作者は、その著作物の原作品に、又はその著作物の公衆への提供若しくは提示に際し、その実名若しくは変名を著作者名として表示し、又は著作者名を表示しないこととする権利を有する。 その著作物を原著作物とする二次的著作物の公衆への提供又は提示に際しての原著作物の著作者名の表示についても、同様とする。</blockquote>\n      <p class=\"profile-core\">著作権法 第 20 条第 1 項</p>\n      <blockquote class=\"profile-core\" data-statute=\"著作権法 第20条\">著作者は、その著作物及びその題号の同一性を保持する権利を有し、その意に反してこれらの変更、切除その他の改変を受けないものとする。</blockquote>\n      <p class=\"profile-core\">CC BY 4.0 の第 2 節 b の 1 は、人格権を許諾の外に置き、許諾した権利を使える限りで、許諾者は人格権を行使しないと定めます。</p>\n      <blockquote class=\"profile-core\" data-licence=\"CC BY 4.0\">Moral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.</blockquote>\n      <p class=\"profile-core\">MIT ライセンスの文には、著作者人格権についての定めはありません。</p>\n      <p class=\"profile-core\">ロゴの SVG と頁の飾りと図のコードは、運営者の求めにより Claude Code（Anthropic）で書きました。運営者が内容を確かめ、責任を負います。Claude は著者ではありません（免責事項の「言語モデルの利用」）。</p>\n      <p class=\"profile-core\">他人の画像、図案、字のファイルは、どの部品にも使っていません。共有カードの字の形だけは IPAGothic のもので、その使用許諾は前の節に引いたとおりです。</p>\n    "
+    },
+    {
+      "id": "d5",
+      "title": "商標・意匠・不正競争",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">運営者が、名やロゴを商標や意匠として登録したという記録は、このリポジトリにありません。特許庁の登録の記録は、確かめていません。</p>\n      <p class=\"profile-core\">登録商標と登録意匠の権利は、商標法と意匠法が次のように定めます。どちらも第 1 文だけを切り出しています。意匠法第 2 条は、第 1 項だけを切り出しています。</p>\n      <p class=\"profile-core\">商標法 第 25 条</p>\n      <blockquote class=\"profile-core\" data-statute=\"商標法 第25条\">商標権者は、指定商品又は指定役務について登録商標の使用をする権利を専有する。</blockquote>\n      <p class=\"profile-core\">意匠法 第 2 条第 1 項</p>\n      <blockquote class=\"profile-core\" data-statute=\"意匠法 第2条\">この法律で「意匠」とは、物品（物品の部分を含む。以下同じ。）の形状、模様若しくは色彩若しくはこれらの結合（以下「形状等」という。）、建築物（建築物の部分を含む。以下同じ。）の形状等又は画像（機器の操作の用に供されるもの又は機器がその機能を発揮した結果として表示されるものに限り、画像の部分を含む。次条第二項、第三十七条第二項、第三十八条第七号及び第八号、第四十四条の三第二項第六号並びに第五十五条第二項第六号を除き、以下同じ。）であつて、視覚を通じて美感を起こさせるものをいう。</blockquote>\n      <p class=\"profile-core\">意匠法 第 23 条</p>\n      <blockquote class=\"profile-core\" data-statute=\"意匠法 第23条\">意匠権者は、業として登録意匠及びこれに類似する意匠の実施をする権利を専有する。</blockquote>\n      <p class=\"profile-core\">このロゴや頁の見た目が、他人の登録商標や登録意匠と同じか似ているかは、確かめていません。登録の記録を検索していないためです。</p>\n      <p class=\"profile-core\">このサイトは無償で、物も役務も売っていません。それが「業として」に当たらないかは、条文の文からは決まりません。この頁は決めません。</p>\n      <p class=\"profile-core\">不正競争防止法は、次の行為を不正競争に数えます（第 2 条第 1 項の第 1 号から第 3 号を切り出しています）。</p>\n      <p class=\"profile-core\">不正競争防止法 第 2 条第 1 項第 1 号</p>\n      <blockquote class=\"profile-core\" data-statute=\"不正競争防止法 第2条\">一 他人の商品等表示（人の業務に係る氏名、商号、商標、標章、商品の容器若しくは包装その他の商品又は営業を表示するものをいう。以下同じ。）として需要者の間に広く認識されているものと同一若しくは類似の商品等表示を使用し、又はその商品等表示を使用した商品を譲渡し、引き渡し、譲渡若しくは引渡しのために展示し、輸出し、輸入し、若しくは電気通信回線を通じて提供して、他人の商品又は営業と混同を生じさせる行為</blockquote>\n      <p class=\"profile-core\">不正競争防止法 第 2 条第 1 項第 2 号</p>\n      <blockquote class=\"profile-core\" data-statute=\"不正競争防止法 第2条\">二 自己の商品等表示として他人の著名な商品等表示と同一若しくは類似のものを使用し、又はその商品等表示を使用した商品を譲渡し、引き渡し、譲渡若しくは引渡しのために展示し、輸出し、輸入し、若しくは電気通信回線を通じて提供する行為</blockquote>\n      <p class=\"profile-core\">不正競争防止法 第 2 条第 1 項第 3 号</p>\n      <blockquote class=\"profile-core\" data-statute=\"不正競争防止法 第2条\">三 他人の商品の形態（当該商品の機能を確保するために不可欠な形態を除く。）を模倣した商品を譲渡し、貸し渡し、譲渡若しくは貸渡しのために展示し、輸出し、輸入し、又は電気通信回線を通じて提供する行為</blockquote>\n      <p class=\"profile-core\">ロゴは、運営者の名の頭文字を、長方形と多角形で組んだものです。作ったときの記録（コミット）には、他人の表示を元にした跡はありません。</p>\n      <p class=\"profile-core\">他人の表示や商品の形態と似ていないかを、検索して比べたことはありません。確かめていない、というのが事実です。</p>\n      <p class=\"profile-core\">前の節の書体の名は、閲覧者の端末の書体を呼ぶための CSS の名として出るだけで、このサイトの表示として使ってはいません。</p>\n    "
+    },
+    {
+      "id": "d6",
+      "title": "見やすさ（アクセシビリティ）",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">障害を理由とする差別の解消の推進に関する法律（障害者差別解消法）は、次のように定めます。第 2 条は第 2 号と第 7 号だけを切り出しています。</p>\n      <p class=\"profile-core\">障害者差別解消法 第 2 条第 2 号</p>\n      <blockquote class=\"profile-core\" data-statute=\"障害者差別解消法 第2条\">二 社会的障壁 障害がある者にとって日常生活又は社会生活を営む上で障壁となるような社会における事物、制度、慣行、観念その他一切のものをいう。</blockquote>\n      <p class=\"profile-core\">障害者差別解消法 第 2 条第 7 号</p>\n      <blockquote class=\"profile-core\" data-statute=\"障害者差別解消法 第2条\">七 事業者 商業その他の事業を行う者（国、独立行政法人等、地方公共団体及び地方独立行政法人を除く。）をいう。</blockquote>\n      <p class=\"profile-core\">障害者差別解消法 第 8 条</p>\n      <blockquote class=\"profile-core\" data-statute=\"障害者差別解消法 第8条\">事業者は、その事業を行うに当たり、障害を理由として障害者でない者と不当な差別的取扱いをすることにより、障害者の権利利益を侵害してはならない。 ２ 事業者は、その事業を行うに当たり、障害者から現に社会的障壁の除去を必要としている旨の意思の表明があった場合において、その実施に伴う負担が過重でないときは、障害者の権利利益を侵害することとならないよう、当該障害者の性別、年齢及び障害の状態に応じて、社会的障壁の除去の実施について必要かつ合理的な配慮をしなければならない。</blockquote>\n      <p class=\"profile-core\">運営者がこの法の「事業者」に当たるかは、条文の文からは決まりません。この頁は、当たるとも当たらないとも決めません。</p>\n      <p class=\"profile-core\">その上で、このサイトがしていることを、検査が確かめている事柄に限って書きます。</p>\n      <ul class=\"profile-core\">\n        <li>本文の文字の色（<code translate=\"no\" class=\"notranslate\">--text</code>・<code translate=\"no\" class=\"notranslate\">--muted</code>・<code translate=\"no\" class=\"notranslate\">--faint</code>・<code translate=\"no\" class=\"notranslate\">--accent</code>）と地の色の比は、明るい側でも暗い側でも 4.5:1 以上です。<code translate=\"no\" class=\"notranslate\">check_contrast.js</code> が頁ごとに測ります。</li>\n        <li>帯の金と墨、札の縁と地のように、字でない図形の比は 3:1 以上です。同じ <code translate=\"no\" class=\"notranslate\">check_contrast.js</code> が測ります。</li>\n        <li>本文の中のリンクは、色のほかに下線で示します。色だけに頼らないためです。<code translate=\"no\" class=\"notranslate\">check_contrast.js</code> が、下線の指定が残っているかを見ます。</li>\n        <li>端末で動きを減らす設定（<code translate=\"no\" class=\"notranslate\">prefers-reduced-motion: reduce</code>）を選ぶと、頁の動きを止めます。check_site.js の 10.69 が、生成した頁のすべてにその指定があることを見ます。</li>\n        <li>画像には代替の文を付け、飾りの SVG は読み上げから外します。図の SVG には、図の中身を述べた <code translate=\"no\" class=\"notranslate\">aria-label</code> を付けます。check_site.js の 10.66・10.68・10.69 が見ます。</li>\n        <li>キーボードだけで頁を辿れること、焦点の枠が見えること、辿る順が読む順と同じことを、<code translate=\"no\" class=\"notranslate\">check_keyboard.js</code> がブラウザで測ります。check_site.js の 10.58 は、焦点の枠を消した指定が無いこと、飛ばす導線に行き先があることを見ます。</li>\n        <li>幅 1440・1200・900・390・360 px のどれでも、頁が横に流れ出しません。幅 1280 px と 1024 px で文字を 200% にしても、流れ出しません。<code translate=\"no\" class=\"notranslate\">check_keyboard.js</code> が測ります。</li>\n        <li>頁は、端末の明暗の設定に従う暗い側の色を持ちます。check_site.js の 10.66 が見ます。</li>\n      </ul>\n      <p class=\"profile-core\">読み上げのソフトで実際に頁を読んだことは、ありません。確かめていない、というのが事実です。</p>\n      <p class=\"profile-core\">頁の下の欄の「連絡」は、GitHub の issue を開く道です。</p>\n    "
+    },
+    {
+      "id": "d7",
+      "title": "人と団体",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">このサイトの画像に、実在の人の顔や姿はありません。顔写真は置かないと、サイトの決まり（docs/site-rules.md）に決めています。</p>\n      <p class=\"profile-core\">実在の団体のロゴ、印、色も、どの画像にも使っていません。頁に団体の名が出るのは、文の中の字としてだけです。</p>\n      <p class=\"profile-core\">配っている画像は、部品の一覧の表に挙げたものだけです。check_site.js の 10.69 が、配っている画像のファイルが表と過不足なく一致することを見ます。</p>\n    "
+    },
+    {
+      "id": "d8",
+      "title": "変わったとき",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">部品を変えたときは、この頁と検査を同じ PR で直します。</p>\n      <p class=\"profile-core\">部品の一覧と配っているファイルがずれたとき、書体の名が変わったとき、引いた条文が写しと違ったときは、check_site.js の 10.69 が落ちます。</p>\n      <p class=\"profile-core\">この頁を変えたときは、頁の下の欄の最終更新の日付が改まります。過去の版は、公開のリポジトリの履歴に残ります。</p>\n    "
+    },
+    {
+      "id": "d9",
+      "title": "引いた文の出所",
+      "nav": false,
+      "html": "\n      <p class=\"profile-core\">条文は、<a href=\"https://github.com/cpsbvbng26-dotcom/nusquama/blob/85dd68091ce06598f55740428d3f1a927448523c/verification/statutes-texts.json\" target=\"_blank\" rel=\"noopener\">nusquama の verification/statutes-texts.json</a>（コミット 85dd680、e-Gov 法令 API から 2026-11-22 に取り寄せ）の文と一字一句同じです。このリポジトリでは、同じ文を verification/statutes.json に置いています。</p>\n      <p class=\"profile-core\">長い条は、頁の文が拠る項や号だけを、写しの文から一字一句そのまま切り出しました。切り出したところは、引いた文の前に書いています。</p>\n      <p class=\"profile-core\">IPA フォントライセンスの文は、共有カードを描いた作業の環境のパッケージ（fonts-ipafont-gothic）の許諾の文から、行の折り返しだけを外して写しました。その文書全体の SHA-256 も、verification/statutes.json に置いています。</p>\n      <p class=\"profile-core\">CC BY 4.0 と MIT の文は、このリポジトリの LICENSE と LICENSE-CODE から写しました。</p>\n    "
+    }
+  ]
+}
