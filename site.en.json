@@ -416,6 +416,10 @@
       {
         "name": "Statement",
         "html": "What this place is for, and how that relates to the Disclaimer, is in the <a href=\"./notes/mission.en.html\">Statement of Purpose</a>"
+      },
+      {
+        "name": "Design",
+        "html": "How each visual part was made, where it came from, its rights and licence, and the articles of law it touches, are in <a href=\"./notes/design-legal.en.html\">Legal handling of the design</a>"
       }
     ]
   },
