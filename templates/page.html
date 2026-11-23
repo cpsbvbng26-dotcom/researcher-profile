@@ -697,6 +697,10 @@ footer { border-top: 1px solid var(--line); margin-top: 2rem; }
   border: 1px solid var(--line); border-radius: var(--radius-md);
   box-shadow: var(--shadow-face);
 }
+/* 狭い画面では、図の札の内側の余白を詰め、図を小さくしない。 */
+@media (max-width: 30rem) {
+  .figure { padding: var(--sp-4) var(--sp-3) var(--sp-3); }
+}
 /* 仕切りは、線の下に明かりを一本足して、溝に見せる。 */
 .rule { box-shadow: 0 1px 0 var(--edge-hi); }
 /* 見出しは行の長さをそろえて折り返す。地の文は最後の行が一語だけにならないように折り返す。 */

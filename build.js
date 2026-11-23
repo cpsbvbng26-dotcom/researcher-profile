@@ -304,7 +304,9 @@ function extraCss(profile) {
         + ' border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-face); }',
       '#gw-live p { padding: var(--sp-2) 0; border-bottom: 0; }',
       '#gw-live svg { display: block; margin: var(--sp-2) 0; padding: var(--sp-3) var(--sp-2); background: var(--bg); border-radius: var(--radius-sm); box-shadow: var(--shadow-well); }',
-      '#gw-live #gw-state { padding-top: var(--sp-3); border-top: 1px solid var(--line-soft); }');
+      '#gw-live #gw-state { padding-top: var(--sp-3); border-top: 1px solid var(--line-soft); }',
+      /* 狭い画面では、札とくぼみの内側の余白を詰め、図を小さくしない。 */
+      '@media (max-width: 30rem) {', '  #gw-live { padding: var(--sp-2) var(--sp-3) var(--sp-3); }', '  #gw-live svg { padding: var(--sp-2) 0; }', '}');
   }
   if (profile.printCard) {
     out.push('@media print {', '  @page { size: A4; margin: 12mm; }', '  :root { --fs-md: 11pt; }', '  .hero { padding-top: 0; padding-bottom: 0; }', '  section, .cert, .links-group { break-inside: avoid; }', '}');
