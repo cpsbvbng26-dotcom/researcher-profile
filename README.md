@@ -245,9 +245,6 @@ README と頁の科目の数は、`cpsbvbng26-dotcom` の検査が突き合わ�
 `register-timeline.json` は生成物です。self-correction の登録簿に行が増えたら、`node build_timeline.js` で作り直します。
 作者のサイトの横断の検査が、登録簿の `data/register.csv` と一字一句で突き合わせます。
 
-`register-timeline.json` は生成物です。self-correction の登録簿に行が増えたら、`node build_timeline.js` で作り直します。
-作者のサイトの横断の検査が、登録簿の `data/register.csv` と一字一句で突き合わせます。
-
 ### 予想のサイトの意匠
 
 2026-11-23 に利用者が「ゴールデンウィンドウもオシャレかつ立体的に同じように」と求め、Claude が次のように決めました。
