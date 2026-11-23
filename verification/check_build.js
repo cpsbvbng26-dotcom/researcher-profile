@@ -640,7 +640,9 @@ section('3c. 見た目の決まり（字・幅・色・印刷・写真・最初�
   /* 437. 色の値は変数の定義にしか書かない。指し色は一つで、薄めた二つはその指し色から作る。 */
   const 色 = css.split('\n').filter((l) => /#[0-9a-fA-F]{3,6}\b|rgba?\(/.test(l) && !/^\s*--[a-z-]+:/.test(l.trim().replace(/^(--[a-z-]+:[^;]*;\s*)+$/, '--x: y;')));
   const 名 = [...new Set([...((/:root \{([^}]*)\}/.exec(css) || [])[1] || '').matchAll(/--([a-z-]+):/g)].map((m) => m[1]))];
-  const 許す = ['bg', 'card', 'text', 'muted', 'faint', 'line', 'line-soft', 'accent', 'accent-soft', 'accent-wash', 'header-bg'];
+  /* 2026-11-23。奥行きの段（面の下の色・光・縁の明かり・四つの影）を足した。決まりは 3i が見る。 */
+  const 許す = ['bg', 'card', 'card-lo', 'text', 'muted', 'faint', 'line', 'line-soft', 'accent', 'accent-soft', 'accent-wash', 'header-bg',
+    'glow', 'edge-hi', 'shadow-face', 'shadow-float', 'shadow-front', 'shadow-well'];
   const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(', ');
   const 指し = [[/:root \{([^}]*)\}/, 'ライト'], [/:root\[data-theme="dark"\] \{([^}]*)\}/, 'ダーク']].filter(([re]) => {
     const b = (re.exec(css) || [])[1] || '';
@@ -886,6 +888,77 @@ section('3g. 作者のサイトの意匠（帯・飾り・年表・色・字）'
   try { timeline('id,recorded\nA-1,2026-9-8\n'); } catch (e) { threw = true; }
   ok('壊して確かめる：年表は引用符の中の改行とカンマを読み、日の順に並べ、日付でない記録の日で止まる',
      JSON.stringify(t1) === JSON.stringify([{ date: '2026-09-07', count: 1 }, { date: '2026-09-08', count: 2 }]) && threw);
+})();
+
+/* 2026-11-23。奥行き。決まりは README の「奥行き」にある（3i）。テンプレートと意匠と生成した頁の CSS を読む。
+ * - 高さは段の変数（--shadow-face・--shadow-float・--shadow-front・--shadow-well）でしか付けない。影を規則の中に直に書かない。
+ * - 段の変数は、明るい側・暗い側・端末の設定の暗い側の三か所に同じ名前で置き、暗い側の二か所は一字一句同じにする。
+ * - 光は左上から一方向。外へ落とす影は、横も縦も負にしない（右下へ落ちる）。
+ * - 浮かせる（translate）のは、指したときと焦点が入ったときだけ。動きを減らす設定では、同じ部品の浮きを外す。
+ * - 紙では、影と濃淡を外す。
+ * どの決まりも、壊した入力で落ちることを先に確かめる。 */
+section('3i. 奥行き（高さの段・光の向き・浮き・紙）');
+(() => {
+  const tpl = fs.readFileSync(path.join(ROOT, 'templates', 'page.html'), 'utf8');
+  const design = require(path.join(ROOT, 'design.js'));
+  const NAMES = ['shadow-face', 'shadow-float', 'shadow-front', 'shadow-well'];
+  const 問題 = (css) => {
+    const bad = [];
+    const blk = (re) => (re.exec(css) || [])[1] || '';
+    const light = blk(/:root \{([^}]*)\}/), dark = blk(/:root\[data-theme="dark"\] \{([^}]*)\}/), auto = blk(/:root:not\(\[data-theme="light"\]\) \{([^}]*)\}/);
+    [['明', light], ['暗', dark], ['端末の暗', auto]].forEach(([n, b]) => {
+      NAMES.concat(['card-lo', 'glow', 'edge-hi']).forEach((k) => { if (b.indexOf('--' + k + ':') < 0) bad.push(n + ' に --' + k + ' が無い'); });
+    });
+    if (dark.replace(/\s+/g, ' ').trim() !== auto.replace(/\s+/g, ' ').trim()) bad.push('暗い側の二か所が違う');
+    /* 段の変数の中の影。inset で無いものは、横と縦のずれが負でない。 */
+    [light, dark].forEach((b) => NAMES.forEach((k) => {
+      const v = (new RegExp('--' + k + ': ([^;]+);').exec(b) || [])[1] || '';
+      v.split(/,(?![^(]*\))/).map((x) => x.trim()).filter((x) => x && !/^inset\b/.test(x)).forEach((x) => {
+        const n = x.replace(/rgba?\([^)]*\)/, '').trim().split(/\s+/).map(parseFloat);
+        if (!(n[0] >= 0 && n[1] >= 0)) bad.push('--' + k + ' の影が左上へ落ちる: ' + x);
+      });
+    }));
+    /* 規則の中の影は、段の変数か縁の明かりだけ。 */
+    const rules = css.replace(/:root[^{]*\{[^}]*\}/g, '');
+    [...rules.matchAll(/box-shadow:\s*([^;}]+)/g)].map((m) => m[1].trim())
+      .filter((v) => !/^(var\(--shadow-(face|float|front|well)\)|0 1px 0 var\(--edge-hi\)|none( !important)?)$/.test(v))
+      .forEach((v) => bad.push('段の外の影 ' + v.slice(0, 40)));
+    /* 浮き。translate を置く規則は :hover か :focus-visible だけで、動きを減らす設定がその部品の浮きを外す。 */
+    const pi = css.indexOf('@media print');
+    const screen = pi >= 0 ? css.slice(0, pi) + css.slice(css.indexOf('\n}\n', pi) + 3) : css;
+    const rm = [...screen.matchAll(/@media \(prefers-reduced-motion: reduce\) \{([\s\S]*?)\n\}/g)].map((m) => m[1]).join('\n');
+    const 外す = [...rm.matchAll(/([^{}\n]+)\{[^}]*translate: none;[^}]*\}/g)].map((m) => m[1]).join(',').split(',').map((x) => x.trim()).filter(Boolean);
+    const 浮く = [];
+    screen.replace(/@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\n\}/g, '').split('}').forEach((chunk) => {
+      const i = chunk.lastIndexOf('{');
+      if (i < 0 || !/(^|[\s;])translate:\s*(?!none)/.test(chunk.slice(i))) return;
+      chunk.slice(0, i).split('\n').pop().split(',').map((x) => x.trim()).forEach((sel) => 浮く.push(sel));
+    });
+    if (!浮く.length) bad.push('浮く部品が無い');
+    浮く.forEach((sel) => {
+      if (!/:(hover|focus-visible)$/.test(sel)) bad.push('指していないのに浮く ' + sel);
+      if (外す.indexOf(sel) < 0) bad.push('動きを減らす設定で浮きを外していない ' + sel);
+    });
+    /* 紙。 */
+    const 印 = pi >= 0 ? css.slice(pi, css.indexOf('\n}\n', pi)) : '';
+    if (!/box-shadow: none !important;/.test(印) || !/background-image: none !important;/.test(印)) bad.push('紙で影か濃淡を外していない');
+    return bad;
+  };
+  const css = ((/<style>([\s\S]*?)<\/style>/.exec(tpl) || [])[1] || '').replace('{{EXTRA_CSS}}', design.css());
+  const now = 問題(css);
+  ok('奥行きが、四つの段の変数（三か所に同じ名前、暗い側は同じ値）だけで付き、影は右下へ落ち、浮くのは指したときと焦点のときだけで、動きを減らす設定と紙では外れる',
+     now.length === 0, now.slice(0, 4).join(' / '));
+  const 壊れ = [
+    css.replace('.claim, .link, .theme-toggle {\n  background: linear-gradient(180deg, var(--card), var(--card-lo));\n  box-shadow: var(--shadow-face);',
+      '.claim, .link, .theme-toggle {\n  background: linear-gradient(180deg, var(--card), var(--card-lo));\n  box-shadow: 0 2px 8px var(--line);'),
+    css.replace('  .entries a:hover, .entries a:focus-visible, .cert:hover, .cert:focus-visible, .link:hover, .link:focus-visible { translate: none; }\n', ''),
+    css.replace('--shadow-float: inset 0 1px 0 rgba(255, 255, 255, .9), 1px 2px 3px', '--shadow-float: inset 0 1px 0 rgba(255, 255, 255, .9), -1px 2px 3px'),
+    css.replace('  *, *::before, *::after { box-shadow: none !important;', '  *, *::before, *::after { opacity: 1;'),
+    css.replace(/(@media \(prefers-color-scheme: dark\) \{\n  :root:not\(\[data-theme="light"\]\) \{[\s\S]*?)    --shadow-well: [^\n]*\n/, '$1'),
+    css.replace('.theme-toggle:hover, .theme-toggle:focus-visible { box-shadow: var(--shadow-float); }', '.theme-toggle { translate: 0 -1px; }'),
+  ].map(問題);
+  ok('壊して確かめる：段の外の影・動きを減らす設定の浮き・光の向き・紙の影・暗い側の段・指していない浮きのどれを崩しても落ちる（' + 壊れ.filter((b) => b.length).length + ' / ' + 壊れ.length + '）',
+     壊れ.every((b) => b.length > 0));
 })();
 
 /* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */

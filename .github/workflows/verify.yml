@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   verify:
-    name: 設定と生成物 95 項目
+    name: 設定と生成物 97 項目
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
