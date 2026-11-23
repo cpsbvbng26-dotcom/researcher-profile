@@ -105,13 +105,14 @@ function barSvg(count, max) {
 
 /* 色。明暗それぞれの組。ロゴの二色は両方で同じ。
  * 検査（cpsbvbng26-dotcom の check_contrast.js）は、生成した頁からこの値を読んで比を測る。 */
+/* 余白の段（--sp-）と角の丸みの段（--radius-）、高さの段（--shadow-）は、2026-11-23 からテンプレートが持つ。
+ * 予想のサイトにも同じ段を当てるためである。ここではロゴの二色だけを足す。 */
 const TOKENS = {
   seal: { '--seal-ink': LOGO.ink, '--seal-gold': LOGO.gold },
-  space: { '--sp-1': '.25rem', '--sp-2': '.5rem', '--sp-3': '.75rem', '--sp-4': '1rem', '--sp-5': '1.5rem', '--sp-6': '2rem', '--sp-7': '3rem' },
 };
 
 function tokenBlock() {
-  const all = Object.assign({}, TOKENS.seal, TOKENS.space);
+  const all = Object.assign({}, TOKENS.seal);
   return Object.entries(all).map(([k, v]) => `  ${k}: ${v};`).join('\n');
 }
 
@@ -135,7 +136,14 @@ function css() {
     '.seal-frame { fill: none; stroke: var(--line); }',
     '.seal-fill { fill: var(--line); }',
     '@media (min-width: 62rem) {',
-    '  .hero .seal { display: block; position: absolute; top: 4.5rem; right: 1.5rem; width: 7rem; height: 7rem; }',
+    '  .hero .seal { display: block; position: absolute; top: 4.5rem; right: 1.5rem; width: 7rem; height: 7rem; filter: drop-shadow(1px 1px 0 var(--card)); }',
+    /* 銘の台座。銘の後ろに、線の色の細かな格子を円くぼかして敷く。字の行は銘の幅だけ右を空けるので、格子は字の後ろに入らない。 */
+    '  .hero { isolation: isolate; }',
+    "  .hero::after { content: ''; position: absolute; z-index: -1; top: 3rem; right: 0; width: 10rem; height: 10rem; pointer-events: none;"
+      + ' background-image: linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);'
+      + ' background-size: .75rem .75rem; -webkit-mask-image: radial-gradient(closest-side, var(--text), transparent); mask-image: radial-gradient(closest-side, var(--text), transparent); }',
+    /* 銘と名前を重ねない。長い題（論文の頁）は、銘の手前で折り返す。 */
+    '  .hero > .eyebrow, .hero > h1, .hero > .romaji { padding-right: 9rem; }',
     '}',
     '.hero .romaji { margin-bottom: var(--sp-4); }',
     '.orn-frame { fill: none; stroke: var(--accent); }',
@@ -145,10 +153,10 @@ function css() {
     '.sec-head .orn-short, .profile-section .orn-short { display: block; margin-top: var(--sp-3); }',
     '.sec-head h2::before, .profile-section .profile-label::before { color: var(--accent); }',
     /* 入口。上端に指し色の細い線を引き、札に見せる。 */
-    '.entries a { border-top: 2px solid var(--accent); border-radius: 0 0 .5rem .5rem; }',
+    '.entries a { border-top: 2px solid var(--accent); border-radius: 0 0 var(--radius-md) var(--radius-md); }',
     /* カード。修了証・制作物・論文ノートの札。上端の線で揃える。 */
-    '.cert { border-top: 2px solid var(--accent); border-radius: 0 0 .5rem .5rem; }',
-    '.cert .code { display: inline-block; align-self: flex-start; padding: 0 var(--sp-2); border: 1px solid var(--line); border-radius: .2rem; }',
+    '.cert { border-top: 2px solid var(--accent); border-radius: 0 0 var(--radius-md) var(--radius-md); }',
+    '.cert .code { display: inline-block; align-self: flex-start; padding: 0 var(--sp-2); border: 1px solid var(--line); border-radius: var(--radius-sm); }',
     '.cert .doi { padding-top: var(--sp-2); border-top: 1px dashed var(--line); }',
     /* 論文の表を、一篇ずつの札に組み直す。中身と並びは表のまま（題・年・DOI・状態）。
      * 表の見出しは、各欄の前の札（data-label）として出す。狭い画面の組み方を、広い画面にも使う。 */
@@ -156,14 +164,14 @@ function css() {
     '.works-table, .works-table tbody { display: block; width: 100%; }',
     '.works-table tbody { display: grid; gap: var(--sp-4); }',
     '.works-table tr { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-2) var(--sp-4);'
-      + ' padding: var(--sp-4) var(--sp-5); background: var(--card); border: 1px solid var(--line);'
-      + ' border-left: 3px solid var(--accent); border-radius: 0 .5rem .5rem 0; }',
+      + ' padding: var(--sp-4) var(--sp-5); background: linear-gradient(180deg, var(--card), var(--card-lo)); border: 1px solid var(--line);'
+      + ' border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; box-shadow: var(--shadow-face); }',
     '.works-table td { display: block; padding: 0; border: 0; }',
     '.works-table .t-title { flex: 1 1 100%; width: 100%; }',
     '.works-table td[data-label] { font-size: var(--fs-xs); }',
     '.works-table td[data-label]::before { content: attr(data-label); display: inline-block; margin-right: var(--sp-2);'
       + ' font-family: var(--font-sans); font-size: var(--fs-xs); letter-spacing: .06em; color: var(--faint); }',
-    '.works-table .t-state { padding: 0 var(--sp-2); border: 1px solid var(--accent); border-radius: 999px; color: var(--text); }',
+    '.works-table .t-state { padding: 0 var(--sp-2); border: 1px solid var(--accent); border-radius: var(--radius-pill); color: var(--text); }',
     '.works-table .t-state::before { content: none; }',
     /* 年表。記録した日ごとの件数。日・棒・件数を一行に並べる。棒は飾りで、件数は字で出る。 */
     '.timeline { margin: var(--sp-6) 0 0; max-width: var(--measure); }',

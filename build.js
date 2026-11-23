@@ -289,11 +289,24 @@ function extraCss(profile) {
   if (profile.filter && arr(profile.filter.items).length) {
     const ids = arr(profile.filter.items).map((i) => i.id);
     out.push('.filter { margin: 1.75rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }',
-      '.filter a { padding: .25rem .85rem; font-size: var(--fs-sm); line-height: 1.8; color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; }',
+      /* 札は面の高さに置き、選んだものだけを押し込んだくぼみにする（2026-11-23）。 */
+      '.filter a { padding: .25rem .85rem; font-size: var(--fs-sm); line-height: 1.8; color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius-pill);'
+        + ' background: linear-gradient(180deg, var(--card), var(--card-lo)); box-shadow: var(--shadow-face); }',
       '.filter a:hover { color: var(--text); border-color: var(--accent); }',
       'main:has(.filterable:target) .filterable:not(:target), main:has(.filterable:target) hr.rule { display: none; }',
       ids.map((id) => `main:has(#${id}:target) .filter a[href="#${id}"]`).join(',\n')
-        + ',\nmain:not(:has(.filterable:target)) .filter a[href="#filter"] { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }');
+        + ',\nmain:not(:has(.filterable:target)) .filter a[href="#filter"] { color: var(--text); border-color: var(--accent); background: var(--accent-soft); box-shadow: var(--shadow-well); }');
+  }
+  /* 黄金比の窓の図（golden-window.js）を頁の中で描く頁。δ を動かす欄を面の高さの札にし、図をくぼみに置く（2026-11-23）。
+   * 予想のサイトにも当たる。作者のサイトの意匠（design.js）は予想のサイトに当たらないので、図の札はここに置く。 */
+  if (arr(profile.scripts).indexOf('golden-window.js') >= 0) {
+    out.push('#gw-live { margin: var(--sp-4) 0 0; padding: var(--sp-3) var(--sp-5) var(--sp-4); background: linear-gradient(180deg, var(--card), var(--card-lo));'
+        + ' border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-face); }',
+      '#gw-live p { padding: var(--sp-2) 0; border-bottom: 0; }',
+      '#gw-live svg { display: block; margin: var(--sp-2) 0; padding: var(--sp-3) var(--sp-2); background: var(--bg); border-radius: var(--radius-sm); box-shadow: var(--shadow-well); }',
+      '#gw-live #gw-state { padding-top: var(--sp-3); border-top: 1px solid var(--line-soft); }',
+      /* 狭い画面では、札とくぼみの内側の余白を詰め、図を小さくしない。 */
+      '@media (max-width: 30rem) {', '  #gw-live { padding: var(--sp-2) var(--sp-3) var(--sp-3); }', '  #gw-live svg { padding: var(--sp-2) 0; }', '}');
   }
   if (profile.printCard) {
     out.push('@media print {', '  @page { size: A4; margin: 12mm; }', '  :root { --fs-md: 11pt; }', '  .hero { padding-top: 0; padding-bottom: 0; }', '  section, .cert, .links-group { break-inside: avoid; }', '}');
