@@ -11,6 +11,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const design = require('./design.js');
+const gwDesign = require('./golden-window-design.js');
 
 const ROOT = __dirname;
 const CONFIG = process.env.PROFILE_CONFIG || path.join(ROOT, 'profile.json');
@@ -1064,6 +1065,8 @@ function build() {
 
   /* 作者のサイトの意匠（design.js）。当たるのは siteUrl が作者のサイトの頁だけ。 */
   const useDesign = design.applies(profile);
+  /* 予想のサイトの意匠（golden-window-design.js、2026-11-23）。当たるのは siteUrl が予想のサイトの頁だけ。 */
+  const useGw = gwDesign.applies(profile);
 
   const labels = Object.assign({}, DEFAULT_LABELS, profile.labels || {});
   const profileInSection = arr(profile.sections).indexOf('profile') >= 0;
@@ -1133,8 +1136,8 @@ function build() {
     /* 頁の下の欄に、運営・連絡・免責への道と、中身が変わった日を置く（2026-11-11）。
      * 設定に書いた頁だけに出す。書いていない頁の出力は、一字一句前と同じである。 */
     .replace(/{{FOOTER_EXTRA}}/g, renderFooterExtra(profile))
-    .replace(/{{EXTRA_CSS}}/g, extraCss(profile) + (useDesign ? design.css() : ''))
-    .replace(/{{BAND}}/g, useDesign ? '\n  ' + design.bandSvg() : '')
+    .replace(/{{EXTRA_CSS}}/g, extraCss(profile) + (useDesign ? design.css() : '') + (useGw ? gwDesign.css() : ''))
+    .replace(/{{BAND}}/g, useDesign ? '\n  ' + design.bandSvg() : (useGw ? '\n  ' + gwDesign.bandSvg() : ''))
     .replace(/{{SKIP}}/g, esc(labels.skip))
     .replace(/{{THEME_TOGGLE}}/g, esc(labels.themeToggle));
 
@@ -1158,6 +1161,15 @@ function build() {
         '$1\n      ' + design.ornamentSvg('short'))
       .replace(/(\n( *)<h2 class="profile-label">[^\n]*<\/h2>)/g,
         (m, a, ind) => a + '\n' + ind + design.ornamentSvg('short'));
+  }
+  /* 予想のサイトの飾り。右肩に渦、題の下に長い飾り、節の見出しの下に短い飾り。字は変えない。 */
+  if (useGw) {
+    html = html
+      .replace('<section class="wrap hero">\n', '<section class="wrap hero">\n    ' + gwDesign.sealSvg() + '\n')
+      .replace(/(<h1 class="serif reveal">[^\n]*<\/h1>\n(?: {4}<p class="romaji reveal">[^\n]*<\/p>\n)?)/,
+        '$1    ' + gwDesign.ornamentSvg('long') + '\n')
+      .replace(/(<div class="sec-head reveal">\n\s*<h2 class="serif">[^\n]*<\/h2>)/g,
+        '$1\n      ' + gwDesign.ornamentSvg('short'));
   }
 
   /* 頁に固有のスクリプト。**外のファイルを読みに行かせない。**中身を頁に入れ、
