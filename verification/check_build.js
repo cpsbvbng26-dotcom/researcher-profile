@@ -945,7 +945,10 @@ section('3i. 奥行き（高さの段・光の向き・浮き・紙）');
     return bad;
   };
   const css = ((/<style>([\s\S]*?)<\/style>/.exec(tpl) || [])[1] || '').replace('{{EXTRA_CSS}}', design.css());
-  const now = 問題(css);
+  /* 2026-11-23。予想のサイトの意匠（golden-window-design.js）を足した頁にも、同じ決まりを当てる。 */
+  const gwDesign = require(path.join(ROOT, 'golden-window-design.js'));
+  const cssGw = ((/<style>([\s\S]*?)<\/style>/.exec(tpl) || [])[1] || '').replace('{{EXTRA_CSS}}', gwDesign.css());
+  const now = 問題(css).concat(問題(cssGw));
   ok('奥行きが、四つの段の変数（三か所に同じ名前、暗い側は同じ値）だけで付き、影は右下へ落ち、浮くのは指したときと焦点のときだけで、動きを減らす設定と紙では外れる',
      now.length === 0, now.slice(0, 4).join(' / '));
   const 壊れ = [
@@ -956,9 +959,128 @@ section('3i. 奥行き（高さの段・光の向き・浮き・紙）');
     css.replace('  *, *::before, *::after { box-shadow: none !important;', '  *, *::before, *::after { opacity: 1;'),
     css.replace(/(@media \(prefers-color-scheme: dark\) \{\n  :root:not\(\[data-theme="light"\]\) \{[\s\S]*?)    --shadow-well: [^\n]*\n/, '$1'),
     css.replace('.theme-toggle:hover, .theme-toggle:focus-visible { box-shadow: var(--shadow-float); }', '.theme-toggle { translate: 0 -1px; }'),
+    cssGw.replace('border-radius: 0 var(--radius-md) var(--radius-md) 0; box-shadow: var(--shadow-float); }', 'border-radius: 0 var(--radius-md) var(--radius-md) 0; box-shadow: 2px 4px 12px var(--line); }'),
   ].map(問題);
-  ok('壊して確かめる：段の外の影・動きを減らす設定の浮き・光の向き・紙の影・暗い側の段・指していない浮きのどれを崩しても落ちる（' + 壊れ.filter((b) => b.length).length + ' / ' + 壊れ.length + '）',
+  ok('壊して確かめる：段の外の影・動きを減らす設定の浮き・光の向き・紙の影・暗い側の段・指していない浮き・予想のサイトの札の影のどれを崩しても落ちる（' + 壊れ.filter((b) => b.length).length + ' / ' + 壊れ.length + '）',
      壊れ.every((b) => b.length > 0));
+})();
+
+/* 2026-11-23。予想のサイトの意匠（golden-window-design.js）。決まりは README の「予想のサイトの意匠」にある（3j）。
+ * - CSS は、字の大きさを --fs- に、書体を三つの変数に、幅を二つに限り、色を変数の定義にしか書かず、外を読まない。
+ * - SVG は、長方形と道（直線と円弧）だけで描き、字も外への参照も持たず、読み上げない。
+ * - 数は φ の式から出す。帯と飾りの各段は、比 1/φ² = 2 − φ で両端の二つを残す列で、渦の正方形の辺は 1/φ ずつ縮む。
+ * - 予想のサイトの頁にだけ当たり、作者のサイトの頁と見本には当たらない。
+ * どの決まりも、壊した入力で落ちることを確かめる。 */
+section('3j. 予想のサイトの意匠（帯・渦・飾り・札・色）');
+(() => {
+  const { execFileSync } = require('child_process');
+  const gw = require(path.join(ROOT, 'golden-window-design.js'));
+  const design = require(path.join(ROOT, 'design.js'));
+  const cssProblems = (css) => {
+    const pi = css.indexOf('@media print');
+    const screen = pi >= 0 ? css.slice(0, pi) : css;
+    const bad = [];
+    [...screen.matchAll(/(?<![-\w])font-size:\s*([^;}]+)/g)].map((m) => m[1].trim())
+      .filter((v) => !/^var\(--fs-(xs|sm|md|lg|xl|name)\)$/.test(v)).forEach((v) => bad.push('字の大きさ ' + v));
+    [...screen.matchAll(/(?<![-\w])font-family:\s*([^;}]+)/g)].map((m) => m[1].trim())
+      .filter((v) => !/^var\(--font-(sans|serif|mono)\)$/.test(v)).forEach((v) => bad.push('書体 ' + v));
+    [...screen.matchAll(/(?<![-\w(])max-width:\s*([^;}]+)/g)].map((m) => m[1].trim())
+      .filter((v) => !/^(var\(--(measure|page)\)|100%|none)$/.test(v)).forEach((v) => bad.push('幅 ' + v));
+    css.split('\n').filter((l) => /#[0-9a-fA-F]{3,8}\b|rgba?\(|hsla?\(/.test(l))
+      .filter((l) => !/^\s*(:root[^{]*\{\s*)?(--[a-z0-9-]+:\s*[^;]+;\s*)+\}?\s*$/.test(l)).forEach((l) => bad.push('定義の外の色 ' + l.trim().slice(0, 40)));
+    if (/@font-face|@import|url\(/i.test(css)) bad.push('外の書体か外への参照');
+    return bad;
+  };
+  const css = gw.css();
+  const cssNow = cssProblems(css);
+  ok('予想のサイトの意匠の CSS が、字の大きさを --fs- に、書体を三つの変数に、幅を二つに限り、色を変数の定義にしか書かず、外を読まない',
+     cssNow.length === 0, cssNow.join(' / '));
+  const cssBroken = [css.replace('.gw-band { display: block;', '.gw-band { display: block; font-size: 13px;'), css.replace('.gw-band { display: block;', '.gw-band { display: block; font-family: Menlo;'),
+    css.replace('.gw-band { display: block;', '.gw-band { display: block; max-width: 37rem;'), css.replace('fill: var(--gw-gold)', 'fill: #c9a13b'),
+    css + '.x { background: url(https://example.org/x.png); }\n'].map(cssProblems);
+  ok('壊して確かめる：字の大きさ・書体・幅・色・外への参照のどれを混ぜても落ちる（' + cssBroken.filter((b) => b.length).length + ' / ' + cssBroken.length + '）',
+     cssBroken.every((b) => b.length > 0));
+
+  const svgProblems = (svg) => {
+    const bad = [];
+    [...svg.matchAll(/<\/?([a-zA-Z]+)/g)].map((m) => m[1]).filter((t) => ['svg', 'g', 'rect', 'path'].indexOf(t) < 0).forEach((t) => bad.push('使わない要素 ' + t));
+    if (!/^<svg [^>]*aria-hidden="true"/.test(svg)) bad.push('読み上げを外していない');
+    if (!/^<svg [^>]*viewBox="/.test(svg)) bad.push('viewBox が無い');
+    if (/href|https?:|<text|<image|font/i.test(svg)) bad.push('字か外への参照');
+    return bad;
+  };
+  const svgs = [gw.bandSvg(), gw.sealSvg(), gw.ornamentSvg('long'), gw.ornamentSvg('short')];
+  const svgNow = svgs.map(svgProblems).flat();
+  ok('帯・渦・飾りの SVG（' + svgs.length + ' 種）が、長方形と道だけで描かれ、viewBox で縮み、字も外への参照も持たず、読み上げない', svgNow.length === 0, svgNow.join(' / '));
+  const svgBroken = [gw.bandSvg().replace('</svg>', '<text>φ</text></svg>'), gw.ornamentSvg('short').replace(' aria-hidden="true"', ''),
+    gw.sealSvg().replace('</svg>', '<image href="https://example.org/a.png"/></svg>')].map(svgProblems);
+  ok('壊して確かめる：字・読み上げ・外の画像のどれを混ぜても落ちる（' + svgBroken.filter((b) => b.length).length + ' / ' + svgBroken.length + '）',
+     svgBroken.every((b) => b.length > 0));
+
+  /* 数を φ の式から数え直す。描いた SVG の長方形を行ごとに読み、各行が 2^n 個で、幅がどれも全体の (2 − φ)^n であることを見る。 */
+  const phi = (1 + Math.sqrt(5)) / 2, keep = 2 - phi;
+  const rowsOf = (svg) => {
+    const rs = [...svg.matchAll(/<rect x="([\d.]+)" y="([\d.]+)" width="([\d.]+)" height="([\d.]+)"\/>/g)].map((m) => m.slice(1).map(Number));
+    const by = {};
+    rs.forEach(([x, y, w]) => { (by[y] = by[y] || []).push([x, w]); });
+    return Object.keys(by).map(Number).sort((a, b) => a - b).map((y) => by[y]);
+  };
+  const levelsOk = (svg, width, levels) => {
+    const rows = rowsOf(svg);
+    return rows.length === levels.length && rows.every((row, i) => {
+      const n = levels[i], w = width * Math.pow(keep, n);
+      return row.length === Math.pow(2, n) && row.every(([x, rw]) => Math.abs(rw - w) <= 0.006 && x >= -0.006 && x + rw <= width + 0.006)
+        && Math.abs(row[0][0]) <= 0.006 && Math.abs(row[row.length - 1][0] + row[row.length - 1][1] - width) <= 0.011;
+    });
+  };
+  const bandBody = gw.bandSvg().replace(/<rect width="[^"]*" height="[^"]*" class="gw-band-ink"\/>/, '');
+  const spiralOk = (sp) => sp.squares.length === gw.SPIRAL.squares
+    && sp.squares.every(([, , s], i) => Math.abs(s - gw.SPIRAL.width * Math.pow(phi, -i)) < 1e-9);
+  const 数 = Math.abs(gw.KEEP - 1 / (phi * phi)) < 1e-12 && Math.abs(gw.PHI - phi) < 1e-12
+    && levelsOk(bandBody, gw.BAND.width, gw.BAND.levels)
+    && levelsOk(gw.ornamentSvg('short'), gw.ORN.short.width, gw.ORN.short.levels)
+    && levelsOk(gw.ornamentSvg('long'), gw.ORN.long.width, gw.ORN.long.levels)
+    && spiralOk(gw.spiral());
+  ok('帯と飾りの各段が比 1/φ² で両端を残す 2^n 個の区間で、渦の正方形の辺が 1/φ ずつ縮む（φ の式から数え直す）', 数);
+  const short = gw.ornamentSvg('short');
+  const 数壊れ = [
+    !levelsOk(short.replace(/width="([\d.]+)" height="2"\/>/, (m, w) => 'width="' + (Number(w) + 0.5) + '" height="2"/>'), gw.ORN.short.width, gw.ORN.short.levels),
+    !levelsOk(short.replace(/<rect x="[\d.]+" y="[\d.]+" width="[\d.]+" height="2"\/><\/g>/, '</g>'), gw.ORN.short.width, gw.ORN.short.levels),
+    !spiralOk({ squares: gw.spiral().squares.map(([x, y, s], i) => [x, y, i === 3 ? s * 1.01 : s]) }),
+  ];
+  ok('壊して確かめる：区間の幅を変える・区間を一つ消す・渦の正方形を一つ変えるのどれでも落ちる（' + 数壊れ.filter(Boolean).length + ' / ' + 数壊れ.length + '）',
+     数壊れ.every(Boolean));
+
+  /* 当たる頁と当たらない頁。 */
+  const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
+  const own = fs.readdirSync(ROOT).filter((f) => /\.json$/.test(f) && !/\.site\.json$/.test(f))
+    .filter((f) => { try { return /^https:\/\/cpsbvbng26-dotcom\.vercel\.app\//.test(J(f).siteUrl || ''); } catch (e) { return false; } });
+  const gwCfg = Object.assign({}, J('golden-window.en.json'), J('golden-window.site.json'));
+  ok('予想のサイトの意匠が予想のサイトに当たり、作者のサイトの設定（' + own.length + ' 本）と見本には当たらない。二つの意匠は同じ頁に重ならない',
+     gw.applies(gwCfg) && own.length > 0 && own.every((f) => !gw.applies(J(f))) && !gw.applies(J('profile.json'))
+     && own.every((f) => !(gw.applies(J(f)) && design.applies(J(f)))) && !design.applies(gwCfg));
+
+  /* 生成して見る。予想のサイトの頁は、帯が一本・渦が一つ・題の下の飾りが一つ・節の見出しごとに飾りが一つで、意匠の CSS が入る。
+   * 状態の段と命題の行を札にする CSS が、頁の中の要素に当たる（節の id が変われば落ちる）。作者のサイトの頁には、どれも入らない。 */
+  const gen = (cfg, overlay) => {
+    const out = fs.mkdtempSync(path.join(require('os').tmpdir(), 'rp-gw-'));
+    try {
+      execFileSync(process.execPath, [path.join(ROOT, 'build.js')], { env: Object.assign({}, process.env,
+        { PROFILE_CONFIG: path.join(ROOT, cfg), PROFILE_OUT: out }, overlay ? { PROFILE_OVERLAY: path.join(ROOT, overlay) } : {}), stdio: 'pipe' });
+      return fs.readFileSync(path.join(out, 'index.html'), 'utf8');
+    } catch (e) { return ''; } finally { fs.rmSync(out, { recursive: true, force: true }); }
+  };
+  const count = (h, x) => h.split(x).length - 1;
+  const page = gen('golden-window.en.json', 'golden-window.site.json');
+  const heads = count(page, '<div class="sec-head reveal">');
+  const state = (/<section id="state" class="wrap block">[\s\S]*?<div class="notes-list reveal">\n\s*(<p[^>]*>)/.exec(page) || [])[1];
+  ok('予想のサイトの頁に、帯が一本・渦が一つ・題の下の飾りが一つ・節の見出しごとに飾りが一つ（' + heads + '）あり、意匠の CSS が入り、状態の段が札になる',
+     count(page, gw.bandSvg()) === 1 && /<header>\n  <svg class="gw-band"/.test(page) && count(page, gw.sealSvg()) === 1
+     && count(page, gw.ornamentSvg('long')) === 1 && count(page, gw.ornamentSvg('short')) === heads && heads > 0
+     && page.indexOf(gw.css()) >= 0 && state === '<p class="profile-core">' && page.indexOf('id="gw-live"') >= 0);
+  const authorPages = ['site.json', 'site.en.json', 'golden-window.en.json', 'golden-window.json'].map((f) => [f, gen(f)]);
+  const 漏れ = authorPages.filter(([, h]) => h === '' || /gw-band|gw-seal|gw-orn/.test(h) || h.indexOf('golden-window-design.js') >= 0).map(([f]) => f);
+  ok('作者のサイトの頁（トップ二つと黄金比の窓の頁二つで生成）には、予想のサイトの帯・渦・飾り・CSS が入らない', 漏れ.length === 0, 漏れ.join(', '));
 })();
 
 /* この検査が名乗る件数。README と CI の仕事の名前に書いた数を、実際と合わせる（決めごと 5）。 */
