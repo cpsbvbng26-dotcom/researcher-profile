@@ -57,6 +57,12 @@
           "name": "PhilArchive",
           "id": "NEMTNA",
           "url": "https://philarchive.org/rec/NEMTNA"
+        },
+        {
+          "name": "NDL",
+          "id": "info:ndljp/pid/15017937",
+          "url": "https://dl.ndl.go.jp/pid/15017937",
+          "note": " (National Diet Library Digital Collections)"
         }
       ]
     },
@@ -86,6 +92,12 @@
           "name": "PhilArchive",
           "id": "NEMMOI",
           "url": "https://philarchive.org/rec/NEMMOI"
+        },
+        {
+          "name": "NDL",
+          "id": "info:ndljp/pid/15017938",
+          "url": "https://dl.ndl.go.jp/pid/15017938",
+          "note": " (National Diet Library Digital Collections)"
         }
       ]
     },
@@ -135,6 +147,12 @@
           "name": "Knowledge Commons",
           "id": "q36z2-98e12",
           "url": "https://works.hcommons.org/records/q36z2-98e12"
+        },
+        {
+          "name": "NDL",
+          "id": "info:ndljp/pid/15017939",
+          "url": "https://dl.ndl.go.jp/pid/15017939",
+          "note": " (National Diet Library Digital Collections)"
         }
       ]
     }
@@ -233,6 +251,7 @@
         "sameAs": [
           "https://doi.org/10.2139/ssrn.7358779",
           "https://philarchive.org/rec/NEMTNA",
+          "https://dl.ndl.go.jp/pid/15017937",
           "https://www.wikidata.org/wiki/Q142184034"
         ],
         "inLanguage": "en",
@@ -262,6 +281,7 @@
         "sameAs": [
           "https://doi.org/10.2139/ssrn.7358818",
           "https://philarchive.org/rec/NEMMOI",
+          "https://dl.ndl.go.jp/pid/15017938",
           "https://www.wikidata.org/wiki/Q142184151"
         ],
         "inLanguage": "en",
@@ -303,7 +323,8 @@
           "transcription"
         ],
         "sameAs": [
-          "https://works.hcommons.org/records/q36z2-98e12"
+          "https://works.hcommons.org/records/q36z2-98e12",
+          "https://dl.ndl.go.jp/pid/15017939"
         ]
       },
       {
