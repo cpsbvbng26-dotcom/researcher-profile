@@ -98,6 +98,7 @@
         { "name": "SSRN", "id": "10.2139/ssrn.7358779", "url": "https://doi.org/10.2139/ssrn.7358779" },
         { "name": "PhilArchive", "id": "NEMTNA", "url": "https://philarchive.org/rec/NEMTNA" },
         { "name": "NDL", "id": "info:ndljp/pid/15017937", "url": "https://dl.ndl.go.jp/pid/15017937", "note": "国立国会図書館デジタルコレクションです。オンライン資料収集制度（e デポ）で、Zenodo のレコードから収集されました", "noteEn": "National Diet Library Digital Collections. Collected from the Zenodo record under the NDL's online materials collection system" },
+        { "name": "JNB", "id": "R100000039-I15017937", "url": "https://ndlsearch.ndl.go.jp/books/R100000039-I15017937", "note": "全国書誌（電子書籍編）の 2026-11-24 提供分に載りました。国立国会図書館サーチの書誌の頁です。本文は上の NDL にあります", "noteEn": "Listed in the Japanese National Bibliography (e-book edition), file provided on 2026-11-24. This is the NDL Search record. The text is at the NDL entry above" },
         { "name": "CORE", "id": "403307066", "url": "https://core.ac.uk/works/403307066", "note": "書誌の索引です。全文は置かれていません", "noteEn": "Bibliographic index. The full text is not held there" },
         { "name": "Sophaxis", "id": "2026.0004", "url": "https://sophaxis.vercel.app/abs/2026.0004.html" }
       ],
@@ -128,6 +129,7 @@
         { "name": "SSRN", "id": "10.2139/ssrn.7358818", "url": "https://doi.org/10.2139/ssrn.7358818" },
         { "name": "PhilArchive", "id": "NEMMOI", "url": "https://philarchive.org/rec/NEMMOI" },
         { "name": "NDL", "id": "info:ndljp/pid/15017938", "url": "https://dl.ndl.go.jp/pid/15017938", "note": "国立国会図書館デジタルコレクションです。オンライン資料収集制度（e デポ）で、Zenodo のレコードから収集されました", "noteEn": "National Diet Library Digital Collections. Collected from the Zenodo record under the NDL's online materials collection system" },
+        { "name": "JNB", "id": "R100000039-I15017938", "url": "https://ndlsearch.ndl.go.jp/books/R100000039-I15017938", "note": "全国書誌（電子書籍編）の 2026-11-24 提供分に載りました。国立国会図書館サーチの書誌の頁です。本文は上の NDL にあります", "noteEn": "Listed in the Japanese National Bibliography (e-book edition), file provided on 2026-11-24. This is the NDL Search record. The text is at the NDL entry above" },
         { "name": "Sophaxis", "id": "2026.0003", "url": "https://sophaxis.vercel.app/abs/2026.0003.html" }
       ],
       "ja": {
@@ -179,7 +181,8 @@
       "locations": [
         { "name": "SSRN", "id": "10.2139/ssrn.7449338", "url": "https://doi.org/10.2139/ssrn.7449338" },
         { "name": "Knowledge Commons", "id": "q36z2-98e12", "url": "https://works.hcommons.org/records/q36z2-98e12" },
-        { "name": "NDL", "id": "info:ndljp/pid/15017939", "url": "https://dl.ndl.go.jp/pid/15017939", "note": "国立国会図書館デジタルコレクションです。オンライン資料収集制度（e デポ）で、Zenodo のレコードから収集されました", "noteEn": "National Diet Library Digital Collections. Collected from the Zenodo record under the NDL's online materials collection system" }
+        { "name": "NDL", "id": "info:ndljp/pid/15017939", "url": "https://dl.ndl.go.jp/pid/15017939", "note": "国立国会図書館デジタルコレクションです。オンライン資料収集制度（e デポ）で、Zenodo のレコードから収集されました", "noteEn": "National Diet Library Digital Collections. Collected from the Zenodo record under the NDL's online materials collection system" },
+        { "name": "JNB", "id": "R100000039-I15017939", "url": "https://ndlsearch.ndl.go.jp/books/R100000039-I15017939", "note": "全国書誌（電子書籍編）の 2026-11-24 提供分に載りました。国立国会図書館サーチの書誌の頁です。本文は上の NDL にあります", "noteEn": "Listed in the Japanese National Bibliography (e-book edition), file provided on 2026-11-24. This is the NDL Search record. The text is at the NDL entry above" }
       ],
       "ja": {
         "version": "2026 年 8 月",
