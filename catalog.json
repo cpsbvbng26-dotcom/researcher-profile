@@ -6,7 +6,7 @@
     "ライセンスの列は、置いてあるリポジトリの LICENSE の置き方（免責事項の「再利用」）から生成する。手で書かない。",
     "娯楽の創作は載せない。研究の系列とはつながない。"
   ],
-  "asOf": "2026-11-18",
+  "asOf": "2026-11-24",
   "base": "https://cpsbvbng26-dotcom.vercel.app/",
   "gh": "https://github.com/cpsbvbng26-dotcom/",
   "orcid": "0009-0000-1406-0547",
@@ -315,6 +315,24 @@
       ],
       "canonical": "zenodo",
       "resourceType": "Preprint"
+    },
+    {
+      "id": "celibate-individual-follow-up",
+      "type": "essay",
+      "kind": "text",
+      "repo": null,
+      "status": "frozen",
+      "title": "Celibacy, Attachment, and the Non-Reproducing Individual: A Psychiatric and Biological Re-examination of “The Nobility and Exemplarity of the Celibate Individual”",
+      "summaryJa": "独身論が頼っている心理学・精神医学と生物学の主張を、公表された研究に照らして検討し直す。臨床の主張や助言はしない。題は原稿のもので、SSRN の記録とは突き合わせていない",
+      "summaryEn": "Re-examines the psychological, psychiatric and biological claims that the celibacy essay relies on, against published research. It makes no clinical claims and gives no advice. The title is the manuscript's and has not been checked against the SSRN record",
+      "doi": "10.2139/ssrn.7726682",
+      "canonical": "ssrn",
+      "resourceType": null,
+      "registry": "Crossref",
+      "startRepo": "autonomy-and-self-cultivation",
+      "continues": "The Nobility and Exemplarity of the Celibate Individual",
+      "startNoteJa": "原稿は十のリポジトリのどれにも置いていません。原稿の日付は 2026-11-18 です。独身論（The Nobility and Exemplarity of the Celibate Individual）の続きで、学部一年次の成果の続きにあたります（決めごと 15 が許す続きです）。DOI は 2026-11-24 に利用者から受け取りました。2026-11-24 に、Crossref の API はこの DOI に Resource not found を返しました",
+      "startNoteEn": "The manuscript is not in any of the ten repositories. The manuscript is dated 2026-11-18. It continues the celibacy essay (The Nobility and Exemplarity of the Celibate Individual), and is a continuation of first-year work (a continuation rule 15 allows). The DOI was received from the owner on 2026-11-24. On 2026-11-24 the Crossref API returned Resource not found for this DOI"
     },
     {
       "id": "imperial-selfhood",
