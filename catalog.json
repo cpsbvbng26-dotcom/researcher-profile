@@ -323,16 +323,16 @@
       "repo": null,
       "status": "frozen",
       "title": "Celibacy, Attachment, and the Non-Reproducing Individual: A Psychiatric and Biological Re-examination of “The Nobility and Exemplarity of the Celibate Individual”",
-      "summaryJa": "独身論が頼っている心理学・精神医学と生物学の主張を、公表された研究に照らして検討し直す。臨床の主張や助言はしない。題は原稿のもので、SSRN の記録とは突き合わせていない",
-      "summaryEn": "Re-examines the psychological, psychiatric and biological claims that the celibacy essay relies on, against published research. It makes no clinical claims and gives no advice. The title is the manuscript's and has not been checked against the SSRN record",
+      "summaryJa": "独身論が頼っている心理学・精神医学と生物学の主張を、公表された研究に照らして検討し直す。臨床の主張や助言はしない。題は、引用符の形を除いて Crossref の記録の題と同じ（2026-11-25 に確かめた）",
+      "summaryEn": "Re-examines the psychological, psychiatric and biological claims that the celibacy essay relies on, against published research. It makes no clinical claims and gives no advice. The title is the same as in the Crossref record, apart from the shape of the quotation marks (checked on 2026-11-25)",
       "doi": "10.2139/ssrn.7726682",
       "canonical": "ssrn",
       "resourceType": null,
       "registry": "Crossref",
       "startRepo": "autonomy-and-self-cultivation",
       "continues": "The Nobility and Exemplarity of the Celibate Individual",
-      "startNoteJa": "原稿は十のリポジトリのどれにも置いていません。原稿の日付は 2026-11-18 です。独身論（The Nobility and Exemplarity of the Celibate Individual）の続きで、学部一年次の成果の続きにあたります（決めごと 15 が許す続きです）。DOI は 2026-11-24 に利用者から受け取りました。2026-11-24 に、Crossref の API はこの DOI に Resource not found を返しました",
-      "startNoteEn": "The manuscript is not in any of the ten repositories. The manuscript is dated 2026-11-18. It continues the celibacy essay (The Nobility and Exemplarity of the Celibate Individual), and is a continuation of first-year work (a continuation rule 15 allows). The DOI was received from the owner on 2026-11-24. On 2026-11-24 the Crossref API returned Resource not found for this DOI"
+      "startNoteJa": "原稿は十のリポジトリのどれにも置いていません。原稿の日付は 2026-11-18 です。独身論（The Nobility and Exemplarity of the Celibate Individual）の続きで、学部一年次の成果の続きにあたります（決めごと 15 が許す続きです）。DOI は 2026-11-24 に利用者から受け取りました。2026-11-24 に、Crossref の API はこの DOI に Resource not found を返しました。2026-11-25 に、Crossref の API で記録を確かめました。記録が作られた時刻は 2026-11-24T05:11:04Z です。Resource not found を受け取った時刻は書き留めていません。そのため、二つの前後は分かりません。記録の題は、引用符の形を除いて原稿の題と同じです。記録の著者は Takuya Nemoto で、ORCID の認証を経た ORCID iD（0009-0000-1406-0547）が付いています。この DOI は、ORCID の公開の記録にも載っています",
+      "startNoteEn": "The manuscript is not in any of the ten repositories. The manuscript is dated 2026-11-18. It continues the celibacy essay (The Nobility and Exemplarity of the Celibate Individual), and is a continuation of first-year work (a continuation rule 15 allows). The DOI was received from the owner on 2026-11-24. On 2026-11-24 the Crossref API returned Resource not found for this DOI. On 2026-11-25 the Crossref record was checked through the Crossref API. The record was created at 2026-11-24T05:11:04Z. The time of the Resource not found response was not written down, so the order of the two is not known. The title in the record is the same as the manuscript's, apart from the shape of the quotation marks. The author in the record is Takuya Nemoto, with the ORCID iD 0009-0000-1406-0547 added through ORCID authentication. The DOI is also on the public ORCID record"
     },
     {
       "id": "imperial-selfhood",
